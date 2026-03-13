@@ -15,6 +15,7 @@ Anyway, prerequisites before continuing:
 - Git and Github
 
 ## Project Structure
+```
 project
 |- public
 |  |- *.png / *.jpg / *.ttf / *.otf 
@@ -24,6 +25,7 @@ project
 |  |- styles
 |  |  |- *.css / *.scss
 |- index.html
+```
 
 ## File Naming
 We gotta stick with `camelCase` names for files.
