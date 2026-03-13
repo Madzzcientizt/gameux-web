@@ -175,3 +175,8 @@
   --bs-form-invalid-border-color: #ea868f;
 }
 
+.navbar-logo {
+    height: 2em;
+    width: auto;
+    border-radius: 0.5rem;
+}

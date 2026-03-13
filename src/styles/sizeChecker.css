@@ -4,8 +4,9 @@ body::after {
   top: 1em;
   right: 1em;
   font-size: 2em;
-  color: red;
+  color: var(--bs-red);
   font-weight: 600;
+  pointer-events: none;
 }
 
 @media (width >= 40rem) { 
