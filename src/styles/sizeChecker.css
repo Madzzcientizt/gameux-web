@@ -7,9 +7,10 @@ body::after {
   color: var(--bs-red);
   font-weight: 600;
   pointer-events: none;
+  z-index: 9999;
 }
 
-@media (width >= 40rem) { 
+@media (width >= 36rem) { 
     body::after {
         content: 'md';
     }
@@ -21,19 +22,19 @@ body::after {
     }
 }
 
-@media (width >= 64rem) { 
+@media (width >= 62rem) { 
     body::after {
         content:'xl';
     }
 }
 
-@media (width >= 80rem) { 
+@media (width >= 75rem) { 
     body::after {
         content:'2xl';
     }
 }
 
-@media (width >= 96rem) { 
+@media (width >= 87.5rem) { 
     body::after {
         content:'3xl';
     }
