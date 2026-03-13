@@ -15,6 +15,7 @@ Anyway, prerequisites before continuing:
 - Git and Github
 
 ## Project Structure
+```
 project
 |- public
 |  |- *.png / *.jpg / *.ttf / *.otf 
@@ -24,6 +25,7 @@ project
 |  |- styles
 |  |  |- *.css / *.scss
 |- index.html
+```
 
 ## File Naming
 We gotta stick with `camelCase` names for files.
@@ -43,3 +45,6 @@ eg:
 
 ## Hosting
 The hosting for this website is already upto me, the team leader. There would be 2 sites when this is hosted: Github Pages, and Vercel.
+
+## Getting Started
+Since I only accept PRs (so that you gain knowledge about PRs), `git clone` this project then branch out from the main and work on that branch.
