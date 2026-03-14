@@ -259,6 +259,7 @@ section { /* Hero */
 @media (width >= 62rem) { /* above lg */
   header {
     position: fixed;
+    width: 100%;
   }
 
   .navbar-collapse {
