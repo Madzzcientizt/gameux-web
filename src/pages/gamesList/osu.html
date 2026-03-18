@@ -63,15 +63,25 @@
             </div>
         </nav>
     </header>
+    <nav class="breadcrumb-nav" style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="../gameList.html">Game List</a></li>
+            <li class="breadcrumb-item active game-name">Game name</li>
+        </ol>
+    </nav>
     <main>
-        <article>
+        <article class="wide">
             <section class="header-section">
-                <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active game-name">Game name</li>
-                    </ol>
-                </nav>
+                <h1 class="game-name game-name-header" title="Game Name">Game name</h1>
+                <div class="game-info-bar">
+                    <span class="date-released" title="Date Released">Date Released</span>
+                    <span class="publisher" title="Publisher">Publisher</span>
+                </div>
+            </section>
+        </article>
+        <article>
+            <section>
+Hello?
             </section>
         </article>
         
@@ -83,15 +93,16 @@
 
 <script>
     // VARIABLES
-    const GAMENAME = "Osu!";
-
+    const GAMENAME = "osu!";
+    const DATERELEASED = "09/16/2007"; // MM/DD/YYYY
+    const PUBLISHER = 'Dean "peppy" Herbert';
 
 
     // -- Implementation --
     document.getElementById('title').textContent = GAMENAME + " - GameUX";
-    for (let el of document.getElementsByClassName('game-name')) {
-        el.textContent = GAMENAME;
-    }
+    for (let el of document.getElementsByClassName('game-name')) { el.textContent = GAMENAME; }
+    for (let el of document.getElementsByClassName('date-released')) { el.textContent = DATERELEASED; }
+    for (let el of document.getElementsByClassName('publisher')) { el.textContent = PUBLISHER; }
 </script>
 
 </html>

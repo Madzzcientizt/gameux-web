@@ -1,6 +1,13 @@
+article {
+    width: 100%;
+    max-width: var(--t-maxwidth);
+    background-color: var(--t-color-base-300);
+}
+
 .header-section {
     padding-top: 2em;
     box-sizing: border-box;
+    width: 100%;
 }
 
 .breadcrumb-item a {
@@ -11,3 +18,27 @@
         text-decoration: underline;
     }
 } 
+
+.breadcrumb-nav {
+    background-color: var(--t-color-base-100);
+    padding: 0.5em 0;
+
+    & .breadcrumb {
+        max-width: var(--t-maxwidth);
+        margin: auto;
+        margin-bottom: 0;
+        padding: 0 1em;
+    }
+}
+
+.game-name-header {
+    font-weight: 900;
+    font-size: clamp(2.75rem, 10vw, 4rem);
+    margin-bottom: 0;
+}
+
+.game-info-bar {
+    display: flex;
+    gap: 1em;
+    font-size: 0.9em;
+}

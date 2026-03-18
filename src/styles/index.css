@@ -9,6 +9,7 @@
     header:not(.init) {
         .navbar {
             background-color: var(--transparent) !important;
+            border-bottom: 2px solid transparent;
         }
         .nav-item {
             &::after {

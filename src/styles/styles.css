@@ -207,6 +207,8 @@
 
   --bs-font-sans-serif: "Lexend", "Manrope", "Inter", sans-serif !important;
   --bs-font-serif: "Lora", "DM Serif", "Spectral", serif !important;
+
+  --t-maxwidth: 75rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -225,19 +227,26 @@ header {
 main {
   width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
 }
 
 article {
   width: 100%;
-  max-width: 75rem;
+  max-width: var(--t-maxwidth);
   background-color: var(--t-color-base-300);
+  margin: auto;
 
   &.wide {
     width: 100%;
     max-width: 100%;
     background-color: var(--t-color-base-300);
+
+    & section {
+      width: 100%;
+      max-width: var(--t-maxwidth);
+      margin: auto;
+    }
   }
 }
 
@@ -246,6 +255,8 @@ section { /* Hero */
   width: 100%;
   background-color: var(--t-color-base-300);
   max-width: 1280px;
+  padding-left: 1em;
+  padding-right: 1em;
 
   &.wide {
     max-width: 100%;
@@ -260,7 +271,8 @@ section { /* Hero */
 
 .navbar {
   background-color: var(--t-color-base-100) !important;
-  transition: background-color 0.3s ease;
+  border-bottom: 2px solid var(--t-color-base-300);
+  transition: background-color 0.3s ease, border-bottom 0.3s ease;
 }
 
 @media (width >= 62rem) { /* above lg */
