@@ -1,0 +1,13 @@
+.header-section {
+    padding-top: 2em;
+    box-sizing: border-box;
+}
+
+.breadcrumb-item a {
+    text-decoration: none;
+    color: var(--t-color-primary);
+
+    &:hover {
+        text-decoration: underline;
+    }
+} 
