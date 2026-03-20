@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,7 +26,7 @@
 
     <!-- Custom Styles ------------------------------------------------------------------------------------------ -->
     <style>
-        
+
     </style>
     <!-- Custom Styles ------------------------------------------------------------------------------------------ -->
 
@@ -63,7 +64,9 @@
             </div>
         </nav>
     </header>
-    <nav class="breadcrumb-nav" style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+    <nav class="breadcrumb-nav"
+        style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);"
+        aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="../gameList.html">Game List</a></li>
             <li class="breadcrumb-item active game-name">Game name</li>
@@ -73,18 +76,107 @@
         <article class="wide">
             <section class="header-section">
                 <h1 class="game-name game-name-header" title="Game Name">Game name</h1>
-                <div class="game-info-bar">
-                    <span class="date-released" title="Date Released">Date Released</span>
-                    <span class="publisher" title="Publisher">Publisher</span>
+                <div class="game-header">
+                    <span class="game-header-cont">
+                        <div class="game-info-bar">
+                            <span class="game-date-info">
+                                <span class="date-released" title="Date Released">Date Released</span>
+                                <span class="days-ago" title="Days Age">11 months ago</span>
+                            </span>
+                            <span class="game-badge">Full Release</span>
+                            <span class="publisher" title="Publisher">Publisher</span>
+                        </div>
+                    </span>
+                    <div class="game-header-rating">
+                        <table class="game-user-rating-cont">
+                            <tr>
+                                <td rowspan="2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <path fill-rule="evenodd"
+                                            d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </td>
+                                <td class="game-user-rating">0</td>
+                            </tr>
+                            <tr>
+                                <td class="game-user-ratings">0 user ratings</td>
+                            </tr>
+                        </table>
+                        <table class="game-critic-rating-cont">
+                            <tr>
+                                <td rowspan="2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <path fill-rule="evenodd"
+                                            d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </td>
+                                <td class="game-critic-rating">0</td>
+                            </tr>
+                            <tr>
+                                <td class="game-critic-ratings">0 critic ratings</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="video-game-container">
+                    <a class="game-poster" id="game-poster">
+                        <img class="game-poster-img" id="game-poster-img">
+                    </a>
+                    <video class="game-video" id="game-video">
+                        <source type="video/mp4" id="game-video-source">
+                    </video>
+                    <div class="game-rating">
+                        <table class="game-user-rating-cont">
+                            <tr>
+                                <td rowspan="2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <path fill-rule="evenodd"
+                                            d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </td>
+                                <td class="game-user-rating">0</td>
+                            </tr>
+                            <tr>
+                                <td class="game-user-ratings">0 user ratings</td>
+                            </tr>
+                        </table>
+                        <table class="game-critic-rating-cont">
+                            <tr>
+                                <td rowspan="2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <path fill-rule="evenodd"
+                                            d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </td>
+                                <td class="game-critic-rating">0</td>
+                            </tr>
+                            <tr>
+                                <td class="game-critic-ratings">0 critic ratings</td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
             </section>
         </article>
         <article>
-            <section>
-Hello?
+            <section class="game-desc-section">
+                <ul class="game-list-data">
+                    <li class="game-list-data-item">Genres:
+                        <ul id="genres"></ul>
+                    </li>
+                    <li class="game-list-data-item">Platforms:
+                        <ul id="platforms"></ul>
+                    </li>
+                    <li class="game-list-data-item">Editions:
+                        <ul id="editions"></ul>
+                    </li>
+                </ul>
             </section>
         </article>
-        
     </main>
     <footer>
 
@@ -96,13 +188,72 @@ Hello?
     const GAMENAME = "osu!";
     const DATERELEASED = "09/16/2007"; // MM/DD/YYYY
     const PUBLISHER = 'Dean "peppy" Herbert';
+    const BADGE = "FULL RELEASE";
+    // Pre-Alpha
+    // Alpha
+    // Beta
+    // Early Access
+    // Full Release
+    const POSTERURL = "#";
+    const GAMEUSERSTARS = "7.9";
+    const GAMEUSERRATINGS = "158";
+
+    const HASCRITICS = false;           // Set to false if there are no critic ratings
+    const GAMECRITICSTARS = "0";
+    const GAMECRITICRATINGS = "0";
+
+    const GENRES = ["Rhythm", "Music"];
+    const PLATFORMS = ["PC", "Mac", "Linux", "iOS", "Android"];
+    const EDITIONS = ["osu!stable", "osu!lazer"];
+
+
 
 
     // -- Implementation --
-    document.getElementById('title').textContent = GAMENAME + " - GameUX";
-    for (let el of document.getElementsByClassName('game-name')) { el.textContent = GAMENAME; }
-    for (let el of document.getElementsByClassName('date-released')) { el.textContent = DATERELEASED; }
-    for (let el of document.getElementsByClassName('publisher')) { el.textContent = PUBLISHER; }
+    document.getElementById('title').textContent = GAMENAME + " - GameUX";                                                          // Set page title
+    for (let el of document.getElementsByClassName('game-name')) { el.textContent = GAMENAME; }                                     // Set game name
+    for (let el of document.getElementsByClassName('date-released')) { el.textContent = DATERELEASED; }                             // Set date released
+    for (let el of document.getElementsByClassName('publisher')) { el.textContent = PUBLISHER; }                                    // Set publisher
+    for (let el of document.getElementsByClassName('game-badge')) { el.textContent = BADGE; }                                       // Set badge
+    for (let el of document.getElementsByClassName('game-user-rating')) { el.textContent = GAMEUSERSTARS; }                         // Set user rating
+    for (let el of document.getElementsByClassName('game-user-ratings')) { el.textContent = GAMEUSERRATINGS + " user ratings"; }    // Set user ratings
+    for (let el of document.getElementsByClassName('game-critic-rating')) { el.textContent = GAMECRITICSTARS; }                     // Set critic rating
+    for (let el of document.getElementsByClassName('game-critic-ratings')) { el.textContent = GAMECRITICRATINGS + " critic ratings"; } // Set critic ratings
+    document.getElementById('game-poster-img').src = POSTERURL;                                                                     // Set poster image
+    document.getElementById('game-poster').href = POSTERURL;                                                                        // Set poster link
+
+    
+    for (let genre of GENRES) { // Set genres
+        let li = document.createElement('li');
+        li.textContent = genre;
+        document.getElementById('genres').appendChild(li);
+    }
+
+    for (let platform of PLATFORMS) { // Set platforms
+        let li = document.createElement('li');
+        li.textContent = platform;
+        document.getElementById('platforms').appendChild(li);
+    }
+
+    for (let edition of EDITIONS) { // Set editions
+        let li = document.createElement('li');
+        li.textContent = edition;
+        document.getElementById('editions').appendChild(li);
+    }
+
+    if (!HASCRITICS) {
+        for (let el of document.getElementsByClassName('game-critic-rating-cont')) { el.classList.add('hidden'); }
+    }
+
+    // Calculate days ago
+    let timeDiff = new Date().getTime() - new Date(DATERELEASED).getTime();
+    let daysAgo = Math.floor(timeDiff / (1000 * 3600 * 24));
+    if (daysAgo > 365) {
+        let yearsAgo = Math.floor(daysAgo / 365);
+        for (let el of document.getElementsByClassName('days-ago')) { el.textContent = "(" + yearsAgo + " years ago)"; }
+    } else {
+        for (let el of document.getElementsByClassName('days-ago')) { el.textContent = "(" + daysAgo + " days ago)"; }
+    }
 </script>
 
 </html>

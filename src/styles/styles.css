@@ -222,6 +222,7 @@ body {
 header {
   position: sticky;
   top: 0;
+  z-index: 999;
 }
 
 main {
@@ -251,7 +252,7 @@ article {
 }
 
 section { /* Hero */
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   background-color: var(--t-color-base-300);
   max-width: 1280px;
