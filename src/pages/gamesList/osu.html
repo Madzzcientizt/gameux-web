@@ -126,9 +126,13 @@
                         <img class="game-poster-img" id="game-poster-img" alt="Game Poster" target="images"
                             title="Osu! Game Poster">
                     </a>
-                    <video class="game-video" id="game-video">
-                        <source type="video/mp4" id="game-video-source">
-                    </video>
+                    <div class="game-video-wrp">
+                        <video class="game-video" id="game-video" controls>
+                            <source type="video/mp4" id="game-video-source">
+                            Your browser does not support the video tag.
+                        </video>
+                        <iframe class="game-video" id="game-video-yt" frameborder="0" allowfullscreen hidden></iframe>
+                    </div>
                     <div class="game-rating">
                         <table class="game-user-rating-cont">
                             <tr>
@@ -253,6 +257,8 @@
     const POSTERURL = "../../../public/posters/osu_poster.jpg";
     const POSTERALTTEXT = "Osu! Game Poster";
     const VIDEOURL = "../../../public/videos/osu_trailer.mp4";
+    const VIDEOURLYT = "https://www.youtube.com/embed/2qZy9t8sQwM";
+    const YTVID = true;
 
     const GAMEUSERSTARS = "7.9";
     const GAMEUSERRATINGS = "158";
@@ -290,7 +296,18 @@
     document.getElementById('game-poster').href = POSTERURL;                                                                        // Set poster link
     document.getElementById('game-description').textContent = DESCRIPTION;                                                          // Set game description
     document.getElementById('game-poster-img').alt = POSTERALTTEXT;                                                                 // Set poster image alt text
-    document.getElementById('game-video').src = VIDEOURL;                                                                           // Set video source
+    // Video / YouTube toggle: show iframe when YTVID is true, otherwise show <video> with source
+    const videoEl = document.getElementById('game-video');
+    const videoSourceEl = document.getElementById('game-video-source');
+    const ytEl = document.getElementById('game-video-yt');
+    if (YTVID) {
+        if (ytEl) { ytEl.src = VIDEOURLYT; ytEl.hidden = false; }
+        if (videoEl) { videoEl.hidden = true; try { videoEl.pause(); } catch (e) {} }
+    } else {
+        if (videoSourceEl) { videoSourceEl.src = VIDEOURL; }
+        if (videoEl) { videoEl.hidden = false; try { videoEl.load(); } catch (e) {} }
+        if (ytEl) { ytEl.hidden = true; ytEl.src = ''; }
+    }
 
     for (let genre of GENRES) { // Set genres
         let li = document.createElement('li');
