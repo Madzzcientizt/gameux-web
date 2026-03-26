@@ -73,6 +73,9 @@ nav.game-info-nav {
 
 .game-info-nav-wrap {
     position: relative;
+    width: 100%;
+    max-width: 75rem;
+    margin: auto;
 }
 
 .game-info-nav-arrow {
@@ -233,6 +236,12 @@ nav.game-info-nav {
         padding-bottom: 56.25%; 
     }
 } */
+
+.game-info-nav-container {
+    position: relative;
+    background-color: var(--t-color-base-100);
+    width: 100%;
+}
 
 .game-video {
     display: block;
