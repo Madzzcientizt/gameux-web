@@ -25,7 +25,160 @@
     <link rel="stylesheet" href="../../styles/game.css" type="text/css" />
 
     <!-- Custom Styles ------------------------------------------------------------------------------------------ -->
-    <style></style>
+    <style>
+        .game-sections {
+            &#short-description {
+
+                &>h2 {
+                    font-weight: 900;
+                    font-size: 2.5em;
+                }
+
+                &>p {
+                    text-align: justify;
+                    margin-bottom: 1em;
+                }
+
+                &>.list-style {
+                    list-style: none;
+                    float: right;
+                    background-color: var(--t-color-base-100);
+                    padding: 2em;
+                    margin-left: 2em;
+                    margin-bottom: 2em;
+                    border-radius: 0.5em;
+                    border: 1px solid var(--t-color-base-300);
+
+                    &>h6 {
+                        font-weight: 900;
+                    }
+
+                    &>li {
+                        margin-left: 1em;
+                        margin-bottom: 1em;
+                        position: relative;
+
+                        &::before {
+                            content: '';
+                            display: block;
+                            position: absolute;
+                            width: 0.2em;
+                            height: 1em;
+                            background-color: var(--t-color-primary);
+                            border-radius: 1em;
+                            left: -0.75em;
+                            top: calc(50% - 0.5em);
+                        }
+                    }
+                }
+            }
+
+            &#ui-components {
+                &>h2 {
+                    font-weight: 900;
+                    font-size: 2.5em;
+                }
+
+                & .major-component {
+                    background-color: var(--t-color-base-100);
+                    border-radius: 0.5em;
+                    padding: 1em;
+                    margin-top: 2em;
+                    height: auto;
+                    position: relative;
+                    display: flex;
+                    align-items: flex-start;
+                    gap: 1em;
+                    min-height: 15em;
+                    border: 1px solid var(--t-color-base-300);
+
+                    & figure {
+                        position: relative;
+
+                        & figcaption {
+                            font-size: 0.9em;
+                            color: var(--t-color-light);
+                            margin-top: 0.5em;
+                            position: absolute;
+                            bottom: 0.5em;
+                            right: 0.5em;
+                        }
+                    }
+
+                    & a {
+                        flex-shrink: 0;
+                        margin-left: auto;
+
+                        & img {
+                            display: block;
+                            height: 20em;
+                            width: auto;
+                            object-fit: cover;
+                            border-radius: 0.25em;
+                        }
+                    }
+
+                    @media (width < 48rem) {
+                        flex-direction: column;
+
+                        & a {
+                            margin-left: 0;
+                            width: 100%;
+
+                            & img {
+                                width: 100%;
+                                height: auto;
+                                margin-bottom: 1em;
+                            }
+                        }
+
+                    }
+
+                    & .count {
+                        font-weight: 700;
+                        font-size: 1.2em;
+                        font-family: var(--bs-font-monospace);
+                        color: var(--t-color-primary);
+                        display: block;
+                    }
+
+                    & .header-text {
+                        font-weight: 700;
+                        font-size: 2.5em;
+                        font-family: var(--bs-font-serif);
+                    }
+
+                    & ul {
+                            list-style: none;
+                            margin-left: 1em;
+                            margin-top: 2em;
+    
+                            & h6 {
+                                font-weight: 900;
+                            }
+    
+                            & li {
+                                margin-left: 1em;
+                                margin-bottom: 0.5em;
+                                position: relative;
+    
+                                &::before {
+                                    content: '';
+                                    display: block;
+                                    position: absolute;
+                                    width: 0.2em;
+                                    height: 1em;
+                                    background-color: var(--t-color-primary);
+                                    border-radius: 1em;
+                                    left: -0.75em;
+                                    top: calc(50% - 0.5em);
+                                }
+                            }
+                    }
+                }
+            }
+        }
+    </style>
     <!-- Custom Styles ------------------------------------------------------------------------------------------ -->
 
     <title id="title">GameName - GameUX</title>
@@ -279,7 +432,44 @@
                     <h2>UI Components</h2>
                     <p>UI components in osu! include the main game interface, hit circles, sliders, and spinners.</p>
                     <div class="major-component">
-                        <span class="header-text">Circle</span>
+                        <figure>
+                            <a href="../../../public/gamesContent/osu/hitCircles.png" title="osu! Hit Circle"
+                                target="images">
+                                <img src="../../../public/gamesContent/osu/hitCircles.png" alt="Hit Circles">
+                            </a>
+                            <figcaption>FIG 1.1: Hit Circles</figcaption>
+                        </figure>
+                        <div>
+                            <span class="count">[ ELEMENT_01 ]</span>
+                            <span class="header-text">Hit Circles</span>
+                            <p>
+                                The fundamental gameplay elements in osu! are the hit circles, which players must click
+                                in time with the music. These components utilizes an "Approach Circle" to signal precise
+                                moment of interaction.
+                            </p>
+                            <ul>
+                                <h6>Visual Feedback</h6>
+                                <li>Temporal Precision Mapping</li>
+                                <li>Color-Coded Grouping (Combos)</li>
+                                <li>Numerical Sequencing</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="major-component">
+                        <div>
+                            <span class="count">[ ELEMENT_02 ]</span>
+                            <span class="header-text">Sliders</span>
+                            <p>
+                                Elongated paths that extends the duration of the hit circle interaction. Players must follow the slider's path while maintaining contact. It requires sustained spacial tracking and motor control precision over a B&eacute;zier curve.
+                            </p>
+                        </div>
+                        <figure>
+                            <a href="../../../public/gamesContent/osu/slider.jpg" title="osu! Slider"
+                                target="images">
+                                <img src="../../../public/gamesContent/osu/slider.jpg" alt="Sliders">
+                            </a>
+                            <figcaption>FIG 1.2: Sliders</figcaption>
+                        </figure>
                     </div>
                 </section>
                 <section class="game-sections" id="user-interaction">

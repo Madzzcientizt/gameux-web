@@ -102,59 +102,6 @@ footer {
     }
 }
 
-.game-sections {
-    &#short-description {
-
-        &>h2 {
-            font-weight: 900;
-            font-size: 2.5em;
-        }
-        &>p {
-            text-align: justify;
-            margin-bottom: 1em;
-        }
-        &>.list-style {
-            list-style: none;
-            float: right;
-            background-color: var(--t-color-base-100);
-            padding: 2em;
-            margin-left: 2em;
-            margin-bottom: 2em;
-            border-radius: 0.5em;
-            border: 1px solid var(--t-color-base-300);
-            
-            &>h6 {
-                font-weight: 900;
-            }
-
-            &>li {
-                margin-left: 1em;
-                margin-bottom: 1em;
-                position: relative;
-
-                &::before {
-                    content: '';
-                    display: block;
-                    position: absolute;
-                    width: 0.2em;
-                    height: 1em;
-                    background-color: var(--t-color-primary);
-                    border-radius: 1em;
-                    left: -0.75em;
-                    top: calc(50% - 0.5em);
-                }
-            }
-        }
-    }
-    
-    &#ui-components {
-        &>h2 {
-            font-weight: 900;
-            font-size: 2.5em;
-        }
-    }
-}
-
 .metrics-list {
     list-style: none;
     padding: 0;

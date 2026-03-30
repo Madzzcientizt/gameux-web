@@ -209,6 +209,7 @@
 
   --bs-font-sans-serif: "Lexend", "Manrope", "Inter", sans-serif !important;
   --bs-font-serif: "Lora", "DM Serif", "Spectral", serif !important;
+  --bs-font-monospace: 'Courier New', Courier, monospace !important;
 
   --t-maxwidth: 75rem;
 }
