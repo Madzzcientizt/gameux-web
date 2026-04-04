@@ -74,26 +74,49 @@
             }
 
             &#ui-components {
+                margin-bottom: 2em;
+
                 &>h2 {
                     font-weight: 900;
                     font-size: 2.5em;
+                }
+
+                & .major-components {
+                    display: grid;
+                    grid-template-rows: 1fr;
+                    grid-template-columns: 50% 1fr;
+                    gap: 1em;
+                    margin: 2em 0;
                 }
 
                 & .major-component {
                     background-color: var(--t-color-base-100);
                     border-radius: 0.5em;
                     padding: 1em;
-                    margin-top: 2em;
                     height: auto;
                     position: relative;
                     display: flex;
                     align-items: flex-start;
+                    flex-direction: column;
                     gap: 1em;
                     min-height: 15em;
                     border: 1px solid var(--t-color-base-300);
 
+                    &:first-child {
+                        grid-column: 1 / -1;
+                        width: 100%;
+                        flex-direction: row;
+                    }
+
+                    &:not(:first-child) {
+                        flex-direction: column;
+                    }
+
                     & figure {
                         position: relative;
+                        margin-bottom: 0;
+                        width: 100%;
+                        height: auto;
 
                         & figcaption {
                             font-size: 0.9em;
@@ -111,27 +134,11 @@
 
                         & img {
                             display: block;
-                            height: 20em;
-                            width: auto;
+                            width: 100%;
+                            height: 100%;
                             object-fit: cover;
                             border-radius: 0.25em;
                         }
-                    }
-
-                    @media (width < 48rem) {
-                        flex-direction: column;
-
-                        & a {
-                            margin-left: 0;
-                            width: 100%;
-
-                            & img {
-                                width: 100%;
-                                height: auto;
-                                margin-bottom: 1em;
-                            }
-                        }
-
                     }
 
                     & .count {
@@ -149,33 +156,246 @@
                     }
 
                     & ul {
-                            list-style: none;
+                        list-style: none;
+                        margin-left: 1em;
+                        margin-top: 2em;
+
+                        & h6 {
+                            font-weight: 900;
+                        }
+
+                        & li {
                             margin-left: 1em;
-                            margin-top: 2em;
-    
-                            & h6 {
-                                font-weight: 900;
+                            margin-bottom: 0.5em;
+                            position: relative;
+
+                            &::before {
+                                content: '';
+                                display: block;
+                                position: absolute;
+                                width: 0.2em;
+                                height: 1em;
+                                background-color: var(--t-color-primary);
+                                border-radius: 1em;
+                                left: -0.75em;
+                                top: calc(50% - 0.5em);
                             }
-    
-                            & li {
-                                margin-left: 1em;
-                                margin-bottom: 0.5em;
-                                position: relative;
-    
-                                &::before {
-                                    content: '';
-                                    display: block;
-                                    position: absolute;
-                                    width: 0.2em;
-                                    height: 1em;
-                                    background-color: var(--t-color-primary);
-                                    border-radius: 1em;
-                                    left: -0.75em;
-                                    top: calc(50% - 0.5em);
-                                }
-                            }
+                        }
                     }
                 }
+
+                & .fittslaw {
+                    display: grid;
+                    grid-template-columns: 50% 1fr;
+                    gap: 1em;
+
+                    & h2 {
+                        font-weight: 900;
+                        font-size: 2.5em;
+                    }
+
+                    & figure {
+                        position: relative;
+                        margin-bottom: 0;
+                        width: 100%;
+                        height: auto;
+
+                        & figcaption {
+                            font-size: 0.9em;
+                            color: var(--t-color-dark);
+                            margin-top: 0.5em;
+                            position: absolute;
+                            bottom: 0.5em;
+                            right: 0.5em;
+                        }
+                    }
+
+                    & a {
+                        flex-shrink: 0;
+                        margin-left: auto;
+
+                        & img {
+                            width: 100% !important;
+                            height: auto !important;
+                            margin-bottom: 1em;
+                        }
+                    }
+                }
+
+                @media (width < 48rem) {
+                    & .fittslaw {
+                        grid-template-columns: 1fr;
+                    }
+                }
+
+                & .mathmodel {
+                    margin: 1em 0;
+                    padding: 1em;
+                    position: relative;
+                    padding-left: 2em;
+                    background-color: var(--t-color-base-300);
+                    border-radius: 0.5em;
+                    overflow: hidden;
+
+                    &::before {
+                        content: '';
+                        display: block;
+                        position: absolute;
+                        width: 0.5em;
+                        height: 100%;
+                        background-color: var(--t-color-primary);
+                        left: 0;
+                        top: 0;
+                    }
+
+                    & h6 {
+                        font-family: var(--bs-font-monospace);
+                        color: var(--t-color-dark);
+                        font-weight: 300;
+                    }
+
+                    & span {
+                        font-size: 2em
+                    }
+                }
+
+                & .visual-breakdown {
+                    margin: 2em 0;
+                    width: 100%;
+                    min-height: 20em;
+                    background-color: var(--t-color-base-100);
+                    border: 1px solid var(--t-color-base-300);
+                    padding: 1em;
+                    border-radius: 0.5em;
+
+                    & h2 {
+                        font-weight: 900;
+                        font-size: 2.5em;
+                    }
+
+                    & ol {
+                        list-style: none;
+                        margin-left: 0;
+                        padding-left: 0;
+                        margin-top: 2em;
+                        display: grid;
+                        grid-template-columns: 1fr 1fr 1fr;
+                        gap: 1em;
+
+                        @media (width < 48rem) {
+                            grid-template-columns: 1fr;
+                        }
+
+                        & li {
+                            position: relative;
+
+                            &::before {
+                                font-weight: 700;
+                                font-size: 5em;
+                                font-family: var(--bs-font-monospace);
+                                color: var(--t-color-base-200);
+                                position: absolute;
+                                top: -0.5em;
+                            }
+
+                            &:nth-child(1)::before {
+                                content: '01';
+                            }
+
+                            &:nth-child(2)::before {
+                                content: '02';
+                            }
+
+                            &:nth-child(3)::before {
+                                content: '03';
+                            }
+
+                            @media (width > 48rem) {
+                                &::before {
+                                    left: 0;
+                                }
+                            }
+
+                            @media (width < 48rem) {
+                                &::before {
+                                    right: 0;
+                                }
+                            }
+
+                            & h6 {
+                                font-weight: 700;
+                                font-size: 1.5em;
+                                position: relative;
+
+                                &::after {
+                                    content: '';
+                                    display: block;
+                                    width: 100%;
+                                    height: 1px;
+                                    background-color: var(--t-color-base-300);
+                                    margin-top: 0.5em;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                @media (width < 48rem) {
+                    & .major-components {
+                        grid-template-columns: 1fr;
+                        gap: 1em;
+                    }
+
+                    & .major-component {
+                        &:first-child {
+                            flex-direction: column;
+                        }
+
+                        & figure {
+                            width: 100%;
+
+                            & figcaption {
+                                bottom: 1em;
+                            }
+                        }
+
+                        & a {
+                            margin-left: 0;
+                            width: 100%;
+
+                            & img {
+                                width: 100% !important;
+                                height: auto !important;
+                                margin-bottom: 1em;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &#user-interaction {
+                margin-bottom: 2em;
+
+                &>h2 {
+                    font-weight: 900;
+                    font-size: 2.5em;
+                }
+            }
+        }
+
+        .footnote {
+            width: 100%;
+            background-color: rgba(var(--t-color-primary-rgb), 0.1);
+            padding: 2em;
+            border-radius: 0.5em;
+
+            &::before {
+                content: 'Note:';
+                font-weight: 700;
+                font-size: 1.2em;
+                color: var(--t-color-primary);
+                display: block;
+                margin-bottom: 0.5em;
             }
         }
     </style>
@@ -192,8 +412,7 @@
                     <img src="../../../public/gameux.png" alt="Logo" class="navbar-logo" />
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
+                    data-bs-target="#navbarSupportedContent">
                     <span class="navbar-toggler-icon" style="width: 1em"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -430,50 +649,133 @@
                 </section>
                 <section class="game-sections" id="ui-components">
                     <h2>UI Components</h2>
-                    <p>UI components in osu! include the main game interface, hit circles, sliders, and spinners.</p>
-                    <div class="major-component">
-                        <figure>
-                            <a href="../../../public/gamesContent/osu/hitCircles.png" title="osu! Hit Circle"
-                                target="images">
-                                <img src="../../../public/gamesContent/osu/hitCircles.png" alt="Hit Circles">
-                            </a>
-                            <figcaption>FIG 1.1: Hit Circles</figcaption>
-                        </figure>
-                        <div>
-                            <span class="count">[ ELEMENT_01 ]</span>
-                            <span class="header-text">Hit Circles</span>
-                            <p>
-                                The fundamental gameplay elements in osu! are the hit circles, which players must click
-                                in time with the music. These components utilizes an "Approach Circle" to signal precise
-                                moment of interaction.
-                            </p>
-                            <ul>
-                                <h6>Visual Feedback</h6>
-                                <li>Temporal Precision Mapping</li>
-                                <li>Color-Coded Grouping (Combos)</li>
-                                <li>Numerical Sequencing</li>
-                            </ul>
+                    <div class="major-components">
+                        <div class="major-component">
+                            <figure>
+                                <a href="../../../public/gamesContent/osu/hitCircles.png" title="osu! Hit Circle"
+                                    target="images">
+                                    <img src="../../../public/gamesContent/osu/hitCircles.png" alt="Hit Circles">
+                                </a>
+                                <figcaption>FIG 1.1: Hit Circles</figcaption>
+                            </figure>
+                            <div>
+                                <span class="count">[ ELEMENT_01 ]</span>
+                                <span class="header-text">Hit Circles</span>
+                                <p>
+                                    The fundamental gameplay elements in osu! are the hit circles, which players must
+                                    click
+                                    in time with the music. These components utilizes an "Approach Circle" to signal
+                                    precise
+                                    moment of interaction.
+                                </p>
+                                <ul>
+                                    <h6>Visual Feedback</h6>
+                                    <li>Temporal Precision Mapping</li>
+                                    <li>Color-Coded Grouping (Combos)</li>
+                                    <li>Numerical Sequencing</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="major-component">
+                            <figure>
+                                <a href="../../../public/gamesContent/osu/slider.jpg" title="osu! Slider"
+                                    target="images">
+                                    <img src="../../../public/gamesContent/osu/slider.jpg" alt="Sliders">
+                                </a>
+                                <figcaption>FIG 1.2: Sliders</figcaption>
+                            </figure>
+                            <div>
+                                <span class="count">[ ELEMENT_02 ]</span>
+                                <span class="header-text">Sliders</span>
+                                <p>
+                                    Elongated paths that extends the duration of the hit circle interaction. Players
+                                    must
+                                    follow the slider's path while maintaining contact. It requires sustained spacial
+                                    tracking and motor control precision over a B&eacute;zier curve.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="major-component">
+                            <figure>
+                                <a href="../../../public/gamesContent/osu/spinner.png" title="osu! Spinner"
+                                    target="images">
+                                    <img src="../../../public/gamesContent/osu/spinner.png" alt="Spinners">
+                                </a>
+                                <figcaption>FIG 1.3: Spinners</figcaption>
+                            </figure>
+                            <div>
+                                <span class="count">[ ELEMENT_03 ]</span>
+                                <span class="header-text">Spinner</span>
+                                <p>
+                                    A rotating wheel that players must spin. It requires high-speed circular motion
+                                    which tests
+                                    the player's physical endurance.
+                                </p>
+                            </div>
                         </div>
                     </div>
-                    <div class="major-component">
+                    <h2>Fitt's Law in High-Speed Human-Computer Interaction</h2>
+                    <div class="fittslaw">
                         <div>
-                            <span class="count">[ ELEMENT_02 ]</span>
-                            <span class="header-text">Sliders</span>
                             <p>
-                                Elongated paths that extends the duration of the hit circle interaction. Players must follow the slider's path while maintaining contact. It requires sustained spacial tracking and motor control precision over a B&eacute;zier curve.
+                                Fitt's Law states that the time required to acquire a target is a function of the
+                                distance to and the size of the target. In osu!, this law applies to the hit circles,
+                                which must be clicked with precision and speed.
+                            </p>
+                            <div class="mathmodel">
+                                <h6>[ MATHEMATICAL MODEL ]</h6>
+                                <span>MT = a + b * log<sub>2</sub>(2D/W)</span>
+                            </div>
+                            <p>
+                                In osu!, "Circle Size" (CS) directly affects the effective target width (W). As the
+                                players progress, the system decreases CS and increases the index of difficulty (ID).
+                                This creates a direct correlation between component sizing and player skill ceiling.
                             </p>
                         </div>
-                        <figure>
-                            <a href="../../../public/gamesContent/osu/slider.jpg" title="osu! Slider"
-                                target="images">
-                                <img src="../../../public/gamesContent/osu/slider.jpg" alt="Sliders">
-                            </a>
-                            <figcaption>FIG 1.2: Sliders</figcaption>
-                        </figure>
+                        <div>
+                            <figure>
+                                <a href="../../../public/gamesContent/osu/osuJudgements.png" title="osu! Judgements"
+                                    target="images">
+                                    <img src="../../../public/gamesContent/osu/osuJudgements.png" alt="Judgements">
+                                </a>
+                                <figcaption>FIG 1.4: osu! Judgements</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="visual-breakdown">
+                        <h2 class="text-center">Visual Hierarchy Breakdown</h2>
+                        <div class="text-center">Layering of Information</div>
+                        <ol>
+                            <li>
+                                <h6>Active Target</h6>
+                                <p>
+                                    Primary focus. High contrst, saturated colors, and movement (approach circles)
+                                    distinguish it from the static background
+                                </p>
+                            </li>
+                            <li>
+                                <h6>Follow Path</h6>
+                                <p>
+                                    Secondary focus. Desaturated traces (ghost notes) provide cognitive scaffolding for
+                                    the player's next physical movement.
+                                </p>
+                            </li>
+                            <li>
+                                <h6>HUD Overlays</h6>
+                                <p>
+                                    Tertiary focus. Score, combo, and accuracy are displayed with smaller fonts and
+                                    muted colors to avoid competing with the active gameplay elements.
+                                </p>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="footnote">
+                        All component analysis is based on standard osu! skinning metrics. Variability in user custom
+                        skins may alter visual hierarchy but remains anchored to fundamental Fitts's Law constraints.
                     </div>
                 </section>
                 <section class="game-sections" id="user-interaction">
-                    user interaction
+                    <h2>User Interaction</h2>
                 </section>
                 <section class="game-sections" id="hci-principles">
                     hci principles
