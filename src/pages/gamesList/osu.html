@@ -26,6 +26,10 @@
 
     <!-- Custom Styles ------------------------------------------------------------------------------------------ -->
     <style>
+        nav.game-info-nav label {
+            width: calc(100% / 5) !important;
+        }
+
         .game-sections {
             &#short-description {
 
@@ -259,87 +263,6 @@
                     }
                 }
 
-                & .visual-breakdown {
-                    margin: 2em 0;
-                    width: 100%;
-                    min-height: 20em;
-                    background-color: var(--t-color-base-100);
-                    border: 1px solid var(--t-color-base-300);
-                    padding: 1em;
-                    border-radius: 0.5em;
-
-                    & h2 {
-                        font-weight: 900;
-                        font-size: 2.5em;
-                    }
-
-                    & ol {
-                        list-style: none;
-                        margin-left: 0;
-                        padding-left: 0;
-                        margin-top: 2em;
-                        display: grid;
-                        grid-template-columns: 1fr 1fr 1fr;
-                        gap: 1em;
-
-                        @media (width < 48rem) {
-                            grid-template-columns: 1fr;
-                        }
-
-                        & li {
-                            position: relative;
-
-                            &::before {
-                                font-weight: 700;
-                                font-size: 5em;
-                                font-family: var(--bs-font-monospace);
-                                color: var(--t-color-base-200);
-                                position: absolute;
-                                top: -0.5em;
-                            }
-
-                            &:nth-child(1)::before {
-                                content: '01';
-                            }
-
-                            &:nth-child(2)::before {
-                                content: '02';
-                            }
-
-                            &:nth-child(3)::before {
-                                content: '03';
-                            }
-
-                            @media (width > 48rem) {
-                                &::before {
-                                    left: 0;
-                                }
-                            }
-
-                            @media (width < 48rem) {
-                                &::before {
-                                    right: 0;
-                                }
-                            }
-
-                            & h6 {
-                                font-weight: 700;
-                                font-size: 1.5em;
-                                position: relative;
-
-                                &::after {
-                                    content: '';
-                                    display: block;
-                                    width: 100%;
-                                    height: 1px;
-                                    background-color: var(--t-color-base-300);
-                                    margin-top: 0.5em;
-                                }
-                            }
-                        }
-                    }
-                }
-
                 @media (width < 48rem) {
                     & .major-components {
                         grid-template-columns: 1fr;
@@ -379,6 +302,169 @@
                 &>h2 {
                     font-weight: 900;
                     font-size: 2.5em;
+                }
+
+                & h3 {
+                    font-weight: 900;
+                    font-size: 2.5em;
+                }
+
+
+                & .multi-modal-feedback {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 1em;
+                    padding-top: 1em;
+
+                    @media (width < 48rem) {
+                        grid-template-columns: 1fr !important;
+                    }
+
+                    & figure {
+                        margin: auto;
+                        width: 100%;
+                        height: auto;
+
+                        & img {
+                            width: 100% !important;
+                            height: auto !important;
+                        }
+                    }
+                }
+
+                & ul {
+                    list-style: none;
+                    padding: 0;
+
+                    & li {
+                        margin-top: 2em;
+                        display: flex;
+                        flex-direction: row;
+
+                        & h6 {
+                            font-weight: 700;
+                            font-size: 1.5em;
+                            margin-bottom: 0.5em;
+                        }
+
+                        & .logo-svg {
+                            height: 5em;
+                            flex-shrink: 0;
+                            background-color: var(--t-color-primary);
+                            color: var(--t-color-base-100);
+                            aspect-ratio: 1 / 1;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: center;
+                            padding: 1em;
+                            border-radius: 0.5em;
+                            margin: auto;
+                            margin-right: 1em;
+
+                            & svg {
+                                width: 100%;
+                                height: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+
+        & .list-style-area {
+            margin: 2em 0;
+            width: 100%;
+            background-color: var(--t-color-base-100);
+            border: 1px solid var(--t-color-base-300);
+            padding: 1em;
+            border-radius: 0.5em;
+
+            & ol {
+                list-style: none;
+                margin-left: 0;
+                padding-left: 0;
+                margin-top: 2em;
+                display: grid;
+                gap: 1em;
+
+                &.two-columns {
+                    grid-template-columns: 1fr 1fr;
+                }
+
+                &.three-columns {
+                    grid-template-columns: 1fr 1fr 1fr;
+                }
+
+                &.four-columns {
+                    grid-template-columns: 1fr 1fr 1fr 1fr;
+                }
+
+                @media (width < 48rem) {
+                    &.md-one-columns {
+                        grid-template-columns: 1fr !important;
+                    }
+
+                    &.md-two-columns {
+                        grid-template-columns: 1fr 1fr !important;
+                    }
+                }
+
+                & li {
+                    position: relative;
+
+                    &::before {
+                        font-weight: 700;
+                        font-size: 5em;
+                        font-family: var(--bs-font-monospace);
+                        color: var(--t-color-base-200);
+                        position: absolute;
+                        top: -0.5em;
+                    }
+
+                    &:nth-child(1)::before {
+                        content: '01';
+                    }
+
+                    &:nth-child(2)::before {
+                        content: '02';
+                    }
+
+                    &:nth-child(3)::before {
+                        content: '03';
+                    }
+
+                    &:nth-child(4)::before {
+                        content: '04';
+                    }
+
+                    @media (width > 48rem) {
+                        &::before {
+                            left: 0;
+                        }
+                    }
+
+                    @media (width < 48rem) {
+                        &::before {
+                            right: 0;
+                        }
+                    }
+
+                    & h6 {
+                        font-weight: 700;
+                        font-size: 1.5em;
+                        position: relative;
+
+                        &::after {
+                            content: '';
+                            display: block;
+                            width: 100%;
+                            height: 1px;
+                            background-color: var(--t-color-base-300);
+                            margin-top: 0.5em;
+                        }
+                    }
                 }
             }
         }
@@ -579,12 +665,12 @@
                         User Interaction</label>
                     <label><input type="radio" name="game-section" value="hci-principles" />
                         HCI Principles</label>
-                    <label><input type="radio" name="game-section" value="strengths" />
-                        Strengths</label>
+                    <!-- <label><input type="radio" name="game-section" value="strengths" />
+                        Strengths</label> -->
                     <label><input type="radio" name="game-section" value="ui-ux-weaknesses" />
-                        UI/UX Weaknesses</label>
-                    <label><input type="radio" name="game-section" value="conclusion" />
-                        Conclusion</label>
+                        Strengths & Weaknesses</label>
+                    <!-- <label><input type="radio" name="game-section" value="conclusion" />
+                        Conclusion</label> -->
                 </nav>
                 <button class="game-info-nav-arrow right" id="game-info-nav-right" type="button"
                     aria-label="Scroll right" hidden>
@@ -742,10 +828,10 @@
                             </figure>
                         </div>
                     </div>
-                    <div class="visual-breakdown">
-                        <h2 class="text-center">Visual Hierarchy Breakdown</h2>
+                    <div class="list-style-area">
+                        <h3 class="text-center">Visual Hierarchy Breakdown</h3>
                         <div class="text-center">Layering of Information</div>
-                        <ol>
+                        <ol class="three-columns md-one-columns">
                             <li>
                                 <h6>Active Target</h6>
                                 <p>
@@ -776,15 +862,126 @@
                 </section>
                 <section class="game-sections" id="user-interaction">
                     <h2>User Interaction</h2>
+                    <p>
+                        An investigation into the neuro-mechanical feedback loops of rhythm-based interfaces,
+                        specifically analyzing the osu! standard mode interaction model.
+                    </p>
+                    <div class="list-style-area">
+                        <h3 class="text-center">Core Gameplay Loop</h3>
+                        <div class="text-center"></div>
+                        <ol class="four-columns md-two-columns">
+                            <li>
+                                <h6>See</h6>
+                                <p>
+                                    Visual stimuli (hit circles, sliders, spinners) are processed through the player's
+                                    visual system.
+                                </p>
+                            </li>
+                            <li>
+                                <h6>React</h6>
+                                <p>
+                                    Motor cortex triggers physical movement to the localized coordinate on the 2D plane.
+                                </p>
+                            </li>
+                            <li>
+                                <h6>Interact/ Click</h6>
+                                <p>
+                                    Binary input activation with the game elements through mouse clicks or key presses.
+                                </p>
+                            </li>
+                            <li>
+                                <h6>Follow</h6>
+                                <p>
+                                    Continuity of interaction via sliders, spinners, or rapid-fire response for stream
+                                    patterns.
+                                </p>
+                            </li>
+                            </ul>
+                    </div>
+                    <h3>Multi-Modal Feedback Matrix</h3>
+                    <div class="multi-modal-feedback">
+                        <div>
+                            <p>
+                                Precision rhythm games rely on a triad of sensory confirmations to minimize the
+                                "Perception-Action" gap. When a player hits a note, the system responds instantly across
+                                three channels to validate the interaction.
+                            </p>
+                        </div>
+                        <div>
+                            <figure>
+                                <a href="../../../public/gamesContent/osu/keyToMusic.png" title="osu! Input to Feedback"
+                                    target="images">
+                                    <img src="../../../public/gamesContent/osu/keyToMusic.png"
+                                        alt="osu! Input to Feedback">
+                                </a>
+                                <figcaption>FIG 1.5: osu! Input to Feedback</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                    <ul>
+                        <li>
+                            <div class="logo-svg">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25l4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h6>Audio Feedback</h6>
+                                <p>
+                                    Instant sample playback (Clap, Finish, Whistle) providing precise timing
+                                    verification. Music synchronization with objects reinforces rhythm
+                                    perception and player immersion.
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="logo-svg">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                                </svg>
+
+                            </div>
+                            <div>
+                                <h6>Visual Feedback</h6>
+                                <p>
+                                    Hit bursts and lighting effects that confirm spatial accuracy on the 2D
+                                    grid. Approach circles, hit bursts, cursor trails, and combo popups provide
+                                    layered visual feedback that reinforces timing and precision.
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="logo-svg">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M7.864 4.243A7.5 7.5 0 0 1 19.5 10.5c0 2.92-.556 5.709-1.568 8.268M5.742 6.364A7.465 7.465 0 0 0 4.5 10.5a7.464 7.464 0 0 1-1.15 3.993m1.989 3.559A11.209 11.209 0 0 0 8.25 10.5a3.75 3.75 0 1 1 7.5 0c0 .527-.021 1.049-.064 1.565M12 10.5a14.94 14.94 0 0 1-3.6 9.75m6.633-4.596a18.666 18.666 0 0 1-2.485 5.33" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h6>Haptic Feedback</h6>
+                                <p>
+                                    Tactile feedback on peripheral and stylus contact / mouse clicks confirms
+                                    physical interaction. Haptic feedback on compatible devices provides an
+                                    additional layer of sensory confirmation, reinforcing the player's
+                                    connection to the rhythm and enhancing immersion.
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
                 </section>
                 <section class="game-sections" id="hci-principles">
                     hci principles
                 </section>
-                <section class="game-sections" id="strengths">strengths</section>
                 <section class="game-sections" id="ui-ux-weaknesses">
-                    ui/ux weaknesses
+                    strength & weaknesses
                 </section>
-                <section class="game-sections" id="conclusion">conclusion</section>
             </div>
         </article>
     </main>
