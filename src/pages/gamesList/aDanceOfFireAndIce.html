@@ -1,0 +1,3095 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend:wght@100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Manrope:wght@200..800&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+        rel="stylesheet" />
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../styles/styles.css" type="text/css" />
+    <link rel="stylesheet" href="../../styles/sizeChecker.css" type="text/css" />
+    <link rel="stylesheet" href="../../styles/game.css" type="text/css" />
+
+    <!-- Custom Styles ------------------------------------------------------------------------------------------ -->
+    <style>
+        nav.game-info-nav label {
+            width: calc(100% / 5) !important;
+        }
+
+        .game-sections {
+            &#short-description {
+
+                &>h2 {
+                    font-weight: 900;
+                    font-size: 2.5em;
+                }
+
+                &>p {
+                    text-align: justify;
+                    margin-bottom: 1em;
+                }
+
+                &>.list-style {
+                    list-style: none;
+                    float: right;
+                    background-color: var(--t-color-base-100);
+                    padding: 2em;
+                    margin-left: 2em;
+                    margin-bottom: 2em;
+                    border-radius: var(--t-radius-field);
+                    border: var(--t-border) solid var(--t-color-base-300);
+
+                    &>h6 {
+                        font-weight: 900;
+                    }
+
+                    &>li {
+                        margin-left: 1em;
+                        margin-bottom: 1em;
+                        position: relative;
+
+                        &::before {
+                            content: '';
+                            display: block;
+                            position: absolute;
+                            width: 0.2em;
+                            height: 1em;
+                            background-color: var(--t-color-primary);
+                            border-radius: 1em;
+                            left: -0.75em;
+                            top: calc(50% - 0.5em);
+                        }
+                    }
+                }
+
+                & .timing-judgement-table {
+                    width: 100%;
+                    border-collapse: separate;
+                    border-spacing: 0;
+                    border: var(--t-border) solid var(--t-color-base-300);
+                    border-radius: var(--t-radius-field);
+                    overflow: hidden;
+                    background-color: var(--t-color-base-200);
+                    margin-top: 2em;
+
+                    & th,
+                    & td {
+                        padding: 1em;
+                        vertical-align: top;
+                        border-bottom: 1px solid var(--t-color-base-300);
+                    }
+
+                    & th {
+                        font-weight: 800;
+                        font-size: 1.05em;
+                        background-color: var(--t-color-base-300);
+                    }
+
+                    & th+th,
+                    & td+td {
+                        border-left: 1px solid var(--t-color-base-300);
+                    }
+
+                    & tbody td {
+                        background-color: var(--t-color-base-100);
+                    }
+
+                    & tbody tr:last-child td {
+                        border-bottom: 0;
+                    }
+
+                    & tbody td:first-child {
+                        font-weight: 800;
+                        white-space: nowrap;
+                    }
+
+                    & .judge-perfect {
+                        background-color: color-mix(in oklab, var(--t-color-success) 18%, var(--t-color-base-100));
+                    }
+
+                    & .judge-window {
+                        background-color: color-mix(in oklab, var(--t-color-warning) 20%, var(--t-color-base-100));
+                    }
+
+                    & .judge-earlylate {
+                        background-color: color-mix(in oklab, var(--t-color-error) 18%, var(--t-color-base-100));
+                    }
+
+                    & .judge-multipress {
+                        background-color: color-mix(in oklab, var(--t-color-accent) 20%, var(--t-color-base-100));
+                    }
+
+                    & .judge-miss {
+                        background-color: color-mix(in oklab, var(--t-color-dark) 10%, var(--t-color-base-100));
+                    }
+
+                    @media (width < 48rem) {
+
+                        &,
+                        & thead,
+                        & tbody,
+                        & tr,
+                        & th,
+                        & td {
+                            display: block;
+                            width: 100%;
+                        }
+
+                        & thead {
+                            display: none;
+                        }
+
+                        & tbody tr {
+                            border-bottom: 1px solid var(--t-color-base-300);
+                            padding: 0.5em;
+                            background-color: var(--t-color-base-200);
+                        }
+
+                        & tbody tr:last-child {
+                            border-bottom: 0;
+                        }
+
+                        & td {
+                            border-left: 0;
+                            border-radius: var(--t-radius-field);
+                            background-color: var(--t-color-base-100);
+                            margin-bottom: 0.75em;
+                        }
+
+                        & td::before {
+                            display: block;
+                            margin-bottom: 0.5em;
+                            font-size: 0.8em;
+                            font-weight: 700;
+                            text-transform: uppercase;
+                            letter-spacing: 0.04em;
+                            color: var(--t-color-primary);
+                        }
+
+                        & td:nth-child(1)::before {
+                            content: 'Judgement';
+                        }
+
+                        & td:nth-child(2)::before {
+                            content: 'Timing window';
+                        }
+
+                        & td:nth-child(3)::before {
+                            content: 'Effect';
+                        }
+                    }
+                }
+
+                & .adofai-sync-grid {
+                    display: grid;
+                    grid-template-columns: repeat(2, minmax(0, 1fr));
+                    gap: 1em;
+                    margin: 2em 0;
+                }
+
+                & .sync-panel {
+                    background-color: var(--t-color-base-100);
+                    border: var(--t-border) solid var(--t-color-base-300);
+                    border-radius: var(--t-radius-field);
+                    padding: 1.25em;
+                }
+
+                & .sync-panel h3 {
+                    font-weight: 900;
+                    line-height: 1;
+                    margin-bottom: 0.75rem;
+                }
+
+                & .sync-chips {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 0.5em;
+                    margin-top: 1em;
+                }
+
+                & .sync-chip {
+                    display: inline-block;
+                    padding: 0.35em 0.75em;
+                    border: var(--t-border) solid var(--t-color-base-300);
+                    border-radius: var(--t-radius-selector);
+                    background-color: var(--t-color-base-200);
+                    font-family: var(--bs-font-monospace);
+                    font-size: 0.8em;
+                    letter-spacing: 0.03em;
+                }
+
+                & .sync-tag {
+                    display: inline-block;
+                    margin-bottom: 0.75em;
+                    padding: 0.35em 0.8em;
+                    border-radius: var(--t-radius-selector);
+                    background-color: var(--t-color-dark);
+                    color: var(--t-color-light);
+                    font-family: var(--bs-font-monospace);
+                    font-size: 0.8em;
+                    letter-spacing: 0.03em;
+                }
+
+                & .sync-bullets {
+                    list-style: none;
+                    margin: 1em 0 0;
+                    padding-left: 0;
+                }
+
+                & .sync-bullets li {
+                    position: relative;
+                    padding-left: 1.1em;
+                    margin-bottom: 0.4em;
+                    font-family: var(--bs-font-monospace);
+                }
+
+                & .sync-bullets li::before {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    top: 0.6em;
+                    width: 0.35em;
+                    height: 0.35em;
+                    border-radius: 50%;
+                    background-color: var(--t-color-primary);
+                }
+
+                @media (width < 48rem) {
+                    & .adofai-sync-grid {
+                        grid-template-columns: 1fr;
+                    }
+                }
+            }
+
+            &#ui-components {
+                margin-bottom: 2em;
+
+                &>h2 {
+                    font-weight: 900;
+                    font-size: 2.5em;
+                }
+
+                &>h3 {
+                    font-weight: 900;
+                    font-size: 2em;
+                }
+
+                & .timing-judgement-table {
+                    width: 100%;
+                    border-collapse: separate;
+                    border-spacing: 0;
+                    border: var(--t-border) solid var(--t-color-base-300);
+                    border-radius: var(--t-radius-field);
+                    overflow: hidden;
+                    background-color: var(--t-color-base-200);
+                    margin-top: 2em;
+
+                    & th,
+                    & td {
+                        padding: 1em;
+                        vertical-align: top;
+                        border-bottom: 1px solid var(--t-color-base-300);
+                    }
+
+                    & th {
+                        font-weight: 800;
+                        font-size: 1.05em;
+                        background-color: var(--t-color-base-300);
+                    }
+
+                    & th+th,
+                    & td+td {
+                        border-left: 1px solid var(--t-color-base-300);
+                    }
+
+                    & tbody td {
+                        background-color: var(--t-color-base-100);
+                    }
+
+                    & tbody tr:last-child td {
+                        border-bottom: 0;
+                    }
+
+                    & tbody td:first-child {
+                        font-weight: 800;
+                        white-space: nowrap;
+                    }
+
+                    & .judge-perfect {
+                        background-color: color-mix(in oklab, var(--t-color-success) 18%, var(--t-color-base-100));
+                    }
+
+                    & .judge-window {
+                        background-color: color-mix(in oklab, var(--t-color-warning) 20%, var(--t-color-base-100));
+                    }
+
+                    & .judge-earlylate {
+                        background-color: color-mix(in oklab, var(--t-color-error) 18%, var(--t-color-base-100));
+                    }
+
+                    & .judge-multipress {
+                        background-color: color-mix(in oklab, var(--t-color-accent) 20%, var(--t-color-base-100));
+                    }
+
+                    & .judge-miss {
+                        background-color: color-mix(in oklab, var(--t-color-dark) 10%, var(--t-color-base-100));
+                    }
+
+                    @media (width < 48rem) {
+
+                        &,
+                        & thead,
+                        & tbody,
+                        & tr,
+                        & th,
+                        & td {
+                            display: block;
+                            width: 100%;
+                        }
+
+                        & thead {
+                            display: none;
+                        }
+
+                        & tbody tr {
+                            border-bottom: 1px solid var(--t-color-base-300);
+                            padding: 0.5em;
+                            background-color: var(--t-color-base-200);
+                        }
+
+                        & tbody tr:last-child {
+                            border-bottom: 0;
+                        }
+
+                        & td {
+                            border-left: 0;
+                            border-radius: var(--t-radius-field);
+                            background-color: var(--t-color-base-100);
+                            margin-bottom: 0.75em;
+                        }
+
+                        & td::before {
+                            display: block;
+                            margin-bottom: 0.5em;
+                            font-size: 0.8em;
+                            font-weight: 700;
+                            text-transform: uppercase;
+                            letter-spacing: 0.04em;
+                            color: var(--t-color-primary);
+                        }
+
+                        & td:nth-child(1)::before {
+                            content: 'Judgement';
+                        }
+
+                        & td:nth-child(2)::before {
+                            content: 'Timing window';
+                        }
+
+                        & td:nth-child(3)::before {
+                            content: 'Effect';
+                        }
+                    }
+                }
+
+                & .major-components {
+                    display: grid;
+                    grid-template-rows: 1fr;
+                    grid-template-columns: repeat(2, minmax(0, 1fr));
+                    gap: 1em;
+                    margin: 2em 0;
+                }
+
+                & .major-component {
+                    background-color: var(--t-color-base-100);
+                    border-radius: var(--t-radius-field);
+                    padding: 1em;
+                    height: auto;
+                    position: relative;
+                    display: flex;
+                    align-items: flex-start;
+                    flex-direction: column;
+                    gap: 1em;
+                    min-height: 15em;
+                    border: var(--t-border) solid var(--t-color-base-300);
+
+                    & figure {
+                        position: relative;
+                        margin-bottom: 0;
+                        width: 100%;
+                        height: auto;
+
+                        & figcaption {
+                            font-size: 0.9em;
+                            color: var(--t-color-light);
+                            margin-top: 0.5em;
+                            position: absolute;
+                            bottom: 0.5em;
+                            right: 0.5em;
+                        }
+                    }
+
+                    & a {
+                        flex-shrink: 0;
+                        margin-left: auto;
+
+                        & img {
+                            display: block;
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                            border-radius: 0.25em;
+                        }
+                    }
+
+                    & .count {
+                        font-weight: 700;
+                        font-size: 1.2em;
+                        font-family: var(--bs-font-monospace);
+                        color: var(--t-color-secondary);
+                        display: block;
+                    }
+
+                    & .header-text {
+                        font-weight: 700;
+                        font-size: 2.5em;
+                        font-family: var(--bs-font-serif);
+                    }
+
+                    & ul {
+                        list-style: none;
+                        margin-left: 1em;
+                        margin-top: 2em;
+
+                        & h6 {
+                            font-weight: 900;
+                        }
+
+                        & li {
+                            margin-left: 1em;
+                            margin-bottom: 0.5em;
+                            position: relative;
+
+                            &::before {
+                                content: '';
+                                display: block;
+                                position: absolute;
+                                width: 0.2em;
+                                height: 1em;
+                                background-color: var(--t-color-primary);
+                                border-radius: 1em;
+                                left: -0.75em;
+                                top: calc(50% - 0.5em);
+                            }
+                        }
+                    }
+                }
+
+                & .fittslaw {
+                    display: grid;
+                    grid-template-columns: 50% 1fr;
+                    gap: 1em;
+
+                    & h2 {
+                        font-weight: 900;
+                        font-size: 2.5em;
+                    }
+
+                    & figure {
+                        position: relative;
+                        margin-bottom: 0;
+                        width: 100%;
+                        height: auto;
+
+                        & figcaption {
+                            font-size: 0.9em;
+                            color: var(--t-color-dark);
+                            margin-top: 0.5em;
+                            position: absolute;
+                            bottom: 0.5em;
+                            right: 0.5em;
+                        }
+                    }
+
+                    & a {
+                        flex-shrink: 0;
+                        margin-left: auto;
+
+                        & img {
+                            width: 100% !important;
+                            height: auto !important;
+                            margin-bottom: 1em;
+                        }
+                    }
+                }
+
+                @media (width < 48rem) {
+                    & .fittslaw {
+                        grid-template-columns: 1fr;
+                    }
+                }
+
+                & .mathmodel {
+                    margin: 1em 0;
+                    padding: 1em;
+                    position: relative;
+                    padding-left: 2em;
+                    background-color: var(--t-color-base-300);
+                    border-radius: var(--t-radius-field);
+                    overflow: hidden;
+
+                    &::before {
+                        content: '';
+                        display: block;
+                        position: absolute;
+                        width: 0.5em;
+                        height: 100%;
+                        background-color: var(--t-color-primary);
+                        left: 0;
+                        top: 0;
+                    }
+
+                    & h6 {
+                        font-family: var(--bs-font-monospace);
+                        color: var(--t-color-dark);
+                        font-weight: 300;
+                    }
+
+                    & span {
+                        font-size: 2em
+                    }
+                }
+
+                @media (width < 48rem) {
+                    & .major-components {
+                        grid-template-columns: 1fr;
+                        gap: 1em;
+                    }
+
+                    & .major-component {
+                        &:first-child {
+                            flex-direction: column;
+                        }
+
+                        & figure {
+                            width: 100%;
+
+                            & figcaption {
+                                bottom: 1em;
+                            }
+                        }
+
+                        & a {
+                            margin-left: 0;
+                            width: 100%;
+
+                            & img {
+                                width: 100% !important;
+                                height: auto !important;
+                                margin-bottom: 1em;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &#user-interaction {
+                margin-bottom: 2em;
+
+                &>h2 {
+                    font-weight: 900;
+                    font-size: 2.5em;
+                }
+
+                & h3 {
+                    font-weight: 900;
+                    font-size: 2.5em;
+                }
+
+
+                & .multi-modal-feedback {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 1em;
+                    padding-top: 1em;
+
+                    @media (width < 48rem) {
+                        grid-template-columns: 1fr !important;
+                    }
+
+                    & figure {
+                        margin: auto;
+                        width: 100%;
+                        height: auto;
+
+                        & img {
+                            width: 100% !important;
+                            height: auto !important;
+                        }
+                    }
+                }
+
+                & ul {
+                    list-style: none;
+                    padding: 0;
+
+                    & li {
+                        margin-top: 2em;
+                        display: flex;
+                        flex-direction: row;
+
+                        & h6 {
+                            font-weight: 700;
+                            font-size: 1.5em;
+                            margin-bottom: 0.5em;
+                        }
+
+                        & .logo-svg {
+                            height: 5em;
+                            flex-shrink: 0;
+                            background-color: var(--t-color-secondary);
+                            color: var(--t-color-base-100);
+                            aspect-ratio: 1 / 1;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: center;
+                            padding: 1em;
+                            border-radius: var(--t-radius-field);
+                            margin: auto;
+                            margin-right: 1em;
+
+                            & svg {
+                                width: 100%;
+                                height: 100%;
+                            }
+                        }
+                    }
+                }
+
+                & .keypoints {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 1em;
+                    margin: 2em 0;
+
+                    @media (width < 48rem) {
+                        grid-template-columns: 1fr;
+                    }
+
+                    &>div {
+                        background-color: var(--t-color-base-100);
+                        border-radius: var(--t-radius-field);
+                        padding: 1em;
+                        border: var(--t-border) solid var(--t-color-base-300);
+
+                        & figure {
+                            width: 100%;
+                            margin: 0;
+                            margin-top: 2em;
+
+                            & img {
+                                width: 100%;
+                                height: auto;
+                            }
+                        }
+                    }
+                }
+
+                & table {
+                    width: 100%;
+                    border-collapse: separate;
+                    border-spacing: 0;
+                    border: var(--t-border) solid var(--t-color-base-300);
+                    border-radius: var(--t-radius-field);
+                    overflow: hidden;
+                    background-color: var(--t-color-base-100);
+                    margin-top: 1.5em;
+                }
+
+                & th,
+                & td {
+                    padding: 1em;
+                    vertical-align: top;
+                }
+
+                & thead th {
+                    font-weight: 800;
+                    font-size: 1.05em;
+                    background-color: var(--t-color-base-300);
+                    border-bottom: 1px solid var(--t-color-base-300);
+                }
+
+                & th+th,
+                & td+td {
+                    border-left: 1px solid var(--t-color-base-300);
+                }
+
+                & tbody td {
+                    border-bottom: 1px solid var(--t-color-base-300);
+                }
+
+                & tbody tr:last-child td {
+                    border-bottom: 0;
+                }
+
+                & .angular-temporality {
+                    display: grid;
+                    grid-template-columns: minmax(0, 1.5fr) minmax(0, 0.9fr);
+                    gap: 1em;
+                    margin-top: 2em;
+                    align-items: stretch;
+
+                    @media (width < 48rem) {
+                        grid-template-columns: 1fr;
+                    }
+                }
+
+                & .angular-copy {
+                    background-color: var(--t-color-base-100);
+                    border: var(--t-border) solid var(--t-color-base-300);
+                    border-radius: var(--t-radius-field);
+                    padding: 1.25em;
+                    display: flex;
+                    flex-direction: column;
+                    min-height: 100%;
+                }
+
+                & .angular-copy h3 {
+                    margin: 0;
+                    font-weight: 900;
+                    font-size: 2.1em;
+                    line-height: 0.95;
+                }
+
+                & .angular-copy p {
+                    margin: 1em 0 0;
+                    font-size: 1.02em;
+                    line-height: 1.6;
+                }
+
+                & .angular-metrics {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 1em;
+                    margin-top: auto;
+                    padding-top: 1.5em;
+
+                    @media (width < 48rem) {
+                        grid-template-columns: 1fr;
+                    }
+                }
+
+                & .angular-metric {
+                    background-color: var(--t-color-base-200);
+                    border: var(--t-border) solid var(--t-color-base-300);
+                    border-radius: var(--t-radius-field);
+                    padding: 1em;
+                }
+
+                & .angular-metric-label {
+                    display: block;
+                    font-size: 0.72em;
+                    font-weight: 800;
+                    letter-spacing: 0.08em;
+                    text-transform: uppercase;
+                    margin-bottom: 0.35em;
+                }
+
+                & .angular-metric-value {
+                    display: block;
+                    font-size: 1.55em;
+                    font-weight: 900;
+                    line-height: 1;
+                }
+
+                & .angular-architecture {
+                    background-color: var(--t-color-base-300);
+                    border-radius: var(--t-radius-field);
+                    padding: 1.5em;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    min-height: 100%;
+                }
+
+                & .angular-architecture h3 {
+                    margin: 0;
+                    font-weight: 900;
+                    font-size: 2em;
+                    line-height: 0.95;
+                    letter-spacing: 0.01em;
+                }
+
+                & .angular-architecture-meta {
+                    margin-top: auto;
+                    padding-top: 1.5em;
+                    display: grid;
+                    gap: 0.55em;
+                }
+
+                & .angular-architecture-meta span {
+                    display: block;
+                    font-size: 0.75em;
+                    font-weight: 800;
+                    font-family: var(--bs-font-monospace);
+                    text-transform: uppercase;
+                    letter-spacing: 0.08em;
+                    color: var(--t-color-secondary);
+                }
+
+                & .motor-feedback-grid {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 1.25em;
+                    margin-top: 2em;
+
+                    @media (width < 48rem) {
+                        grid-template-columns: 1fr;
+                    }
+                }
+
+                & .motor-feedback-card,
+                & .latency-analysis-card {
+                    padding: 1.25em;
+                    justify-content: space-between;
+                    min-height: 100%;
+                }
+
+                & .latency-analysis-card {
+                    background-color: var(--t-color-base-100);
+                    border: var(--t-border) solid var(--t-color-base-300);
+                    border-radius: var(--t-radius-field);
+                    padding: 1.25em;
+                    justify-content: space-between;
+                    min-height: 100%;
+                }
+
+                & .motor-feedback-eyebrow,
+                & .latency-analysis-eyebrow {
+                    margin: 0 0 1.25em;
+                    font-size: 2em;
+                    font-weight: 900;
+                }
+
+                & .motor-feedback-figure {
+                    margin: 0 0 1.25em;
+                }
+
+                & .motor-feedback-figure img {
+                    display: block;
+                    width: 100%;
+                    height: auto;
+                    border-radius: 0.35em;
+                    border: var(--t-border) solid var(--t-color-base-300);
+                }
+
+                & .motor-feedback-copy {
+                    margin: 0;
+                    text-align: justify;
+                    line-height: 1.65;
+                }
+
+                & .latency-analysis-card {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1em;
+                }
+
+                & .latency-analysis-value {
+                    margin: 0;
+                    font-size: clamp(3rem, 7vw, 5rem);
+                    line-height: 0.9;
+                    font-weight: 900;
+                    color: var(--t-color-error);
+                }
+
+                & .latency-analysis-title {
+                    margin: 0;
+                    font-size: 1.1em;
+                    font-weight: 900;
+                }
+
+                & .latency-analysis-table {
+                    width: 100%;
+                    border-collapse: collapse;
+                }
+
+                & .latency-analysis-table tr {
+                    border-bottom: 1px solid var(--t-color-base-300);
+                }
+
+                & .latency-analysis-table tr:last-child {
+                    border-bottom: 0;
+                }
+
+                & .latency-analysis-table th,
+                & .latency-analysis-table td {
+                    padding: 0.75em 0;
+                    font-size: 0.95em;
+                    vertical-align: top;
+                }
+
+                & .latency-analysis-table th {
+                    text-align: left;
+                    font-weight: 700;
+                    width: 68%;
+                }
+
+                & .latency-analysis-table td {
+                    text-align: right;
+                    font-weight: 800;
+                    white-space: nowrap;
+                }
+
+                & .latency-analysis-note {
+                    margin: 0;
+                    font-size: 0.9em;
+                    line-height: 1.6;
+                    color: color-mix(in oklab, var(--t-color-dark) 82%, var(--t-color-base-300));
+                }
+
+                & .interaction-metrics {
+                    margin-top: 2em;
+                }
+
+                & .interaction-metrics-head {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    gap: 1em;
+                    margin-bottom: 1em;
+
+                    @media (width < 48rem) {
+                        align-items: flex-start;
+                        flex-direction: column;
+                    }
+                }
+
+                & .interaction-metrics-head h3 {
+                    margin: 0;
+                    font-weight: 900;
+                    font-size: 2.2em;
+                    line-height: 1;
+                    text-transform: uppercase;
+                }
+
+                & .interaction-metrics-tag {
+                    display: inline-block;
+                    padding: 0.35em 0.8em;
+                    border-radius: var(--t-radius-selector);
+                    border: var(--t-border) solid var(--t-color-base-300);
+                    background-color: var(--t-color-info);
+                    color: var(--t-color-info-content);
+                    font-family: var(--bs-font-monospace);
+                    font-size: 0.72em;
+                    font-weight: 700;
+                    letter-spacing: 0.08em;
+                    text-transform: uppercase;
+                }
+
+                & .interaction-metrics-table thead th {
+                    text-transform: uppercase;
+                    letter-spacing: 0.04em;
+                    font-size: 0.85em;
+                }
+
+                & .interaction-metrics-table tbody td:first-child {
+                    font-weight: 700;
+                }
+
+                & .interaction-metrics-table tbody tr:nth-child(even) td {
+                    background-color: var(--t-color-base-200);
+                }
+
+                & .spatial-audio-feedback {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 2em;
+                    margin-top: 2em;
+                    align-items: start;
+
+                    @media (width < 48rem) {
+                        grid-template-columns: 1fr;
+                        gap: 1.5em;
+                    }
+
+                    & .hrtf-section {
+
+                        & .hrtf-header {
+                            display: flex;
+                            align-items: center;
+                            gap: 1em;
+                            margin-bottom: 1.5em;
+
+                            & .hrtf-icon {
+                                width: 2em;
+                                height: 2em;
+                                color: var(--t-color-primary);
+                                flex-shrink: 0;
+                            }
+
+                            & h3 {
+                                font-weight: 700;
+                                font-size: 1.5em;
+                                margin: 0;
+                            }
+                        }
+
+                        & p {
+                            margin: 0;
+                            text-align: justify;
+                            font-size: 0.95em;
+                            line-height: 1.6;
+                        }
+                    }
+
+                    & .motor-cognitive-section {
+                        background: var(--t-color-neutral);
+                        border-radius: var(--t-radius-field);
+                        padding: 2em;
+                        border: var(--t-border) solid rgba(var(--t-color-primary-rgb), 0.2);
+                        color: var(--t-color-neutral-content);
+
+                        & h4 {
+                            font-weight: 700;
+                            font-size: 1.3em;
+                            color: var(--t-color-neutral-content);
+                            margin: 0 0 1.5em 0;
+                            letter-spacing: 0.02em;
+
+                            & .loop-time {
+                                display: block;
+                                font-size: 0.8em;
+                                color: var(--t-color-accent);
+                                margin-top: 0.25em;
+                            }
+                        }
+
+                        & .feedback-timeline {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 1.25em;
+                        }
+
+                        & .timeline-step {
+                            display: flex;
+                            gap: 1em;
+                            align-items: flex-start;
+
+                            & .step-indicator {
+                                width: 15px;
+                                height: 15px;
+                                border-radius: 50%;
+                                flex-shrink: 0;
+                                margin-top: 0.25em;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                            }
+
+                            &.stimulus .step-indicator {
+                                background-color: white;
+                                border: 3px solid white;
+                            }
+
+                            &.processing .step-indicator {
+                                background-color: transparent;
+                                border: 3px solid white;
+                            }
+
+                            &.execution .step-indicator {
+                                background-color: transparent;
+                                border: 3px dotted white;
+                            }
+
+                            &.reinforcement .step-indicator {
+                                background-color: var(--t-color-error);
+                                border: 3px solid var(--t-color-error);
+                            }
+
+                            & .step-content {
+                                flex: 1;
+
+                                & .step-label {
+                                    display: block;
+                                    font-weight: 600;
+                                    font-size: 0.85em;
+                                    text-transform: uppercase;
+                                    letter-spacing: 0.04em;
+                                    color: var(--t-color-base-300);
+                                    margin-bottom: 0.4em;
+                                }
+
+                                & p {
+                                    margin: 0;
+                                    font-size: 0.9em;
+                                    line-height: 1.5;
+                                    color: var(--t-color-neutral-content);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            &#hci-principles {
+                margin-bottom: 2em;
+
+                &>h2 {
+                    font-weight: 900;
+                    font-size: 2.5em;
+                }
+
+                & .proprioception-kinematics {
+                    margin-top: 2em;
+                    background-color: var(--t-color-base-100);
+                    border: var(--t-border) solid var(--t-color-base-300);
+                    border-radius: var(--t-radius-field);
+                    padding: 1.25em;
+                }
+
+                & .proprioception-kinematics h3 {
+                    margin: 0;
+                    font-weight: 900;
+                    font-size: 2em;
+                }
+
+                & .proprioception-kinematics p {
+                    margin: 1em 0 0;
+                    font-size: 1.02em;
+                    line-height: 1.55;
+                    max-width: 60ch;
+                }
+
+                & .proprioception-kpi-grid {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 1em;
+                    margin-top: 2em;
+
+                    @media (width < 48rem) {
+                        grid-template-columns: 1fr;
+                    }
+                }
+
+                & .proprioception-kpi {
+                    background-color: var(--t-color-base-200);
+                    border: var(--t-border) solid var(--t-color-base-300);
+                    border-radius: var(--t-radius-field);
+                    padding: 1em;
+                }
+
+                & .proprioception-kpi-label {
+                    margin: 0;
+                    font-family: var(--bs-font-monospace);
+                    font-size: 0.72em;
+                    font-weight: 700;
+                    letter-spacing: 0.06em;
+                    text-transform: uppercase;
+                }
+
+                & .proprioception-kpi-value {
+                    margin: 0.35em 0 0;
+                    font-size: 1.65em;
+                    font-weight: 900;
+                    line-height: 1;
+                    text-transform: uppercase;
+                }
+
+                & .hci-dual-cards {
+                    margin-top: 2em;
+                    display: grid;
+                    grid-template-columns: 2fr 1fr;
+                    gap: 1em;
+
+                    @media (width < 48rem) {
+                        grid-template-columns: 1fr;
+                    }
+                }
+
+                & .hci-dual-cards .proprioception-kinematics {
+                    margin-top: 0;
+                }
+
+                & .flow-state-activation {
+                    background-color: var(--t-color-base-300);
+                    border: var(--t-border) solid var(--t-color-base-300);
+                    border-radius: var(--t-radius-field);
+                    padding: 1.25em;
+                    display: flex;
+                    min-height: 100%;
+                    flex-direction: column;
+                }
+
+                & .flow-state-activation h3 {
+                    margin: 0;
+                    font-weight: 900;
+                    font-size: 2em;
+                }
+
+                & .flow-state-activation p {
+                    margin: 1em 0 0;
+                    text-align: justify;
+                    font-size: 1.02em;
+                    line-height: 1.55;
+                }
+
+                & .flow-state-footer {
+                    margin-top: auto;
+                    padding-top: 2em;
+                    display: flex;
+                    align-items: center;
+                    gap: 0.75em;
+                }
+
+                & .hicks-law-card {
+                    margin-top: 2em;
+                    background-color: var(--t-color-base-100);
+                    border: var(--t-border) solid var(--t-color-base-300);
+                    border-radius: var(--t-radius-field);
+                    padding: 1.5em;
+
+                    & h3 {
+                        margin: 0 0 0.75em;
+                        font-weight: 900;
+                        font-size: 2em;
+                    }
+
+                    & p {
+                        margin: 0;
+                        text-align: justify;
+                    }
+
+                    & .hicks-law-formula {
+                        margin: 1em 0;
+                        padding: 1em;
+                        position: relative;
+                        padding-left: 2em;
+                        background-color: var(--t-color-base-300);
+                        border-radius: var(--t-radius-field);
+                        overflow: hidden;
+
+                        &::before {
+                            content: '';
+                            display: block;
+                            position: absolute;
+                            width: 0.5em;
+                            height: 100%;
+                            background-color: var(--t-color-primary);
+                            left: 0;
+                            top: 0;
+                        }
+
+                        & h6 {
+                            font-family: var(--bs-font-monospace);
+                            color: var(--t-color-dark);
+                            font-weight: 300;
+                            margin-bottom: 0.25em;
+                        }
+
+                        & span {
+                            font-size: 2em;
+                        }
+                    }
+                }
+
+                & .cognitive-load-matrix {
+                    margin-top: 2em;
+                    display: grid;
+                    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.6fr);
+                    gap: 1.25em;
+                    align-items: start;
+
+                    @media (width < 48rem) {
+                        grid-template-columns: 1fr;
+                    }
+
+                    & .matrix-intro {
+                        padding-top: 1.25em;
+                        position: relative;
+
+                        & h3 {
+                            margin: 0;
+                            font-weight: 900;
+                            line-height: 1.05;
+                            letter-spacing: 0.01em;
+                        }
+
+                        & p {
+                            margin: 1em 0 0;
+                            color: var(--t-color-dark);
+                        }
+                    }
+
+                    & .matrix-grid {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        gap: 1em;
+
+                        @media (width < 48rem) {
+                            grid-template-columns: 1fr;
+                        }
+                    }
+
+                    & .matrix-card {
+                        background-color: var(--t-color-base-300);
+                        border: var(--t-border) solid var(--t-color-base-300);
+                        border-radius: var(--t-radius-field);
+                        padding: 1.25em;
+                        position: relative;
+
+                        & .matrix-icon {
+                            width: 1.5em;
+                            height: 1.5em;
+                            color: var(--t-color-dark);
+                            margin-bottom: 0.6em;
+                            position: absolute;
+                            top: 1.25em;
+                            right: 1.25em;
+                        }
+
+                        & h6 {
+                            margin: 0;
+                            font-weight: 800;
+                            font-size: 0.95em;
+                            letter-spacing: 0.08em;
+                            text-transform: uppercase;
+                        }
+
+                        & p {
+                            margin: 0.5em 0 0;
+                            font-size: 0.95em;
+                            line-height: 1.45;
+                            color: var(--t-color-dark);
+                        }
+                    }
+                }
+
+                & .cybernetic-feedback-loops {
+                    margin-top: 2em;
+                    padding: 1em;
+                    border-radius: var(--t-radius-field);
+                    background-color: var(--t-color-base-100);
+                    border: var(--t-border) solid var(--t-color-base-300);
+
+                    &>h3 {
+                        font-weight: 900;
+                        font-size: 2em;
+                    }
+
+                    & .cybernetic-content {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        gap: 1em;
+
+                        @media (width < 48rem) {
+                            grid-template-columns: 1fr !important;
+                        }
+
+                        & h6 {
+                            font-weight: 700;
+                            font-size: 1.2em;
+                            margin-bottom: 0.5em;
+                        }
+
+                        & .primary-modalities {
+                            list-style: none;
+                            padding: 1em;
+                            background-color: var(--t-color-base-200);
+                            border-radius: var(--t-radius-field);
+                            margin-bottom: 0;
+
+
+                            & li {
+                                margin-left: 1em;
+                                margin-bottom: 0.5em;
+                                position: relative;
+
+                                &::before {
+                                    content: '';
+                                    display: block;
+                                    position: absolute;
+                                    width: 0.2em;
+                                    height: 1em;
+                                    background-color: var(--t-color-primary);
+                                    border-radius: 1em;
+                                    left: -0.75em;
+                                    top: calc(50% - 0.5em);
+                                }
+                            }
+                        }
+                    }
+                }
+
+                & .spatial-congruence {
+                    padding: 1em;
+                    margin-top: 2em;
+
+                    & h2 {
+                        font-weight: 900;
+                        font-size: 2.5em;
+                    }
+                }
+
+                & .cognitive-load-bifurcation {
+                    margin: 2em 0;
+                    padding: 1em;
+                    border-radius: var(--t-radius-field);
+                    background-color: var(--t-color-base-100);
+                    border: var(--t-border) solid var(--t-color-base-300);
+
+                    &>h2 {
+                        font-weight: 900;
+                        font-size: 2em;
+                    }
+
+                    & table {
+                        width: 100%;
+                        border-collapse: separate;
+                        border-spacing: 0;
+                        border: var(--t-border) solid var(--t-color-base-300);
+                        border-radius: var(--t-radius-field);
+                        overflow: hidden;
+                        background-color: var(--t-color-base-200);
+                    }
+
+                    & th,
+                    & td {
+                        padding: 1em;
+                        vertical-align: top;
+                    }
+
+                    & thead th {
+                        font-weight: 800;
+                        font-size: 1.05em;
+                        background-color: var(--t-color-base-300);
+                        border-bottom: 1px solid var(--t-color-base-300);
+                    }
+
+                    & th+th,
+                    & td+td {
+                        border-left: 1px solid var(--t-color-base-300);
+                    }
+
+                    & tbody td {
+                        border-bottom: 1px solid var(--t-color-base-300);
+                    }
+
+                    & tbody tr:last-child td {
+                        border-bottom: 0;
+                    }
+
+                    & td h6 {
+                        font-weight: 700;
+                        font-size: 1.15em;
+                        margin-bottom: 0.5em;
+                    }
+
+                    & td p {
+                        margin-bottom: 0;
+                    }
+
+                    @media (width < 48rem) {
+
+                        & table,
+                        & thead,
+                        & tbody,
+                        & tr,
+                        & th,
+                        & td {
+                            display: block;
+                            width: 100%;
+                        }
+
+                        & thead {
+                            display: none;
+                        }
+
+                        & tbody tr {
+                            border-bottom: 1px solid var(--t-color-base-300);
+                            padding: 0.5em;
+                        }
+
+                        & tbody tr:last-child {
+                            border-bottom: 0;
+                        }
+
+                        & td {
+                            border: 0;
+                            border-radius: var(--t-radius-field);
+                            background-color: var(--t-color-base-100);
+                            margin-bottom: 0.75em;
+                        }
+
+                        & td::before {
+                            display: block;
+                            font-weight: 700;
+                            font-size: 0.85em;
+                            text-transform: uppercase;
+                            letter-spacing: 0.04em;
+                            color: var(--t-color-primary);
+                            margin-bottom: 0.5em;
+                        }
+
+                        & td:nth-child(1)::before {
+                            content: 'Extrinsic Load';
+                        }
+
+                        & td:nth-child(2)::before {
+                            content: 'Intrinsic Focus';
+                        }
+                    }
+                }
+            }
+
+            &#ui-ux-weaknesses {
+                margin-bottom: 2em;
+
+                &>h2 {
+                    font-weight: 900;
+                    font-size: 2.5em;
+                }
+
+                &>p {
+                    text-align: justify;
+                    margin-bottom: 2em;
+                }
+
+                & table {
+                    width: 100%;
+                    border-collapse: separate;
+                    border-spacing: 0;
+                    border: var(--t-border) solid var(--t-color-base-300);
+                    border-radius: var(--t-radius-field);
+                    overflow: hidden;
+                    background-color: var(--t-color-base-100);
+                }
+
+                & th,
+                & td {
+                    padding: 1em;
+                    vertical-align: top;
+                }
+
+                & td {
+                    position: relative;
+                    padding-right: 4.25em;
+                }
+
+                & thead th {
+                    font-weight: 800;
+                    font-size: 1.05em;
+                    background-color: var(--t-color-base-300);
+                    border-bottom: 1px solid var(--t-color-base-300);
+                }
+
+                & th+th,
+                & td+td {
+                    border-left: 1px solid var(--t-color-base-300);
+                }
+
+                & tbody td {
+                    border-bottom: 1px solid var(--t-color-base-300);
+                }
+
+                & tbody tr:last-child td {
+                    border-bottom: 0;
+                }
+
+                & .badge {
+                    font-size: 0.75em;
+                    font-weight: 400;
+                    border-radius: var(--t-radius-selector);
+                    padding: 0.35em 0.75em;
+                    margin-left: 0.5em;
+                    vertical-align: middle;
+                    border: var(--t-border) solid transparent;
+                }
+
+                & .badge-success {
+                    background-color: var(--t-color-success);
+                    color: color-mix(in oklab, var(--t-color-success-content) 70%, var(--t-color-success));
+                    border-color: color-mix(in oklab, var(--t-color-success) 65%, var(--t-color-dark));
+                }
+
+                & .badge-danger {
+                    background-color: var(--t-color-error);
+                    color: color-mix(in oklab, var(--t-color-error-content) 70%, var(--t-color-error));
+                    border-color: color-mix(in oklab, var(--t-color-error) 65%, var(--t-color-dark));
+                }
+
+                & .sw-item-head {
+                    display: block;
+                    margin-bottom: 0.75em;
+                }
+
+                & .sw-icon {
+                    width: 2.75em;
+                    height: 2.75em;
+                    color: var(--t-color-base-300);
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-shrink: 0;
+                    position: absolute;
+                    top: 0.75em;
+                    right: 0.75em;
+                }
+
+                & .sw-icon svg {
+                    width: 1.5em;
+                    height: 1.5em;
+                }
+
+                & .label {
+                    display: inline-block;
+                    font-family: var(--bs-font-monospace);
+                    font-size: 0.9em;
+                    font-weight: 700;
+                    color: var(--t-color-secondary);
+                    letter-spacing: 0.03em;
+                }
+
+                & td h6 {
+                    font-weight: 700;
+                    font-size: 1.2em;
+                    margin-bottom: 0.5em;
+                }
+
+                & td p {
+                    margin-bottom: 0;
+                    text-align: justify;
+                }
+
+                @media (width < 48rem) {
+
+                    & table,
+                    & thead,
+                    & tbody,
+                    & tr,
+                    & th,
+                    & td {
+                        display: block;
+                        width: 100%;
+                    }
+
+                    & thead {
+                        display: none;
+                    }
+
+                    & tbody tr {
+                        border-bottom: 1px solid var(--t-color-base-300);
+                        padding: 0.5em;
+                        background-color: var(--t-color-base-200);
+                    }
+
+                    & tbody tr:last-child {
+                        border-bottom: 0;
+                    }
+
+                    & td {
+                        border: 0;
+                        border-radius: var(--t-radius-field);
+                        background-color: var(--t-color-base-100);
+                        margin-bottom: 0.75em;
+                    }
+
+                    & td::before {
+                        display: block;
+                        font-weight: 700;
+                        font-size: 0.85em;
+                        text-transform: uppercase;
+                        letter-spacing: 0.04em;
+                        margin-bottom: 0.5em;
+                    }
+
+                    & td:nth-child(1)::before {
+                        content: 'System Strengths';
+                        color: color-mix(in oklab, var(--t-color-success) 70%, var(--t-color-dark));
+                    }
+
+                    & td:nth-child(2)::before {
+                        content: 'System Weaknesses';
+                        color: color-mix(in oklab, var(--t-color-error) 70%, var(--t-color-dark));
+                    }
+                }
+            }
+        }
+
+
+        & .list-style-area {
+            margin: 2em 0;
+            width: 100%;
+            background-color: var(--t-color-base-100);
+            border: var(--t-border) solid var(--t-color-base-300);
+            padding: 1em;
+            border-radius: var(--t-radius-field);
+
+            & ol {
+                list-style: none;
+                margin-left: 0;
+                padding-left: 0;
+                margin-top: 2em;
+                display: grid;
+                gap: 1em;
+
+                &.two-columns {
+                    grid-template-columns: 1fr 1fr;
+                }
+
+                &.three-columns {
+                    grid-template-columns: 1fr 1fr 1fr;
+                }
+
+                &.four-columns {
+                    grid-template-columns: 1fr 1fr 1fr 1fr;
+                }
+
+                @media (width < 48rem) {
+                    &.md-one-columns {
+                        grid-template-columns: 1fr !important;
+                    }
+
+                    &.md-two-columns {
+                        grid-template-columns: 1fr 1fr !important;
+                    }
+                }
+
+                & li {
+                    position: relative;
+
+                    &::before {
+                        font-weight: 700;
+                        font-size: 5em;
+                        font-family: var(--bs-font-monospace);
+                        color: var(--t-color-base-200);
+                        position: absolute;
+                        top: -0.5em;
+                    }
+
+                    &:nth-child(1)::before {
+                        content: '01';
+                    }
+
+                    &:nth-child(2)::before {
+                        content: '02';
+                    }
+
+                    &:nth-child(3)::before {
+                        content: '03';
+                    }
+
+                    &:nth-child(4)::before {
+                        content: '04';
+                    }
+
+                    @media (width > 48rem) {
+                        &::before {
+                            left: 0;
+                        }
+                    }
+
+                    @media (width < 48rem) {
+                        &::before {
+                            right: 0;
+                        }
+                    }
+
+                    & h6 {
+                        font-weight: 700;
+                        font-size: 1.5em;
+                        position: relative;
+
+                        &::after {
+                            content: '';
+                            display: block;
+                            width: 100%;
+                            height: 1px;
+                            background-color: var(--t-color-base-300);
+                            margin-top: 0.5em;
+                        }
+                    }
+                }
+            }
+        }
+
+        .footnote {
+            width: 100%;
+            background-color: rgba(var(--t-color-primary-rgb), 0.1);
+            padding: 2em;
+            border-radius: var(--t-radius-field);
+
+            &::before {
+                content: 'Note:';
+                font-weight: 700;
+                font-size: 1.2em;
+                color: var(--t-color-primary);
+                display: block;
+                margin-bottom: 0.5em;
+            }
+
+            &.summary::before {
+                content: 'Summary:';
+            }
+        }
+
+        .back-to-top {
+            position: fixed;
+            right: 1.25rem;
+            bottom: 1.25rem;
+            width: 3.5rem;
+            height: 3.5rem;
+            border: 0;
+            border-radius: var(--t-radius-selector);
+            background-color: transparent;
+            padding: 0;
+            display: grid;
+            place-items: center;
+            z-index: 1001;
+            opacity: 0;
+            transform: translateY(0.5rem) scale(0.96);
+            pointer-events: none;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+            cursor: pointer;
+        }
+
+        .back-to-top.is-visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            pointer-events: auto;
+        }
+
+        .back-to-top .btn-bg {
+            fill: var(--t-color-base-100);
+            stroke: var(--t-color-base-300);
+            stroke-width: 1.5;
+        }
+
+        .back-to-top .btn-progress-track {
+            fill: none;
+            stroke: var(--t-color-base-300);
+            stroke-width: 3;
+            opacity: 0.35;
+        }
+
+        .back-to-top .btn-progress {
+            fill: none;
+            stroke: var(--t-color-primary);
+            stroke-width: 3;
+            stroke-linecap: round;
+            transform: rotate(-90deg);
+            transform-origin: 28px 28px;
+            transition: stroke-dashoffset 0.1s linear;
+        }
+
+        .back-to-top .btn-icon {
+            fill: none;
+            stroke: var(--t-color-primary);
+            stroke-width: 1.8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .back-to-top:hover .btn-bg {
+            fill: var(--t-color-base-200);
+        }
+
+        /* YouTube Ban Fallback Styling */
+        .video-fallback-message {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(var(--t-color-primary-rgb), 0.05) 0%, rgba(59.939% 0.191 335.171, 0.03) 100%);
+            border-radius: var(--t-radius-field);
+            padding: 2em;
+            z-index: 10;
+            backdrop-filter: blur(4px);
+        }
+
+        .fallback-content {
+            text-align: center;
+            max-width: 90%;
+        }
+
+        .fallback-icon {
+            width: 3.5em;
+            height: 3.5em;
+            color: var(--t-color-accent);
+            margin: 0 auto 1em;
+            stroke: var(--t-color-accent);
+        }
+
+        .fallback-content h4 {
+            font-weight: 700;
+            font-size: 1.5em;
+            color: var(--t-color-dark);
+            margin-bottom: 0.5em;
+        }
+
+        .fallback-content p {
+            color: var(--t-color-dark);
+            font-size: 0.95em;
+            margin-bottom: 1.5em;
+            text-indent: 0;
+        }
+
+        .fallback-actions {
+            display: flex;
+            gap: 1em;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 1.5em;
+        }
+
+        .btn-fallback {
+            padding: 0.75em 1.5em;
+            border: none;
+            border-radius: var(--t-radius-field);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            font-size: 0.9em;
+            white-space: nowrap;
+        }
+
+        .btn-retry {
+            background: linear-gradient(135deg, var(--t-color-primary) 0%, var(--t-color-accent) 100%);
+            color: var(--t-color-primary-content);
+            box-shadow: 0 4px 12px rgba(var(--t-color-primary-rgb), 0.3);
+        }
+
+        .btn-retry:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(var(--t-color-primary-rgb), 0.4);
+        }
+
+        .btn-local {
+            background-color: var(--t-color-secondary);
+            color: var(--t-color-secondary-content);
+            box-shadow: 0 4px 12px rgba(42.551% 0.161 282.339, 0.3);
+        }
+
+        .btn-local:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(42.551% 0.161 282.339, 0.4);
+        }
+
+        .fallback-hint {
+            color: var(--t-color-dark);
+            font-size: 0.85em;
+            margin: 0;
+        }
+
+        .game-video-wrp {
+            position: relative;
+        }
+    </style>
+    <!-- Custom Styles ------------------------------------------------------------------------------------------ -->
+
+    <title id="title">GameName - GameUX</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-light navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="../../index.html">
+                    <img src="../../../public/gameux.png" alt="Logo" class="navbar-logo" />
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent">
+                    <span class="navbar-toggler-icon" style="width: 1em"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">Game List</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <nav class="breadcrumb-nav" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="../gameList.html">Game List</a>
+            </li>
+            <li class="breadcrumb-item active game-name">Game name</li>
+        </ol>
+    </nav>
+    <main>
+        <article class="wide">
+            <section class="header-section">
+                <img class="game-poster-content game-poster-background-style" />
+                <h1 class="game-name game-name-header" title="Game Name">
+                    Game name
+                </h1>
+                <div class="game-header">
+                    <span class="game-header-cont">
+                        <div class="game-info-bar">
+                            <span class="game-date-info">
+                                <span class="date-released" title="Date Released">Date Released</span>
+                                <span class="days-ago" title="Days Age">11 months ago</span>
+                            </span>
+                            <span class="game-badge">Full Release</span>
+                            <span class="publisher" title="Publisher">Publisher</span>
+                        </div>
+                    </span>
+                    <div class="game-header-rating">
+                        <table class="game-user-rating-cont">
+                            <tr>
+                                <td rowspan="2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <path fill-rule="evenodd"
+                                            d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </td>
+                                <td class="game-user-rating">0</td>
+                            </tr>
+                            <tr>
+                                <td class="game-user-ratings">0 user ratings</td>
+                            </tr>
+                        </table>
+                        <table class="game-critic-rating-cont">
+                            <tr>
+                                <td rowspan="2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <path fill-rule="evenodd"
+                                            d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </td>
+                                <td class="game-critic-rating">0</td>
+                            </tr>
+                            <tr>
+                                <td class="game-critic-ratings">0 critic ratings</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="video-game-container">
+                    <a class="game-poster" id="game-poster">
+                        <img class="game-poster-img" id="game-poster-img" alt="Game Poster" target="images"
+                            title="Osu! Game Poster" />
+                    </a>
+                    <div class="game-video-wrp">
+                        <video class="game-video" id="game-video" controls>
+                            <source type="video/mp4" id="game-video-source" />
+                            Your browser does not support the video tag.
+                        </video>
+                        <iframe class="game-video" id="game-video-yt" frameborder="0" allowfullscreen hidden></iframe>
+                        <div class="video-fallback-message" id="video-fallback" hidden>
+                            <div class="fallback-content">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" class="fallback-icon">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                                </svg>
+                                <h4>YouTube is Blocked on Your Network</h4>
+                                <p>It appears YouTube is not accessible in your current network environment.</p>
+                                <div class="fallback-actions">
+                                    <button id="retry-youtube-btn" class="btn-fallback btn-retry" type="button">Retry
+                                        YouTube</button>
+                                    <button id="use-local-video-btn" class="btn-fallback btn-local" type="button">Use
+                                        Local Video</button>
+                                </div>
+                                <p class="fallback-hint">Try connecting through a different network or VPN to access
+                                    YouTube content.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="game-rating">
+                        <table class="game-user-rating-cont">
+                            <tr>
+                                <td rowspan="2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <path fill-rule="evenodd"
+                                            d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </td>
+                                <td class="game-user-rating">0</td>
+                            </tr>
+                            <tr>
+                                <td class="game-user-ratings">0 user ratings</td>
+                            </tr>
+                        </table>
+                        <table class="game-critic-rating-cont">
+                            <tr>
+                                <td rowspan="2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <path fill-rule="evenodd"
+                                            d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </td>
+                                <td class="game-critic-rating">0</td>
+                            </tr>
+                            <tr>
+                                <td class="game-critic-ratings">0 critic ratings</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <ul class="game-list-data">
+                    <li class="game-list-data-item">
+                        Genres:
+                        <ul id="genres"></ul>
+                    </li>
+                    <li class="game-list-data-item">
+                        Platforms:
+                        <ul id="platforms"></ul>
+                    </li>
+                    <li class="game-list-data-item">
+                        Editions:
+                        <ul id="editions"></ul>
+                    </li>
+                </ul>
+                <p class="game-description" id="game-description">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
+                    aliquam consequatur iusto corrupti magni similique, non delectus
+                    illum esse ullam ad iure exercitationem doloribus ipsum at molestias
+                    et enim accusamus.
+                </p>
+            </section>
+        </article>
+        <div class="game-info-nav-container">
+            <div class="game-info-nav-wrap">
+                <button class="game-info-nav-arrow left" id="game-info-nav-left" type="button"
+                    aria-label="Scroll sections left" hidden>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
+                        width="20" height="20">
+                        <path fill-rule="evenodd"
+                            d="M15.78 19.28a.75.75 0 0 1-1.06 0L8.22 12.78a.75.75 0 0 1 0-1.06l6.5-6.5a.75.75 0 1 1 1.06 1.06L9.81 12l5.97 5.72a.75.75 0 0 1 0 1.56Z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </button>
+                <nav class="game-info-nav" id="game-info-nav" role="tablist">
+                    <label role="tab"><input type="radio" name="game-section" value="short-description"
+                            checked="checked" />
+                        Overview</label>
+                    <label role="tab"><input type="radio" name="game-section" value="ui-components" /> UI
+                        Components</label>
+                    <label role="tab"><input type="radio" name="game-section" value="user-interaction" />
+                        Interaction</label>
+                    <label role="tab"><input type="radio" name="game-section" value="hci-principles" />
+                        HCI Principles</label>
+                    <label role="tab"><input type="radio" name="game-section" value="ui-ux-weaknesses" />
+                        Analysis</label>
+                </nav>
+                <button class="game-info-nav-arrow right" id="game-info-nav-right" type="button"
+                    aria-label="Scroll sections right" hidden>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
+                        width="20" height="20">
+                        <path fill-rule="evenodd"
+                            d="M8.22 4.72a.75.75 0 0 1 1.06 0l6.5 6.5a.75.75 0 0 1 0 1.06l-6.5 6.5a.75.75 0 0 1-1.06-1.06L14.19 12 8.22 6.28a.75.75 0 0 1 0-1.56Z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- 
+        
+        Sections ==================================================
+        
+        -->
+        <article>
+            <div class="game-sections-stage">
+                <section class="game-sections" id="short-description">
+                    <h2>Overview</h2>
+                    <p>
+                        A technical investigation into the reductive perfection of rhythm-based navigation and geometric
+                        spatial synchronization. A Dance of Fire and Ice (ADOFAI) is a strict one-button rhythm game
+                        where players control two orbiting planets as they travel along a winding path. Unlike
+                        traditional rhythm games that rely on falling notes, ADOFAI translates complex rhythmic patterns
+                        into spatial geometry, requiring absolute precision and internal timing as the 'visual'
+                        representation of the beat is the path itself. This analysis explores how its extreme minimalism
+                        achieves cognitive transparency.
+                    </p>
+                    <ul class="metrics-list">
+                        <li>
+                            <h6>Input Schematic</h6>
+                            <div class="value">Single-button interaction model</div>
+                            <div class="desc">Complete temporal control via any singular keystroke. Total elimination of
+                                spatial input complexity.</div>
+                        </li>
+                        <li>
+                            <h6>Response Time</h6>
+                            <div class="value">~16.7ms to ~80ms end-to-end</div>
+                            <div class="desc">At 60 FPS, one frame is 16.7ms. Practical input-to-feedback latency is
+                                usually one to several frames plus device/display/audio delay.</div>
+                        </li>
+                        <li>
+                            <h6>Visual Reaction Time</h6>
+                            <div class="value">~200ms to ~250ms (human baseline)</div>
+                            <div class="desc">Simple visual reaction time for most players is around this range, but
+                                ADOFAI performance is primarily anticipatory timing synced to rhythm patterns.</div>
+                        </li>
+                    </ul>
+
+                    <div class="adofai-sync-grid">
+                        <article class="sync-panel">
+                            <h3>GEOMETRIC RHYTHMIC PATHS</h3>
+                            <p>
+                                Unlike traditional scrolling rhythm games, ADOFAI translates time into spatial geometry.
+                                The path is the score. Every angle (90°, 180°, 60°) represents a specific subdivision of
+                                the beat. The player does not react to a moving bar, but to the intersection of an
+                                orbiting body with a stationary grid.
+                            </p>
+                            <div class="sync-chips">
+                                <span class="sync-chip">PATH MAPPING</span>
+                                <span class="sync-chip">ANGULAR SUBDIVISION</span>
+                            </div>
+                        </article>
+                        <article class="sync-panel">
+                            <h3>PERFECT SYNCHRONIZATION</h3>
+                            <p>
+                                The "Dossier" methodology highlights the game's demand for absolute focus. Failure is
+                                binary - one misstep terminates the sequence. This creates a high-stakes clinical
+                                environment where the audio-visual feedback loop must reach zero-latency clarity.
+                            </p>
+                            <ul class="sync-bullets">
+                                <li>ZERO MARGIN FOR ERROR</li>
+                                <li>PROCEDURAL VISUAL CUES</li>
+                                <li>SUB-MILLISECOND FEEDBACK</li>
+                            </ul>
+                        </article>
+                    </div>
+                </section>
+                <section class="game-sections" id="ui-components">
+                    <h2>UI Components</h2>
+                    <p>
+                        An anatomical dissection of the minimal visual vocabulary used in ADOFAI. We explore how
+                        geometry replaces traditional HUD elements to minimize cognitive friction.
+                    </p>
+                    <div class="major-components">
+                        <div class="major-component">
+                            <figure>
+                                <a href="../../../public/gamesContent/aDanceOfFireAndIce/planets.jpg"
+                                    title="A Dance of Fire and Ice - Planets" target="images">
+                                    <img src="../../../public/gamesContent/aDanceOfFireAndIce/planets.jpg"
+                                        alt="Planets">
+                                </a>
+                                <figcaption>FIG 3.1: Planets</figcaption>
+                            </figure>
+                            <div>
+                                <span class="count">[ ELEMENT_01 ]</span>
+                                <span class="header-text">Planets</span>
+                                <p>
+                                    Dual-orbit dynamics representing the 'Active' and 'Pivot' states. Fire (Red) and Ice
+                                    (Blue) are not merely decorative; they serve as high-contrast anchors for peripheral
+                                    vision.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="major-component">
+                            <figure>
+                                <a href="../../../public/gamesContent/aDanceOfFireAndIce/tiles.jpg"
+                                    title="A Dance of Fire and Ice - Tiles" target="images">
+                                    <img src="../../../public/gamesContent/aDanceOfFireAndIce/tiles.jpg" alt="Tiles">
+                                </a>
+                                <figcaption>FIG 3.2: Tiles</figcaption>
+                            </figure>
+                            <div>
+                                <span class="count">[ ELEMENT_02 ]</span>
+                                <span class="header-text">Tiles</span>
+                                <p>
+                                    The path is composed of discrete tiles that visually encode timing and rhythm. Each
+                                    tile's shape and orientation corresponds to a specific beat subdivision, allowing
+                                    players to 'read' the music through spatial geometry rather than traditional note
+                                    charts.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>Timing Judgements</h3>
+                    <p style="margin-top: 1em;">
+                        The angle of a tile determines how many beats there are between the current and next tile. For
+                        example, a 180 degree angle (aka straight tile) will have a length of 1 beat, and a 90 degree
+                        angle will have a length of half a beat. There are various possible tile angles. Certain angles
+                        composed together form a pattern, and each pattern has a certain rhythm.
+                    </p>
+                    <table class="timing-judgement-table">
+                        <thead>
+                            <tr>
+                                <th>Judgement</th>
+                                <th>Timing window</th>
+                                <th>Effect</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="judge-perfect">Perfect</td>
+                                <td>0° - 30°</td>
+                                <td>+ (100% / Total Tiles + 0.01%)</td>
+                            </tr>
+                            <tr>
+                                <td class="judge-window">(E/L)Perfect</td>
+                                <td>30° - 45°</td>
+                                <td>+ (100% / Total Tiles)</td>
+                            </tr>
+                            <tr>
+                                <td class="judge-earlylate">Early/Late</td>
+                                <td>45° - 60°</td>
+                                <td>+ (100% / Total Tiles - 0.01%)</td>
+                            </tr>
+                            <tr>
+                                <td class="judge-earlylate">Early/Late</td>
+                                <td>&gt; 60°</td>
+                                <td><strong>Early:</strong> Does not hit<br /><strong>Late:</strong> Does not hit (Loss)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="judge-multipress">Multipress</td>
+                                <td>2 keys at the same time</td>
+                                <td>Combination of two judgements. This is not shown to the player.</td>
+                            </tr>
+                            <tr>
+                                <td class="judge-miss">Miss/Overload</td>
+                                <td>No hit or overload</td>
+                                <td>Loss unless on a safety tile</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </section>
+                <section class="game-sections" id="user-interaction">
+                    <h2>User Interaction</h2>
+                    <p>
+                        Analyzing the reduction of complex rhythmic structures into a singular mechanical event. A deep
+                        dive into the 1-bit interaction paradigm of <i>A Dance of Fire and Ice</i>. The keybinds used in
+                        ADOFAI are extremely simple. The player only has one button to press, and the timing of that
+                        button press is the only variable. There are no other buttons, no directional input, and no
+                        modifiers. The entire game is built around this single input, which creates a unique interaction
+                        model where the player must internalize the rhythm and geometry of the level to succeed.
+                    </p>
+                    <div class="angular-temporality">
+                        <article class="angular-copy">
+                            <h3>Angular Temporality</h3>
+                            <p>
+                                In ADOFAI, rhythm is not represented by horizontal time, but by spatial angles. A 90°
+                                turn translates to a 1/4 beat. The player's single keypress satisfies a geometric
+                                requirement, allowing the system to map complex polyrhythms (3:4, 5:8) through
+                                path-branching rather than multi-button orchestration.
+                            </p>
+                            <div class="angular-metrics">
+                                <div class="angular-metric">
+                                    <span class="angular-metric-label">Beat Fraction</span>
+                                    <span class="angular-metric-value">180° = 1/2</span>
+                                </div>
+                                <div class="angular-metric">
+                                    <span class="angular-metric-label">Angular Velocity</span>
+                                    <span class="angular-metric-value">Constant</span>
+                                </div>
+                            </div>
+                        </article>
+                        <aside class="angular-architecture">
+                            <h3>The 1-Bit Architecture</h3>
+                            <div class="angular-architecture-meta">
+                                <span>INPUT_STATE: [0, 1]</span>
+                                <span>ACTION: PIVOT ORBIT</span>
+                                <span>LATENCY_REQ: CRITICAL</span>
+                            </div>
+                        </aside>
+                    </div>
+
+                    <div class="motor-feedback-grid">
+                        <article class="motor-feedback-card">
+                            <h3 class="motor-feedback-eyebrow">Motor-Cognitive Feedback</h3>
+                            <p class="motor-feedback-copy">
+                                The "sync" in ADOFAI is a loop between visual trajectory and auditory pulse. The
+                                motor-cognitive loop occurs when the player stops 'reading' the screen and starts
+                                'feeling' the rotation. The tactile click of a mechanical switch provides the physical
+                                confirmation of a spatial intersection.
+                            </p>
+                        </article>
+                        <article class="latency-analysis-card">
+                            <h3 class="latency-analysis-eyebrow">Latency Impact Analysis</h3>
+                            <p class="latency-analysis-value">&lt;1ms</p>
+                            <h4 class="latency-analysis-title text-center">Target Goal</h4>
+                            <table class="latency-analysis-table" aria-label="Latency impact analysis metrics">
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">Input Polling Rate</th>
+                                        <td>1000Hz+</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Audio Buffer Size</th>
+                                        <td>64 Samples</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Visual Prediction</th>
+                                        <td>Enabled</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p class="latency-analysis-note">
+                                At high BPM (&gt;200), a deviation of 10ms is catastrophic. The single-key model
+                                reduces hardware interrupt overhead, enabling the precision required for sub-millisecond
+                                rhythmic alignment.
+                            </p>
+                        </article>
+                    </div>
+
+                    <div class="interaction-metrics">
+                        <div class="interaction-metrics-head">
+                            <h3>Interaction Metrics</h3>
+                            <span class="interaction-metrics-tag">Read-Only Data</span>
+                        </div>
+                        <table class="interaction-metrics-table" aria-label="Interaction metrics table">
+                            <thead>
+                                <tr>
+                                    <th>Rhythmic Model</th>
+                                    <th>Angular Mapping</th>
+                                    <th>Cognitive Load</th>
+                                    <th>Execution Type</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Straight 4/4</td>
+                                    <td>180deg Symmetrical</td>
+                                    <td>Low / Reflexive</td>
+                                    <td>Isochronous Tap</td>
+                                </tr>
+                                <tr>
+                                    <td>Triplet Hemiola</td>
+                                    <td>120deg / 240deg Pivot</td>
+                                    <td>Medium / Patterned</td>
+                                    <td>Syncopated Tap</td>
+                                </tr>
+                                <tr>
+                                    <td>Polyrhythm (3:2)</td>
+                                    <td>Varying Angle Ratios</td>
+                                    <td>High / Analytical</td>
+                                    <td>Compound Tap Logic</td>
+                                </tr>
+                                <tr>
+                                    <td>Speed Change</td>
+                                    <td>Angle Constant / BPM Shift</td>
+                                    <td>Critical / Reactive</td>
+                                    <td>Acceleration Burst</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="footnote mt-4">
+                        By restricting the interaction to a single binary input, ADOFAI removes the barrier of "where to
+                        press" and places the entire focus on "when to press." This radical simplicity allows the player
+                        to process rhythmic complexities that would be unplayable on a traditional multi-lane interface.
+                    </div>
+                </section>
+                <section class="game-sections" id="hci-principles">
+                    <h2>HCI Principles</h2>
+                    <p>
+                        Analyzing the cognitive bridge between visual geometry and rhythmic precision in A Dance of Fire
+                        and Ice.
+                    </p>
+
+                    <div class="hci-dual-cards">
+                        <div class="proprioception-kinematics">
+                            <h3>Proprioception <br />&amp; Digital Kinematics</h3>
+                            <p>
+                                ADOFAI leverages the user's internal sense of body position by mapping rhythmic input to
+                                a
+                                circular motion. The binary alternating click (Left/Right) mimics the physical sensation
+                                of
+                                walking, creating a seamless mental model where the player's hands become the literal
+                                orbs
+                                of fire and ice.
+                            </p>
+                            <div class="proprioception-kpi-grid">
+                                <article class="proprioception-kpi">
+                                    <h4 class="proprioception-kpi-label">Tactile Feedback</h4>
+                                    <p class="proprioception-kpi-value">1:1 Mapping</p>
+                                </article>
+                                <article class="proprioception-kpi">
+                                    <h4 class="proprioception-kpi-label">Motor Load</h4>
+                                    <p class="proprioception-kpi-value">Minimalist</p>
+                                </article>
+                            </div>
+                        </div>
+
+                        <article class="flow-state-activation">
+                            <h3>Flow State Activation</h3>
+                            <p>
+                                By removing UI clutter (health bars, timers, score counters) and focusing entirely on
+                                the path, the player reaches a state of hyper-focus. The brain transitions from
+                                conscious processing to reactive instinct.
+                            </p>
+                        </article>
+                    </div>
+
+                    <div class="list-style-area">
+                        <h3 class="text-center" style="font-weight: 900;">Cognitive Load Optimization</h3>
+                        <div class="text-center">Rhythm is parsed as intention, not interface overhead.</div>
+                        <ol class="two-columns md-one-columns">
+                            <li>
+                                <h6>Visual Chunking</h6>
+                                <p>
+                                    The geometric path is read as grouped beat phrases rather than isolated tiles,
+                                    reducing working-memory pressure and letting players pre-plan rhythmic movement.
+                                </p>
+                            </li>
+                            <li>
+                                <h6>Predictive Pathing</h6>
+                                <p>
+                                    Consistent angular transitions enable forward anticipation. Players allocate
+                                    attention to upcoming turns before they occur, improving reaction stability under
+                                    tempo acceleration.
+                                </p>
+                            </li>
+                        </ol>
+                    </div>
+                </section>
+                <section class="game-sections" id="ui-ux-weaknesses">
+                    <h2>Strengths and Weaknesses</h2>
+                    <p>
+                        A rigorous examination of A Dance of Fire and Ice’s core mechanics, focusing on the dichotomy
+                        between mathematical rhythmic precision and the cognitive load of high-velocity visual feedback.
+                    </p>
+
+                    <table style="margin-bottom: 2em;">
+                        <thead>
+                            <tr>
+                                <th>System Strengths <span class="badge badge-success">Positive_Vectors</span></th>
+                                <th>System Weaknesses <span class="badge badge-danger">Negative_Vectors</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="sw-item-head">
+                                        <span class="sw-icon" aria-hidden="true">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6l4 2" />
+                                                <circle cx="12" cy="12" r="8.25" />
+                                            </svg>
+                                        </span>
+                                        <span class="label">01_BEAT_SYNC</span>
+                                    </div>
+                                    <h6>
+                                        Beat-Synced Input
+                                    </h6>
+                                    <p>
+                                        The single-button rhythm loop keeps timing, movement, and feedback tightly
+                                        coupled. Players read the path as a pulse, which reduces interface overhead and
+                                        strengthens rhythmic recall.
+                                    </p>
+                                </td>
+                                <td>
+                                    <div class="sw-item-head">
+                                        <span class="sw-icon" aria-hidden="true">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M12 9v4m0 4h.01M5.5 19.5h13l-6.5-14-6.5 14Z" />
+                                            </svg>
+                                        </span>
+                                        <span class="label">01_TIGHT_WINDOWS</span>
+                                    </div>
+                                    <h6>Tight Timing Windows</h6>
+                                    <p>
+                                        The UI is unforgiving by design. Small timing deviations become immediate
+                                        failures, so latency spikes, audio drift, or focus loss are exposed quickly and
+                                        can feel harsh to new players.
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="sw-item-head">
+                                        <span class="sw-icon" aria-hidden="true">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M4.5 12h15M12 4.5v15" />
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M7.5 7.5h9v9h-9z" />
+                                            </svg>
+                                        </span>
+                                        <span class="label">02_PATH_READ</span>
+                                    </div>
+                                    <h6>
+                                        Clear Path Readability
+                                    </h6>
+                                    <p>
+                                        Sharp angles, alternating orb colors, and a minimal HUD make the route easy to
+                                        parse at a glance. The player can focus on shape transitions instead of
+                                        menu-like
+                                        interface clutter.
+                                    </p>
+                                </td>
+                                <td>
+                                    <div class="sw-item-head">
+                                        <span class="sw-icon" aria-hidden="true">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M18.364 5.636 5.636 18.364" />
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M6.75 5.25h12v12" />
+                                            </svg>
+                                        </span>
+                                        <span class="label">02_OVERLAP</span>
+                                    </div>
+                                    <h6>Overlap at High Speed</h6>
+                                    <p>
+                                        When the path accelerates or turns stack tightly, upcoming geometry can visually
+                                        crowd the current action. That compresses perception and makes long strings
+                                        harder
+                                        to read in real time.
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="sw-item-head">
+                                        <span class="sw-icon" aria-hidden="true">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor" class="size-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M12 3v18m9-9H3" />
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M8.25 8.25 15.75 15.75" />
+                                            </svg>
+                                        </span>
+                                        <span class="label">03_FEEDBACK</span>
+                                    </div>
+                                    <h6>
+                                        Instant Feedback Loop
+                                    </h6>
+                                    <p>
+                                        The game gives immediate success or failure states, letting players recalibrate
+                                        instinctively. That feedback loop supports rapid learning because the result of
+                                        each press is unambiguous.
+                                    </p>
+                                </td>
+                                <td>
+                                    <div class="sw-item-head">
+                                        <span class="sw-icon" aria-hidden="true">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor" class="size-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M12 8v4.5m0 3.25h.01" />
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M10.29 3.86 2.79 16.86A1.5 1.5 0 0 0 4.09 19.5h15.82a1.5 1.5 0 0 0 1.3-2.64l-7.5-13a1.5 1.5 0 0 0-2.6 0Z" />
+                                            </svg>
+                                        </span>
+                                        <span class="label">03_FATIGUE</span>
+                                    </div>
+                                    <h6>Repetition Fatigue</h6>
+                                    <p>
+                                        The stripped-down UI is highly legible, but the same visual language repeats for
+                                        the entire session. That can create perceptual fatigue and reduce long-session
+                                        variety for some players.
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="sw-item-head">
+                                        <span class="sw-icon" aria-hidden="true">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v18" />
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M5.25 12h13.5" />
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M12 7.5l4.5 4.5-4.5 4.5-4.5-4.5 4.5-4.5Z" />
+                                            </svg>
+                                        </span>
+                                        <span class="label">04_MATH_ACC</span>
+                                    </div>
+                                    <h6>
+                                        Mathematical Accuracy
+                                    </h6>
+                                    <p>
+                                        The game uses a singular button input for multi-rhythm translation, keeping the
+                                        timing model precise and the feedback loop stable. The 180-degree logic creates
+                                        a
+                                        reliable framework for odd-meter patterns without adding interface clutter.
+                                    </p>
+                                </td>
+                                <td>
+                                    <div class="sw-item-head">
+                                        <span class="sw-icon" aria-hidden="true">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M3 12s3.75-6.75 9-6.75S21 12 21 12s-3.75 6.75-9 6.75S3 12 3 12Z" />
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M12 9.75a2.25 2.25 0 1 1 0 4.5 2.25 2.25 0 0 1 0-4.5Z" />
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12" />
+                                            </svg>
+                                        </span>
+                                        <span class="label">04_OBFUSCATE</span>
+                                    </div>
+                                    <h6>High-Speed Obfuscation</h6>
+                                    <p>
+                                        In high-BPM sections, the path geometry can overlap and create visual noise.
+                                        Camera panning speeds can struggle to keep the fire and ice orbs centered,
+                                        which increases eye fatigue during dense sequences.
+                                    </p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="footnote summary">
+                        <p>
+                            ADOFAI remains the gold standard for rhythmic purity, but requires advanced visual settings
+                            (disabling background effects) to maintain professional-grade reading at the highest levels
+                            of play. The investigation confirms that "A Dance of Fire and Ice" (ADOFAI) represents a
+                            pinnacle in reductive interface design. By distilling complex polyrhythmic input into a
+                            singular, binary interaction model, the system achieves a state of "Cognitive
+                            Transparency"—where the player no longer views the interface as a barrier, but as a direct
+                            extension of auditory perception.
+                        </p>
+                    </div>
+                </section>
+            </div>
+        </article>
+    </main>
+    <footer>
+        <h6>GameUX Atlas</h6>
+        <ul class="socials"></ul>
+        <div class="footer-info">
+            <span>&copy; Group 5</span>
+            <span>CIP 1101</span>
+            <span>2026</span>
+            <span>GameUX Atlas</span>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top" title="Back to top">
+        <svg viewBox="0 0 56 56" width="56" height="56" aria-hidden="true" focusable="false">
+            <circle class="btn-bg" cx="28" cy="28" r="27"></circle>
+            <circle class="btn-progress-track" cx="28" cy="28" r="22"></circle>
+            <circle class="btn-progress" id="back-to-top-progress" cx="28" cy="28" r="22"></circle>
+            <path class="btn-icon" d="M28 36V20"></path>
+            <path class="btn-icon" d="M21.5 26.5L28 20l6.5 6.5"></path>
+        </svg>
+    </button>
+</body>
+
+<script>
+    // VARIABLES
+    const GAMENAME = "A Dance of Fire and Ice";
+    const DATERELEASED = "01/24/2019"; // MM/DD/YYYY
+    const PUBLISHER = '7th Beat Games';
+    const BADGE = "Full Release";
+    // Pre-Alpha
+    // Alpha
+    // Beta
+    // Early Access
+    // Full Release
+    const POSTERURL = "../../../public/posters/aDanceOfFireAndIce_poster.jpg";
+    const POSTERALTTEXT = "A Dance of Fire and Ice Game Poster";
+    const VIDEOURL = "../../../public/videos/aDanceOfFireAndIce_trailer.mp4";
+    const VIDEOURLYT = "https://www.youtube.com/embed/Bqj-tnv5K2c?si=Obkmq7oirUOkdnHB";
+    const YTVID = true;
+
+    const GAMEUSERSTARS = "6.8";
+    const GAMEUSERRATINGS = "12";
+
+    const HASCRITICS = false; // Set to false if there are no critic ratings
+    const GAMECRITICSTARS = "8.6";
+    const GAMECRITICRATINGS = "14";
+
+    const GENRES = ["Adventure", "Indie", "Music"];
+    const PLATFORMS = ["PC", "Mac", "Linux", "Android", "Nintendo Switch", "iOS"];
+    const EDITIONS = ["A Dance of Fire and Ice Standard Edition", "A Dance of Fire and Ice: Neo Cosmos DLC"];
+
+    const DESCRIPTION =
+        "A Dance of Fire and Ice is a strict rhythm game. Keep your focus as you guide two orbiting planets along a winding path without breaking their perfect equilibrium. It is a simple one-button rhythm game. Press on every beat of the music to move in a line. Every pattern has its own rhythm to it. It can get difficult. This game is purely based on rhythm, so use your ears more than your sight.";
+
+    // Document Variables
+    const sectionRadios = Array.from(
+        document.querySelectorAll('input[name="game-section"]'),
+    );
+    const gameSections = Array.from(
+        document.querySelectorAll(".game-sections"),
+    );
+    const gameInfoNav = document.getElementById("game-info-nav");
+    const gameInfoNavLeft = document.getElementById("game-info-nav-left");
+    const gameInfoNavRight = document.getElementById("game-info-nav-right");
+    const backToTopButton = document.getElementById("back-to-top");
+    const backToTopProgress = document.getElementById("back-to-top-progress");
+
+    // -- Implementation --
+    document.getElementById("title").textContent = GAMENAME + " - GameUX"; // Set page title
+    for (let el of document.getElementsByClassName("game-name")) {
+        el.textContent = GAMENAME;
+    } // Set game name
+    for (let el of document.getElementsByClassName("date-released")) {
+        el.textContent = DATERELEASED;
+    } // Set date released
+    for (let el of document.getElementsByClassName("publisher")) {
+        el.textContent = PUBLISHER;
+    } // Set publisher
+    for (let el of document.getElementsByClassName("game-badge")) {
+        el.textContent = BADGE;
+    } // Set badge
+    for (let el of document.getElementsByClassName("game-user-rating")) {
+        el.textContent = GAMEUSERSTARS;
+    } // Set user rating
+    for (let el of document.getElementsByClassName("game-user-ratings")) {
+        el.textContent = GAMEUSERRATINGS + " user ratings";
+    } // Set user ratings
+    for (let el of document.getElementsByClassName("game-critic-rating")) {
+        el.textContent = GAMECRITICSTARS;
+    } // Set critic rating
+    for (let el of document.getElementsByClassName("game-critic-ratings")) {
+        el.textContent = GAMECRITICRATINGS + " critic ratings";
+    } // Set critic ratings
+    for (let el of document.getElementsByClassName("game-poster-content")) {
+        el.src = POSTERURL;
+    } // Set poster content
+    document.getElementById("game-poster-img").src = POSTERURL; // Set poster image
+    document.getElementById("game-poster-img").title =
+        GAMENAME + " Game Poster"; // Set poster image title
+    document.getElementById("game-poster").href = POSTERURL; // Set poster link
+    document.getElementById("game-description").textContent = DESCRIPTION; // Set game description
+    document.getElementById("game-poster-img").alt = POSTERALTTEXT; // Set poster image alt text
+    // Video / YouTube toggle: show iframe when YTVID is true, otherwise show <video> with source
+    const videoEl = document.getElementById("game-video");
+    const videoSourceEl = document.getElementById("game-video-source");
+    const ytEl = document.getElementById("game-video-yt");
+    if (YTVID) {
+        if (ytEl) {
+            ytEl.src = VIDEOURLYT;
+            ytEl.hidden = false;
+        }
+        if (videoEl) {
+            videoEl.hidden = true;
+            try {
+                videoEl.pause();
+            } catch (e) { }
+        }
+    } else {
+        if (videoSourceEl) {
+            videoSourceEl.src = VIDEOURL;
+        }
+        if (videoEl) {
+            videoEl.hidden = false;
+            try {
+                videoEl.load();
+            } catch (e) { }
+        }
+        if (ytEl) {
+            ytEl.hidden = true;
+            ytEl.src = "";
+        }
+    }
+
+    for (let genre of GENRES) {
+        // Set genres
+        let li = document.createElement("li");
+        li.textContent = genre;
+        document.getElementById("genres").appendChild(li);
+    }
+
+    for (let platform of PLATFORMS) {
+        // Set platforms
+        let li = document.createElement("li");
+        li.textContent = platform;
+        document.getElementById("platforms").appendChild(li);
+    }
+
+    for (let edition of EDITIONS) {
+        // Set editions
+        let li = document.createElement("li");
+        li.textContent = edition;
+        document.getElementById("editions").appendChild(li);
+    }
+
+    // Hide critic ratings
+    if (!HASCRITICS) {
+        for (let el of document.getElementsByClassName(
+            "game-critic-rating-cont",
+        )) {
+            el.classList.add("hidden");
+        }
+    }
+
+    // Calculate days ago
+    let timeDiff = new Date().getTime() - new Date(DATERELEASED).getTime();
+    let daysAgo = Math.floor(timeDiff / (1000 * 3600 * 24));
+    if (daysAgo > 365) {
+        let yearsAgo = Math.floor(daysAgo / 365);
+        for (let el of document.getElementsByClassName("days-ago")) {
+            el.textContent = "(" + yearsAgo + " years ago)";
+        }
+    } else {
+        for (let el of document.getElementsByClassName("days-ago")) {
+            el.textContent = "(" + daysAgo + " days ago)";
+        }
+    }
+
+    // Sections navigation
+    function showGameSection(sectionId) {
+        for (let section of gameSections) {
+            let isActive = section.id === sectionId;
+            section.classList.toggle("is-active", isActive);
+            section.setAttribute("aria-hidden", String(!isActive));
+        }
+    }
+
+    function getSectionIdFromHash() {
+        const rawHash = window.location.hash || "";
+        const hash = rawHash.startsWith("#") ? rawHash.slice(1) : rawHash;
+        if (!hash) {
+            return null;
+        }
+        return gameSections.some((section) => section.id === hash) ? hash : null;
+    }
+
+    function syncSectionFromHash() {
+        const hashSectionId = getSectionIdFromHash();
+        if (!hashSectionId) {
+            return false;
+        }
+
+        const matchingRadio = sectionRadios.find((radio) => radio.value === hashSectionId);
+        if (matchingRadio) {
+            matchingRadio.checked = true;
+        }
+        showGameSection(hashSectionId);
+        return true;
+    }
+
+    const defaultSection = document.querySelector(
+        'input[name="game-section"]:checked',
+    );
+    if (!syncSectionFromHash()) {
+        showGameSection(
+            defaultSection ? defaultSection.value : "short-description",
+        );
+    }
+
+    for (let radio of sectionRadios) {
+        radio.addEventListener("change", () => {
+            if (!radio.checked) {
+                return;
+            }
+            showGameSection(radio.value);
+            if (history.replaceState) {
+                history.replaceState(null, "", `#${radio.value}`);
+            } else {
+                window.location.hash = radio.value;
+            }
+        });
+    }
+
+    window.addEventListener("hashchange", () => {
+        syncSectionFromHash();
+    });
+
+    // Game info nav
+    function updateGameInfoNavArrows() {
+        if (!gameInfoNav || !gameInfoNavLeft || !gameInfoNavRight) {
+            return;
+        }
+
+        const maxScrollLeft = gameInfoNav.scrollWidth - gameInfoNav.clientWidth;
+        const canScroll = maxScrollLeft > 1;
+        const canScrollLeft = canScroll && gameInfoNav.scrollLeft > 1;
+        const canScrollRight =
+            canScroll && gameInfoNav.scrollLeft < maxScrollLeft - 1;
+
+        gameInfoNavLeft.hidden = !canScrollLeft;
+        gameInfoNavRight.hidden = !canScrollRight;
+    }
+
+    function scrollGameInfoNavBy(distance) {
+        if (!gameInfoNav) {
+            return;
+        }
+        gameInfoNav.scrollBy({ left: distance, behavior: "smooth" });
+    }
+
+    if (gameInfoNav && gameInfoNavLeft && gameInfoNavRight) {
+        gameInfoNav.addEventListener("scroll", updateGameInfoNavArrows);
+        gameInfoNavLeft.addEventListener("click", () => {
+            scrollGameInfoNavBy(
+                -Math.max(200, Math.floor(gameInfoNav.clientWidth * 0.5)),
+            );
+        });
+        gameInfoNavRight.addEventListener("click", () => {
+            scrollGameInfoNavBy(
+                Math.max(200, Math.floor(gameInfoNav.clientWidth * 0.5)),
+            );
+        });
+        window.addEventListener("resize", updateGameInfoNavArrows);
+        updateGameInfoNavArrows();
+    }
+
+    // Back-to-top button with circular scroll progress
+    const progressRadius = 22;
+    const progressCircumference = 2 * Math.PI * progressRadius;
+
+    if (backToTopProgress) {
+        backToTopProgress.style.strokeDasharray = String(progressCircumference);
+        backToTopProgress.style.strokeDashoffset = String(progressCircumference);
+    }
+
+    function updateBackToTop() {
+        if (!backToTopButton || !backToTopProgress) {
+            return;
+        }
+
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        const scrollableHeight =
+            document.documentElement.scrollHeight - window.innerHeight;
+        const progress = scrollableHeight > 0 ? Math.min(scrollTop / scrollableHeight, 1) : 0;
+        const dashOffset = progressCircumference * (1 - progress);
+
+        backToTopProgress.style.strokeDashoffset = String(dashOffset);
+        backToTopButton.classList.toggle("is-visible", scrollTop > 160);
+    }
+
+    if (backToTopButton) {
+        backToTopButton.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    }
+
+    window.addEventListener("scroll", updateBackToTop, { passive: true });
+    window.addEventListener("resize", updateBackToTop);
+    updateBackToTop();
+</script>
+
+</html>
