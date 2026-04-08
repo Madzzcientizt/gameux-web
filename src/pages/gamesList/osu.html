@@ -370,6 +370,364 @@
                     }
                 }
             }
+
+            &#hci-principles {
+                margin-bottom: 2em;
+
+                &>h2 {
+                    font-weight: 900;
+                    font-size: 2.5em;
+                }
+
+                & .cybernetic-feedback-loops {
+                    margin-top: 2em;
+                    padding: 1em;
+                    border-radius: 0.5em;
+                    background-color: var(--t-color-base-100);
+                    border: 1px solid var(--t-color-base-300);
+
+                    &>h3 {
+                        font-weight: 900;
+                        font-size: 2em;
+                    }
+
+                    & .cybernetic-content {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        gap: 1em;
+
+                        @media (width < 48rem) {
+                            grid-template-columns: 1fr !important;
+                        }
+
+                        & h6 {
+                            font-weight: 700;
+                            font-size: 1.2em;
+                            margin-bottom: 0.5em;
+                        }
+
+                        & .primary-modalities {
+                            list-style: none;
+                            padding: 1em;
+                            background-color: var(--t-color-base-200);
+                            border-radius: 0.5em;
+                            margin-bottom: 0;
+
+
+                            & li {
+                                margin-left: 1em;
+                                margin-bottom: 0.5em;
+                                position: relative;
+
+                                &::before {
+                                    content: '';
+                                    display: block;
+                                    position: absolute;
+                                    width: 0.2em;
+                                    height: 1em;
+                                    background-color: var(--t-color-primary);
+                                    border-radius: 1em;
+                                    left: -0.75em;
+                                    top: calc(50% - 0.5em);
+                                }
+                            }
+                        }
+                    }
+                }
+
+                & .spatial-congruence {
+                    padding: 1em;
+                    margin-top: 2em;
+
+                    & h2 {
+                        font-weight: 900;
+                        font-size: 2.5em;
+                    }
+                }
+
+                & .cognitive-load-bifurcation {
+                    margin: 2em 0;
+                    padding: 1em;
+                    border-radius: 0.5em;
+                    background-color: var(--t-color-base-100);
+                    border: 1px solid var(--t-color-base-300);
+
+                    &>h2 {
+                        font-weight: 900;
+                        font-size: 2em;
+                    }
+
+                    & table {
+                        width: 100%;
+                        border-collapse: separate;
+                        border-spacing: 0;
+                        border: 1px solid var(--t-color-base-300);
+                        border-radius: 0.5em;
+                        overflow: hidden;
+                        background-color: var(--t-color-base-200);
+                    }
+
+                    & th,
+                    & td {
+                        padding: 1em;
+                        vertical-align: top;
+                    }
+
+                    & thead th {
+                        font-weight: 800;
+                        font-size: 1.05em;
+                        background-color: var(--t-color-base-300);
+                        border-bottom: 1px solid var(--t-color-base-300);
+                    }
+
+                    & th+th,
+                    & td+td {
+                        border-left: 1px solid var(--t-color-base-300);
+                    }
+
+                    & tbody td {
+                        border-bottom: 1px solid var(--t-color-base-300);
+                    }
+
+                    & tbody tr:last-child td {
+                        border-bottom: 0;
+                    }
+
+                    & td h6 {
+                        font-weight: 700;
+                        font-size: 1.15em;
+                        margin-bottom: 0.5em;
+                    }
+
+                    & td p {
+                        margin-bottom: 0;
+                    }
+
+                    @media (width < 48rem) {
+
+                        & table,
+                        & thead,
+                        & tbody,
+                        & tr,
+                        & th,
+                        & td {
+                            display: block;
+                            width: 100%;
+                        }
+
+                        & thead {
+                            display: none;
+                        }
+
+                        & tbody tr {
+                            border-bottom: 1px solid var(--t-color-base-300);
+                            padding: 0.5em;
+                        }
+
+                        & tbody tr:last-child {
+                            border-bottom: 0;
+                        }
+
+                        & td {
+                            border: 0;
+                            border-radius: 0.5em;
+                            background-color: var(--t-color-base-100);
+                            margin-bottom: 0.75em;
+                        }
+
+                        & td::before {
+                            display: block;
+                            font-weight: 700;
+                            font-size: 0.85em;
+                            text-transform: uppercase;
+                            letter-spacing: 0.04em;
+                            color: var(--t-color-primary);
+                            margin-bottom: 0.5em;
+                        }
+
+                        & td:nth-child(1)::before {
+                            content: 'Extrinsic Load';
+                        }
+
+                        & td:nth-child(2)::before {
+                            content: 'Intrinsic Focus';
+                        }
+                    }
+                }
+            }
+
+            &#ui-ux-weaknesses {
+                margin-bottom: 2em;
+
+                &>h2 {
+                    font-weight: 900;
+                    font-size: 2.5em;
+                }
+
+                &>p {
+                    text-align: justify;
+                    margin-bottom: 2em;
+                }
+
+                & table {
+                    width: 100%;
+                    border-collapse: separate;
+                    border-spacing: 0;
+                    border: 1px solid var(--t-color-base-300);
+                    border-radius: 0.5em;
+                    overflow: hidden;
+                    background-color: var(--t-color-base-100);
+                }
+
+                & th,
+                & td {
+                    padding: 1em;
+                    vertical-align: top;
+                }
+
+                & td {
+                    position: relative;
+                    padding-right: 4.25em;
+                }
+
+                & thead th {
+                    font-weight: 800;
+                    font-size: 1.05em;
+                    background-color: var(--t-color-base-300);
+                    border-bottom: 1px solid var(--t-color-base-300);
+                }
+
+                & th+th,
+                & td+td {
+                    border-left: 1px solid var(--t-color-base-300);
+                }
+
+                & tbody td {
+                    border-bottom: 1px solid var(--t-color-base-300);
+                }
+
+                & tbody tr:last-child td {
+                    border-bottom: 0;
+                }
+
+                & .badge {
+                    font-size: 0.75em;
+                    font-weight: 400;
+                    border-radius: 999px;
+                    padding: 0.35em 0.75em;
+                    margin-left: 0.5em;
+                    vertical-align: middle;
+                    border: 1px solid transparent;
+                }
+
+                & .badge-success {
+                    background-color: var(--t-color-success);
+                    color: color-mix(in oklab, var(--t-color-success-content) 70%, var(--t-color-success));
+                    border-color: color-mix(in oklab, var(--t-color-success) 65%, var(--t-color-dark));
+                }
+
+                & .badge-danger {
+                    background-color: var(--t-color-error);
+                    color: color-mix(in oklab, var(--t-color-error-content) 70%, var(--t-color-error));
+                    border-color: color-mix(in oklab, var(--t-color-error) 65%, var(--t-color-dark));
+                }
+
+                & .sw-item-head {
+                    display: block;
+                    margin-bottom: 0.75em;
+                }
+
+                & .sw-icon {
+                    width: 2.75em;
+                    height: 2.75em;
+                    color: var(--t-color-base-300);
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-shrink: 0;
+                    position: absolute;
+                    top: 0.75em;
+                    right: 0.75em;
+                }
+
+                & .sw-icon svg {
+                    width: 1.5em;
+                    height: 1.5em;
+                }
+
+                & .label {
+                    display: inline-block;
+                    font-family: var(--bs-font-monospace);
+                    font-size: 0.9em;
+                    font-weight: 700;
+                    color: var(--t-color-primary);
+                    letter-spacing: 0.03em;
+                }
+
+                & td h6 {
+                    font-weight: 700;
+                    font-size: 1.2em;
+                    margin-bottom: 0.5em;
+                }
+
+                & td p {
+                    margin-bottom: 0;
+                    text-align: justify;
+                }
+
+                @media (width < 48rem) {
+
+                    & table,
+                    & thead,
+                    & tbody,
+                    & tr,
+                    & th,
+                    & td {
+                        display: block;
+                        width: 100%;
+                    }
+
+                    & thead {
+                        display: none;
+                    }
+
+                    & tbody tr {
+                        border-bottom: 1px solid var(--t-color-base-300);
+                        padding: 0.5em;
+                        background-color: var(--t-color-base-200);
+                    }
+
+                    & tbody tr:last-child {
+                        border-bottom: 0;
+                    }
+
+                    & td {
+                        border: 0;
+                        border-radius: 0.5em;
+                        background-color: var(--t-color-base-100);
+                        margin-bottom: 0.75em;
+                    }
+
+                    & td::before {
+                        display: block;
+                        font-weight: 700;
+                        font-size: 0.85em;
+                        text-transform: uppercase;
+                        letter-spacing: 0.04em;
+                        margin-bottom: 0.5em;
+                    }
+
+                    & td:nth-child(1)::before {
+                        content: 'System Strengths';
+                        color: color-mix(in oklab, var(--t-color-success) 70%, var(--t-color-dark));
+                    }
+
+                    & td:nth-child(2)::before {
+                        content: 'System Weaknesses';
+                        color: color-mix(in oklab, var(--t-color-error) 70%, var(--t-color-dark));
+                    }
+                }
+            }
         }
 
 
@@ -483,6 +841,10 @@
                 display: block;
                 margin-bottom: 0.5em;
             }
+
+            &.summary::before {
+                content: 'Summary:';
+            }
         }
     </style>
     <!-- Custom Styles ------------------------------------------------------------------------------------------ -->
@@ -504,10 +866,10 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            <a class="nav-link" aria-current="page" href="#">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Game List</a>
+                            <a class="nav-link active" href="#">Game List</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">About</a>
@@ -977,10 +1339,240 @@
                     </ul>
                 </section>
                 <section class="game-sections" id="hci-principles">
-                    hci principles
+                    <h2>HCI Principles</h2>
+                    <div class="cybernetic-feedback-loops">
+                        <h3>Cybernetic Feedback Loops</h3>
+                        <div class="cybernetic-content">
+                            <div>
+                                <p style="text-align: justify;">
+                                    osu! utilizes a multi-modal feedback architecture that provides immediate visual,
+                                    auditory, and haptic (if peripheral allows) confirmation of actions. The Feedback
+                                    Loop is closed within milliseconds, aligning with the "Action-Perception" cycle
+                                    fundamental to high-stakes HCI.
+                                </p>
+                            </div>
+                            <div>
+                                <ul class="primary-modalities">
+                                    <h6>Primary Modalities</h6>
+                                    <li><strong>Visual</strong>: Hit bursts, approach circles, combo popups, accuracy
+                                        judgements</li>
+                                    <li><strong>Auditory</strong>: Sample playback synchronized with music, hitsounds
+                                        synced to beatmap timeline</li>
+                                    <li><strong>Structural</strong>: Life bar depletion/ replenishment</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="spatial-congruence">
+                        <h2>Spatial Congruence</h2>
+                        <p style="text-align: justify;">
+                            The spatial arrangement of game elements in osu! supports intuitive interaction and reduces
+                            cognitive load. Visual cues guide players to the correct input locations, enhancing the
+                            overall user experience. Mapping in osu! is direct. The movement of the cursor corresponds
+                            1:1 with the spatial arrangement of the hit circles. Unlike joystick-based mapping, this
+                            absolute positioning eliminates translation latency in the user's mental model.
+                        </p>
+                    </div>
+                    <div class="cognitive-load-bifurcation">
+                        <h2>Cognitive Load Bifurcation</h2>
+                        <p style="text-align: justify; margin-bottom: 2em;">
+                            The central success of the osu! interface is the radical reduction of Extrinsic Load (the
+                            difficulty of using the interface) to allow for the absolute saturation of Intrinsic Load
+                            (the difficulty of the task itself).
+                        </p>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Extrinsic Load</th>
+                                    <th>Intrinsic Focus</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <h6>Minimalist HUD</h6>
+                                        <p>
+                                            Non-essential data is pushed to the periphery (corners), keeping the central
+                                            visual fovea clear for hit-circle tracking.
+                                        </p>
+                                    </td>
+                                    <td>
+                                        <h6>Kinesthetic Mastery</h6>
+                                        <p>
+                                            The user's entire cognitive budget is spent on rhythm synchronization and
+                                            spatial precision.
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <h6>Color Coding</h6>
+                                        <p>
+                                            Consistent hue association for combo sequences reduces the need for the
+                                            brain to parse "next-action" logic.
+                                        </p>
+                                    </td>
+                                    <td>
+                                        <h6>Flow State Entry</h6>
+                                        <p>
+                                            By removing interface friction, the system facilitates rapid entry into
+                                            'Flow,' where awareness and action merge.
+                                        </p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="footnote">
+                        <q>
+                            The interface is a bridge that must vanish. In osu!, the UX design achieves this by
+                            ruthlessly prioritizing task-based focus over aesthetic ornamentation.
+                        </q>
+                    </div>
                 </section>
                 <section class="game-sections" id="ui-ux-weaknesses">
-                    strength & weaknesses
+                    <h2>Strengths and Weaknesses Analysis</h2>
+                    <p>
+                        A comprehensive breakdown of the osu! interface paradigm. Evaluating the friction between
+                        high-precision rhythmic input and human physiological limitations.
+                    </p>
+
+                    <table style="margin-bottom: 2em;">
+                        <thead>
+                            <tr>
+                                <th>System Strengths <span class="badge badge-success">Positive_Vectors</span></th>
+                                <th>System Weaknesses <span class="badge badge-danger">Negative_Vectors</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="sw-item-head">
+                                        <span class="sw-icon" aria-hidden="true">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M12 3v2.25m0 13.5V21m9-9h-2.25M5.25 12H3m15.364 6.364-1.59-1.59M7.226 7.226l-1.59-1.59m12.728 0-1.59 1.59M7.226 16.774l-1.59 1.59" />
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                                            </svg>
+                                        </span>
+                                        <span class="label">01_PRECISION</span>
+                                    </div>
+                                    <h6>
+                                        High Precision
+                                    </h6>
+                                    <p>
+                                        The 1:1 mapping of input to screen action creates an unparalleled sense of
+                                        agency. The interface rewards micro-movements and sub-millisecond timing
+                                        accuracy.
+                                    </p>
+                                </td>
+                                <td>
+                                    <div class="sw-item-head">
+                                        <span class="sw-icon" aria-hidden="true">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75M6.75 10.5h10.5A2.25 2.25 0 0 1 19.5 12.75v6A2.25 2.25 0 0 1 17.25 21H6.75A2.25 2.25 0 0 1 4.5 18.75v-6A2.25 2.25 0 0 1 6.75 10.5Z" />
+                                            </svg>
+                                        </span>
+                                        <span class="label">01_BARRIER</span>
+                                    </div>
+                                    <h6>High Entry Barrier</h6>
+                                    <p>
+                                        The learning curve is steep and often punishing. Lack of comprehensive
+                                        tutorialization means the cognitive load for new users is extremely high.
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="sw-item-head">
+                                        <span class="sw-icon" aria-hidden="true">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25l4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z" />
+                                            </svg>
+                                        </span>
+                                        <span class="label">02_FEEDBACK</span>
+                                    </div>
+                                    <h6>Clear Feedback</h6>
+                                    <p>
+                                        Multi-modal feedback (haptic, auditory, and visual) ensures the user is never in
+                                        doubt about their performance state. Hit markers provide instant error
+                                        correction.
+                                    </p>
+                                </td>
+                                <td>
+                                    <div class="sw-item-head">
+                                        <span class="sw-icon" aria-hidden="true">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M12 9v4.5m0 3.75h.008v.008H12v-.008ZM10.29 3.86l-7.5 13A1.5 1.5 0 0 0 4.09 19h15.82a1.5 1.5 0 0 0 1.3-2.14l-7.5-13a1.5 1.5 0 0 0-2.6 0Z" />
+                                            </svg>
+                                        </span>
+                                        <span class="label">02_STRAIN</span>
+                                    </div>
+                                    <h6>Physical Strain</h6>
+                                    <p>
+                                        Repetitive Stress Injury (RSI) risk is a primary concern. The interface demands
+                                        sustained, high-intensity motor performance without built-in ergonomic
+                                        safeguards.
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="sw-item-head">
+                                        <span class="sw-icon" aria-hidden="true">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor" class="size-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
+                                            </svg>
+                                        </span>
+                                        <span class="label">03_ECOSYSTEM</span>
+                                    </div>
+                                    <h6>Community-driven Ecosystem</h6>
+                                    <p>
+                                        The content loop is sustained by an open-source ethos. Users act as designers,
+                                        continuously pushing the boundaries of what the HCI can facilitate through
+                                        custom beatmaps.
+                                    </p>
+                                </td>
+                                <td>
+                                    <div class="sw-item-head">
+                                        <span class="sw-icon" aria-hidden="true">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor" class="size-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M3.98 8.223A10.477 10.477 0 0 0 1.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.451 10.451 0 0 1 12 4.5c4.756 0 8.773 3.162 10.065 7.498a10.522 10.522 0 0 1-4.293 5.774M6.228 6.228 3 3m3.228 3.228 3.65 3.65m7.894 7.894L21 21m-3.228-3.228-3.65-3.65m0 0a3 3 0 1 0-4.243-4.243m4.242 4.242L9.88 9.88" />
+                                            </svg>
+                                        </span>
+                                        <span class="label">03_NOISE</span>
+                                    </div>
+                                    <h6>Visual Clutter</h6>
+                                    <p>
+                                        At high difficulty levels, the signal-to-noise ratio degrades. "Note density"
+                                        can lead to visual saturation, making it difficult for the user to parse the
+                                        primary task.
+                                    </p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="footnote summary">
+                        <p>
+                            The osu! interface represents a pure expression of skill-based HCI. While its strengths lie
+                            in the <u>unfiltered translation</u> of user intent into digital action, its weaknesses stem from
+                            the same source: a refusal to compromise for human fragility. The system's "clutter" is a
+                            byproduct of its community-driven depth, creating a paradox where the most engaged users are
+                            also the most physically and cognitively vulnerable.
+                        </p>
+                    </div>
                 </section>
             </div>
         </article>
