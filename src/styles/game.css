@@ -114,8 +114,8 @@ footer {
         gap: 0.25em;
         background-color: var(--t-color-base-100);
         padding: 1em;
-        border-radius: 0.5em;
-        border: 1px solid var(--t-color-base-300);
+        border-radius: var(--t-radius-field);
+        border: var(--t-border) solid var(--t-color-base-300);
 
         &>.value {
             font-size: 1.5em;
@@ -139,7 +139,7 @@ footer {
     width: 2rem;
     height: 2rem;
     border: none;
-    border-radius: 999px;
+    border-radius: var(--t-radius-selector);
     background-color: rgba(0, 0, 0, 0.65);
     color: #fff;
     display: inline-flex;
@@ -217,9 +217,13 @@ footer {
     color: var(--t-color-base-100);
     font-weight: 600;
     padding: 0.125em 1em !important;
-    border-radius: 10em;
+    border-radius: calc(var(--t-radius-box) * 10);
     width: fit-content;
     text-wrap: nowrap;
+    line-height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .game-info-bar {
@@ -261,7 +265,7 @@ footer {
     width: 100%;
     max-width: 20em;
     height: auto;
-    border-radius: 0.5em;
+    border-radius: var(--t-radius-field);
     aspect-ratio: 2/3;
     background-color: var(--t-color-base-100);
     overflow: hidden;
@@ -272,7 +276,7 @@ footer {
     width: 100%;
     max-width: 40em;
     height: auto;
-    border-radius: 0.5em;
+    border-radius: var(--t-radius-field);
     background-color: var(--t-color-base-100);
     aspect-ratio: 16/9;
     position: relative;
@@ -309,7 +313,7 @@ footer {
     width: 40em;
     min-width: 40em;
     height: auto;
-    border-radius: 0.5em;
+    border-radius: var(--t-radius-field);
     background-color: var(--t-color-base-100);
     aspect-ratio: 16/9;
     position: relative;
@@ -329,7 +333,7 @@ footer {
     padding-bottom: 22.5%;
     height: auto;
     overflow: auto;
-    border-radius: 0.5em;
+    border-radius: var(--t-radius-field);
     background-color: var(--t-color-base-100);
     aspect-ratio: 16/9;
 }
@@ -453,9 +457,9 @@ footer {
         & li {
             display: inline-block;
             padding: 0.125em 1em;
-            border-radius: 10em;
+            border-radius: calc(var(--t-radius-box) * 10);
             /* border: 1px solid var(--t-color-primary); */
-            border: 1px solid var(--t-color-light);
+            border: var(--t-border) solid var(--t-color-light);
             color: var(--t-color-light);
         }
     }
