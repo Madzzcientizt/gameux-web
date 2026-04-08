@@ -225,6 +225,34 @@ body {
   scroll-behavior: smooth;
 }
 
+/* Scrollbar Styling */
+html {
+  scrollbar-color: var(--t-color-primary) var(--t-color-base-200);
+  scrollbar-width: thin;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--t-color-base-200);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--t-color-primary) 0%, var(--t-color-accent) 100%);
+  border-radius: 10px;
+  border: 2px solid var(--t-color-base-200);
+  transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--t-color-secondary) 0%, var(--t-color-primary) 100%);
+  box-shadow: 0 0 6px rgba(var(--t-color-primary-rgb), 0.4);
+}
+
 header {
   position: sticky;
   top: 0;

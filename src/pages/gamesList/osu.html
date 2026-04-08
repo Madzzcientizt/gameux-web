@@ -1071,33 +1071,28 @@
         </article>
         <div class="game-info-nav-container">
             <div class="game-info-nav-wrap">
-                <button class="game-info-nav-arrow left" id="game-info-nav-left" type="button" aria-label="Scroll left"
+                <button class="game-info-nav-arrow left" id="game-info-nav-left" type="button" aria-label="Scroll sections left"
                     hidden>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="20" height="20">
                         <path fill-rule="evenodd"
                             d="M15.78 19.28a.75.75 0 0 1-1.06 0L8.22 12.78a.75.75 0 0 1 0-1.06l6.5-6.5a.75.75 0 1 1 1.06 1.06L9.81 12l5.97 5.72a.75.75 0 0 1 0 1.56Z"
                             clip-rule="evenodd" />
                     </svg>
                 </button>
-                <nav class="game-info-nav" id="game-info-nav">
-                    <label><input type="radio" name="game-section" value="short-description" checked="checked" />
-                        Short Description</label>
-                    <label><input type="radio" name="game-section" value="ui-components" /> UI
-                        Components</label>
-                    <label><input type="radio" name="game-section" value="user-interaction" />
-                        User Interaction</label>
-                    <label><input type="radio" name="game-section" value="hci-principles" />
+                <nav class="game-info-nav" id="game-info-nav" role="tablist">
+                    <label role="tab"><input type="radio" name="game-section" value="short-description" checked="checked" />
+                        Overview</label>
+                    <label role="tab"><input type="radio" name="game-section" value="ui-components" /> UI Components</label>
+                    <label role="tab"><input type="radio" name="game-section" value="user-interaction" />
+                        Interaction</label>
+                    <label role="tab"><input type="radio" name="game-section" value="hci-principles" />
                         HCI Principles</label>
-                    <!-- <label><input type="radio" name="game-section" value="strengths" />
-                        Strengths</label> -->
-                    <label><input type="radio" name="game-section" value="ui-ux-weaknesses" />
-                        Strengths & Weaknesses</label>
-                    <!-- <label><input type="radio" name="game-section" value="conclusion" />
-                        Conclusion</label> -->
+                    <label role="tab"><input type="radio" name="game-section" value="ui-ux-weaknesses" />
+                        Analysis</label>
                 </nav>
                 <button class="game-info-nav-arrow right" id="game-info-nav-right" type="button"
-                    aria-label="Scroll right" hidden>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    aria-label="Scroll sections right" hidden>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="20" height="20">
                         <path fill-rule="evenodd"
                             d="M8.22 4.72a.75.75 0 0 1 1.06 0l6.5 6.5a.75.75 0 0 1 0 1.06l-6.5 6.5a.75.75 0 0 1-1.06-1.06L14.19 12 8.22 6.28a.75.75 0 0 1 0-1.56Z"
                             clip-rule="evenodd" />
@@ -1105,7 +1100,6 @@
                 </button>
             </div>
         </div>
-
 
         <!-- 
         
@@ -1674,7 +1668,7 @@
     const POSTERURL = "../../../public/posters/osu_poster.jpg";
     const POSTERALTTEXT = "Osu! Game Poster";
     const VIDEOURL = "../../../public/videos/osu_trailer.mp4";
-    const VIDEOURLYT = "https://www.youtube.com/embed/2qZy9t8sQwM";
+    const VIDEOURLYT = "https://www.youtube.com/embed/ut_SOreClcc?si=rZrqATPXz6TMIVMY";
     const YTVID = true;
 
     const GAMEUSERSTARS = "7.9";

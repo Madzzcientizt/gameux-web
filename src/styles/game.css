@@ -22,46 +22,43 @@ article:has( .header-section) {
 nav.game-info-nav {
     display: flex;
     flex-wrap: nowrap;
-    overflow-x: scroll;
+    overflow-x: auto;
     overflow-y: visible;
-    scrollbar-width: none; /* Firefox */
-    /* -ms-overflow-style: none; */
-    background-color: var(--t-color-base-100);
+    scrollbar-width: thin;
+    scrollbar-color: var(--t-color-primary) var(--t-color-base-200);
     z-index: 3;
+    padding: 0 0.5em;
 
     & label {
-        font-size: clamp(0.9rem, 2vw, 1.25rem);
-        padding: 0.75em 1em;
-        width: calc(100% / 7);
-        min-width: 7em;
+        font-size: clamp(0.9rem, 2vw, 1.1rem);
+        padding: 1em 1.25em;
+        width: auto;
+        min-width: 6.5em;
         text-align: center;
         cursor: pointer;
-        padding-top: 1.5em;
         display: flex;
-        flex-direction: column;
-        justify-content: end;
+        align-items: center;
+        justify-content: center;
         position: relative;
         overflow-y: visible;
         color: var(--t-color-dark);
+        font-weight: 500;
+        border-radius: var(--t-radius-field);
+        margin: 0.25em;
+        transition: all 0.25s ease;
+        white-space: nowrap;
+        text-wrap: wrap;
 
-        &:has( input[type="radio"]:checked) {
+        &:hover {
+            background-color: rgba(var(--t-color-primary-rgb), 0.1);
             color: var(--t-color-primary);
-            font-weight: 600;
-            &::after {
-                height: 0.3em;
-            }
         }
 
-        &::after {
-            content: '';
-            display: block;
-            position: absolute;
-            width: 100%;
-            height: 1px;
-            background-color: var(--t-color-primary);
-            bottom: 0;
-            left: 0;
-            transition: height 0.2s ease;
+        &:has( input[type="radio"]:checked) {
+            background-color: var(--t-color-neutral);
+            color: var(--t-color-primary-content);
+            font-weight: 700;
+            box-shadow: 0 4px 12px rgba(var(--t-color-primary-rgb), 0.3);
         }
     }
 
@@ -136,17 +133,27 @@ footer {
     top: 50%;
     transform: translateY(-50%);
     z-index: 4;
-    width: 2rem;
-    height: 2rem;
+    width: 2.25rem;
+    height: 2.25rem;
     border: none;
     border-radius: var(--t-radius-selector);
-    background-color: rgba(0, 0, 0, 0.65);
-    color: #fff;
+    background: linear-gradient(135deg, var(--t-color-secondary) 0%, var(--t-color-primary) 100%);
+    color: var(--t-color-secondary-content);
     display: inline-flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: opacity 160ms ease;
+    transition: all 160ms ease;
+    box-shadow: 0 2px 8px rgba(var(--t-color-primary-rgb), 0.2);
+
+    &:hover {
+        transform: translateY(-50%) scale(1.08);
+        box-shadow: 0 4px 14px rgba(var(--t-color-primary-rgb), 0.35);
+    }
+
+    &:active {
+        transform: translateY(-50%) scale(0.95);
+    }
 }
 
 .game-info-nav-arrow[hidden] {
