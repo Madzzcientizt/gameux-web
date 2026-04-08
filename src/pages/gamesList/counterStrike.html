@@ -88,7 +88,7 @@
                 & .major-components {
                     display: grid;
                     grid-template-rows: 1fr;
-                    grid-template-columns: 50% 1fr;
+                    grid-template-columns: repeat(2, minmax(0, 1fr));
                     gap: 1em;
                     margin: 2em 0;
                 }
@@ -106,13 +106,13 @@
                     min-height: 15em;
                     border: var(--t-border) solid var(--t-color-base-300);
 
-                    &:first-child {
+                    &:last-child {
                         grid-column: 1 / -1;
                         width: 100%;
                         flex-direction: row;
                     }
 
-                    &:not(:first-child) {
+                    &:not(:last-child) {
                         flex-direction: column;
                     }
 
@@ -1227,177 +1227,154 @@
                 <section class="game-sections" id="short-description">
                     <h2>Overview</h2>
                     <ul class="list-style">
-                        <h2>osu! builds:</h2>
-                        <li>osu!stable</li>
-                        <li>osu!lazer</li>
-                        <li>osu!stream</li>
+                        <h2>Key Pillars:</h2>
+                        <li>Muscle Memory</li>
+                        <li>Spatial Acoustics</li>
+                        <li>Visual Clarity</li>
                     </ul>
                     <p>
-                        Osu! (osu!) is a freeware rhythm game created and self-published by the Australian developer
-                        Dean Lewis "peppy" Herbert. Released for windows on September 16, 2007, with later ports to
-                        other main stream operating systems.
-                        The gameplay of osu! is based on the Osu! Tatakae! Ouendan series of rhythm games, which
-                        primarily involves clicking notes, which appear as circles, using a cursor or finger. Since the
-                        game's release, three other official "rulesets" (game modes) such as osu!catch, osu!mania,
-                        osu!taiko, which have been added, taking inspiration from various games.
+                        Counter-Strike is an objective-based, multiplayer tactical first-person shooter. Two opposing
+                        teams: the Terrorists and the Counter Terrorists, compete in game modes to complete objectives,
+                        such as securing a location to plant or defuse a bomb and rescuing or guarding hostages. At the
+                        end of each round, players are rewarded based on their individual performance with in-game
+                        currency to spend on more powerful weapons in subsequent rounds. Winning rounds results in more
+                        money than losing and completing objectives such as killing enemy players gives cash bonuses.
+                        Uncooperative actions, such as killing teammates, result in a penalty.
                     </p>
                     <p>
-                        Unlike other rhythm games. Levels or "Beatmaps" are created and uploaded by users increasing the
-                        range and volume of the song library. Due to the nature of the uploaded music, it became heavily
-                        connected to Japanese culture and anime music.
-                        Because of the game's demand for extreme visual-motor coordination, it can be a perfect case
-                        study for HCI. It must balance vibrant aesthetic with technical performance.
+                        Counter-Strike's design philosophy centers on the <b>HCI Feedback Loop</b>. Every pixel move and
+                        every millisecond of audio cue serves as critical input for the user's tactical decision engine.
+                        It is within the domain of gaming, particularly concerning high-performance input, network
+                        latency effects, and user interface (UI) design.
                     </p>
                     <ul class="metrics-list">
                         <li>
                             <h6>Cognitive Load</h6>
-                            <div class="value">High</div>
-                            <div class="desc">Number of simultaneous elements a player tracks</div>
+                            <div class="value">High (multi-source tracking)</div>
+                            <div class="desc">Processing map awareness, enemy positions, economy, and team communication
+                                simultaneously</div>
                         </li>
                         <li>
                             <h6>Response Time</h6>
-                            <div class="value">&pm; 20ms to &pm; 150ms</div>
-                            <div class="desc">Time between user action and system feedback</div>
+                            <div class="value">±10ms to ±100ms</div>
+                            <div class="desc">Delay between player input (shoot/move) and in-game feedback, influenced
+                                by latency and hardware</div>
                         </li>
                         <li>
                             <h6>Visual Reaction Time</h6>
-                            <div class="value">~150ms to ~1200ms</div>
-                            <div class="desc">Time for a player to respond to visual stimuli</div>
+                            <div class="value">~200ms to ~400ms</div>
+                            <div class="desc">Time to detect and react to an enemy appearing on screen (e.g., peeking
+                                opponents)</div>
                         </li>
                     </ul>
                 </section>
                 <section class="game-sections" id="ui-components">
                     <h2>UI Components</h2>
+                    <p>
+                        Analyzing the tension between high-density data management and the physiological "Kill Zone."
+                        How CS:GO crafts a minimalist HUD for maximum performance.
+                    </p>
                     <div class="major-components">
                         <div class="major-component">
                             <figure>
-                                <a href="../../../public/gamesContent/osu/hitCircles.png" title="osu! Hit Circle"
-                                    target="images">
-                                    <img src="../../../public/gamesContent/osu/hitCircles.png" alt="Hit Circles">
+                                <a href="../../../public/gamesContent/counterStrike/crosshair.png"
+                                    title="Counter-Strike Crosshair" target="images">
+                                    <img src="../../../public/gamesContent/counterStrike/crosshair.png" alt="Crosshair">
                                 </a>
-                                <figcaption>FIG 1.1: Hit Circles</figcaption>
+                                <figcaption>FIG 2.1: Crosshair</figcaption>
                             </figure>
                             <div>
                                 <span class="count">[ ELEMENT_01 ]</span>
-                                <span class="header-text">Hit Circles</span>
+                                <span class="header-text">Crosshair</span>
                                 <p>
-                                    The fundamental gameplay elements in osu! are the hit circles, which players must
-                                    click
-                                    in time with the music. These components utilizes an "Approach Circle" to signal
-                                    precise
-                                    moment of interaction.
+                                    Reliability over information. Preferred by professional players for consistent
+                                    visual anchoring regardless of movement or recoil. Real-time visualization of weapon
+                                    spread. Critical for new users to understand the relationship between movement and
+                                    inaccuracy.
                                 </p>
-                                <ul>
-                                    <h6>Visual Feedback</h6>
-                                    <li>Temporal Precision Mapping</li>
-                                    <li>Color-Coded Grouping (Combos)</li>
-                                    <li>Numerical Sequencing</li>
-                                </ul>
                             </div>
                         </div>
                         <div class="major-component">
                             <figure>
-                                <a href="../../../public/gamesContent/osu/slider.jpg" title="osu! Slider"
-                                    target="images">
-                                    <img src="../../../public/gamesContent/osu/slider.jpg" alt="Sliders">
+                                <a href="../../../public/gamesContent/counterStrike/minimap.jpg"
+                                    title="Counter-Strike Minimap" target="images">
+                                    <img src="../../../public/gamesContent/counterStrike/minimap.jpg" alt="Minimap">
                                 </a>
-                                <figcaption>FIG 1.2: Sliders</figcaption>
+                                <figcaption style="color: var(--t-color-dark);">FIG 2.2: Minimap</figcaption>
                             </figure>
                             <div>
                                 <span class="count">[ ELEMENT_02 ]</span>
-                                <span class="header-text">Sliders</span>
+                                <span class="header-text">Minimap</span>
                                 <p>
-                                    Elongated paths that extends the duration of the hit circle interaction. Players
-                                    must
-                                    follow the slider's path while maintaining contact. It requires sustained spacial
-                                    tracking and motor control precision over a B&eacute;zier curve.
+                                    The radar is a "Cognitive Externalization" tool. It translates 3D directional sound
+                                    cues into 2D visual indicators, reducing the mental load required to track 9 other
+                                    players in high-stress scenarios.
                                 </p>
                             </div>
                         </div>
                         <div class="major-component">
                             <figure>
-                                <a href="../../../public/gamesContent/osu/spinner.png" title="osu! Spinner"
-                                    target="images">
-                                    <img src="../../../public/gamesContent/osu/spinner.png" alt="Spinners">
+                                <a href="../../../public/gamesContent/counterStrike/buyMenu.png"
+                                    title="Counter-Strike Buy Menu" target="images">
+                                    <img src="../../../public/gamesContent/counterStrike/buyMenu.png" alt="Buy Menu">
                                 </a>
-                                <figcaption>FIG 1.3: Spinners</figcaption>
+                                <figcaption>FIG 2.3: Buy Menu</figcaption>
                             </figure>
                             <div>
                                 <span class="count">[ ELEMENT_03 ]</span>
-                                <span class="header-text">Spinner</span>
+                                <span class="header-text">Buy Menu</span>
                                 <p>
-                                    A rotating wheel that players must spin. It requires high-speed circular motion
-                                    which tests
-                                    the player's physical endurance.
+                                    A "Decision Matrix" interface. It organizes a complex array of purchasable items
+                                    into
+                                    a grid that can be navigated with both mouse and keyboard. The design minimizes
+                                    cognitive friction during the critical buy phase at the start of each round, where
+                                    players must make rapid decisions under economic constraints. "The hierarchical
+                                    structure utilizes Muscle Memory over Visual Search. Experts can complete complex
+                                    multi-item purchases in &lt; 0.8 seconds using key-code sequences (B-4-2,
+                                    B-5-2).
                                 </p>
+                                <div class="footnote mt-4">
+                                    The buy menu's interface design changed as new editions were released, but the core
+                                    principles of rapid decision-making and muscle memory optimization have remained
+                                    consistent throughout the franchise's evolution.
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <h2>Fitt's Law in High-Speed Human-Computer Interaction</h2>
-                    <div class="fittslaw">
-                        <div>
-                            <p>
-                                Fitt's Law states that the time required to acquire a target is a function of the
-                                distance to and the size of the target. In osu!, this law applies to the hit circles,
-                                which must be clicked with precision and speed.
-                            </p>
-                            <div class="mathmodel">
-                                <h6>[ MATHEMATICAL MODEL ]</h6>
-                                <span>MT = a + b * log<sub>2</sub>(2D/W)</span>
-                            </div>
-                            <p>
-                                In osu!, "Circle Size" (CS) directly affects the effective target width (W). As the
-                                players progress, the system decreases CS and increases the index of difficulty (ID).
-                                This creates a direct correlation between component sizing and player skill ceiling.
-                            </p>
-                        </div>
-                        <div>
-                            <figure>
-                                <a href="../../../public/gamesContent/osu/osuJudgements.png" title="osu! Judgements"
-                                    target="images">
-                                    <img src="../../../public/gamesContent/osu/osuJudgements.png" alt="Judgements">
-                                </a>
-                                <figcaption>FIG 1.4: osu! Judgements</figcaption>
-                            </figure>
-                        </div>
-                    </div>
+
                     <div class="list-style-area">
-                        <h3 class="text-center">Visual Hierarchy Breakdown</h3>
-                        <div class="text-center">Layering of Information</div>
+                        <h3 class="text-center">Interactive Model Summary</h3>
+                        <!-- <div class="text-center"></div> -->
                         <ol class="three-columns md-one-columns">
                             <li>
-                                <h6>Active Target</h6>
+                                <h6>Passive Data</h6>
                                 <p>
-                                    Primary focus. High contrst, saturated colors, and movement (approach circles)
-                                    distinguish it from the static background
+                                    Health, Armor, and Round Timer. These elements use high-contrast white text to
+                                    remain readable in peripheral vision without active fixation.
                                 </p>
                             </li>
                             <li>
-                                <h6>Follow Path</h6>
+                                <h6>Active Feedback</h6>
                                 <p>
-                                    Secondary focus. Desaturated traces (ghost notes) provide cognitive scaffolding for
-                                    the player's next physical movement.
+                                    Hitmarkers, tracers, and kill feed notifications. These are transient, appearing
+                                    only during state-changes to prevent visual clutter.
                                 </p>
                             </li>
                             <li>
-                                <h6>HUD Overlays</h6>
+                                <h6>Contextual Tools</h6>
                                 <p>
-                                    Tertiary focus. Score, combo, and accuracy are displayed with smaller fonts and
-                                    muted colors to avoid competing with the active gameplay elements.
+                                    The Buy Menu and Team Inventory. These are hidden during active combat to prioritize
+                                    the primary play space.
                                 </p>
                             </li>
                         </ol>
-                    </div>
-                    <div class="footnote">
-                        All component analysis is based on standard osu! skinning metrics. Variability in user custom
-                        skins may alter visual hierarchy but remains anchored to fundamental Fitts's Law constraints.
                     </div>
                 </section>
                 <section class="game-sections" id="user-interaction">
                     <h2>User Interaction</h2>
                     <p>
-                        An investigation into the neuro-mechanical feedback loops of rhythm-based interfaces,
-                        specifically analyzing the osu! standard mode interaction model.
+                        Analysis of Motor-Cognitive Feedback Loops: How Counter-Strike transforms physical input into
+                        high-stakes tactical precision through auditory and visual reinforcement.
                     </p>
                     <div class="list-style-area">
                         <h3 class="text-center">Core Gameplay Loop</h3>
@@ -1429,7 +1406,7 @@
                                     patterns.
                                 </p>
                             </li>
-                        </ol>
+                            </ul>
                     </div>
                     <h3>Multi-Modal Feedback Matrix</h3>
                     <div class="multi-modal-feedback">
@@ -1773,34 +1750,34 @@
 
 <script>
     // VARIABLES
-    const GAMENAME = "osu!";
-    const DATERELEASED = "09/16/2007"; // MM/DD/YYYY
-    const PUBLISHER = 'Dean "peppy" Herbert';
+    const GAMENAME = "Counter-Stike";
+    const DATERELEASED = "11/09/2000"; // MM/DD/YYYY
+    const PUBLISHER = 'Valve Corporation';
     const BADGE = "Full Release";
     // Pre-Alpha
     // Alpha
     // Beta
     // Early Access
     // Full Release
-    const POSTERURL = "../../../public/posters/osu_poster.jpg";
-    const POSTERALTTEXT = "Osu! Game Poster";
-    const VIDEOURL = "../../../public/videos/osu_trailer.mp4";
+    const POSTERURL = "../../../public/posters/counterStrike_poster.jpg";
+    const POSTERALTTEXT = "Counter-Strike Game Poster";
+    const VIDEOURL = "../../../public/videos/counterstrike_trailer.mp4";
     const VIDEOURLYT = "https://www.youtube.com/embed/ut_SOreClcc?si=rZrqATPXz6TMIVMY";
     const YTVID = true;
 
-    const GAMEUSERSTARS = "7.9";
-    const GAMEUSERRATINGS = "158";
+    const GAMEUSERSTARS = "7.7";
+    const GAMEUSERRATINGS = "4.7k";
 
-    const HASCRITICS = false; // Set to false if there are no critic ratings
-    const GAMECRITICSTARS = "0";
-    const GAMECRITICRATINGS = "0";
+    const HASCRITICS = true; // Set to false if there are no critic ratings
+    const GAMECRITICSTARS = "8.6";
+    const GAMECRITICRATINGS = "14";
 
-    const GENRES = ["Rhythm", "Music"];
-    const PLATFORMS = ["PC", "Mac", "Linux", "iOS", "Android"];
-    const EDITIONS = ["osu!stable", "osu!lazer", "osu!stream"];
+    const GENRES = ["Action", "Shooter", "Multiplayer", "First-Person Shooter"];
+    const PLATFORMS = ["PC", "Mac", "Linux", "Xbox", "Play Station 3", "SteamOS"];
+    const EDITIONS = ["Counter-Strike", "Counter-Strike: Condition Zero", "Counter-Strike: Source", "Counter-Strike: Global Offensive", "Counter-Strike 2", "Counter-Strike: Condition Zero", "Counter-Strike: Condition Zero Deleted Scenes"];
 
     const DESCRIPTION =
-        "Osu! is a free-to-play, community-driven rhythm game for PC where players click circles, follow sliders, and spin spinners to the beat of music. Inspired by Osu! Tatakae! Ouendan, it emphasizes speed, precision, and musical rhythm, featuring a highly competitive, PP-based ranking system, user-created beatmaps, and customizable skins.";
+        "A first person shooter game depicting death matches between terrorists and counter-terrorists. Widely recognized as the gold standard of competitive tactical shooters, Counter-Strike represents the ultimate intersection of human reflex, spatial reasoning, and technical precision.";
 
     // Document Variables
     const sectionRadios = Array.from(
