@@ -369,6 +369,202 @@
                         }
                     }
                 }
+
+                & .keypoints {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 1em;
+                    margin: 2em 0;
+
+                    @media (width < 48rem) {
+                        grid-template-columns: 1fr;
+                    }
+
+                    &>div {
+                        background-color: var(--t-color-base-100);
+                        border-radius: var(--t-radius-field);
+                        padding: 1em;
+                        border: var(--t-border) solid var(--t-color-base-300);
+
+                        & figure {
+                            width: 100%;
+                            margin: 0;
+                            margin-top: 2em;
+
+                            & img {
+                                width: 100%;
+                                height: auto;
+                            }
+                        }
+                    }
+                }
+
+                & table {
+                    width: 100%;
+                    border-collapse: separate;
+                    border-spacing: 0;
+                    border: var(--t-border) solid var(--t-color-base-300);
+                    border-radius: var(--t-radius-field);
+                    overflow: hidden;
+                    background-color: var(--t-color-base-100);
+                    margin-top: 1.5em;
+                }
+
+                & th,
+                & td {
+                    padding: 1em;
+                    vertical-align: top;
+                }
+
+                & thead th {
+                    font-weight: 800;
+                    font-size: 1.05em;
+                    background-color: var(--t-color-base-300);
+                    border-bottom: 1px solid var(--t-color-base-300);
+                }
+
+                & th+th,
+                & td+td {
+                    border-left: 1px solid var(--t-color-base-300);
+                }
+
+                & tbody td {
+                    border-bottom: 1px solid var(--t-color-base-300);
+                }
+
+                & tbody tr:last-child td {
+                    border-bottom: 0;
+                }
+
+                & .spatial-audio-feedback {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 2em;
+                    margin-top: 2em;
+                    align-items: start;
+
+                    @media (width < 48rem) {
+                        grid-template-columns: 1fr;
+                        gap: 1.5em;
+                    }
+
+                    & .hrtf-section {
+
+                        & .hrtf-header {
+                            display: flex;
+                            align-items: center;
+                            gap: 1em;
+                            margin-bottom: 1.5em;
+
+                            & .hrtf-icon {
+                                width: 2em;
+                                height: 2em;
+                                color: var(--t-color-primary);
+                                flex-shrink: 0;
+                            }
+
+                            & h3 {
+                                font-weight: 700;
+                                font-size: 1.5em;
+                                margin: 0;
+                            }
+                        }
+
+                        & p {
+                            margin: 0;
+                            text-align: justify;
+                            font-size: 0.95em;
+                            line-height: 1.6;
+                        }
+                    }
+
+                    & .motor-cognitive-section {
+                        background: var(--t-color-neutral);
+                        border-radius: var(--t-radius-field);
+                        padding: 2em;
+                        border: var(--t-border) solid rgba(var(--t-color-primary-rgb), 0.2);
+                        color: var(--t-color-neutral-content);
+
+                        & h4 {
+                            font-weight: 700;
+                            font-size: 1.3em;
+                            color: var(--t-color-neutral-content);
+                            margin: 0 0 1.5em 0;
+                            letter-spacing: 0.02em;
+
+                            & .loop-time {
+                                display: block;
+                                font-size: 0.8em;
+                                color: var(--t-color-accent);
+                                margin-top: 0.25em;
+                            }
+                        }
+
+                        & .feedback-timeline {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 1.25em;
+                        }
+
+                        & .timeline-step {
+                            display: flex;
+                            gap: 1em;
+                            align-items: flex-start;
+
+                            & .step-indicator {
+                                width: 15px;
+                                height: 15px;
+                                border-radius: 50%;
+                                flex-shrink: 0;
+                                margin-top: 0.25em;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                            }
+
+                            &.stimulus .step-indicator {
+                                background-color: white;
+                                border: 3px solid white;
+                            }
+
+                            &.processing .step-indicator {
+                                background-color: transparent;
+                                border: 3px solid white;
+                            }
+
+                            &.execution .step-indicator {
+                                background-color: transparent;
+                                border: 3px dotted white;
+                            }
+
+                            &.reinforcement .step-indicator {
+                                background-color: var(--t-color-error);
+                                border: 3px solid var(--t-color-error);
+                            }
+
+                            & .step-content {
+                                flex: 1;
+
+                                & .step-label {
+                                    display: block;
+                                    font-weight: 600;
+                                    font-size: 0.85em;
+                                    text-transform: uppercase;
+                                    letter-spacing: 0.04em;
+                                    color: var(--t-color-base-300);
+                                    margin-bottom: 0.4em;
+                                }
+
+                                & p {
+                                    margin: 0;
+                                    font-size: 0.9em;
+                                    line-height: 1.5;
+                                    color: var(--t-color-neutral-content);
+                                }
+                            }
+                        }
+                    }
+                }
             }
 
             &#hci-principles {
@@ -377,6 +573,129 @@
                 &>h2 {
                     font-weight: 900;
                     font-size: 2.5em;
+                }
+
+                & .hicks-law-card {
+                    margin-top: 2em;
+                    background-color: var(--t-color-base-100);
+                    border: var(--t-border) solid var(--t-color-base-300);
+                    border-radius: var(--t-radius-field);
+                    padding: 1.5em;
+
+                    & h3 {
+                        margin: 0 0 0.75em;
+                        font-weight: 900;
+                        font-size: 2em;
+                    }
+
+                    & p {
+                        margin: 0;
+                        text-align: justify;
+                    }
+
+                    & .hicks-law-formula {
+                        margin: 1em 0;
+                        padding: 1em;
+                        position: relative;
+                        padding-left: 2em;
+                        background-color: var(--t-color-base-300);
+                        border-radius: var(--t-radius-field);
+                        overflow: hidden;
+
+                        &::before {
+                            content: '';
+                            display: block;
+                            position: absolute;
+                            width: 0.5em;
+                            height: 100%;
+                            background-color: var(--t-color-primary);
+                            left: 0;
+                            top: 0;
+                        }
+
+                        & h6 {
+                            font-family: var(--bs-font-monospace);
+                            color: var(--t-color-dark);
+                            font-weight: 300;
+                            margin-bottom: 0.25em;
+                        }
+
+                        & span {
+                            font-size: 2em;
+                        }
+                    }
+                }
+
+                & .cognitive-load-matrix {
+                    margin-top: 2em;
+                    display: grid;
+                    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.6fr);
+                    gap: 1.25em;
+                    align-items: start;
+
+                    @media (width < 48rem) {
+                        grid-template-columns: 1fr;
+                    }
+
+                    & .matrix-intro {
+                        padding-top: 1.25em;
+                        position: relative;
+
+                        & h3 {
+                            margin: 0;
+                            font-weight: 900;
+                            line-height: 1.05;
+                            letter-spacing: 0.01em;
+                        }
+
+                        & p {
+                            margin: 1em 0 0;
+                            color: var(--t-color-dark);
+                        }
+                    }
+
+                    & .matrix-grid {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        gap: 1em;
+
+                        @media (width < 48rem) {
+                            grid-template-columns: 1fr;
+                        }
+                    }
+
+                    & .matrix-card {
+                        background-color: var(--t-color-base-300);
+                        border: var(--t-border) solid var(--t-color-base-300);
+                        border-radius: var(--t-radius-field);
+                        padding: 1.25em;
+                        position: relative;
+
+                        & .matrix-icon {
+                            width: 1.5em;
+                            height: 1.5em;
+                            color: var(--t-color-dark);
+                            margin-bottom: 0.6em;
+                            position: absolute;
+                            top: 1.25em;
+                            right: 1.25em;
+                        }
+
+                        & h6 {
+                            margin: 0;
+                            font-weight: 800;
+                            font-size: 0.95em;
+                            letter-spacing: 0.08em;
+                            text-transform: uppercase;
+                        }
+
+                        & p {
+                            margin: 0.5em 0 0;
+                            font-size: 0.95em;
+                            line-height: 1.45;
+                            color: var(--t-color-dark);
+                        }
+                    }
                 }
 
                 & .cybernetic-feedback-loops {
@@ -1376,213 +1695,224 @@
                         Analysis of Motor-Cognitive Feedback Loops: How Counter-Strike transforms physical input into
                         high-stakes tactical precision through auditory and visual reinforcement.
                     </p>
-                    <div class="list-style-area">
-                        <h3 class="text-center">Core Gameplay Loop</h3>
-                        <div class="text-center"></div>
-                        <ol class="four-columns md-two-columns">
-                            <li>
-                                <h6>See</h6>
-                                <p>
-                                    Visual stimuli (hit circles, sliders, spinners) are processed through the player's
-                                    visual system.
-                                </p>
-                            </li>
-                            <li>
-                                <h6>React</h6>
-                                <p>
-                                    Motor cortex triggers physical movement to the localized coordinate on the 2D plane.
-                                </p>
-                            </li>
-                            <li>
-                                <h6>Interact/ Click</h6>
-                                <p>
-                                    Binary input activation with the game elements through mouse clicks or key presses.
-                                </p>
-                            </li>
-                            <li>
-                                <h6>Follow</h6>
-                                <p>
-                                    Continuity of interaction via sliders, spinners, or rapid-fire response for stream
-                                    patterns.
-                                </p>
-                            </li>
-                            </ul>
-                    </div>
-                    <h3>Multi-Modal Feedback Matrix</h3>
-                    <div class="multi-modal-feedback">
-                        <div>
+
+                    <div class="keypoints">
+                        <div class="spray-patterns-recoil-compensation">
+                            <h3>Spray Patterns & Recoil Compensation</h3>
                             <p>
-                                Precision rhythm games rely on a triad of sensory confirmations to minimize the
-                                "Perception-Action" gap. When a player hits a note, the system responds instantly across
-                                three channels to validate the interaction.
+                                Weapon accuracy is governed by deterministic recoil paths. Mastering this requires a
+                                learned
+                                motor skill where the user provides an inverse mouse movement to the weapon's
+                                displacement
+                                pattern.
                             </p>
-                        </div>
-                        <div>
                             <figure>
-                                <a href="../../../public/gamesContent/osu/keyToMusic.png" title="osu! Input to Feedback"
-                                    target="images">
-                                    <img src="../../../public/gamesContent/osu/keyToMusic.png"
-                                        alt="osu! Input to Feedback">
+                                <a href="../../../public/gamesContent/counterStrike/sprayPatterns.gif"
+                                    title="Counter-Strike Spray Patterns" target="images">
+                                    <img src="../../../public/gamesContent/counterStrike/sprayPatterns.gif"
+                                        alt="Spray Patterns">
                                 </a>
-                                <figcaption>FIG 1.5: osu! Input to Feedback</figcaption>
+                                <figcaption>FIG 2.4: Spray Patterns</figcaption>
                             </figure>
                         </div>
+                        <div class="counter-strafe">
+                            <h3>Counter-Strafing</h3>
+                            <p>
+                                To achieve instantaneous "first-shot accuracy," users must tap the opposite movement key
+                                (e.g., 'D' if moving 'A') to cancel kinetic momentum.
+                            </p>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Weapon</th>
+                                        <th>Units per second</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Knife</td>
+                                        <td>245</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mac 10 / MP9</td>
+                                        <td>240</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Glock / USP</td>
+                                        <td>240</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Deagle</td>
+                                        <td>230</td>
+                                    </tr>
+                                    <tr>
+                                        <td>M4A1-S / M4A4</td>
+                                        <td>225</td>
+                                    </tr>
+                                    <tr>
+                                        <td>AK-47</td>
+                                        <td>215</td>
+                                    </tr>
+                                    <tr>
+                                        <td>AWP</td>
+                                        <td>200</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Grenades</td>
+                                        <td>245</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
-                    <ul>
-                        <li>
-                            <div class="logo-svg">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25l4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z" />
-                                </svg>
-                            </div>
-                            <div>
-                                <h6>Audio Feedback</h6>
-                                <p>
-                                    Instant sample playback (Clap, Finish, Whistle) providing precise timing
-                                    verification. Music synchronization with objects reinforces rhythm
-                                    perception and player immersion.
-                                </p>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="logo-svg">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                                </svg>
 
-                            </div>
-                            <div>
-                                <h6>Visual Feedback</h6>
-                                <p>
-                                    Hit bursts and lighting effects that confirm spatial accuracy on the 2D
-                                    grid. Approach circles, hit bursts, cursor trails, and combo popups provide
-                                    layered visual feedback that reinforces timing and precision.
-                                </p>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="logo-svg">
+                    <h3>Spatial Audio & Auditory Feedback</h3>
+                    <div class="spatial-audio-feedback">
+                        <div class="hrtf-section">
+                            <div class="hrtf-header">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    stroke-width="1.5" stroke="currentColor" class="hrtf-icon">
                                     <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M7.864 4.243A7.5 7.5 0 0 1 19.5 10.5c0 2.92-.556 5.709-1.568 8.268M5.742 6.364A7.465 7.465 0 0 0 4.5 10.5a7.464 7.464 0 0 1-1.15 3.993m1.989 3.559A11.209 11.209 0 0 0 8.25 10.5a3.75 3.75 0 1 1 7.5 0c0 .527-.021 1.049-.064 1.565M12 10.5a14.94 14.94 0 0 1-3.6 9.75m6.633-4.596a18.666 18.666 0 0 1-2.485 5.33" />
+                                        d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418" />
                                 </svg>
+                                <h3 class="hrtf-label">HRTF Processing Unit</h3>
                             </div>
-                            <div>
-                                <h6>Haptic Feedback</h6>
-                                <p>
-                                    Tactile feedback on peripheral and stylus contact / mouse clicks confirms
-                                    physical interaction. Haptic feedback on compatible devices provides an
-                                    additional layer of sensory confirmation, reinforcing the player's
-                                    connection to the rhythm and enhancing immersion.
-                                </p>
+                            <p>
+                                CS:GO/CS2 utilizes Head-Related Transfer Functions (HRTF) to simulate 360-degree
+                                positioning. This creates a cognitive "map" for the user, allowing for wall-bangs and
+                                pre-fires based on acoustic signatures alone.
+                            </p>
+                        </div>
+                        <div class="motor-cognitive-section">
+                            <h4>Motor-Cognitive Loop</h4>
+                            <div class="feedback-timeline">
+                                <div class="timeline-step stimulus">
+                                    <div class="step-indicator"></div>
+                                    <div class="step-content">
+                                        <span class="step-label">Stimulus (Visual/Audio)</span>
+                                        <p>Enemy detected via spatial audio cues.</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-step processing">
+                                    <div class="step-indicator"></div>
+                                    <div class="step-content">
+                                        <span class="step-label">Processing</span>
+                                        <p>Vector calculation for mouse flick.</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-step execution">
+                                    <div class="step-indicator"></div>
+                                    <div class="step-content">
+                                        <span class="step-label">Execution</span>
+                                        <p>Motor command: Mouse drag + Click.</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-step reinforcement">
+                                    <div class="step-indicator"></div>
+                                    <div class="step-content">
+                                        <span class="step-label">Reinforcement</span>
+                                        <p>Visual 'Dink' or hit-marker confirmation.</p>
+                                    </div>
+                                </div>
                             </div>
-                        </li>
-                    </ul>
+                        </div>
+                    </div>
                 </section>
                 <section class="game-sections" id="hci-principles">
                     <h2>HCI Principles</h2>
-                    <div class="cybernetic-feedback-loops">
-                        <h3>Cybernetic Feedback Loops</h3>
-                        <div class="cybernetic-content">
-                            <div>
-                                <p style="text-align: justify;">
-                                    osu! utilizes a multi-modal feedback architecture that provides immediate visual,
-                                    auditory, and haptic (if peripheral allows) confirmation of actions. The Feedback
-                                    Loop is closed within milliseconds, aligning with the "Action-Perception" cycle
-                                    fundamental to high-stakes HCI.
+
+                    <div class="hicks-law-card">
+                        <h3>Hick's Law in Clutch Decision-Making</h3>
+                        <p>
+                            Hick's Law describes the time it takes for a person to make a decision as a result of the
+                            possible choices they have. In a 1v3 "clutch" scenario, the information flow explodes.
+                            The player must choose between infinite geometric angles, utility combinations, and timing
+                            windows.
+                        </p>
+                        <div class="hicks-law-formula">
+                            <h6>[ MATHEMATICAL MODEL ]</h6>
+                            <span>T = b * log<sub>2</sub>(n + 1)</span>
+                        </div>
+                        <p>
+                            Every additional tactical option increases decision latency, so high-level play depends on
+                            reducing choice complexity through practiced routines and pre-committed utility plans.
+                        </p>
+                    </div>
+
+                    <div class="cognitive-load-matrix">
+                        <div class="matrix-intro">
+                            <h3>Cognitive Load: Utility Management</h3>
+                            <p>
+                                How does a player manage a $16,000 economy, 5 grenades, 3 teammates' positions, and
+                                sound cues simultaneously without system failure?
+                            </p>
+                        </div>
+                        <div class="matrix-grid">
+                            <article class="matrix-card">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="matrix-icon">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" />
+                                </svg>
+                                <h6>Intrinsic Load</h6>
+                                <p>
+                                    The base complexity of mechanics: spray control, movement, and map geometry.
+                                    Professionals automate this to free up "RAM".
                                 </p>
-                            </div>
-                            <div>
-                                <ul class="primary-modalities">
-                                    <h6>Primary Modalities</h6>
-                                    <li><strong>Visual</strong>: Hit bursts, approach circles, combo popups, accuracy
-                                        judgements</li>
-                                    <li><strong>Auditory</strong>: Sample playback synchronized with music, hitsounds
-                                        synced to beatmap timeline</li>
-                                    <li><strong>Structural</strong>: Life bar depletion/ replenishment</li>
-                                </ul>
-                            </div>
+                            </article>
+                            <article class="matrix-card">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="matrix-icon">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M6.429 9.75 2.25 12l4.179 2.25m0-4.5 5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0 4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0-5.571 3-5.571-3" />
+                                </svg>
+                                <h6>Extraneous Load</h6>
+                                <p>
+                                    Poor UI design (unclear HUD) or chaotic comms. Counter-Strike minimizes this via
+                                    highly contrastive HUD elements.
+                                </p>
+                            </article>
+                            <article class="matrix-card">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="matrix-icon">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 5.25h.008v.008H12v-.008Z" />
+                                </svg>
+                                <h6>Germane Load</h6>
+                                <p>
+                                    The mental processing used to develop "Game Sense" predicting enemy rotations and
+                                    calculating utility trajectories.
+                                </p>
+                            </article>
+                            <article class="matrix-card">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="matrix-icon">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 0 0 2.25-2.25V6.75a2.25 2.25 0 0 0-2.25-2.25H6.75A2.25 2.25 0 0 0 4.5 6.75v10.5a2.25 2.25 0 0 0 2.25 2.25Zm.75-12h9v9h-9v-9Z" />
+                                </svg>
+
+                                <h6>Working Memory</h6>
+                                <p>
+                                    Limited to around 7 items. Advanced players use "chunking" (for example, viewing
+                                    an entire site defense as one single concept).
+                                </p>
+                            </article>
                         </div>
                     </div>
-                    <div class="spatial-congruence">
-                        <h2>Spatial Congruence</h2>
-                        <p style="text-align: justify;">
-                            The spatial arrangement of game elements in osu! supports intuitive interaction and reduces
-                            cognitive load. Visual cues guide players to the correct input locations, enhancing the
-                            overall user experience. Mapping in osu! is direct. The movement of the cursor corresponds
-                            1:1 with the spatial arrangement of the hit circles. Unlike joystick-based mapping, this
-                            absolute positioning eliminates translation latency in the user's mental model.
-                        </p>
-                    </div>
-                    <div class="cognitive-load-bifurcation">
-                        <h2>Cognitive Load Bifurcation</h2>
-                        <p style="text-align: justify; margin-bottom: 2em;">
-                            The central success of the osu! interface is the radical reduction of Extrinsic Load (the
-                            difficulty of using the interface) to allow for the absolute saturation of Intrinsic Load
-                            (the difficulty of the task itself).
-                        </p>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Extrinsic Load</th>
-                                    <th>Intrinsic Focus</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <h6>Minimalist HUD</h6>
-                                        <p>
-                                            Non-essential data is pushed to the periphery (corners), keeping the central
-                                            visual fovea clear for hit-circle tracking.
-                                        </p>
-                                    </td>
-                                    <td>
-                                        <h6>Kinesthetic Mastery</h6>
-                                        <p>
-                                            The user's entire cognitive budget is spent on rhythm synchronization and
-                                            spatial precision.
-                                        </p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <h6>Color Coding</h6>
-                                        <p>
-                                            Consistent hue association for combo sequences reduces the need for the
-                                            brain to parse "next-action" logic.
-                                        </p>
-                                    </td>
-                                    <td>
-                                        <h6>Flow State Entry</h6>
-                                        <p>
-                                            By removing interface friction, the system facilitates rapid entry into
-                                            'Flow,' where awareness and action merge.
-                                        </p>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="footnote">
-                        <q>
-                            The interface is a bridge that must vanish. In osu!, the UX design achieves this by
-                            ruthlessly prioritizing task-based focus over aesthetic ornamentation.
-                        </q>
+
+                    <div class="footnote" style="margin: 2em 0;">
+                        Success in Counter-Strike is not a matter of 'luck' or 'talent' alone; it is the successful
+                        management of cognitive bandwidth. The mouse is the neural interface, the HUD is the data
+                        stream, and the player is the processor. When these align, the distinction between human and
+                        software evaporates.
                     </div>
                 </section>
                 <section class="game-sections" id="ui-ux-weaknesses">
-                    <h2>Strengths and Weaknesses Analysis</h2>
+                    <h2>Strengths and Weaknesses</h2>
                     <p>
-                        A comprehensive breakdown of the osu! interface paradigm. Evaluating the friction between
-                        high-precision rhythmic input and human physiological limitations.
+                        A critical decompression of the Human-Computer Interaction dynamics within tactical shooters.
+                        This audit evaluates the dual nature of Counter-Strike's design philosophy, balancing absolute
+                        precision against systemic friction.
                     </p>
 
                     <table style="margin-bottom: 2em;">
@@ -1600,57 +1930,18 @@
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                                 stroke-width="1.5" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round"
-                                                    d="M12 3v2.25m0 13.5V21m9-9h-2.25M5.25 12H3m15.364 6.364-1.59-1.59M7.226 7.226l-1.59-1.59m12.728 0-1.59 1.59M7.226 16.774l-1.59 1.59" />
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                    d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                                                    d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
                                             </svg>
                                         </span>
-                                        <span class="label">01_PRECISION</span>
+                                        <span class="label">01_INTEGRITY</span>
                                     </div>
                                     <h6>
-                                        High Precision
+                                        Competitive Integrity
                                     </h6>
                                     <p>
-                                        The 1:1 mapping of input to screen action creates an unparalleled sense of
-                                        agency. The interface rewards micro-movements and sub-millisecond timing
-                                        accuracy.
-                                    </p>
-                                </td>
-                                <td>
-                                    <div class="sw-item-head">
-                                        <span class="sw-icon" aria-hidden="true">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                stroke-width="1.5" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                    d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75M6.75 10.5h10.5A2.25 2.25 0 0 1 19.5 12.75v6A2.25 2.25 0 0 1 17.25 21H6.75A2.25 2.25 0 0 1 4.5 18.75v-6A2.25 2.25 0 0 1 6.75 10.5Z" />
-                                            </svg>
-                                        </span>
-                                        <span class="label">01_BARRIER</span>
-                                    </div>
-                                    <h6>High Entry Barrier</h6>
-                                    <p>
-                                        The learning curve is steep and often punishing. Lack of comprehensive
-                                        tutorialization means the cognitive load for new users is extremely high.
-                                    </p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="sw-item-head">
-                                        <span class="sw-icon" aria-hidden="true">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                stroke-width="1.5" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                    d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25l4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z" />
-                                            </svg>
-                                        </span>
-                                        <span class="label">02_FEEDBACK</span>
-                                    </div>
-                                    <h6>Clear Feedback</h6>
-                                    <p>
-                                        Multi-modal feedback (haptic, auditory, and visual) ensures the user is never in
-                                        doubt about their performance state. Hit markers provide instant error
-                                        correction.
+                                        The interaction model prioritizes "What You See Is What You Get" (WYSIWYG).
+                                        Mechanical predictability allows players to build muscle memory that is never
+                                        subverted by RNG-heavy mechanics, creating a pure HCI feedback loop.
                                     </p>
                                 </td>
                                 <td>
@@ -1662,13 +1953,53 @@
                                                     d="M12 9v4.5m0 3.75h.008v.008H12v-.008ZM10.29 3.86l-7.5 13A1.5 1.5 0 0 0 4.09 19h15.82a1.5 1.5 0 0 0 1.3-2.14l-7.5-13a1.5 1.5 0 0 0-2.6 0Z" />
                                             </svg>
                                         </span>
-                                        <span class="label">02_STRAIN</span>
+                                        <span class="label">01_TOXIC</span>
                                     </div>
-                                    <h6>Physical Strain</h6>
+                                    <h6>Toxic Communication Ecosystem</h6>
                                     <p>
-                                        Repetitive Stress Injury (RSI) risk is a primary concern. The interface demands
-                                        sustained, high-intensity motor performance without built-in ergonomic
-                                        safeguards.
+                                        The reliance on high-stakes voice communication can create social friction.
+                                        Verbal aggression can undermine collaborative HCI intent and reduce team-wide
+                                        decision quality.
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="sw-item-head">
+                                        <span class="sw-icon" aria-hidden="true">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                                            </svg>
+                                        </span>
+                                        <span class="label">02_SKILL</span>
+                                    </div>
+                                    <h6>High Skill Ceiling</h6>
+                                    <p>
+                                        Movement and aim are deeply coupled. Sub-millimeter precision is required for
+                                        optimal performance, ensuring the interface never acts as a bottleneck for elite
+                                        cognitive processing.
+                                    </p>
+                                </td>
+                                <td>
+                                    <div class="sw-item-head">
+                                        <span class="sw-icon" aria-hidden="true">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75M6.75 10.5h10.5A2.25 2.25 0 0 1 19.5 12.75v6A2.25 2.25 0 0 1 17.25 21H6.75A2.25 2.25 0 0 1 4.5 18.75v-6A2.25 2.25 0 0 1 6.75 10.5Z" />
+                                            </svg>
+                                        </span>
+                                        <span class="label">02_LEARNING</span>
+                                    </div>
+                                    <h6>Punishing Learning Curve</h6>
+                                    <p>
+                                        Onboarding is nearly non-existent. New users are dropped into a high-lethality
+                                        environment where time-to-death can be under 200ms, leaving little room for
+                                        experimentation or failure-based learning.
                                     </p>
                                 </td>
                             </tr>
@@ -1679,16 +2010,16 @@
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                                 stroke-width="1.5" stroke="currentColor" class="size-6">
                                                 <path stroke-linecap="round" stroke-linejoin="round"
-                                                    d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
+                                                    d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25l4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z" />
                                             </svg>
                                         </span>
-                                        <span class="label">03_ECOSYSTEM</span>
+                                        <span class="label">03_FEEDBACK</span>
                                     </div>
-                                    <h6>Community-driven Ecosystem</h6>
+                                    <h6>Clear Feedback</h6>
                                     <p>
-                                        The content loop is sustained by an open-source ethos. Users act as designers,
-                                        continuously pushing the boundaries of what the HCI can facilitate through
-                                        custom beatmaps.
+                                        Audio-visual cues for hits (headshot "dinks", kill-confirm sounds) provide
+                                        immediate confirmation. The UI stays out of the way, letting the environment
+                                        speak to the player.
                                     </p>
                                 </td>
                                 <td>
@@ -1700,13 +2031,15 @@
                                                     d="M3.98 8.223A10.477 10.477 0 0 0 1.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.451 10.451 0 0 1 12 4.5c4.756 0 8.773 3.162 10.065 7.498a10.522 10.522 0 0 1-4.293 5.774M6.228 6.228 3 3m3.228 3.228 3.65 3.65m7.894 7.894L21 21m-3.228-3.228-3.65-3.65m0 0a3 3 0 1 0-4.243-4.243m4.242 4.242L9.88 9.88" />
                                             </svg>
                                         </span>
-                                        <span class="label">03_NOISE</span>
+                                        <span class="label">03_CLUTTER</span>
                                     </div>
-                                    <h6>Visual Clutter</h6>
+                                    <h6>Visual Clutter: Particle Scenarios</h6>
                                     <p>
-                                        At high difficulty levels, the signal-to-noise ratio degrades. "Note density"
-                                        can lead to visual saturation, making it difficult for the user to parse the
-                                        primary task.
+                                        High-particle density scenarios can obscure critical hitbox silhouettes and
+                                        destabilize framerate, breaking the "perfect fidelity" promise.<br /><br />
+                                        Impact analysis: Smokes/Molotovs.<br />
+                                        Frame Data (Standard): 0.0ms.<br />
+                                        Frame Delta (Multi-Smoke): -12.4ms.
                                     </p>
                                 </td>
                             </tr>
@@ -1714,12 +2047,9 @@
                     </table>
                     <div class="footnote summary">
                         <p>
-                            The osu! interface represents a pure expression of skill-based HCI. While its strengths lie
-                            in the <u>unfiltered translation</u> of user intent into digital action, its weaknesses stem
-                            from
-                            the same source: a refusal to compromise for human fragility. The system's "clutter" is a
-                            byproduct of its community-driven depth, creating a paradox where the most engaged users are
-                            also the most physically and cognitively vulnerable.
+                            Counter-Strike demonstrates a dual-edge HCI system: exceptional precision and feedback for
+                            expert performance, but meaningful friction in communication dynamics, onboarding, and
+                            high-particle combat readability.
                         </p>
                     </div>
                 </section>
@@ -1762,7 +2092,7 @@
     const POSTERURL = "../../../public/posters/counterStrike_poster.jpg";
     const POSTERALTTEXT = "Counter-Strike Game Poster";
     const VIDEOURL = "../../../public/videos/counterstrike_trailer.mp4";
-    const VIDEOURLYT = "https://www.youtube.com/embed/ut_SOreClcc?si=rZrqATPXz6TMIVMY";
+    const VIDEOURLYT = "https://www.youtube.com/embed/JZwlvtMWUgc?si=gB-ZuPBHkm2Tgy9i";
     const YTVID = true;
 
     const GAMEUSERSTARS = "7.7";
