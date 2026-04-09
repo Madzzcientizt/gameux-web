@@ -88,31 +88,21 @@
                 & .major-components {
                     display: grid;
                     grid-template-rows: 1fr;
-                    grid-template-columns: 50% 1fr;
+                    grid-template-columns: repeat(2, minmax(0, 1fr));
                     gap: 1em;
                     margin: 2em 0;
                 }
 
-                
+
                 & .major-component {
                     display: flex;
                     gap: 2rem;
-                    background: rgba(255, 255, 255, 0.03);
                     padding: 2rem;
                     border-radius: 12px;
-                    border: 1px solid rgba(255, 255, 255, 0.1);
+                    background-color: var(--t-color-base-100);
+                    border: 1px solid var(--t-color-base-300);
                     transition: transform 0.3s ease;
-                    flex-direction: row;
-
-                    &:last-child {
-                        grid-column: 1 / -1;
-                        width: 100%;
-                        flex-direction: row-reverse;
-                    }
-
-                    &:not(:first-child):not(:last-child) {
-                        flex-direction: column;
-                    }
+                    flex-direction: column;
 
                     & figure {
                         width: 100%;
@@ -345,29 +335,23 @@
                         gap: 1em;
                     }
 
-                    
-                & .major-component {
-                    display: flex;
-                    gap: 2rem;
-                    background: rgba(255, 255, 255, 0.03);
-                    padding: 2rem;
-                    border-radius: 12px;
-                    border: 1px solid rgba(255, 255, 255, 0.1);
-                    transition: transform 0.3s ease;
-                    flex-direction: row;
 
-                    &:last-child {
-                        grid-column: 1 / -1;
-                        width: 100%;
-                        flex-direction: row-reverse;
-                    }
+                    & .major-component {
+                        display: flex;
+                        gap: 2rem;
+                        background-color: var(--t-color-base-100);
+                        border: 1px solid var(--t-color-base-300);
+                        padding: 2rem;
+                        border-radius: 12px;
+                        transition: transform 0.3s ease;
+                        flex-direction: row;
 
-                    &:not(:first-child):not(:last-child) {
-                        flex-direction: column;
-                    }
+                        &:not(:first-child) {
+                            flex-direction: column;
+                        }
 
-                    & figure {
-                        width: 100%;
+                        & figure {
+                            width: 100%;
 
                             width: 100%;
 
@@ -403,6 +387,121 @@
                     font-size: 2.5em;
                 }
 
+                & .cognitive-load-bifurcation {
+                    margin: 2em 0;
+                    padding: 1em;
+                    border-radius: var(--t-radius-field);
+                    background-color: var(--t-color-base-100);
+                    border: var(--t-border) solid var(--t-color-base-300);
+
+                    &>h2 {
+                        font-weight: 900;
+                        font-size: 2em;
+                    }
+
+                    & table {
+                        width: 100%;
+                        border-collapse: separate;
+                        border-spacing: 0;
+                        border: var(--t-border) solid var(--t-color-base-300);
+                        border-radius: var(--t-radius-field);
+                        overflow: hidden;
+                        background-color: var(--t-color-base-200);
+                        margin-top: 1em;
+                    }
+
+                    & th,
+                    & td {
+                        padding: 1em;
+                        vertical-align: top;
+                    }
+
+                    & thead th {
+                        font-weight: 800;
+                        font-size: 1.05em;
+                        background-color: var(--t-color-base-300);
+                        border-bottom: 1px solid var(--t-color-base-300);
+                    }
+
+                    & th+th,
+                    & td+td {
+                        border-left: 1px solid var(--t-color-base-300);
+                    }
+
+                    & tbody td {
+                        border-bottom: 1px solid var(--t-color-base-300);
+                    }
+
+                    & tbody tr:last-child td {
+                        border-bottom: 0;
+                    }
+
+                    & td h6 {
+                        font-weight: 700;
+                        font-size: 1.15em;
+                        margin-bottom: 0.5em;
+                    }
+
+                    & td p {
+                        margin-bottom: 0;
+                    }
+
+                    @media (width < 48rem) {
+
+                        & table,
+                        & thead,
+                        & tbody,
+                        & tr,
+                        & th,
+                        & td {
+                            display: block;
+                            width: 100%;
+                        }
+
+                        & thead {
+                            display: none;
+                        }
+
+                        & tbody tr {
+                            border-bottom: 1px solid var(--t-color-base-300);
+                            padding: 0.5em;
+                        }
+
+                        & tbody tr:last-child {
+                            border-bottom: 0;
+                        }
+
+                        & td {
+                            border: 0;
+                            border-radius: var(--t-radius-field);
+                            background-color: var(--t-color-base-100);
+                            margin-bottom: 0.75em;
+                        }
+
+                        & td::before {
+                            display: block;
+                            font-weight: 700;
+                            font-size: 0.85em;
+                            text-transform: uppercase;
+                            letter-spacing: 0.04em;
+                            color: var(--t-color-primary);
+                            margin-bottom: 0.5em;
+                        }
+
+                        & td:nth-child(1)::before {
+                            content: 'Accuracy Result';
+                        }
+
+                        & td:nth-child(2)::before {
+                            content: 'What It Means';
+                        }
+
+                        & td:nth-child(3)::before {
+                            content: 'Player Feedback';
+                        }
+                    }
+                }
+
 
                 & .multi-modal-feedback {
                     display: grid;
@@ -410,45 +509,45 @@
                     gap: 1em;
                     padding-top: 1em;
 
-    
-                & .ui-split-panels {
-                    display: grid;
-                    grid-template-columns: 1fr 1fr;
-                    gap: 1em;
-                    align-items: start;
-                    margin-top: 2em;
+
+                    & .ui-split-panels {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        gap: 1em;
+                        align-items: start;
+                        margin-top: 2em;
+
+                        @media (width < 48rem) {
+                            grid-template-columns: 1fr;
+                        }
+                    }
+
+                    & .ui-split-panels .fittslaw {
+                        display: block;
+                    }
+
+                    & .ui-split-panels .list-style-area {
+                        margin: 0;
+                    }
+
+                    & .hci-layout {
+                        display: grid;
+                        grid-template-columns: 1.15fr 1fr;
+                        gap: 1em;
+                        align-items: start;
+                        margin-top: 2em;
+
+                        @media (width < 48rem) {
+                            grid-template-columns: 1fr;
+                        }
+                    }
+
+                    & .hci-layout .spatial-congruence,
+                    & .hci-layout .cognitive-load-bifurcation {
+                        margin: 0;
+                    }
 
                     @media (width < 48rem) {
-                        grid-template-columns: 1fr;
-                    }
-                }
-
-                & .ui-split-panels .fittslaw {
-                    display: block;
-                }
-
-                & .ui-split-panels .list-style-area {
-                    margin: 0;
-                }
-
-                & .hci-layout {
-                    display: grid;
-                    grid-template-columns: 1.15fr 1fr;
-                    gap: 1em;
-                    align-items: start;
-                    margin-top: 2em;
-
-                    @media (width < 48rem) {
-                        grid-template-columns: 1fr;
-                    }
-                }
-
-                & .hci-layout .spatial-congruence,
-                & .hci-layout .cognitive-load-bifurcation {
-                    margin: 0;
-                }
-
-                @media (width < 48rem) {
                         grid-template-columns: 1fr !important;
                     }
 
@@ -460,6 +559,51 @@
                         & img {
                             width: 100% !important;
                             height: auto !important;
+                        }
+                    }
+                }
+
+                & .feedback-channels {
+                    & ul {
+                        display: grid;
+                        grid-template-columns: repeat(3, minmax(0, 1fr));
+                        gap: 1em;
+                        margin-top: 1em;
+                    }
+
+                    & ul li {
+                        margin-top: 0;
+                        align-items: flex-start;
+                        background-color: var(--t-color-base-200);
+                        border: var(--t-border) solid var(--t-color-base-300);
+                        border-radius: var(--t-radius-field);
+                        padding: 1em;
+                    }
+
+                    & ul li .logo-svg {
+                        width: 3.5em;
+                        height: 3.5em;
+                        margin: 0 1em 0 0;
+                        flex-shrink: 0;
+                    }
+
+                    & ul li h6 {
+                        font-size: 1.2em;
+                    }
+
+                    & ul li p {
+                        margin-bottom: 0;
+                    }
+
+                    @media (width < 64rem) {
+                        & ul {
+                            grid-template-columns: 1fr 1fr;
+                        }
+                    }
+
+                    @media (width < 48rem) {
+                        & ul {
+                            grid-template-columns: 1fr;
                         }
                     }
                 }
@@ -528,45 +672,45 @@
                         grid-template-columns: 1fr 1fr;
                         gap: 1em;
 
-        
-                & .ui-split-panels {
-                    display: grid;
-                    grid-template-columns: 1fr 1fr;
-                    gap: 1em;
-                    align-items: start;
-                    margin-top: 2em;
 
-                    @media (width < 48rem) {
-                        grid-template-columns: 1fr;
-                    }
-                }
+                        & .ui-split-panels {
+                            display: grid;
+                            grid-template-columns: 1fr 1fr;
+                            gap: 1em;
+                            align-items: start;
+                            margin-top: 2em;
 
-                & .ui-split-panels .fittslaw {
-                    display: block;
-                }
+                            @media (width < 48rem) {
+                                grid-template-columns: 1fr;
+                            }
+                        }
 
-                & .ui-split-panels .list-style-area {
-                    margin: 0;
-                }
+                        & .ui-split-panels .fittslaw {
+                            display: block;
+                        }
 
-                & .hci-layout {
-                    display: grid;
-                    grid-template-columns: 1.15fr 1fr;
-                    gap: 1em;
-                    align-items: start;
-                    margin-top: 2em;
+                        & .ui-split-panels .list-style-area {
+                            margin: 0;
+                        }
 
-                    @media (width < 48rem) {
-                        grid-template-columns: 1fr;
-                    }
-                }
+                        & .hci-layout {
+                            display: grid;
+                            grid-template-columns: 1.15fr 1fr;
+                            gap: 1em;
+                            align-items: start;
+                            margin-top: 2em;
 
-                & .hci-layout .spatial-congruence,
-                & .hci-layout .cognitive-load-bifurcation {
-                    margin: 0;
-                }
+                            @media (width < 48rem) {
+                                grid-template-columns: 1fr;
+                            }
+                        }
 
-                @media (width < 48rem) {
+                        & .hci-layout .spatial-congruence,
+                        & .hci-layout .cognitive-load-bifurcation {
+                            margin: 0;
+                        }
+
+                        @media (width < 48rem) {
                             grid-template-columns: 1fr !important;
                         }
 
@@ -673,45 +817,45 @@
                         margin-bottom: 0;
                     }
 
-    
-                & .ui-split-panels {
-                    display: grid;
-                    grid-template-columns: 1fr 1fr;
-                    gap: 1em;
-                    align-items: start;
-                    margin-top: 2em;
+
+                    & .ui-split-panels {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        gap: 1em;
+                        align-items: start;
+                        margin-top: 2em;
+
+                        @media (width < 48rem) {
+                            grid-template-columns: 1fr;
+                        }
+                    }
+
+                    & .ui-split-panels .fittslaw {
+                        display: block;
+                    }
+
+                    & .ui-split-panels .list-style-area {
+                        margin: 0;
+                    }
+
+                    & .hci-layout {
+                        display: grid;
+                        grid-template-columns: 1.15fr 1fr;
+                        gap: 1em;
+                        align-items: start;
+                        margin-top: 2em;
+
+                        @media (width < 48rem) {
+                            grid-template-columns: 1fr;
+                        }
+                    }
+
+                    & .hci-layout .spatial-congruence,
+                    & .hci-layout .cognitive-load-bifurcation {
+                        margin: 0;
+                    }
 
                     @media (width < 48rem) {
-                        grid-template-columns: 1fr;
-                    }
-                }
-
-                & .ui-split-panels .fittslaw {
-                    display: block;
-                }
-
-                & .ui-split-panels .list-style-area {
-                    margin: 0;
-                }
-
-                & .hci-layout {
-                    display: grid;
-                    grid-template-columns: 1.15fr 1fr;
-                    gap: 1em;
-                    align-items: start;
-                    margin-top: 2em;
-
-                    @media (width < 48rem) {
-                        grid-template-columns: 1fr;
-                    }
-                }
-
-                & .hci-layout .spatial-congruence,
-                & .hci-layout .cognitive-load-bifurcation {
-                    margin: 0;
-                }
-
-                @media (width < 48rem) {
 
                         & table,
                         & thead,
@@ -1087,45 +1231,45 @@
                         }
                     }
 
-    
-                & .ui-split-panels {
-                    display: grid;
-                    grid-template-columns: 1fr 1fr;
-                    gap: 1em;
-                    align-items: start;
-                    margin-top: 2em;
+
+                    & .ui-split-panels {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        gap: 1em;
+                        align-items: start;
+                        margin-top: 2em;
+
+                        @media (width < 48rem) {
+                            grid-template-columns: 1fr;
+                        }
+                    }
+
+                    & .ui-split-panels .fittslaw {
+                        display: block;
+                    }
+
+                    & .ui-split-panels .list-style-area {
+                        margin: 0;
+                    }
+
+                    & .hci-layout {
+                        display: grid;
+                        grid-template-columns: 1.15fr 1fr;
+                        gap: 1em;
+                        align-items: start;
+                        margin-top: 2em;
+
+                        @media (width < 48rem) {
+                            grid-template-columns: 1fr;
+                        }
+                    }
+
+                    & .hci-layout .spatial-congruence,
+                    & .hci-layout .cognitive-load-bifurcation {
+                        margin: 0;
+                    }
 
                     @media (width < 48rem) {
-                        grid-template-columns: 1fr;
-                    }
-                }
-
-                & .ui-split-panels .fittslaw {
-                    display: block;
-                }
-
-                & .ui-split-panels .list-style-area {
-                    margin: 0;
-                }
-
-                & .hci-layout {
-                    display: grid;
-                    grid-template-columns: 1.15fr 1fr;
-                    gap: 1em;
-                    align-items: start;
-                    margin-top: 2em;
-
-                    @media (width < 48rem) {
-                        grid-template-columns: 1fr;
-                    }
-                }
-
-                & .hci-layout .spatial-congruence,
-                & .hci-layout .cognitive-load-bifurcation {
-                    margin: 0;
-                }
-
-                @media (width < 48rem) {
                         &::before {
                             right: 0;
                         }
@@ -1555,10 +1699,14 @@
                         <li>Steam / Windows Port</li>
                     </ul>
                     <p>
-                        DJMAX RESPECT V (2020) is the pinnacle of the long-running premium DJMAX franchise. It offers a luxury VSRG experience known for its high-fidelity audio engineering and professional broadcast aesthetic presentation.
+                        DJMAX RESPECT V (2020) is the pinnacle of the long-running premium DJMAX franchise. It offers a
+                        luxury VSRG experience known for its high-fidelity audio engineering and professional broadcast
+                        aesthetic presentation.
                     </p>
                     <p>
-                        Unlike modern simplified rhythm games, DJMAX forces rigorous multi-lane tracking (4, 5, 6, and 8-button layouts) alongside a mechanic called "Key-Sounding." From an HCI perspective, Key-Sounding is the ultimate implementation of instantaneous negative feedback validation.
+                        Unlike modern simplified rhythm games, DJMAX forces rigorous multi-lane tracking (4, 5, 6, and
+                        8-button layouts) alongside a mechanic called "Key-Sounding." From an HCI perspective,
+                        Key-Sounding is the ultimate implementation of instantaneous negative feedback validation.
                     </p>
                     <ul class="metrics-list">
                         <li>
@@ -1572,126 +1720,340 @@
                             <div class="desc">Premium 100% timing execution needed.</div>
                         </li>
                     </ul>
-    
-</section>
+
+                </section>
                 <section class="game-sections" id="ui-components">
 
                     <h2>UI Components</h2>
                     <div class="major-components">
                         <div class="major-component">
                             <figure>
-                                <a href="https://via.placeholder.com/600x400/9b59b6/FFF?text=The+Gear+Frame" title="The Gear UI" target="images">
-                                    <img src="https://via.placeholder.com/600x400/9b59b6/FFF?text=The+Gear+Frame" alt="Gear UI Shell">
+                                <a href="../../../public/gamesContent/djmaxRespectV/gearFrame.jpg" title="The Gear UI"
+                                    target="images">
+                                    <img src="../../../public/gamesContent/djmaxRespectV/gearFrame.jpg"
+                                        alt="Gear UI Shell">
                                 </a>
-                                <figcaption style="color: var(--t-color-dark)">FIG 1.1: The 'Gear' Playfield Shell</figcaption>
+                                <figcaption>FIG 1.1: The main note highway and judgment area
+                                </figcaption>
                             </figure>
                             <div>
                                 <span class="count">[ ELEMENT_01 ]</span>
-                                <span class="header-text">The Gear Playfield Frame</span>
-                                <p>The primary Gear frame physically encloses the tracks, establishing a rigid border between gameplay data and background movies.</p>
+                                <span class="header-text">Main Gear Playfield</span>
+                                <p>The Gear is the central note lane in DJMAX RESPECT V, where notes scroll toward the
+                                    judgment line during play.</p>
                             </div>
                         </div>
                         <div class="major-component">
                             <figure>
-                                <a href="https://via.placeholder.com/600x400/34495e/FFF?text=Side+Track+Notes" title="Side Track Mechanics" target="images">
-                                    <img src="https://via.placeholder.com/600x400/34495e/FFF?text=Side+Track+Notes" alt="Side Track Notes">
+                                <a href="../../../public/gamesContent/djmaxRespectV/expandedLane.png"
+                                    title="Side Track Mechanics" target="images">
+                                    <img src="../../../public/gamesContent/djmaxRespectV/expandedLane.png"
+                                        alt="Side Track Notes">
                                 </a>
-                                <figcaption style="color: var(--t-color-dark)">FIG 1.2: Periphery Side Tracks</figcaption>
+                                <figcaption>FIG 1.2: Outer-lane note placement in wider charts
+                                </figcaption>
                             </figure>
                             <div>
                                 <span class="count">[ ELEMENT_02 ]</span>
-                                <span class="header-text">Peripheral Side-Track Alerts</span>
-                                <p>Special notes fall outside standard gear constraints, demanding rapid lateral eye flicks and hardware key re-mapping.</p>
+                                <span class="header-text">Expanded Lane Coverage</span>
+                                <p>DJMAX RESPECT V supports multiple key modes, including 4, 5, 6, and 8 button
+                                    layouts, which increase the number of active lanes the player must track.</p>
                             </div>
                         </div>
                         <div class="major-component">
                             <figure>
-                                <a href="https://via.placeholder.com/600x400/000000/F1C40F?text=Fever+Icon+Flash" title="Fever UI" target="images">
-                                    <img src="https://via.placeholder.com/600x400/000000/F1C40F?text=Fever+Icon+Flash" alt="Fever UI">
+                                <a href="../../../public/gamesContent/djmaxRespectV/analogNotes.jpg" title="Notes UI"
+                                    target="images">
+                                    <img src="../../../public/gamesContent/djmaxRespectV/analogNotes.jpg"
+                                        alt="DJMAX RESPECT V notes">
                                 </a>
-                                <figcaption style="color: var(--t-color-dark)">FIG 1.3: Rhythmic Multiplier State</figcaption>
+                                <figcaption style="color: var(--t-color-dark)">FIG 1.3: DJMAX RESPECT V note display
+                                </figcaption>
                             </figure>
                             <div>
                                 <span class="count">[ ELEMENT_03 ]</span>
-                                <span class="header-text">Fever Mode Feedback</span>
-                                <p>Activating 'FEVER' triggers a global screen flash and transforms note textures, communicating the multiplier bonus via ambient visual reinforcement.</p>
+                                <span class="header-text">Note Timing Display</span>
+                                <p>DJMAX RESPECT V presents notes in scrolling lanes that move toward the judgment line
+                                    as the song plays.</p>
                             </div>
                         </div>
                         <div class="major-component">
                             <figure>
-                                <a href="https://via.placeholder.com/600x400/333/FFF?text=BGA+Dimmer+Overlay" title="BGA UI" target="images">
-                                    <img src="https://via.placeholder.com/600x400/333/FFF?text=BGA+Dimmer+Overlay" alt="BGA UI">
+                                <a href="../../../public/gamesContent/djmaxRespectV/judgements.png" title="Judgement UI"
+                                    target="images">
+                                    <img src="../../../public/gamesContent/djmaxRespectV/judgements.png"
+                                        alt="DJMAX RESPECT V judgement display">
                                 </a>
-                                <figcaption style="color: var(--t-color-dark)">FIG 1.4: Background Occlusion Shielding</figcaption>
+                                <figcaption>FIG 1.4: Accuracy judgment feedback
+                                </figcaption>
                             </figure>
                             <div>
                                 <span class="count">[ ELEMENT_04 ]</span>
-                                <span class="header-text">Procedural BGA Dimming</span>
-                                <p>Allows for procedural dimming of music videos. The Gear frame acts as an 'Occlusion Cage,' shielding tracks from background interference.</p>
+                                <span class="header-text">Accuracy Judgements</span>
+                                <p>DJMAX RESPECT V grades note inputs by timing accuracy, giving the player immediate
+                                    feedback on how closely each hit matches the beat.</p>
                             </div>
                         </div>
                     </div>
 
-</section>
+                </section>
                 <section class="game-sections" id="user-interaction">
 
                     <h2>User Interaction</h2>
-                    <p>DJMAX Interaction marries luxury broadcast aesthetics with uncompromising systemic audio synchronization.</p>
+                    <p>
+                        DJMAX RESPECT V centers on lane reading, key mapping, and immediate timing feedback.
+                        Notes scroll toward the judgment line, and the player responds using one of the game's
+                        supported button layouts.
+                    </p>
                     <div class="ui-split-panels">
                         <div class="fittslaw">
-                            <h3 class="text-center">The Acoustic Execution Loop</h3>
                             <div class="list-style-area">
-                                <ol class="four-columns md-two-columns" style="grid-template-columns: repeat(2, 1fr);">
-                                    <li><h6>Read Matrix</h6><p>Scan 4 to 8 variable columns simultaneously inside the Gear.</p></li>
-                                    <li><h6>Map Hardware</h6><p>Switch finger assignments between 4-Key and 8-Key modes.</p></li>
-                                    <li><h6>Actuate</h6><p>Execute the keystroke to trigger the system interrupt.</p></li>
-                                    <li><h6>Hear Feedback</h6><p>Audio engine renders the individual instrument stem (Key-Sounding).</p></li>
+                                <h3 class="text-center">Core Gameplay Loop</h3>
+                                <ol class="four-columns md-two-columns">
+                                    <li>
+                                        <h6>Read</h6>
+                                        <p>Track the note lanes, spacing, and upcoming patterns as they scroll down the
+                                            Gear.</p>
+                                    </li>
+                                    <li>
+                                        <h6>Map</h6>
+                                        <p>Translate the chart into the current button mode, including 4, 5, 6, or 8-key
+                                            layouts.</p>
+                                    </li>
+                                    <li>
+                                        <h6>Hit</h6>
+                                        <p>Press the matching keys at the judgment line to maintain score and combo
+                                            progress.</p>
+                                    </li>
+                                    <li>
+                                        <h6>Adjust</h6>
+                                        <p>Use the game's judgment feedback to correct timing on the next sequence of
+                                            notes.</p>
+                                    </li>
                                 </ol>
                             </div>
                         </div>
                         <div class="list-style-area">
-                            <h3 class="text-center">Multi-Modal Feedback Matrix</h3>
-                            <div class="multi-modal-feedback">
-                                <ul>
-                                    <li>
-                                        <div class="logo-svg"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.114 5.636a9 9 0 010 12.728M16.463 8.288a5.25 5.25 0 010 7.424M6.75 8.25l4.72-4.72a.75.75 0 011.28.53v15.88a.75.75 0 01-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 012.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75z" /></svg></div>
-                                        <div><h6>Validation Denial</h6><p>If you miss, the instrument stem does not play. This 'Audio Withdrawal' is a uniquely effective failure signal.</p></div>
-                                    </li>
-                                    <li>
-                                        <div class="logo-svg"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8l-3.45-3.45a2 2 0 010-2.82l.06-.06a2 2 0 012.82 0l3.44 3.44h4.82a6 6 0 01-1.85 3.31z" /></svg></div>
-                                        <div><h6>Combo Weight</h6><p>High combos trigger screen-shaking and UI vibrations, communicating 'streak' state via haptics.</p></div>
-                                    </li>
-                                </ul>
-                            </div>
+                            <h3 class="text-center">Button Mode Coverage</h3>
+                            <ol class="four-columns md-two-columns">
+                                <li>
+                                    <h6>4-Button</h6>
+                                    <p>The compact mode that emphasizes basic lane reading and consistent timing.</p>
+                                </li>
+                                <li>
+                                    <h6>5-Button</h6>
+                                    <p>Adds a center lane and increases the need for quick hand assignment during play.
+                                    </p>
+                                </li>
+                                <li>
+                                    <h6>6-Button</h6>
+                                    <p>Expands the lane spread and raises the amount of simultaneous visual tracking.
+                                    </p>
+                                </li>
+                                <li>
+                                    <h6>8-Button</h6>
+                                    <p>The widest standard layout, requiring the player to read and react across the
+                                        full Gear.</p>
+                                </li>
+                            </ol>
                         </div>
                     </div>
 
-</section>
-                <section class="game-sections" id="hci-principles">
-
-                    <h2>HCI Principles</h2>
                     <div class="hci-layout">
                         <div class="spatial-congruence">
-                            <h2>Key-Sounding Transparency</h2>
-                            <p style="text-align: justify;">
-                                DJMAX input triggers an instrument stem (a unique track of the song). This creates a 100% transparent interaction model: the user is the performer, not just the reactor.
+                            <h2>Lane Reading and Key Mapping</h2>
+                            <p>
+                                The game's interaction model depends on maintaining a fixed relationship between note
+                                position and finger placement. As charts become denser, the player has to process lane
+                                position, note spacing, and timing windows at the same time.
+                            </p>
+                            <p>
+                                That makes the Gear frame, lane separation, and chart speed the main readability tools
+                                for the player rather than a freeform cursor or analog aim system.
                             </p>
                         </div>
                         <div class="cognitive-load-bifurcation">
-                            <h2>Mapping Saccade Conflict</h2>
+                            <h2>Timing Accuracy and Feedback</h2>
+                            <p>
+                                Every input is evaluated against the beat, and the game responds with immediate visual
+                                and audio confirmation. Score, combo, and judgment feedback all update as notes are hit
+                                or missed.
+                            </p>
                             <table>
-                                <thead><tr><th>Cognitive Advantage</th><th>Mapping Friction</th></tr></thead>
+                                <thead>
+                                    <tr>
+                                        <th>Accuracy Result</th>
+                                        <th>What It Means</th>
+                                        <th>Player Feedback</th>
+                                    </tr>
+                                </thead>
                                 <tbody>
                                     <tr>
-                                        <td><h6>Gear Shielding</h6><p>The thick UI Gear frame prevents background motion-tracking from leaching into note processing.</p></td>
-                                        <td><h6>5B/8B Ambiguity</h6><p>The center lane in 5-Button mode forces the user to decide which hand 'owns' the note, causing micro-stalling.</p></td>
+                                        <td>
+                                            <h6>On-Time Hit</h6>
+                                            <p>Input lands within the intended timing window for the chart.</p>
+                                        </td>
+                                        <td>
+                                            <h6>Score Gain</h6>
+                                            <p>The note counts toward score and combo progression.</p>
+                                        </td>
+                                        <td>
+                                            <h6>Visual Confirmation</h6>
+                                            <p>The game shows a judgment result and updates the running combo.</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <h6>Late or Early Hit</h6>
+                                            <p>Input is close to the beat, but not within the most accurate window.</p>
+                                        </td>
+                                        <td>
+                                            <h6>Reduced Precision</h6>
+                                            <p>The note still registers, but the result reflects less accurate timing.
+                                            </p>
+                                        </td>
+                                        <td>
+                                            <h6>Immediate Correction Cue</h6>
+                                            <p>The player can adjust rhythm and hand placement on the next notes.</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <h6>Miss</h6>
+                                            <p>The note is not hit within the required timing window.</p>
+                                        </td>
+                                        <td>
+                                            <h6>Combo Break</h6>
+                                            <p>The combo is interrupted and the missed note does not contribute to the
+                                                score.</p>
+                                        </td>
+                                        <td>
+                                            <h6>Strong Negative Feedback</h6>
+                                            <p>The absence of the note sound makes the miss easy to detect in real time.
+                                            </p>
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
                     </div>
 
-</section>
+                    <div class="list-style-area feedback-channels">
+                        <h3 class="text-center">Feedback Channels</h3>
+                        <ul>
+                            <li>
+                                <div class="logo-svg"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M14.25 7.5 9.75 12l4.5 4.5m-4.5-9 4.5 4.5-4.5 4.5" />
+                                    </svg></div>
+                                <div>
+                                    <h6>Visual Feedback</h6>
+                                    <p>Notes, judgment text, combo count, and score changes tell the player how cleanly
+                                        each hit landed.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="logo-svg"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M3 12c0-4.97 4.03-9 9-9s9 4.03 9 9-4.03 9-9 9-9-4.03-9-9Z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 12h7.5" />
+                                    </svg></div>
+                                <div>
+                                    <h6>Audio Feedback</h6>
+                                    <p>Successful hits trigger the note sound in key-sounding charts, while misses
+                                        remove that sound from the music layer.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="logo-svg"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v18m9-9H3" />
+                                    </svg></div>
+                                <div>
+                                    <h6>Performance Feedback</h6>
+                                    <p>The result of each note contributes to the player's ongoing score and combo
+                                        streak, which is central to chart completion.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                </section>
+                <section class="game-sections" id="hci-principles">
+
+                    <h2>HCI Principles</h2>
+                    <p>
+                        In DJMAX RESPECT V, interaction quality is tied to how clearly the game maps visual lanes,
+                        hand inputs, and audio confirmation into one continuous loop. The principles below explain why
+                        the interface can feel both highly readable and mentally demanding during dense charts.
+                    </p>
+                    <div class="hci-layout">
+                        <div class="spatial-congruence">
+                            <h2>Key-Sounding Transparency</h2>
+                            <p style="text-align: justify;">
+                                DJMAX input triggers an instrument stem (a unique track of the song). This creates a
+                                100% transparent interaction model: the user is the performer, not just the reactor.
+                            </p>
+                            <p>
+                                Because each key press directly contributes to the chart's musical output, misses are
+                                not only visual failures but audible gaps in performance. This strengthens the
+                                perception of agency and makes timing errors immediately meaningful to the player.
+                            </p>
+                        </div>
+                        <div class="cognitive-load-bifurcation">
+                            <h2>Mapping Saccade Conflict</h2>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Cognitive Advantage</th>
+                                        <th>Mapping Friction</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <h6>Gear Shielding</h6>
+                                            <p>The thick UI Gear frame prevents background motion-tracking from leaching
+                                                into note processing.</p>
+                                        </td>
+                                        <td>
+                                            <h6>5B/8B Ambiguity</h6>
+                                            <p>The center lane in 5-Button mode forces the user to decide which hand
+                                                'owns' the note, causing micro-stalling.</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <h6>Consistent Lane Geometry</h6>
+                                            <p>Fixed lane positions let players build strong muscle-memory mappings as
+                                                chart speed and complexity increase.</p>
+                                        </td>
+                                        <td>
+                                            <h6>Peripheral Lane Pressure</h6>
+                                            <p>Outer lanes in wider button modes demand more eye travel, increasing the
+                                                chance of late recognition on fast patterns.</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <h6>Judgment Visibility</h6>
+                                            <p>Clear timing judgments and combo updates provide immediate performance
+                                                diagnostics after each note.</p>
+                                        </td>
+                                        <td>
+                                            <h6>Split-Attention Cost</h6>
+                                            <p>Players must monitor lane flow, judgment text, and combo status at once,
+                                                which raises cognitive load under dense sections.</p>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </section>
                 <section class="game-sections" id="ui-ux-weaknesses">
 
                     <h2>Strengths and Weaknesses Analysis</h2>
@@ -1709,14 +2071,16 @@
                                         <span class="label">01_AUDIO</span>
                                     </div>
                                     <h6>Complete Acoustic Immersion</h6>
-                                    <p>Key-sounding makes the player feel like they are directly performing the music, raising intrinsic motivation far beyond synthetic claps.</p>
+                                    <p>Key-sounding makes the player feel like they are directly performing the music,
+                                        raising intrinsic motivation far beyond synthetic claps.</p>
                                 </td>
                                 <td>
                                     <div class="sw-item-head">
                                         <span class="label">01_BGA_CLUTTER</span>
                                     </div>
                                     <h6>Background Distraction</h6>
-                                    <p>High-contrast, flashing Background Animations effectively break UI contrast ratio laws, forcing most players to dim the BGA opacity to 0%.</p>
+                                    <p>High-contrast, flashing Background Animations effectively break UI contrast ratio
+                                        laws, forcing most players to dim the BGA opacity to 0%.</p>
                                 </td>
                             </tr>
                             <tr>
@@ -1725,14 +2089,16 @@
                                         <span class="label">02_UI_FRAME</span>
                                     </div>
                                     <h6>The Gear Margin Protection</h6>
-                                    <p>Using the physical "Gear" border prevents the background video from bleeding directly into the note reading lane, a massive step up from Project DIVA.</p>
+                                    <p>Using the physical "Gear" border prevents the background video from bleeding
+                                        directly into the note reading lane, a massive step up from Project DIVA.</p>
                                 </td>
                                 <td>
                                     <div class="sw-item-head">
                                         <span class="label">02_MAPPING</span>
                                     </div>
                                     <h6>Ambiguous Center Lane</h6>
-                                    <p>The 5B and 8B modes force constant mental re-assignment of which thumb owns the center track, causing intense cognitive load stalling.</p>
+                                    <p>The 5B and 8B modes force constant mental re-assignment of which thumb owns the
+                                        center track, causing intense cognitive load stalling.</p>
                                 </td>
                             </tr>
                             <tr>
@@ -1741,24 +2107,28 @@
                                         <span class="label">03_FEEDBACK</span>
                                     </div>
                                     <h6>Definitive Miss Feedback</h6>
-                                    <p>The immediate silence of a missed instrument is the most elegant, non-intrusive negative feedback mechanism in all of rhythm gaming.</p>
+                                    <p>The immediate silence of a missed instrument is the most elegant, non-intrusive
+                                        negative feedback mechanism in all of rhythm gaming.</p>
                                 </td>
                                 <td>
                                     <div class="sw-item-head">
                                         <span class="label">03_SIDETRACKS</span>
                                     </div>
                                     <h6>Peripheral Sidetrack Strain</h6>
-                                    <p>Deploying notes physically outside the Gear boundaries requires sudden Saccadic eye flicks, breaking foveal concentration completely.</p>
+                                    <p>Deploying notes physically outside the Gear boundaries requires sudden Saccadic
+                                        eye flicks, breaking foveal concentration completely.</p>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
-                    
+
                     <div class="footnote summary">
-                        <p>DJMAX Respect V proves that restricting the visual UI matrix (enforcing strict columns) while expanding the auditory UX (Key-Sounding) builds a far more profound sensory loop than games relying entirely on visual spectacle.</p>
+                        <p>DJMAX Respect V proves that restricting the visual UI matrix (enforcing strict columns) while
+                            expanding the auditory UX (Key-Sounding) builds a far more profound sensory loop than games
+                            relying entirely on visual spectacle.</p>
                     </div>
-    
-</section>
+
+                </section>
             </div>
         </article>
     </main>
@@ -1802,14 +2172,14 @@
     const YTVID = true;
 
     const GAMEUSERSTARS = "8.9";
-    const GAMEUSERRATINGS = "24k";
+    const GAMEUSERRATINGS = "29k";
 
-    const HASCRITICS = false; // Set to false if there are no critic ratings
-    const GAMECRITICSTARS = "0";
-    const GAMECRITICRATINGS = "0";
+    const HASCRITICS = true; // Set to false if there are no critic ratings
+    const GAMECRITICSTARS = "8.1";
+    const GAMECRITICRATINGS = "19";
 
     const GENRES = ["VSRG", "Rhythm Arcade", "Music"];
-    const PLATFORMS = ["PlayStation 4", "PC", "Xbox On"];
+    const PLATFORMS = ["PlayStation 4", "PC", "Xbox One"];
     const EDITIONS = ["DJMAX Respect V Base", "V Extension DLCs"];
 
     const DESCRIPTION = "The definitive version of the prolific rhythm game franchise delivering a high-fidelity visual and musical experience.";
