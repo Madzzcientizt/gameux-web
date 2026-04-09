@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="../../styles/game.css" type="text/css" />
 
     <!-- Custom Styles ------------------------------------------------------------------------------------------ -->
-    <style>
+        <style>
         nav.game-info-nav label {
             width: calc(100% / 5) !important;
         }
@@ -87,305 +87,68 @@
 
                 & .major-components {
                     display: grid;
-                    grid-template-rows: 1fr;
-                    grid-template-columns: 50% 1fr;
+                    grid-template-columns: 1fr 1fr;
                     gap: 1em;
                     margin: 2em 0;
+
+                    @media (width < 48rem) {
+                        grid-template-columns: 1fr;
+                    }
                 }
 
-                
                 & .major-component {
-                    display: flex;
-                    gap: 2rem;
-                    background: rgba(255, 255, 255, 0.03);
-                    padding: 2rem;
-                    border-radius: 12px;
-                    border: 1px solid rgba(255, 255, 255, 0.1);
-                    transition: transform 0.3s ease;
-                    flex-direction: row;
-
-                    &:last-child {
-                        grid-column: 1 / -1;
-                        width: 100%;
-                        flex-direction: row-reverse;
-                    }
-
-                    &:not(:first-child):not(:last-child) {
-                        flex-direction: column;
-                    }
-
-                    & figure {
-                        width: 100%;
-
-                        position: relative;
-                        margin-bottom: 0;
-                        width: 100%;
-                        height: auto;
-
-                        & figcaption {
-                            font-size: 0.9em;
-                            color: var(--t-color-light);
-                            margin-top: 0.5em;
-                            position: absolute;
-                            bottom: 0.5em;
-                            right: 0.5em;
-                        }
-                    }
-
-                    & a {
-                        flex-shrink: 0;
-                        margin-left: auto;
-
-                        & img {
-                            display: block;
-                            width: 100%;
-                            height: 100%;
-                            object-fit: cover;
-                            border-radius: 0.25em;
-                        }
-                    }
-
-                    & .count {
-                        font-weight: 700;
-                        font-size: 1.2em;
-                        font-family: var(--bs-font-monospace);
-                        color: var(--t-color-secondary);
-                        display: block;
-                    }
-
-                    & .header-text {
-                        font-weight: 700;
-                        font-size: 2.5em;
-                        font-family: var(--bs-font-serif);
-                    }
-
-                    & ul {
-                        list-style: none;
-                        margin-left: 1em;
-                        margin-top: 2em;
-
-                        & h6 {
-                            font-weight: 900;
-                        }
-
-                        & li {
-                            margin-left: 1em;
-                            margin-bottom: 0.5em;
-                            position: relative;
-
-                            &::before {
-                                content: '';
-                                display: block;
-                                position: absolute;
-                                width: 0.2em;
-                                height: 1em;
-                                background-color: var(--t-color-primary);
-                                border-radius: 1em;
-                                left: -0.75em;
-                                top: calc(50% - 0.5em);
-                            }
-                        }
-                    }
-                }
-
-                & .fittslaw {
+                    background-color: var(--t-color-base-100);
+                    border-radius: var(--t-radius-field);
+                    padding: 1em;
                     display: grid;
-                    grid-template-columns: 50% 1fr;
+                    grid-template-columns: 1fr;
                     gap: 1em;
-
-                    & h2 {
-                        font-weight: 900;
-                        font-size: 2.5em;
-                    }
+                    border: var(--t-border) solid var(--t-color-base-300);
 
                     & figure {
-                        position: relative;
                         margin-bottom: 0;
-                        width: 100%;
-                        height: auto;
+                        border-radius: var(--t-radius-selector);
+                        overflow: hidden;
+                        border: var(--t-border) solid var(--t-color-base-300);
 
                         & figcaption {
                             font-size: 0.9em;
                             color: var(--t-color-dark);
                             margin-top: 0.5em;
-                            position: absolute;
-                            bottom: 0.5em;
-                            right: 0.5em;
+                            position: static;
+                            padding: 0 0.25em 0.25em;
                         }
                     }
 
                     & a {
-                        flex-shrink: 0;
-                        margin-left: auto;
+                        display: block;
 
                         & img {
-                            width: 100% !important;
-                            height: auto !important;
-                            margin-bottom: 1em;
+                            display: block;
+                            width: 100%;
+                            height: auto;
                         }
                     }
-                }
 
-
-                & .ui-split-panels {
-                    display: grid;
-                    grid-template-columns: 1fr 1fr;
-                    gap: 1em;
-                    align-items: start;
-                    margin-top: 2em;
-
-                    @media (width < 48rem) {
-                        grid-template-columns: 1fr;
-                    }
-                }
-
-                & .ui-split-panels .fittslaw {
-                    display: block;
-                }
-
-                & .ui-split-panels .list-style-area {
-                    margin: 0;
-                }
-
-                & .hci-layout {
-                    display: grid;
-                    grid-template-columns: 1.15fr 1fr;
-                    gap: 1em;
-                    align-items: start;
-                    margin-top: 2em;
-
-                    @media (width < 48rem) {
-                        grid-template-columns: 1fr;
-                    }
-                }
-
-                & .hci-layout .spatial-congruence,
-                & .hci-layout .cognitive-load-bifurcation {
-                    margin: 0;
-                }
-
-                @media (width < 48rem) {
-                    & .fittslaw {
-                        grid-template-columns: 1fr;
-                    }
-                }
-
-                & .mathmodel {
-                    margin: 1em 0;
-                    padding: 1em;
-                    position: relative;
-                    padding-left: 2em;
-                    background-color: var(--t-color-base-300);
-                    border-radius: var(--t-radius-field);
-                    overflow: hidden;
-
-                    &::before {
-                        content: '';
-                        display: block;
-                        position: absolute;
-                        width: 0.5em;
-                        height: 100%;
-                        background-color: var(--t-color-primary);
-                        left: 0;
-                        top: 0;
-                    }
-
-                    & h6 {
+                    & .count {
+                        font-weight: 700;
+                        font-size: 1em;
                         font-family: var(--bs-font-monospace);
-                        color: var(--t-color-dark);
-                        font-weight: 300;
+                        color: var(--t-color-primary);
+                        display: block;
                     }
 
-                    & span {
-                        font-size: 2em
-                    }
-                }
-
-
-                & .ui-split-panels {
-                    display: grid;
-                    grid-template-columns: 1fr 1fr;
-                    gap: 1em;
-                    align-items: start;
-                    margin-top: 2em;
-
-                    @media (width < 48rem) {
-                        grid-template-columns: 1fr;
-                    }
-                }
-
-                & .ui-split-panels .fittslaw {
-                    display: block;
-                }
-
-                & .ui-split-panels .list-style-area {
-                    margin: 0;
-                }
-
-                & .hci-layout {
-                    display: grid;
-                    grid-template-columns: 1.15fr 1fr;
-                    gap: 1em;
-                    align-items: start;
-                    margin-top: 2em;
-
-                    @media (width < 48rem) {
-                        grid-template-columns: 1fr;
-                    }
-                }
-
-                & .hci-layout .spatial-congruence,
-                & .hci-layout .cognitive-load-bifurcation {
-                    margin: 0;
-                }
-
-                @media (width < 48rem) {
-                    & .major-components {
-                        grid-template-columns: 1fr;
-                        gap: 1em;
+                    & .header-text {
+                        font-weight: 700;
+                        font-size: 1.35em;
+                        font-family: var(--bs-font-sans-serif);
+                        display: block;
+                        margin-bottom: 0.35em;
                     }
 
-                    
-                & .major-component {
-                    display: flex;
-                    gap: 2rem;
-                    background: rgba(255, 255, 255, 0.03);
-                    padding: 2rem;
-                    border-radius: 12px;
-                    border: 1px solid rgba(255, 255, 255, 0.1);
-                    transition: transform 0.3s ease;
-                    flex-direction: row;
-
-                    &:last-child {
-                        grid-column: 1 / -1;
-                        width: 100%;
-                        flex-direction: row-reverse;
-                    }
-
-                    &:not(:first-child):not(:last-child) {
-                        flex-direction: column;
-                    }
-
-                    & figure {
-                        width: 100%;
-
-                            width: 100%;
-
-                            & figcaption {
-                                bottom: 1em;
-                            }
-                        }
-
-                        & a {
-                            margin-left: 0;
-                            width: 100%;
-
-                            & img {
-                                width: 100% !important;
-                                height: auto !important;
-                                margin-bottom: 1em;
-                            }
-                        }
+                    & p {
+                        margin: 0;
+                        text-align: justify;
                     }
                 }
             }
@@ -398,11 +161,41 @@
                     font-size: 2.5em;
                 }
 
-                & h3 {
-                    font-weight: 900;
-                    font-size: 2.5em;
+                &>p {
+                    margin: 0.75em 0 0;
+                    text-align: justify;
                 }
 
+                & .ui-split-panels {
+                    margin-top: 2em;
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 1em;
+                    align-items: start;
+
+                    @media (width < 48rem) {
+                        grid-template-columns: 1fr;
+                    }
+                }
+
+                & .list-style-area {
+                    margin: 0;
+                }
+
+                & .list-style-area h3 {
+                    margin: 0 0 0.8em;
+                    font-weight: 800;
+                    font-size: 1.5em;
+                }
+
+                & .two-columns {
+                    margin-top: 0;
+                    gap: 0.8em;
+                }
+
+                & .two-columns h6 {
+                    font-size: 1em;
+                }
 
                 & .multi-modal-feedback {
                     display: grid;
@@ -410,93 +203,109 @@
                     gap: 1em;
                     padding-top: 1em;
 
-    
-                & .ui-split-panels {
-                    display: grid;
-                    grid-template-columns: 1fr 1fr;
-                    gap: 1em;
-                    align-items: start;
-                    margin-top: 2em;
-
                     @media (width < 48rem) {
                         grid-template-columns: 1fr;
                     }
                 }
 
-                & .ui-split-panels .fittslaw {
-                    display: block;
-                }
-
-                & .ui-split-panels .list-style-area {
-                    margin: 0;
-                }
-
-                & .hci-layout {
-                    display: grid;
-                    grid-template-columns: 1.15fr 1fr;
-                    gap: 1em;
-                    align-items: start;
-                    margin-top: 2em;
-
-                    @media (width < 48rem) {
-                        grid-template-columns: 1fr;
-                    }
-                }
-
-                & .hci-layout .spatial-congruence,
-                & .hci-layout .cognitive-load-bifurcation {
-                    margin: 0;
-                }
-
-                @media (width < 48rem) {
-                        grid-template-columns: 1fr !important;
-                    }
-
-                    & figure {
-                        margin: auto;
-                        width: 100%;
-                        height: auto;
-
-                        & img {
-                            width: 100% !important;
-                            height: auto !important;
-                        }
-                    }
-                }
-
-                & ul {
+                & .multi-modal-feedback ul {
                     list-style: none;
                     padding: 0;
+                    margin: 0;
+                    display: contents;
+
+                    @media (width < 48rem) {
+                        display: grid;
+                        grid-template-columns: 1fr;
+                        gap: 1em;
+                    }
 
                     & li {
-                        margin-top: 2em;
+                        margin-top: 0;
                         display: flex;
                         flex-direction: row;
+                        align-items: flex-start;
+                        gap: 0.75em;
+                        background-color: var(--t-color-base-200);
+                        border: var(--t-border) solid var(--t-color-base-300);
+                        border-radius: var(--t-radius-field);
+                        padding: 1em;
 
                         & h6 {
                             font-weight: 700;
-                            font-size: 1.5em;
-                            margin-bottom: 0.5em;
+                            font-size: 1em;
+                            margin-bottom: 0.3em;
                         }
 
                         & .logo-svg {
-                            height: 5em;
+                            width: 3em;
+                            height: 3em;
                             flex-shrink: 0;
                             background-color: var(--t-color-secondary);
                             color: var(--t-color-base-100);
-                            aspect-ratio: 1 / 1;
                             display: flex;
                             flex-direction: column;
                             justify-content: center;
                             align-items: center;
-                            padding: 1em;
-                            border-radius: var(--t-radius-field);
-                            margin: auto;
-                            margin-right: 1em;
+                            padding: 0.75em;
+                            border-radius: var(--t-radius-selector);
+                            margin: 0;
 
                             & svg {
                                 width: 100%;
                                 height: 100%;
+                            }
+                        }
+
+                        & p {
+                            margin: 0;
+                            text-align: justify;
+                            line-height: 1.5;
+                        }
+                    }
+                }
+
+                & .interaction-modes {
+                    margin-top: 2em;
+                    padding: 1.25em;
+                    border-radius: var(--t-radius-field);
+                    background-color: var(--t-color-base-100);
+                    border: var(--t-border) solid var(--t-color-base-300);
+
+                    & h3 {
+                        margin: 0;
+                        font-size: 1.5em;
+                        font-weight: 800;
+                    }
+
+                    & .modes-grid {
+                        margin-top: 1em;
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        gap: 1em;
+
+                        @media (width < 48rem) {
+                            grid-template-columns: 1fr;
+                        }
+
+                        & article {
+                            padding: 1em;
+                            border-radius: var(--t-radius-field);
+                            background-color: var(--t-color-base-200);
+                            border: var(--t-border) solid var(--t-color-base-300);
+
+                            & h6 {
+                                margin: 0 0 0.4em;
+                                font-weight: 800;
+                                font-size: 1em;
+                                text-transform: uppercase;
+                                letter-spacing: 0.04em;
+                            }
+
+                            & p {
+                                margin: 0;
+                                text-align: justify;
+                                line-height: 1.5;
                             }
                         }
                     }
@@ -511,256 +320,133 @@
                     font-size: 2.5em;
                 }
 
-                & .cybernetic-feedback-loops {
+                & .hicks-law-card {
                     margin-top: 2em;
-                    padding: 1em;
+                    padding: 1.5em;
                     border-radius: var(--t-radius-field);
                     background-color: var(--t-color-base-100);
                     border: var(--t-border) solid var(--t-color-base-300);
 
-                    &>h3 {
+                    & h3 {
+                        margin: 0 0 0.75em;
                         font-weight: 900;
                         font-size: 2em;
                     }
 
-                    & .cybernetic-content {
+                    & p {
+                        margin: 0;
+                        text-align: justify;
+                    }
+
+                    & .mathmodel {
+                        margin: 1em 0;
+                        padding: 1em;
+                        position: relative;
+                        padding-left: 2em;
+                        background-color: var(--t-color-base-300);
+                        border-radius: var(--t-radius-field);
+                        overflow: hidden;
+
+                        &::before {
+                            content: '';
+                            display: block;
+                            position: absolute;
+                            width: 0.5em;
+                            height: 100%;
+                            background-color: var(--t-color-primary);
+                            left: 0;
+                            top: 0;
+                        }
+
+                        & h6 {
+                            font-family: var(--bs-font-monospace);
+                            color: var(--t-color-dark);
+                            font-weight: 300;
+                            margin-bottom: 0.25em;
+                        }
+
+                        & span {
+                            font-size: 2em;
+                        }
+                    }
+                }
+
+                & .cognitive-load-matrix {
+                    margin-top: 2em;
+                    display: grid;
+                    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.6fr);
+                    gap: 1.25em;
+                    align-items: start;
+
+                    @media (width < 48rem) {
+                        grid-template-columns: 1fr;
+                    }
+
+                    & .matrix-intro {
+                        padding-top: 1.25em;
+                        position: relative;
+
+                        & h3 {
+                            margin: 0;
+                            font-weight: 900;
+                            line-height: 1.05;
+                            letter-spacing: 0.01em;
+                        }
+
+                        & p {
+                            margin: 1em 0 0;
+                            color: var(--t-color-dark);
+                            text-align: justify;
+                        }
+                    }
+
+                    & .matrix-grid {
                         display: grid;
                         grid-template-columns: 1fr 1fr;
                         gap: 1em;
 
-        
-                & .ui-split-panels {
-                    display: grid;
-                    grid-template-columns: 1fr 1fr;
-                    gap: 1em;
-                    align-items: start;
-                    margin-top: 2em;
-
-                    @media (width < 48rem) {
-                        grid-template-columns: 1fr;
+                        @media (width < 48rem) {
+                            grid-template-columns: 1fr;
+                        }
                     }
-                }
 
-                & .ui-split-panels .fittslaw {
-                    display: block;
-                }
+                    & .matrix-card {
+                        background-color: var(--t-color-base-300);
+                        border: var(--t-border) solid var(--t-color-base-300);
+                        border-radius: var(--t-radius-field);
+                        padding: 1.25em;
+                        position: relative;
 
-                & .ui-split-panels .list-style-area {
-                    margin: 0;
-                }
-
-                & .hci-layout {
-                    display: grid;
-                    grid-template-columns: 1.15fr 1fr;
-                    gap: 1em;
-                    align-items: start;
-                    margin-top: 2em;
-
-                    @media (width < 48rem) {
-                        grid-template-columns: 1fr;
-                    }
-                }
-
-                & .hci-layout .spatial-congruence,
-                & .hci-layout .cognitive-load-bifurcation {
-                    margin: 0;
-                }
-
-                @media (width < 48rem) {
-                            grid-template-columns: 1fr !important;
+                        & .matrix-icon {
+                            width: 1.5em;
+                            height: 1.5em;
+                            color: var(--t-color-dark);
+                            margin-bottom: 0.6em;
+                            position: absolute;
+                            top: 1.25em;
+                            right: 1.25em;
                         }
 
                         & h6 {
-                            font-weight: 700;
-                            font-size: 1.2em;
-                            margin-bottom: 0.5em;
-                        }
-
-                        & .primary-modalities {
-                            list-style: none;
-                            padding: 1em;
-                            background-color: var(--t-color-base-200);
-                            border-radius: var(--t-radius-field);
-                            margin-bottom: 0;
-
-
-                            & li {
-                                margin-left: 1em;
-                                margin-bottom: 0.5em;
-                                position: relative;
-
-                                &::before {
-                                    content: '';
-                                    display: block;
-                                    position: absolute;
-                                    width: 0.2em;
-                                    height: 1em;
-                                    background-color: var(--t-color-primary);
-                                    border-radius: 1em;
-                                    left: -0.75em;
-                                    top: calc(50% - 0.5em);
-                                }
-                            }
-                        }
-                    }
-                }
-
-                & .spatial-congruence {
-                    padding: 1em;
-                    margin-top: 2em;
-
-                    & h2 {
-                        font-weight: 900;
-                        font-size: 2.5em;
-                    }
-                }
-
-                & .cognitive-load-bifurcation {
-                    margin: 2em 0;
-                    padding: 1em;
-                    border-radius: var(--t-radius-field);
-                    background-color: var(--t-color-base-100);
-                    border: var(--t-border) solid var(--t-color-base-300);
-
-                    &>h2 {
-                        font-weight: 900;
-                        font-size: 2em;
-                    }
-
-                    & table {
-                        width: 100%;
-                        border-collapse: separate;
-                        border-spacing: 0;
-                        border: var(--t-border) solid var(--t-color-base-300);
-                        border-radius: var(--t-radius-field);
-                        overflow: hidden;
-                        background-color: var(--t-color-base-200);
-                    }
-
-                    & th,
-                    & td {
-                        padding: 1em;
-                        vertical-align: top;
-                    }
-
-                    & thead th {
-                        font-weight: 800;
-                        font-size: 1.05em;
-                        background-color: var(--t-color-base-300);
-                        border-bottom: 1px solid var(--t-color-base-300);
-                    }
-
-                    & th+th,
-                    & td+td {
-                        border-left: 1px solid var(--t-color-base-300);
-                    }
-
-                    & tbody td {
-                        border-bottom: 1px solid var(--t-color-base-300);
-                    }
-
-                    & tbody tr:last-child td {
-                        border-bottom: 0;
-                    }
-
-                    & td h6 {
-                        font-weight: 700;
-                        font-size: 1.15em;
-                        margin-bottom: 0.5em;
-                    }
-
-                    & td p {
-                        margin-bottom: 0;
-                    }
-
-    
-                & .ui-split-panels {
-                    display: grid;
-                    grid-template-columns: 1fr 1fr;
-                    gap: 1em;
-                    align-items: start;
-                    margin-top: 2em;
-
-                    @media (width < 48rem) {
-                        grid-template-columns: 1fr;
-                    }
-                }
-
-                & .ui-split-panels .fittslaw {
-                    display: block;
-                }
-
-                & .ui-split-panels .list-style-area {
-                    margin: 0;
-                }
-
-                & .hci-layout {
-                    display: grid;
-                    grid-template-columns: 1.15fr 1fr;
-                    gap: 1em;
-                    align-items: start;
-                    margin-top: 2em;
-
-                    @media (width < 48rem) {
-                        grid-template-columns: 1fr;
-                    }
-                }
-
-                & .hci-layout .spatial-congruence,
-                & .hci-layout .cognitive-load-bifurcation {
-                    margin: 0;
-                }
-
-                @media (width < 48rem) {
-
-                        & table,
-                        & thead,
-                        & tbody,
-                        & tr,
-                        & th,
-                        & td {
-                            display: block;
-                            width: 100%;
-                        }
-
-                        & thead {
-                            display: none;
-                        }
-
-                        & tbody tr {
-                            border-bottom: 1px solid var(--t-color-base-300);
-                            padding: 0.5em;
-                        }
-
-                        & tbody tr:last-child {
-                            border-bottom: 0;
-                        }
-
-                        & td {
-                            border: 0;
-                            border-radius: var(--t-radius-field);
-                            background-color: var(--t-color-base-100);
-                            margin-bottom: 0.75em;
-                        }
-
-                        & td::before {
-                            display: block;
-                            font-weight: 700;
-                            font-size: 0.85em;
+                            margin: 0;
+                            font-weight: 800;
+                            font-size: 0.95em;
+                            letter-spacing: 0.08em;
                             text-transform: uppercase;
-                            letter-spacing: 0.04em;
-                            color: var(--t-color-primary);
-                            margin-bottom: 0.5em;
                         }
 
-                        & td:nth-child(1)::before {
-                            content: 'Extrinsic Load';
-                        }
-
-                        & td:nth-child(2)::before {
-                            content: 'Intrinsic Focus';
+                        & p {
+                            margin: 0.5em 0 0;
+                            font-size: 0.95em;
+                            line-height: 1.45;
+                            color: var(--t-color-dark);
+                            text-align: justify;
                         }
                     }
+                }
+
+                & .footnote {
+                    margin-top: 2em;
                 }
             }
 
@@ -883,44 +569,6 @@
                     text-align: justify;
                 }
 
-
-                & .ui-split-panels {
-                    display: grid;
-                    grid-template-columns: 1fr 1fr;
-                    gap: 1em;
-                    align-items: start;
-                    margin-top: 2em;
-
-                    @media (width < 48rem) {
-                        grid-template-columns: 1fr;
-                    }
-                }
-
-                & .ui-split-panels .fittslaw {
-                    display: block;
-                }
-
-                & .ui-split-panels .list-style-area {
-                    margin: 0;
-                }
-
-                & .hci-layout {
-                    display: grid;
-                    grid-template-columns: 1.15fr 1fr;
-                    gap: 1em;
-                    align-items: start;
-                    margin-top: 2em;
-
-                    @media (width < 48rem) {
-                        grid-template-columns: 1fr;
-                    }
-                }
-
-                & .hci-layout .spatial-congruence,
-                & .hci-layout .cognitive-load-bifurcation {
-                    margin: 0;
-                }
-
                 @media (width < 48rem) {
 
                     & table,
@@ -1005,44 +653,6 @@
                     grid-template-columns: 1fr 1fr 1fr 1fr;
                 }
 
-
-                & .ui-split-panels {
-                    display: grid;
-                    grid-template-columns: 1fr 1fr;
-                    gap: 1em;
-                    align-items: start;
-                    margin-top: 2em;
-
-                    @media (width < 48rem) {
-                        grid-template-columns: 1fr;
-                    }
-                }
-
-                & .ui-split-panels .fittslaw {
-                    display: block;
-                }
-
-                & .ui-split-panels .list-style-area {
-                    margin: 0;
-                }
-
-                & .hci-layout {
-                    display: grid;
-                    grid-template-columns: 1.15fr 1fr;
-                    gap: 1em;
-                    align-items: start;
-                    margin-top: 2em;
-
-                    @media (width < 48rem) {
-                        grid-template-columns: 1fr;
-                    }
-                }
-
-                & .hci-layout .spatial-congruence,
-                & .hci-layout .cognitive-load-bifurcation {
-                    margin: 0;
-                }
-
                 @media (width < 48rem) {
                     &.md-one-columns {
                         grid-template-columns: 1fr !important;
@@ -1087,45 +697,7 @@
                         }
                     }
 
-    
-                & .ui-split-panels {
-                    display: grid;
-                    grid-template-columns: 1fr 1fr;
-                    gap: 1em;
-                    align-items: start;
-                    margin-top: 2em;
-
                     @media (width < 48rem) {
-                        grid-template-columns: 1fr;
-                    }
-                }
-
-                & .ui-split-panels .fittslaw {
-                    display: block;
-                }
-
-                & .ui-split-panels .list-style-area {
-                    margin: 0;
-                }
-
-                & .hci-layout {
-                    display: grid;
-                    grid-template-columns: 1.15fr 1fr;
-                    gap: 1em;
-                    align-items: start;
-                    margin-top: 2em;
-
-                    @media (width < 48rem) {
-                        grid-template-columns: 1fr;
-                    }
-                }
-
-                & .hci-layout .spatial-congruence,
-                & .hci-layout .cognitive-load-bifurcation {
-                    margin: 0;
-                }
-
-                @media (width < 48rem) {
                         &::before {
                             right: 0;
                         }
@@ -1555,16 +1127,22 @@
                         <li>DIVA X Engine</li>
                     </ul>
                     <p>
-                        Hatsune Miku: Project DIVA (2009) is a legendary rhythm game series by Sega. The core UI abandons the rigid, static "highway track" logic used in Guitar Hero or Beatmania. Instead, it relies on targets appearing dynamically across the entire screen real estate.
+                        Hatsune Miku: Project DIVA (2009) is a legendary rhythm game series by Sega. The core UI
+                        abandons the rigid, static "highway track" logic used in Guitar Hero or Beatmania. Instead, it
+                        relies on targets appearing dynamically across the entire screen real estate.
                     </p>
                     <p>
-                        This "Wandering Track" mechanic forces the player to constantly search the screen for the next input, making active eye-tracking and peripheral awareness significantly more demanding. The notes literally fly in from the edges to collide with static ghost-targets placed haphazardly over a high-production 3D music video.
+                        This "Wandering Track" mechanic forces the player to constantly search the screen for the next
+                        input, making active eye-tracking and peripheral awareness significantly more demanding. The
+                        notes literally fly in from the edges to collide with static ghost-targets placed haphazardly
+                        over a high-production 3D music video.
                     </p>
                     <ul class="metrics-list">
                         <li>
                             <h6>Cognitive Load</h6>
                             <div class="value">Severe</div>
-                            <div class="desc">Active optical scanning combined with complex shape/color recognition.</div>
+                            <div class="desc">Active optical scanning combined with complex shape/color recognition.
+                            </div>
                         </li>
                         <li>
                             <h6>Response Time</h6>
@@ -1572,80 +1150,108 @@
                             <div class="desc">Strict arcade 'COOL' windows demand extreme accuracy.</div>
                         </li>
                     </ul>
-    
-</section>
+
+                </section>
                 <section class="game-sections" id="ui-components">
 
                     <h2>UI Components</h2>
                     <div class="major-components">
                         <div class="major-component">
                             <figure>
-                                <a href="https://via.placeholder.com/600x400/123/FFE?text=Floating+Melody+Icons" title="Melody Targets" target="images">
-                                    <img src="https://via.placeholder.com/600x400/123/FFE?text=Floating+Melody+Icons" alt="Melody Icons">
+                                <a href="../../../public/gamesContent/projectDiva/notes.png" title="Melody Targets"
+                                    target="images">
+                                    <img src="../../../public/gamesContent/projectDiva/notes.png" alt="Melody Icons">
                                 </a>
-                                <figcaption style="color: var(--t-color-dark)">FIG 1.1: Flying Melody Targets</figcaption>
+                                <figcaption style="color: var(--t-color-dark)">FIG 1.1: Flying Melody Targets
+                                </figcaption>
                             </figure>
                             <div>
                                 <span class="count">[ ELEMENT_01 ]</span>
                                 <span class="header-text">Wandering Melody Targets</span>
-                                <p>Gray targets sit statically while colored icons fly in organically across 3D space to collide perfectly on the beat.</p>
+                                <p>Gray targets sit statically while colored icons fly in organically across 3D space to
+                                    collide perfectly on the beat.</p>
                             </div>
                         </div>
                         <div class="major-component">
                             <figure>
-                                <a href="https://via.placeholder.com/600x400/123/F20?text=Analog+Slide+Vector" title="Slide Inputs" target="images">
-                                    <img src="https://via.placeholder.com/600x400/123/F20?text=Analog+Slide+Vector" alt="Analog Slides">
+                                <a href="../../../public/gamesContent/projectDiva/sliders.png" title="Slide Inputs"
+                                    target="images">
+                                    <img src="../../../public/gamesContent/projectDiva/sliders.png" alt="Analog Slides">
                                 </a>
-                                <figcaption style="color: var(--t-color-dark)">FIG 1.2: Analog Slide UI</figcaption>
+                                <figcaption>FIG 1.2: Analog Slide UI</figcaption>
                             </figure>
                             <div>
                                 <span class="count">[ ELEMENT_02 ]</span>
                                 <span class="header-text">Vector Slide Indicators</span>
-                                <p>Long, trailing vector graphics indicating the player must flick the analog stick (or swipe the touchpad on arcade cabinets).</p>
+                                <p>Long, trailing vector graphics indicating the player must flick the analog stick (or
+                                    swipe the touchpad on arcade cabinets).</p>
                             </div>
                         </div>
                         <div class="major-component">
                             <figure>
-                                <a href="https://via.placeholder.com/600x400/123/0F0?text=Chain+Note+Linkage" title="Chain Notes" target="images">
-                                    <img src="https://via.placeholder.com/600x400/123/0F0?text=Chain+Note+Linkage" alt="Chain Note UI">
+                                <a href="../../../public/gamesContent/projectDiva/chain.png" title="Chain Notes"
+                                    target="images">
+                                    <img src="../../../public/gamesContent/projectDiva/chain.png" alt="Chain Note UI">
                                 </a>
-                                <figcaption style="color: var(--t-color-dark)">FIG 1.3: Target Path Linkage</figcaption>
+                                <figcaption>FIG 1.3: Target Path Linkage</figcaption>
                             </figure>
                             <div>
                                 <span class="count">[ ELEMENT_03 ]</span>
                                 <span class="header-text">Wandering Sequence Trails</span>
-                                <p>Faint lines connect consecutive targets in a chain. This acts as a visual 'pre-read' system, guiding the player's optical path through screen space.</p>
+                                <p>Faint lines connect consecutive targets in a chain. This acts as a visual 'pre-read'
+                                    system, guiding the player's optical path through screen space.</p>
                             </div>
                         </div>
                         <div class="major-component">
                             <figure>
-                                <a href="https://via.placeholder.com/600x400/123/FFD700?text=Arcade+Slider+Bar" title="Slider UI" target="images">
-                                    <img src="https://via.placeholder.com/600x400/123/FFD700?text=Arcade+Slider+Bar" alt="Slider UI">
+                                <a href="../../../public/gamesContent/projectDiva/sliderBar.png" title="Slider UI"
+                                    target="images">
+                                    <img src="../../../public/gamesContent/projectDiva/sliderBar.png" alt="Slider UI">
                                 </a>
-                                <figcaption style="color: var(--t-color-dark)">FIG 1.4: Arcade Slider Proximity</figcaption>
+                                <figcaption>FIG 1.4: Arcade Slider Proximity
+                                </figcaption>
                             </figure>
                             <div>
                                 <span class="count">[ ELEMENT_04 ]</span>
                                 <span class="header-text">Kinetic Interaction Zone</span>
-                                <p>A dedicated horizontal touch-ribbon indicates multi-directional swipes. This is physically mapped to the user's hand position, providing high spatial congruence.</p>
+                                <p>A dedicated horizontal touch-ribbon indicates multi-directional swipes. This is
+                                    physically mapped to the user's hand position, providing high spatial congruence.
+                                </p>
                             </div>
                         </div>
                     </div>
 
-</section>
+                </section>
                 <section class="game-sections" id="user-interaction">
 
                     <h2>User Interaction</h2>
-                    <p>Interaction in Project DIVA is characterized by decentralized ocular scanning and multi-modal velocity processing.</p>
+                    <p>Interaction in Project DIVA is characterized by decentralized ocular scanning, rapid symbol
+                        decoding, and continuous timing correction under moving visual targets.</p>
                     <div class="ui-split-panels">
                         <div class="fittslaw">
-                            <h3 class="text-center">The Screen-Scan Loop</h3>
                             <div class="list-style-area">
-                                <ol class="four-columns md-two-columns" style="grid-template-columns: repeat(2, 1fr);">
-                                    <li><h6>Search</h6><p>Locate the grey base targets spawning in random quadrants.</p></li>
-                                    <li><h6>Identify</h6><p>Process the incoming flying note's color and shape icon.</p></li>
-                                    <li><h6>Anticipate</h6><p>Track velocity. Notes frequently change acceleration to test visual timing.</p></li>
-                                    <li><h6>Execute</h6><p>Depress the hardware button precisely upon graphical intersection.</p></li>
+                                <h3 class="text-center">The Screen-Scan Loop</h3>
+                                <ol class="two-columns md-two-columns">
+                                    <li>
+                                        <h6>Search</h6>
+                                        <p>Locate static target anchors in different quadrants while suppressing
+                                            background MV distractions.</p>
+                                    </li>
+                                    <li>
+                                        <h6>Identify</h6>
+                                        <p>Decode shape and color pairs fast enough to map to face buttons or D-pad
+                                            substitutes.</p>
+                                    </li>
+                                    <li>
+                                        <h6>Anticipate</h6>
+                                        <p>Track approach speed and arrival angle as note velocity shifts create timing
+                                            ambiguity.</p>
+                                    </li>
+                                    <li>
+                                        <h6>Execute</h6>
+                                        <p>Confirm input at collision timing while preparing the next hand transition in
+                                            the chain.</p>
+                                    </li>
                                 </ol>
                             </div>
                         </div>
@@ -1654,44 +1260,177 @@
                             <div class="multi-modal-feedback">
                                 <ul>
                                     <li>
-                                        <div class="logo-svg"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg></div>
-                                        <div><h6>Saccadic Pathing Guides</h6><p>Faint trailing lines connect notes, reducing the eye-search load by providing a visual trajectory vector.</p></div>
+                                        <div class="logo-svg"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                            </svg></div>
+                                        <div>
+                                            <h6>Saccadic Pathing Guides</h6>
+                                            <p>Faint trajectory lines connect target chains and reduce search overhead
+                                                by pre-positioning eye movement.</p>
+                                        </div>
                                     </li>
                                     <li>
-                                        <div class="logo-svg"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.114 5.636a9 9 0 010 12.728M16.463 8.288a5.25 5.25 0 010 7.424M6.75 8.25l4.72-4.72a.75.75 0 011.28.53v15.88a.75.75 0 01-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 012.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75z" /></svg></div>
-                                        <div><h6>Auditory De-Coupling</h6><p>Visual notes often lie about their speed, forcing the player to prioritize auditory rhythm.</p></div>
+                                        <div class="logo-svg"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M19.114 5.636a9 9 0 010 12.728M16.463 8.288a5.25 5.25 0 010 7.424M6.75 8.25l4.72-4.72a.75.75 0 011.28.53v15.88a.75.75 0 01-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 012.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75z" />
+                                            </svg></div>
+                                        <div>
+                                            <h6>Auditory De-Coupling</h6>
+                                            <p>Visual movement can mislead; experienced players align execution to audio
+                                                pulse over apparent note speed.</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="logo-svg"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M15.042 21.672 13.684 16.6m0 0-2.51 2.225.569-9.47 5.227 7.917-3.286-.672ZM12 3.75a8.25 8.25 0 1 0 0 16.5 8.25 8.25 0 0 0 0-16.5Z" />
+                                            </svg></div>
+                                        <div>
+                                            <h6>Timing Judgment Feedback</h6>
+                                            <p>COOL, FINE, SAFE, and SAD ratings give immediate temporal error signals
+                                                for micro-adjustments on the next sequence.</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="logo-svg"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M4.5 12a7.5 7.5 0 0 1 15 0m-15 0a7.5 7.5 0 0 0 15 0m-15 0H3m18 0h-1.5M12 4.5V3m0 18v-1.5" />
+                                            </svg></div>
+                                        <div>
+                                            <h6>Motor Redundancy Mapping</h6>
+                                            <p>Dual mappings between face buttons and directional inputs expand
+                                                execution options and reduce finger travel bottlenecks.</p>
+                                        </div>
                                     </li>
                                 </ul>
                             </div>
                         </div>
                     </div>
 
-</section>
-                <section class="game-sections" id="hci-principles">
-
-                    <h2>HCI Principles</h2>
-                    <div class="hci-layout">
-                        <div class="spatial-congruence">
-                            <h2>Saccadic Scanning</h2>
-                            <p style="text-align: justify;">
-                                DIVA forces full-screen saccadic scanning. This drastically increases the cognitive load of 'Informational Search'. To mitigate this, Sega uses Color-Form Redundancy (Circle is ALWAYS Red), allowing the brain to categorize the incoming note shape via color-processing before the shape-processing completes.
-                            </p>
-                        </div>
-                        <div class="cognitive-load-bifurcation">
-                            <h2>Visual Chaos Management</h2>
-                            <table>
-                                <thead><tr><th>Extrinsic Background Oscclusion</th><th>Intrinsic Input Precision</th></tr></thead>
-                                <tbody>
-                                    <tr>
-                                        <td><h6>MV Interference</h6><p>High-fidelity music videos often share the same color space as active note icons.</p></td>
-                                        <td><h6>Input Mapping Abstraction</h6><p>Allowing D-Pad directions to substitute for face buttons functionally doubles the motor processing bandwidth.</p></td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                    <div class="interaction-modes">
+                        <h3>Input Strategy Layers</h3>
+                        <div class="modes-grid">
+                            <article>
+                                <h6>Controller Mapping Layer</h6>
+                                <p>Advanced play uses mirrored mappings to distribute load between thumbs and avoid
+                                    fatigue during long 16th-note patterns.</p>
+                            </article>
+                            <article>
+                                <h6>Visual Filtering Layer</h6>
+                                <p>Players intentionally ignore low-priority background motion, then lock onto note hue
+                                    and trajectory as primary channels.</p>
+                            </article>
+                            <article>
+                                <h6>Rhythm Lock Layer</h6>
+                                <p>When charts desync visual expectation, audio metronomic anchoring stabilizes accuracy
+                                    and limits panic overcorrection.</p>
+                            </article>
+                            <article>
+                                <h6>Chain Planning Layer</h6>
+                                <p>Pre-reading two to four notes ahead allows smoother hand routing and fewer emergency
+                                    finger switches.</p>
+                            </article>
                         </div>
                     </div>
 
-</section>
+                </section>
+                <section class="game-sections" id="hci-principles">
+
+                    <h2>HCI Principles</h2>
+                    <div class="hicks-law-card">
+                        <h3>Saccadic Scanning and Target Choice Density</h3>
+                        <p>
+                            Project DIVA forces full-screen saccadic scanning while preserving strict rhythm timing.
+                            Every incoming icon introduces a new choice point: button mapping, movement direction, and
+                            exact timing offset. As concurrent notes increase, visual search and decision selection
+                            compete for limited working memory.
+                        </p>
+                        <div class="mathmodel">
+                            <h6>[ VISUAL CHOICE COST MODEL ]</h6>
+                            <span>T<sub>scan</sub> = b * log<sub>2</sub>(n + 1)</span>
+                        </div>
+                        <p>
+                            Color-form redundancy (for example fixed symbol-color pairings) reduces effective choice
+                            load by letting perceptual pattern recognition happen before conscious symbol parsing.
+                        </p>
+                    </div>
+
+                    <div class="cognitive-load-matrix">
+                        <div class="matrix-intro">
+                            <h3>Cognitive Load: Screen-Wide Rhythm Parsing</h3>
+                            <p>
+                                How does the player track moving targets, decode symbol mappings, and preserve tempo
+                                lock while a high-motion music video competes for visual attention?
+                            </p>
+                        </div>
+                        <div class="matrix-grid">
+                            <article class="matrix-card">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="matrix-icon">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                                </svg>
+                                <h6>Visual Search Load</h6>
+                                <p>
+                                    Targets can appear across all quadrants, forcing frequent long-distance eye jumps
+                                    and increasing detection latency under dense charts.
+                                </p>
+                            </article>
+                            <article class="matrix-card">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="matrix-icon">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 5.25h.008v.008H12v-.008Z" />
+                                </svg>
+                                <h6>Symbol-Mapping Load</h6>
+                                <p>
+                                    Players constantly translate shape-color cues into hand actions; mapping errors
+                                    rise when visual clutter and tempo spikes overlap.
+                                </p>
+                            </article>
+                            <article class="matrix-card">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="matrix-icon">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25l4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75z" />
+                                </svg>
+                                <h6>Audio-Visual Conflict Load</h6>
+                                <p>
+                                    Apparent note speed can diverge from perceived rhythm, requiring players to trust
+                                    audio timing anchors over deceptive motion cues.
+                                </p>
+                            </article>
+                            <article class="matrix-card">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="matrix-icon">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 0 0 2.25-2.25V6.75a2.25 2.25 0 0 0-2.25-2.25H6.75A2.25 2.25 0 0 0 4.5 6.75v10.5a2.25 2.25 0 0 0 2.25 2.25Zm.75-12h9v9h-9v-9Z" />
+                                </svg>
+                                <h6>Motor Planning Load</h6>
+                                <p>
+                                    Fast alternation between face buttons and directional substitutes demands predictive
+                                    hand routing to avoid missed transitions in chained sequences.
+                                </p>
+                            </article>
+                        </div>
+                    </div>
+
+                    <div class="footnote" style="margin: 2em 0;">
+                        Project DIVA remains readable when perception and action layers are intentionally separated:
+                        visual pathing for anticipation, auditory timing for execution, and redundant mappings for
+                        motor resilience.
+                    </div>
+
+                </section>
                 <section class="game-sections" id="ui-ux-weaknesses">
 
                     <h2>Strengths and Weaknesses Analysis</h2>
@@ -1709,14 +1448,17 @@
                                         <span class="label">01_AESTHETICS</span>
                                     </div>
                                     <h6>Music Video Synergy</h6>
-                                    <p>The screen-wide charting allows the UI to dance along with the background music video rather than locking player focus to a narrow vertical lane.</p>
+                                    <p>The screen-wide charting allows the UI to dance along with the background music
+                                        video rather than locking player focus to a narrow vertical lane.</p>
                                 </td>
                                 <td>
                                     <div class="sw-item-head">
                                         <span class="label">01_CLUTTER</span>
                                     </div>
                                     <h6>Background Sabotage</h6>
-                                    <p>If the background video features bright colors similar to the notes (e.g. bright blue laser lights), it completely masks the incoming UI elements, causing unfair drops.</p>
+                                    <p>If the background video features bright colors similar to the notes (e.g. bright
+                                        blue laser lights), it completely masks the incoming UI elements, causing unfair
+                                        drops.</p>
                                 </td>
                             </tr>
                             <tr>
@@ -1725,14 +1467,16 @@
                                         <span class="label">02_MAPPING</span>
                                     </div>
                                     <h6>Hardware Abstraction Simplification</h6>
-                                    <p>Allowing D-Pad directions to substitute for face buttons functionally doubles the player's execution bandwidth for 16th note streams.</p>
+                                    <p>Allowing D-Pad directions to substitute for face buttons functionally doubles the
+                                        player's execution bandwidth for 16th note streams.</p>
                                 </td>
                                 <td>
                                     <div class="sw-item-head">
                                         <span class="label">02_CHAOS</span>
                                     </div>
                                     <h6>Predictive Visual Failure</h6>
-                                    <p>In extreme difficulty charts, tracking 15 flying notes simultaneously across all screen quadrants breaks the biological limit of foveal scanning.</p>
+                                    <p>In extreme difficulty charts, tracking 15 flying notes simultaneously across all
+                                        screen quadrants breaks the biological limit of foveal scanning.</p>
                                 </td>
                             </tr>
                             <tr>
@@ -1741,24 +1485,28 @@
                                         <span class="label">03_DUAL_SENSORY</span>
                                     </div>
                                     <h6>Color-Shape Redundancy</h6>
-                                    <p>Fusing the symbol (Triangle) permanently to the color (Green) caters to both shape-recognizers and color-recognizers simultaneously.</p>
+                                    <p>Fusing the symbol (Triangle) permanently to the color (Green) caters to both
+                                        shape-recognizers and color-recognizers simultaneously.</p>
                                 </td>
                                 <td>
                                     <div class="sw-item-head">
                                         <span class="label">03_SPEED</span>
                                     </div>
                                     <h6>Velocity Deception UX</h6>
-                                    <p>Having the UI deliberately lie to the player about its speed generates immense initial frustration and a punishing learning curve.</p>
+                                    <p>Having the UI deliberately lie to the player about its speed generates immense
+                                        initial frustration and a punishing learning curve.</p>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
-                    
+
                     <div class="footnote summary">
-                        <p>Project DIVA successfully rejects the VSRG standard to create a rhythm aesthetic more akin to choreography. Its willingness to sacrifice perfect UI readability in favor of screen-scale chaotic beauty is its defining hallmark.</p>
+                        <p>Project DIVA successfully rejects the VSRG standard to create a rhythm aesthetic more akin to
+                            choreography. Its willingness to sacrifice perfect UI readability in favor of screen-scale
+                            chaotic beauty is its defining hallmark.</p>
                     </div>
-    
-</section>
+
+                </section>
             </div>
         </article>
     </main>
@@ -1798,19 +1546,19 @@
     const POSTERURL = "../../../public/posters/projectDiva_poster.jpg";
     const POSTERALTTEXT = "Project DIVA Game Poster";
     const VIDEOURL = "../../../public/videos/osu_trailer.mp4";
-    const VIDEOURLYT = "https://www.youtube.com/embed/S_8U8S1r3N8?si=diva_future";
+    const VIDEOURLYT = "https://www.youtube.com/embed/7IqkUsbXdGA?si=283zdBrbFYR3r5_I";
     const YTVID = true;
 
-    const GAMEUSERSTARS = "8.8";
-    const GAMEUSERRATINGS = "14k";
+    const GAMEUSERSTARS = "7.9";
+    const GAMEUSERRATINGS = "195";
 
-    const HASCRITICS = false; // Set to false if there are no critic ratings
-    const GAMECRITICSTARS = "0";
-    const GAMECRITICRATINGS = "0";
+    const HASCRITICS = true; // Set to false if there are no critic ratings
+    const GAMECRITICSTARS = "8.0";
+    const GAMECRITICRATINGS = "62";
 
     const GENRES = ["Rhythm", "Arcade", "Music"];
     const PLATFORMS = ["Arcade", "PlayStation 4", "Nintendo Switch", "PC"];
-    const EDITIONS = ["Future Tone", "Mega Mix"];
+    const EDITIONS = ["Hatsune Miku: Project DIVA", "Project DIVA 2nd", "Project DIVA Extend", "Project DIVA f / F", "Project DIVA F 2nd", "Project DIVA X", "Project DIVA Arcade Future Tone", "Project DIVA Future Tone", "Project DIVA Mega 39's / Mega Mix", "Project DIVA Mega Mix+"];
 
     const DESCRIPTION = "A pioneering rhythm game featuring Vocaloid characters and music, demanding high-speed multi-button coordination.";
 
@@ -2071,3 +1819,4 @@
 </script>
 
 </html>
+
