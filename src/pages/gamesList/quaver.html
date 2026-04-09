@@ -106,13 +106,13 @@
                     min-height: 15em;
                     border: var(--t-border) solid var(--t-color-base-300);
 
-                    &:first-child {
+                    &:last-child {
                         grid-column: 1 / -1;
                         width: 100%;
                         flex-direction: row;
                     }
 
-                    &:not(:first-child) {
+                    &:not(:last-child) {
                         flex-direction: column;
                     }
 
@@ -226,6 +226,7 @@
                     }
                 }
 
+
                 @media (width < 48rem) {
                     & .fittslaw {
                         grid-template-columns: 1fr;
@@ -261,6 +262,44 @@
                     & span {
                         font-size: 2em
                     }
+                }
+
+
+                & .ui-split-panels {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 1em;
+                    align-items: start;
+                    margin-top: 2em;
+
+                    @media (width < 48rem) {
+                        grid-template-columns: 1fr;
+                    }
+                }
+
+                & .ui-split-panels .fittslaw {
+                    display: block;
+                }
+
+                & .ui-split-panels .list-style-area {
+                    margin: 0;
+                }
+
+                & .hci-layout {
+                    display: grid;
+                    grid-template-columns: 1.15fr 1fr;
+                    gap: 1em;
+                    align-items: start;
+                    margin-top: 2em;
+
+                    @media (width < 48rem) {
+                        grid-template-columns: 1fr;
+                    }
+                }
+
+                & .hci-layout .spatial-congruence,
+                & .hci-layout .cognitive-load-bifurcation {
+                    margin: 0;
                 }
 
                 @media (width < 48rem) {
@@ -311,10 +350,63 @@
 
 
                 & .multi-modal-feedback {
-                    display: grid;
-                    grid-template-columns: 1fr 1fr;
-                    gap: 1em;
-                    padding-top: 1em;
+                    display: block;
+
+                    & ul {
+                        list-style: none;
+                        padding: 0;
+                        margin: 0;
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        gap: 1.5em;
+
+                        @media (width < 48rem) {
+                            grid-template-columns: 1fr;
+                        }
+
+                        & li {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 1em;
+                        }
+                    }
+
+                    & .ui-split-panels {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        gap: 1em;
+                        align-items: start;
+                        margin-top: 2em;
+
+                        @media (width < 48rem) {
+                            grid-template-columns: 1fr;
+                        }
+                    }
+
+                    & .ui-split-panels .fittslaw {
+                        display: block;
+                    }
+
+                    & .ui-split-panels .list-style-area {
+                        margin: 0;
+                    }
+
+                    & .hci-layout {
+                        display: grid;
+                        grid-template-columns: 1.15fr 1fr;
+                        gap: 1em;
+                        align-items: start;
+                        margin-top: 2em;
+
+                        @media (width < 48rem) {
+                            grid-template-columns: 1fr;
+                        }
+                    }
+
+                    & .hci-layout .spatial-congruence,
+                    & .hci-layout .cognitive-load-bifurcation {
+                        margin: 0;
+                    }
 
                     @media (width < 48rem) {
                         grid-template-columns: 1fr !important;
@@ -332,41 +424,105 @@
                     }
                 }
 
+                & .game-modes-panel {
+                    margin-top: 2em;
+                    padding: 1.5em;
+                    border-radius: var(--t-radius-field);
+                    background-color: var(--t-color-base-100);
+                    border: var(--t-border) solid var(--t-color-base-300);
+
+                    &>h3 {
+                        font-weight: 900;
+                        font-size: 1.3em;
+                        margin-bottom: 1em;
+                    }
+                }
+
+                & .game-modes-grid {
+                    display: grid;
+                    grid-template-columns: repeat(2, minmax(0, 1fr));
+                    gap: 1em;
+
+                    @media (width < 48rem) {
+                        grid-template-columns: 1fr;
+                    }
+                }
+
+                & .mode-card {
+                    padding: 1em;
+                    border-radius: var(--t-radius-field);
+                    background-color: var(--t-color-base-200);
+                    border: var(--t-border) solid var(--t-color-base-300);
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.75em;
+
+                    &.offset-calibration {
+                        grid-column: 1 / -1;
+                    }
+
+                    & h4 {
+                        font-weight: 800;
+                        font-size: 1.1em;
+                        margin: 0;
+                    }
+
+                    & p {
+                        margin: 0;
+                        text-align: justify;
+                        line-height: 1.55;
+                        font-size: 0.95em;
+                    }
+                }
+
                 & ul {
                     list-style: none;
                     padding: 0;
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 1.5em;
 
                     & li {
-                        margin-top: 2em;
                         display: flex;
-                        flex-direction: row;
+                        flex-direction: column;
+                        gap: 1em;
 
                         & h6 {
                             font-weight: 700;
-                            font-size: 1.5em;
-                            margin-bottom: 0.5em;
+                            font-size: 1.15em;
+                            margin: 0;
                         }
 
                         & .logo-svg {
-                            height: 5em;
+                            width: 3em;
+                            height: 3em;
                             flex-shrink: 0;
                             background-color: var(--t-color-secondary);
                             color: var(--t-color-base-100);
-                            aspect-ratio: 1 / 1;
                             display: flex;
-                            flex-direction: column;
                             justify-content: center;
                             align-items: center;
-                            padding: 1em;
-                            border-radius: var(--t-radius-field);
-                            margin: auto;
-                            margin-right: 1em;
+                            padding: 0.75em;
+                            border-radius: var(--t-radius-selector);
 
                             & svg {
                                 width: 100%;
                                 height: 100%;
+                                overflow: visible;
+                                display: block;
                             }
                         }
+
+                        & p {
+                            margin: 0;
+                            font-size: 0.95em;
+                            line-height: 1.5;
+                            text-align: justify;
+                        }
+                    }
+
+                    @media (width < 48rem) {
+                        grid-template-columns: 1fr;
                     }
                 }
             }
@@ -377,6 +533,124 @@
                 &>h2 {
                     font-weight: 900;
                     font-size: 2.5em;
+                }
+
+                & .hicks-law-card {
+                    margin: 2em 0;
+                    padding: 1.5em;
+                    border-radius: var(--t-radius-field);
+                    background-color: var(--t-color-base-100);
+                    border: var(--t-border) solid var(--t-color-base-300);
+
+                    &>h3 {
+                        font-weight: 900;
+                        font-size: 1.8em;
+                        margin-bottom: 0.75em;
+                    }
+
+                    &>p {
+                        text-align: justify;
+                        margin-bottom: 1.25em;
+                        line-height: 1.6;
+                    }
+
+                    &>p:last-of-type {
+                        margin-bottom: 0;
+                    }
+                }
+
+                & .mathmodel {
+                    margin: 1em 0;
+                    padding: 1em;
+                    position: relative;
+                    padding-left: 2em;
+                    background-color: var(--t-color-base-300);
+                    border-radius: var(--t-radius-field);
+                    overflow: hidden;
+
+                    &::before {
+                        content: '';
+                        display: block;
+                        position: absolute;
+                        width: 0.5em;
+                        height: 100%;
+                        background-color: var(--t-color-primary);
+                        left: 0;
+                        top: 0;
+                    }
+
+                    & h6 {
+                        font-family: var(--bs-font-monospace);
+                        color: var(--t-color-dark);
+                        font-weight: 300;
+                    }
+
+                    & span {
+                        font-size: 2em
+                    }
+                }
+
+                & .cognitive-load-matrix {
+                    margin: 2em 0;
+                }
+
+                & .matrix-intro {
+                    margin-bottom: 2em;
+
+                    &>h3 {
+                        font-weight: 900;
+                        font-size: 1.8em;
+                        margin-bottom: 0.75em;
+                    }
+
+                    &>p {
+                        text-align: justify;
+                        font-size: 1.05em;
+                        line-height: 1.6;
+                    }
+                }
+
+                & .matrix-grid {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 1.5em;
+                    margin: 2em 0;
+
+                    @media (width < 48rem) {
+                        grid-template-columns: 1fr;
+                        gap: 1.25em;
+                    }
+                }
+
+                & .matrix-card {
+                    padding: 1.5em;
+                    border-radius: var(--t-radius-field);
+                    background-color: var(--t-color-base-100);
+                    border: var(--t-border) solid var(--t-color-base-300);
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.75em;
+
+                    & .matrix-icon {
+                        width: 2.5em;
+                        height: 2.5em;
+                        color: var(--t-color-primary);
+                        flex-shrink: 0;
+                    }
+
+                    &>h6 {
+                        font-weight: 800;
+                        font-size: 1.15em;
+                        margin: 0;
+                    }
+
+                    &>p {
+                        text-align: justify;
+                        margin: 0;
+                        font-size: 0.95em;
+                        line-height: 1.5;
+                        color: var(--t-color-dark);
+                    }
                 }
 
                 & .cybernetic-feedback-loops {
@@ -395,6 +669,44 @@
                         display: grid;
                         grid-template-columns: 1fr 1fr;
                         gap: 1em;
+
+
+                        & .ui-split-panels {
+                            display: grid;
+                            grid-template-columns: 1fr 1fr;
+                            gap: 1em;
+                            align-items: start;
+                            margin-top: 2em;
+
+                            @media (width < 48rem) {
+                                grid-template-columns: 1fr;
+                            }
+                        }
+
+                        & .ui-split-panels .fittslaw {
+                            display: block;
+                        }
+
+                        & .ui-split-panels .list-style-area {
+                            margin: 0;
+                        }
+
+                        & .hci-layout {
+                            display: grid;
+                            grid-template-columns: 1.15fr 1fr;
+                            gap: 1em;
+                            align-items: start;
+                            margin-top: 2em;
+
+                            @media (width < 48rem) {
+                                grid-template-columns: 1fr;
+                            }
+                        }
+
+                        & .hci-layout .spatial-congruence,
+                        & .hci-layout .cognitive-load-bifurcation {
+                            margin: 0;
+                        }
 
                         @media (width < 48rem) {
                             grid-template-columns: 1fr !important;
@@ -501,6 +813,44 @@
 
                     & td p {
                         margin-bottom: 0;
+                    }
+
+
+                    & .ui-split-panels {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        gap: 1em;
+                        align-items: start;
+                        margin-top: 2em;
+
+                        @media (width < 48rem) {
+                            grid-template-columns: 1fr;
+                        }
+                    }
+
+                    & .ui-split-panels .fittslaw {
+                        display: block;
+                    }
+
+                    & .ui-split-panels .list-style-area {
+                        margin: 0;
+                    }
+
+                    & .hci-layout {
+                        display: grid;
+                        grid-template-columns: 1.15fr 1fr;
+                        gap: 1em;
+                        align-items: start;
+                        margin-top: 2em;
+
+                        @media (width < 48rem) {
+                            grid-template-columns: 1fr;
+                        }
+                    }
+
+                    & .hci-layout .spatial-congruence,
+                    & .hci-layout .cognitive-load-bifurcation {
+                        margin: 0;
                     }
 
                     @media (width < 48rem) {
@@ -675,6 +1025,44 @@
                     text-align: justify;
                 }
 
+
+                & .ui-split-panels {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 1em;
+                    align-items: start;
+                    margin-top: 2em;
+
+                    @media (width < 48rem) {
+                        grid-template-columns: 1fr;
+                    }
+                }
+
+                & .ui-split-panels .fittslaw {
+                    display: block;
+                }
+
+                & .ui-split-panels .list-style-area {
+                    margin: 0;
+                }
+
+                & .hci-layout {
+                    display: grid;
+                    grid-template-columns: 1.15fr 1fr;
+                    gap: 1em;
+                    align-items: start;
+                    margin-top: 2em;
+
+                    @media (width < 48rem) {
+                        grid-template-columns: 1fr;
+                    }
+                }
+
+                & .hci-layout .spatial-congruence,
+                & .hci-layout .cognitive-load-bifurcation {
+                    margin: 0;
+                }
+
                 @media (width < 48rem) {
 
                     & table,
@@ -759,6 +1147,44 @@
                     grid-template-columns: 1fr 1fr 1fr 1fr;
                 }
 
+
+                & .ui-split-panels {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 1em;
+                    align-items: start;
+                    margin-top: 2em;
+
+                    @media (width < 48rem) {
+                        grid-template-columns: 1fr;
+                    }
+                }
+
+                & .ui-split-panels .fittslaw {
+                    display: block;
+                }
+
+                & .ui-split-panels .list-style-area {
+                    margin: 0;
+                }
+
+                & .hci-layout {
+                    display: grid;
+                    grid-template-columns: 1.15fr 1fr;
+                    gap: 1em;
+                    align-items: start;
+                    margin-top: 2em;
+
+                    @media (width < 48rem) {
+                        grid-template-columns: 1fr;
+                    }
+                }
+
+                & .hci-layout .spatial-congruence,
+                & .hci-layout .cognitive-load-bifurcation {
+                    margin: 0;
+                }
+
                 @media (width < 48rem) {
                     &.md-one-columns {
                         grid-template-columns: 1fr !important;
@@ -801,6 +1227,44 @@
                         &::before {
                             left: 0;
                         }
+                    }
+
+
+                    & .ui-split-panels {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        gap: 1em;
+                        align-items: start;
+                        margin-top: 2em;
+
+                        @media (width < 48rem) {
+                            grid-template-columns: 1fr;
+                        }
+                    }
+
+                    & .ui-split-panels .fittslaw {
+                        display: block;
+                    }
+
+                    & .ui-split-panels .list-style-area {
+                        margin: 0;
+                    }
+
+                    & .hci-layout {
+                        display: grid;
+                        grid-template-columns: 1.15fr 1fr;
+                        gap: 1em;
+                        align-items: start;
+                        margin-top: 2em;
+
+                        @media (width < 48rem) {
+                            grid-template-columns: 1fr;
+                        }
+                    }
+
+                    & .hci-layout .spatial-congruence,
+                    & .hci-layout .cognitive-load-bifurcation {
+                        margin: 0;
                     }
 
                     @media (width < 48rem) {
@@ -1121,7 +1585,7 @@
                                     <button id="use-local-video-btn" class="btn-fallback btn-local" type="button">Use
                                         Local Video</button>
                                 </div>
-                                <p class="fallback-hint">💡 Try connecting through a different network or VPN to access
+                                <p class="fallback-hint">Try connecting through a different network or VPN to access
                                     YouTube content.</p>
                             </div>
                         </div>
@@ -1233,16 +1697,22 @@
                         <li>C# / FNA Framework</li>
                     </ul>
                     <p>
-                        Quaver (2020) is a community-driven, open-source vertical scrolling rhythm game (VSRG) heavily focused on hyper-competitive play in 4-Key and 7-Key modes.
+                        Quaver (2020) is a community-driven, open-source vertical scrolling rhythm game (VSRG) heavily
+                        focused on hyper-competitive play in 4-Key and 7-Key modes.
                     </p>
                     <p>
-                        From a UI/UX standpoint, Quaver is the ultimate distillation of brutalist data transmission. It actively strips away "fun" aesthetic distractions (MVs, dancing avatars) to provide raw, unadulterated feedback: millisecond hit errors, real-time AP percentages, and ultra-high polling rate diagnostics.
+                        From a UI/UX standpoint, Quaver is the ultimate distillation of brutalist data transmission. It
+                        actively strips away "fun" aesthetic distractions (MVs, dancing avatars) to provide raw,
+                        unadulterated feedback: millisecond hit errors, real-time AP percentages, and ultra-high polling
+                        rate diagnostics.
                     </p>
                     <ul class="metrics-list">
                         <li>
                             <h6>Cognitive Load</h6>
                             <div class="value">Extreme</div>
-                            <div class="desc">High note density reading (chordjacking/streaming 30+ taps per second).</div>
+                            <div class="desc">
+                                High note density reading (chordjacking/streaming 30+ taps per second).
+                            </div>
                         </li>
                         <li>
                             <h6>Response Time</h6>
@@ -1255,123 +1725,253 @@
                             <div class="desc">100% of the screen real-estate is given purely to the note grid.</div>
                         </li>
                     </ul>
-    
-</section>
+
+                </section>
                 <section class="game-sections" id="ui-components">
 
                     <h2>UI Components</h2>
                     <div class="major-components">
+
                         <div class="major-component">
                             <figure>
-                                <a href="https://via.placeholder.com/600x400/2Ecc71/FFF?text=Hit+Error+Distribution+Bar" title="Hit Error Bar" target="images">
-                                    <img src="https://via.placeholder.com/600x400/2Ecc71/FFF?text=Hit+Error+Distribution+Bar" alt="Hit Error Bar">
+                                <a href="../../../public/gamesContent/quaver/strictBorder.png"
+                                    title="Lane Separators" target="images">
+                                    <img src="../../../public/gamesContent/quaver/strictBorder.png"
+                                        alt="VSRG Lanes">
                                 </a>
-                                <figcaption>FIG 1.1: Micro-Feedback Hit Error</figcaption>
+                                <figcaption>FIG 1.1: Hard Lane Division</figcaption>
                             </figure>
                             <div>
                                 <span class="count">[ ELEMENT_01 ]</span>
-                                <span class="header-text">The Hit Error Bar</span>
-                                <p>A real-time distribution graph plotting every tap on a millisecond axis, visually communicating if the player is drifting early or late.</p>
+                                <span class="header-text">Strict Border Outlines</span>
+                                <p>
+                                    The playfield is rigidly segmented by literal pixel-perfect columns. This allows the
+                                    player's brain to chunk the visual data into distinct left-hand and right-hand
+                                    processing blocks instantly.
+                                </p>
                             </div>
                         </div>
                         <div class="major-component">
                             <figure>
-                                <a href="https://via.placeholder.com/600x400/333/FFF?text=VSRG+Lane+Separators" title="Lane Separators" target="images">
-                                    <img src="https://via.placeholder.com/600x400/333/FFF?text=VSRG+Lane+Separators" alt="VSRG Lanes">
+                                <a href="../../../public/gamesContent/quaver/modularSkins.png"
+                                    title="UI Skinning" target="images">
+                                    <img src="../../../public/gamesContent/quaver/modularSkins.png"
+                                        alt="Skinning UI">
                                 </a>
-                                <figcaption>FIG 1.2: Hard Lane Division</figcaption>
+                                <figcaption>FIG 1.2: User-Driven UI Agency
+                                </figcaption>
                             </figure>
                             <div>
                                 <span class="count">[ ELEMENT_02 ]</span>
-                                <span class="header-text">Strict Border Outlines</span>
-                                <p>Rigidly segmented columns allow the brain to 'chunk' visual data into distinct left-hand and right-hand processing blocks instantly.</p>
+                                <span class="header-text">Modular Skinning Interface</span>
+                                <p>
+                                    Quaver allows for extreme personalization. Users can modify note-to-background
+                                    contrast ratios and judgment-text positions. This grants 'UI Agency' to the player,
+                                    allowing them to solve their own 'informational occlusion' issues.
+                                </p>
                             </div>
                         </div>
                         <div class="major-component">
                             <figure>
-                                <a href="https://via.placeholder.com/600x400/000000/00FF00?text=Skinning+Config+Preview" title="UI Skinning" target="images">
-                                    <img src="https://via.placeholder.com/600x400/000000/00FF00?text=Skinning+Config+Preview" alt="Skinning UI">
+                                <a href="../../../public/gamesContent/quaver/graphs.webp"
+                                    title="Diagnostic UI" target="images">
+                                    <img src="../../../public/gamesContent/quaver/graphs.webp"
+                                        alt="Diagnostic Graph">
                                 </a>
-                                <figcaption>FIG 1.3: User-Driven UI Agency</figcaption>
+                                <figcaption>FIG 1.3: Real-Time Temporal Density Graph
+                                </figcaption>
                             </figure>
                             <div>
                                 <span class="count">[ ELEMENT_03 ]</span>
-                                <span class="header-text">Modular Skinning Interface</span>
-                                <p>
-                                    Quaver allows for extreme personalization. Users can modify note-to-background contrast ratios and judgement-text positions. This grants 'UI Agency' to the player, allowing them to solve their own 'informational occlusion' issues based on their monitor's refresh-rate limits.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="major-component">
-                            <figure>
-                                <a href="https://via.placeholder.com/600x400/FFFFFF/000?text=Timing+Graph+Overlay" title="Diagnostic UI" target="images">
-                                    <img src="https://via.placeholder.com/600x400/FFFFFF/000?text=Timing+Graph+Overlay" alt="Diagnostic Graph">
-                                </a>
-                                <figcaption>FIG 1.4: Real-Time Temporal Density Graph</figcaption>
-                            </figure>
-                            <div>
-                                <span class="count">[ ELEMENT_04 ]</span>
                                 <span class="header-text">Advanced Diagnostic Graphs</span>
                                 <p>
-                                    A post-hit line graph showing active BPM density vs accuracy performance. This allows for high-level neuro-motor recalibration, letting the user identify exactly at what note-density threshold their cognitive processing loop begins to fail.
+                                    A post-hit line graph showing active BPM density vs accuracy performance. This
+                                    allows for high-level neuro-motor recalibration, letting the user identify exactly
+                                    at what note-density threshold their cognitive processing loop begins to fail.
                                 </p>
                             </div>
                         </div>
                     </div>
-    
-</section>
+
+                </section>
                 <section class="game-sections" id="user-interaction">
 
                     <h2>User Interaction</h2>
-                    <p>Interaction is is purely competitive—translating extreme visual density into neuro-motor twitch responses via a zero-latency data pipeline.</p>
-                    <div class="list-style-area">
-                        <h3 class="text-center">The Data Translation Loop</h3>
-                        <ol class="four-columns md-two-columns">
-                            <li><h6>Read Stream</h6><p>Process dense vertical note chunks arriving at high scroll speeds (30+ note objects/sec).</p></li>
-                            <li><h6>Chunk Chords</h6><p>Group adjacent columns into singular rhythmic actions to reduce cognitive input branching.</p></li>
-                            <li><h6>Actuate</h6><p>Depress physical mechanical switches with millisecond temporal precision.</p></li>
-                            <li><h6>Calibrate</h6><p>Observe the Hit Error bar and adjust rhythmic tension mid-stream.</p></li>
-                        </ol>
+                    <p>Interaction is purely competitive—translating extreme visual density into neuro-motor twitch responses via a zero-latency data pipeline. Every keystroke is a data point. Every microsecond of delay is failure.</p>
+                    
+                    <div class="ui-split-panels">
+                        <div class="fittslaw">
+                            <div class="list-style-area">
+                                <h3 class="text-center">The Data Translation Loop</h3>
+                                <ol class="four-columns md-two-columns" style="grid-template-columns: repeat(2, 1fr);">
+                                    <li>
+                                        <h6>Read Stream</h6>
+                                        <p>Process dense vertical note chunks arriving at high scroll speeds (1.0x–2.5x rate). The brain must parse 4–7 simultaneous input lanes while maintaining temporal awareness of incoming chains.</p>
+                                    </li>
+                                    <li>
+                                        <h6>Chunk Chords</h6>
+                                        <p>Group adjacent columns into singular rhythmic actions (left-hand vs right-hand mechanical units). Professionals treat hand-pairs as monolithic input units rather than discrete key presses.</p>
+                                    </li>
+                                    <li>
+                                        <h6>Actuate</h6>
+                                        <p>Depress physical mechanical switches with millisecond temporal precision. The input latency budget is fixed: ±16ms window. Outside this, judgment degrades from "Perfect" → "Great" → "Good" → Miss.</p>
+                                    </li>
+                                    <li>
+                                        <h6>Calibrate</h6>
+                                        <p>Real-time offset correction via the hit error bar. If drifting early, conscious micro-adjustments delay the next keystroke; if late, accelerate the tempo slightly. This closed-loop correction requires active decision-making mid-performance.</p>
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                        <div class="list-style-area">
+                            <h3 class="text-center">Latency Architecture</h3>
+                            <p style="text-align: justify; margin-bottom: 1.5em;">Quaver's performance obsession stems from a single truth: in rhythm games, latency IS the core mechanic. The engine prioritizes input polling at 1000Hz (every 1ms), rendering bypass bloated OS input threadpools entirely. This creates a direct neural-to-hardware pipeline where timing compensation is purely biological—the player's brain, not the computer's.</p>
+                            <div class="multi-modal-feedback">
+                                <ul>
+                                    <li>
+                                        <div class="logo-svg"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8l-3.45-3.45a2 2 0 010-2.82l.06-.06a2 2 0 012.82 0l3.44 3.44h4.82a6 6 0 01-1.85 3.31z" />
+                                            </svg></div>
+                                        <div>
+                                            <h6>Mechanical Switch Haptics</h6>
+                                            <p>The physical keystroke generates tactile feedback (~0-5ms latency). This proprioceptive signal validates input registration before visual confirmation, acting as a low-latency checkpoint for motor memory.</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="logo-svg"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" />
+                                            </svg></div>
+                                        <div>
+                                            <h6>Hit Feedback & Accuracy Display</h6>
+                                            <p>Judgment text (Perfect/Great/Good/Miss) appears immediately after keystroke (~16ms render latency). Combined with the error bar, players receive dual-channel feedback: audio confirmation + visual judgment + temporal offset visualization.</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    <h3>Multi-Modal Feedback Matrix</h3>
-                    <div class="multi-modal-feedback">
-                        <div><p>Quaver treats human interaction hardware like a diagnostic tool, maximizing bandwidth for temporal precision data.</p></div>
-                        <ul>
-                            <li>
-                                <div class="logo-svg"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8l-3.45-3.45a2 2 0 010-2.82l.06-.06a2 2 0 012.82 0l3.44 3.44h4.82a6 6 0 01-1.85 3.31z" /></svg></div>
-                                <div><h6>Mechanical Switch Haptics</h6><p>The interaction depends on the 1:1 physical actuation of hardware switches, providing the tactile 'click' that validates the visual hit circle instantly.</p></div>
-                            </li>
-                            <li>
-                                <div class="logo-svg"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" /></svg></div>
-                                <div><h6>Live Accuracy Statistics</h6><p>Real-time 'AP' (Average Precision) counters in the periphery allow the user to monitor system state without breaking foveal lock on the notes.</p></div>
-                            </li>
-                        </ul>
+
+                    <div class="game-modes-panel">
+                        <h3>Game Modes & Input Schemes</h3>
+                        <div class="game-modes-grid">
+                            <article class="mode-card">
+                                <h4>4-Key Mode</h4>
+                                <p>Left-hand chord (D+F) and right-hand chord (J+K), mapped to a single spacebar. This creates a "toggle" interaction model where players rapidly alternate between left and right hand positions, creating a rhythm-based coordination challenge.</p>
+                            </article>
+                            <article class="mode-card">
+                                <h4>7-Key Mode</h4>
+                                <p>Full piano-like layout (D, F, G, Spacebar, H, J, K). Dramatically increases pattern complexity by introducing true poly-rhythmic sequences where independent fingers must execute different temporal offsets simultaneously.</p>
+                            </article>
+                            <article class="mode-card offset-calibration">
+                                <h4>Offset Calibration</h4>
+                                <p>Quaver's UI provides a dedicated offset wizard allowing players to dial in equipment latency to the millisecond. This eliminates hardware as a variable—if you can't hit the timing window, it's a biological/skill limitation, not a technical one.</p>
+                            </article>
+                        </div>
                     </div>
-    
-</section>
+
+                </section>
                 <section class="game-sections" id="hci-principles">
 
                     <h2>HCI Principles</h2>
-                    <div class="spatial-congruence">
-                        <h2>Defocused Pattern Recognition</h2>
-                        <p style="text-align: justify;">
-                            At extreme difficulty levels (30+ notes/sec), individual target tracking is biologically impossible. Professional Quaver users utilize 'Defocused Pattern Recognition'—anchoring their eyes at the screen's midpoint and treating the falling blocks as a unified texture rather than individual targets, bypassing slow saccadic processing.
+
+                    <div class="hicks-law-card">
+                        <h3>Temporal Precision in Synchronized Movement</h3>
+                        <p>
+                            The human neuro-motor system operates within hard timing windows. At high note densities, every 
+                            keystroke must land within ±16 milliseconds of the intended beat, or the rhythm breaks. This 
+                            creates a cascading error state: miss one note, lose temporal synchronization, miss the next 
+                            note. The cognitive load is not choosing what to do—it's executing with millimeter-perfect 
+                            mechanical timing.
+                        </p>
+                        <div class="mathmodel">
+                            <h6>[ TEMPO-ACCURACY COUPLING ]</h6>
+                            <span>Ἐ = |τ<sub>actual</sub> - τ<sub>target</sub>| ≤ 16ms</span>
+                        </div>
+                        <p>
+                            Visual cognition cannot be bypassed. The performer must read AND execute in real-time, 
+                            essentially running two parallel processes—visual parsing and motor execution—to maintain sync 
+                            across 200+ simultaneous decisions per minute.
                         </p>
                     </div>
-                    <div class="cognitive-load-bifurcation">
-                        <h2>VSRG Reading Overload</h2>
-                        <table>
-                            <thead><tr><th>Visual Simplification</th><th>Intrinsic Complexity</th></tr></thead>
-                            <tbody>
-                                <tr>
-                                    <td><h6>Brutalist HUD</h6><p>Total removal of Background Animations (BGA) ensures 100% background contrast for note readability.</p></td>
-                                    <td><h6>Note Stacking Friction</h6><p>Low scroll speeds cause notes to stack into illegible blocks, often requiring 100+ manual scroll-speed calibrations.</p></td>
-                                </tr>
-                            </tbody>
-                        </table>
+
+                    <div class="cognitive-load-matrix">
+                        <div class="matrix-intro">
+                            <h3>Cognitive Load: The Vision-Motor Loop</h3>
+                            <p>
+                                How does a player maintain perfect timing across 30+ note-densities per second while 
+                                reading upcoming patterns and adjusting swing mid-stream without system failure?
+                            </p>
+                        </div>
+                        <div class="matrix-grid">
+                            <article class="matrix-card">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="matrix-icon">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                                </svg>
+                                <h6>Visual Stream Processing</h6>
+                                <p>
+                                    The base load of parsing falling notes in real-time. At 30+ notes/sec, individual 
+                                    attention becomes biologically impossible; the brain chunks patterns into texture 
+                                    recognition.
+                                </p>
+                            </article>
+                            <article class="matrix-card">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="matrix-icon">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 5.25h.008v.008H12v-.008Z" />
+                                </svg>
+                                <h6>Motor Execution Load</h6>
+                                <p>
+                                    The physical keystroke timing precision required. Professionals decouple conscious 
+                                    attention from finger motion—turning macro-level awareness into micro-level muscle 
+                                    memory.
+                                </p>
+                            </article>
+                            <article class="matrix-card">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="matrix-icon">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M6.429 9.75 2.25 12l4.179 2.25m0-4.5 5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0 4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0-5.571 3-5.571-3" />
+                                </svg>
+                                <h6>Temporal Drift Correction</h6>
+                                <p>
+                                    Real-time adjustment of swing when the player's timing deviates. This requires active 
+                                    monitoring of the hit error bar while maintaining focus on incoming patterns—dual-task 
+                                    processing at maximum capacity.
+                                </p>
+                            </article>
+                            <article class="matrix-card">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="matrix-icon">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 0 0 2.25-2.25V6.75a2.25 2.25 0 0 0-2.25-2.25H6.75A2.25 2.25 0 0 0 4.5 6.75v10.5a2.25 2.25 0 0 0 2.25 2.25Zm.75-12h9v9h-9v-9Z" />
+                                </svg>
+                                <h6>UI Information Density</h6>
+                                <p>
+                                    The cognitive overhead of parsing HUD metrics (AP%, hit error, accuracy feedback) while 
+                                    maintaining rhythm focus. Minimalist design reduces this load by eliminating non-critical 
+                                    visual noise.
+                                </p>
+                            </article>
+                        </div>
                     </div>
-    
-</section>
+
+                    <div class="footnote" style="margin: 2em 0;">
+                        Success in Quaver is not about 'musicality' or 'feel'—it is the successful management of 
+                        cognitive bandwidth under extreme temporal pressure. The display is the visual input stream, 
+                        the keyboard is the motor output interface, and the player's auditory-motor cortex is the processor. 
+                        When these align perfectly, the human becomes a biological metronome.
+                    </div>
+
+                </section>
                 <section class="game-sections" id="ui-ux-weaknesses">
 
                     <h2>Strengths and Weaknesses Analysis</h2>
@@ -1389,14 +1989,16 @@
                                         <span class="label">01_PERFORMANCE</span>
                                     </div>
                                     <h6>Zero Latency Focus</h6>
-                                    <p>Open source optimizations strip away unneeded render threads, achieving superhuman sub-millisecond response minimums.</p>
+                                    <p>Open source optimizations strip away unneeded render threads, achieving
+                                        superhuman sub-millisecond response minimums.</p>
                                 </td>
                                 <td>
                                     <div class="sw-item-head">
                                         <span class="label">01_AESTHETICS</span>
                                     </div>
                                     <h6>Minimal Immersion</h6>
-                                    <p>The rigid, spreadsheet-like focus on brutalist data completely alienates casual players seeking a music-visualizer experience.</p>
+                                    <p>The rigid, spreadsheet-like focus on brutalist data completely alienates casual
+                                        players seeking a music-visualizer experience.</p>
                                 </td>
                             </tr>
                             <tr>
@@ -1405,14 +2007,16 @@
                                         <span class="label">02_CUSTOMIZATION</span>
                                     </div>
                                     <h6>Extreme Local Customization</h6>
-                                    <p>Every single UI element (hit bars, judgments, combos) can be re-anchored, scaled, or made invisible via .ini skinning config edits.</p>
+                                    <p>Every single UI element (hit bars, judgments, combos) can be re-anchored, scaled,
+                                        or made invisible via .ini skinning config edits.</p>
                                 </td>
                                 <td>
                                     <div class="sw-item-head">
                                         <span class="label">02_ONBOARDING</span>
                                     </div>
                                     <h6>Hostile UX Onboarding</h6>
-                                    <p>The settings menu hurls over 150 sliders at the user (Scroll speeds, offset wizards) with zero hand-holding.</p>
+                                    <p>The settings menu hurls over 150 sliders at the user (Scroll speeds, offset
+                                        wizards) with zero hand-holding.</p>
                                 </td>
                             </tr>
                             <tr>
@@ -1421,24 +2025,28 @@
                                         <span class="label">03_DIAGNOSTICS</span>
                                     </div>
                                     <h6>Micro-Correction Feedback</h6>
-                                    <p>The hit error bar provides immediate actionable intelligence to fix drifting rhythms mid-song.</p>
+                                    <p>The hit error bar provides immediate actionable intelligence to fix drifting
+                                        rhythms mid-song.</p>
                                 </td>
                                 <td>
                                     <div class="sw-item-head">
                                         <span class="label">03_EYE_STRAIN</span>
                                     </div>
                                     <h6>Retinal Burnout</h6>
-                                    <p>Staring at hyper-contrasting white blocks falling on pure black backgrounds for 3 hours induces massive ocular fatigue.</p>
+                                    <p>Staring at hyper-contrasting white blocks falling on pure black backgrounds for 3
+                                        hours induces massive ocular fatigue.</p>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
-                    
+
                     <div class="footnote summary">
-                        <p>Quaver treats human interaction hardware like a diagnostic tool. By removing every single piece of cinematic UX, it has built a hyper-efficient data pipeline between the visual cortex and the keyboard switch matrix.</p>
+                        <p>Quaver treats human interaction hardware like a diagnostic tool. By removing every single
+                            piece of cinematic UX, it has built a hyper-efficient data pipeline between the visual
+                            cortex and the keyboard switch matrix.</p>
                     </div>
-    
-</section>
+
+                </section>
             </div>
         </article>
     </main>
@@ -1467,7 +2075,7 @@
 <script>
     // VARIABLES
     const GAMENAME = "Quaver";
-    const DATERELEASED = "07/11/2020"; // MM/DD/YYYY
+    const DATERELEASED = "07/10/2020"; // MM/DD/YYYY
     const PUBLISHER = 'Swan';
     const BADGE = "Full Release";
     // Pre-Alpha
@@ -1475,14 +2083,14 @@
     // Beta
     // Early Access
     // Full Release
-    const POSTERURL = "../../../public/posters/quaver_poster.jpg";
+    const POSTERURL = "../../../public/posters/quaver_poster.webp";
     const POSTERALTTEXT = "Quaver Game Poster";
     const VIDEOURL = "../../../public/videos/osu_trailer.mp4";
-    const VIDEOURLYT = "https://www.youtube.com/embed/q_G70K-Z3p8";
+    const VIDEOURLYT = "https://www.youtube.com/embed/w6Vs9HsSArE?si=XWjpm1rECzju0zY8";
     const YTVID = true;
 
-    const GAMEUSERSTARS = "9.2";
-    const GAMEUSERRATINGS = "16k";
+    const GAMEUSERSTARS = "9.1";
+    const GAMEUSERRATINGS = "16.5k";
 
     const HASCRITICS = false; // Set to false if there are no critic ratings
     const GAMECRITICSTARS = "0";
@@ -1492,7 +2100,7 @@
     const PLATFORMS = ["PC", "Mac", "Linux"];
     const EDITIONS = ["Steam Native", "Open Source Builds"];
 
-    const DESCRIPTION = "An open-source rhythm game featuring two game modes (4K and 7K), highly focused on competitive accuracy and community charting.";
+    const DESCRIPTION = "Quaver is a community-driven and open-source competitive rhythm game with two game modes and online leaderboards. Create your own maps, or challenge the world in online multiplayer matches. An open-source rhythm game featuring two game modes (4K and 7K), highly focused on competitive accuracy and community charting.";
 
     // Document Variables
     const sectionRadios = Array.from(

@@ -93,30 +93,30 @@
                     margin: 2em 0;
                 }
 
+                
                 & .major-component {
-                    background-color: var(--t-color-base-100);
-                    border-radius: var(--t-radius-field);
-                    padding: 1em;
-                    height: auto;
-                    position: relative;
                     display: flex;
-                    align-items: flex-start;
-                    flex-direction: column;
-                    gap: 1em;
-                    min-height: 15em;
-                    border: var(--t-border) solid var(--t-color-base-300);
+                    gap: 2rem;
+                    background: rgba(255, 255, 255, 0.03);
+                    padding: 2rem;
+                    border-radius: 12px;
+                    border: 1px solid rgba(255, 255, 255, 0.1);
+                    transition: transform 0.3s ease;
+                    flex-direction: row;
 
-                    &:first-child {
+                    &:last-child {
                         grid-column: 1 / -1;
                         width: 100%;
-                        flex-direction: row;
+                        flex-direction: row-reverse;
                     }
 
-                    &:not(:first-child) {
+                    &:not(:first-child):not(:last-child) {
                         flex-direction: column;
                     }
 
                     & figure {
+                        width: 100%;
+
                         position: relative;
                         margin-bottom: 0;
                         width: 100%;
@@ -226,6 +226,44 @@
                     }
                 }
 
+
+                & .ui-split-panels {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 1em;
+                    align-items: start;
+                    margin-top: 2em;
+
+                    @media (width < 48rem) {
+                        grid-template-columns: 1fr;
+                    }
+                }
+
+                & .ui-split-panels .fittslaw {
+                    display: block;
+                }
+
+                & .ui-split-panels .list-style-area {
+                    margin: 0;
+                }
+
+                & .hci-layout {
+                    display: grid;
+                    grid-template-columns: 1.15fr 1fr;
+                    gap: 1em;
+                    align-items: start;
+                    margin-top: 2em;
+
+                    @media (width < 48rem) {
+                        grid-template-columns: 1fr;
+                    }
+                }
+
+                & .hci-layout .spatial-congruence,
+                & .hci-layout .cognitive-load-bifurcation {
+                    margin: 0;
+                }
+
                 @media (width < 48rem) {
                     & .fittslaw {
                         grid-template-columns: 1fr;
@@ -263,18 +301,74 @@
                     }
                 }
 
+
+                & .ui-split-panels {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 1em;
+                    align-items: start;
+                    margin-top: 2em;
+
+                    @media (width < 48rem) {
+                        grid-template-columns: 1fr;
+                    }
+                }
+
+                & .ui-split-panels .fittslaw {
+                    display: block;
+                }
+
+                & .ui-split-panels .list-style-area {
+                    margin: 0;
+                }
+
+                & .hci-layout {
+                    display: grid;
+                    grid-template-columns: 1.15fr 1fr;
+                    gap: 1em;
+                    align-items: start;
+                    margin-top: 2em;
+
+                    @media (width < 48rem) {
+                        grid-template-columns: 1fr;
+                    }
+                }
+
+                & .hci-layout .spatial-congruence,
+                & .hci-layout .cognitive-load-bifurcation {
+                    margin: 0;
+                }
+
                 @media (width < 48rem) {
                     & .major-components {
                         grid-template-columns: 1fr;
                         gap: 1em;
                     }
 
-                    & .major-component {
-                        &:first-child {
-                            flex-direction: column;
-                        }
+                    
+                & .major-component {
+                    display: flex;
+                    gap: 2rem;
+                    background: rgba(255, 255, 255, 0.03);
+                    padding: 2rem;
+                    border-radius: 12px;
+                    border: 1px solid rgba(255, 255, 255, 0.1);
+                    transition: transform 0.3s ease;
+                    flex-direction: row;
 
-                        & figure {
+                    &:last-child {
+                        grid-column: 1 / -1;
+                        width: 100%;
+                        flex-direction: row-reverse;
+                    }
+
+                    &:not(:first-child):not(:last-child) {
+                        flex-direction: column;
+                    }
+
+                    & figure {
+                        width: 100%;
+
                             width: 100%;
 
                             & figcaption {
@@ -316,7 +410,45 @@
                     gap: 1em;
                     padding-top: 1em;
 
+    
+                & .ui-split-panels {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 1em;
+                    align-items: start;
+                    margin-top: 2em;
+
                     @media (width < 48rem) {
+                        grid-template-columns: 1fr;
+                    }
+                }
+
+                & .ui-split-panels .fittslaw {
+                    display: block;
+                }
+
+                & .ui-split-panels .list-style-area {
+                    margin: 0;
+                }
+
+                & .hci-layout {
+                    display: grid;
+                    grid-template-columns: 1.15fr 1fr;
+                    gap: 1em;
+                    align-items: start;
+                    margin-top: 2em;
+
+                    @media (width < 48rem) {
+                        grid-template-columns: 1fr;
+                    }
+                }
+
+                & .hci-layout .spatial-congruence,
+                & .hci-layout .cognitive-load-bifurcation {
+                    margin: 0;
+                }
+
+                @media (width < 48rem) {
                         grid-template-columns: 1fr !important;
                     }
 
@@ -396,7 +528,45 @@
                         grid-template-columns: 1fr 1fr;
                         gap: 1em;
 
-                        @media (width < 48rem) {
+        
+                & .ui-split-panels {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 1em;
+                    align-items: start;
+                    margin-top: 2em;
+
+                    @media (width < 48rem) {
+                        grid-template-columns: 1fr;
+                    }
+                }
+
+                & .ui-split-panels .fittslaw {
+                    display: block;
+                }
+
+                & .ui-split-panels .list-style-area {
+                    margin: 0;
+                }
+
+                & .hci-layout {
+                    display: grid;
+                    grid-template-columns: 1.15fr 1fr;
+                    gap: 1em;
+                    align-items: start;
+                    margin-top: 2em;
+
+                    @media (width < 48rem) {
+                        grid-template-columns: 1fr;
+                    }
+                }
+
+                & .hci-layout .spatial-congruence,
+                & .hci-layout .cognitive-load-bifurcation {
+                    margin: 0;
+                }
+
+                @media (width < 48rem) {
                             grid-template-columns: 1fr !important;
                         }
 
@@ -503,7 +673,45 @@
                         margin-bottom: 0;
                     }
 
+    
+                & .ui-split-panels {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 1em;
+                    align-items: start;
+                    margin-top: 2em;
+
                     @media (width < 48rem) {
+                        grid-template-columns: 1fr;
+                    }
+                }
+
+                & .ui-split-panels .fittslaw {
+                    display: block;
+                }
+
+                & .ui-split-panels .list-style-area {
+                    margin: 0;
+                }
+
+                & .hci-layout {
+                    display: grid;
+                    grid-template-columns: 1.15fr 1fr;
+                    gap: 1em;
+                    align-items: start;
+                    margin-top: 2em;
+
+                    @media (width < 48rem) {
+                        grid-template-columns: 1fr;
+                    }
+                }
+
+                & .hci-layout .spatial-congruence,
+                & .hci-layout .cognitive-load-bifurcation {
+                    margin: 0;
+                }
+
+                @media (width < 48rem) {
 
                         & table,
                         & thead,
@@ -675,6 +883,44 @@
                     text-align: justify;
                 }
 
+
+                & .ui-split-panels {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 1em;
+                    align-items: start;
+                    margin-top: 2em;
+
+                    @media (width < 48rem) {
+                        grid-template-columns: 1fr;
+                    }
+                }
+
+                & .ui-split-panels .fittslaw {
+                    display: block;
+                }
+
+                & .ui-split-panels .list-style-area {
+                    margin: 0;
+                }
+
+                & .hci-layout {
+                    display: grid;
+                    grid-template-columns: 1.15fr 1fr;
+                    gap: 1em;
+                    align-items: start;
+                    margin-top: 2em;
+
+                    @media (width < 48rem) {
+                        grid-template-columns: 1fr;
+                    }
+                }
+
+                & .hci-layout .spatial-congruence,
+                & .hci-layout .cognitive-load-bifurcation {
+                    margin: 0;
+                }
+
                 @media (width < 48rem) {
 
                     & table,
@@ -759,6 +1005,44 @@
                     grid-template-columns: 1fr 1fr 1fr 1fr;
                 }
 
+
+                & .ui-split-panels {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 1em;
+                    align-items: start;
+                    margin-top: 2em;
+
+                    @media (width < 48rem) {
+                        grid-template-columns: 1fr;
+                    }
+                }
+
+                & .ui-split-panels .fittslaw {
+                    display: block;
+                }
+
+                & .ui-split-panels .list-style-area {
+                    margin: 0;
+                }
+
+                & .hci-layout {
+                    display: grid;
+                    grid-template-columns: 1.15fr 1fr;
+                    gap: 1em;
+                    align-items: start;
+                    margin-top: 2em;
+
+                    @media (width < 48rem) {
+                        grid-template-columns: 1fr;
+                    }
+                }
+
+                & .hci-layout .spatial-congruence,
+                & .hci-layout .cognitive-load-bifurcation {
+                    margin: 0;
+                }
+
                 @media (width < 48rem) {
                     &.md-one-columns {
                         grid-template-columns: 1fr !important;
@@ -803,7 +1087,45 @@
                         }
                     }
 
+    
+                & .ui-split-panels {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 1em;
+                    align-items: start;
+                    margin-top: 2em;
+
                     @media (width < 48rem) {
+                        grid-template-columns: 1fr;
+                    }
+                }
+
+                & .ui-split-panels .fittslaw {
+                    display: block;
+                }
+
+                & .ui-split-panels .list-style-area {
+                    margin: 0;
+                }
+
+                & .hci-layout {
+                    display: grid;
+                    grid-template-columns: 1.15fr 1fr;
+                    gap: 1em;
+                    align-items: start;
+                    margin-top: 2em;
+
+                    @media (width < 48rem) {
+                        grid-template-columns: 1fr;
+                    }
+                }
+
+                & .hci-layout .spatial-congruence,
+                & .hci-layout .cognitive-load-bifurcation {
+                    margin: 0;
+                }
+
+                @media (width < 48rem) {
                         &::before {
                             right: 0;
                         }
@@ -1261,14 +1583,12 @@
                                 <a href="https://via.placeholder.com/600x400/123/FFE?text=Floating+Melody+Icons" title="Melody Targets" target="images">
                                     <img src="https://via.placeholder.com/600x400/123/FFE?text=Floating+Melody+Icons" alt="Melody Icons">
                                 </a>
-                                <figcaption>FIG 1.1: Flying Melody Targets</figcaption>
+                                <figcaption style="color: var(--t-color-dark)">FIG 1.1: Flying Melody Targets</figcaption>
                             </figure>
                             <div>
                                 <span class="count">[ ELEMENT_01 ]</span>
                                 <span class="header-text">Wandering Melody Targets</span>
-                                <p>
-                                    Corresponding to the PlayStation controller buttons (Triangle, Circle, Cross, Square). Gray targets sit statically while colored icons fly in organically across 3D space to collide perfectly on the beat.
-                                </p>
+                                <p>Gray targets sit statically while colored icons fly in organically across 3D space to collide perfectly on the beat.</p>
                             </div>
                         </div>
                         <div class="major-component">
@@ -1276,14 +1596,12 @@
                                 <a href="https://via.placeholder.com/600x400/123/F20?text=Analog+Slide+Vector" title="Slide Inputs" target="images">
                                     <img src="https://via.placeholder.com/600x400/123/F20?text=Analog+Slide+Vector" alt="Analog Slides">
                                 </a>
-                                <figcaption>FIG 1.2: Analog Slide UI</figcaption>
+                                <figcaption style="color: var(--t-color-dark)">FIG 1.2: Analog Slide UI</figcaption>
                             </figure>
                             <div>
                                 <span class="count">[ ELEMENT_02 ]</span>
                                 <span class="header-text">Vector Slide Indicators</span>
-                                <p>
-                                    Long, trailing vector graphics indicating the player must flick the analog stick. This shifts input modality from button depression to kinematic lateral friction.
-                                </p>
+                                <p>Long, trailing vector graphics indicating the player must flick the analog stick (or swipe the touchpad on arcade cabinets).</p>
                             </div>
                         </div>
                         <div class="major-component">
@@ -1291,14 +1609,12 @@
                                 <a href="https://via.placeholder.com/600x400/123/0F0?text=Chain+Note+Linkage" title="Chain Notes" target="images">
                                     <img src="https://via.placeholder.com/600x400/123/0F0?text=Chain+Note+Linkage" alt="Chain Note UI">
                                 </a>
-                                <figcaption>FIG 1.3: Target Path Linkage</figcaption>
+                                <figcaption style="color: var(--t-color-dark)">FIG 1.3: Target Path Linkage</figcaption>
                             </figure>
                             <div>
                                 <span class="count">[ ELEMENT_03 ]</span>
                                 <span class="header-text">Wandering Sequence Trails</span>
-                                <p>
-                                    Faint lines connect consecutive targets in a chain. This acts as a visual 'pre-read' system, guiding the player's optical path through the chaotic screen space to the next foveal anchor.
-                                </p>
+                                <p>Faint lines connect consecutive targets in a chain. This acts as a visual 'pre-read' system, guiding the player's optical path through screen space.</p>
                             </div>
                         </div>
                         <div class="major-component">
@@ -1306,70 +1622,75 @@
                                 <a href="https://via.placeholder.com/600x400/123/FFD700?text=Arcade+Slider+Bar" title="Slider UI" target="images">
                                     <img src="https://via.placeholder.com/600x400/123/FFD700?text=Arcade+Slider+Bar" alt="Slider UI">
                                 </a>
-                                <figcaption>FIG 1.4: Arcade Slider Proximity</figcaption>
+                                <figcaption style="color: var(--t-color-dark)">FIG 1.4: Arcade Slider Proximity</figcaption>
                             </figure>
                             <div>
                                 <span class="count">[ ELEMENT_04 ]</span>
                                 <span class="header-text">Kinetic Interaction Zone</span>
-                                <p>
-                                    In Arcade builds, a dedicated horizontal touch-ribbon indicates multi-directional swipes. This UI element is physically mapped to the user's hand position, providing high spatial congruence between visual target and tactile input.
-                                </p>
+                                <p>A dedicated horizontal touch-ribbon indicates multi-directional swipes. This is physically mapped to the user's hand position, providing high spatial congruence.</p>
                             </div>
                         </div>
                     </div>
-    
+
 </section>
                 <section class="game-sections" id="user-interaction">
 
                     <h2>User Interaction</h2>
                     <p>Interaction in Project DIVA is characterized by decentralized ocular scanning and multi-modal velocity processing.</p>
-                    <div class="list-style-area">
-                        <h3 class="text-center">The Screen-Scan Loop</h3>
-                        <ol class="four-columns md-two-columns">
-                            <li><h6>Search</h6><p>Locate the grey base targets spawning in random screen quadrants.</p></li>
-                            <li><h6>Identify</h6><p>Process the incoming flying note's color and shape icon (X, O, Triangle, Square).</p></li>
-                            <li><h6>Anticipate</h6><p>Track velocity. Notes frequently change acceleration to test visual timing.</p></li>
-                            <li><h6>Execute</h6><p>Depress the hardware button precisely upon graphical intersection.</p></li>
-                        </ol>
+                    <div class="ui-split-panels">
+                        <div class="fittslaw">
+                            <h3 class="text-center">The Screen-Scan Loop</h3>
+                            <div class="list-style-area">
+                                <ol class="four-columns md-two-columns" style="grid-template-columns: repeat(2, 1fr);">
+                                    <li><h6>Search</h6><p>Locate the grey base targets spawning in random quadrants.</p></li>
+                                    <li><h6>Identify</h6><p>Process the incoming flying note's color and shape icon.</p></li>
+                                    <li><h6>Anticipate</h6><p>Track velocity. Notes frequently change acceleration to test visual timing.</p></li>
+                                    <li><h6>Execute</h6><p>Depress the hardware button precisely upon graphical intersection.</p></li>
+                                </ol>
+                            </div>
+                        </div>
+                        <div class="list-style-area">
+                            <h3 class="text-center">Multi-Modal Feedback Matrix</h3>
+                            <div class="multi-modal-feedback">
+                                <ul>
+                                    <li>
+                                        <div class="logo-svg"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg></div>
+                                        <div><h6>Saccadic Pathing Guides</h6><p>Faint trailing lines connect notes, reducing the eye-search load by providing a visual trajectory vector.</p></div>
+                                    </li>
+                                    <li>
+                                        <div class="logo-svg"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.114 5.636a9 9 0 010 12.728M16.463 8.288a5.25 5.25 0 010 7.424M6.75 8.25l4.72-4.72a.75.75 0 011.28.53v15.88a.75.75 0 01-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 012.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75z" /></svg></div>
+                                        <div><h6>Auditory De-Coupling</h6><p>Visual notes often lie about their speed, forcing the player to prioritize auditory rhythm.</p></div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    <h3>Multi-Modal Feedback Matrix</h3>
-                    <div class="multi-modal-feedback">
-                        <div><p>DIVA intentionally maximizes visual clutter to test the user's ability to isolate UI frames from chaotic 3D background movies.</p></div>
-                        <ul>
-                            <li>
-                                <div class="logo-svg"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg></div>
-                                <div><h6>Saccadic Pathing Guides</h6><p>Faint trailing lines connect notes, reducing the eye-search load in high-BPM segments by providing a visual trajectory vector.</p></div>
-                            </li>
-                            <li>
-                                <div class="logo-svg"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.114 5.636a9 9 0 010 12.728M16.463 8.288a5.25 5.25 0 010 7.424M6.75 8.25l4.72-4.72a.75.75 0 011.28.53v15.88a.75.75 0 01-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 012.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75z" /></svg></div>
-                                <div><h6>Auditory Velocity De-Coupling</h6><p>Visual notes often lie about their speed (acceleration tricks), forcing the player to prioritize auditory rhythm over deceptive graphical velocity vectors.</p></div>
-                            </li>
-                        </ul>
-                    </div>
-    
+
 </section>
                 <section class="game-sections" id="hci-principles">
 
                     <h2>HCI Principles</h2>
-                    <div class="spatial-congruence">
-                        <h2>Saccadic Scanning vs Lane-Stationary Reading</h2>
-                        <p style="text-align: justify;">
-                            Unlike standard VSRGs where the eye remains fixed on a 'judgement highway', DIVA forces full-screen saccadic scanning. This drastically increases the cognitive load of 'Informational Search'. To mitigate this, Sega uses Color-Form Redundancy (Circle is ALWAYS Red), allowing the brain to categorize the incoming note shape via color-processing before the shape-processing completes.
-                        </p>
+                    <div class="hci-layout">
+                        <div class="spatial-congruence">
+                            <h2>Saccadic Scanning</h2>
+                            <p style="text-align: justify;">
+                                DIVA forces full-screen saccadic scanning. This drastically increases the cognitive load of 'Informational Search'. To mitigate this, Sega uses Color-Form Redundancy (Circle is ALWAYS Red), allowing the brain to categorize the incoming note shape via color-processing before the shape-processing completes.
+                            </p>
+                        </div>
+                        <div class="cognitive-load-bifurcation">
+                            <h2>Visual Chaos Management</h2>
+                            <table>
+                                <thead><tr><th>Extrinsic Background Oscclusion</th><th>Intrinsic Input Precision</th></tr></thead>
+                                <tbody>
+                                    <tr>
+                                        <td><h6>MV Interference</h6><p>High-fidelity music videos often share the same color space as active note icons.</p></td>
+                                        <td><h6>Input Mapping Abstraction</h6><p>Allowing D-Pad directions to substitute for face buttons functionally doubles the motor processing bandwidth.</p></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
-                <div class="cognitive-load-bifurcation">
-                        <h2>Visual Chaos Management</h2>
-                        <table>
-                            <thead><tr><th>Extrinsic Background Occlusion</th><th>Intrinsic Input Precision</th></tr></thead>
-                            <tbody>
-                                <tr>
-                                    <td><h6>MV Interference</h6><p>High-fidelity music videos with bright flashes often share the same color space as active note icons.</p></td>
-                                    <td><h6>Input Mapping Abstraction</h6><p>Allowing D-Pad directions to substitute for face buttons functionally doubles the player's motor processing bandwidth.</p></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-    
+
 </section>
                 <section class="game-sections" id="ui-ux-weaknesses">
 

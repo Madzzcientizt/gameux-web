@@ -93,30 +93,30 @@
                     margin: 2em 0;
                 }
 
+                
                 & .major-component {
-                    background-color: var(--t-color-base-100);
-                    border-radius: var(--t-radius-field);
-                    padding: 1em;
-                    height: auto;
-                    position: relative;
                     display: flex;
-                    align-items: flex-start;
-                    flex-direction: column;
-                    gap: 1em;
-                    min-height: 15em;
-                    border: var(--t-border) solid var(--t-color-base-300);
+                    gap: 2rem;
+                    background: rgba(255, 255, 255, 0.03);
+                    padding: 2rem;
+                    border-radius: 12px;
+                    border: 1px solid rgba(255, 255, 255, 0.1);
+                    transition: transform 0.3s ease;
+                    flex-direction: row;
 
-                    &:first-child {
+                    &:last-child {
                         grid-column: 1 / -1;
                         width: 100%;
-                        flex-direction: row;
+                        flex-direction: row-reverse;
                     }
 
-                    &:not(:first-child) {
+                    &:not(:first-child):not(:last-child) {
                         flex-direction: column;
                     }
 
                     & figure {
+                        width: 100%;
+
                         position: relative;
                         margin-bottom: 0;
                         width: 100%;
@@ -226,6 +226,44 @@
                     }
                 }
 
+
+                & .ui-split-panels {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 1em;
+                    align-items: start;
+                    margin-top: 2em;
+
+                    @media (width < 48rem) {
+                        grid-template-columns: 1fr;
+                    }
+                }
+
+                & .ui-split-panels .fittslaw {
+                    display: block;
+                }
+
+                & .ui-split-panels .list-style-area {
+                    margin: 0;
+                }
+
+                & .hci-layout {
+                    display: grid;
+                    grid-template-columns: 1.15fr 1fr;
+                    gap: 1em;
+                    align-items: start;
+                    margin-top: 2em;
+
+                    @media (width < 48rem) {
+                        grid-template-columns: 1fr;
+                    }
+                }
+
+                & .hci-layout .spatial-congruence,
+                & .hci-layout .cognitive-load-bifurcation {
+                    margin: 0;
+                }
+
                 @media (width < 48rem) {
                     & .fittslaw {
                         grid-template-columns: 1fr;
@@ -263,18 +301,74 @@
                     }
                 }
 
+
+                & .ui-split-panels {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 1em;
+                    align-items: start;
+                    margin-top: 2em;
+
+                    @media (width < 48rem) {
+                        grid-template-columns: 1fr;
+                    }
+                }
+
+                & .ui-split-panels .fittslaw {
+                    display: block;
+                }
+
+                & .ui-split-panels .list-style-area {
+                    margin: 0;
+                }
+
+                & .hci-layout {
+                    display: grid;
+                    grid-template-columns: 1.15fr 1fr;
+                    gap: 1em;
+                    align-items: start;
+                    margin-top: 2em;
+
+                    @media (width < 48rem) {
+                        grid-template-columns: 1fr;
+                    }
+                }
+
+                & .hci-layout .spatial-congruence,
+                & .hci-layout .cognitive-load-bifurcation {
+                    margin: 0;
+                }
+
                 @media (width < 48rem) {
                     & .major-components {
                         grid-template-columns: 1fr;
                         gap: 1em;
                     }
 
-                    & .major-component {
-                        &:first-child {
-                            flex-direction: column;
-                        }
+                    
+                & .major-component {
+                    display: flex;
+                    gap: 2rem;
+                    background: rgba(255, 255, 255, 0.03);
+                    padding: 2rem;
+                    border-radius: 12px;
+                    border: 1px solid rgba(255, 255, 255, 0.1);
+                    transition: transform 0.3s ease;
+                    flex-direction: row;
 
-                        & figure {
+                    &:last-child {
+                        grid-column: 1 / -1;
+                        width: 100%;
+                        flex-direction: row-reverse;
+                    }
+
+                    &:not(:first-child):not(:last-child) {
+                        flex-direction: column;
+                    }
+
+                    & figure {
+                        width: 100%;
+
                             width: 100%;
 
                             & figcaption {
@@ -316,7 +410,45 @@
                     gap: 1em;
                     padding-top: 1em;
 
+    
+                & .ui-split-panels {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 1em;
+                    align-items: start;
+                    margin-top: 2em;
+
                     @media (width < 48rem) {
+                        grid-template-columns: 1fr;
+                    }
+                }
+
+                & .ui-split-panels .fittslaw {
+                    display: block;
+                }
+
+                & .ui-split-panels .list-style-area {
+                    margin: 0;
+                }
+
+                & .hci-layout {
+                    display: grid;
+                    grid-template-columns: 1.15fr 1fr;
+                    gap: 1em;
+                    align-items: start;
+                    margin-top: 2em;
+
+                    @media (width < 48rem) {
+                        grid-template-columns: 1fr;
+                    }
+                }
+
+                & .hci-layout .spatial-congruence,
+                & .hci-layout .cognitive-load-bifurcation {
+                    margin: 0;
+                }
+
+                @media (width < 48rem) {
                         grid-template-columns: 1fr !important;
                     }
 
@@ -396,7 +528,45 @@
                         grid-template-columns: 1fr 1fr;
                         gap: 1em;
 
-                        @media (width < 48rem) {
+        
+                & .ui-split-panels {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 1em;
+                    align-items: start;
+                    margin-top: 2em;
+
+                    @media (width < 48rem) {
+                        grid-template-columns: 1fr;
+                    }
+                }
+
+                & .ui-split-panels .fittslaw {
+                    display: block;
+                }
+
+                & .ui-split-panels .list-style-area {
+                    margin: 0;
+                }
+
+                & .hci-layout {
+                    display: grid;
+                    grid-template-columns: 1.15fr 1fr;
+                    gap: 1em;
+                    align-items: start;
+                    margin-top: 2em;
+
+                    @media (width < 48rem) {
+                        grid-template-columns: 1fr;
+                    }
+                }
+
+                & .hci-layout .spatial-congruence,
+                & .hci-layout .cognitive-load-bifurcation {
+                    margin: 0;
+                }
+
+                @media (width < 48rem) {
                             grid-template-columns: 1fr !important;
                         }
 
@@ -503,7 +673,45 @@
                         margin-bottom: 0;
                     }
 
+    
+                & .ui-split-panels {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 1em;
+                    align-items: start;
+                    margin-top: 2em;
+
                     @media (width < 48rem) {
+                        grid-template-columns: 1fr;
+                    }
+                }
+
+                & .ui-split-panels .fittslaw {
+                    display: block;
+                }
+
+                & .ui-split-panels .list-style-area {
+                    margin: 0;
+                }
+
+                & .hci-layout {
+                    display: grid;
+                    grid-template-columns: 1.15fr 1fr;
+                    gap: 1em;
+                    align-items: start;
+                    margin-top: 2em;
+
+                    @media (width < 48rem) {
+                        grid-template-columns: 1fr;
+                    }
+                }
+
+                & .hci-layout .spatial-congruence,
+                & .hci-layout .cognitive-load-bifurcation {
+                    margin: 0;
+                }
+
+                @media (width < 48rem) {
 
                         & table,
                         & thead,
@@ -675,6 +883,44 @@
                     text-align: justify;
                 }
 
+
+                & .ui-split-panels {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 1em;
+                    align-items: start;
+                    margin-top: 2em;
+
+                    @media (width < 48rem) {
+                        grid-template-columns: 1fr;
+                    }
+                }
+
+                & .ui-split-panels .fittslaw {
+                    display: block;
+                }
+
+                & .ui-split-panels .list-style-area {
+                    margin: 0;
+                }
+
+                & .hci-layout {
+                    display: grid;
+                    grid-template-columns: 1.15fr 1fr;
+                    gap: 1em;
+                    align-items: start;
+                    margin-top: 2em;
+
+                    @media (width < 48rem) {
+                        grid-template-columns: 1fr;
+                    }
+                }
+
+                & .hci-layout .spatial-congruence,
+                & .hci-layout .cognitive-load-bifurcation {
+                    margin: 0;
+                }
+
                 @media (width < 48rem) {
 
                     & table,
@@ -759,6 +1005,44 @@
                     grid-template-columns: 1fr 1fr 1fr 1fr;
                 }
 
+
+                & .ui-split-panels {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 1em;
+                    align-items: start;
+                    margin-top: 2em;
+
+                    @media (width < 48rem) {
+                        grid-template-columns: 1fr;
+                    }
+                }
+
+                & .ui-split-panels .fittslaw {
+                    display: block;
+                }
+
+                & .ui-split-panels .list-style-area {
+                    margin: 0;
+                }
+
+                & .hci-layout {
+                    display: grid;
+                    grid-template-columns: 1.15fr 1fr;
+                    gap: 1em;
+                    align-items: start;
+                    margin-top: 2em;
+
+                    @media (width < 48rem) {
+                        grid-template-columns: 1fr;
+                    }
+                }
+
+                & .hci-layout .spatial-congruence,
+                & .hci-layout .cognitive-load-bifurcation {
+                    margin: 0;
+                }
+
                 @media (width < 48rem) {
                     &.md-one-columns {
                         grid-template-columns: 1fr !important;
@@ -803,7 +1087,45 @@
                         }
                     }
 
+    
+                & .ui-split-panels {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 1em;
+                    align-items: start;
+                    margin-top: 2em;
+
                     @media (width < 48rem) {
+                        grid-template-columns: 1fr;
+                    }
+                }
+
+                & .ui-split-panels .fittslaw {
+                    display: block;
+                }
+
+                & .ui-split-panels .list-style-area {
+                    margin: 0;
+                }
+
+                & .hci-layout {
+                    display: grid;
+                    grid-template-columns: 1.15fr 1fr;
+                    gap: 1em;
+                    align-items: start;
+                    margin-top: 2em;
+
+                    @media (width < 48rem) {
+                        grid-template-columns: 1fr;
+                    }
+                }
+
+                & .hci-layout .spatial-congruence,
+                & .hci-layout .cognitive-load-bifurcation {
+                    margin: 0;
+                }
+
+                @media (width < 48rem) {
                         &::before {
                             right: 0;
                         }
@@ -1261,12 +1583,12 @@
                                 <a href="https://via.placeholder.com/600x400/9b59b6/FFF?text=The+Gear+Frame" title="The Gear UI" target="images">
                                     <img src="https://via.placeholder.com/600x400/9b59b6/FFF?text=The+Gear+Frame" alt="Gear UI Shell">
                                 </a>
-                                <figcaption>FIG 1.1: The 'Gear' Playfield Shell</figcaption>
+                                <figcaption style="color: var(--t-color-dark)">FIG 1.1: The 'Gear' Playfield Shell</figcaption>
                             </figure>
                             <div>
                                 <span class="count">[ ELEMENT_01 ]</span>
                                 <span class="header-text">The Gear Playfield Frame</span>
-                                <p>The primary Gear frame physically encloses the tracks, establishing a rigid border between the gameplay data and the chaotic 3D background entertainment.</p>
+                                <p>The primary Gear frame physically encloses the tracks, establishing a rigid border between gameplay data and background movies.</p>
                             </div>
                         </div>
                         <div class="major-component">
@@ -1274,12 +1596,12 @@
                                 <a href="https://via.placeholder.com/600x400/34495e/FFF?text=Side+Track+Notes" title="Side Track Mechanics" target="images">
                                     <img src="https://via.placeholder.com/600x400/34495e/FFF?text=Side+Track+Notes" alt="Side Track Notes">
                                 </a>
-                                <figcaption>FIG 1.2: Periphery Side Tracks</figcaption>
+                                <figcaption style="color: var(--t-color-dark)">FIG 1.2: Periphery Side Tracks</figcaption>
                             </figure>
                             <div>
                                 <span class="count">[ ELEMENT_02 ]</span>
                                 <span class="header-text">Peripheral Side-Track Alerts</span>
-                                <p>Special notes fall outside the standard Gear constraints, demanding rapid lateral eye flicks and forcing the user to map hardware keys (Shift/Alt) to peripheral actions.</p>
+                                <p>Special notes fall outside standard gear constraints, demanding rapid lateral eye flicks and hardware key re-mapping.</p>
                             </div>
                         </div>
                         <div class="major-component">
@@ -1287,14 +1609,12 @@
                                 <a href="https://via.placeholder.com/600x400/000000/F1C40F?text=Fever+Icon+Flash" title="Fever UI" target="images">
                                     <img src="https://via.placeholder.com/600x400/000000/F1C40F?text=Fever+Icon+Flash" alt="Fever UI">
                                 </a>
-                                <figcaption>FIG 1.3: Rhythmic Multiplier State</figcaption>
+                                <figcaption style="color: var(--t-color-dark)">FIG 1.3: Rhythmic Multiplier State</figcaption>
                             </figure>
                             <div>
                                 <span class="count">[ ELEMENT_03 ]</span>
                                 <span class="header-text">Fever Mode Feedback</span>
-                                <p>
-                                    Activating 'FEVER' triggers a global screen flash and transforms note textures into glowing variants. This systemic state-change communicates the multiplier bonus via ambient visual reinforcement rather than a static text counter.
-                                </p>
+                                <p>Activating 'FEVER' triggers a global screen flash and transforms note textures, communicating the multiplier bonus via ambient visual reinforcement.</p>
                             </div>
                         </div>
                         <div class="major-component">
@@ -1302,70 +1622,75 @@
                                 <a href="https://via.placeholder.com/600x400/333/FFF?text=BGA+Dimmer+Overlay" title="BGA UI" target="images">
                                     <img src="https://via.placeholder.com/600x400/333/FFF?text=BGA+Dimmer+Overlay" alt="BGA UI">
                                 </a>
-                                <figcaption>FIG 1.4: Background Occlusion Shielding</figcaption>
+                                <figcaption style="color: var(--t-color-dark)">FIG 1.4: Background Occlusion Shielding</figcaption>
                             </figure>
                             <div>
                                 <span class="count">[ ELEMENT_04 ]</span>
                                 <span class="header-text">Procedural BGA Dimming</span>
-                                <p>
-                                    To protect the user from the high visual noise of professional music videos, the UX allows for procedural dimming. The Gear frame itself acts as an 'Occlusion Cage,' shielding the foveal note tracks from background motion-tracking interference.
-                                </p>
+                                <p>Allows for procedural dimming of music videos. The Gear frame acts as an 'Occlusion Cage,' shielding tracks from background interference.</p>
                             </div>
                         </div>
                     </div>
-    
+
 </section>
                 <section class="game-sections" id="user-interaction">
 
                     <h2>User Interaction</h2>
                     <p>DJMAX Interaction marries luxury broadcast aesthetics with uncompromising systemic audio synchronization.</p>
-                    <div class="list-style-area">
-                        <h3 class="text-center">The Acoustic Execution Loop</h3>
-                        <ol class="four-columns md-two-columns">
-                            <li><h6>Read Matrix</h6><p>Scan 4 to 8 variable columns simultaneously inside the Gear.</p></li>
-                            <li><h6>Map Hardware</h6><p>Dynamically switch finger assignments between 4-Key and 8-Key modes (Mapping Ambiguity management).</p></li>
-                            <li><h6>Actuate</h6><p>Execute the keystroke to trigger the system interrupt.</p></li>
-                            <li><h6>Hear Feedback</h6><p>The audio engine renders the individual instrument stem (Key-Sounding), providing instant validation.</p></li>
-                        </ol>
+                    <div class="ui-split-panels">
+                        <div class="fittslaw">
+                            <h3 class="text-center">The Acoustic Execution Loop</h3>
+                            <div class="list-style-area">
+                                <ol class="four-columns md-two-columns" style="grid-template-columns: repeat(2, 1fr);">
+                                    <li><h6>Read Matrix</h6><p>Scan 4 to 8 variable columns simultaneously inside the Gear.</p></li>
+                                    <li><h6>Map Hardware</h6><p>Switch finger assignments between 4-Key and 8-Key modes.</p></li>
+                                    <li><h6>Actuate</h6><p>Execute the keystroke to trigger the system interrupt.</p></li>
+                                    <li><h6>Hear Feedback</h6><p>Audio engine renders the individual instrument stem (Key-Sounding).</p></li>
+                                </ol>
+                            </div>
+                        </div>
+                        <div class="list-style-area">
+                            <h3 class="text-center">Multi-Modal Feedback Matrix</h3>
+                            <div class="multi-modal-feedback">
+                                <ul>
+                                    <li>
+                                        <div class="logo-svg"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.114 5.636a9 9 0 010 12.728M16.463 8.288a5.25 5.25 0 010 7.424M6.75 8.25l4.72-4.72a.75.75 0 011.28.53v15.88a.75.75 0 01-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 012.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75z" /></svg></div>
+                                        <div><h6>Validation Denial</h6><p>If you miss, the instrument stem does not play. This 'Audio Withdrawal' is a uniquely effective failure signal.</p></div>
+                                    </li>
+                                    <li>
+                                        <div class="logo-svg"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8l-3.45-3.45a2 2 0 010-2.82l.06-.06a2 2 0 012.82 0l3.44 3.44h4.82a6 6 0 01-1.85 3.31z" /></svg></div>
+                                        <div><h6>Combo Weight</h6><p>High combos trigger screen-shaking and UI vibrations, communicating 'streak' state via haptics.</p></div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    <h3>Multi-Modal Feedback Matrix</h3>
-                    <div class="multi-modal-feedback">
-                        <div><p>DJMAX utilizes 'Audio stem isolation' to create the most robust negative-feedback loop in the genre.</p></div>
-                        <ul>
-                            <li>
-                                <div class="logo-svg"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.114 5.636a9 9 0 010 12.728M16.463 8.288a5.25 5.25 0 010 7.424M6.75 8.25l4.72-4.72a.75.75 0 011.28.53v15.88a.75.75 0 01-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 012.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75z" /></svg></div>
-                                <div><h6>Acoustic Validation Denial</h6><p>If you miss a note, the corresponding piano chord simply does not play. This 'Audio Withdrawal' is a uniquely effective psychological failure signal.</p></div>
-                            </li>
-                            <li>
-                                <div class="logo-svg"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8l-3.45-3.45a2 2 0 010-2.82l.06-.06a2 2 0 012.82 0l3.44 3.44h4.82a6 6 0 01-1.85 3.31z" /></svg></div>
-                                <div><h6>Kinetic Combo Weight</h6><p>High combo counts trigger aggressive screen-shaking and UI vibrations, physically communicating the 'streak' state to the user's hands via hardware haptics.</p></div>
-                            </li>
-                        </ul>
-                    </div>
-    
+
 </section>
                 <section class="game-sections" id="hci-principles">
 
                     <h2>HCI Principles</h2>
-                    <div class="spatial-congruence">
-                        <h2>Key-Sounding & Systemic Transparency</h2>
-                        <p style="text-align: justify;">
-                            The primary HCI achievement in DJMAX is 'Key-Sounding'. Unlike modern rhythm games where input simply triggers a synthetic click, DJMAX input triggers an instrument stem (a unique track of the song). This creates a 100% transparent interaction model: the user is the performer, not just the reactor. 
-                        </p>
+                    <div class="hci-layout">
+                        <div class="spatial-congruence">
+                            <h2>Key-Sounding Transparency</h2>
+                            <p style="text-align: justify;">
+                                DJMAX input triggers an instrument stem (a unique track of the song). This creates a 100% transparent interaction model: the user is the performer, not just the reactor.
+                            </p>
+                        </div>
+                        <div class="cognitive-load-bifurcation">
+                            <h2>Mapping Saccade Conflict</h2>
+                            <table>
+                                <thead><tr><th>Cognitive Advantage</th><th>Mapping Friction</th></tr></thead>
+                                <tbody>
+                                    <tr>
+                                        <td><h6>Gear Shielding</h6><p>The thick UI Gear frame prevents background motion-tracking from leaching into note processing.</p></td>
+                                        <td><h6>5B/8B Ambiguity</h6><p>The center lane in 5-Button mode forces the user to decide which hand 'owns' the note, causing micro-stalling.</p></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
-                    <div class="cognitive-load-bifurcation">
-                        <h2>Mapping Saccade Conflict</h2>
-                        <table>
-                            <thead><tr><th>Cognitive Advantage</th><th>Mapping Friction</th></tr></thead>
-                            <tbody>
-                                <tr>
-                                    <td><h6>Gear Shielding</h6><p>The thick UI Gear frame prevents background motion-tracking from leaching into note processing.</p></td>
-                                    <td><h6>5B/8B Ambiguity</h6><p>The center lane in 5-Button mode forces the user to decide which hand 'owns' the note, causing a micro-stalling in the cognitive loop.</p></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-    
+
 </section>
                 <section class="game-sections" id="ui-ux-weaknesses">
 
