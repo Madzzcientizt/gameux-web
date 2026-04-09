@@ -166,6 +166,74 @@
                     text-align: justify;
                 }
 
+                & .accuracy-judgement-table-wrap {
+                    margin-top: 1.25em;
+                    overflow-x: auto;
+                    border: var(--t-border) solid var(--t-color-base-300);
+                    border-radius: var(--t-radius-field);
+                    background-color: var(--t-color-base-100);
+                }
+
+                & .accuracy-judgement-table {
+                    width: 100%;
+                    min-width: 52rem;
+                    border-collapse: collapse;
+
+                    & th,
+                    & td {
+                        padding: 0.85em 1em;
+                        vertical-align: top;
+                        border-bottom: 1px solid var(--t-color-base-300);
+                    }
+
+                    & thead th {
+                        background-color: var(--t-color-base-300);
+                        font-weight: 800;
+                        font-size: 0.92em;
+                        text-transform: uppercase;
+                        letter-spacing: 0.03em;
+                    }
+
+                    & th+th,
+                    & td+td {
+                        border-left: 1px solid var(--t-color-base-300);
+                    }
+
+                    & tbody tr:last-child td {
+                        border-bottom: 0;
+                    }
+
+                    & td strong {
+                        font-size: 1.05em;
+                    }
+
+                    & tbody tr.jdg-cool td {
+                        background-color: color-mix(in oklab, var(--t-color-success) 20%, var(--t-color-base-100));
+                    }
+
+                    & tbody tr.jdg-fine td {
+                        background-color: color-mix(in oklab, var(--t-color-info) 22%, var(--t-color-base-100));
+                    }
+
+                    & tbody tr.jdg-safe td {
+                        background-color: color-mix(in oklab, var(--t-color-warning) 24%, var(--t-color-base-100));
+                    }
+
+                    & tbody tr.jdg-sad td {
+                        background-color: color-mix(in oklab, var(--t-color-error) 18%, var(--t-color-base-100));
+                    }
+
+                    & tbody tr.jdg-worst td {
+                        background-color: color-mix(in oklab, var(--t-color-error) 28%, var(--t-color-base-100));
+                    }
+                }
+
+                & .accuracy-note {
+                    margin-top: 0.8em;
+                    font-size: 0.95em;
+                    color: var(--t-color-dark);
+                }
+
                 & .ui-split-panels {
                     margin-top: 2em;
                     display: grid;
@@ -1227,6 +1295,65 @@
                     <h2>User Interaction</h2>
                     <p>Interaction in Project DIVA is characterized by decentralized ocular scanning, rapid symbol
                         decoding, and continuous timing correction under moving visual targets.</p>
+                    <div class="accuracy-judgement-table-wrap">
+                        <table class="accuracy-judgement-table">
+                            <thead>
+                                <tr>
+                                    <th>Judgement Tier</th>
+                                    <th>Localized Label in Mega Mix+</th>
+                                    <th>Relative Note Score Weight</th>
+                                    <th>Combo Impact</th>
+                                    <th>Life Gauge Impact</th>
+                                    <th>Effect on Overall Accuracy/Performance</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="jdg-cool">
+                                    <td><strong>COOL</strong></td>
+                                    <td>COOL</td>
+                                    <td>500 points (100% baseline)</td>
+                                    <td>Maintains combo</td>
+                                    <td>Increases life gauge</td>
+                                    <td>Best possible timing; maximizes score efficiency and supports high completion consistency.</td>
+                                </tr>
+                                <tr class="jdg-fine">
+                                    <td><strong>FINE</strong></td>
+                                    <td>GOOD (localized term)</td>
+                                    <td>300 points (60% of COOL)</td>
+                                    <td>Maintains combo</td>
+                                    <td>Increases life gauge (less than COOL in practical play flow)</td>
+                                    <td>Acceptable timing but significantly weaker than COOL for leaderboard-grade accuracy.</td>
+                                </tr>
+                                <tr class="jdg-safe">
+                                    <td><strong>SAFE</strong></td>
+                                    <td>SAFE</td>
+                                    <td>100 points (20% of COOL)</td>
+                                    <td>Breaks combo</td>
+                                    <td>Does not drain life gauge</td>
+                                    <td>Large accuracy loss: score contribution is low and combo bonus is lost immediately.</td>
+                                </tr>
+                                <tr class="jdg-sad">
+                                    <td><strong>SAD</strong></td>
+                                    <td>BAD (localized term)</td>
+                                    <td>50 points (10% of COOL)</td>
+                                    <td>Breaks combo</td>
+                                    <td>Drains life gauge</td>
+                                    <td>Major execution error; heavily damages score trajectory and clear stability.</td>
+                                </tr>
+                                <tr class="jdg-worst">
+                                    <td><strong>WORST</strong></td>
+                                    <td>MISS (localized term)</td>
+                                    <td>0 points (0% of COOL)</td>
+                                    <td>Breaks combo</td>
+                                    <td>Strong life gauge penalty</td>
+                                    <td>Worst timing outcome; no score gain, high fail risk, and wrong-key hits are treated in this failure tier.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="footnote accuracy-note">Mega Mix+ follows the Arcade/Future Tone judgement model. In this
+                        system, only COOL and FINE/GOOD sustain combo, while SAFE/SAD/WORST progressively reduce scoring
+                        efficiency and chart clear reliability.</div>
                     <div class="ui-split-panels">
                         <div class="fittslaw">
                             <div class="list-style-area">
