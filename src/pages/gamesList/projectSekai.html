@@ -93,30 +93,30 @@
                     margin: 2em 0;
                 }
 
-                
                 & .major-component {
+                    background-color: var(--t-color-base-100);
+                    border-radius: var(--t-radius-field);
+                    padding: 1em;
+                    height: auto;
+                    position: relative;
                     display: flex;
-                    gap: 2rem;
-                    background: rgba(255, 255, 255, 0.03);
-                    padding: 2rem;
-                    border-radius: 12px;
-                    border: 1px solid rgba(255, 255, 255, 0.1);
-                    transition: transform 0.3s ease;
-                    flex-direction: row;
+                    align-items: flex-start;
+                    flex-direction: column;
+                    gap: 1em;
+                    min-height: 15em;
+                    border: var(--t-border) solid var(--t-color-base-300);
 
-                    &:last-child {
+                    &:first-child {
                         grid-column: 1 / -1;
                         width: 100%;
-                        flex-direction: row-reverse;
+                        flex-direction: row;
                     }
 
-                    &:not(:first-child):not(:last-child) {
+                    &:not(:first-child) {
                         flex-direction: column;
                     }
 
                     & figure {
-                        width: 100%;
-
                         position: relative;
                         margin-bottom: 0;
                         width: 100%;
@@ -226,44 +226,6 @@
                     }
                 }
 
-
-                & .ui-split-panels {
-                    display: grid;
-                    grid-template-columns: 1fr 1fr;
-                    gap: 1em;
-                    align-items: start;
-                    margin-top: 2em;
-
-                    @media (width < 48rem) {
-                        grid-template-columns: 1fr;
-                    }
-                }
-
-                & .ui-split-panels .fittslaw {
-                    display: block;
-                }
-
-                & .ui-split-panels .list-style-area {
-                    margin: 0;
-                }
-
-                & .hci-layout {
-                    display: grid;
-                    grid-template-columns: 1.15fr 1fr;
-                    gap: 1em;
-                    align-items: start;
-                    margin-top: 2em;
-
-                    @media (width < 48rem) {
-                        grid-template-columns: 1fr;
-                    }
-                }
-
-                & .hci-layout .spatial-congruence,
-                & .hci-layout .cognitive-load-bifurcation {
-                    margin: 0;
-                }
-
                 @media (width < 48rem) {
                     & .fittslaw {
                         grid-template-columns: 1fr;
@@ -301,74 +263,18 @@
                     }
                 }
 
-
-                & .ui-split-panels {
-                    display: grid;
-                    grid-template-columns: 1fr 1fr;
-                    gap: 1em;
-                    align-items: start;
-                    margin-top: 2em;
-
-                    @media (width < 48rem) {
-                        grid-template-columns: 1fr;
-                    }
-                }
-
-                & .ui-split-panels .fittslaw {
-                    display: block;
-                }
-
-                & .ui-split-panels .list-style-area {
-                    margin: 0;
-                }
-
-                & .hci-layout {
-                    display: grid;
-                    grid-template-columns: 1.15fr 1fr;
-                    gap: 1em;
-                    align-items: start;
-                    margin-top: 2em;
-
-                    @media (width < 48rem) {
-                        grid-template-columns: 1fr;
-                    }
-                }
-
-                & .hci-layout .spatial-congruence,
-                & .hci-layout .cognitive-load-bifurcation {
-                    margin: 0;
-                }
-
                 @media (width < 48rem) {
                     & .major-components {
                         grid-template-columns: 1fr;
                         gap: 1em;
                     }
 
-                    
-                & .major-component {
-                    display: flex;
-                    gap: 2rem;
-                    background: rgba(255, 255, 255, 0.03);
-                    padding: 2rem;
-                    border-radius: 12px;
-                    border: 1px solid rgba(255, 255, 255, 0.1);
-                    transition: transform 0.3s ease;
-                    flex-direction: row;
+                    & .major-component {
+                        &:first-child {
+                            flex-direction: column;
+                        }
 
-                    &:last-child {
-                        grid-column: 1 / -1;
-                        width: 100%;
-                        flex-direction: row-reverse;
-                    }
-
-                    &:not(:first-child):not(:last-child) {
-                        flex-direction: column;
-                    }
-
-                    & figure {
-                        width: 100%;
-
+                        & figure {
                             width: 100%;
 
                             & figcaption {
@@ -403,14 +309,6 @@
                     font-size: 2.5em;
                 }
 
-
-                & .multi-modal-feedback {
-                    display: grid;
-                    grid-template-columns: 1fr 1fr;
-                    gap: 1em;
-                    padding-top: 1em;
-
-    
                 & .ui-split-panels {
                     display: grid;
                     grid-template-columns: 1fr 1fr;
@@ -431,25 +329,33 @@
                     margin: 0;
                 }
 
-                & .hci-layout {
-                    display: grid;
-                    grid-template-columns: 1.15fr 1fr;
-                    gap: 1em;
-                    align-items: start;
-                    margin-top: 2em;
+
+                & .multi-modal-feedback {
+                    display: block;
+                    padding-top: 1em;
+
+                    &>ul {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        gap: 1em;
+                        margin: 0;
+                        padding: 0;
+                        list-style: none;
+                    }
+
+                    &>ul>li {
+                        margin-top: 0;
+                        height: 100%;
+                    }
+
+                    &>ul>li>div {
+                        height: 100%;
+                    }
 
                     @media (width < 48rem) {
-                        grid-template-columns: 1fr;
-                    }
-                }
-
-                & .hci-layout .spatial-congruence,
-                & .hci-layout .cognitive-load-bifurcation {
-                    margin: 0;
-                }
-
-                @media (width < 48rem) {
-                        grid-template-columns: 1fr !important;
+                        &>ul {
+                            grid-template-columns: 1fr;
+                        }
                     }
 
                     & figure {
@@ -462,6 +368,40 @@
                             height: auto !important;
                         }
                     }
+                }
+
+                & .interaction-table {
+                    width: 100%;
+                    border-collapse: separate;
+                    border-spacing: 0;
+                    border: var(--t-border) solid var(--t-color-base-300);
+                    border-radius: var(--t-radius-field);
+                    overflow: hidden;
+                    background-color: var(--t-color-base-100);
+                }
+
+                & .interaction-table th,
+                & .interaction-table td {
+                    padding: 0.85em;
+                    vertical-align: top;
+                    border-bottom: 1px solid var(--t-color-base-300);
+                }
+
+                & .interaction-table thead th {
+                    font-weight: 800;
+                    font-size: 0.95em;
+                    text-transform: uppercase;
+                    letter-spacing: 0.03em;
+                    background-color: var(--t-color-base-200);
+                }
+
+                & .interaction-table th+th,
+                & .interaction-table td+td {
+                    border-left: 1px solid var(--t-color-base-300);
+                }
+
+                & .interaction-table tbody tr:last-child td {
+                    border-bottom: 0;
                 }
 
                 & ul {
@@ -501,6 +441,62 @@
                         }
                     }
                 }
+
+                @media (width < 48rem) {
+
+                    & .interaction-table,
+                    & .interaction-table thead,
+                    & .interaction-table tbody,
+                    & .interaction-table tr,
+                    & .interaction-table th,
+                    & .interaction-table td {
+                        display: block;
+                        width: 100%;
+                    }
+
+                    & .interaction-table thead {
+                        display: none;
+                    }
+
+                    & .interaction-table tbody tr {
+                        border-bottom: 1px solid var(--t-color-base-300);
+                        padding: 0.5em;
+                        background-color: var(--t-color-base-200);
+                    }
+
+                    & .interaction-table tbody tr:last-child {
+                        border-bottom: 0;
+                    }
+
+                    & .interaction-table td {
+                        border: 0;
+                        border-radius: var(--t-radius-field);
+                        background-color: var(--t-color-base-100);
+                        margin-bottom: 0.5em;
+                    }
+
+                    & .interaction-table td::before {
+                        display: block;
+                        font-weight: 700;
+                        font-size: 0.8em;
+                        text-transform: uppercase;
+                        letter-spacing: 0.04em;
+                        margin-bottom: 0.35em;
+                        color: var(--t-color-primary);
+                    }
+
+                    & .interaction-table td:nth-child(1)::before {
+                        content: 'Note Type';
+                    }
+
+                    & .interaction-table td:nth-child(2)::before {
+                        content: 'Input Action';
+                    }
+
+                    & .interaction-table td:nth-child(3)::before {
+                        content: 'Common Failure Pattern';
+                    }
+                }
             }
 
             &#hci-principles {
@@ -511,8 +507,24 @@
                     font-size: 2.5em;
                 }
 
-                & .cybernetic-feedback-loops {
+                & .hci-layout {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 2em;
                     margin-top: 2em;
+
+                    @media (width < 48rem) {
+                        grid-template-columns: 1fr;
+                        gap: 1em;
+                    }
+                }
+
+                & .hci-layout > div:nth-child(n+3) {
+                    grid-column: 1 / -1;
+                }
+
+                & .cybernetic-feedback-loops {
+                    margin-top: 0;
                     padding: 1em;
                     border-radius: var(--t-radius-field);
                     background-color: var(--t-color-base-100);
@@ -528,45 +540,7 @@
                         grid-template-columns: 1fr 1fr;
                         gap: 1em;
 
-        
-                & .ui-split-panels {
-                    display: grid;
-                    grid-template-columns: 1fr 1fr;
-                    gap: 1em;
-                    align-items: start;
-                    margin-top: 2em;
-
-                    @media (width < 48rem) {
-                        grid-template-columns: 1fr;
-                    }
-                }
-
-                & .ui-split-panels .fittslaw {
-                    display: block;
-                }
-
-                & .ui-split-panels .list-style-area {
-                    margin: 0;
-                }
-
-                & .hci-layout {
-                    display: grid;
-                    grid-template-columns: 1.15fr 1fr;
-                    gap: 1em;
-                    align-items: start;
-                    margin-top: 2em;
-
-                    @media (width < 48rem) {
-                        grid-template-columns: 1fr;
-                    }
-                }
-
-                & .hci-layout .spatial-congruence,
-                & .hci-layout .cognitive-load-bifurcation {
-                    margin: 0;
-                }
-
-                @media (width < 48rem) {
+                        @media (width < 48rem) {
                             grid-template-columns: 1fr !important;
                         }
 
@@ -607,16 +581,20 @@
 
                 & .spatial-congruence {
                     padding: 1em;
-                    margin-top: 2em;
+                    margin-top: 0;
+                    border-radius: var(--t-radius-field);
+                    background-color: var(--t-color-base-100);
+                    border: var(--t-border) solid var(--t-color-base-300);
 
                     & h2 {
                         font-weight: 900;
                         font-size: 2.5em;
+                        margin-top: 0;
                     }
                 }
 
                 & .cognitive-load-bifurcation {
-                    margin: 2em 0;
+                    margin: 0;
                     padding: 1em;
                     border-radius: var(--t-radius-field);
                     background-color: var(--t-color-base-100);
@@ -673,45 +651,7 @@
                         margin-bottom: 0;
                     }
 
-    
-                & .ui-split-panels {
-                    display: grid;
-                    grid-template-columns: 1fr 1fr;
-                    gap: 1em;
-                    align-items: start;
-                    margin-top: 2em;
-
                     @media (width < 48rem) {
-                        grid-template-columns: 1fr;
-                    }
-                }
-
-                & .ui-split-panels .fittslaw {
-                    display: block;
-                }
-
-                & .ui-split-panels .list-style-area {
-                    margin: 0;
-                }
-
-                & .hci-layout {
-                    display: grid;
-                    grid-template-columns: 1.15fr 1fr;
-                    gap: 1em;
-                    align-items: start;
-                    margin-top: 2em;
-
-                    @media (width < 48rem) {
-                        grid-template-columns: 1fr;
-                    }
-                }
-
-                & .hci-layout .spatial-congruence,
-                & .hci-layout .cognitive-load-bifurcation {
-                    margin: 0;
-                }
-
-                @media (width < 48rem) {
 
                         & table,
                         & thead,
@@ -761,6 +701,10 @@
                             content: 'Intrinsic Focus';
                         }
                     }
+                }
+
+                & .hci-layout > div:nth-child(n+3) {
+                    margin-top: 2em;
                 }
             }
 
@@ -883,44 +827,6 @@
                     text-align: justify;
                 }
 
-
-                & .ui-split-panels {
-                    display: grid;
-                    grid-template-columns: 1fr 1fr;
-                    gap: 1em;
-                    align-items: start;
-                    margin-top: 2em;
-
-                    @media (width < 48rem) {
-                        grid-template-columns: 1fr;
-                    }
-                }
-
-                & .ui-split-panels .fittslaw {
-                    display: block;
-                }
-
-                & .ui-split-panels .list-style-area {
-                    margin: 0;
-                }
-
-                & .hci-layout {
-                    display: grid;
-                    grid-template-columns: 1.15fr 1fr;
-                    gap: 1em;
-                    align-items: start;
-                    margin-top: 2em;
-
-                    @media (width < 48rem) {
-                        grid-template-columns: 1fr;
-                    }
-                }
-
-                & .hci-layout .spatial-congruence,
-                & .hci-layout .cognitive-load-bifurcation {
-                    margin: 0;
-                }
-
                 @media (width < 48rem) {
 
                     & table,
@@ -1005,44 +911,6 @@
                     grid-template-columns: 1fr 1fr 1fr 1fr;
                 }
 
-
-                & .ui-split-panels {
-                    display: grid;
-                    grid-template-columns: 1fr 1fr;
-                    gap: 1em;
-                    align-items: start;
-                    margin-top: 2em;
-
-                    @media (width < 48rem) {
-                        grid-template-columns: 1fr;
-                    }
-                }
-
-                & .ui-split-panels .fittslaw {
-                    display: block;
-                }
-
-                & .ui-split-panels .list-style-area {
-                    margin: 0;
-                }
-
-                & .hci-layout {
-                    display: grid;
-                    grid-template-columns: 1.15fr 1fr;
-                    gap: 1em;
-                    align-items: start;
-                    margin-top: 2em;
-
-                    @media (width < 48rem) {
-                        grid-template-columns: 1fr;
-                    }
-                }
-
-                & .hci-layout .spatial-congruence,
-                & .hci-layout .cognitive-load-bifurcation {
-                    margin: 0;
-                }
-
                 @media (width < 48rem) {
                     &.md-one-columns {
                         grid-template-columns: 1fr !important;
@@ -1087,45 +955,7 @@
                         }
                     }
 
-    
-                & .ui-split-panels {
-                    display: grid;
-                    grid-template-columns: 1fr 1fr;
-                    gap: 1em;
-                    align-items: start;
-                    margin-top: 2em;
-
                     @media (width < 48rem) {
-                        grid-template-columns: 1fr;
-                    }
-                }
-
-                & .ui-split-panels .fittslaw {
-                    display: block;
-                }
-
-                & .ui-split-panels .list-style-area {
-                    margin: 0;
-                }
-
-                & .hci-layout {
-                    display: grid;
-                    grid-template-columns: 1.15fr 1fr;
-                    gap: 1em;
-                    align-items: start;
-                    margin-top: 2em;
-
-                    @media (width < 48rem) {
-                        grid-template-columns: 1fr;
-                    }
-                }
-
-                & .hci-layout .spatial-congruence,
-                & .hci-layout .cognitive-load-bifurcation {
-                    margin: 0;
-                }
-
-                @media (width < 48rem) {
                         &::before {
                             right: 0;
                         }
@@ -1237,7 +1067,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, rgba(var(--t-color-primary-rgb), 0.05) 0%, rgba(59.939% 0.191 335.171, 0.03) 100%);
+            background: linear-gradient(135deg, rgba(var(--t-color-primary-rgb), 0.08) 0%, rgba(var(--t-color-accent-rgb), 0.03) 100%);
             border-radius: var(--t-radius-field);
             padding: 2em;
             z-index: 10;
@@ -1551,106 +1381,157 @@
                     <h2>Overview</h2>
                     <ul class="list-style">
                         <h2>Sekai Architecture:</h2>
-                        <li>Custom Unity Engine</li>
-                        <li>Colorful Palette</li>
+                        <li>Unity Mobile Client</li>
+                        <li>Lane-Perspective Rhythm Field</li>
+                        <li>Character + Live Service Layer</li>
                     </ul>
                     <p>
-                        Hatsune Miku: Colorful Stage! (Project Sekai, 2020) is a mobile rhythm game. Unlike arcade or PC rhythm games that rely on tactile hardware feedback (keyboard switches or arcade buttons), mobile rhythm games must conquer the "Flat Glass" problem.
+                        Hatsune Miku: Colorful Stage! (Project Sekai, 2020) is a mobile rhythm game built around touch
+                        gestures and character-driven progression. Core songs are played in 2D rhythm charts while the
+                        broader product loop includes card collection, unit building, and event-based score goals.
                     </p>
                     <p>
-                        Project Sekai provides an excellent study in touchscreen ergonomics and dynamic lane scaling. Instead of fixed vertical tracks, the playfield actively curves and scales in 3D depth, guiding the user's thumbs naturally toward the strike zone.
+                        From an HCI perspective, Sekai is a strong case study in mobile ergonomics: it must preserve
+                        timing precision without the mechanical certainty of physical keys. The interface balances
+                        readability and spectacle through lane perspective, configurable note speed, lane offset,
+                        and background dimming options that reduce visual noise.
                     </p>
                     <ul class="metrics-list">
                         <li>
                             <h6>Cognitive Load</h6>
-                            <div class="value">High</div>
-                            <div class="desc">Scaling multi-lane reading disguised as a 3D perspective.</div>
+                            <div class="value">Medium to High</div>
+                            <div class="desc">Players track lane depth, gesture type shifts, and combo-state feedback in
+                                real time.</div>
                         </li>
                         <li>
                             <h6>Response Time</h6>
-                            <div class="value">&pm; 40ms</div>
-                            <div class="desc">Heavily bound by the polling rate of the capacitive touch screen.</div>
+                            <div class="value">Touch-latency constrained</div>
+                            <div class="desc">Performance depends on device touch sampling, frame pacing, and player
+                                calibration settings.</div>
                         </li>
                         <li>
-                            <h6>Tactile Load</h6>
-                            <div class="value">Zero</div>
-                            <div class="desc">Total lack of physical button resistance.</div>
+                            <h6>Primary Input Surface</h6>
+                            <div class="value">Capacitive glass</div>
+                            <div class="desc">No physical key travel, so visual/auditory judgement feedback becomes
+                                essential for confidence.</div>
                         </li>
                     </ul>
-    
-</section>
+
+                </section>
                 <section class="game-sections" id="ui-components">
 
                     <h2>UI Components</h2>
+                    <p>
+                        Sekai's core UI follows a "dense but legible" philosophy: only information needed for timing,
+                        survival, and score optimization remains persistent during songs; secondary systems are
+                        deferred.
+                    </p>
                     <div class="major-components">
                         <div class="major-component">
                             <figure>
-                                <a href="https://via.placeholder.com/600x400/99CCFF/333?text=Curved+Judgement+Line" title="Curved Track" target="images">
-                                    <img src="https://via.placeholder.com/600x400/99CCFF/333?text=Curved+Judgement+Line" alt="Curved Track">
+                                <a href="../../../public/gamesContent/projectSekai/track.jpg"
+                                    title="Dynamic lane scaling" target="images">
+                                    <img src="../../../public/gamesContent/projectSekai/track.jpg"
+                                        alt="Project Sekai lane scaling toward a straight judgement line diagram">
                                 </a>
-                                <figcaption style="color: var(--t-color-dark)">FIG 1.1: Ergonomic UI Geometry</figcaption>
+                                <figcaption>FIG 1.1: Dynamic Lane Scaling Geometry
+                                </figcaption>
                             </figure>
                             <div>
                                 <span class="count">[ ELEMENT_01 ]</span>
-                                <span class="header-text">Curved Judgement Line</span>
-                                <p>To accommodate the radial sweep of human thumbs holding a physical smartphone, the judgement line is subtly curved, increasing hit accuracy at screen edges.</p>
+                                <span class="header-text">Dynamic Lane Scaling</span>
+                                <p>Project Sekai uses perspective-driven lane scaling and variable note widths that
+                                    funnel into a straight judgement line, improving readability on small touch screens
+                                    without
+                                    changing core timing logic.</p>
                             </div>
                         </div>
                         <div class="major-component">
                             <figure>
-                                <a href="https://via.placeholder.com/600x400/FF66B2/FFF?text=Flick+Notes" title="Flick Notes" target="images">
-                                    <img src="https://via.placeholder.com/600x400/FF66B2/FFF?text=Flick+Notes" alt="Flick Notes UI">
+                                <a href="../../../public/gamesContent/projectSekai/flick.jpeg" title="Flick Notes"
+                                    target="images">
+                                    <img src="../../../public/gamesContent/projectSekai/flick.jpeg"
+                                        alt="Flick Notes UI">
                                 </a>
                                 <figcaption style="color: var(--t-color-dark)">FIG 1.2: Flick Note Vector</figcaption>
                             </figure>
                             <div>
                                 <span class="count">[ ELEMENT_02 ]</span>
                                 <span class="header-text">Directional Flick Arrows</span>
-                                <p>Specialized gestures (Flicks) require the user to drag fingers across the glass, adding kinesthetic energy to the otherwise flat interaction format.</p>
+                                <p>Specialized gestures (Flicks) require the user to drag fingers across the glass,
+                                    adding kinesthetic energy to the otherwise flat interaction format. Directional cues
+                                    reduce ambiguity and improve first-read comprehension in dense charts.</p>
                             </div>
                         </div>
                         <div class="major-component">
                             <figure>
-                                <a href="https://via.placeholder.com/600x400/FFD700/000?text=Skill+Activation+Alert" title="Skill UI" target="images">
-                                    <img src="https://via.placeholder.com/600x400/FFD700/000?text=Skill+Activation+Alert" alt="Skill UI">
+                                <a href="../../../public/gamesContent/projectSekai/width.jpg" title="Trace UI"
+                                    target="images">
+                                    <img src="../../../public/gamesContent/projectSekai/width.jpg" alt="Trace UI">
                                 </a>
-                                <figcaption style="color: var(--t-color-dark)">FIG 1.3: Peripheral Gacha State Feedback</figcaption>
+                                <figcaption>FIG 1.3: Dynamic Visual Weighting
+                                </figcaption>
                             </figure>
                             <div>
                                 <span class="count">[ ELEMENT_03 ]</span>
-                                <span class="header-text">Procedural Skill Indicators</span>
-                                <p>Flashcards appear on the periphery to indicate ability procs. These use high contrast and sound-barks to ensure players register the state update without looking away.</p>
-                            </div>
-                        </div>
-                        <div class="major-component">
-                            <figure>
-                                <a href="https://via.placeholder.com/600x400/00FF00/000?text=Trace+Note+Bar" title="Trace UI" target="images">
-                                    <img src="https://via.placeholder.com/600x400/00FF00/000?text=Trace+Note+Bar" alt="Trace UI">
-                                </a>
-                                <figcaption style="color: var(--t-color-dark)">FIG 1.4: Dynamic Visual Weighting</figcaption>
-                            </figure>
-                            <div>
-                                <span class="count">[ ELEMENT_04 ]</span>
                                 <span class="header-text">Variable Width Lane Bars</span>
-                                <p>Notes vary from 1-lane to 6-lane widths dynamically. This uses visual weighting to signify note importance and input leniency.</p>
+                                <p>Notes vary from 1-lane to 6-lane widths dynamically. This uses visual weighting to
+                                    signify note importance and input leniency, especially during simultaneous lane
+                                    pressure.
+                                </p>
                             </div>
                         </div>
                     </div>
 
-</section>
+                    <div class="list-style-area">
+                        <h3 class="text-center">Persistent In-Song HUD Channels</h3>
+                        <ol class="three-columns md-one-columns">
+                            <li>
+                                <h6>Judgement & Combo</h6>
+                                <p>Immediate timing labels and combo continuity expose precision and error cost
+                                    instantly.</p>
+                            </li>
+                            <li>
+                                <h6>Score & Skill State</h6>
+                                <p>Score growth, multiplier behavior, and temporary skill activations communicate run
+                                    quality.</p>
+                            </li>
+                            <li>
+                                <h6>Life / Clear Safety</h6>
+                                <p>The life gauge converts timing mistakes into visible clear-risk, shaping player
+                                    pacing decisions.</p>
+                            </li>
+                        </ol>
+                    </div>
+
+                </section>
                 <section class="game-sections" id="user-interaction">
 
                     <h2>User Interaction</h2>
-                    <p>The UX flow is built specifically for capacitive glass, mitigating the lack of tactile hardware feedback through kinesthetic empathy.</p>
+                    <p>The UX flow is built specifically for capacitive glass, mitigating the lack of tactile hardware
+                        feedback through kinesthetic empathy.</p>
                     <div class="ui-split-panels">
                         <div class="fittslaw">
-                            <h3 class="text-center">The Capacitive Loop</h3>
                             <div class="list-style-area">
+                                <h3 class="text-center">The Capacitive Loop</h3>
                                 <ol class="four-columns md-two-columns" style="grid-template-columns: repeat(2, 1fr);">
-                                    <li><h6>Read Depth</h6><p>Anticipate 3D notes emerging from the vanishing point.</p></li>
-                                    <li><h6>Tap/Flick</h6><p>Execute glass strikes or violent swipe vectors.</p></li>
-                                    <li><h6>Trace</h6><p>Follow green curved hold-paths, mapping movement to melodies.</p></li>
-                                    <li><h6>Validate</h6><p>Judgement pop-up appears ABOVE the thumb to prevent occlusion.</p></li>
+                                    <li>
+                                        <h6>Read Depth</h6>
+                                        <p>Track incoming note groups along depth cues and approach timing.</p>
+                                    </li>
+                                    <li>
+                                        <h6>Tap/Flick</h6>
+                                        <p>Execute tap or directional flick according to note iconography.</p>
+                                    </li>
+                                    <li>
+                                        <h6>Trace</h6>
+                                        <p>Maintain hold/slide continuity while preparing for simultaneous side-lane
+                                            inputs.</p>
+                                    </li>
+                                    <li>
+                                        <h6>Validate</h6>
+                                        <p>Use judgement + combo feedback to micro-correct tempo and hand placement.</p>
+                                    </li>
                                 </ol>
                             </div>
                         </div>
@@ -1659,19 +1540,60 @@
                             <div class="multi-modal-feedback">
                                 <ul>
                                     <li>
-                                        <div class="logo-svg"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" /></svg></div>
-                                        <div><h6>Synthetic Haptic Rhythms</h6><p>The vibration motor triggers on Flick notes, replacing the missing mechanical switch feedback.</p></div>
+                                        <div>
+                                            <h6>Synthetic Haptic Rhythms</h6>
+                                            <p>Optional vibration cues can reinforce contact timing on mobile devices,
+                                                partially replacing physical key feedback.</p>
+                                        </div>
                                     </li>
                                     <li>
-                                        <div class="logo-svg"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15" /></svg></div>
-                                        <div><h6>Background Dimming</h6><p>Users can adjust 3D-Live transparency to balance cinematic spectacle with readability.</p></div>
+                                        <div>
+                                            <h6>Background Dimming</h6>
+                                            <p>Players can reduce MV/3D visual intensity to prioritize note readability
+                                                during high-density passages.</p>
+                                        </div>
                                     </li>
                                 </ul>
                             </div>
                         </div>
                     </div>
 
-</section>
+                    <div class="list-style-area">
+                        <h3 class="text-center">Input Mapping and Error Risk</h3>
+                        <table class="interaction-table">
+                            <thead>
+                                <tr>
+                                    <th>Note Type</th>
+                                    <th>Input Action</th>
+                                    <th>Common Failure Pattern</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Tap</td>
+                                    <td>Single timed contact</td>
+                                    <td>Early tap while over-reading perspective depth</td>
+                                </tr>
+                                <tr>
+                                    <td>Hold</td>
+                                    <td>Press and maintain until release point</td>
+                                    <td>Premature release while shifting attention to side notes</td>
+                                </tr>
+                                <tr>
+                                    <td>Flick</td>
+                                    <td>Timed directional swipe</td>
+                                    <td>Correct timing but incorrect swipe direction</td>
+                                </tr>
+                                <tr>
+                                    <td>Slide / Trace Chain</td>
+                                    <td>Continuous path-following across anchors</td>
+                                    <td>Path discontinuity during cross-lane transitions</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </section>
                 <section class="game-sections" id="hci-principles">
 
                     <h2>HCI Principles</h2>
@@ -1679,24 +1601,80 @@
                         <div class="spatial-congruence">
                             <h2>Finger Occlusion Correction</h2>
                             <p style="text-align: justify;">
-                                A critical HCI failure in mobile apps is 'Anatomical Occlusion' where the finger hides the UI. Sekai solves this by rendering the judgement pop-up ABOVE the judgement line, ensuring feedback is visible.
+                                A critical HCI failure in mobile apps is 'Anatomical Occlusion' where the finger hides
+                                the UI. Sekai mitigates this by rendering judgement feedback above the primary hit zone,
+                                ensuring feedback is visible.
                             </p>
                         </div>
                         <div class="cognitive-load-bifurcation">
                             <h2>Glass Friction UX</h2>
                             <table>
-                                <thead><tr><th>Tactile Benefit</th><th>Interaction Friction</th></tr></thead>
+                                <thead>
+                                    <tr>
+                                        <th>Tactile Benefit</th>
+                                        <th>Interaction Friction</th>
+                                    </tr>
+                                </thead>
                                 <tbody>
                                     <tr>
-                                        <td><h6>Gestural mapping</h6><p>Circular thumb sweeps around a curved line match the natural hand biomechanics.</p></td>
-                                        <td><h6>Kinetic Drag</h6><p>Sweaty fingers destroy 'Trace' note accuracy as kinetic friction destroys capacitive dragging.</p></td>
+                                        <td>
+                                            <h6>Gestural mapping</h6>
+                                            <p>Tap, hold, flick, and slide gestures map directly to visual note
+                                                semantics,
+                                                lowering interpretation overhead after practice.</p>
+                                        </td>
+                                        <td>
+                                            <h6>Kinetic Drag</h6>
+                                            <p>Finger moisture, screen protectors, and unstable grip can reduce slide
+                                                consistency,
+                                                especially on long chained traces.</p>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="spatial-congruence">
+                            <h2>Visual Hierarchy & Complexity Management</h2>
+                            <p style="text-align: justify;">
+                                Sekai employs strict visual prioritization to prevent cognitive overload: during active gameplay, only notes and the judgement line persist as primary focus. Secondary UI (score, life bar, skill icons) occupies the periphery with muted opacity. Song-specific MV (music video) background rendering can be disabled or dimmed to reduce visual competition with lane content, a critical feature for high-difficulty charts where 10+ simultaneous notes appear.
+                            </p>
+                        </div>
+                        <div class="cognitive-load-bifurcation">
+                            <h2>Adaptive Feedback & Skill Scaffolding</h2>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Feedback Type</th>
+                                        <th>Adaptive Mechanism</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <h6>Judgement Granularity</h6>
+                                            <p>Tutorial and early difficulties display only four tiers (PERFECT / GOOD / OK / MISS) to avoid analysis paralysis. Higher difficulties reveal the full five-tier system (PERFECT / COOL / FINE / SAFE / MISS), allowing skilled players to micro-optimize timing.</p>
+                                        </td>
+                                        <td>
+                                            <h6>Chart Progression</h6>
+                                            <p>Each song offers multiple difficulty levels that scaffold from simple 2-lane patterns (difficulty 1–5) to dense, lane-spanning arrangements (difficulty 25+). Players self-select their entry point, reducing frustration while maintaining mastery pathways.</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <h6>Auditory Reinforcement</h6>
+                                            <p>Judgement sounds vary by accuracy: PERFECT triggers a clean "ding," while MISS produces a distinct "thud." This non-visual feedback channel allows peripheral awareness of timing precision without diverting visual focus.</p>
+                                        </td>
+                                        <td>
+                                            <h6>Skill-Based Settings</h6>
+                                            <p>A practice mode lets players loop sections, adjust note speed & offset per-song, and disable MV rendering entirely. These "crutches" are removed during ranked play, but their availability during learning reduces initial barrier-to-entry.</p>
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
                     </div>
 
-</section>
+                </section>
                 <section class="game-sections" id="ui-ux-weaknesses">
 
                     <h2>Strengths and Weaknesses Analysis</h2>
@@ -1714,14 +1692,16 @@
                                         <span class="label">01_ERGONOMICS</span>
                                     </div>
                                     <h6>Biomechanical Synergy</h6>
-                                    <p>The curved hit line completely acknowledges the physical limitations of reaching thumbs stretching across modern 6+ inch phone screens.</p>
+                                    <p>Lane perspective and note scaling improve reach planning for thumbs across wide
+                                        phone displays.</p>
                                 </td>
                                 <td>
                                     <div class="sw-item-head">
                                         <span class="label">01_HARDWARE</span>
                                     </div>
                                     <h6>Polling Rate Friction</h6>
-                                    <p>Low-end Android phones with 60Hz polling limits will randomly drop inputs, completely severing the trust between user intent and system reaction.</p>
+                                    <p>Lower touch sampling rates and unstable frame pacing can produce perceived timing
+                                        inconsistency in dense charts.</p>
                                 </td>
                             </tr>
                             <tr>
@@ -1730,14 +1710,17 @@
                                         <span class="label">02_FLEXIBILITY</span>
                                     </div>
                                     <h6>Variable Width Tuning</h6>
-                                    <p>Allowing a single note to visually span 5 lanes ensures casual players never miss it, while keeping strict timing windows for pros.</p>
+                                    <p>Allowing a single note to visually span 5 lanes ensures casual players never miss
+                                        it, while keeping strict timing windows for pros.</p>
                                 </td>
                                 <td>
                                     <div class="sw-item-head">
                                         <span class="label">02_OCCLUSION</span>
                                     </div>
                                     <h6>Anatomical Occlusion</h6>
-                                    <p>Despite offsets, playing with 4 fingers (index-style playing on a tablet) heavily obscures the lower-third of the screen, creating massive blind spots.</p>
+                                    <p>Multi-finger tablet play can still block approach lanes, forcing memory-based
+                                        input
+                                        during fast alternations.</p>
                                 </td>
                             </tr>
                             <tr>
@@ -1746,24 +1729,28 @@
                                         <span class="label">03_FEEDBACK</span>
                                     </div>
                                     <h6>Synthetic Haptics</h6>
-                                    <p>Triggering the phone's internal vibration motor precisely on "Flick" notes synthetically replaces the missing mechanical switch feel.</p>
+                                    <p>Audio + optional vibration + judgement text create a layered confirmation stack
+                                        that stabilizes player confidence.</p>
                                 </td>
                                 <td>
                                     <div class="sw-item-head">
                                         <span class="label">03_FRICTION</span>
                                     </div>
                                     <h6>Glass Moisture Drag</h6>
-                                    <p>Continuous "Hold and Swipe" mechanics fail frequently if the user's fingers are sweaty, as kinetic friction destroys capacitive dragging.</p>
+                                    <p>Long slides remain sensitive to friction variation, producing avoidable breaks
+                                        during endurance sections.</p>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
-                    
+
                     <div class="footnote summary">
-                        <p>Project Sekai expertly mitigates the innate flaws of capacitive touch screens—lack of haptics, anatomical occlusion, and fat-finger errors—by utilizing dynamic width scaling and synthetic vibration feedback to craft a tactile rhythm experience on flat glass.</p>
+                        <p>Project Sekai expertly mitigates the innate flaws of capacitive touch screens—lack of
+                            haptics, anatomical occlusion, and fat-finger errors—by utilizing dynamic width scaling and
+                            synthetic vibration feedback to craft a tactile rhythm experience on flat glass.</p>
                     </div>
-    
-</section>
+
+                </section>
             </div>
         </article>
     </main>
@@ -1803,21 +1790,21 @@
     const POSTERURL = "../../../public/posters/projectSekai_poster.jpg";
     const POSTERALTTEXT = "Project Sekai Game Poster";
     const VIDEOURL = "../../../public/videos/osu_trailer.mp4";
-    const VIDEOURLYT = "https://www.youtube.com/embed/Z52p8vP7mkk";
+    const VIDEOURLYT = "https://www.youtube.com/embed/0jVqBM0M5Rs?si=9RdDNpfK2acu3hnd";
     const YTVID = true;
 
-    const GAMEUSERSTARS = "9.4";
-    const GAMEUSERRATINGS = "1.2M";
+    const GAMEUSERSTARS = "7,7";
+    const GAMEUSERRATINGS = "159";
 
-    const HASCRITICS = false; // Set to false if there are no critic ratings
-    const GAMECRITICSTARS = "0";
-    const GAMECRITICRATINGS = "0";
+    const HASCRITICS = true; // Set to false if there are no critic ratings
+    const GAMECRITICSTARS = "8.1";
+    const GAMECRITICRATINGS = "4";
 
     const GENRES = ["Rhythm", "Gacha", "Music"];
     const PLATFORMS = ["iOS", "Android"];
-    const EDITIONS = ["Colorful Stage"];
+    const EDITIONS = ["Project Sekai: Colorful Stage"];
 
-    const DESCRIPTION = "A mobile rhythm game focusing on touch-screen tapping, swiping, and holding distinct lanes matching the vocaloid tracks.";
+    const DESCRIPTION = "Find Your Music! Join Hatsune Miku in this mobile rhythm game and discover a rich cast of characters overcoming their struggles through the power of music. A mobile rhythm game focusing on touch-screen tapping, swiping, and holding distinct lanes matching the vocaloid tracks.";
 
     // Document Variables
     const sectionRadios = Array.from(
