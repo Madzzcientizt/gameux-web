@@ -106,15 +106,15 @@
                     min-height: 15em;
                     border: var(--t-border) solid var(--t-color-base-300);
 
-                    &:first-child {
+                    /* &:first-child {
                         grid-column: 1 / -1;
                         width: 100%;
                         flex-direction: row;
-                    }
+                    } */
 
-                    &:not(:first-child) {
+                    /* &:not(:first-child) {
                         flex-direction: column;
-                    }
+                    } */
 
                     & figure {
                         position: relative;
@@ -306,65 +306,139 @@
 
                 & h3 {
                     font-weight: 900;
-                    font-size: 2.5em;
+                    font-size: 1.8em;
+                }
+
+                &>p {
+                    text-align: justify;
+                    margin-bottom: 1.25em;
+                }
+
+                & .interaction-split-panels {
+                    display: grid;
+                    grid-template-columns: 1.2fr 1fr;
+                    gap: 1em;
+                    align-items: start;
+                    margin-top: 1.5em;
+
+                    @media (width < 48rem) {
+                        grid-template-columns: 1fr;
+                    }
+                }
+
+                & .interaction-insight {
+                    padding: 1.25em;
+                    border-radius: var(--t-radius-field);
+                    background-color: var(--t-color-base-100);
+                    border: var(--t-border) solid var(--t-color-base-300);
+
+                    & h3 {
+                        margin-bottom: 0.65em;
+                    }
+
+                    & p {
+                        margin: 0 0 1em;
+                        text-align: justify;
+                        line-height: 1.55;
+                    }
+
+                    & ul {
+                        list-style: none;
+                        padding: 0;
+                        margin: 0;
+                        display: grid;
+                        gap: 0.75em;
+
+                        & li {
+                            margin: 0;
+                            padding: 0.9em;
+                            border-radius: var(--t-radius-field);
+                            background-color: var(--t-color-base-200);
+                            border: var(--t-border) solid var(--t-color-base-300);
+                            text-align: justify;
+                            line-height: 1.45;
+                        }
+                    }
                 }
 
 
                 & .multi-modal-feedback {
-                    display: grid;
-                    grid-template-columns: 1fr 1fr;
-                    gap: 1em;
-                    padding-top: 1em;
+                    margin-top: 2em;
+                    padding: 1.25em;
+                    border-radius: var(--t-radius-field);
+                    background-color: var(--t-color-base-100);
+                    border: var(--t-border) solid var(--t-color-base-300);
 
-                    @media (width < 48rem) {
-                        grid-template-columns: 1fr !important;
+                    & h3 {
+                        margin-bottom: 0.75em;
                     }
 
-                    & figure {
-                        margin: auto;
-                        width: 100%;
-                        height: auto;
+                    & .feedback-intro {
+                        padding: 1em;
+                        border-radius: var(--t-radius-field);
+                        background-color: var(--t-color-base-200);
+                        border: var(--t-border) solid var(--t-color-base-300);
+                        margin-bottom: 1em;
 
-                        & img {
-                            width: 100% !important;
-                            height: auto !important;
+                        & p {
+                            margin: 0;
+                            text-align: justify;
+                            line-height: 1.55;
                         }
                     }
-                }
 
-                & ul {
-                    list-style: none;
-                    padding: 0;
+                    & ul {
+                        list-style: none;
+                        padding: 0;
+                        margin: 0;
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        gap: 1em;
 
-                    & li {
-                        margin-top: 2em;
-                        display: flex;
-                        flex-direction: row;
-
-                        & h6 {
-                            font-weight: 700;
-                            font-size: 1.5em;
-                            margin-bottom: 0.5em;
+                        @media (width < 48rem) {
+                            grid-template-columns: 1fr;
                         }
 
-                        & .logo-svg {
-                            height: 5em;
-                            flex-shrink: 0;
-                            background-color: var(--t-color-secondary);
-                            color: var(--t-color-base-100);
-                            aspect-ratio: 1 / 1;
+                        & li {
+                            margin: 0;
                             display: flex;
                             flex-direction: column;
-                            justify-content: center;
-                            align-items: center;
+                            gap: 0.85em;
                             padding: 1em;
                             border-radius: var(--t-radius-field);
-                            margin: auto;
-                            margin-right: 1em;
+                            background-color: var(--t-color-base-200);
+                            border: var(--t-border) solid var(--t-color-base-300);
 
-                            & svg {
-                                width: 100%;
-                                height: 100%;
+                            & h6 {
+                                font-weight: 700;
+                                font-size: 1.15em;
+                                margin: 0;
+                            }
+
+                            & .logo-svg {
+                                width: 3em;
+                                height: 3em;
+                                flex-shrink: 0;
+                                background-color: var(--t-color-secondary);
+                                color: var(--t-color-base-100);
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                padding: 0.75em;
+                                border-radius: var(--t-radius-selector);
+
+                                & svg {
+                                    width: 100%;
+                                    height: 100%;
+                                    overflow: visible;
+                                    display: block;
+                                }
+                            }
+
+                            & p {
+                                margin: 0;
+                                text-align: justify;
+                                line-height: 1.5;
                             }
                         }
                     }
@@ -379,178 +453,127 @@
                     font-size: 2.5em;
                 }
 
-                & .cybernetic-feedback-loops {
+                & .hicks-law-card {
                     margin-top: 2em;
-                    padding: 1em;
-                    border-radius: var(--t-radius-field);
                     background-color: var(--t-color-base-100);
                     border: var(--t-border) solid var(--t-color-base-300);
+                    border-radius: var(--t-radius-field);
+                    padding: 1.5em;
 
-                    &>h3 {
+                    & h3 {
+                        margin: 0 0 0.75em;
                         font-weight: 900;
                         font-size: 2em;
                     }
 
-                    & .cybernetic-content {
+                    & p {
+                        margin: 0;
+                        text-align: justify;
+                    }
+
+                    & .mathmodel {
+                        margin: 1em 0;
+                        padding: 1em;
+                        position: relative;
+                        padding-left: 2em;
+                        background-color: var(--t-color-base-300);
+                        border-radius: var(--t-radius-field);
+                        overflow: hidden;
+
+                        &::before {
+                            content: '';
+                            display: block;
+                            position: absolute;
+                            width: 0.5em;
+                            height: 100%;
+                            background-color: var(--t-color-primary);
+                            left: 0;
+                            top: 0;
+                        }
+
+                        & h6 {
+                            font-family: var(--bs-font-monospace);
+                            color: var(--t-color-dark);
+                            font-weight: 300;
+                            margin-bottom: 0.25em;
+                        }
+
+                        & span {
+                            font-size: 2em;
+                        }
+                    }
+                }
+
+                & .cognitive-load-matrix {
+                    margin-top: 2em;
+                    display: grid;
+                    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.6fr);
+                    gap: 1.25em;
+                    align-items: start;
+
+                    @media (width < 48rem) {
+                        grid-template-columns: 1fr;
+                    }
+
+                    & .matrix-intro {
+                        padding-top: 1.25em;
+                        position: relative;
+
+                        & h3 {
+                            margin: 0;
+                            font-weight: 900;
+                            line-height: 1.05;
+                            letter-spacing: 0.01em;
+                        }
+
+                        & p {
+                            margin: 1em 0 0;
+                            color: var(--t-color-dark);
+                            text-align: justify;
+                        }
+                    }
+
+                    & .matrix-grid {
                         display: grid;
                         grid-template-columns: 1fr 1fr;
                         gap: 1em;
 
                         @media (width < 48rem) {
-                            grid-template-columns: 1fr !important;
+                            grid-template-columns: 1fr;
+                        }
+                    }
+
+                    & .matrix-card {
+                        background-color: var(--t-color-base-300);
+                        border: var(--t-border) solid var(--t-color-base-300);
+                        border-radius: var(--t-radius-field);
+                        padding: 1.25em;
+                        position: relative;
+
+                        & .matrix-icon {
+                            width: 1.5em;
+                            height: 1.5em;
+                            color: var(--t-color-dark);
+                            margin-bottom: 0.6em;
+                            position: absolute;
+                            top: 1.25em;
+                            right: 1.25em;
                         }
 
                         & h6 {
-                            font-weight: 700;
-                            font-size: 1.2em;
-                            margin-bottom: 0.5em;
-                        }
-
-                        & .primary-modalities {
-                            list-style: none;
-                            padding: 1em;
-                            background-color: var(--t-color-base-200);
-                            border-radius: var(--t-radius-field);
-                            margin-bottom: 0;
-
-
-                            & li {
-                                margin-left: 1em;
-                                margin-bottom: 0.5em;
-                                position: relative;
-
-                                &::before {
-                                    content: '';
-                                    display: block;
-                                    position: absolute;
-                                    width: 0.2em;
-                                    height: 1em;
-                                    background-color: var(--t-color-primary);
-                                    border-radius: 1em;
-                                    left: -0.75em;
-                                    top: calc(50% - 0.5em);
-                                }
-                            }
-                        }
-                    }
-                }
-
-                & .spatial-congruence {
-                    padding: 1em;
-                    margin-top: 2em;
-
-                    & h2 {
-                        font-weight: 900;
-                        font-size: 2.5em;
-                    }
-                }
-
-                & .cognitive-load-bifurcation {
-                    margin: 2em 0;
-                    padding: 1em;
-                    border-radius: var(--t-radius-field);
-                    background-color: var(--t-color-base-100);
-                    border: var(--t-border) solid var(--t-color-base-300);
-
-                    &>h2 {
-                        font-weight: 900;
-                        font-size: 2em;
-                    }
-
-                    & table {
-                        width: 100%;
-                        border-collapse: separate;
-                        border-spacing: 0;
-                        border: var(--t-border) solid var(--t-color-base-300);
-                        border-radius: var(--t-radius-field);
-                        overflow: hidden;
-                        background-color: var(--t-color-base-200);
-                    }
-
-                    & th,
-                    & td {
-                        padding: 1em;
-                        vertical-align: top;
-                    }
-
-                    & thead th {
-                        font-weight: 800;
-                        font-size: 1.05em;
-                        background-color: var(--t-color-base-300);
-                        border-bottom: 1px solid var(--t-color-base-300);
-                    }
-
-                    & th+th,
-                    & td+td {
-                        border-left: 1px solid var(--t-color-base-300);
-                    }
-
-                    & tbody td {
-                        border-bottom: 1px solid var(--t-color-base-300);
-                    }
-
-                    & tbody tr:last-child td {
-                        border-bottom: 0;
-                    }
-
-                    & td h6 {
-                        font-weight: 700;
-                        font-size: 1.15em;
-                        margin-bottom: 0.5em;
-                    }
-
-                    & td p {
-                        margin-bottom: 0;
-                    }
-
-                    @media (width < 48rem) {
-
-                        & table,
-                        & thead,
-                        & tbody,
-                        & tr,
-                        & th,
-                        & td {
-                            display: block;
-                            width: 100%;
-                        }
-
-                        & thead {
-                            display: none;
-                        }
-
-                        & tbody tr {
-                            border-bottom: 1px solid var(--t-color-base-300);
-                            padding: 0.5em;
-                        }
-
-                        & tbody tr:last-child {
-                            border-bottom: 0;
-                        }
-
-                        & td {
-                            border: 0;
-                            border-radius: var(--t-radius-field);
-                            background-color: var(--t-color-base-100);
-                            margin-bottom: 0.75em;
-                        }
-
-                        & td::before {
-                            display: block;
-                            font-weight: 700;
-                            font-size: 0.85em;
+                            margin: 0;
+                            font-weight: 800;
+                            font-size: 0.95em;
+                            letter-spacing: 0.08em;
                             text-transform: uppercase;
-                            letter-spacing: 0.04em;
-                            color: var(--t-color-primary);
-                            margin-bottom: 0.5em;
                         }
 
-                        & td:nth-child(1)::before {
-                            content: 'Extrinsic Load';
-                        }
-
-                        & td:nth-child(2)::before {
-                            content: 'Intrinsic Focus';
+                        & p {
+                            margin: 0.5em 0 0;
+                            font-size: 0.95em;
+                            line-height: 1.45;
+                            color: var(--t-color-dark);
+                            text-align: justify;
                         }
                     }
                 }
@@ -1057,7 +1080,7 @@
                                 <span class="date-released" title="Date Released">Date Released</span>
                                 <span class="days-ago" title="Days Age">11 months ago</span>
                             </span>
-                            <span class="game-badge">Full Release</span>
+                            <span class="game-badge" style="background-color: var(--t-color-accent);">Alpha</span>
                             <span class="publisher" title="Publisher">Publisher</span>
                         </div>
                     </span>
@@ -1233,10 +1256,15 @@
                         <li>Source 2 Architecture</li>
                     </ul>
                     <p>
-                        Deadlock (2024) is Valve's experimental competitive third-person multiplayer action game. It uniquely attempts to bridge the twitch-mechanical rigor of a hero shooter with the macroeconomic, lane-pushing architecture of a pure MOBA (like Dota 2).
+                        Deadlock (2024) is Valve's experimental competitive third-person multiplayer action game. It
+                        uniquely attempts to bridge the twitch-mechanical rigor of a hero shooter with the
+                        macroeconomic, lane-pushing architecture of a pure MOBA (like Dota 2).
                     </p>
                     <p>
-                        The core HCI challenge in Deadlock is "Information Density Funneling." The game must communicate active item CDs, passive procs, 'Souls' (currency), four separate lane pressures, minion health thresholds, and vertically aligned 3D teamfights simultaneously without paralyzing the player's cognitive processing loop.
+                        The core HCI challenge in Deadlock is "Information Density Funneling." The game must communicate
+                        active item CDs, passive procs, 'Souls' (currency), four separate lane pressures, minion health
+                        thresholds, and vertically aligned 3D teamfights simultaneously without paralyzing the player's
+                        cognitive processing loop.
                     </p>
                     <ul class="metrics-list">
                         <li>
@@ -1255,16 +1283,23 @@
                             <div class="desc">Over 15 modular UI elements constantly updating dynamically.</div>
                         </li>
                     </ul>
-    
-</section>
+
+                    <div class="footnote" style="margin: 2em 0;">
+                        Although this game is in closed alpha, the analysis is based on extensive hands-on play
+                        sessions, developer interviews, and early design documentation leaks. The insights presented are
+                        speculative but grounded in observed mechanics and UI patterns.
+                    </div>
+                </section>
                 <section class="game-sections" id="ui-components">
 
                     <h2>UI Components</h2>
                     <div class="major-components">
                         <div class="major-component">
                             <figure>
-                                <a href="https://via.placeholder.com/600x400/3A134A/FFF?text=Deadlock+Reticle+Grouping" title="Centralized HUD Grouping" target="images">
-                                    <img src="https://via.placeholder.com/600x400/3A134A/FFF?text=Deadlock+Reticle+Grouping" alt="Deadlock Central UI">
+                                <a href="../../../public/gamesContent/deadlock/criticalUi.webp"
+                                    title="Centralized HUD Grouping" target="images">
+                                    <img src="../../../public/gamesContent/deadlock/criticalUi.webp"
+                                        alt="Deadlock Central UI">
                                 </a>
                                 <figcaption>FIG 1.1: The Foveal Data Anchor</figcaption>
                             </figure>
@@ -1272,14 +1307,17 @@
                                 <span class="count">[ ELEMENT_01 ]</span>
                                 <span class="header-text">Reticle Data Clustering</span>
                                 <p>
-                                    To combat eye travel time, Deadlock pulls critical mechanics (stamina, ability cooldowns) into a tight halo beneath the aiming reticle. This ensures tactical state checks do not require the user to look away from their target.
+                                    To combat eye travel time, Deadlock pulls critical mechanics (stamina, ability
+                                    cooldowns) into a tight halo beneath the aiming reticle. This ensures tactical state
+                                    checks do not require the user to look away from their target.
                                 </p>
                             </div>
                         </div>
                         <div class="major-component">
                             <figure>
-                                <a href="https://via.placeholder.com/600x400/3A134A/F4D03F?text=Soul+Orbs" title="Soul Orb Dynamics" target="images">
-                                    <img src="https://via.placeholder.com/600x400/3A134A/F4D03F?text=Soul+Orbs" alt="Soul UI Orbs">
+                                <a href="../../../public/gamesContent/deadlock/souls.jpeg" title="Soul Orb Dynamics"
+                                    target="images">
+                                    <img src="../../../public/gamesContent/deadlock/souls.jpeg" alt="Soul UI Orbs">
                                 </a>
                                 <figcaption>FIG 1.2: Kinetic Currency Validation</figcaption>
                             </figure>
@@ -1287,14 +1325,17 @@
                                 <span class="count">[ ELEMENT_02 ]</span>
                                 <span class="header-text">Diegetic Soul Tracking</span>
                                 <p>
-                                    When killing a minion, "Souls" appear as physical glowing orbs that float up and must be shot. This maps macroeconomic farming onto existing shooter muscle memory, a innovative fusion of MOBA and Shooter paradigms.
+                                    When killing a minion, "Souls" appear as physical glowing orbs that float up and
+                                    must be shot. This maps macroeconomic farming onto existing shooter muscle memory, a
+                                    innovative fusion of MOBA and Shooter paradigms.
                                 </p>
                             </div>
                         </div>
                         <div class="major-component">
                             <figure>
-                                <a href="https://via.placeholder.com/600x400/111111/FFFFFF?text=Item+Shop+HUD" title="Shop UI Analysis" target="images">
-                                    <img src="https://via.placeholder.com/600x400/111111/FFFFFF?text=Item+Shop+HUD" alt="Shop UI">
+                                <a href="../../../public/gamesContent/deadlock/store.jpg" title="Shop UI Analysis"
+                                    target="images">
+                                    <img src="../../../public/gamesContent/deadlock/store.jpg" alt="Shop UI">
                                 </a>
                                 <figcaption>FIG 1.3: Heavy Occlusion Information Density</figcaption>
                             </figure>
@@ -1302,14 +1343,17 @@
                                 <span class="count">[ ELEMENT_03 ]</span>
                                 <span class="header-text">Economic Hub Occlusion</span>
                                 <p>
-                                    The shop UI in Deadlock is a high-density grid that almost entirely occludes the player's 3D field of view. This creates a severe UX trade-off: players can browse a massive list of complex items, but only at the cost of total situational awareness.
+                                    The shop UI in Deadlock is a high-density grid that almost entirely occludes the
+                                    player's 3D field of view. This creates a severe UX trade-off: players can browse a
+                                    massive list of complex items, but only at the cost of total situational awareness.
                                 </p>
                             </div>
                         </div>
                         <div class="major-component">
                             <figure>
-                                <a href="https://via.placeholder.com/600x400/8E44AD/FFFFFF?text=3D+Ping+Markers" title="Communication UI" target="images">
-                                    <img src="https://via.placeholder.com/600x400/8E44AD/FFFFFF?text=3D+Ping+Markers" alt="Ping UI">
+                                <a href="../../../public/gamesContent/deadlock/pingSystem.png" title="Communication UI"
+                                    target="images">
+                                    <img src="../../../public/gamesContent/deadlock/pingSystem.png" alt="Ping UI">
                                 </a>
                                 <figcaption>FIG 1.4: 3D Spatial Signaling</figcaption>
                             </figure>
@@ -1317,126 +1361,227 @@
                                 <span class="count">[ ELEMENT_04 ]</span>
                                 <span class="header-text">Vertical Saccadic Awareness</span>
                                 <p>
-                                    Because threats can appear on rooftops, Deadlock uses 3D ping markers that indicate depth and height. This guides the player's optical saccades more effectively than a standard 2D top-down minimap indicator found in traditional MOBA titles.
+                                    Because threats can appear on rooftops, Deadlock uses 3D ping markers that indicate
+                                    depth and height. This guides the player's optical saccades more effectively than a
+                                    standard 2D top-down minimap indicator found in traditional MOBA titles.
                                 </p>
                             </div>
                         </div>
                     </div>
-    
-</section>
+                </section>
                 <section class="game-sections" id="user-interaction">
 
                     <h2>User Interaction</h2>
-                    <p>Deadlock is a stress test of human information-bandwidth, requiring constant toggling between MOBA strategy and FPS mechanics.</p>
-                    <div class="list-style-area">
-                        <h3 class="text-center">The Macro-Micro Toggle</h3>
-                        <ol class="four-columns md-two-columns">
-                            <li>
-                                <h6>Scout Macro</h6>
-                                <p>Parse the four-lane colored minimap for rotation opportunities or lane pressure.</p>
-                            </li>
-                            <li>
-                                <h6>Execute Micro</h6>
-                                <p>Last-hit minions and shoot floating Soul Orbs via Fitts's Law ballistics.</p>
-                            </li>
-                            <li>
-                                <h6>Economic Check</h6>
-                                <p>Navigate massive shop trees under safe-zone conditions (high occlusion risk).</p>
-                            </li>
-                            <li>
-                                <h6>Combat Duel</h6>
-                                <p>Execute dashes, parries, and vertical jumps while aiming in a fully 3D environment.</p>
-                            </li>
-                        </ol>
+                    <p>Deadlock is a stress test of human information bandwidth. The player continuously alternates
+                        between macro lane-state planning and micro mechanical execution, often inside the same
+                        five-second window.</p>
+
+                    <div class="interaction-split-panels">
+                        <div class="list-style-area">
+                            <h3 class="text-center">The Macro-Micro Toggle</h3>
+                            <ol class="four-columns md-two-columns">
+                                <li>
+                                    <h6>Scout Macro</h6>
+                                    <p>Parse four-lane minimap pressure, identify objective timing, and predict enemy
+                                        rotations before overextending.</p>
+                                </li>
+                                <li>
+                                    <h6>Execute Micro</h6>
+                                    <p>Last-hit minions and secure floating Soul Orbs while tracking recoil, spacing,
+                                        and target movement in 3D space.</p>
+                                </li>
+                                <li>
+                                    <h6>Economic Check</h6>
+                                    <p>Enter shop windows only during safe timing bands; item pathing errors cause power
+                                        spikes to arrive one fight too late.</p>
+                                </li>
+                                <li>
+                                    <h6>Combat Duel</h6>
+                                    <p>Chain dashes, jumps, parries, and aim correction while preserving stamina for
+                                        disengage and counter-engage states.</p>
+                                </li>
+                            </ol>
+                        </div>
+
+                        <aside class="interaction-insight">
+                            <h3>Decision Latency Budget</h3>
+                            <p>Deadlock rewards players who compress decision time without dropping execution quality.
+                                Most interaction failures come from delayed commitment, not raw aim error.</p>
+                            <ul>
+                                <li><strong>Lane-State Read:</strong> Identify whether to shove, freeze, or rotate
+                                    before your wave collapses.</li>
+                                <li><strong>Resource Discipline:</strong> Treat stamina, ammo, and cooldowns as one
+                                    shared budget during skirmishes.</li>
+                                <li><strong>Shop Timing:</strong> Buy decisions must fit objective downtime to avoid
+                                    map-control loss.</li>
+                            </ul>
+                        </aside>
                     </div>
-                    
-                    <h3>Multi-Modal Feedback Matrix</h3>
+
                     <div class="multi-modal-feedback">
-                        <div>
-                            <p>
-                                To prevent cognitive overload, Deadlock relies on "Data Funneling"—dynamically hiding complex info during high-intensity states.
-                            </p>
+                        <h3>Multi-Modal Feedback Matrix</h3>
+                        <div class="feedback-intro">
+                            <p>To reduce cognitive overload, Deadlock uses aggressive data funneling: non-critical
+                                signals are visually down-prioritized during high-threat moments while urgent cues move
+                                to audio and motion channels.</p>
                         </div>
                         <ul>
                             <li>
                                 <div class="logo-svg">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
                                     </svg>
                                 </div>
                                 <div>
                                     <h6>Combat Peripheral Filtering</h6>
-                                    <p>
-                                        When Aiming Down Sights (ADS), the UI desaturates peripheral ability icons to prevent the foveal focus from being distracted by non-essential data during a dual.
-                                    </p>
+                                    <p>During ADS and close-range duels, peripheral UI elements are visually
+                                        de-emphasized so foveal attention stays on target tracking and cover
+                                        transitions.</p>
                                 </div>
                             </li>
                             <li>
                                 <div class="logo-svg">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8l-3.45-3.45a2 2 0 010-2.82l.06-.06a2 2 0 012.82 0l3.44 3.44h4.82a6 6 0 01-1.85 3.31z" />
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="size-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M15.042 21.672 13.684 16.6m0 0-2.51 2.225.569-9.47 5.227 7.917-3.286-.672Zm-7.518-.267A8.25 8.25 0 1 1 20.25 10.5M8.288 14.212A5.25 5.25 0 1 1 17.25 10.5" />
+                                    </svg>
+
+                                </div>
+                                <div>
+                                    <h6>Haptic Mobility Feedback</h6>
+                                    <p>Stamina depletion is reinforced through camera weight and motion feel, letting
+                                        players sense mobility risk without diverting gaze to HUD meters.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="logo-svg">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="size-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                                     </svg>
                                 </div>
                                 <div>
-                                    <h6>Haptic Stamina Depletion</h6>
-                                    <p>
-                                        The dash/jump cooldown is communicated via rhythmic screen-shake and camera weight shifts, allowing the player to feel their lack of mobility without needing to look at a HUD bar.
-                                    </p>
+                                    <h6>Economy Event Readouts</h6>
+                                    <p>Souls gained, denied, and objective payouts are surfaced as short-lifetime cues,
+                                        enabling fast economic verification during ongoing fights.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="logo-svg">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="size-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h6>Team Coordination Signals</h6>
+                                    <p>Ping markers and directional callouts convert team intent into low-latency
+                                        spatial prompts, improving rotation timing without voice dependency.</p>
                                 </div>
                             </li>
                         </ul>
                     </div>
-    
-</section>
+
+                </section>
                 <section class="game-sections" id="hci-principles">
 
                     <h2>HCI Principles</h2>
-                    <div class="spatial-congruence">
-                        <h2>Foveal Anchoring & Eye-Travel Reduction</h2>
-                        <p style="text-align: justify;">
-                            Deadlock's primary HCI innovation is 'Foveal Anchoring.' By centering critical data (Health, Stamina, Ability Bullets) around the crosshair, the game acknowledges that in a 3D shooter, even a 100ms saccade to a corner is potentially lethal. This architecture minimizes 'Attention Fragmenting' common in traditional MOBAs where the eye must constantly shift between the center and the bottom-right corner.
+                    <div class="hicks-law-card">
+                        <h3>Foveal Anchoring and Choice Compression</h3>
+                        <p>
+                            Deadlock's central HCI move is reducing eye-travel by clustering survival-critical data
+                            near the reticle. In vertical firefights, each additional decision branch (dash, parry,
+                            item active, lane call, soul secure) increases cognitive branching cost and delays response.
+                            High-level players survive by compressing options into rehearsed decision trees.
+                        </p>
+                        <div class="mathmodel">
+                            <h6>[ DECISION LATENCY MODEL ]</h6>
+                            <span>T<sub>decision</sub> = b * log<sub>2</sub>(n + 1)</span>
+                        </div>
+                        <p>
+                            As the number of simultaneous tactical options $n$ rises, decision time $T$ rises
+                            non-linearly.
+                            Effective UI design offsets this by prioritizing urgency cues and suppressing non-essential
+                            visual noise during combat peaks.
                         </p>
                     </div>
-                    
-                    <div class="cognitive-load-bifurcation">
-                        <h2>Genre Compression Overload</h2>
-                        <p style="text-align: justify; margin-bottom: 2em;">
-                            The intersection of disparate genres pushes user information-processing limits to the brink.
-                        </p>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Extrinsic UI Complexity</th>
-                                    <th>Intrinsic Spatial Load</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <h6>Shop Navigation</h6>
-                                        <p>The shop features over 100 items with unique passive/active states, requiring massive cognitive recall in mid-game.</p>
-                                    </td>
-                                    <td>
-                                        <h6>3D Flank Awareness</h6>
-                                        <p>Enemies flank from 3D verticality (Z-axis), tripling the spatial data compared to a 2D top-down MOBA lane.</p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <h6>Souls as Currency Targets</h6>
-                                        <p>Managing income requires constant aiming accuracy, merging economy with motor-limit execution.</p>
-                                    </td>
-                                    <td>
-                                        <h6>Multi-Tasking Fatigue</h6>
-                                        <p>The user must track 4 colored lanes, teammate status, and active item procs concurrently for 30+ minutes.</p>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+
+                    <div class="cognitive-load-matrix">
+                        <div class="matrix-intro">
+                            <h3>Cognitive Load: MOBA-Shooter Convergence</h3>
+                            <p>
+                                How does the player maintain aim precision, map awareness, economy progression, and
+                                cooldown planning simultaneously without exceeding working-memory limits?
+                            </p>
+                        </div>
+                        <div class="matrix-grid">
+                            <article class="matrix-card">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="matrix-icon">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                                </svg>
+                                <h6>Foveal Attention Load</h6>
+                                <p>
+                                    Reticle-centric focus must coexist with projectile tracking, ability telegraphs,
+                                    and vertical flank checks, creating persistent visual contention.
+                                </p>
+                            </article>
+                            <article class="matrix-card">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="matrix-icon">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M6.429 9.75 2.25 12l4.179 2.25m0-4.5 5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0 4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0-5.571 3-5.571-3" />
+                                </svg>
+                                <h6>Spatial Processing Load</h6>
+                                <p>
+                                    Unlike top-down MOBAs, threat vectors arrive across full 3D geometry; elevation,
+                                    angle, and line-of-sight all alter tactical value in real time.
+                                </p>
+                            </article>
+                            <article class="matrix-card">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="matrix-icon">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                </svg>
+                                <h6>Economic Cognition Load</h6>
+                                <p>
+                                    Souls, item spikes, deny windows, and shop routing form a parallel decision track
+                                    that competes with moment-to-moment combat execution.
+                                </p>
+                            </article>
+                            <article class="matrix-card">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="matrix-icon">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 0 0 2.25-2.25V6.75a2.25 2.25 0 0 0-2.25-2.25H6.75A2.25 2.25 0 0 0 4.5 6.75v10.5a2.25 2.25 0 0 0 2.25 2.25Zm.75-12h9v9h-9v-9Z" />
+                                </svg>
+                                <h6>Coordination Load</h6>
+                                <p>
+                                    Team pings, lane calls, and timing synchronization require continuous context
+                                    updates, increasing working-memory pressure across extended matches.
+                                </p>
+                            </article>
+                        </div>
                     </div>
-    
-</section>
+
+                    <div class="footnote" style="margin: 2em 0;">
+                        Deadlock succeeds when interface hierarchy matches cognitive hierarchy: urgent combat signals
+                        first, strategic planning data second, and optional detail deferred until low-intensity windows.
+                        This sequencing keeps players operational even under multi-system overload.
+                    </div>
+
+                </section>
                 <section class="game-sections" id="ui-ux-weaknesses">
 
                     <h2>Strengths and Weaknesses Analysis</h2>
@@ -1454,14 +1599,16 @@
                                         <span class="label">01_FOVEAL_UI</span>
                                     </div>
                                     <h6>Reticle Grouping Optimization</h6>
-                                    <p>Clustering cooldowns right under the crosshair drastically reduces lethal eye-travel time.</p>
+                                    <p>Clustering cooldowns right under the crosshair drastically reduces lethal
+                                        eye-travel time.</p>
                                 </td>
                                 <td>
                                     <div class="sw-item-head">
                                         <span class="label">01_OVERLOAD</span>
                                     </div>
                                     <h6>Extreme Cognitive Overhead</h6>
-                                    <p>The sheer density of UI elements (items, souls, buffs) paralyzes new players unaccustomed to parallel processing.</p>
+                                    <p>The sheer density of UI elements (items, souls, buffs) paralyzes new players
+                                        unaccustomed to parallel processing.</p>
                                 </td>
                             </tr>
                             <tr>
@@ -1470,14 +1617,16 @@
                                         <span class="label">02_DIEGETICS</span>
                                     </div>
                                     <h6>Kinetic Economy Cues</h6>
-                                    <p>Making 'Souls' physical orbs you must shoot perfectly maps economic tasks onto existing shooter muscle memory.</p>
+                                    <p>Making 'Souls' physical orbs you must shoot perfectly maps economic tasks onto
+                                        existing shooter muscle memory.</p>
                                 </td>
                                 <td>
                                     <div class="sw-item-head">
                                         <span class="label">02_OCCLUSION</span>
                                     </div>
                                     <h6>Shop Screen Occlusion</h6>
-                                    <p>Opening the shop heavily occludes the 3D world view, creating dangerous blind spots during safe-zone rotations.</p>
+                                    <p>Opening the shop heavily occludes the 3D world view, creating dangerous blind
+                                        spots during safe-zone rotations.</p>
                                 </td>
                             </tr>
                             <tr>
@@ -1486,24 +1635,29 @@
                                         <span class="label">03_COLOR_MAP</span>
                                     </div>
                                     <h6>Color-Coded Routing</h6>
-                                    <p>The rigid coloring of the four lanes (Yellow, Green, Blue, Purple) ensures instant peripheral apprehension of global position.</p>
+                                    <p>The rigid coloring of the four lanes (Yellow, Green, Blue, Purple) ensures
+                                        instant peripheral apprehension of global position.</p>
                                 </td>
                                 <td>
                                     <div class="sw-item-head">
                                         <span class="label">03_VFX_CLUTTER</span>
                                     </div>
                                     <h6>Particle Effect Layering</h6>
-                                    <p>In 6v6 3D teamfights, the overlapping alpha channels of ability VFX can entirely camouflage critical player silhouettes.</p>
+                                    <p>In 6v6 3D teamfights, the overlapping alpha channels of ability VFX can entirely
+                                        camouflage critical player silhouettes.</p>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
-                    
+
                     <div class="footnote summary">
-                        <p>Deadlock is a fascinating stress test of human information-bandwidth limits. By violently combining the geometric needs of a shooter with the spreadsheet density of a MOBA, the UI is forced to adopt revolutionary foveal-anchoring techniques just to keep the player operational.</p>
+                        <p>Deadlock is a fascinating stress test of human information-bandwidth limits. By violently
+                            combining the geometric needs of a shooter with the spreadsheet density of a MOBA, the UI is
+                            forced to adopt revolutionary foveal-anchoring techniques just to keep the player
+                            operational.</p>
                     </div>
-    
-</section>
+
+                </section>
             </div>
         </article>
     </main>
@@ -1534,7 +1688,7 @@
     const GAMENAME = "Deadlock";
     const DATERELEASED = "09/01/2024"; // MM/DD/YYYY
     const PUBLISHER = 'Valve Corporation';
-    const BADGE = "Full Release";
+    const BADGE = "Alpha";
     // Pre-Alpha
     // Alpha
     // Beta
@@ -1543,11 +1697,11 @@
     const POSTERURL = "../../../public/posters/deadlock_poster.jpg";
     const POSTERALTTEXT = "Deadlock Game Poster";
     const VIDEOURL = "../../../public/videos/osu_trailer.mp4";
-    const VIDEOURLYT = "https://www.youtube.com/embed/5D2KxRSTQ94";
+    const VIDEOURLYT = "https://www.youtube.com/embed/ZdlOy1gbgHk?si=hoNO4M68nh0qD7Sz";
     const YTVID = true;
 
     const GAMEUSERSTARS = "N/A";
-    const GAMEUSERRATINGS = "Alpha Test";
+    const GAMEUSERRATINGS = "Alpha";
 
     const HASCRITICS = false; // Set to false if there are no critic ratings
     const GAMECRITICSTARS = "0";
