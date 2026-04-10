@@ -1,20 +1,34 @@
 <!doctype html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend:wght@100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Manrope:wght@200..800&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
-        rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend:wght@100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Manrope:wght@200..800&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+      rel="stylesheet"
+    />
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
 
     <link rel="stylesheet" href="../../styles/styles.css" type="text/css" />
-    <link rel="stylesheet" href="../../styles/sizeChecker.css" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="../../styles/sizeChecker.css"
+      type="text/css"
+    />
     <link rel="stylesheet" href="../../styles/game.css" type="text/css" />
     <style>
       nav.game-info-nav {
@@ -891,14 +905,20 @@
         bottom: 1.25rem;
         width: 3.5rem;
         height: 3.5rem;
+        border: 0;
+        border-radius: var(--t-radius-selector);
+        background-color: transparent;
+        padding: 0;
+        display: grid;
+        place-items: center;
         z-index: 1001;
-        cursor: pointer;
         opacity: 0;
+        transform: translateY(0.5rem) scale(0.96);
         pointer-events: none;
         transition:
           opacity 0.2s ease,
           transform 0.2s ease;
-        transform: translateY(0.5rem);
+        cursor: pointer;
       }
 
       .back-to-top.is-visible {
@@ -907,15 +927,39 @@
         transform: translateY(0);
       }
 
-      .back-to-top svg {
-        width: 100%;
-        height: 100%;
+      .back-to-top .btn-bg {
+        fill: var(--t-color-base-100);
+        stroke: var(--t-color-base-300);
+        stroke-width: 1.5;
+      }
+
+      .back-to-top .btn-progress-track {
+        fill: none;
+        stroke: var(--t-color-base-300);
+        stroke-width: 3;
+        opacity: 0.35;
       }
 
       .back-to-top .btn-progress {
+        fill: none;
+        stroke: var(--t-color-primary);
+        stroke-width: 3;
+        stroke-linecap: round;
         transform: rotate(-90deg);
-        transform-origin: center;
+        transform-origin: 28px 28px;
         transition: stroke-dashoffset 0.1s linear;
+      }
+
+      .back-to-top .btn-icon {
+        fill: none;
+        stroke: var(--t-color-primary);
+        stroke-width: 1.8;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .back-to-top:hover .btn-bg {
+        fill: var(--t-color-base-200);
       }
 
       .hidden {
@@ -923,183 +967,187 @@
       }
     </style>
 
-    <title id="title">League of Legends - GameUX</title>
-</head>
+    <title id="title">Omori - GameUX</title>
+  </head>
 
-<body>
+  <body>
     <header>
-        <nav class="navbar navbar-light navbar-expand-lg">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="../../index.html">
-                    <img src="../../../public/gameux.png" alt="Logo" class="navbar-logo" />
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <nav class="navbar navbar-light navbar-expand-lg">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="../../index.html">
+            <img
+              src="../../../public/gameux.png"
+              alt="Logo"
+              class="navbar-logo"
+            />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
             <span class="navbar-toggler-icon" style="width: 1em"></span>
           </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="../../index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="../gameList.html">Game List</a>
-                        </li>
-                        <li class="nav-item"><a class="nav-link" href="#">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="../../index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="../gameList.html">Game List</a>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
     </header>
 
     <nav class="breadcrumb-nav" aria-label="breadcrumb">
-<<<<<<< HEAD
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item">
-                <a href="../gameList.html">Game List</a>
-            </li>
-            <li class="breadcrumb-item active game-name">League of Legends</li>
-        </ol>
-=======
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
           <a href="../gameList.html">Game List</a>
         </li>
-        <li class="breadcrumb-item active game-name">League of Legends</li>
+        <li class="breadcrumb-item active game-name">Omori</li>
       </ol>
->>>>>>> 9da5a15 (Revised 10 pages--Added 2 more Game pages)
     </nav>
 
     <main>
-        <article class="wide">
-            <section class="header-section">
-                <img class="game-poster-content game-poster-background-style" />
-                <h1 class="game-name game-name-header">League of Legends</h1>
-                <div class="game-header">
-                    <span class="game-header-cont">
+      <article class="wide">
+        <section class="header-section">
+          <img class="game-poster-content game-poster-background-style" />
+          <h1 class="game-name game-name-header">Omori</h1>
+          <div class="game-header">
+            <span class="game-header-cont">
               <div class="game-info-bar">
                 <span class="game-date-info">
-                  <span class="date-released">October 27, 2009</span>
-                    <span class="days-ago"></span>
-                    </span>
-                    <span class="game-badge">Full Release</span>
-                    <span class="publisher">Riot Games</span>
-                </div>
+                  <span class="date-released">December 25, 2020</span>
+                  <span class="days-ago"></span>
                 </span>
-                <div class="game-header-rating">
-                    <table class="game-critic-rating-cont">
-                        <tr>
-                            <td rowspan="2">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <span class="game-badge">Indie / RPG</span>
+                <span class="publisher">OMOCAT, LLC</span>
+              </div>
+            </span>
+            <div class="game-header-rating">
+              <table class="game-critic-rating-cont">
+                <tr>
+                  <td rowspan="2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
                       <path
                         fill-rule="evenodd"
                         d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
                         clip-rule="evenodd"
                       />
                     </svg>
-                            </td>
-                            <td class="game-critic-rating">0</td>
-                        </tr>
-                        <tr>
-                            <td class="game-critic-ratings">0 critic ratings</td>
-                        </tr>
-                    </table>
-                </div>
-                </div>
-                <div class="video-game-container">
-                    <a class="game-poster" id="game-poster">
-                        <img class="game-poster-img" id="game-poster-img" alt="LoL Poster" />
-                    </a>
-                    <div class="game-video-wrp">
-                        <video class="game-video" id="game-video" controls>
+                  </td>
+                  <td class="game-critic-rating">0</td>
+                </tr>
+                <tr>
+                  <td class="game-critic-ratings">0 critic ratings</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <div class="video-game-container">
+            <a class="game-poster" id="game-poster">
+              <img
+                class="game-poster-img"
+                id="game-poster-img"
+                alt="Omori Poster"
+              />
+            </a>
+            <div class="game-video-wrp">
+              <video class="game-video" id="game-video" controls>
                 <source type="video/mp4" id="game-video-source" />
                 Your browser does not support the video tag.
               </video>
-                        <iframe class="game-video" id="game-video-yt" frameborder="0" allowfullscreen hidden></iframe>
-                    </div>
+              <iframe
+                class="game-video"
+                id="game-video-yt"
+                frameborder="0"
+                allowfullscreen
+                hidden
+              ></iframe>
+            </div>
 
-                    <div class="game-rating">
-                        <table class="game-user-rating-cont">
-                            <tr>
-                                <td rowspan="2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <div class="game-rating">
+              <table class="game-user-rating-cont">
+                <tr>
+                  <td rowspan="2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
                       <path
                         fill-rule="evenodd"
                         d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
                         clip-rule="evenodd"
                       />
                     </svg>
-                                </td>
-                                <td class="game-user-rating">0</td>
-                            </tr>
-                            <tr>
-                                <td class="game-user-ratings">0 user ratings</td>
-                            </tr>
-                        </table>
-                        <table class="game-critic-rating-cont">
-                            <tr>
-                                <td rowspan="2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                  </td>
+                  <td class="game-user-rating">0</td>
+                </tr>
+                <tr>
+                  <td class="game-user-ratings">0 user ratings</td>
+                </tr>
+              </table>
+              <table class="game-critic-rating-cont">
+                <tr>
+                  <td rowspan="2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
                       <path
                         fill-rule="evenodd"
                         d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
                         clip-rule="evenodd"
                       />
                     </svg>
-                                </td>
-                                <td class="game-critic-rating">0</td>
-                            </tr>
-                            <tr>
-                                <td class="game-critic-ratings">0 critic ratings</td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
+                  </td>
+                  <td class="game-critic-rating">0</td>
+                </tr>
+                <tr>
+                  <td class="game-critic-ratings">0 critic ratings</td>
+                </tr>
+              </table>
+            </div>
+          </div>
 
-                <ul class="game-list-data">
-                    <li class="game-list-data-item">
-                        Genres:
-                        <ul id="genres"></ul>
-                    </li>
-                    <li class="game-list-data-item">
-                        Platforms:
-                        <ul id="platforms"></ul>
-                    </li>
-                    <li class="game-list-data-item">
-                        Editions:
-                        <ul id="editions"></ul>
-                    </li>
-                </ul>
-                <p class="game-description" id="game-description"></p>
-            </section>
-        </article>
+          <ul class="game-list-data">
+            <li class="game-list-data-item">
+              Genres:
+              <ul id="genres"></ul>
+            </li>
+            <li class="game-list-data-item">
+              Platforms:
+              <ul id="platforms"></ul>
+            </li>
+            <li class="game-list-data-item">
+              Editions:
+              <ul id="editions"></ul>
+            </li>
+          </ul>
+          <p class="game-description" id="game-description"></p>
+        </section>
+      </article>
 
-<<<<<<< HEAD
-        <article>
-            <div class="game-info-nav-wrap">
-                <button class="game-info-nav-arrow left" id="game-info-nav-left" type="button" aria-label="Scroll left" hidden>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              aria-hidden="true"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M15.78 19.28a.75.75 0 0 1-1.06 0L8.22 12.78a.75.75 0 0 1 0-1.06l6.5-6.5a.75.75 0 1 1 1.06 1.06L9.81 12l5.97 5.72a.75.75 0 0 1 0 1.56Z"
-                clip-rule="evenodd"
-              />
-            </svg>
-          </button>
-                <nav class="game-info-nav" id="game-info-nav">
-                    <label><input
-=======
       <div class="game-info-nav-container">
         <div class="game-info-nav-wrap">
           <nav class="game-info-nav" id="game-info-nav" role="tablist">
             <label role="tab"
               ><input
->>>>>>> 9da5a15 (Revised 10 pages--Added 2 more Game pages)
                 type="radio"
                 name="game-section"
                 value="short-description"
@@ -1166,221 +1214,226 @@
           >
             <h2>Overview</h2>
             <ul class="list-style">
-              <h2>League of Legends modes:</h2>
-              <li>Summoner's Rift</li>
-              <li>ARAM (All Random All Mid)</li>
-              <li>Teamfight Tactics (TFT)</li>
+              <h2>Core Gameplay Loops:</h2>
+              <li>Emotion-Based Turn Combat</li>
+              <li>Dual-Reality Traversal</li>
+              <li>Psychological Trauma Encounters</li>
             </ul>
             <p>
-              League of Legends (LoL) is a free-to-play multiplayer online
-              battle arena (MOBA) created and self-published by Riot Games.
-              Released for Windows on October 27, 2009, with later native ports
-              to macOS. The gameplay of LoL is primarily based on the Defense of
-              the Ancients (DotA) mod for Warcraft III, which involves
-              controlling a single "champion" with unique abilities from an
-              isometric perspective, using a mouse and keyboard to move, attack,
-              and cast spells. Since the game's release, several other official
-              "rulesets" (game modes) such as ARAM and Arena have been added,
-              alongside the auto-battler spin-off Teamfight Tactics.
+              Omori is a surreal, story-driven psychological horror RPG Maker
+              game developed by OMOCAT. Players take on the role of a silent
+              protagonist traversing between two distinct realities: the
+              vibrant, pastel dreamscape of "Headspace" and the muted,
+              emotionally fraught reality of "Faraway Town".
             </p>
             <p>
-              Unlike standard action games, matches require a high volume of
-              tactical decision-making synchronized with intense mechanical
-              execution (high APM). Due to the nature of the competitive ladder
-              and continuous balance patches, it became heavily connected to
-              global esports culture. Because of the game's demand for extreme
-              visual-motor coordination, multi-tasking, and map awareness, it
-              serves as a perfect case study for HCI. It must balance vibrant
-              ability aesthetics with strict technical performance and clarity.
+              From an HCI perspective, Omori utilizes what can be termed as
+              "Affective Computing Paradigms." Instead of abstract status
+              ailments like 'Poison' or 'Paralyze', the game explicitly gamifies
+              human emotion. The UI brilliantly reflects this by translating
+              complex emotional states into functional rock-paper-scissors
+              combat mechanics, while utilizing a heavily stylized "sketchbook"
+              aesthetic to blur the lines between the protagonist's coping
+              mechanisms and the user interface.
             </p>
             <ul class="metrics-list">
               <li>
                 <h6>Cognitive Load</h6>
-                <div class="value">Extreme</div>
+                <div class="value">Bifurcated</div>
                 <div class="desc">
-                  Number of simultaneous elements a player tracks (10 players,
-                  minion waves, cooldowns)
+                  Standard RPG load in Headspace, shifting to heavy
+                  narrative/psychological processing in the real world.
                 </div>
               </li>
               <li>
-                <h6>Response Time</h6>
-                <div class="value">± 15ms to ± 60ms</div>
+                <h6>Interaction Frequency</h6>
+                <div class="value">Turn-Based Tactical</div>
                 <div class="desc">
-                  Time between user action and server-side system feedback
-                  (Ping)
+                  Requires deliberate navigation of menus to chain emotional
+                  states across party members.
                 </div>
               </li>
               <li>
-                <h6>Visual Reaction Time</h6>
-                <div class="value">~150ms to ~300ms</div>
+                <h6>Visual Aesthetics</h6>
+                <div class="value">Ludonarrative UI</div>
                 <div class="desc">
-                  Time for a player to respond to visual stimuli (e.g., flashing
-                  a skillshot)
+                  Hand-drawn UI elements intentionally meant to represent the
+                  main character's internal mental state.
                 </div>
               </li>
             </ul>
           </section>
+
           <section class="game-sections" id="ui-components" aria-hidden="true">
             <h2>UI Components</h2>
             <div class="major-components">
               <div class="major-component">
                 <figure>
                   <a
-                    href="../../../public/gamesContent/lol/champions.png"
-                    title="LoL Champions"
+                    href="../../../public/gamesContent/omori/sketchbook.png"
+                    title="Sketchbook Menu"
                     target="images"
                   >
                     <img
-                      src="../../../public/gamesContent/lol/champions.png"
-                      alt="Champions"
+                      src="../../../public/gamesContent/omori/sketchbook.png"
+                      alt="Hand-drawn Menu Interface"
                     />
                   </a>
-                  <figcaption>FIG 1.1: Champion Hitboxes</figcaption>
+                  <figcaption>FIG 1.1: The Coping Mechanism</figcaption>
                 </figure>
                 <div>
                   <span class="count">[ ELEMENT_01 ]</span>
-                  <span class="header-text">Champion Entities</span>
+                  <span class="header-text">The Sketchbook UI</span>
                   <p>
-                    The fundamental gameplay targets in LoL are the enemy
-                    champions and minions, which players must click or aim at
-                    amidst chaotic movement. These components utilize complex 3D
-                    hitboxes mapped to a 2D isometric plane.
+                    The main pause menu completely abandons the clean, digital
+                    lines of traditional RPGs. Instead, it is framed as a
+                    literal notebook with crayon-scrawled text, imperfect
+                    borders, and shaky, animated line art. This grounds the
+                    interface diegetically within the protagonist's mind, acting
+                    as a child's coping mechanism.
                   </p>
                   <ul>
-                    <h6>Visual Feedback</h6>
-                    <li>Health Bar Degradation</li>
-                    <li>Status Effect Overlays (CC)</li>
-                    <li>Dynamic Outline Highlighting</li>
+                    <h6>Functionality</h6>
+                    <li>Houses inventory ("Pockets") and skills</li>
+                    <li>Visually separates the Dream World from Reality</li>
                   </ul>
                 </div>
               </div>
               <div class="major-component">
                 <figure>
                   <a
-                    href="../../../public/gamesContent/lol/skillshots.jpg"
-                    title="LoL Skillshot Indicators"
+                    href="../../../public/gamesContent/omori/emotion.jpg"
+                    title="Emotion Combat HUD"
                     target="images"
                   >
                     <img
-                      src="../../../public/gamesContent/lol/skillshots.jpg"
-                      alt="Skillshots"
+                      src="../../../public/gamesContent/omori/emotion.jpg"
+                      alt="Party Portraits showing emotions"
                     />
                   </a>
-                  <figcaption>FIG 1.2: Ability Indicators</figcaption>
+                  <figcaption>FIG 1.2: Affective State Feedback</figcaption>
                 </figure>
                 <div>
                   <span class="count">[ ELEMENT_02 ]</span>
-                  <span class="header-text">Skillshots & Indicators</span>
+                  <span class="header-text">The Emotion HUD</span>
                   <p>
-                    Geometric overlays that display the range, width, and
-                    trajectory of abilities before they are cast. Players must
-                    align these paths with predicting enemy movement. It
-                    requires spacial tracking and understanding of variable
-                    projectile velocities.
+                    During combat, the lower half of the screen displays
+                    detailed, hand-drawn portraits of the four party members.
+                    When an emotion is applied (e.g., Sad, Angry, Happy), the
+                    portrait immediately updates its expression and
+                    color-coding, providing instant, highly readable visual
+                    feedback on the character's status.
                   </p>
                 </div>
               </div>
               <div class="major-component">
                 <figure>
                   <a
-                    href="../../../public/gamesContent/lol/minimap.png"
-                    title="LoL Minimap"
+                    href="../../../public/gamesContent/omori/afraid.jpg"
+                    title="The Afraid Status"
                     target="images"
                   >
                     <img
-                      src="../../../public/gamesContent/lol/minimap.png"
-                      alt="Minimap"
+                      src="../../../public/gamesContent/omori/afraid.jpg"
+                      alt="Restricted Combat Options"
                     />
                   </a>
-                  <figcaption>FIG 1.3: The Minimap</figcaption>
+                  <figcaption>FIG 1.3: Interface Restriction</figcaption>
                 </figure>
                 <div>
                   <span class="count">[ ELEMENT_03 ]</span>
-                  <span class="header-text">The Minimap</span>
+                  <span class="header-text">The AFRAID Status</span>
                   <p>
-                    A real-time abstraction of the entire battlefield located in
-                    the HUD corner. It requires constant peripheral scanning and
-                    high-speed cursor snapping for map awareness and global
-                    targeting.
+                    During specific, trauma-induced psychological battles, the
+                    UI weaponizes its own rules. When a character becomes
+                    "AFRAID," standard skills are greyed out, attack accuracy
+                    plummets, and the screen visually warps. The UI actively
+                    restricts player agency to simulate a panic attack.
                   </p>
                 </div>
               </div>
             </div>
-            <h2>Fitt's Law in High-Speed Human-Computer Interaction</h2>
+
+            <h2>Emotional Logic & Cognitive Mapping</h2>
             <div class="fittslaw">
               <div>
                 <p>
-                  Fitt's Law states that the time required to acquire a target
-                  is a function of the distance to and the size of the target.
-                  In League of Legends, this law applies to targeting enemy
-                  champions, last-hitting minions, and executing precise minimap
-                  clicks.
+                  Omori replaces standard elemental weaknesses (Fire beats Ice)
+                  with a cyclical system of emotions. For the player to succeed,
+                  they must map these human affective states to functional
+                  mathematical advantages.
                 </p>
                 <div class="mathmodel">
-                  <h6>[ MATHEMATICAL MODEL ]</h6>
-                  <span>MT = a + b * log<sub>2</sub>(2D/W)</span>
+                  <h6>[ AFFECTIVE TRIANGLE ]</h6>
+                  <span>Happy > Angry > Sad > Happy</span>
                 </div>
                 <p>
-                  In LoL, the dynamic movement speed and size of an enemy
-                  champion directly affects the effective target width (W).
-                  "Orb-walking" or kiting increases the index of difficulty (ID)
-                  because the player must constantly alternate clicking between
-                  a moving target and the terrain to reposition.
+                  This system is brilliant UX because it leans on real-world
+                  logic. A 'Happy' character is fast and lucky, but an 'Angry'
+                  character deals massive damage while lowering their defense. A
+                  'Sad' character ignores some damage but drains their MP. By
+                  using universal emotional shorthand, the UI minimizes the
+                  cognitive load required to memorize a complex elemental chart.
                 </p>
               </div>
               <div>
                 <figure>
                   <a
-                    href="../../../public/gamesContent/lol/lolTargeting.png"
-                    title="LoL Targeting Interactions"
+                    href="../../../public/gamesContent/omori/triangle.png"
+                    title="Emotion Triangle Map"
                     target="images"
                   >
                     <img
-                      src="../../../public/gamesContent/lol/lolTargeting.png"
-                      alt="Targeting"
+                      src="../../../public/gamesContent/omori/triangle.png"
+                      alt="Emotional Rock Paper Scissors"
                     />
                   </a>
-                  <figcaption>FIG 1.4: LoL Cursor Targeting</figcaption>
+                  <figcaption>FIG 1.4: Universal Emotional Mapping</figcaption>
                 </figure>
               </div>
             </div>
+
             <div class="list-style-area">
               <h3 class="text-center">Visual Hierarchy Breakdown</h3>
-              <div class="text-center">Layering of Information</div>
+              <div class="text-center">Combat Interface Layering</div>
               <ol class="three-columns md-one-columns">
                 <li>
-                  <h6>Active Danger</h6>
+                  <h6>The Adversary (Center Top)</h6>
                   <p>
-                    Primary focus. High contrast VFX, saturated colors, and fast
-                    animations distinguish lethal skillshots and enemy
-                    engagements from the environment.
+                    First-person perspective places the enemy front and center.
+                    Enemy sprites utilize a "boiling line" animation style
+                    (wiggling lines) to give static 2D images a sense of
+                    nervous, kinetic energy.
                   </p>
                 </li>
                 <li>
-                  <h6>Tactical State</h6>
+                  <h6>The Party State (Bottom)</h6>
                   <p>
-                    Secondary focus. Champion health bars, minion wave
-                    positions, and cursor location provide the scaffolding for
-                    the player's immediate micro-decisions.
+                    The emotional portraits of the party members. Players must
+                    constantly monitor this row, as shifting an enemy's emotion
+                    is useless if your own party's emotional state isn't
+                    synergized.
                   </p>
                 </li>
                 <li>
-                  <h6>HUD Overlays</h6>
+                  <h6>Action Economy (Periphery)</h6>
                   <p>
-                    Tertiary focus. The minimap, ability cooldowns, and
-                    inventory are pushed to the screen borders to avoid
-                    competing with the central combat elements.
+                    The "Energy" gauge. Accumulating energy allows for distinct
+                    "Follow-Up" attacks, encouraging rhythmic, sequential input
+                    chaining between specific characters.
                   </p>
                 </li>
               </ol>
             </div>
             <div class="footnote">
-              All component analysis is based on standard League of Legends HUD
-              metrics. Variability in user resolution and HUD scaling may alter
-              visual hierarchy but remains anchored to fundamental Fitts's Law
-              constraints.
+              The game's use of color is critical. "Happy" is universally bright
+              yellow/pink, "Angry" is harsh red, and "Sad" is deep blue. This
+              color-coding bleeds into the text, the background, and the UI
+              panels, ensuring the player is constantly aware of the emotional
+              terrain.
             </div>
           </section>
+
           <section
             class="game-sections"
             id="user-interaction"
@@ -1388,42 +1441,39 @@
           >
             <h2>User Interaction</h2>
             <p>
-              An investigation into the neuro-mechanical feedback loops of
-              isometric MOBA interfaces, specifically analyzing the LoL standard
-              interaction model.
+              A breakdown of the turn-based loop and how the game utilizes its
+              distinct visual styles to communicate shifting realities.
             </p>
             <div class="list-style-area">
-              <h3 class="text-center">Core Gameplay Loop</h3>
-              <div class="text-center"></div>
+              <h3 class="text-center">The Combat Loop</h3>
               <ol class="four-columns md-two-columns">
                 <li>
-                  <h6>Process</h6>
+                  <h6>Assess (Emotion)</h6>
                   <p>
-                    Visual stimuli (minimap icons, enemy positioning, ability
-                    VFX) are processed through the player's visual system.
+                    Check the current emotional state of the enemy and the party
+                    by reading the visual portraits and color cues.
                   </p>
                 </li>
                 <li>
-                  <h6>Decide</h6>
+                  <h6>Manipulate (Shift)</h6>
                   <p>
-                    Cognitive pathways calculate trade advantages, cooldown
-                    windows, and trigger positioning adjustments on the 2D
-                    plane.
+                    Use specific skills or items (e.g., "Mock," "Poetry Book")
+                    to inflict an emotion on the enemy that disadvantages them.
                   </p>
                 </li>
                 <li>
-                  <h6>Execute</h6>
+                  <h6>Synergize (Match)</h6>
                   <p>
-                    High-APM input activation through continuous right-clicks
-                    for movement and QWER keystrokes for ability casts.
+                    Alter the party's own emotions to counter the enemy (e.g.,
+                    making the party Happy if the enemy is Angry).
                   </p>
                 </li>
                 <li>
-                  <h6>Adapt</h6>
+                  <h6>Execute (Follow-Up)</h6>
                   <p>
-                    Continuity of interaction via kiting (orb-walking), dodging,
-                    or repositioning based on the enemy's immediate
-                    counter-response.
+                    Unleash high-damage combos utilizing the built-up Energy
+                    meter, triggering unique, hand-drawn character interaction
+                    animations.
                   </p>
                 </li>
               </ol>
@@ -1432,25 +1482,25 @@
             <div class="multi-modal-feedback">
               <div>
                 <p>
-                  High-stakes MOBAs rely on a triad of sensory confirmations to
-                  minimize the "Perception-Action" gap. When a player casts a
-                  spell or takes damage, the system responds instantly across
-                  channels to validate the game state.
+                  As a horror game, Omori relies heavily on sensory distortion.
+                  The interface will frequently break its own established rules
+                  to signal to the player that the protagonist's mental state is
+                  deteriorating.
                 </p>
               </div>
               <div>
                 <figure>
                   <a
-                    href="../../../public/gamesContent/lol/inputFeedback.png"
-                    title="LoL Input to Feedback"
+                    href="../../../public/gamesContent/omori/distortion.png"
+                    title="Horror Elements"
                     target="images"
                   >
                     <img
-                      src="../../../public/gamesContent/lol/inputFeedback.png"
-                      alt="LoL Input to Feedback"
+                      src="../../../public/gamesContent/omori/distortion.png"
+                      alt="UI Glitching"
                     />
                   </a>
-                  <figcaption>FIG 1.5: LoL Input to Feedback</figcaption>
+                  <figcaption>FIG 1.5: UI Deterioration</figcaption>
                 </figure>
               </div>
             </div>
@@ -1472,12 +1522,12 @@
                   </svg>
                 </div>
                 <div>
-                  <h6>Audio Feedback</h6>
+                  <h6>Auditory Escalation</h6>
                   <p>
-                    Distinct sound effects for abilities landing, gold
-                    generation (last-hits), and system pings. Champion voice
-                    lines and announcer callouts provide crucial situational
-                    awareness without requiring visual focus.
+                    In moments of high trauma, the chipper RPG music drops out
+                    entirely, replaced by the rhythmic, heavy thumping of a
+                    heartbeat or the abrasive sound of scribbling markers,
+                    directly tying audio feedback to physiological anxiety.
                   </p>
                 </div>
               </li>
@@ -1503,12 +1553,12 @@
                   </svg>
                 </div>
                 <div>
-                  <h6>Visual Feedback</h6>
+                  <h6>Visual Typography</h6>
                   <p>
-                    Floating combat text (damage numbers), immediate health bar
-                    depletion, screen edge flashing (red for low health), and
-                    distinct spell VFX. These layers confirm hit registration
-                    and overall combat trajectory.
+                    Dialogue text utilizes capitalization and screen shaking to
+                    denote volume and stress. When the "Something" phobias
+                    appear, the text box itself may warp or display unreadable,
+                    glitching characters to simulate dissociation.
                   </p>
                 </div>
               </li>
@@ -1530,114 +1580,112 @@
                   </svg>
                 </div>
                 <div>
-                  <h6>Input/Tactile Fidelity</h6>
+                  <h6>Input Denial</h6>
                   <p>
-                    While lacking traditional controller rumble, the intense
-                    mechanical demand creates a rhythmic tactile feedback loop
-                    through keyboard actuation and mouse switch clicks,
-                    anchoring the player to the APM requirements of complex
-                    combos.
+                    During critical narrative sequences, the game will present
+                    choices but physically refuse to let the player select the
+                    "safe" option. Forcing the cursor to select a traumatic
+                    memory is a stark subversion of RPG interface agency.
                   </p>
                 </div>
               </li>
             </ul>
           </section>
+
           <section class="game-sections" id="hci-principles" aria-hidden="true">
             <h2>HCI Principles</h2>
             <div class="cybernetic-feedback-loops">
-              <h3>Cybernetic Feedback Loops</h3>
+              <h3>The Dual Reality Interface</h3>
               <div class="cybernetic-content">
                 <div>
                   <p style="text-align: justify">
-                    League of Legends utilizes a multi-modal feedback
-                    architecture that provides immediate visual and auditory
-                    confirmation of actions. The Feedback Loop is closed
-                    rapidly, but must account for server tick rates and network
-                    latency (ping), fundamentally altering the
-                    "Action-Perception" cycle compared to local, offline games.
+                    Omori utilizes two distinct UI paradigms to enforce its
+                    narrative. When in the dream-like "Headspace," menus are
+                    bright purple, bouncing, and filled with whimsical
+                    terminology (Clams for money, Juice for MP). When waking up
+                    in the real world, the UI strips all this away.
                   </p>
                 </div>
                 <div>
                   <ul class="primary-modalities">
-                    <h6>Primary Modalities</h6>
+                    <h6>Real-World Grounding</h6>
                     <li>
-                      <strong>Visual</strong>: Spell effects, UI cooldown
-                      sweeps, floating damage text, gold popups
+                      <strong>Muted Colors</strong>: The real-world UI is stark
+                      black, white, and sepia, immediately signaling a drop in
+                      dopamine and emotional vibrancy.
                     </li>
                     <li>
-                      <strong>Auditory</strong>: Distinct ability SFX, tactical
-                      pings, global objective announcements
-                    </li>
-                    <li>
-                      <strong>Structural</strong>: Gold income, XP bars, map
-                      control (vision/fog of war)
+                      <strong>Terminological Shift</strong>: "Juice" becomes
+                      standard RPG terminology, removing the protective layer of
+                      childhood imagination.
                     </li>
                   </ul>
                 </div>
               </div>
             </div>
+
             <div class="spatial-congruence">
-              <h2>Spatial Congruence</h2>
+              <h2>Spatial Memory and Trauma Mapping</h2>
               <p style="text-align: justify">
-                The spatial arrangement of game elements in LoL requires the
-                player to translate 2D cursor movements into an isometric 3D
-                space. Visual cues like the ground-targeting reticles guide
-                players to the correct impact zones, enhancing aiming accuracy.
-                Navigation mapping is relative to the camera: moving the cursor
-                to the screen edge pans the camera, demanding players to
-                constantly recalibrate their spatial center while maintaining
-                character control.
+                The game plays heavily with spatial orientation. The layout of
+                the protagonist's house is burned into the player's memory over
+                several days. When the psychological horror elements activate,
+                the game slightly alters this familiar spatial congruence—adding
+                a door that shouldn't exist, extending a hallway infinitely, or
+                replacing the pause menu with a blank white void. This
+                disruption of expected spatial mapping is the root of the game's
+                creeping dread.
               </p>
             </div>
+
             <div class="cognitive-load-bifurcation">
-              <h2>Cognitive Load Bifurcation</h2>
+              <h2>Managing RPG Maker Clunkiness</h2>
               <p style="text-align: justify; margin-bottom: 2em">
-                The central challenge of the LoL interface is managing immense
-                Intrinsic Load (the strategic and mechanical demands) while
-                preventing Extrinsic Load (the HUD and information dense UI)
-                from overwhelming the user's processing bandwidth.
+                Because Omori is built on the RPG Maker engine, it inherently
+                inherits some of the clunky, grid-based menu constraints of the
+                software, which the developers had to creatively mask.
               </p>
               <table>
                 <thead>
                   <tr>
-                    <th>Extrinsic Organization</th>
-                    <th>Intrinsic Focus</th>
+                    <th>Extrinsic Limitations</th>
+                    <th>Intrinsic Masking</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <td>
-                      <h6>Peripheral HUD</h6>
+                      <h6>Inventory Bloat</h6>
                       <p>
-                        Stats, items, and the minimap are anchored to the bottom
-                        corners, keeping the central screen estate clear for
-                        active combat tracking.
+                        RPG Maker naturally lists every item in endless,
+                        scrolling text columns, which can become overwhelming
+                        mid-to-late game.
                       </p>
                     </td>
                     <td>
-                      <h6>Macro & Micro Mastery</h6>
+                      <h6>Theming over Function</h6>
                       <p>
-                        The user's cognitive budget is split between mechanical
-                        outplays (micro) and map-wide strategic positioning
-                        (macro).
+                        By framing the inventory as "Pockets" filled with
+                        literal junk (rubber bands, sparklers), the messy UI
+                        feels somewhat intentionally juvenile.
                       </p>
                     </td>
                   </tr>
                   <tr>
                     <td>
-                      <h6>Clarity Standardization</h6>
+                      <h6>Status Opacity</h6>
                       <p>
-                        Color coding (Red=Enemy, Blue/Green=Ally) and distinct
-                        silhouette design reduces the brain's parsing time
-                        during chaotic 5v5 clashes.
+                        The exact mathematical percentages of how much "Angry"
+                        lowers defense vs. raises attack is never explicitly
+                        shown in the UI.
                       </p>
                     </td>
                     <td>
-                      <h6>Zone State Entry</h6>
+                      <h6>Experiential Learning</h6>
                       <p>
-                        By internalizing cooldown timings and champion ranges,
-                        players can enter a predictive 'Flow,' reacting to
-                        intentions before animations start.
+                        The game forces players to learn through trial and
+                        error, providing qualitative visual feedback (big damage
+                        numbers) rather than quantitative data menus.
                       </p>
                     </td>
                   </tr>
@@ -1646,13 +1694,14 @@
             </div>
             <div class="footnote">
               <q>
-                The interface is a dashboard that must balance extreme data
-                density with immediate readability. In LoL, the UX design
-                achieves this by ruthlessly prioritizing combat clarity over
-                environmental noise.
+                By turning human emotions into a highly readable, color-coded
+                combat system, Omori brilliantly bridges the gap between
+                traditional RPG mechanics and a deeply personal narrative about
+                psychological processing.
               </q>
             </div>
           </section>
+
           <section
             class="game-sections"
             id="ui-ux-weaknesses"
@@ -1660,9 +1709,9 @@
           >
             <h2>Strengths and Weaknesses Analysis</h2>
             <p>
-              A comprehensive breakdown of the MOBA interface paradigm.
-              Evaluating the friction between dense information streams and
-              human physiological/cognitive limitations.
+              Evaluating the friction between an incredibly stylized,
+              emotionally resonant aesthetic and the structural limitations of
+              its underlying game engine.
             </p>
 
             <table style="margin-bottom: 2em">
@@ -1702,13 +1751,14 @@
                           ></path>
                         </svg>
                       </span>
-                      <span class="label">01_DEPTH</span>
+                      <span class="label">01_LUDONARRATIVE</span>
                     </div>
-                    <h6>High Strategic Depth</h6>
+                    <h6>Perfect Narrative Resonance</h6>
                     <p>
-                      The combination of 160+ champions, varied item builds, and
-                      map objectives creates near-infinite replayability and
-                      rewards deep analytical mastery of the game's systems.
+                      The UI is not just a tool; it is the story. The sketchbook
+                      aesthetic and the emotional combat system perfectly align
+                      the player's mechanical actions with the protagonist's
+                      mental state.
                     </p>
                   </td>
                   <td>
@@ -1728,14 +1778,14 @@
                           ></path>
                         </svg>
                       </span>
-                      <span class="label">01_BURDEN</span>
+                      <span class="label">01_ENGINE_LIMITS</span>
                     </div>
-                    <h6>Burden of Knowledge</h6>
+                    <h6>Legacy Menu Navigation</h6>
                     <p>
-                      The learning curve is a sheer cliff. The immense
-                      prerequisite knowledge (knowing every champion's
-                      abilities, cooldowns, and items) means the cognitive load
-                      for new users is hostile and exclusionary.
+                      Due to the RPG Maker constraints, equipping items,
+                      checking sub-menus, and managing deep inventories can feel
+                      unnecessarily tedious and reliant on endless scrolling
+                      rather than modern grid layouts.
                     </p>
                   </td>
                 </tr>
@@ -1757,14 +1807,14 @@
                           ></path>
                         </svg>
                       </span>
-                      <span class="label">02_AWARENESS</span>
+                      <span class="label">02_AESTHETIC</span>
                     </div>
-                    <h6>Information Accessibility</h6>
+                    <h6>Visual Feedback Loops</h6>
                     <p>
-                      UI elements like the scoreboard (Tab) and minimap provide
-                      total game-state visibility, allowing highly skilled
-                      players to synthesize vast amounts of data into
-                      split-second shotcalling.
+                      The hand-drawn, shifting portraits during combat provide
+                      instant, highly readable feedback that transcends
+                      language, making the complex emotional system incredibly
+                      easy to parse at a glance.
                     </p>
                   </td>
                   <td>
@@ -1784,72 +1834,15 @@
                           ></path>
                         </svg>
                       </span>
-                      <span class="label">02_FATIGUE</span>
+                      <span class="label">02_OBSCURITY</span>
                     </div>
-                    <h6>Cognitive Fatigue</h6>
+                    <h6>Hidden Mechanics</h6>
                     <p>
-                      Match lengths (30-40 minutes) demand sustained,
-                      high-intensity focus and emotional regulation. This
-                      systemic pressure frequently catalyzes in-game toxicity
-                      and extreme mental burnout.
-                    </p>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="sw-item-head">
-                      <span class="sw-icon" aria-hidden="true">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke-width="1.5"
-                          stroke="currentColor"
-                          class="size-6"
-                        >
-                          <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z"
-                          ></path>
-                        </svg>
-                      </span>
-                      <span class="label">03_ECOSYSTEM</span>
-                    </div>
-                    <h6>Live-Service Evolution</h6>
-                    <p>
-                      The bi-weekly patch cycle ensures the meta remains fluid.
-                      Riot Games continuously refines UX/UI clarity, using
-                      telemetrics to optimize visual hierarchies across a
-                      massive global player base.
-                    </p>
-                  </td>
-                  <td>
-                    <div class="sw-item-head">
-                      <span class="sw-icon" aria-hidden="true">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke-width="1.5"
-                          stroke="currentColor"
-                          class="size-6"
-                        >
-                          <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            d="M3.98 8.223A10.477 10.477 0 0 0 1.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.451 10.451 0 0 1 12 4.5c4.756 0 8.773 3.162 10.065 7.498a10.522 10.522 0 0 1-4.293 5.774M6.228 6.228 3 3m3.228 3.228 3.65 3.65m7.894 7.894L21 21m-3.228-3.228-3.65-3.65m0 0a3 3 0 1 0-4.243-4.243m4.242 4.242L9.88 9.88"
-                          ></path>
-                        </svg>
-                      </span>
-                      <span class="label">03_NOISE</span>
-                    </div>
-                    <h6>Visual Clutter</h6>
-                    <p>
-                      During late-game 5v5 teamfights, the sheer volume of
-                      overlapping particle effects, character skins, and ability
-                      indicators degrades the signal-to-noise ratio, making it
-                      difficult to parse critical threats.
+                      The game obscures the secondary and tertiary tiers of
+                      emotions (e.g., Happy -> Ecstatic -> Manic) early on,
+                      leading to moments where players might accidentally
+                      over-buff an enemy without understanding the UI
+                      consequence.
                     </p>
                   </td>
                 </tr>
@@ -1857,13 +1850,12 @@
             </table>
             <div class="footnote summary">
               <p>
-                The League of Legends interface represents a complex balancing
-                act of data-dense HCI. While its strengths lie in providing
-                <u>total strategic visibility</u> into the digital arena, its
-                weaknesses stem from the same source: an unforgiving demand on
-                human processing power. The system's "clutter" is a byproduct of
-                its mechanical depth, creating a paradox where the highest level
-                of play borders on sensory overload.
+                Omori stands as a benchmark for
+                <u>Affective User Interfaces</u> in gaming. By framing its menus
+                as a childhood sketchbook and translating psychological trauma
+                into a brilliantly readable color-coded combat system, it proves
+                that UI design can be as integral to storytelling as the
+                dialogue itself.
               </p>
             </div>
           </section>
@@ -1871,220 +1863,327 @@
       </article>
     </main>
 
-    <footer></footer>
+    <footer>
+      <h6>GameUX Atlas</h6>
+      <ul class="socials"></ul>
+      <div class="footer-info">
+        <span>&copy; Group 5</span>
+        <span>CIP 1101</span>
+        <span>2026</span>
+        <span>GameUX Atlas</span>
+      </div>
+    </footer>
+    <button
+      class="back-to-top"
+      id="back-to-top"
+      type="button"
+      aria-label="Back to top"
+      title="Back to top"
+    >
+      <svg
+        viewBox="0 0 56 56"
+        width="56"
+        height="56"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <circle class="btn-bg" cx="28" cy="28" r="27"></circle>
+        <circle class="btn-progress-track" cx="28" cy="28" r="22"></circle>
+        <circle
+          class="btn-progress"
+          id="back-to-top-progress"
+          cx="28"
+          cy="28"
+          r="22"
+        ></circle>
+        <path class="btn-icon" d="M28 36V20"></path>
+        <path class="btn-icon" d="M21.5 26.5L28 20l6.5 6.5"></path>
+      </svg>
+    </button>
+  </body>
 
-    <script>
-      // VARIABLES
-      const GAMENAME = "League of Legends";
-      const DATERELEASED = "10/27/2009";
-      const PUBLISHER = "Riot Games";
-      const BADGE = "Full Release";
-      const POSTERURL = "../../../public/posters/leagueOfLegends_poster.jpg";
-      const POSTERALTTEXT = "League of Legends Poster";
-      const VIDEOURL = "../../../public/videos/leagueOfLegends_trailer.mp4";
-      const VIDEOURLYT = "https://www.youtube.com/embed/aR-KAldshAE";
-      const YTVID = true;
+  <script>
+    // VARIABLES - UPDATED FOR OMORI
+    const GAMENAME = "Omori";
+    const DATERELEASED = "12/25/2020";
+    const PUBLISHER = "OMOCAT, LLC";
+    const BADGE = "Indie / RPG";
+    const POSTERURL = "../../../public/posters/omori_poster.jpg";
+    const POSTERALTTEXT = "Omori Poster";
+    const VIDEOURL = "../../../public/videos/omori_trailer.mp4";
+    const VIDEOURLYT = "https://www.youtube.com/embed/placeholderID"; // Example Trailer ID
+    const YTVID = true;
 
-      const GAMEUSERSTARS = "7.2";
-      const GAMEUSERRATINGS = "1,000,000+";
+    const GAMEUSERSTARS = "9.6";
+    const GAMEUSERRATINGS = "50,000+";
 
-      const HASCRITICS = true;
-      const GAMECRITICSTARS = "7.8";
-      const GAMECRITICRATINGS = "37";
+    const HASCRITICS = true;
+    const GAMECRITICSTARS = "8.7";
+    const GAMECRITICRATINGS = "35";
 
-      const GENRES = ["MOBA", "Strategy", "Action"];
-      const PLATFORMS = ["PC", "Mac"];
-      const EDITIONS = ["Standard Edition"];
+    const GENRES = ["RPG", "Psychological Horror", "Indie"];
+    const PLATFORMS = ["PC", "Switch", "PS4", "Xbox"];
+    const EDITIONS = ["Standard Edition"];
 
-      const DESCRIPTION =
-        "League of Legends (LoL) is a high-intensity, team-based Multiplayer Online Battle Arena (MOBA) that blends real-time strategy with role-playing elements. Since its release by Riot Games in 2009, it has become one of the most played and influential competitive titles in the world.";
+    const DESCRIPTION =
+      "Omori is a surreal psychological horror RPG Maker game. Players traverse between a colorful, pastel dreamscape known as Headspace and the muted, grounded reality of Faraway Town. Its interface brilliantly gamifies human emotions, utilizing a sketchbook aesthetic to bridge the gap between childhood nostalgia and repressed trauma.";
 
-      // -- Document Variables --
-      const sectionRadios = Array.from(
-        document.querySelectorAll('input[name="game-section"]'),
+    // Document Variables
+    const sectionRadios = Array.from(
+      document.querySelectorAll('input[name="game-section"]'),
+    );
+    const gameSections = Array.from(
+      document.querySelectorAll(".game-sections"),
+    );
+    const gameInfoNav = document.getElementById("game-info-nav");
+    const gameInfoNavLeft = document.getElementById("game-info-nav-left");
+    const gameInfoNavRight = document.getElementById("game-info-nav-right");
+    const backToTopButton = document.getElementById("back-to-top");
+    const backToTopProgress = document.getElementById("back-to-top-progress");
+
+    // -- Implementation --
+    document.getElementById("title").textContent = GAMENAME + " - GameUX"; // Set page title
+    for (let el of document.getElementsByClassName("game-name")) {
+      el.textContent = GAMENAME;
+    } // Set game name
+    for (let el of document.getElementsByClassName("date-released")) {
+      el.textContent = DATERELEASED;
+    } // Set date released
+    for (let el of document.getElementsByClassName("publisher")) {
+      el.textContent = PUBLISHER;
+    } // Set publisher
+    for (let el of document.getElementsByClassName("game-badge")) {
+      el.textContent = BADGE;
+    } // Set badge
+    for (let el of document.getElementsByClassName("game-user-rating")) {
+      el.textContent = GAMEUSERSTARS;
+    } // Set user rating
+    for (let el of document.getElementsByClassName("game-user-ratings")) {
+      el.textContent = GAMEUSERRATINGS + " user ratings";
+    } // Set user ratings
+    for (let el of document.getElementsByClassName("game-critic-rating")) {
+      el.textContent = GAMECRITICSTARS;
+    } // Set critic rating
+    for (let el of document.getElementsByClassName("game-critic-ratings")) {
+      el.textContent = GAMECRITICRATINGS + " critic ratings";
+    } // Set critic ratings
+    for (let el of document.getElementsByClassName("game-poster-content")) {
+      el.src = POSTERURL;
+    } // Set poster content
+    document.getElementById("game-poster-img").src = POSTERURL; // Set poster image
+    document.getElementById("game-poster-img").title =
+      GAMENAME + " Game Poster"; // Set poster image title
+    document.getElementById("game-poster").href = POSTERURL; // Set poster link
+    document.getElementById("game-description").textContent = DESCRIPTION; // Set game description
+    document.getElementById("game-poster-img").alt = POSTERALTTEXT; // Set poster image alt text
+    // Video / YouTube toggle: show iframe when YTVID is true, otherwise show <video> with source
+    const videoEl = document.getElementById("game-video");
+    const videoSourceEl = document.getElementById("game-video-source");
+    const ytEl = document.getElementById("game-video-yt");
+    if (YTVID) {
+      if (ytEl) {
+        ytEl.src = VIDEOURLYT;
+        ytEl.hidden = false;
+      }
+      if (videoEl) {
+        videoEl.hidden = true;
+        try {
+          videoEl.pause();
+        } catch (e) {}
+      }
+    } else {
+      if (videoSourceEl) {
+        videoSourceEl.src = VIDEOURL;
+      }
+      if (videoEl) {
+        videoEl.hidden = false;
+        try {
+          videoEl.load();
+        } catch (e) {}
+      }
+      if (ytEl) {
+        ytEl.hidden = true;
+        ytEl.src = "";
+      }
+    }
+
+    for (let genre of GENRES) {
+      // Set genres
+      let li = document.createElement("li");
+      li.textContent = genre;
+      document.getElementById("genres").appendChild(li);
+    }
+
+    for (let platform of PLATFORMS) {
+      // Set platforms
+      let li = document.createElement("li");
+      li.textContent = platform;
+      document.getElementById("platforms").appendChild(li);
+    }
+
+    for (let edition of EDITIONS) {
+      // Set editions
+      let li = document.createElement("li");
+      li.textContent = edition;
+      document.getElementById("editions").appendChild(li);
+    }
+
+    // Hide critic ratings
+    if (!HASCRITICS) {
+      for (let el of document.getElementsByClassName(
+        "game-critic-rating-cont",
+      )) {
+        el.classList.add("hidden");
+      }
+    }
+
+    // Calculate days ago
+    let timeDiff = new Date().getTime() - new Date(DATERELEASED).getTime();
+    let daysAgo = Math.floor(timeDiff / (1000 * 3600 * 24));
+    if (daysAgo > 365) {
+      let yearsAgo = Math.floor(daysAgo / 365);
+      for (let el of document.getElementsByClassName("days-ago")) {
+        el.textContent = "(" + yearsAgo + " years ago)";
+      }
+    } else {
+      for (let el of document.getElementsByClassName("days-ago")) {
+        el.textContent = "(" + daysAgo + " days ago)";
+      }
+    }
+
+    // Sections navigation
+    function showGameSection(sectionId) {
+      for (let section of gameSections) {
+        let isActive = section.id === sectionId;
+        section.classList.toggle("is-active", isActive);
+        section.setAttribute("aria-hidden", String(!isActive));
+      }
+    }
+
+    function getSectionIdFromHash() {
+      const rawHash = window.location.hash || "";
+      const hash = rawHash.startsWith("#") ? rawHash.slice(1) : rawHash;
+      if (!hash) {
+        return null;
+      }
+      return gameSections.some((section) => section.id === hash) ? hash : null;
+    }
+
+    function syncSectionFromHash() {
+      const hashSectionId = getSectionIdFromHash();
+      if (!hashSectionId) {
+        return false;
+      }
+
+      const matchingRadio = sectionRadios.find(
+        (radio) => radio.value === hashSectionId,
       );
-      const gameSections = Array.from(
-        document.querySelectorAll(".game-sections"),
-      );
-      const gameInfoNav = document.getElementById("game-info-nav");
-      const gameInfoNavLeft = document.getElementById("game-info-nav-left");
-      const gameInfoNavRight = document.getElementById("game-info-nav-right");
-
-      // -- Implementation --
-      document.getElementById("title").textContent = GAMENAME + " - GameUX"; // Set page title
-      for (let el of document.getElementsByClassName("game-name")) {
-        el.textContent = GAMENAME;
-      } // Set game name
-      for (let el of document.getElementsByClassName("date-released")) {
-        el.textContent = DATERELEASED;
-      } // Set date released
-      for (let el of document.getElementsByClassName("publisher")) {
-        el.textContent = PUBLISHER;
-      } // Set publisher
-      for (let el of document.getElementsByClassName("game-badge")) {
-        el.textContent = BADGE;
-      } // Set badge
-      for (let el of document.getElementsByClassName("game-user-rating")) {
-        el.textContent = GAMEUSERSTARS;
-      } // Set user rating
-      for (let el of document.getElementsByClassName("game-user-ratings")) {
-        el.textContent = GAMEUSERRATINGS + " user ratings";
-      } // Set user ratings
-      for (let el of document.getElementsByClassName("game-critic-rating")) {
-        el.textContent = GAMECRITICSTARS;
-      } // Set critic rating
-      for (let el of document.getElementsByClassName("game-critic-ratings")) {
-        el.textContent = GAMECRITICRATINGS + " critic ratings";
-      } // Set critic ratings
-      for (let el of document.getElementsByClassName("game-poster-content")) {
-        el.src = POSTERURL;
-      } // Set poster content
-      document.getElementById("game-poster-img").src = POSTERURL; // Set poster image
-      document.getElementById("game-poster-img").title =
-        GAMENAME + " Game Poster"; // Set poster image title
-      document.getElementById("game-poster").href = POSTERURL; // Set poster link
-      document.getElementById("game-description").textContent = DESCRIPTION; // Set game description
-      document.getElementById("game-poster-img").alt = POSTERALTTEXT;
-
-      // Video / YouTube Toggle Logic
-      const videoEl = document.getElementById("game-video");
-      const videoSourceEl = document.getElementById("game-video-source");
-      const ytEl = document.getElementById("game-video-yt");
-      if (YTVID) {
-        if (ytEl) {
-          ytEl.src = VIDEOURLYT;
-          ytEl.hidden = false;
-        }
-        if (videoEl) {
-          videoEl.hidden = true;
-          try {
-            videoEl.pause();
-          } catch (e) {}
-        }
-      } else {
-        if (videoSourceEl) {
-          videoSourceEl.src = VIDEOURL;
-        }
-        if (videoEl) {
-          videoEl.hidden = false;
-          try {
-            videoEl.load();
-          } catch (e) {}
-        }
-        if (ytEl) {
-          ytEl.hidden = true;
-          ytEl.src = "";
-        }
+      if (matchingRadio) {
+        matchingRadio.checked = true;
       }
+      showGameSection(hashSectionId);
+      return true;
+    }
 
-      // Lists
-      for (let genre of GENRES) {
-        // Set genres
-        let li = document.createElement("li");
-        li.textContent = genre;
-        document.getElementById("genres").appendChild(li);
-      }
-
-      for (let platform of PLATFORMS) {
-        // Set platforms
-        let li = document.createElement("li");
-        li.textContent = platform;
-        document.getElementById("platforms").appendChild(li);
-      }
-
-      for (let edition of EDITIONS) {
-        // Set editions
-        let li = document.createElement("li");
-        li.textContent = edition;
-        document.getElementById("editions").appendChild(li);
-      }
-
-      // Critic Visibility
-      if (!HASCRITICS) {
-        for (let el of document.getElementsByClassName(
-          "game-critic-rating-cont",
-        )) {
-          el.classList.add("hidden");
-        }
-      }
-
-      // Days/Years Calculation
-      let timeDiff = new Date().getTime() - new Date(DATERELEASED).getTime();
-      let daysAgo = Math.floor(timeDiff / (1000 * 3600 * 24));
-      if (daysAgo > 365) {
-        let yearsAgo = Math.floor(daysAgo / 365);
-        for (let el of document.getElementsByClassName("days-ago")) {
-          el.textContent = "(" + yearsAgo + (yearsAgo === 1 ? " year ago)" : " years ago)");
-        }
-      } else {
-        for (let el of document.getElementsByClassName("days-ago")) {
-          el.textContent = "(" + daysAgo + (daysAgo === 1 ? " day ago)" : " days ago)");
-        }
-      }
-
-      // Section Navigation
-      function showGameSection(sectionId) {
-        for (let section of gameSections) {
-          let isActive = section.id === sectionId;
-          section.classList.toggle("is-active", isActive);
-          section.setAttribute("aria-hidden", String(!isActive));
-        }
-      }
-
-      const defaultSection = document.querySelector(
-        'input[name="game-section"]:checked',
-      );
+    const defaultSection = document.querySelector(
+      'input[name="game-section"]:checked',
+    );
+    if (!syncSectionFromHash()) {
       showGameSection(
         defaultSection ? defaultSection.value : "short-description",
       );
+    }
 
-      for (let radio of sectionRadios) {
-        radio.addEventListener("change", () => {
-          if (!radio.checked) {
-            return;
-          }
-          showGameSection(radio.value);
-        });
-      }
-
-      // Scroll Navigation Arrows
-      function updateGameInfoNavArrows() {
-        if (!gameInfoNav || !gameInfoNavLeft || !gameInfoNavRight) {
+    for (let radio of sectionRadios) {
+      radio.addEventListener("change", () => {
+        if (!radio.checked) {
           return;
         }
-
-        const maxScrollLeft = gameInfoNav.scrollWidth - gameInfoNav.clientWidth;
-        const canScroll = maxScrollLeft > 1;
-        const canScrollLeft = canScroll && gameInfoNav.scrollLeft > 1;
-        const canScrollRight =
-          canScroll && gameInfoNav.scrollLeft < maxScrollLeft - 1;
-
-        gameInfoNavLeft.hidden = !canScrollLeft;
-        gameInfoNavRight.hidden = !canScrollRight;
-      }
-
-      function scrollGameInfoNavBy(distance) {
-        if (!gameInfoNav) {
-          return;
+        showGameSection(radio.value);
+        if (history.replaceState) {
+          history.replaceState(null, "", `#${radio.value}`);
+        } else {
+          window.location.hash = radio.value;
         }
-        gameInfoNav.scrollBy({ left: distance, behavior: "smooth" });
+      });
+    }
+
+    window.addEventListener("hashchange", () => {
+      syncSectionFromHash();
+    });
+
+    // Game info nav
+    function updateGameInfoNavArrows() {
+      if (!gameInfoNav || !gameInfoNavLeft || !gameInfoNavRight) {
+        return;
       }
 
-      if (gameInfoNav && gameInfoNavLeft && gameInfoNavRight) {
-        gameInfoNav.addEventListener("scroll", updateGameInfoNavArrows);
-        gameInfoNavLeft.addEventListener("click", () => {
-          scrollGameInfoNavBy(
-            -Math.max(200, Math.floor(gameInfoNav.clientWidth * 0.5)),
-          );
-        });
-        gameInfoNavRight.addEventListener("click", () => {
-          scrollGameInfoNavBy(
-            Math.max(200, Math.floor(gameInfoNav.clientWidth * 0.5)),
-          );
-        });
-        window.addEventListener("resize", updateGameInfoNavArrows);
-        updateGameInfoNavArrows();
+      const maxScrollLeft = gameInfoNav.scrollWidth - gameInfoNav.clientWidth;
+      const canScroll = maxScrollLeft > 1;
+      const canScrollLeft = canScroll && gameInfoNav.scrollLeft > 1;
+      const canScrollRight =
+        canScroll && gameInfoNav.scrollLeft < maxScrollLeft - 1;
+
+      gameInfoNavLeft.hidden = !canScrollLeft;
+      gameInfoNavRight.hidden = !canScrollRight;
+    }
+
+    function scrollGameInfoNavBy(distance) {
+      if (!gameInfoNav) {
+        return;
       }
-    </script>
-  </body>
+      gameInfoNav.scrollBy({ left: distance, behavior: "smooth" });
+    }
+
+    if (gameInfoNav && gameInfoNavLeft && gameInfoNavRight) {
+      gameInfoNav.addEventListener("scroll", updateGameInfoNavArrows);
+      gameInfoNavLeft.addEventListener("click", () => {
+        scrollGameInfoNavBy(
+          -Math.max(200, Math.floor(gameInfoNav.clientWidth * 0.5)),
+        );
+      });
+      gameInfoNavRight.addEventListener("click", () => {
+        scrollGameInfoNavBy(
+          Math.max(200, Math.floor(gameInfoNav.clientWidth * 0.5)),
+        );
+      });
+      window.addEventListener("resize", updateGameInfoNavArrows);
+      updateGameInfoNavArrows();
+    }
+
+    // Back-to-top button with circular scroll progress
+    const progressRadius = 22;
+    const progressCircumference = 2 * Math.PI * progressRadius;
+
+    if (backToTopProgress) {
+      backToTopProgress.style.strokeDasharray = String(progressCircumference);
+      backToTopProgress.style.strokeDashoffset = String(progressCircumference);
+    }
+
+    function updateBackToTop() {
+      if (!backToTopButton || !backToTopProgress) {
+        return;
+      }
+
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      const scrollableHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
+      const progress =
+        scrollableHeight > 0 ? Math.min(scrollTop / scrollableHeight, 1) : 0;
+      const dashOffset = progressCircumference * (1 - progress);
+
+      backToTopProgress.style.strokeDashoffset = String(dashOffset);
+      backToTopButton.classList.toggle("is-visible", scrollTop > 160);
+    }
+
+    if (backToTopButton) {
+      backToTopButton.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    }
+
+    window.addEventListener("scroll", updateBackToTop, { passive: true });
+    window.addEventListener("resize", updateBackToTop);
+    updateBackToTop();
+  </script>
 </html>

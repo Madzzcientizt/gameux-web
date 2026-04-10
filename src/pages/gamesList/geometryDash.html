@@ -1,244 +1,56 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend:wght@100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Manrope:wght@200..800&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
-        rel="stylesheet">
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend:wght@100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Manrope:wght@200..800&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+      rel="stylesheet"
+    />
 
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="../../styles/styles.css" type="text/css">
-    <link rel="stylesheet" href="../../styles/sizeChecker.css" type="text/css">
-    <link rel="stylesheet" href="../../styles/game.css" type="text/css">
-
-    <!-- Custom Styles ------------------------------------------------------------------------------------------ -->
+    <link rel="stylesheet" href="../../styles/styles.css" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="../../styles/sizeChecker.css"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="../../styles/game.css" type="text/css" />
     <style>
+      nav.game-info-nav {
+        display: flex;
+        overflow-x: auto;
+        white-space: nowrap;
+        scrollbar-width: none;
+      }
 
-    </style>
-    <!-- Custom Styles ------------------------------------------------------------------------------------------ -->
+      nav.game-info-nav::-webkit-scrollbar {
+        display: none;
+      }
 
-    <title id="title">GameName - GameUX</title>
-</head>
+      nav.game-info-nav label {
+        width: calc(100% / 5) !important;
+      }
 
-<body>
-    <header>
-        <nav class="navbar navbar-light navbar-expand-lg">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="../../index.html">
-                    <img src="../../../public/gameux.png" alt="Logo" class="navbar-logo">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon" style="width: 1em;"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#">Game List</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Contact</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <nav class="breadcrumb-nav"
-        aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="../gameList.html">Game List</a></li>
-            <li class="breadcrumb-item active game-name">Game name</li>
-        </ol>
-    </nav>
-    <main>
-        <article class="wide">
-            <section class="header-section">
-                <img class="game-poster-content game-poster-background-style"></img>
-                <h1 class="game-name game-name-header" title="Game Name">Game name</h1>
-                <div class="game-header">
-                    <span class="game-header-cont">
-                        <div class="game-info-bar">
-                            <span class="game-date-info">
-                                <span class="date-released" title="Date Released">Date Released</span>
-                                <span class="days-ago" title="Days Age">11 months ago</span>
-                            </span>
-                            <span class="game-badge">Full Release</span>
-                            <span class="publisher" title="Publisher">Publisher</span>
-                        </div>
-                    </span>
-                    <div class="game-header-rating">
-                        <table class="game-user-rating-cont">
-                            <tr>
-                                <td rowspan="2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                                        <path fill-rule="evenodd"
-                                            d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
-                                            clip-rule="evenodd" />
-                                    </svg>
-                                </td>
-                                <td class="game-user-rating">0</td>
-                            </tr>
-                            <tr>
-                                <td class="game-user-ratings">0 user ratings</td>
-                            </tr>
-                        </table>
-                        <table class="game-critic-rating-cont">
-                            <tr>
-                                <td rowspan="2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                                        <path fill-rule="evenodd"
-                                            d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
-                                            clip-rule="evenodd" />
-                                    </svg>
-                                </td>
-                                <td class="game-critic-rating">0</td>
-                            </tr>
-                            <tr>
-                                <td class="game-critic-ratings">0 critic ratings</td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-                <div class="video-game-container">
-                    <a class="game-poster" id="game-poster">
-                        <img class="game-poster-img" id="game-poster-img" alt="Game Poster" target="images"
-                            title="Geometry Dash Game Poster">
-                    </a>
-                    <div class="game-video-wrp">
-                        <video class="game-video" id="game-video" controls>
-                            <source type="video/mp4" id="game-video-source">
-                            Your browser does not support the video tag.
-                        </video>
-                        <iframe class="game-video" id="game-video-yt" frameborder="0" allowfullscreen hidden></iframe>
-                    </div>
-                    <div class="game-rating">
-                        <table class="game-user-rating-cont">
-                            <tr>
-                                <td rowspan="2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                                        <path fill-rule="evenodd"
-                                            d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
-                                            clip-rule="evenodd" />
-                                    </svg>
-                                </td>
-                                <td class="game-user-rating">0</td>
-                            </tr>
-                            <tr>
-                                <td class="game-user-ratings">0 user ratings</td>
-                            </tr>
-                        </table>
-                        <table class="game-critic-rating-cont">
-                            <tr>
-                                <td rowspan="2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                                        <path fill-rule="evenodd"
-                                            d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
-                                            clip-rule="evenodd" />
-                                    </svg>
-                                </td>
-                                <td class="game-critic-rating">0</td>
-                            </tr>
-                            <tr>
-                                <td class="game-critic-ratings">0 critic ratings</td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-                <ul class="game-list-data">
-                    <li class="game-list-data-item">Genres:
-                        <ul id="genres"></ul>
-                    </li>
-                    <li class="game-list-data-item">Platforms:
-                        <ul id="platforms"></ul>
-                    </li>
-                    <li class="game-list-data-item">Editions:
-                        <ul id="editions"></ul>
-                    </li>
-                </ul>
-                <p class="game-description" id="game-description">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas aliquam consequatur iusto corrupti
-                    magni similique, non delectus illum esse ullam ad iure exercitationem doloribus ipsum at molestias
-                    et enim accusamus.
-                </p>
-            </section>
-        </article>
-        <article>
-            <div class="game-info-nav-wrap">
-                <button class="game-info-nav-arrow left" id="game-info-nav-left" type="button" aria-label="Scroll left"
-                    hidden>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                        <path fill-rule="evenodd"
-                            d="M15.78 19.28a.75.75 0 0 1-1.06 0L8.22 12.78a.75.75 0 0 1 0-1.06l6.5-6.5a.75.75 0 1 1 1.06 1.06L9.81 12l5.97 5.72a.75.75 0 0 1 0 1.56Z"
-                            clip-rule="evenodd" />
-                    </svg>
-                </button>
-                <nav class="game-info-nav" id="game-info-nav">
-                    <label><input type="radio" name="game-section" value="short-description" checked="checked"> Short
-                        Description</label>
-                    <label><input type="radio" name="game-section" value="ui-components"> UI Components</label>
-                    <label><input type="radio" name="game-section" value="user-interaction"> User Interaction</label>
-                    <label><input type="radio" name="game-section" value="hci-principles"> HCI Principles</label>
-                    <label><input type="radio" name="game-section" value="strengths"> Strengths</label>
-                    <label><input type="radio" name="game-section" value="ui-ux-weaknesses"> UI/UX Weaknesses</label>
-                    <label><input type="radio" name="game-section" value="conclusion"> Conclusion</label>
-                </nav>
-                <button class="game-info-nav-arrow right" id="game-info-nav-right" type="button"
-                    aria-label="Scroll right" hidden>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                        <path fill-rule="evenodd"
-                            d="M8.22 4.72a.75.75 0 0 1 1.06 0l6.5 6.5a.75.75 0 0 1 0 1.06l-6.5 6.5a.75.75 0 0 1-1.06-1.06L14.19 12 8.22 6.28a.75.75 0 0 1 0-1.56Z"
-                            clip-rule="evenodd" />
-                    </svg>
-                </button>
-            </div>
-            <div class="game-sections-stage">
-                <section class="game-sections" id="short-description">
-                    short description
-                </section>
-                <section class="game-sections" id="ui-components">
-                    UI components
-                </section>
-                <section class="game-sections" id="user-interaction">
-                    user interaction
-                </section>
-                <section class="game-sections" id="hci-principles">
-                    hci principles
-                </section>
-                <section class="game-sections" id="strengths">
-                    strengths
-                </section>
-                <section class="game-sections" id="ui-ux-weaknesses">
-                    ui/ux weaknesses
-                </section>
-                <section class="game-sections" id="conclusion">
-                    conclusion
-                </section>
-            </div>
-        </article>
-    </main>
-    <footer>
+      .game-sections {
+        display: none;
+        width: 100%;
 
+<<<<<<< HEAD
     </footer>
 </body>
 
@@ -348,50 +160,2066 @@
             let isActive = section.id === sectionId;
             section.classList.toggle('is-active', isActive);
             section.setAttribute('aria-hidden', String(!isActive));
+=======
+        &.is-active {
+          display: block;
+>>>>>>> 9da5a15 (Revised 10 pages--Added 2 more Game pages)
         }
-    }
 
-    const defaultSection = document.querySelector('input[name="game-section"]:checked');
-    showGameSection(defaultSection ? defaultSection.value : 'short-description');
+        &#short-description {
+          & > h2 {
+            font-weight: 900;
+            font-size: 2.5em;
+          }
 
-    for (let radio of sectionRadios) {
-        radio.addEventListener('change', () => {
-            if (!radio.checked) { return; }
-            showGameSection(radio.value);
+          & > p {
+            text-align: justify;
+            margin-bottom: 1em;
+          }
+
+          & > .list-style {
+            list-style: none;
+            float: right;
+            background-color: var(--t-color-base-100);
+            padding: 2em;
+            margin-left: 2em;
+            margin-bottom: 2em;
+            border-radius: var(--t-radius-field);
+            border: var(--t-border) solid var(--t-color-base-300);
+
+            & > li {
+              margin-left: 1em;
+              margin-bottom: 1em;
+              position: relative;
+
+              &::before {
+                content: "";
+                display: block;
+                position: absolute;
+                width: 0.2em;
+                height: 1em;
+                background-color: var(--t-color-primary);
+                border-radius: 1em;
+                left: -0.75em;
+                top: calc(50% - 0.5em);
+              }
+            }
+          }
+        }
+
+        &#ui-components {
+          margin-bottom: 2em;
+
+          & > h2 {
+            font-weight: 900;
+            font-size: 2.5em;
+          }
+
+          & .major-components {
+            display: grid;
+            grid-template-rows: 1fr;
+            grid-template-columns: 50% 1fr;
+            gap: 1em;
+            margin: 2em 0;
+          }
+
+          & .major-component {
+            background-color: var(--t-color-base-100);
+            border-radius: var(--t-radius-field);
+            padding: 1em;
+            height: auto;
+            position: relative;
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+            gap: 1em;
+            min-height: 15em;
+            border: var(--t-border) solid var(--t-color-base-300);
+
+            &:first-child {
+              grid-column: 1 / -1;
+              width: 100%;
+              flex-direction: row;
+            }
+
+            &:not(:first-child) {
+              flex-direction: column;
+            }
+
+            & figure {
+              position: relative;
+              margin-bottom: 0;
+              width: 100%;
+              height: auto;
+
+              & figcaption {
+                font-size: 0.9em;
+                color: var(--t-color-light);
+                margin-top: 0.5em;
+                position: absolute;
+                bottom: 0.5em;
+                right: 0.5em;
+              }
+            }
+
+            & a {
+              flex-shrink: 0;
+              margin-left: auto;
+
+              & img {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 0.25em;
+              }
+            }
+
+            & .count {
+              font-weight: 700;
+              font-size: 1.2em;
+              font-family: var(--bs-font-monospace);
+              color: var(--t-color-secondary);
+              display: block;
+            }
+
+            & .header-text {
+              font-weight: 700;
+              font-size: 2.5em;
+              font-family: var(--bs-font-serif);
+            }
+
+            & ul {
+              list-style: none;
+              margin-left: 1em;
+              margin-top: 2em;
+
+              & h6 {
+                font-weight: 900;
+              }
+
+              & li {
+                margin-left: 1em;
+                margin-bottom: 0.5em;
+                position: relative;
+
+                &::before {
+                  content: "";
+                  display: block;
+                  position: absolute;
+                  width: 0.2em;
+                  height: 1em;
+                  background-color: var(--t-color-primary);
+                  border-radius: 1em;
+                  left: -0.75em;
+                  top: calc(50% - 0.5em);
+                }
+              }
+            }
+          }
+
+          & .fittslaw {
+            display: grid;
+            grid-template-columns: 50% 1fr;
+            gap: 1em;
+
+            & h2 {
+              font-weight: 900;
+              font-size: 2.5em;
+            }
+
+            & figure {
+              position: relative;
+              margin-bottom: 0;
+              width: 100%;
+              height: auto;
+
+              & figcaption {
+                font-size: 0.9em;
+                color: var(--t-color-dark);
+                margin-top: 0.5em;
+                position: absolute;
+                bottom: 0.5em;
+                right: 0.5em;
+              }
+            }
+
+            & a {
+              flex-shrink: 0;
+              margin-left: auto;
+
+              & img {
+                width: 100% !important;
+                height: auto !important;
+                margin-bottom: 1em;
+              }
+            }
+          }
+
+          @media (width < 48rem) {
+            & .fittslaw {
+              grid-template-columns: 1fr;
+            }
+          }
+
+          & .mathmodel {
+            margin: 1em 0;
+            padding: 1em;
+            position: relative;
+            padding-left: 2em;
+            background-color: var(--t-color-base-300);
+            border-radius: var(--t-radius-field);
+            overflow: hidden;
+
+            &::before {
+              content: "";
+              display: block;
+              position: absolute;
+              width: 0.5em;
+              height: 100%;
+              background-color: var(--t-color-primary);
+              left: 0;
+              top: 0;
+            }
+
+            & h6 {
+              font-family: var(--bs-font-monospace);
+              color: var(--t-color-dark);
+              font-weight: 300;
+            }
+
+            & span {
+              font-size: 2em;
+            }
+          }
+
+          @media (width < 48rem) {
+            & .major-components {
+              grid-template-columns: 1fr;
+              gap: 1em;
+            }
+
+            & .major-component {
+              &:first-child {
+                flex-direction: column;
+              }
+
+              & figure {
+                width: 100%;
+
+                & figcaption {
+                  bottom: 1em;
+                }
+              }
+
+              & a {
+                margin-left: 0;
+                width: 100%;
+
+                & img {
+                  width: 100% !important;
+                  height: auto !important;
+                  margin-bottom: 1em;
+                }
+              }
+            }
+          }
+        }
+
+        &#user-interaction {
+          margin-bottom: 2em;
+
+          & > h2 {
+            font-weight: 900;
+            font-size: 2.5em;
+          }
+
+          & h3 {
+            font-weight: 900;
+            font-size: 2.5em;
+          }
+
+          & .multi-modal-feedback {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1em;
+            padding-top: 1em;
+
+            @media (width < 48rem) {
+              grid-template-columns: 1fr !important;
+            }
+
+            & figure {
+              margin: auto;
+              width: 100%;
+              height: auto;
+
+              & img {
+                width: 100% !important;
+                height: auto !important;
+              }
+            }
+          }
+
+          & ul {
+            list-style: none;
+            padding: 0;
+
+            & li {
+              margin-top: 2em;
+              display: flex;
+              flex-direction: row;
+
+              & h6 {
+                font-weight: 700;
+                font-size: 1.5em;
+                margin-bottom: 0.5em;
+              }
+
+              & .logo-svg {
+                height: 5em;
+                flex-shrink: 0;
+                background-color: var(--t-color-secondary);
+                color: var(--t-color-base-100);
+                aspect-ratio: 1 / 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 1em;
+                border-radius: var(--t-radius-field);
+                margin: auto;
+                margin-right: 1em;
+
+                & svg {
+                  width: 100%;
+                  height: 100%;
+                }
+              }
+            }
+          }
+        }
+
+        &#hci-principles {
+          margin-bottom: 2em;
+
+          & > h2 {
+            font-weight: 900;
+            font-size: 2.5em;
+          }
+
+          & .cybernetic-feedback-loops {
+            margin-top: 2em;
+            padding: 1em;
+            border-radius: var(--t-radius-field);
+            background-color: var(--t-color-base-100);
+            border: var(--t-border) solid var(--t-color-base-300);
+
+            & > h3 {
+              font-weight: 900;
+              font-size: 2em;
+            }
+
+            & .cybernetic-content {
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 1em;
+
+              @media (width < 48rem) {
+                grid-template-columns: 1fr !important;
+              }
+
+              & h6 {
+                font-weight: 700;
+                font-size: 1.2em;
+                margin-bottom: 0.5em;
+              }
+
+              & .primary-modalities {
+                list-style: none;
+                padding: 1em;
+                background-color: var(--t-color-base-200);
+                border-radius: var(--t-radius-field);
+                margin-bottom: 0;
+
+                & li {
+                  margin-left: 1em;
+                  margin-bottom: 0.5em;
+                  position: relative;
+
+                  &::before {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    width: 0.2em;
+                    height: 1em;
+                    background-color: var(--t-color-primary);
+                    border-radius: 1em;
+                    left: -0.75em;
+                    top: calc(50% - 0.5em);
+                  }
+                }
+              }
+            }
+          }
+
+          & .spatial-congruence {
+            padding: 1em;
+            margin-top: 2em;
+
+            & h2 {
+              font-weight: 900;
+              font-size: 2.5em;
+            }
+          }
+
+          & .cognitive-load-bifurcation {
+            margin: 2em 0;
+            padding: 1em;
+            border-radius: var(--t-radius-field);
+            background-color: var(--t-color-base-100);
+            border: var(--t-border) solid var(--t-color-base-300);
+
+            & > h2 {
+              font-weight: 900;
+              font-size: 2em;
+            }
+
+            & table {
+              width: 100%;
+              border-collapse: separate;
+              border-spacing: 0;
+              border: var(--t-border) solid var(--t-color-base-300);
+              border-radius: var(--t-radius-field);
+              overflow: hidden;
+              background-color: var(--t-color-base-200);
+            }
+
+            & th,
+            & td {
+              padding: 1em;
+              vertical-align: top;
+            }
+
+            & thead th {
+              font-weight: 800;
+              font-size: 1.05em;
+              background-color: var(--t-color-base-300);
+              border-bottom: 1px solid var(--t-color-base-300);
+            }
+
+            & th + th,
+            & td + td {
+              border-left: 1px solid var(--t-color-base-300);
+            }
+
+            & tbody td {
+              border-bottom: 1px solid var(--t-color-base-300);
+            }
+
+            & tbody tr:last-child td {
+              border-bottom: 0;
+            }
+
+            & td h6 {
+              font-weight: 700;
+              font-size: 1.15em;
+              margin-bottom: 0.5em;
+            }
+
+            & td p {
+              margin-bottom: 0;
+            }
+
+            @media (width < 48rem) {
+              & table,
+              & thead,
+              & tbody,
+              & tr,
+              & th,
+              & td {
+                display: block;
+                width: 100%;
+              }
+
+              & thead {
+                display: none;
+              }
+
+              & tbody tr {
+                border-bottom: 1px solid var(--t-color-base-300);
+                padding: 0.5em;
+              }
+
+              & tbody tr:last-child {
+                border-bottom: 0;
+              }
+
+              & td {
+                border: 0;
+                border-radius: var(--t-radius-field);
+                background-color: var(--t-color-base-100);
+                margin-bottom: 0.75em;
+              }
+
+              & td::before {
+                display: block;
+                font-weight: 700;
+                font-size: 0.85em;
+                text-transform: uppercase;
+                letter-spacing: 0.04em;
+                color: var(--t-color-primary);
+                margin-bottom: 0.5em;
+              }
+
+              & td:nth-child(1)::before {
+                content: "Extrinsic Load";
+              }
+
+              & td:nth-child(2)::before {
+                content: "Intrinsic Focus";
+              }
+            }
+          }
+        }
+
+        &#ui-ux-weaknesses {
+          margin-bottom: 2em;
+
+          & > h2 {
+            font-weight: 900;
+            font-size: 2.5em;
+          }
+
+          & > p {
+            text-align: justify;
+            margin-bottom: 2em;
+          }
+
+          & table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            border: var(--t-border) solid var(--t-color-base-300);
+            border-radius: var(--t-radius-field);
+            overflow: hidden;
+            background-color: var(--t-color-base-100);
+          }
+
+          & th,
+          & td {
+            padding: 1em;
+            vertical-align: top;
+          }
+
+          & td {
+            position: relative;
+            padding-right: 4.25em;
+          }
+
+          & thead th {
+            font-weight: 800;
+            font-size: 1.05em;
+            background-color: var(--t-color-base-300);
+            border-bottom: 1px solid var(--t-color-base-300);
+          }
+
+          & th + th,
+          & td + td {
+            border-left: 1px solid var(--t-color-base-300);
+          }
+
+          & tbody td {
+            border-bottom: 1px solid var(--t-color-base-300);
+          }
+
+          & tbody tr:last-child td {
+            border-bottom: 0;
+          }
+
+          & .badge {
+            font-size: 0.75em;
+            font-weight: 400;
+            border-radius: var(--t-radius-selector);
+            padding: 0.35em 0.75em;
+            margin-left: 0.5em;
+            vertical-align: middle;
+            border: var(--t-border) solid transparent;
+          }
+
+          & .badge-success {
+            background-color: var(--t-color-success);
+            color: color-mix(
+              in oklab,
+              var(--t-color-success-content) 70%,
+              var(--t-color-success)
+            );
+            border-color: color-mix(
+              in oklab,
+              var(--t-color-success) 65%,
+              var(--t-color-dark)
+            );
+          }
+
+          & .badge-danger {
+            background-color: var(--t-color-error);
+            color: color-mix(
+              in oklab,
+              var(--t-color-error-content) 70%,
+              var(--t-color-error)
+            );
+            border-color: color-mix(
+              in oklab,
+              var(--t-color-error) 65%,
+              var(--t-color-dark)
+            );
+          }
+
+          & .sw-item-head {
+            display: block;
+            margin-bottom: 0.75em;
+          }
+
+          & .sw-icon {
+            width: 2.75em;
+            height: 2.75em;
+            color: var(--t-color-base-300);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            position: absolute;
+            top: 0.75em;
+            right: 0.75em;
+          }
+
+          & .sw-icon svg {
+            width: 1.5em;
+            height: 1.5em;
+          }
+
+          & .label {
+            display: inline-block;
+            font-family: var(--bs-font-monospace);
+            font-size: 0.9em;
+            font-weight: 700;
+            color: var(--t-color-secondary);
+            letter-spacing: 0.03em;
+          }
+
+          & td h6 {
+            font-weight: 700;
+            font-size: 1.2em;
+            margin-bottom: 0.5em;
+          }
+
+          & td p {
+            margin-bottom: 0;
+            text-align: justify;
+          }
+
+          @media (width < 48rem) {
+            & table,
+            & thead,
+            & tbody,
+            & tr,
+            & th,
+            & td {
+              display: block;
+              width: 100%;
+            }
+
+            & thead {
+              display: none;
+            }
+
+            & tbody tr {
+              border-bottom: 1px solid var(--t-color-base-300);
+              padding: 0.5em;
+              background-color: var(--t-color-base-200);
+            }
+
+            & tbody tr:last-child {
+              border-bottom: 0;
+            }
+
+            & td {
+              border: 0;
+              border-radius: var(--t-radius-field);
+              background-color: var(--t-color-base-100);
+              margin-bottom: 0.75em;
+            }
+
+            & td::before {
+              display: block;
+              font-weight: 700;
+              font-size: 0.85em;
+              text-transform: uppercase;
+              letter-spacing: 0.04em;
+              margin-bottom: 0.5em;
+            }
+
+            & td:nth-child(1)::before {
+              content: "System Strengths";
+              color: color-mix(
+                in oklab,
+                var(--t-color-success) 70%,
+                var(--t-color-dark)
+              );
+            }
+
+            & td:nth-child(2)::before {
+              content: "System Weaknesses";
+              color: color-mix(
+                in oklab,
+                var(--t-color-error) 70%,
+                var(--t-color-dark)
+              );
+            }
+          }
+        }
+      }
+
+      .list-style-area {
+        margin: 2em 0;
+        width: 100%;
+        background-color: var(--t-color-base-100);
+        border: var(--t-border) solid var(--t-color-base-300);
+        padding: 1em;
+        border-radius: var(--t-radius-field);
+
+        & ol {
+          list-style: none;
+          margin-left: 0;
+          padding-left: 0;
+          margin-top: 2em;
+          display: grid;
+          gap: 1em;
+
+          &.two-columns {
+            grid-template-columns: 1fr 1fr;
+          }
+
+          &.three-columns {
+            grid-template-columns: 1fr 1fr 1fr;
+          }
+
+          &.four-columns {
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+          }
+
+          @media (width < 48rem) {
+            &.md-one-columns {
+              grid-template-columns: 1fr !important;
+            }
+
+            &.md-two-columns {
+              grid-template-columns: 1fr 1fr !important;
+            }
+          }
+
+          & li {
+            position: relative;
+
+            &::before {
+              font-weight: 700;
+              font-size: 5em;
+              font-family: var(--bs-font-monospace);
+              color: var(--t-color-base-200);
+              position: absolute;
+              top: -0.5em;
+            }
+
+            &:nth-child(1)::before {
+              content: "01";
+            }
+
+            &:nth-child(2)::before {
+              content: "02";
+            }
+
+            &:nth-child(3)::before {
+              content: "03";
+            }
+
+            &:nth-child(4)::before {
+              content: "04";
+            }
+
+            @media (width > 48rem) {
+              &::before {
+                left: 0;
+              }
+            }
+
+            @media (width < 48rem) {
+              &::before {
+                right: 0;
+              }
+            }
+
+            & h6 {
+              font-weight: 700;
+              font-size: 1.5em;
+              position: relative;
+
+              &::after {
+                content: "";
+                display: block;
+                width: 100%;
+                height: 1px;
+                background-color: var(--t-color-base-300);
+                margin-top: 0.5em;
+              }
+            }
+          }
+        }
+      }
+
+      .footnote {
+        width: 100%;
+        background-color: rgba(var(--t-color-primary-rgb), 0.1);
+        padding: 2em;
+        border-radius: var(--t-radius-field);
+
+        &::before {
+          content: "Note:";
+          font-weight: 700;
+          font-size: 1.2em;
+          color: var(--t-color-primary);
+          display: block;
+          margin-bottom: 0.5em;
+        }
+
+        &.summary::before {
+          content: "Summary:";
+        }
+      }
+
+      .game-video-wrp {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        overflow: hidden;
+        background-color: var(--t-color-base-300);
+      }
+
+      .game-video-wrp iframe,
+      .game-video-wrp video {
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+
+      .back-to-top {
+        position: fixed;
+        right: 1.25rem;
+        bottom: 1.25rem;
+        width: 3.5rem;
+        height: 3.5rem;
+        z-index: 1001;
+        cursor: pointer;
+        opacity: 0;
+        pointer-events: none;
+        transition:
+          opacity 0.2s ease,
+          transform 0.2s ease;
+        transform: translateY(0.5rem);
+      }
+
+      .back-to-top.is-visible {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+      }
+
+      .back-to-top svg {
+        width: 100%;
+        height: 100%;
+      }
+
+      .back-to-top .btn-progress {
+        transform: rotate(-90deg);
+        transform-origin: center;
+        transition: stroke-dashoffset 0.1s linear;
+      }
+
+      .hidden {
+        display: none !important;
+      }
+    </style>
+
+    <title id="title">Geometry Dash - GameUX</title>
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar navbar-light navbar-expand-lg">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="../../index.html">
+            <img
+              src="../../../public/gameux.png"
+              alt="Logo"
+              class="navbar-logo"
+            />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon" style="width: 1em"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="../../index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="../gameList.html">Game List</a>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <nav class="breadcrumb-nav" aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="../gameList.html">Game List</a>
+        </li>
+        <li class="breadcrumb-item active game-name">Geometry Dash</li>
+      </ol>
+    </nav>
+
+    <main>
+      <article class="wide">
+        <section class="header-section">
+          <img class="game-poster-content game-poster-background-style" />
+          <h1 class="game-name game-name-header">Geometry Dash</h1>
+          <div class="game-header">
+            <span class="game-header-cont">
+              <div class="game-info-bar">
+                <span class="game-date-info">
+                  <span class="date-released">August 13, 2013</span>
+                  <span class="days-ago"></span>
+                </span>
+                <span class="game-badge">Full Release</span>
+                <span class="publisher">RobTop Games</span>
+              </div>
+            </span>
+            <div class="game-header-rating">
+              <table class="game-critic-rating-cont">
+                <tr>
+                  <td rowspan="2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </td>
+                  <td class="game-critic-rating">0</td>
+                </tr>
+                <tr>
+                  <td class="game-critic-ratings">0 critic ratings</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <div class="video-game-container">
+            <a class="game-poster" id="game-poster">
+              <img
+                class="game-poster-img"
+                id="game-poster-img"
+                alt="Geometry Dash Poster"
+              />
+            </a>
+            <div class="game-video-wrp">
+              <video class="game-video" id="game-video" controls>
+                <source type="video/mp4" id="game-video-source" />
+                Your browser does not support the video tag.
+              </video>
+              <iframe
+                class="game-video"
+                id="game-video-yt"
+                frameborder="0"
+                allowfullscreen
+                hidden
+              ></iframe>
+            </div>
+
+            <div class="game-rating">
+              <table class="game-user-rating-cont">
+                <tr>
+                  <td rowspan="2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </td>
+                  <td class="game-user-rating">0</td>
+                </tr>
+                <tr>
+                  <td class="game-user-ratings">0 user ratings</td>
+                </tr>
+              </table>
+              <table class="game-critic-rating-cont">
+                <tr>
+                  <td rowspan="2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </td>
+                  <td class="game-critic-rating">0</td>
+                </tr>
+                <tr>
+                  <td class="game-critic-ratings">0 critic ratings</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+
+          <ul class="game-list-data">
+            <li class="game-list-data-item">
+              Genres:
+              <ul id="genres"></ul>
+            </li>
+            <li class="game-list-data-item">
+              Platforms:
+              <ul id="platforms"></ul>
+            </li>
+            <li class="game-list-data-item">
+              Editions:
+              <ul id="editions"></ul>
+            </li>
+          </ul>
+          <p class="game-description" id="game-description"></p>
+        </section>
+      </article>
+
+      <div class="game-info-nav-container">
+        <div class="game-info-nav-wrap">
+          <nav class="game-info-nav" id="game-info-nav" role="tablist">
+            <label role="tab"
+              ><input
+                type="radio"
+                name="game-section"
+                value="short-description"
+                checked="checked"
+              />
+              Overview</label
+            >
+            <label role="tab"
+              ><input type="radio" name="game-section" value="ui-components" />
+              UI Components</label
+            >
+            <label role="tab"
+              ><input
+                type="radio"
+                name="game-section"
+                value="user-interaction"
+              />
+              Interaction</label
+            >
+            <label role="tab"
+              ><input type="radio" name="game-section" value="hci-principles" />
+              HCI Principles</label
+            >
+            <label role="tab"
+              ><input
+                type="radio"
+                name="game-section"
+                value="ui-ux-weaknesses"
+              />
+              Analysis</label
+            >
+          </nav>
+          <button
+            class="game-info-nav-arrow right"
+            id="game-info-nav-right"
+            type="button"
+            aria-label="Scroll sections right"
+            hidden=""
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+              width="20"
+              height="20"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M8.22 4.72a.75.75 0 0 1 1.06 0l6.5 6.5a.75.75 0 0 1 0 1.06l-6.5 6.5a.75.75 0 0 1-1.06-1.06L14.19 12 8.22 6.28a.75.75 0 0 1 0-1.56Z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <article>
+        <div class="game-sections-stage">
+          <section
+            class="game-sections is-active"
+            id="short-description"
+            aria-hidden="false"
+          >
+            <h2>Overview</h2>
+            <ul class="list-style">
+              <h2>Geometry Dash Modes:</h2>
+              <li>Normal Mode</li>
+              <li>Practice Mode</li>
+              <li>Platformer Mode (2.2)</li>
+            </ul>
+            <p>
+              Geometry Dash is a rhythm-based action platformer developed and
+              published by Robert Topala (known as RobTop Games). Released in
+              August 2013, the game has evolved from a simple mobile app into a
+              massive, community-driven ecosystem. The core gameplay involves
+              navigating a customized icon through a series of obstacles,
+              primarily relying on a single input: a screen tap, mouse click, or
+              key press to jump or change gravity.
+            </p>
+            <p>
+              Unlike traditional platformers, Geometry Dash auto-scrolls at set
+              speeds. There is no spatial aiming or complex input sequences—only
+              binary inputs perfectly timed to a pulsing electronic soundtrack.
+              This distills Human-Computer Interaction to its absolute rawest
+              form: visual anticipation and millisecond-perfect motor response.
+              It serves as an incredible case study for flow state induction
+              through minimalist interface design and immediate feedback loops.
+            </p>
+            <ul class="metrics-list">
+              <li>
+                <h6>Cognitive Load</h6>
+                <div class="value">Moderate</div>
+                <div class="desc">
+                  Low structural complexity (one button) but extremely high
+                  demands on sustained attention and pattern recognition.
+                </div>
+              </li>
+              <li>
+                <h6>Response Time</h6>
+                <div class="value">Instant (Local)</div>
+                <div class="desc">
+                  Zero server latency. Input responsiveness is tied purely to
+                  local hardware polling rates and monitor refresh rates.
+                </div>
+              </li>
+              <li>
+                <h6>Visual Reaction Time</h6>
+                <div class="value">~150ms to ~200ms</div>
+                <div class="desc">
+                  Time required to process an upcoming obstacle and trigger a
+                  motor response, often aided by rhythmic anticipation.
+                </div>
+              </li>
+            </ul>
+          </section>
+          <section class="game-sections" id="ui-components" aria-hidden="true">
+            <h2>UI Components</h2>
+            <div class="major-components">
+              <div class="major-component">
+                <figure>
+                  <a
+                    href="../../../public/gamesContent/geometryDash/playerIcon.png"
+                    title="Geometry Dash Player Icon"
+                    target="images"
+                  >
+                    <img
+                      src="../../../public/gamesContent/geometryDash/playerIcon.png"
+                      alt="Player Icon"
+                    />
+                  </a>
+                  <figcaption>FIG 1.1: The Player Icon (Cube)</figcaption>
+                </figure>
+                <div>
+                  <span class="count">[ ELEMENT_01 ]</span>
+                  <span class="header-text">The Player Icon</span>
+                  <p>
+                    The focal point of the screen. The icon automatically moves
+                    forward, and the user's only control is manipulating its
+                    vertical axis (jumping, flying, reversing gravity). It
+                    represents the absolute center of the user's spatial
+                    awareness.
+                  </p>
+                  <ul>
+                    <h6>Visual Feedback</h6>
+                    <li>Particle Trails on movement</li>
+                    <li>Death explosion animation</li>
+                    <li>Form changes (Ship, UFO, Wave)</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="major-component">
+                <figure>
+                  <a
+                    href="../../../public/gamesContent/geometryDash/obstacles.jpg"
+                    title="Geometry Dash Obstacles"
+                    target="images"
+                  >
+                    <img
+                      src="../../../public/gamesContent/geometryDash/obstacles.jpg"
+                      alt="Obstacles"
+                    />
+                  </a>
+                  <figcaption>FIG 1.2: Spikes and Hazards</figcaption>
+                </figure>
+                <div>
+                  <span class="count">[ ELEMENT_02 ]</span>
+                  <span class="header-text">Hazards</span>
+                  <p>
+                    Static or moving geometric shapes (spikes, saws, walls) that
+                    define the fail-state boundaries. Their contrast against the
+                    background is crucial for rapid cognitive processing and
+                    determining the exact jump timing window.
+                  </p>
+                </div>
+              </div>
+              <div class="major-component">
+                <figure>
+                  <a
+                    href="../../../public/gamesContent/geometryDash/portals.png"
+                    title="Geometry Dash Portals"
+                    target="images"
+                  >
+                    <img
+                      src="../../../public/gamesContent/geometryDash/portals.png"
+                      alt="Portals and Orbs"
+                    />
+                  </a>
+                  <figcaption>FIG 1.3: Portals & Orbs</figcaption>
+                </figure>
+                <div>
+                  <span class="count">[ ELEMENT_03 ]</span>
+                  <span class="header-text">Portals & Jump Rings</span>
+                  <p>
+                    Interactive environmental objects. Jump rings (orbs) require
+                    a mid-air click, while portals automatically alter the
+                    physics engine (speed, gravity, size, or form) the moment
+                    the icon passes through them, demanding instant mental
+                    recalibration.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <h2>Fitts' Law Transposed: Temporal Targeting</h2>
+            <div class="fittslaw">
+              <div>
+                <p>
+                  Traditional Fitts' Law involves spatial targeting—moving a
+                  cursor to a physical box on screen. Because Geometry Dash uses
+                  a global screen input (any click anywhere activates the jump),
+                  the spatial dimension is removed. Instead, the law must be
+                  translated into <strong>temporal precision</strong>.
+                </p>
+                <div class="mathmodel">
+                  <h6>[ TEMPORAL TARGETING MODEL ]</h6>
+                  <span>Difficulty ∝ Speed / Window of Safe Frames</span>
+                </div>
+                <p>
+                  In Geometry Dash, the "target width" (W) is actually a window
+                  of time. If a gap between spikes requires a 5-frame precision
+                  jump, that is the target. As the game speed increases (via
+                  speed portals), the physical distance remains the same, but
+                  the safe temporal window shrinks drastically, rapidly
+                  increasing the Index of Difficulty.
+                </p>
+              </div>
+              <div>
+                <figure>
+                  <a
+                    href="../../../public/gamesContent/geometryDash/temporalTargeting.png"
+                    title="Temporal Targeting Visualized"
+                    target="images"
+                  >
+                    <img
+                      src="../../../public/gamesContent/geometryDash/temporalTargeting.png"
+                      alt="Temporal Targeting"
+                    />
+                  </a>
+                  <figcaption>FIG 1.4: Jump Hitboxes & Time Windows</figcaption>
+                </figure>
+              </div>
+            </div>
+            <div class="list-style-area">
+              <h3 class="text-center">Visual Hierarchy Breakdown</h3>
+              <div class="text-center">A Subtractive UI Approach</div>
+              <ol class="three-columns md-one-columns">
+                <li>
+                  <h6>Foreground (Action)</h6>
+                  <p>
+                    Primary focus. The player icon, lethal obstacles, and
+                    interactive orbs. These must be instantly distinguishable to
+                    survive.
+                  </p>
+                </li>
+                <li>
+                  <h6>Midground (Structure)</h6>
+                  <p>
+                    Secondary focus. Safe platforms and block outlines that
+                    provide context for where the player can land.
+                  </p>
+                </li>
+                <li>
+                  <h6>Background (Aesthetic)</h6>
+                  <p>
+                    Tertiary focus. Pulsing colors and decorative elements that
+                    sync with the music to induce flow, but possess no collision
+                    hitboxes.
+                  </p>
+                </li>
+              </ol>
+            </div>
+            <div class="footnote">
+              Note: In community-created "Demon" levels, this visual hierarchy
+              is frequently intentionally broken or overloaded to artificially
+              increase difficulty, relying entirely on rote memorization over
+              raw reaction.
+            </div>
+          </section>
+          <section
+            class="game-sections"
+            id="user-interaction"
+            aria-hidden="true"
+          >
+            <h2>User Interaction</h2>
+            <p>
+              An investigation into the neuro-mechanical feedback loops of
+              one-button rhythm platforms, specifically analyzing the Geometry
+              Dash interaction model.
+            </p>
+            <div class="list-style-area">
+              <h3 class="text-center">Core Gameplay Loop</h3>
+              <div class="text-center"></div>
+              <ol class="four-columns md-two-columns">
+                <li>
+                  <h6>See & Hear</h6>
+                  <p>
+                    Visual obstacles approach from the right side of the screen,
+                    synced with audio cues from the music track.
+                  </p>
+                </li>
+                <li>
+                  <h6>Anticipate</h6>
+                  <p>
+                    The brain aligns the visual gap with the rhythm of the song
+                    to calculate the exact millisecond to act.
+                  </p>
+                </li>
+                <li>
+                  <h6>Trigger</h6>
+                  <p>
+                    A single binary input (mouse click, spacebar, or screen
+                    tap). No complex chords or aiming required.
+                  </p>
+                </li>
+                <li>
+                  <h6>Evaluate</h6>
+                  <p>
+                    Immediate result: the icon successfully clears the gap, or
+                    crashes resulting in an instant level reset.
+                  </p>
+                </li>
+              </ol>
+            </div>
+            <h3>Multi-Modal Feedback Matrix</h3>
+            <div class="multi-modal-feedback">
+              <div>
+                <p>
+                  Because the game relies on a single input, the feedback it
+                  provides must be incredibly rich to compensate. The
+                  environment itself becomes the interface. The audio, visual
+                  pulsing, and level design all work in concert to confirm or
+                  reject the player's timing.
+                </p>
+              </div>
+              <div>
+                <figure>
+                  <a
+                    href="../../../public/gamesContent/geometryDash/gdFeedback.png"
+                    title="Geometry Dash Audio-Visual Sync"
+                    target="images"
+                  >
+                    <img
+                      src="../../../public/gamesContent/geometryDash/gdFeedback.png"
+                      alt="Audio Visual Sync"
+                    />
+                  </a>
+                  <figcaption>
+                    FIG 1.5: Environmental Audio-Visual Sync
+                  </figcaption>
+                </figure>
+              </div>
+            </div>
+            <ul>
+              <li>
+                <div class="logo-svg">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25l4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z"
+                    ></path>
+                  </svg>
+                </div>
+                <div>
+                  <h6>Audio Feedback</h6>
+                  <p>
+                    The soundtrack is the most critical feedback layer. The
+                    layout of the level is mapped perfectly to the beats, drops,
+                    and melodies of the song. A successful sequence of jumps
+                    feels and sounds like the player is "playing" the music.
+                  </p>
+                </div>
+              </li>
+              <li>
+                <div class="logo-svg">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z"
+                    ></path>
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                    ></path>
+                  </svg>
+                </div>
+                <div>
+                  <h6>Visual Feedback</h6>
+                  <p>
+                    Backgrounds pulse to the beat of the song. Successful orb
+                    clicks emit particle bursts. A failure results in a jarring,
+                    immediate shatter animation and the cessation of the music,
+                    providing instant negative reinforcement.
+                  </p>
+                </div>
+              </li>
+              <li>
+                <div class="logo-svg">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="size-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M7.864 4.243A7.5 7.5 0 0 1 19.5 10.5c0 2.92-.556 5.709-1.568 8.268M5.742 6.364A7.465 7.465 0 0 0 4.5 10.5a7.464 7.464 0 0 1-1.15 3.993m1.989 3.559A11.209 11.209 0 0 0 8.25 10.5a3.75 3.75 0 1 1 7.5 0c0 .527-.021 1.049-.064 1.565M12 10.5a14.94 14.94 0 0 1-3.6 9.75m6.633-4.596a18.666 18.666 0 0 1-2.485 5.33"
+                    ></path>
+                  </svg>
+                </div>
+                <div>
+                  <h6>Input/Tactile Fidelity</h6>
+                  <p>
+                    Because the input is so minimal, players often develop heavy
+                    tactile reliance on the "click" sound of their mouse or the
+                    tap on their phone screen. This physical sound blends with
+                    the game's audio to create a personalized rhythmic feedback
+                    loop.
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </section>
+          <section class="game-sections" id="hci-principles" aria-hidden="true">
+            <h2>HCI Principles</h2>
+            <div class="cybernetic-feedback-loops">
+              <h3>Cybernetic Feedback Loops</h3>
+              <div class="cybernetic-content">
+                <div>
+                  <p style="text-align: justify">
+                    Geometry Dash utilizes a brutally efficient cybernetic loop
+                    based on trial and error. The penalty for failure is an
+                    immediate respawn at the start of the level. This near-zero
+                    downtime between failure and the next attempt minimizes
+                    frustration latency, keeping the player trapped in a highly
+                    addictive "Action-Perception-Correction" cycle.
+                  </p>
+                </div>
+                <div>
+                  <ul class="primary-modalities">
+                    <h6>Primary Modalities</h6>
+                    <li>
+                      <strong>Visual</strong>: Constant forward scrolling,
+                      background pulsing, particle emissions.
+                    </li>
+                    <li>
+                      <strong>Auditory</strong>: Synchronized soundtrack,
+                      satisfying click/jump sound effects, harsh death sound.
+                    </li>
+                    <li>
+                      <strong>Structural</strong>: A persistent progress bar (0%
+                      to 100%) at the top of the screen serving as the only HUD
+                      element.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="spatial-congruence">
+              <h2>Spatial Congruence</h2>
+              <p style="text-align: justify">
+                The spatial model in Geometry Dash is highly restrictive. The
+                camera is locked to the player icon, meaning the environment
+                moves around the user, rather than the user moving through the
+                environment. This framing technique forces the player's eyes
+                slightly ahead of the icon (to the right side of the screen) to
+                parse incoming data, effectively splitting visual processing
+                between the current icon state (peripheral) and the upcoming
+                obstacle (focal).
+              </p>
+            </div>
+            <div class="cognitive-load-bifurcation">
+              <h2>Cognitive Load Bifurcation</h2>
+              <p style="text-align: justify; margin-bottom: 2em">
+                Geometry Dash represents the absolute minimization of Extrinsic
+                Load. Because there is no inventory, no map, and no complex
+                controls to learn, 100% of the player's cognitive capacity is
+                poured into the Intrinsic Load of rhythmic timing and pattern
+                recognition.
+              </p>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Extrinsic Zero-Point</th>
+                    <th>Intrinsic Saturation</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <h6>Zero HUD Interference</h6>
+                      <p>
+                        Aside from an optional, thin progress bar at the top
+                        edge of the screen, the entire display is devoted solely
+                        to the gameplay area.
+                      </p>
+                    </td>
+                    <td>
+                      <h6>Rote Memorization</h6>
+                      <p>
+                        In higher difficulties, the speed exceeds human reaction
+                        time. The cognitive load shifts from reacting to
+                        recalling memorized motor-patterns.
+                      </p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <h6>Universal Input</h6>
+                      <p>
+                        No matter the vehicle (cube, ship, ball, UFO), the input
+                        method (click/hold) remains identical. The brain never
+                        has to search for the right button.
+                      </p>
+                    </td>
+                    <td>
+                      <h6>Sensory Flow State</h6>
+                      <p>
+                        The perfect alignment of visual obstacles with audio
+                        beats allows players to bypass conscious thought,
+                        entering a deep state of automatic mechanical execution.
+                      </p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="footnote">
+              <q>
+                The interface is non-existent. The screen is the controller, the
+                music is the prompt, and the gameplay is the pure, unfiltered
+                measurement of human rhythmic precision.
+              </q>
+            </div>
+          </section>
+          <section
+            class="game-sections"
+            id="ui-ux-weaknesses"
+            aria-hidden="true"
+          >
+            <h2>Strengths and Weaknesses Analysis</h2>
+            <p>
+              A comprehensive breakdown of the minimalist rhythm platformer
+              paradigm. Evaluating how a system built on a single button press
+              can still face profound UX hurdles when scaled by a massive
+              community.
+            </p>
+
+            <table style="margin-bottom: 2em">
+              <thead>
+                <tr>
+                  <th>
+                    System Strengths
+                    <span class="badge badge-success">Positive_Vectors</span>
+                  </th>
+                  <th>
+                    System Weaknesses
+                    <span class="badge badge-danger">Negative_Vectors</span>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="sw-item-head">
+                      <span class="sw-icon" aria-hidden="true">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M12 3v2.25m0 13.5V21m9-9h-2.25M5.25 12H3m15.364 6.364-1.59-1.59M7.226 7.226l-1.59-1.59m12.728 0-1.59 1.59M7.226 16.774l-1.59 1.59"
+                          ></path>
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                          ></path>
+                        </svg>
+                      </span>
+                      <span class="label">01_ACCESSIBILITY</span>
+                    </div>
+                    <h6>Mechanical Accessibility</h6>
+                    <p>
+                      Because it only requires one button, it is immediately
+                      playable by anyone. There are no complex control schemes
+                      to learn, removing mechanical barriers to entry.
+                    </p>
+                  </td>
+                  <td>
+                    <div class="sw-item-head">
+                      <span class="sw-icon" aria-hidden="true">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75M6.75 10.5h10.5A2.25 2.25 0 0 1 19.5 12.75v6A2.25 2.25 0 0 1 17.25 21H6.75A2.25 2.25 0 0 1 4.5 18.75v-6A2.25 2.25 0 0 1 6.75 10.5Z"
+                          ></path>
+                        </svg>
+                      </span>
+                      <span class="label">01_PUNISHING</span>
+                    </div>
+                    <h6>Zero Margin for Error</h6>
+                    <p>
+                      The game offers no dynamic difficulty adjustment or damage
+                      states. A failure at 99% of a level requires starting
+                      completely over from 0%, which can lead to extreme
+                      psychological frustration.
+                    </p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="sw-item-head">
+                      <span class="sw-icon" aria-hidden="true">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25l4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z"
+                          ></path>
+                        </svg>
+                      </span>
+                      <span class="label">02_LOOP</span>
+                    </div>
+                    <h6>Instant Feedback Loop</h6>
+                    <p>
+                      The death-to-respawn time is practically instantaneous.
+                      This immediate reset keeps users engaged and prevents them
+                      from disengaging mentally after a failure.
+                    </p>
+                  </td>
+                  <td>
+                    <div class="sw-item-head">
+                      <span class="sw-icon" aria-hidden="true">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M12 9v4.5m0 3.75h.008v.008H12v-.008ZM10.29 3.86l-7.5 13A1.5 1.5 0 0 0 4.09 19h15.82a1.5 1.5 0 0 0 1.3-2.14l-7.5-13a1.5 1.5 0 0 0-2.6 0Z"
+                          ></path>
+                        </svg>
+                      </span>
+                      <span class="label">02_HEALTH</span>
+                    </div>
+                    <h6>Sensory Hazards</h6>
+                    <p>
+                      Heavy reliance on flashing colors, strobe effects, and
+                      screen-shaking makes the game inherently inaccessible to
+                      players with photosensitive epilepsy or severe motion
+                      sickness.
+                    </p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="sw-item-head">
+                      <span class="sw-icon" aria-hidden="true">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                          class="size-6"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z"
+                          ></path>
+                        </svg>
+                      </span>
+                      <span class="label">03_CREATOR</span>
+                    </div>
+                    <h6>Level Editor Integration</h6>
+                    <p>
+                      The robust in-game editor empowers players to become
+                      designers. The seamless transition between playing and
+                      creating fosters a self-sustaining ecosystem of infinite
+                      content.
+                    </p>
+                  </td>
+                  <td>
+                    <div class="sw-item-head">
+                      <span class="sw-icon" aria-hidden="true">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                          class="size-6"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M3.98 8.223A10.477 10.477 0 0 0 1.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.451 10.451 0 0 1 12 4.5c4.756 0 8.773 3.162 10.065 7.498a10.522 10.522 0 0 1-4.293 5.774M6.228 6.228 3 3m3.228 3.228 3.65 3.65m7.894 7.894L21 21m-3.228-3.228-3.65-3.65m0 0a3 3 0 1 0-4.243-4.243m4.242 4.242L9.88 9.88"
+                          ></path>
+                        </svg>
+                      </span>
+                      <span class="label">03_NOISE</span>
+                    </div>
+                    <h6>Community UX Degradation</h6>
+                    <p>
+                      In modern, user-created "Demon" levels, extreme decorative
+                      clutter often completely obscures the actual hitboxes and
+                      gameplay paths, turning the game into a test of
+                      brute-force memorization rather than sight-reading.
+                    </p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="footnote summary">
+              <p>
+                Geometry Dash proves that HCI does not need to be structurally
+                complex to be infinitely deep. By reducing user input to a
+                single, binary trigger, it shifts the entire burden of
+                interaction from <u>learning controls</u> to
+                <u>mastering timing</u>. However, as the community pushes the
+                limits of the engine, it highlights the breaking point where
+                aesthetic expression severely compromises interface clarity.
+              </p>
+            </div>
+          </section>
+        </div>
+      </article>
+    </main>
+
+    <footer></footer>
+
+    <script>
+      // VARIABLES
+      const GAMENAME = "Geometry Dash";
+      const DATERELEASED = "08/13/2013";
+      const PUBLISHER = "RobTop Games";
+      const BADGE = "Full Release";
+      const POSTERURL = "../../../public/posters/geometryDash_poster.jpg";
+      const POSTERALTTEXT = "Geometry Dash Poster";
+      const VIDEOURL = "../../../public/videos/geometryDash_trailer.mp4";
+      const VIDEOURLYT = "https://www.youtube.com/embed/k90y6PIzIaE"; // Official Trailer
+      const YTVID = true;
+
+      const GAMEUSERSTARS = "8.6";
+      const GAMEUSERRATINGS = "1,500,000+";
+
+      const HASCRITICS = true;
+      const GAMECRITICSTARS = "8.0";
+      const GAMECRITICRATINGS = "15";
+
+      const GENRES = ["Platformer", "Rhythm", "Arcade"];
+      const PLATFORMS = ["iOS", "Android", "PC", "Mac"];
+      const EDITIONS = [
+        "Standard Edition",
+        "Lite",
+        "Meltdown",
+        "World",
+        "SubZero",
+      ];
+
+      const DESCRIPTION =
+        "Jump and fly your way through danger in this rhythm-based action platformer! Geometry Dash takes the core of a simple one-touch game and elevates it with an incredible soundtrack, robust level editor, and near-impossible challenges.";
+
+      // -- Document Variables --
+      const sectionRadios = Array.from(
+        document.querySelectorAll('input[name="game-section"]'),
+      );
+      const gameSections = Array.from(
+        document.querySelectorAll(".game-sections"),
+      );
+      const gameInfoNav = document.getElementById("game-info-nav");
+      const gameInfoNavLeft = document.getElementById("game-info-nav-left");
+      const gameInfoNavRight = document.getElementById("game-info-nav-right");
+
+      // -- Implementation --
+      document.getElementById("title").textContent = GAMENAME + " - GameUX"; // Set page title
+      for (let el of document.getElementsByClassName("game-name")) {
+        el.textContent = GAMENAME;
+      } // Set game name
+      for (let el of document.getElementsByClassName("date-released")) {
+        el.textContent = DATERELEASED;
+      } // Set date released
+      for (let el of document.getElementsByClassName("publisher")) {
+        el.textContent = PUBLISHER;
+      } // Set publisher
+      for (let el of document.getElementsByClassName("game-badge")) {
+        el.textContent = BADGE;
+      } // Set badge
+      for (let el of document.getElementsByClassName("game-user-rating")) {
+        el.textContent = GAMEUSERSTARS;
+      } // Set user rating
+      for (let el of document.getElementsByClassName("game-user-ratings")) {
+        el.textContent = GAMEUSERRATINGS + " user ratings";
+      } // Set user ratings
+      for (let el of document.getElementsByClassName("game-critic-rating")) {
+        el.textContent = GAMECRITICSTARS;
+      } // Set critic rating
+      for (let el of document.getElementsByClassName("game-critic-ratings")) {
+        el.textContent = GAMECRITICRATINGS + " critic ratings";
+      } // Set critic ratings
+      for (let el of document.getElementsByClassName("game-poster-content")) {
+        el.src = POSTERURL;
+      } // Set poster content
+      document.getElementById("game-poster-img").src = POSTERURL; // Set poster image
+      document.getElementById("game-poster-img").title =
+        GAMENAME + " Game Poster"; // Set poster image title
+      document.getElementById("game-poster").href = POSTERURL; // Set poster link
+      document.getElementById("game-description").textContent = DESCRIPTION; // Set game description
+      document.getElementById("game-poster-img").alt = POSTERALTTEXT;
+
+      // Video / YouTube Toggle Logic
+      const videoEl = document.getElementById("game-video");
+      const videoSourceEl = document.getElementById("game-video-source");
+      const ytEl = document.getElementById("game-video-yt");
+      if (YTVID) {
+        if (ytEl) {
+          ytEl.src = VIDEOURLYT;
+          ytEl.hidden = false;
+        }
+        if (videoEl) {
+          videoEl.hidden = true;
+          try {
+            videoEl.pause();
+          } catch (e) {}
+        }
+      } else {
+        if (videoSourceEl) {
+          videoSourceEl.src = VIDEOURL;
+        }
+        if (videoEl) {
+          videoEl.hidden = false;
+          try {
+            videoEl.load();
+          } catch (e) {}
+        }
+        if (ytEl) {
+          ytEl.hidden = true;
+          ytEl.src = "";
+        }
+      }
+
+      // Lists
+      for (let genre of GENRES) {
+        // Set genres
+        let li = document.createElement("li");
+        li.textContent = genre;
+        document.getElementById("genres").appendChild(li);
+      }
+
+      for (let platform of PLATFORMS) {
+        // Set platforms
+        let li = document.createElement("li");
+        li.textContent = platform;
+        document.getElementById("platforms").appendChild(li);
+      }
+
+      for (let edition of EDITIONS) {
+        // Set editions
+        let li = document.createElement("li");
+        li.textContent = edition;
+        document.getElementById("editions").appendChild(li);
+      }
+
+      // Critic Visibility
+      if (!HASCRITICS) {
+        for (let el of document.getElementsByClassName(
+          "game-critic-rating-cont",
+        )) {
+          el.classList.add("hidden");
+        }
+      }
+
+      // Days/Years Calculation
+      let timeDiff = new Date().getTime() - new Date(DATERELEASED).getTime();
+      let daysAgo = Math.floor(timeDiff / (1000 * 3600 * 24));
+      if (daysAgo > 365) {
+        let yearsAgo = Math.floor(daysAgo / 365);
+        for (let el of document.getElementsByClassName("days-ago")) {
+          el.textContent = "(" + yearsAgo + " years ago)";
+        }
+      } else {
+        for (let el of document.getElementsByClassName("days-ago")) {
+          el.textContent = "(" + daysAgo + " days ago)";
+        }
+      }
+
+      // Section Navigation
+      function showGameSection(sectionId) {
+        for (let section of gameSections) {
+          let isActive = section.id === sectionId;
+          section.classList.toggle("is-active", isActive);
+          section.setAttribute("aria-hidden", String(!isActive));
+        }
+      }
+
+      const defaultSection = document.querySelector(
+        'input[name="game-section"]:checked',
+      );
+      showGameSection(
+        defaultSection ? defaultSection.value : "short-description",
+      );
+
+      for (let radio of sectionRadios) {
+        radio.addEventListener("change", () => {
+          if (!radio.checked) {
+            return;
+          }
+          showGameSection(radio.value);
         });
-    }
+      }
 
-    // Game info nav
-    function updateGameInfoNavArrows() {
-        if (!gameInfoNav || !gameInfoNavLeft || !gameInfoNavRight) { return; }
+      // Scroll Navigation Arrows
+      function updateGameInfoNavArrows() {
+        if (!gameInfoNav || !gameInfoNavLeft || !gameInfoNavRight) {
+          return;
+        }
 
         const maxScrollLeft = gameInfoNav.scrollWidth - gameInfoNav.clientWidth;
         const canScroll = maxScrollLeft > 1;
         const canScrollLeft = canScroll && gameInfoNav.scrollLeft > 1;
-        const canScrollRight = canScroll && gameInfoNav.scrollLeft < (maxScrollLeft - 1);
+        const canScrollRight =
+          canScroll && gameInfoNav.scrollLeft < maxScrollLeft - 1;
 
         gameInfoNavLeft.hidden = !canScrollLeft;
         gameInfoNavRight.hidden = !canScrollRight;
-    }
+      }
 
-    function scrollGameInfoNavBy(distance) {
+      function scrollGameInfoNavBy(distance) {
         if (!gameInfoNav) {
-            return;
+          return;
         }
-        gameInfoNav.scrollBy({ left: distance, behavior: 'smooth' });
-    }
+        gameInfoNav.scrollBy({ left: distance, behavior: "smooth" });
+      }
 
-    if (gameInfoNav && gameInfoNavLeft && gameInfoNavRight) {
-        gameInfoNav.addEventListener('scroll', updateGameInfoNavArrows);
-        gameInfoNavLeft.addEventListener('click', () => {
-            scrollGameInfoNavBy(-Math.max(200, Math.floor(gameInfoNav.clientWidth * 0.5)));
+      if (gameInfoNav && gameInfoNavLeft && gameInfoNavRight) {
+        gameInfoNav.addEventListener("scroll", updateGameInfoNavArrows);
+        gameInfoNavLeft.addEventListener("click", () => {
+          scrollGameInfoNavBy(
+            -Math.max(200, Math.floor(gameInfoNav.clientWidth * 0.5)),
+          );
         });
-        gameInfoNavRight.addEventListener('click', () => {
-            scrollGameInfoNavBy(Math.max(200, Math.floor(gameInfoNav.clientWidth * 0.5)));
+        gameInfoNavRight.addEventListener("click", () => {
+          scrollGameInfoNavBy(
+            Math.max(200, Math.floor(gameInfoNav.clientWidth * 0.5)),
+          );
         });
-        window.addEventListener('resize', updateGameInfoNavArrows);
+        window.addEventListener("resize", updateGameInfoNavArrows);
         updateGameInfoNavArrows();
-    }
-</script>
-
+      }
+    </script>
+  </body>
 </html>
