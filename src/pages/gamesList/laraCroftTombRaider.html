@@ -1002,7 +1002,7 @@
     </style>
     <!-- Custom Styles ------------------------------------------------------------------------------------------ -->
 
-    <title id="title">Warframe - GameUX</title>
+    <title id="title">Tomb Raider - GameUX</title>
 </head>
 
 <body>
@@ -1097,7 +1097,7 @@
                 <div class="video-game-container">
                     <a class="game-poster" id="game-poster">
                         <img class="game-poster-img" id="game-poster-img" alt="Game Poster" target="images"
-                            title="Warframe Game Poster" />
+                            title="Tomb Raider Game Poster" />
                     </a>
                     <div class="game-video-wrp">
                         <video class="game-video" id="game-video" controls>
@@ -1200,12 +1200,8 @@
                         User Interaction</label>
                     <label><input type="radio" name="game-section" value="hci-principles" />
                         HCI Principles</label>
-                    <!-- <label><input type="radio" name="game-section" value="strengths" />
-                        Strengths</label> -->
                     <label><input type="radio" name="game-section" value="ui-ux-weaknesses" />
                         Strengths & Weaknesses</label>
-                    <!-- <label><input type="radio" name="game-section" value="conclusion" />
-                        Conclusion</label> -->
                 </nav>
                 <button class="game-info-nav-arrow right" id="game-info-nav-right" type="button"
                     aria-label="Scroll right" hidden>
@@ -1218,121 +1214,98 @@
             </div>
         </div>
 
-
-        <!-- 
-        
-        Sections ==================================================
-        
-        -->
         <article>
             <div class="game-sections-stage">
                 <section class="game-sections" id="short-description">
                     <h2>Overview</h2>
                     <ul class="list-style">
-                        <h2>Warframe Access Types:</h2>
-                        <li>Free-to-Play Base</li>
-                        <li>Prime Access Packs</li>
-                        <li>Supporter Packs</li>
+                        <h2>Tomb Raider Editions:</h2>
+                        <li>Standard Edition</li>
+                        <li>Survival Edition</li>
+                        <li>Definitive Edition</li>
                     </ul>
                     <p>
-                        Warframe is a free-to-play action game developed and published by Digital Extremes, first launched in 2013 for PC. Players take on the role of Tenno — ancient warriors who emerge from cryo-stasis to pilot powerful biomechanical exosuits called Warframes across a sci-fi solar system in perpetual conflict between the Grineer, Corpus, Infested, and Sentient factions.
+                        Tomb Raider (2013) is an action-adventure game developed by Crystal Dynamics and published by Square Enix. It serves as a complete origin story reboot of the iconic Lara Croft franchise, following a young Lara as she fights to survive after her expedition ship is wrecked on the mysterious island of Yamatai. Released on March 5, 2013 for PC, PlayStation 3, and Xbox 360, with a Definitive Edition released in 2014 for PS4 and Xbox One.
                     </p>
                     <p>
-                        Warframe's infamous 'Second Dream' quest is credited with transforming its initially opaque design into a narrative-driven experience. Despite significant interface complexity — over 50 Warframes, 500+ weapons, deep modding trees, and clan-based progression — its fluid movement system and community-driven content pipeline make it a compelling case study in balancing accessibility with extraordinary depth.
+                        The game blends third-person combat, traversal platforming, and environmental puzzle-solving within a semi-open world structure. Its survival horror tone, context-sensitive controls, and progressive skill unlocking make it a compelling case study in HCI — particularly in how the interface communicates Lara's growing agency without interrupting the game's cinematic flow.
                     </p>
-                    <ul class="metrics-list">
-                        <li>
-                            <h6>Cognitive Load</h6>
-                            <div class="value">Very High</div>
-                            <div class="desc">Number of simultaneous elements a player tracks</div>
-                        </li>
-                        <li>
-                            <h6>Response Time</h6>
-                            <div class="value">±30ms to ±150ms</div>
-                            <div class="desc">Time between user action and system feedback</div>
-                        </li>
-                        <li>
-                            <h6>Visual Reaction Time</h6>
-                            <div class="value">~100ms to ~400ms</div>
-                            <div class="desc">Time for a player to respond to visual stimuli</div>
-                        </li>
-                    </ul>
                 </section>
                 <section class="game-sections" id="ui-components">
                     <h2>UI Components</h2>
                     <div class="major-components">
                         <div class="major-component">
                             <figure>
-                                <a href="../../../public/gamesContent/warframe/ability.png" title="Ability Wheel & Energy System" target="images">
-                                    <img src="../../../public/gamesContent/warframe/ability.png"  alt="Warframe Abilities" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='640' height='360' viewBox='0 0 640 360'%3E%3Crect width='640' height='360' fill='%231a1a2e'/%3E%3Ctext x='320' y='175' font-family='monospace' font-size='16' fill='%234a4a6a' text-anchor='middle'%3E%5B IMAGE UNAVAILABLE %5D%3C/text%3E%3Ctext x='320' y='205' font-family='monospace' font-size='12' fill='%233a3a5a' text-anchor='middle'%3EReplace with game screenshot%3C/text%3E%3C/svg%3E';" loading="lazy">
+                                <a href="../../../public/gamesContent/laraCroftTombRaider/hud.webp" title="Survivor HUD" target="images">
+                                    <img src="../../../public/gamesContent/laraCroftTombRaider/hud.webp" alt="Tomb Raider Survivor HUD">
                                 </a>
-                                <figcaption>FIG 1.1: Ability HUD</figcaption>
+                                <figcaption>FIG 1.1: Survivor HUD</figcaption>
                             </figure>
                             <div>
                                 <span class="count">[ ELEMENT_01 ]</span>
-                                <span class="header-text">Ability Wheel & Energy System</span>
+                                <span class="header-text">Survivor HUD</span>
                                 <p>
-                                    Four Warframe abilities are mapped to a radial system, each consuming Energy to activate. The ability HUD displays cooldowns, energy pool, and ability strength modifiers — a compact but information-dense panel that rewards memorization of each Warframe's unique power set across over 50 distinct frames.
+                                    Tomb Raider employs a dynamic HUD that fades in only when needed — health is communicated through Lara's visual and audio state rather than a persistent bar. When health is critically low, a red vignette creeps in at screen edges and Lara's movement and breathing audio shift, making the UI diegetic rather than overlay-dependent.
                                 </p>
                                 <ul>
-                                    <h6>Ability UI Design</h6>
-                                    <li>Energy Pool Bar Visualization</li>
-                                    <li>Buff/Debuff State Icon Stack</li>
-                                    <li>Contextual Ability Descriptions on Hold</li>
+                                    <h6>Design Principles</h6>
+                                    <li>Diegetic Health Feedback (vignette + audio cues)</li>
+                                    <li>Context-Sensitive Ammo Counter</li>
+                                    <li>Dynamic Crosshair with Accuracy Spread Visualization</li>
                                 </ul>
                             </div>
                         </div>
                         <div class="major-component">
                             <figure>
-                                <a href="../../../public/gamesContent/warframe/mods.jpg" title="Modding System Interface" target="images">
-                                    <img src="../../../public/gamesContent/warframe/mods.jpg"  alt="Warframe Mods" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='640' height='360' viewBox='0 0 640 360'%3E%3Crect width='640' height='360' fill='%231a1a2e'/%3E%3Ctext x='320' y='175' font-family='monospace' font-size='16' fill='%234a4a6a' text-anchor='middle'%3E%5B IMAGE UNAVAILABLE %5D%3C/text%3E%3Ctext x='320' y='205' font-family='monospace' font-size='12' fill='%233a3a5a' text-anchor='middle'%3EReplace with game screenshot%3C/text%3E%3C/svg%3E';" loading="lazy">
+                                <a href="../../../public/gamesContent/laraCroftTombRaider/skillTree.jpg" title="Skill Tree" target="images">
+                                    <img src="../../../public/gamesContent/laraCroftTombRaider/skillTree.jpg" alt="Tomb Raider Skill Tree">
                                 </a>
-                                <figcaption>FIG 1.2: Mod Cards</figcaption>
+                                <figcaption>FIG 1.2: Skill & Upgrade Tree</figcaption>
                             </figure>
                             <div>
                                 <span class="count">[ ELEMENT_02 ]</span>
-                                <span class="header-text">Modding System Interface</span>
+                                <span class="header-text">Skill & Upgrade Tree</span>
                                 <p>
-                                    The Mod configuration screen overlays a card-based system onto Warframes and weapons, where players slot power-enhancing mods into a finite capacity grid. Polarity slots reduce capacity costs, and Forma items restructure polarity — making mod optimization a complex meta-game with its own deep UI vocabulary.
+                                    A layered skill tree separates Lara's growth into Survivor, Hunter, and Brawler categories. Each node visually communicates the type of capability unlocked. The upgrade system for weapons uses salvage collected from the environment, tying mechanical progression to physical exploration — reinforcing the game's survival narrative through its interface.
                                 </p>
                             </div>
                         </div>
                         <div class="major-component">
                             <figure>
-                                <a href="../../../public/gamesContent/warframe/starChart.jpg" title="Star Chart Navigation" target="images">
-                                    <img src="../../../public/gamesContent/warframe/starChart.jpg"  alt="Warframe Star Chart" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='640' height='360' viewBox='0 0 640 360'%3E%3Crect width='640' height='360' fill='%231a1a2e'/%3E%3Ctext x='320' y='175' font-family='monospace' font-size='16' fill='%234a4a6a' text-anchor='middle'%3E%5B IMAGE UNAVAILABLE %5D%3C/text%3E%3Ctext x='320' y='205' font-family='monospace' font-size='12' fill='%233a3a5a' text-anchor='middle'%3EReplace with game screenshot%3C/text%3E%3C/svg%3E';" loading="lazy">
+                                <a href="../../../public/gamesContent/laraCroftTombRaider/survivalInstinct.webp" title="Survival Instinct" target="images">
+                                    <img src="../../../public/gamesContent/laraCroftTombRaider/survivalInstinct.webp" alt="Survival Instinct Mode">
                                 </a>
-                                <figcaption>FIG 1.3: Star Chart</figcaption>
+                                <figcaption>FIG 1.3: Survival Instinct</figcaption>
                             </figure>
                             <div>
                                 <span class="count">[ ELEMENT_03 ]</span>
-                                <span class="header-text">Star Chart Navigation</span>
+                                <span class="header-text">Survival Instinct</span>
                                 <p>
-                                    Mission selection is visualized through a 3D solar system map called the Star Chart. Planets are unlocked by defeating Junction Specters, and each node displays mission type, enemy faction, and level range. The spatial map UI makes progression feel like galactic exploration rather than menu selection.
+                                    Survival Instinct is an optional highlighting mechanic that briefly illuminates interactable objects and objectives in gold when activated. It acts as a low-friction accessibility layer — available on demand without cluttering normal play, allowing experienced players to ignore it and new players to rely on it without penalizing either.
                                 </p>
                             </div>
                         </div>
                     </div>
-                    <h2>Fitt's Law in Hyper-Kinetic Combat HCI</h2>
+                    <h2>Fitt's Law in Traversal & Combat Targeting</h2>
                     <div class="fittslaw">
                         <div>
                             <p>
-                                In Warframe, Fitts's Law applies to both combat aiming and the mod-card interface. During combat, Warframe's extreme movement speed — bullet jumping, air-dashing — changes D continuously, requiring predictive aim rather than direct target tracking. The system rewards spatial anticipation over precise cursor placement.
+                                Fitt's Law applies directly to Tomb Raider's aiming system. The soft lock-on assist effectively reduces the distance (D) to a target by snapping the reticle toward enemy hitboxes, while the target width (W) is modulated by Lara's current weapon, stance, and upgrade level. This creates a measurable progression in interaction efficiency as the player upgrades the bow and pistol.
                             </p>
                             <div class="mathmodel">
                                 <h6>[ MATHEMATICAL MODEL ]</h6>
                                 <span>MT = a + b * log<sub>2</sub>(2D/W)</span>
                             </div>
                             <p>
-                                The radial ability wheel equalizes D for all four abilities from the hold-center position, optimizing acquisition time. However, the Mod configuration UI has historically been cited by players as violating Fitts's Law — small card targets with large gaps create inefficient selection paths in a system players interact with for hours.
+                                As Lara's weapons are upgraded, effective W increases — upgraded weapons have tighter spreads and better aim assist, lowering MT. The progression system is thus an HCI progression system: the game literally reduces the cognitive and motor cost of accurate targeting as the player invests in upgrades.
                             </p>
                         </div>
                         <div>
                             <figure>
-                                <a href="../../../public/gamesContent/warframe/mods.jpg" title="FIG 1.4: Mod Interface" target="images">
-                                    <img src="../../../public/gamesContent/warframe/mods.jpg"  alt="Warframe Mod UI" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='640' height='360' viewBox='0 0 640 360'%3E%3Crect width='640' height='360' fill='%231a1a2e'/%3E%3Ctext x='320' y='175' font-family='monospace' font-size='16' fill='%234a4a6a' text-anchor='middle'%3E%5B IMAGE UNAVAILABLE %5D%3C/text%3E%3Ctext x='320' y='205' font-family='monospace' font-size='12' fill='%233a3a5a' text-anchor='middle'%3EReplace with game screenshot%3C/text%3E%3C/svg%3E';" loading="lazy">
+                                <a href="../../../public/gamesContent/laraCroftTombRaider/aim.jpg" title="FIG 1.4: Aiming System" target="images">
+                                    <img src="../../../public/gamesContent/laraCroftTombRaider/aim.jpg" alt="Tomb Raider Aiming">
                                 </a>
-                                <figcaption>FIG 1.4: Mod Interface</figcaption>
+                                <figcaption>FIG 1.4: Aiming System</figcaption>
                             </figure>
                         </div>
                     </div>
@@ -1341,47 +1314,47 @@
                         <div class="text-center">Layering of Information</div>
                         <ol class="three-columns md-one-columns">
                             <li>
-                                <h6>Mission Objective & Threat Markers</h6>
-                                <p>Primary mission focus. Waypoint arrows and enemy radar blips on the minimap provide constant orientation in large, procedurally generated tile-set environments where spatial memory is unreliable.</p>
+                                <h6>Lara's Physical State</h6>
+                                <p>Primary focus during combat and traversal. Breathing, posture, and screen vignette communicate health and danger at a glance, freeing the player from monitoring a separate health bar.</p>
                             </li>
                             <li>
-                                <h6>Ability & Status HUD</h6>
-                                <p>Secondary combat focus. Active ability icons, shield/health/energy bars, and buff timers surrounding the reticle area enable real-time resource management during high-velocity combat at speeds that challenge conventional HCI.</p>
+                                <h6>Ammo & Weapon State</h6>
+                                <p>Secondary focus. A minimal counter bottom-right tracks ammunition, appearing only when a weapon is drawn. The visual reinforces resource scarcity — a core design tension in the survival narrative.</p>
                             </li>
                             <li>
-                                <h6>World Loot & Resource Indicators</h6>
-                                <p>Tertiary pickup focus. Item acquisition notifications and resource counters appear at screen edges, communicating loot gain without interrupting gameplay flow — though they can be overwhelmed during high-density co-op sessions.</p>
+                                <h6>Environmental Interaction Prompts</h6>
+                                <p>Tertiary focus. Context-sensitive prompts appear only when Lara is in range of an interactive element, keeping the viewport clean during exploration and cinematics.</p>
                             </li>
                         </ol>
                     </div>
                     <div class="footnote">
-                        Warframe receives frequent major updates that alter UI, missions, and systems. This analysis is based on the Warframe Duviri Paradox / Whispers in the Walls era content.
+                        All component analysis is based on the 2013 base release and Definitive Edition (2014). Minor HUD differences exist between platform versions.
                     </div>
                 </section>
                 <section class="game-sections" id="user-interaction">
                     <h2>User Interaction</h2>
                     <p>
-                        An investigation into Warframe's layered HCI design — examining how Digital Extremes balances a notoriously complex meta-game with moment-to-moment fluid action gameplay that demands near-instant interface responsiveness at extreme movement speeds.
+                        An investigation into Tomb Raider's survival-driven interface design — examining how Crystal Dynamics uses progressive ability unlocking and diegetic feedback to mirror Lara's character growth through HCI mechanics.
                     </p>
                     <div class="list-style-area">
                         <h3 class="text-center">Core Gameplay Loop</h3>
                         <div class="text-center"></div>
                         <ol class="four-columns md-two-columns">
                             <li>
-                                <h6>Select & Loadout</h6>
-                                <p>Players configure Warframe, weapons, and companions from the Arsenal — a multi-layer UI requiring mod optimization, build testing, and synergy planning before a mission even begins.</p>
+                                <h6>Explore</h6>
+                                <p>Players navigate semi-open environments, reading environmental cues, finding salvage, and discovering optional tombs that reward problem-solving with skill points and gear upgrades.</p>
                             </li>
                             <li>
-                                <h6>Navigate</h6>
-                                <p>Mission tile-sets are traversed at extreme speed via bullet-jumping, wall-running, and air-sliding. The movement system prioritizes fluidity, with environmental targets acquired in fractions of a second.</p>
+                                <h6>Survive</h6>
+                                <p>Combat requires tactical use of cover, positioning, and resource management. Lara's limited early-game arsenal forces deliberate engagement decisions rather than aggressive play.</p>
                             </li>
                             <li>
-                                <h6>Eliminate</h6>
-                                <p>Enemies are dispatched through weapon fire, Warframe abilities, and melee combos. Ability synergy — grouping enemies before AoE detonation — rewards build-level HCI planning executed at combat speed.</p>
+                                <h6>Upgrade</h6>
+                                <p>Collected salvage and XP are invested into weapon modifications and skill tree nodes, progressively expanding the player's action vocabulary in response to earned progression.</p>
                             </li>
                             <li>
-                                <h6>Extract & Upgrade</h6>
-                                <p>Mission completion triggers a reward screen, then players return to the Orbiter to apply mods, level Warframes, and plan the next progression step in the system.</p>
+                                <h6>Adapt</h6>
+                                <p>New traversal tools — rope arrows, pry axe, fire arrows — physically open previously inaccessible areas, making the world itself respond to Lara's growing capability.</p>
                             </li>
                         </ol>
                     </div>
@@ -1389,13 +1362,13 @@
                     <div class="multi-modal-feedback">
                         <div>
                             <p>
-                                Warframe's feedback design supports a hyper-kinetic combat pace — every sensory channel is calibrated to reward skill expression at speeds that would overwhelm conventional game feedback systems.
+                                Tomb Raider's feedback architecture is built around Lara as the primary feedback device. The game deliberately shifts readouts from the screen to the character model — a powerful HCI strategy that grounds all feedback in narrative and emotional context.
                             </p>
                         </div>
                         <div>
                             <figure>
-                                <a href="../../../public/gamesContent/warframe/multiModal.webp" title="Input to Feedback Loop" target="images">
-                                    <img src="../../../public/gamesContent/warframe/multiModal.webp"  alt="Input to Feedback Loop" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='640' height='360' viewBox='0 0 640 360'%3E%3Crect width='640' height='360' fill='%231a1a2e'/%3E%3Ctext x='320' y='175' font-family='monospace' font-size='16' fill='%234a4a6a' text-anchor='middle'%3E%5B IMAGE UNAVAILABLE %5D%3C/text%3E%3Ctext x='320' y='205' font-family='monospace' font-size='12' fill='%233a3a5a' text-anchor='middle'%3EReplace with game screenshot%3C/text%3E%3C/svg%3E';" loading="lazy">
+                                <a href="../../../public/gamesContent/laraCroftTombRaider/feedback.webp" title="Input to Feedback Loop" target="images">
+                                    <img src="../../../public/gamesContent/laraCroftTombRaider/feedback.webp" alt="Feedback Loop">
                                 </a>
                                 <figcaption>FIG 1.5: Input to Feedback Loop</figcaption>
                             </figure>
@@ -1410,7 +1383,7 @@
                             </div>
                             <div>
                                 <h6>Audio Feedback</h6>
-                                <p>Each Warframe ability has a unique sound signature — Saryn's spore burst differs sonically from Volt's electric discharge. Melee hits produce satisfying heavy impacts that escalate with combo counter, providing audio confirmation of the combo multiplier.</p>
+                                <p>Lara vocalizes pain, exertion, and fear in real time — grunt frequencies and breathing patterns serve as an intuitive health proxy. Enemy dialogue cues flank positions and approaching threats, providing spatial audio that supplements visual awareness without a minimap.</p>
                             </div>
                         </li>
                         <li>
@@ -1422,7 +1395,7 @@
                             </div>
                             <div>
                                 <h6>Visual Feedback</h6>
-                                <p>Ability particle effects are lavishly animated, sometimes creating screen-filling visual noise during co-op play that obscures critical combat information. Damage numbers scale with critical multipliers, displayed in escalating yellow and orange.</p>
+                                <p>Hit markers confirm enemy contact, while blood decals and enemy stagger communicate damage state. Screen-edge vignettes escalate as Lara's health drops, and fire arrow ignitions create environmental illumination that rewards tactical positioning with a genuine visual payoff.</p>
                             </div>
                         </li>
                         <li>
@@ -1433,7 +1406,7 @@
                             </div>
                             <div>
                                 <h6>Haptic Feedback</h6>
-                                <p>Controller rumble distinguishes primary weapon fire from melee, with heavy guns producing stronger sustained vibration. Warframe ability activation triggers brief full-controller pulses that reinforce the powerful transformation narrative of each Warframe's design.</p>
+                                <p>Controller rumble escalates with incoming damage and bow draw tension, reinforcing the physicality of each interaction. Melee finishers deliver sharp, distinct vibration patterns that differentiate successful takedowns from missed inputs, providing confirmation without on-screen prompts.</p>
                             </div>
                         </li>
                     </ul>
@@ -1445,29 +1418,29 @@
                         <div class="cybernetic-content">
                             <div>
                                 <p style="text-align: justify;">
-                                    Warframe's feedback architecture faces a unique challenge: delivering meaningful sensory confirmation at movement speeds that routinely exceed 60 m/s. The system compensates through high-contrast visual effects and audio signatures that are distinct enough to parse during bullet-jump traversal.
+                                    Tomb Raider's interface is built on a character-as-HUD philosophy. The feedback loop routes through Lara's physical and vocal performance rather than screen overlays — a deliberate HCI choice that maintains cinematic immersion while ensuring players are never information-starved. The loop closes within the narrative frame, making mechanical feedback feel emotionally resonant.
                                 </p>
                             </div>
                             <div>
                                 <ul class="primary-modalities">
                                     <h6>Primary Modalities</h6>
-                                    <li><strong>Visual</strong>: Ability particles, damage number scale/color, shield/health bars, buff icon stacks</li>
-                                    <li><strong>Auditory</strong>: Frame-unique ability signatures, melee combo escalation, faction alert cues</li>
-                                    <li><strong>Haptic</strong>: Weapon category rumble differentiation, ability activation pulse</li>
+                                    <li><strong>Visual</strong>: Vignette damage, hit markers, Survival Instinct highlights, skill unlock animations</li>
+                                    <li><strong>Auditory</strong>: Lara's voice, enemy callouts, environmental audio cues</li>
+                                    <li><strong>Haptic</strong>: Bow draw tension, melee impact rumble, damage vibration</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                     <div class="spatial-congruence">
-                        <h2>Spatial Congruence in Procedural Environments</h2>
+                        <h2>Spatial Congruence & Progressive Disclosure</h2>
                         <p style="text-align: justify;">
-                            Warframe's greatest spatial congruence challenge is its procedurally generated tile-set missions — environments change layout between visits, preventing the development of spatial memory. The minimap and waypoint system compensate for this, but at the cost of increased HUD dependency compared to games with fixed, learnable environments.
+                            Tomb Raider uses progressive disclosure as its primary HCI strategy — new UI elements, tools, and interactions are introduced only as Lara acquires new capabilities. The rope arrow doesn't appear in the toolkit until found; the fire arrow mechanic isn't surfaced until needed. This keeps cognitive load manageable throughout and ensures each new interaction element arrives with full contextual grounding rather than front-loading complexity at the start of the game.
                         </p>
                     </div>
                     <div class="cognitive-load-bifurcation">
                         <h2>Cognitive Load Bifurcation</h2>
                         <p style="text-align: justify; margin-bottom: 2em;">
-                            Warframe operates on two distinct cognitive planes: the deep meta-game (modding, build optimization, mastery ranking) and the kinetic gameplay (movement, combat, mission execution). The design wisely keeps these planes temporally separated — the Orbiter is for planning, the mission is for execution — but the gap between them remains one of the game's most significant onboarding failures.
+                            The game reduces Extrinsic Load (the cost of understanding the interface) by embedding feedback in Lara's body and voice, leaving Intrinsic Load (the actual challenge of surviving Yamatai) as the player's primary cognitive focus.
                         </p>
                         <table>
                             <thead>
@@ -1477,28 +1450,27 @@
                                 </tr>
                             </thead>
                             <tbody>
-
                                 <tr>
-                                    <td><h6>Movement System Fluidity</h6><p>Bullet-jump traversal is one of gaming's most physically satisfying movement systems — the HCI of motion is so refined that simply moving through a mission is a source of engagement.</p></td>
-                                    <td><h6>Onboarding Opacity</h6><p>Warframe's new player experience remains notoriously poor. Critical systems — modding, the market, mastery ranking — are either unexplained or explained inadequately, creating a discovery burden that drives player attrition.</p></td>
+                                    <td><h6>Diegetic Health System</h6><p>No persistent health bar. Lara's body and audio replace it, eliminating the need to scan a separate UI element during combat.</p></td>
+                                    <td><h6>Survival Decision-Making</h6><p>The player's full attention is directed toward threat assessment, cover selection, and resource conservation — the actual challenge of the game.</p></td>
                                 </tr>
                                 <tr>
-                                    <td><h6>Warframe Diversity</h6><p>Over 50 Warframes, each with unique abilities, creates extraordinary build diversity. The modding system means two players using the same frame can have entirely different capability profiles.</p></td>
-                                    <td><h6>Visual Noise in Co-op</h6><p>Four players deploying screen-filling ability effects simultaneously creates visual saturation that makes combat parsing nearly impossible — a known issue that scales directly with squad coordination.</p></td>
+                                    <td><h6>On-Demand Survival Instinct</h6><p>Objective highlighting is player-triggered, removing ambient clutter while providing an immediate escape valve when spatial orientation is lost.</p></td>
+                                    <td><h6>Traversal Problem-Solving</h6><p>Environmental puzzles and traversal routes demand spatial reasoning and creative application of Lara's growing tool set.</p></td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                     <div class="footnote">
                         <q>
-                            Warframe is what happens when a game accumulates a decade of content without a corresponding decade of interface revision. Its HCI is both a museum of design evolution and a monument to the tension between depth and accessibility.
+                            In Tomb Raider, the interface doesn't tell you Lara is dying — she does. That choice to route feedback through the character rather than the screen is one of the most elegant HCI decisions in the survival-adventure genre.
                         </q>
                     </div>
                 </section>
                 <section class="game-sections" id="ui-ux-weaknesses">
                     <h2>Strengths and Weaknesses Analysis</h2>
                     <p>
-                        A comprehensive evaluation of Warframe's interface paradigm — examining the tension between a decade of accumulated content depth and the onboarding clarity demanded by a free-to-play game that relies on new player conversion.
+                        A comprehensive evaluation of Tomb Raider's interface paradigm — examining where Crystal Dynamics's survival-first HCI philosophy succeeds and where it creates friction for players navigating Lara's origin story.
                     </p>
                     <table style="margin-bottom: 2em;">
                         <thead>
@@ -1508,66 +1480,65 @@
                             </tr>
                         </thead>
                         <tbody>
-
                             <tr>
                                 <td>
                                     <div class="sw-item-head">
                                         <span class="sw-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" /></svg></span>
-                                        <span class="label">01_MOVEMENT</span>
+                                        <span class="label">01_IMMERSION</span>
                                     </div>
-                                    <h6>Movement HCI Excellence</h6>
-                                    <p>The bullet-jump movement system is one of the most fluid and physically satisfying in gaming. Its HCI — stamina-free, momentum-based, expressive — sets the standard for agile action games.</p>
+                                    <h6>Diegetic Feedback Immersion</h6>
+                                    <p>Routing health and danger feedback through Lara's body and voice maintains cinematic immersion without sacrificing information clarity. Players intuitively understand Lara's state through performance rather than bar-reading.</p>
                                 </td>
                                 <td>
                                     <div class="sw-item-head">
                                         <span class="sw-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v4.5m0 3.75h.008v.008H12v-.008ZM10.29 3.86l-7.5 13A1.5 1.5 0 0 0 4.09 19h15.82a1.5 1.5 0 0 0 1.3-2.14l-7.5-13a1.5 1.5 0 0 0-2.6 0Z" /></svg></span>
-                                        <span class="label">01_ONBOARDING</span>
+                                        <span class="label">01_QTE_FATIGUE</span>
                                     </div>
-                                    <h6>Onboarding Failure</h6>
-                                    <p>The new player experience remains the game's defining weakness. Without external wikis or community guidance, most new players cannot progress past the midgame — a critical HCI failure for a free-to-play title.</p>
+                                    <h6>QTE Overuse</h6>
+                                    <p>The game relies heavily on quick-time events for cinematic moments. While visually spectacular, repeated QTEs reduce player agency to button-watching rather than genuine interaction, undermining the HCI contract during key narrative beats.</p>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
                                     <div class="sw-item-head">
                                         <span class="sw-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" /></svg></span>
-                                        <span class="label">02_DEPTH</span>
+                                        <span class="label">02_PROGRESSION</span>
                                     </div>
-                                    <h6>Build System Depth</h6>
-                                    <p>The modding system creates genuine character expression at a depth matched by few games. Players develop personal build philosophies that make their Warframes feel authored.</p>
+                                    <h6>Tangible Skill Progression</h6>
+                                    <p>The skill tree and weapon upgrade system create a genuinely felt sense of Lara growing more capable. Each upgrade has a tangible HCI effect — tighter spreads, faster reload, new traversal options — making progression feel meaningful rather than cosmetic.</p>
                                 </td>
                                 <td>
                                     <div class="sw-item-head">
                                         <span class="sw-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v4.5m0 3.75h.008v.008H12v-.008ZM10.29 3.86l-7.5 13A1.5 1.5 0 0 0 4.09 19h15.82a1.5 1.5 0 0 0 1.3-2.14l-7.5-13a1.5 1.5 0 0 0-2.6 0Z" /></svg></span>
-                                        <span class="label">02_NOISE</span>
+                                        <span class="label">02_TONAL_WHIPLASH</span>
                                     </div>
-                                    <h6>Visual Overload in Co-op</h6>
-                                    <p>Co-op ability effects create screen-filling visual saturation that makes combat information parsing impossible. This is an unresolved design conflict between visual expression and informational clarity.</p>
+                                    <h6>Tonal Inconsistency</h6>
+                                    <p>The interface's survival framing is undercut by mid-game combat that becomes routine and overpowered. The carefully constructed scarcity of early gameplay collapses as upgrades accumulate, breaking the HCI tension that made early encounters feel meaningful.</p>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
                                     <div class="sw-item-head">
                                         <span class="sw-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" /></svg></span>
-                                        <span class="label">03_DIVERSITY</span>
+                                        <span class="label">03_ACCESSIBILITY</span>
                                     </div>
-                                    <h6>Warframe Variety</h6>
-                                    <p>50+ Warframes with distinct ability sets create replay value that sustains engagement across years. Each frame is effectively a different game, with unique HCI implications per loadout.</p>
+                                    <h6>Survival Instinct Accessibility Layer</h6>
+                                    <p>The optional Survival Instinct mechanic is a textbook example of graceful accessibility design — it lowers the floor for players who need guidance without raising the ceiling for those who don't, adapting to diverse player competencies without penalizing either group.</p>
                                 </td>
                                 <td>
                                     <div class="sw-item-head">
                                         <span class="sw-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v4.5m0 3.75h.008v.008H12v-.008ZM10.29 3.86l-7.5 13A1.5 1.5 0 0 0 4.09 19h15.82a1.5 1.5 0 0 0 1.3-2.14l-7.5-13a1.5 1.5 0 0 0-2.6 0Z" /></svg></span>
-                                        <span class="label">03_ECONOMY</span>
+                                        <span class="label">03_MAP_FRICTION</span>
                                     </div>
-                                    <h6>Economy Opacity</h6>
-                                    <p>The in-game economy — platinum, ducats, standing, credits — involves multiple non-obvious currencies that interact in non-obvious ways. New players routinely make economically suboptimal decisions due to system opacity.</p>
+                                    <h6>Map & Navigation Friction</h6>
+                                    <p>The world map lacks sufficient granularity for backtracking to collectibles and optional tombs. Players who want to complete optional content often face orientation challenges that the map UI does not adequately support, creating avoidable friction in the late-game exploration loop.</p>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                     <div class="footnote summary">
                         <p>
-                            Warframe's HCI is a paradox: the movement and combat systems are among the most fluid and expressive in games, while the meta-game interface — onboarding, economy, modding — is among the most opaque. The game thrives despite its interface barriers because its kinetic reward is powerful enough to motivate the discovery effort. Whether that should be considered good HCI or simply survivable HCI is a meaningful design question.
+                            Tomb Raider's HCI is most powerful when it trusts the player to read Lara rather than the screen. Crystal Dynamics built an interface that mirrors Lara's transformation — sparse and frightening at the start, increasingly capable and confident as the game progresses. Its weaknesses emerge when the systems stop trusting the player and fall back on QTEs and a map that fails the open-world promise of its late-game exploration.
                         </p>
                     </div>
                 </section>
@@ -1598,34 +1569,34 @@
 
 <script>
     // VARIABLES
-    const GAMENAME = "Warframe";
-    const DATERELEASED = "03/25/2013"; // MM/DD/YYYY
-    const PUBLISHER = "Digital Extremes";
+    const GAMENAME = "Tomb Raider";
+    const DATERELEASED = "03/05/2013"; // MM/DD/YYYY
+    const PUBLISHER = "Square Enix";
     const BADGE = "Full Release";
     // Pre-Alpha
     // Alpha
     // Beta
     // Early Access
     // Full Release
-    const POSTERURL = "https://cdn.cloudflare.steamstatic.com/steam/apps/230410/library_600x900.jpg";
-    const POSTERALTTEXT = "Warframe Game Poster";
-    const VIDEOURL = "../../../public/videos/warframe_trailer.mp4";
-    const VIDEOURLYT = "https://www.youtube.com/embed/wrZvkO3BzKg?si=s0fPXGdUVBBQgYwy";
+    const POSTERURL = "https://cdn.cloudflare.steamstatic.com/steam/apps/203160/library_600x900.jpg";
+    const POSTERALTTEXT = "Tomb Raider Game Poster";
+    const VIDEOURL = "../../../public/videos/tombRaider_trailer.mp4";
+    const VIDEOURLYT = "https://www.youtube.com/embed/Ine3pl1kHRM?si=kLnPoaHoRUe7dDIz";
     const YTVID = true;
 
-    const GAMEUSERSTARS = "8.8";
-    const GAMEUSERRATINGS = "223";
+    const GAMEUSERSTARS = "8.5";
+    const GAMEUSERRATINGS = "198";
 
     const HASCRITICS = true; // Set to false if there are no critic ratings
-    const GAMECRITICSTARS = "7.5";
-    const GAMECRITICRATINGS = "36";
+    const GAMECRITICSTARS = "8.7";
+    const GAMECRITICRATINGS = "78";
 
-    const GENRES = ["Action", "Looter Shooter", "Free-to-Play"];
-    const PLATFORMS = ["PC", "PS4", "PS5", "Xbox One", "Xbox Series X/S", "Switch"];
-    const EDITIONS = ["Free-to-Play Base", "Prime Access Packs", "Supporter Packs"];
+    const GENRES = ["Action-Adventure", "Survival", "Third-Person Shooter"];
+    const PLATFORMS = ["PC", "PS3", "PS4", "Xbox 360", "Xbox One"];
+    const EDITIONS = ["Standard Edition", "Survival Edition", "Definitive Edition"];
 
     const DESCRIPTION =
-        "Warframe is a free-to-play action game by Digital Extremes where players control Tenno — ancient warriors piloting biomechanical Warframe suits — across a sci-fi solar system. Featuring hyper-kinetic movement, deep modding systems, over 50 unique Warframes, and a decade of live-service content, it is one of the most complex ongoing games in the industry.";
+        "Tomb Raider (2013) is a gritty origin story reboot of the iconic Lara Croft franchise developed by Crystal Dynamics. Stranded on the mysterious island of Yamatai, a young Lara must overcome brutal survival challenges, uncover an ancient cult, and evolve from frightened survivor to resourceful hero through combat, exploration, and environmental puzzle-solving.";
 
     // Document Variables
     const sectionRadios = Array.from(
@@ -1668,10 +1639,10 @@
     } // Set critic ratings
     for (let el of document.getElementsByClassName("game-poster-content")) {
         el.src = POSTERURL;
-        el.onerror = function(){this.onerror=null;this.src="../../../public/posters/warframe_poster.jpg";}
+        el.onerror = function(){this.onerror=null;this.src="../../../public/posters/laraCroftTombRaider_poster.jpg";}
     } // Set poster content
     document.getElementById("game-poster-img").src = POSTERURL; // Set poster image
-    document.getElementById("game-poster-img").onerror = function(){this.onerror=null;this.src="../../../public/posters/warframe_poster.jpg";}; 
+    document.getElementById("game-poster-img").onerror = function(){this.onerror=null;this.src="../../../public/posters/laraCroftTombRaider_poster.jpg";};
     document.getElementById("game-poster-img").title =
         GAMENAME + " Game Poster"; // Set poster image title
     document.getElementById("game-poster").href = POSTERURL; // Set poster link

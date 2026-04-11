@@ -1002,7 +1002,7 @@
     </style>
     <!-- Custom Styles ------------------------------------------------------------------------------------------ -->
 
-    <title id="title">Warframe - GameUX</title>
+    <title id="title">Uncharted 4 - GameUX</title>
 </head>
 
 <body>
@@ -1097,7 +1097,7 @@
                 <div class="video-game-container">
                     <a class="game-poster" id="game-poster">
                         <img class="game-poster-img" id="game-poster-img" alt="Game Poster" target="images"
-                            title="Warframe Game Poster" />
+                            title="Uncharted 4 Game Poster" />
                     </a>
                     <div class="game-video-wrp">
                         <video class="game-video" id="game-video" controls>
@@ -1200,12 +1200,8 @@
                         User Interaction</label>
                     <label><input type="radio" name="game-section" value="hci-principles" />
                         HCI Principles</label>
-                    <!-- <label><input type="radio" name="game-section" value="strengths" />
-                        Strengths</label> -->
                     <label><input type="radio" name="game-section" value="ui-ux-weaknesses" />
                         Strengths & Weaknesses</label>
-                    <!-- <label><input type="radio" name="game-section" value="conclusion" />
-                        Conclusion</label> -->
                 </nav>
                 <button class="game-info-nav-arrow right" id="game-info-nav-right" type="button"
                     aria-label="Scroll right" hidden>
@@ -1218,121 +1214,98 @@
             </div>
         </div>
 
-
-        <!-- 
-        
-        Sections ==================================================
-        
-        -->
         <article>
             <div class="game-sections-stage">
                 <section class="game-sections" id="short-description">
                     <h2>Overview</h2>
                     <ul class="list-style">
-                        <h2>Warframe Access Types:</h2>
-                        <li>Free-to-Play Base</li>
-                        <li>Prime Access Packs</li>
-                        <li>Supporter Packs</li>
+                        <h2>Uncharted 4 Editions:</h2>
+                        <li>Standard Edition</li>
+                        <li>Special Edition</li>
+                        <li>Libertalia Collector's Edition</li>
                     </ul>
                     <p>
-                        Warframe is a free-to-play action game developed and published by Digital Extremes, first launched in 2013 for PC. Players take on the role of Tenno — ancient warriors who emerge from cryo-stasis to pilot powerful biomechanical exosuits called Warframes across a sci-fi solar system in perpetual conflict between the Grineer, Corpus, Infested, and Sentient factions.
+                        Uncharted 4: A Thief's End is an action-adventure game developed by Naughty Dog and published by Sony Interactive Entertainment. Released on May 10, 2016 for PlayStation 4, it concludes the story of Nathan Drake — a treasure hunter pulled out of retirement by his long-lost brother Sam for one final adventure in search of the legendary pirate colony of Libertalia. A Legacy of Thieves Collection brought the game to PC in October 2022.
                     </p>
                     <p>
-                        Warframe's infamous 'Second Dream' quest is credited with transforming its initially opaque design into a narrative-driven experience. Despite significant interface complexity — over 50 Warframes, 500+ weapons, deep modding trees, and clan-based progression — its fluid movement system and community-driven content pipeline make it a compelling case study in balancing accessibility with extraordinary depth.
+                        Uncharted 4 represents Naughty Dog's most ambitious HCI achievement in the series — blending fluid third-person climbing, cover-based combat, vehicle traversal, and stealth into a cinematic package that makes the transition between gameplay and storytelling nearly invisible. Its interface design philosophy prioritizes the player feeling like they are inside a summer blockbuster rather than reading a screen.
                     </p>
-                    <ul class="metrics-list">
-                        <li>
-                            <h6>Cognitive Load</h6>
-                            <div class="value">Very High</div>
-                            <div class="desc">Number of simultaneous elements a player tracks</div>
-                        </li>
-                        <li>
-                            <h6>Response Time</h6>
-                            <div class="value">±30ms to ±150ms</div>
-                            <div class="desc">Time between user action and system feedback</div>
-                        </li>
-                        <li>
-                            <h6>Visual Reaction Time</h6>
-                            <div class="value">~100ms to ~400ms</div>
-                            <div class="desc">Time for a player to respond to visual stimuli</div>
-                        </li>
-                    </ul>
                 </section>
                 <section class="game-sections" id="ui-components">
                     <h2>UI Components</h2>
                     <div class="major-components">
                         <div class="major-component">
                             <figure>
-                                <a href="../../../public/gamesContent/warframe/ability.png" title="Ability Wheel & Energy System" target="images">
-                                    <img src="../../../public/gamesContent/warframe/ability.png"  alt="Warframe Abilities" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='640' height='360' viewBox='0 0 640 360'%3E%3Crect width='640' height='360' fill='%231a1a2e'/%3E%3Ctext x='320' y='175' font-family='monospace' font-size='16' fill='%234a4a6a' text-anchor='middle'%3E%5B IMAGE UNAVAILABLE %5D%3C/text%3E%3Ctext x='320' y='205' font-family='monospace' font-size='12' fill='%233a3a5a' text-anchor='middle'%3EReplace with game screenshot%3C/text%3E%3C/svg%3E';" loading="lazy">
+                                <a href="../../../public/gamesContent/uncharted/hud.jpg" title="Cinematic HUD" target="images">
+                                    <img src="../../../public/gamesContent/uncharted/hud.jpg" alt="Uncharted 4 HUD">
                                 </a>
-                                <figcaption>FIG 1.1: Ability HUD</figcaption>
+                                <figcaption>FIG 1.1: Cinematic HUD</figcaption>
                             </figure>
                             <div>
                                 <span class="count">[ ELEMENT_01 ]</span>
-                                <span class="header-text">Ability Wheel & Energy System</span>
+                                <span class="header-text">Cinematic HUD</span>
                                 <p>
-                                    Four Warframe abilities are mapped to a radial system, each consuming Energy to activate. The ability HUD displays cooldowns, energy pool, and ability strength modifiers — a compact but information-dense panel that rewards memorization of each Warframe's unique power set across over 50 distinct frames.
+                                    Uncharted 4 uses an extremely minimal HUD — health is communicated through a subtle white screen-edge flash and regenerates automatically via cover, eliminating persistent health bars. Ammo counters appear only when a weapon is drawn and fade when not actively needed. The design philosophy is to keep the player's eyes on the world, not the interface.
                                 </p>
                                 <ul>
-                                    <h6>Ability UI Design</h6>
-                                    <li>Energy Pool Bar Visualization</li>
-                                    <li>Buff/Debuff State Icon Stack</li>
-                                    <li>Contextual Ability Descriptions on Hold</li>
+                                    <h6>Design Principles</h6>
+                                    <li>Auto-Regenerating Health (no persistent bar)</li>
+                                    <li>Context-Sensitive Ammo Display</li>
+                                    <li>Cinematic Letterbox during Story Moments</li>
                                 </ul>
                             </div>
                         </div>
                         <div class="major-component">
                             <figure>
-                                <a href="../../../public/gamesContent/warframe/mods.jpg" title="Modding System Interface" target="images">
-                                    <img src="../../../public/gamesContent/warframe/mods.jpg"  alt="Warframe Mods" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='640' height='360' viewBox='0 0 640 360'%3E%3Crect width='640' height='360' fill='%231a1a2e'/%3E%3Ctext x='320' y='175' font-family='monospace' font-size='16' fill='%234a4a6a' text-anchor='middle'%3E%5B IMAGE UNAVAILABLE %5D%3C/text%3E%3Ctext x='320' y='205' font-family='monospace' font-size='12' fill='%233a3a5a' text-anchor='middle'%3EReplace with game screenshot%3C/text%3E%3C/svg%3E';" loading="lazy">
+                                <a href="../../../public/gamesContent/uncharted/grapple.jpg" title="Grapple Hook Traversal" target="images">
+                                    <img src="../../../public/gamesContent/uncharted/grapple.jpg" alt="Uncharted 4 Grapple">
                                 </a>
-                                <figcaption>FIG 1.2: Mod Cards</figcaption>
+                                <figcaption>FIG 1.2: Grapple Hook Traversal</figcaption>
                             </figure>
                             <div>
                                 <span class="count">[ ELEMENT_02 ]</span>
-                                <span class="header-text">Modding System Interface</span>
+                                <span class="header-text">Grapple Hook Traversal</span>
                                 <p>
-                                    The Mod configuration screen overlays a card-based system onto Warframes and weapons, where players slot power-enhancing mods into a finite capacity grid. Polarity slots reduce capacity costs, and Forma items restructure polarity — making mod optimization a complex meta-game with its own deep UI vocabulary.
+                                    The grapple hook is Uncharted 4's primary new traversal tool — anchoring to ledges and tree branches to enable sweeping momentum-based movement. Its HCI design is elegant: anchor points are subtle but visually distinct, and the hook fires on a single button press with no aiming UI required. The system communicates its possibilities through environmental design rather than HUD prompts.
                                 </p>
                             </div>
                         </div>
                         <div class="major-component">
                             <figure>
-                                <a href="../../../public/gamesContent/warframe/starChart.jpg" title="Star Chart Navigation" target="images">
-                                    <img src="../../../public/gamesContent/warframe/starChart.jpg"  alt="Warframe Star Chart" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='640' height='360' viewBox='0 0 640 360'%3E%3Crect width='640' height='360' fill='%231a1a2e'/%3E%3Ctext x='320' y='175' font-family='monospace' font-size='16' fill='%234a4a6a' text-anchor='middle'%3E%5B IMAGE UNAVAILABLE %5D%3C/text%3E%3Ctext x='320' y='205' font-family='monospace' font-size='12' fill='%233a3a5a' text-anchor='middle'%3EReplace with game screenshot%3C/text%3E%3C/svg%3E';" loading="lazy">
+                                <a href="../../../public/gamesContent/uncharted/fluid.webp" title="Cover System" target="images">
+                                    <img src="../../../public/gamesContent/uncharted/fluid.webp" alt="Uncharted 4 Cover System">
                                 </a>
-                                <figcaption>FIG 1.3: Star Chart</figcaption>
+                                <figcaption>FIG 1.3: Cover System</figcaption>
                             </figure>
                             <div>
                                 <span class="count">[ ELEMENT_03 ]</span>
-                                <span class="header-text">Star Chart Navigation</span>
+                                <span class="header-text">Fluid Cover System</span>
                                 <p>
-                                    Mission selection is visualized through a 3D solar system map called the Star Chart. Planets are unlocked by defeating Junction Specters, and each node displays mission type, enemy faction, and level range. The spatial map UI makes progression feel like galactic exploration rather than menu selection.
+                                    The cover system uses a single contextual button to snap Drake to surfaces, peek, lean out, and vault — reducing cognitive overhead to a single interaction verb. The system intelligently reads the environment to determine whether Nathan climbs over or slides under an obstacle, making multi-part traversal sequences feel continuous and uninterrupted.
                                 </p>
                             </div>
                         </div>
                     </div>
-                    <h2>Fitt's Law in Hyper-Kinetic Combat HCI</h2>
+                    <h2>Fitt's Law in Cinematic Combat HCI</h2>
                     <div class="fittslaw">
                         <div>
                             <p>
-                                In Warframe, Fitts's Law applies to both combat aiming and the mod-card interface. During combat, Warframe's extreme movement speed — bullet jumping, air-dashing — changes D continuously, requiring predictive aim rather than direct target tracking. The system rewards spatial anticipation over precise cursor placement.
+                                Fitt's Law maps directly to Uncharted 4's aiming design. The soft aim-assist snaps the reticle toward enemy torsos, reducing effective distance (D) to the target. The aim window (W) is generous by design — Naughty Dog prioritizes narrative momentum over mechanical friction, ensuring players spend less time fighting the controls and more time experiencing the story.
                             </p>
                             <div class="mathmodel">
                                 <h6>[ MATHEMATICAL MODEL ]</h6>
                                 <span>MT = a + b * log<sub>2</sub>(2D/W)</span>
                             </div>
                             <p>
-                                The radial ability wheel equalizes D for all four abilities from the hold-center position, optimizing acquisition time. However, the Mod configuration UI has historically been cited by players as violating Fitts's Law — small card targets with large gaps create inefficient selection paths in a system players interact with for hours.
+                                Uncharted 4 deliberately maximizes W (effective target width via aim assist) and minimizes D (snap-to-target distance) to lower MT — keeping combat fast and readable rather than demanding. The design prioritizes cinematic flow over technical skill expression, an intentional HCI trade-off that makes the game broadly accessible while maintaining moment-to-moment tension.
                             </p>
                         </div>
                         <div>
                             <figure>
-                                <a href="../../../public/gamesContent/warframe/mods.jpg" title="FIG 1.4: Mod Interface" target="images">
-                                    <img src="../../../public/gamesContent/warframe/mods.jpg"  alt="Warframe Mod UI" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='640' height='360' viewBox='0 0 640 360'%3E%3Crect width='640' height='360' fill='%231a1a2e'/%3E%3Ctext x='320' y='175' font-family='monospace' font-size='16' fill='%234a4a6a' text-anchor='middle'%3E%5B IMAGE UNAVAILABLE %5D%3C/text%3E%3Ctext x='320' y='205' font-family='monospace' font-size='12' fill='%233a3a5a' text-anchor='middle'%3EReplace with game screenshot%3C/text%3E%3C/svg%3E';" loading="lazy">
+                                <a href="../../../public/gamesContent/uncharted/combat.avif" title="FIG 1.4: Aiming System" target="images">
+                                    <img src="../../../public/gamesContent/uncharted/combat.avif" alt="Uncharted 4 Aiming">
                                 </a>
-                                <figcaption>FIG 1.4: Mod Interface</figcaption>
+                                <figcaption>FIG 1.4: Aiming System</figcaption>
                             </figure>
                         </div>
                     </div>
@@ -1341,47 +1314,47 @@
                         <div class="text-center">Layering of Information</div>
                         <ol class="three-columns md-one-columns">
                             <li>
-                                <h6>Mission Objective & Threat Markers</h6>
-                                <p>Primary mission focus. Waypoint arrows and enemy radar blips on the minimap provide constant orientation in large, procedurally generated tile-set environments where spatial memory is unreliable.</p>
+                                <h6>World & Character</h6>
+                                <p>Primary focus at all times. Naughty Dog's environmental design communicates traversal paths, cover positions, and narrative beats without overlays — white paint on ledges, yellow rope on climbable elements, and enemy positioning are the HUD.</p>
                             </li>
                             <li>
-                                <h6>Ability & Status HUD</h6>
-                                <p>Secondary combat focus. Active ability icons, shield/health/energy bars, and buff timers surrounding the reticle area enable real-time resource management during high-velocity combat at speeds that challenge conventional HCI.</p>
+                                <h6>Combat Feedback</h6>
+                                <p>Secondary focus during encounters. Hit markers, directional damage indicators, and enemy suppression states are communicated through minimal screen overlays that appear and fade quickly, preserving cinematic framing.</p>
                             </li>
                             <li>
-                                <h6>World Loot & Resource Indicators</h6>
-                                <p>Tertiary pickup focus. Item acquisition notifications and resource counters appear at screen edges, communicating loot gain without interrupting gameplay flow — though they can be overwhelmed during high-density co-op sessions.</p>
+                                <h6>Contextual Action Prompts</h6>
+                                <p>Tertiary, on-demand focus. Button prompts surface only when Nathan is in range of an interaction, maintaining a clean screen during exploration and cinematics while ensuring discoverability is never sacrificed.</p>
                             </li>
                         </ol>
                     </div>
                     <div class="footnote">
-                        Warframe receives frequent major updates that alter UI, missions, and systems. This analysis is based on the Warframe Duviri Paradox / Whispers in the Walls era content.
+                        All component analysis is based on the PS4 original release. The PC Legacy of Thieves Collection (2022) introduced updated resolution support and minor UI refinements.
                     </div>
                 </section>
                 <section class="game-sections" id="user-interaction">
                     <h2>User Interaction</h2>
                     <p>
-                        An investigation into Warframe's layered HCI design — examining how Digital Extremes balances a notoriously complex meta-game with moment-to-moment fluid action gameplay that demands near-instant interface responsiveness at extreme movement speeds.
+                        An investigation into Uncharted 4's cinematic-first interface design — examining how Naughty Dog dissolves the boundary between gameplay and storytelling through seamless HCI transitions and world-embedded feedback systems.
                     </p>
                     <div class="list-style-area">
                         <h3 class="text-center">Core Gameplay Loop</h3>
                         <div class="text-center"></div>
                         <ol class="four-columns md-two-columns">
                             <li>
-                                <h6>Select & Loadout</h6>
-                                <p>Players configure Warframe, weapons, and companions from the Arsenal — a multi-layer UI requiring mod optimization, build testing, and synergy planning before a mission even begins.</p>
+                                <h6>Traverse</h6>
+                                <p>Players navigate richly detailed environments through climbing, grappling, and sliding — with the game seamlessly blending scripted cinematic moments into gameplay traversal without loading screens or HUD interruptions.</p>
                             </li>
                             <li>
-                                <h6>Navigate</h6>
-                                <p>Mission tile-sets are traversed at extreme speed via bullet-jumping, wall-running, and air-sliding. The movement system prioritizes fluidity, with environmental targets acquired in fractions of a second.</p>
+                                <h6>Explore</h6>
+                                <p>Optional collectibles, environmental storytelling notes, and hidden paths reward thorough exploration. Drake's journal fills automatically with clues and observations, making exploration feel authored rather than checklist-driven.</p>
                             </li>
                             <li>
-                                <h6>Eliminate</h6>
-                                <p>Enemies are dispatched through weapon fire, Warframe abilities, and melee combos. Ability synergy — grouping enemies before AoE detonation — rewards build-level HCI planning executed at combat speed.</p>
+                                <h6>Engage</h6>
+                                <p>Combat offers player choice between aggressive gunfighting, stealth takedowns, or hybrid approaches that flow naturally between states. The cover system and grapple enable creative positioning without breaking the game's pacing.</p>
                             </li>
                             <li>
-                                <h6>Extract & Upgrade</h6>
-                                <p>Mission completion triggers a reward screen, then players return to the Orbiter to apply mods, level Warframes, and plan the next progression step in the system.</p>
+                                <h6>Experience</h6>
+                                <p>Conversations, cutscenes, and interactive story moments blend into gameplay without hard transitions — the player retains control of Nathan's movement even during dialogue, keeping immersion unbroken throughout the narrative.</p>
                             </li>
                         </ol>
                     </div>
@@ -1389,13 +1362,13 @@
                     <div class="multi-modal-feedback">
                         <div>
                             <p>
-                                Warframe's feedback design supports a hyper-kinetic combat pace — every sensory channel is calibrated to reward skill expression at speeds that would overwhelm conventional game feedback systems.
+                                Uncharted 4's feedback architecture is designed to be felt rather than read. The DualShock 4's rumble, Nathan's vocal performance, and environmental audio work in concert to communicate game state — keeping the player informed without surfacing data on screen.
                             </p>
                         </div>
                         <div>
                             <figure>
-                                <a href="../../../public/gamesContent/warframe/multiModal.webp" title="Input to Feedback Loop" target="images">
-                                    <img src="../../../public/gamesContent/warframe/multiModal.webp"  alt="Input to Feedback Loop" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='640' height='360' viewBox='0 0 640 360'%3E%3Crect width='640' height='360' fill='%231a1a2e'/%3E%3Ctext x='320' y='175' font-family='monospace' font-size='16' fill='%234a4a6a' text-anchor='middle'%3E%5B IMAGE UNAVAILABLE %5D%3C/text%3E%3Ctext x='320' y='205' font-family='monospace' font-size='12' fill='%233a3a5a' text-anchor='middle'%3EReplace with game screenshot%3C/text%3E%3C/svg%3E';" loading="lazy">
+                                <a href="../../../public/gamesContent/uncharted/feedback.jpg" title="Input to Feedback Loop" target="images">
+                                    <img src="../../../public/gamesContent/uncharted/feedback.jpg" alt="Feedback Loop">
                                 </a>
                                 <figcaption>FIG 1.5: Input to Feedback Loop</figcaption>
                             </figure>
@@ -1410,7 +1383,7 @@
                             </div>
                             <div>
                                 <h6>Audio Feedback</h6>
-                                <p>Each Warframe ability has a unique sound signature — Saryn's spore burst differs sonically from Volt's electric discharge. Melee hits produce satisfying heavy impacts that escalate with combo counter, providing audio confirmation of the combo multiplier.</p>
+                                <p>Nathan and Sam's real-time banter during traversal sequences communicates environmental awareness — they call out handholds, warn of enemy positions, and react to near-misses. This dialogue-as-HUD approach eliminates the need for waypoint markers in many traversal sections, using voice performance as a directional audio cue system.</p>
                             </div>
                         </li>
                         <li>
@@ -1422,7 +1395,7 @@
                             </div>
                             <div>
                                 <h6>Visual Feedback</h6>
-                                <p>Ability particle effects are lavishly animated, sometimes creating screen-filling visual noise during co-op play that obscures critical combat information. Damage numbers scale with critical multipliers, displayed in escalating yellow and orange.</p>
+                                <p>White painted ledges and yellow rope subtly mark climbable surfaces without breaking visual realism. Hit sparks and enemy stumble animations confirm combat success. The letterbox cinematic bars that slide in during story moments act as a visual signal that the game is transitioning modes — an elegant UX convention the player learns without being taught.</p>
                             </div>
                         </li>
                         <li>
@@ -1433,7 +1406,7 @@
                             </div>
                             <div>
                                 <h6>Haptic Feedback</h6>
-                                <p>Controller rumble distinguishes primary weapon fire from melee, with heavy guns producing stronger sustained vibration. Warframe ability activation triggers brief full-controller pulses that reinforce the powerful transformation narrative of each Warframe's design.</p>
+                                <p>The DualShock 4 rumble differentiates weapon types — pistol shots produce brief pulses while explosions deliver sustained vibration. Rope swings generate escalating rumble at the swing's apex, and Drake's footing on unstable surfaces produces subtle irregular feedback that alerts the player to traversal risk before a fall occurs.</p>
                             </div>
                         </li>
                     </ul>
@@ -1445,29 +1418,29 @@
                         <div class="cybernetic-content">
                             <div>
                                 <p style="text-align: justify;">
-                                    Warframe's feedback architecture faces a unique challenge: delivering meaningful sensory confirmation at movement speeds that routinely exceed 60 m/s. The system compensates through high-contrast visual effects and audio signatures that are distinct enough to parse during bullet-jump traversal.
+                                    Uncharted 4's feedback loop is engineered around the concept of seamless mode blending — the game continuously slides between traversal, combat, stealth, and cinematic narrative without hard mode switches. Each state transition is managed through audio, animation, and subtle HUD changes rather than explicit UI signals, making the game's internal state machine invisible to the player.
                                 </p>
                             </div>
                             <div>
                                 <ul class="primary-modalities">
                                     <h6>Primary Modalities</h6>
-                                    <li><strong>Visual</strong>: Ability particles, damage number scale/color, shield/health bars, buff icon stacks</li>
-                                    <li><strong>Auditory</strong>: Frame-unique ability signatures, melee combo escalation, faction alert cues</li>
-                                    <li><strong>Haptic</strong>: Weapon category rumble differentiation, ability activation pulse</li>
+                                    <li><strong>Visual</strong>: Letterbox bars, hit markers, environmental traversal cues (white paint, yellow rope), directional damage flash</li>
+                                    <li><strong>Auditory</strong>: Character dialogue as waypoint system, weapon audio differentiation, ambient enemy chatter</li>
+                                    <li><strong>Haptic</strong>: Weapon-specific rumble patterns, rope swing tension, surface instability feedback</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                     <div class="spatial-congruence">
-                        <h2>Spatial Congruence in Procedural Environments</h2>
+                        <h2>Spatial Congruence & Environmental Storytelling</h2>
                         <p style="text-align: justify;">
-                            Warframe's greatest spatial congruence challenge is its procedurally generated tile-set missions — environments change layout between visits, preventing the development of spatial memory. The minimap and waypoint system compensate for this, but at the cost of increased HUD dependency compared to games with fixed, learnable environments.
+                            Uncharted 4 achieves spatial congruence by embedding navigation, combat, and narrative information directly into the environment. Traversal paths are marked with subtle real-world logic — wet rock reflects light, handholds are worn smooth, structural anchors are visually distinct from decorative elements. The player's mental model maps directly to how the world works physically, eliminating the need for waypoint markers across the vast majority of the game's traversal sections.
                         </p>
                     </div>
                     <div class="cognitive-load-bifurcation">
                         <h2>Cognitive Load Bifurcation</h2>
                         <p style="text-align: justify; margin-bottom: 2em;">
-                            Warframe operates on two distinct cognitive planes: the deep meta-game (modding, build optimization, mastery ranking) and the kinetic gameplay (movement, combat, mission execution). The design wisely keeps these planes temporally separated — the Orbiter is for planning, the mission is for execution — but the gap between them remains one of the game's most significant onboarding failures.
+                            Naughty Dog's core HCI philosophy here is maximum Intrinsic engagement — keeping the player absorbed in the narrative and adventure — by aggressively minimizing Extrinsic interface overhead.
                         </p>
                         <table>
                             <thead>
@@ -1477,28 +1450,27 @@
                                 </tr>
                             </thead>
                             <tbody>
-
                                 <tr>
-                                    <td><h6>Movement System Fluidity</h6><p>Bullet-jump traversal is one of gaming's most physically satisfying movement systems — the HCI of motion is so refined that simply moving through a mission is a source of engagement.</p></td>
-                                    <td><h6>Onboarding Opacity</h6><p>Warframe's new player experience remains notoriously poor. Critical systems — modding, the market, mastery ranking — are either unexplained or explained inadequately, creating a discovery burden that drives player attrition.</p></td>
+                                    <td><h6>Auto-Regenerating Health</h6><p>Removing the health management system eliminates a cognitive management task, letting players focus on tactical positioning and momentum rather than resource economy.</p></td>
+                                    <td><h6>Narrative Engagement</h6><p>The player's attention is directed toward character relationships, environmental storytelling, and the emotional weight of Nathan's final adventure rather than mechanical systems.</p></td>
                                 </tr>
                                 <tr>
-                                    <td><h6>Warframe Diversity</h6><p>Over 50 Warframes, each with unique abilities, creates extraordinary build diversity. The modding system means two players using the same frame can have entirely different capability profiles.</p></td>
-                                    <td><h6>Visual Noise in Co-op</h6><p>Four players deploying screen-filling ability effects simultaneously creates visual saturation that makes combat parsing nearly impossible — a known issue that scales directly with squad coordination.</p></td>
+                                    <td><h6>Contextual Button Prompts</h6><p>Prompts appear only when in range, removing persistent UI noise during exploration and cinematics — the player is never reading a cluttered screen during story moments.</p></td>
+                                    <td><h6>Traversal Problem-Solving</h6><p>Environmental navigation demands spatial reasoning and momentum management — the complexity is in the world's design, not the interface's complexity.</p></td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                     <div class="footnote">
                         <q>
-                            Warframe is what happens when a game accumulates a decade of content without a corresponding decade of interface revision. Its HCI is both a museum of design evolution and a monument to the tension between depth and accessibility.
+                            Uncharted 4's HCI achievement is making the player forget there is an interface at all. When Nathan and Sam banter through a perilous climb, the player isn't reading a screen — they're inside the story.
                         </q>
                     </div>
                 </section>
                 <section class="game-sections" id="ui-ux-weaknesses">
                     <h2>Strengths and Weaknesses Analysis</h2>
                     <p>
-                        A comprehensive evaluation of Warframe's interface paradigm — examining the tension between a decade of accumulated content depth and the onboarding clarity demanded by a free-to-play game that relies on new player conversion.
+                        A comprehensive evaluation of Uncharted 4's interface paradigm — examining where Naughty Dog's cinematic-first HCI philosophy excels and where it creates friction for players who want deeper mechanical engagement.
                     </p>
                     <table style="margin-bottom: 2em;">
                         <thead>
@@ -1508,66 +1480,65 @@
                             </tr>
                         </thead>
                         <tbody>
-
                             <tr>
                                 <td>
                                     <div class="sw-item-head">
                                         <span class="sw-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" /></svg></span>
-                                        <span class="label">01_MOVEMENT</span>
+                                        <span class="label">01_IMMERSION</span>
                                     </div>
-                                    <h6>Movement HCI Excellence</h6>
-                                    <p>The bullet-jump movement system is one of the most fluid and physically satisfying in gaming. Its HCI — stamina-free, momentum-based, expressive — sets the standard for agile action games.</p>
+                                    <h6>Seamless Mode Blending</h6>
+                                    <p>The invisible transitions between traversal, combat, stealth, and cinematics create an unprecedented sense of flow. Players experience the game as a continuous lived adventure rather than a sequence of distinct gameplay modes with loading states between them.</p>
                                 </td>
                                 <td>
                                     <div class="sw-item-head">
                                         <span class="sw-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v4.5m0 3.75h.008v.008H12v-.008ZM10.29 3.86l-7.5 13A1.5 1.5 0 0 0 4.09 19h15.82a1.5 1.5 0 0 0 1.3-2.14l-7.5-13a1.5 1.5 0 0 0-2.6 0Z" /></svg></span>
-                                        <span class="label">01_ONBOARDING</span>
+                                        <span class="label">01_DEPTH</span>
                                     </div>
-                                    <h6>Onboarding Failure</h6>
-                                    <p>The new player experience remains the game's defining weakness. Without external wikis or community guidance, most new players cannot progress past the midgame — a critical HCI failure for a free-to-play title.</p>
+                                    <h6>Shallow Mechanical Depth</h6>
+                                    <p>The prioritization of cinematic accessibility over mechanical challenge means combat lacks the depth of contemporaries. Players who seek systemic engagement find combat resolves quickly and offers limited build or tactical expression — a deliberate trade-off that not all players embrace.</p>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
                                     <div class="sw-item-head">
                                         <span class="sw-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" /></svg></span>
-                                        <span class="label">02_DEPTH</span>
+                                        <span class="label">02_TRAVERSAL</span>
                                     </div>
-                                    <h6>Build System Depth</h6>
-                                    <p>The modding system creates genuine character expression at a depth matched by few games. Players develop personal build philosophies that make their Warframes feel authored.</p>
+                                    <h6>Traversal Feel & Momentum</h6>
+                                    <p>The grapple hook and rope swing introduce genuine momentum-based traversal that rewards spatial awareness and timing. The physicality of Drake's movement communicates weight and consequence — each swing and slide feels authored rather than mechanical.</p>
                                 </td>
                                 <td>
                                     <div class="sw-item-head">
                                         <span class="sw-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v4.5m0 3.75h.008v.008H12v-.008ZM10.29 3.86l-7.5 13A1.5 1.5 0 0 0 4.09 19h15.82a1.5 1.5 0 0 0 1.3-2.14l-7.5-13a1.5 1.5 0 0 0-2.6 0Z" /></svg></span>
-                                        <span class="label">02_NOISE</span>
+                                        <span class="label">02_LINEARITY</span>
                                     </div>
-                                    <h6>Visual Overload in Co-op</h6>
-                                    <p>Co-op ability effects create screen-filling visual saturation that makes combat information parsing impossible. This is an unresolved design conflict between visual expression and informational clarity.</p>
+                                    <h6>Path Ambiguity in Open Areas</h6>
+                                    <p>The game's broader open environments in chapters like Scotland and Madagascar can create spatial confusion — the subtle environmental traversal cues that work perfectly in linear sections become harder to parse when the solution space expands, occasionally producing player disorientation without adequate HCI support.</p>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
                                     <div class="sw-item-head">
                                         <span class="sw-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" /></svg></span>
-                                        <span class="label">03_DIVERSITY</span>
+                                        <span class="label">03_ACCESSIBILITY</span>
                                     </div>
-                                    <h6>Warframe Variety</h6>
-                                    <p>50+ Warframes with distinct ability sets create replay value that sustains engagement across years. Each frame is effectively a different game, with unique HCI implications per loadout.</p>
+                                    <h6>Broad Player Accessibility</h6>
+                                    <p>The generous aim assist, auto-regenerating health, and clear contextual prompts make Uncharted 4 one of the most accessible action-adventure games of its generation — welcoming non-traditional gamers into the experience without sacrificing the sense of adventure for skilled players.</p>
                                 </td>
                                 <td>
                                     <div class="sw-item-head">
                                         <span class="sw-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v4.5m0 3.75h.008v.008H12v-.008ZM10.29 3.86l-7.5 13A1.5 1.5 0 0 0 4.09 19h15.82a1.5 1.5 0 0 0 1.3-2.14l-7.5-13a1.5 1.5 0 0 0-2.6 0Z" /></svg></span>
-                                        <span class="label">03_ECONOMY</span>
+                                        <span class="label">03_AGENCY</span>
                                     </div>
-                                    <h6>Economy Opacity</h6>
-                                    <p>The in-game economy — platinum, ducats, standing, credits — involves multiple non-obvious currencies that interact in non-obvious ways. New players routinely make economically suboptimal decisions due to system opacity.</p>
+                                    <h6>Constrained Player Agency</h6>
+                                    <p>The cinematic-first design necessarily constrains player freedom. Scripted traversal sequences, forced walk-and-talk sections, and unskippable environmental set-pieces prioritize authorial vision over player agency — a valid creative choice that nonetheless limits the HCI expressiveness available to players who want to engage on their own terms.</p>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                     <div class="footnote summary">
                         <p>
-                            Warframe's HCI is a paradox: the movement and combat systems are among the most fluid and expressive in games, while the meta-game interface — onboarding, economy, modding — is among the most opaque. The game thrives despite its interface barriers because its kinetic reward is powerful enough to motivate the discovery effort. Whether that should be considered good HCI or simply survivable HCI is a meaningful design question.
+                            Uncharted 4's HCI is a masterclass in cinematic integration — the interface retreats so successfully that millions of players completed the game without consciously engaging with a single HUD element. Its trade-off is deliberate: mechanical depth is sacrificed for emotional depth, and the player's agency is shaped by narrative necessity. Whether that trade-off is a strength or weakness depends entirely on what you believe games are for.
                         </p>
                     </div>
                 </section>
@@ -1598,34 +1569,34 @@
 
 <script>
     // VARIABLES
-    const GAMENAME = "Warframe";
-    const DATERELEASED = "03/25/2013"; // MM/DD/YYYY
-    const PUBLISHER = "Digital Extremes";
+    const GAMENAME = "Uncharted 4: A Thief's End";
+    const DATERELEASED = "05/10/2016"; // MM/DD/YYYY
+    const PUBLISHER = "Sony Interactive Entertainment";
     const BADGE = "Full Release";
     // Pre-Alpha
     // Alpha
     // Beta
     // Early Access
     // Full Release
-    const POSTERURL = "https://cdn.cloudflare.steamstatic.com/steam/apps/230410/library_600x900.jpg";
-    const POSTERALTTEXT = "Warframe Game Poster";
-    const VIDEOURL = "../../../public/videos/warframe_trailer.mp4";
-    const VIDEOURLYT = "https://www.youtube.com/embed/wrZvkO3BzKg?si=s0fPXGdUVBBQgYwy";
+    const POSTERURL = "https://cdn.cloudflare.steamstatic.com/steam/apps/1659420/library_600x900.jpg";
+    const POSTERALTTEXT = "Uncharted 4 Game Poster";
+    const VIDEOURL = "../../../public/videos/uncharted_trailer.mp4";
+    const VIDEOURLYT = "https://www.youtube.com/embed/gNvLwy-iMOk?si=2C-2iOx3rY_vxzpv";
     const YTVID = true;
 
-    const GAMEUSERSTARS = "8.8";
-    const GAMEUSERRATINGS = "223";
+    const GAMEUSERSTARS = "9.1";
+    const GAMEUSERRATINGS = "241";
 
     const HASCRITICS = true; // Set to false if there are no critic ratings
-    const GAMECRITICSTARS = "7.5";
-    const GAMECRITICRATINGS = "36";
+    const GAMECRITICSTARS = "9.3";
+    const GAMECRITICRATINGS = "93";
 
-    const GENRES = ["Action", "Looter Shooter", "Free-to-Play"];
-    const PLATFORMS = ["PC", "PS4", "PS5", "Xbox One", "Xbox Series X/S", "Switch"];
-    const EDITIONS = ["Free-to-Play Base", "Prime Access Packs", "Supporter Packs"];
+    const GENRES = ["Action-Adventure", "Third-Person Shooter", "Platformer"];
+    const PLATFORMS = ["PS4", "PS5", "PC"];
+    const EDITIONS = ["Standard Edition", "Special Edition", "Libertalia Collector's Edition"];
 
     const DESCRIPTION =
-        "Warframe is a free-to-play action game by Digital Extremes where players control Tenno — ancient warriors piloting biomechanical Warframe suits — across a sci-fi solar system. Featuring hyper-kinetic movement, deep modding systems, over 50 unique Warframes, and a decade of live-service content, it is one of the most complex ongoing games in the industry.";
+        "Uncharted 4: A Thief's End is the critically acclaimed conclusion to Nathan Drake's story, developed by Naughty Dog. Pulled back into adventure by his long-lost brother Sam, Nathan embarks on a globe-trotting hunt for the legendary pirate treasure of Libertalia — delivering a masterclass in cinematic action-adventure game design that blurs the line between gameplay and film.";
 
     // Document Variables
     const sectionRadios = Array.from(
@@ -1668,10 +1639,10 @@
     } // Set critic ratings
     for (let el of document.getElementsByClassName("game-poster-content")) {
         el.src = POSTERURL;
-        el.onerror = function(){this.onerror=null;this.src="../../../public/posters/warframe_poster.jpg";}
+        el.onerror = function(){this.onerror=null;this.src="../../../public/posters/uncharted_poster.jpg";}
     } // Set poster content
     document.getElementById("game-poster-img").src = POSTERURL; // Set poster image
-    document.getElementById("game-poster-img").onerror = function(){this.onerror=null;this.src="../../../public/posters/warframe_poster.jpg";}; 
+    document.getElementById("game-poster-img").onerror = function(){this.onerror=null;this.src="../../../public/posters/uncharted_poster.jpg";};
     document.getElementById("game-poster-img").title =
         GAMENAME + " Game Poster"; // Set poster image title
     document.getElementById("game-poster").href = POSTERURL; // Set poster link

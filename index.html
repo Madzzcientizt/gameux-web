@@ -1,62 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Google Fonts -->
+    <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend:wght@100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Manrope:wght@200..800&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend:wght@100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Manrope:wght@200..800&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
 
-    <!-- Bootstrap -->
+    <!-- bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
 
-    <!-- Styles -->
+    <!-- our styles -->
     <link rel="stylesheet" href="./src/styles/styles.css" type="text/css">
     <link rel="stylesheet" href="./src/styles/sizeChecker.css" type="text/css">
     <link rel="stylesheet" href="./src/styles/index.css" type="text/css">
 
-    <!-- Custom Styles ------------------------------------------------------------------------------------------ -->
-    <style>
-        body {
-            background-color: var(--t-color-base-200);
-        }
-    </style>
-    <!-- Custom Styles ------------------------------------------------------------------------------------------ -->
-
-    <title>Home - GameUX</title>
+    <title>Home - GameUX Atlas</title>
 </head>
+<body>
 
-<body style="min-height: 200vh;">
+    <!-- navbar -->
     <header>
         <nav class="navbar navbar-light navbar-expand-lg">
             <div class="container-fluid">
                 <a class="navbar-brand" href="./index.html">
-                    <img src="./public/gameux.png" alt="Logo" class="navbar-logo">
+                    <img src="./public/gameux.png" alt="GameUX Atlas Logo" class="navbar-logo">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon" style="width: 1em;"></span>
+                    <span class="navbar-toggler-icon" style="width:1em"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Game List</a>
+                            <a class="nav-link" href="./src/pages/gameList.html">Game List</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">About</a>
+                            <a class="nav-link" href="./src/pages/about.html">About</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Contact</a>
@@ -66,29 +56,444 @@
             </div>
         </nav>
     </header>
+
     <main>
-        <article style="max-width: 100%;">
-            <section>
+        <article class="wide">
+
+            <!-- full-screen hero: fills the entire viewport when the page loads -->
+            <section class="hero-section" id="home">
+
+                <!-- centered content, everything stacked -->
+                <div class="hero-content">
+
+                    <div class="hero-label">[ HCI GAME ANALYSIS ]</div>
+
+                    <h1 class="hero-heading">Game UX Atlas</h1>
+
+                    <p class="hero-desc">
+                        A game design analysis website that documents HCI principles across video games —
+                        from UI feedback loops to diegetic interfaces and user control systems.
+                    </p>
+
+                    <div class="hero-chips">
+                        <span class="hero-chip">100 Games</span>
+                        <span class="hero-chip">HCI Focus</span>
+                        <span class="hero-chip">CIP 1101</span>
+                        <span class="hero-chip">Fitts's Law</span>
+                    </div>
+
+                    <div class="hero-actions">
+                        <a href="#approach" class="hero-btn-primary">Explore Games</a>
+                        <a href="./src/pages/about.html" class="hero-btn-secondary">About the Group</a>
+                    </div>
+
+                    <!-- subtle scroll cue at the bottom -->
+                    <div class="hero-scroll-cue" aria-hidden="true">
+                        <span>scroll</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 5v14M5 12l7 7 7-7"/>
+                        </svg>
+                    </div>
+
+                </div>
+
+                <!-- group byline bottom-left -->
+                <div class="hero-byline">
+                    <span class="hero-byline-name">Group 5</span>
+                    <span class="hero-byline-sub">CIP 1101 · CSAD</span>
+                </div>
 
             </section>
+
+            <!-- three-column strip explaining our method -->
+            <section class="approach-section" id="approach">
+                <div class="approach-card">
+
+                    <!-- header mirrors featured-header structure -->
+                    <div class="approach-card-header">
+                        <div class="approach-eyebrow">[ OUR_METHOD ]</div>
+                        <div class="approach-card-title">How We Work</div>
+                        <div class="approach-card-sub">Our process for every game we analyze</div>
+                    </div>
+
+                    <div class="approach-inner">
+
+                        <div class="approach-item" data-step="01 — ANALYZE">
+                            <div class="approach-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="approach-item-title">Analyze</div>
+                                <div class="approach-item-desc">We look at how each game's interface works — what design patterns it uses, how it gives feedback, and whether it applies things like Fitts's Law.</div>
+                            </div>
+                        </div>
+
+                        <div class="approach-divider"></div>
+
+                        <div class="approach-item" data-step="02 — DECONSTRUCT">
+                            <div class="approach-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="approach-item-title">Deconstruct</div>
+                                <div class="approach-item-desc">We split each game into its core UX pieces — HUDs, menus, onboarding, controls — and look at each one on its own.</div>
+                            </div>
+                        </div>
+
+                        <div class="approach-divider"></div>
+
+                        <div class="approach-item" data-step="03 — DOCUMENT">
+                            <div class="approach-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="approach-item-title">Document</div>
+                                <div class="approach-item-desc">Everything gets written up as a proper design critique backed by HCI principles — cognitive load, Gestalt theory, spatial congruence.</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- the game carousel -->
+            <section class="featured-section" id="featured">
+                <div class="featured-card">
+
+                    <!-- header: title on the left, page counter and link on the right -->
+                    <div class="featured-header">
+                        <div>
+                            <div class="featured-eyebrow">[ GAME_CAROUSEL ]</div>
+                            <h2 class="featured-title">Featured Games</h2>
+                            <div class="featured-subtitle">Games analyzed by the group — CIP 1101</div>
+                        </div>
+                        <div class="featured-header-right">
+                            <span class="carousel-page-label" id="carouselPageLabel">Page 1 of 4</span>
+                            <a href="./src/pages/gameList.html" class="featured-read-more">View All Games</a>
+                        </div>
+                    </div>
+
+                    <!-- JS hides cards not on current page — Top 10 by score -->
+                    <div class="carousel-track" id="carouselTrack">
+
+                        <!-- #1 Elden Ring 9.4 -->
+                        <a class="game-card" href="./src/pages/gamesList/eldenRing.html">
+                            <div class="game-card-img">
+                                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1245620/library_600x900.jpg" alt="Elden Ring" class="game-card-img-cover" onerror="this.style.display='none'">
+                            </div>
+                            <div class="game-card-body">
+                                <div class="game-card-top">
+                                    <div class="game-card-title">Elden Ring</div>
+                                </div>
+                                <div class="game-card-bottom">
+                                    <div class="game-card-genre">ACTION RPG</div>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- #2 Resident Evil 4 9.3 -->
+                        <a class="game-card" href="./src/pages/gamesList/residentEvil4.html">
+                            <div class="game-card-img">
+                                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/2050650/library_600x900.jpg" alt="Resident Evil 4 Remake" class="game-card-img-cover" onerror="this.style.display='none'">
+                            </div>
+                            <div class="game-card-body">
+                                <div class="game-card-top">
+                                    <div class="game-card-title">Resident Evil 4</div>
+                                </div>
+                                <div class="game-card-bottom">
+                                    <div class="game-card-genre">SURVIVAL HORROR</div>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- #3 Geometry Dash 9.1 -->
+                        <a class="game-card" href="./src/pages/gamesList/geometryDash.html">
+                            <div class="game-card-img">
+                                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/322170/library_600x900.jpg" alt="Geometry Dash" class="game-card-img-cover" onerror="this.style.display='none'">
+                            </div>
+                            <div class="game-card-body">
+                                <div class="game-card-top">
+                                    <div class="game-card-title">Geometry Dash</div>
+                                </div>
+                                <div class="game-card-bottom">
+                                    <div class="game-card-genre">RHYTHM PLATFORMER</div>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- #4 Ghost of Tsushima 9.1 -->
+                        <a class="game-card" href="./src/pages/gamesList/ghostOfTsushima.html">
+                            <div class="game-card-img">
+                                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/2215430/library_600x900.jpg" alt="Ghost of Tsushima" class="game-card-img-cover" onerror="this.style.display='none'">
+                            </div>
+                            <div class="game-card-body">
+                                <div class="game-card-top">
+                                    <div class="game-card-title">Ghost of Tsushima</div>
+                                </div>
+                                <div class="game-card-bottom">
+                                    <div class="game-card-genre">ACTION-ADVENTURE</div>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- #5 Warframe 8.8 -->
+                        <a class="game-card" href="./src/pages/gamesList/warframe.html">
+                            <div class="game-card-img">
+                                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/230410/library_600x900.jpg" alt="Warframe" class="game-card-img-cover" onerror="this.style.display='none'">
+                            </div>
+                            <div class="game-card-body">
+                                <div class="game-card-top">
+                                    <div class="game-card-title">Warframe</div>
+                                </div>
+                                <div class="game-card-bottom">
+                                    <div class="game-card-genre">LOOTER SHOOTER</div>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- #6 AC: Black Flag 8.6 -->
+                        <a class="game-card" href="./src/pages/gamesList/assassinsCreedBlackFlag.html">
+                            <div class="game-card-img">
+                                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/242050/library_600x900.jpg" alt="Assassin's Creed IV: Black Flag" class="game-card-img-cover" onerror="this.style.display='none'">
+                            </div>
+                            <div class="game-card-body">
+                                <div class="game-card-top">
+                                    <div class="game-card-title">AC: Black Flag</div>
+                                </div>
+                                <div class="game-card-bottom">
+                                    <div class="game-card-genre">ACTION-ADVENTURE</div>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- #7 Dying Light 8.5 -->
+                        <a class="game-card" href="./src/pages/gamesList/dyingLight.html">
+                            <div class="game-card-img">
+                                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/239140/library_600x900.jpg" alt="Dying Light" class="game-card-img-cover" onerror="this.style.display='none'">
+                            </div>
+                            <div class="game-card-body">
+                                <div class="game-card-top">
+                                    <div class="game-card-title">Dying Light</div>
+                                </div>
+                                <div class="game-card-bottom">
+                                    <div class="game-card-genre">SURVIVAL HORROR</div>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- #8 Lies of P 8.4 -->
+                        <a class="game-card" href="./src/pages/gamesList/liesOfPi.html">
+                            <div class="game-card-img">
+                                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1627720/library_600x900.jpg" alt="Lies of P" class="game-card-img-cover" onerror="this.style.display='none'">
+                            </div>
+                            <div class="game-card-body">
+                                <div class="game-card-top">
+                                    <div class="game-card-title">Lies of P</div>
+                                </div>
+                                <div class="game-card-bottom">
+                                    <div class="game-card-genre">SOULSLIKE RPG</div>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- #9 Cyberpunk 2077 8.2 -->
+                        <a class="game-card" href="./src/pages/gamesList/cyberPunk.html">
+                            <div class="game-card-img">
+                                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1091500/library_600x900.jpg" alt="Cyberpunk 2077" class="game-card-img-cover" onerror="this.style.display='none'">
+                            </div>
+                            <div class="game-card-body">
+                                <div class="game-card-top">
+                                    <div class="game-card-title">Cyberpunk 2077</div>
+                                </div>
+                                <div class="game-card-bottom">
+                                    <div class="game-card-genre">OPEN WORLD RPG</div>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- #10 Need for Speed Heat 7.8 -->
+                        <a class="game-card" href="./src/pages/gamesList/needForSpeed.html">
+                            <div class="game-card-img">
+                                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1222680/library_600x900.jpg" alt="Need for Speed Heat" class="game-card-img-cover" onerror="this.style.display='none'">
+                            </div>
+                            <div class="game-card-body">
+                                <div class="game-card-top">
+                                    <div class="game-card-title">Need for Speed Heat</div>
+                                </div>
+                                <div class="game-card-bottom">
+                                    <div class="game-card-genre">RACING</div>
+                                </div>
+                            </div>
+                        </a>
+
+                    </div>
+
+                    <!-- prev dot dot dot next -->
+                    <div class="carousel-controls">
+                        <button class="carousel-btn" id="prevBtn" aria-label="Previous">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="14" height="14">
+                                <path fill-rule="evenodd" d="M15.78 19.28a.75.75 0 0 1-1.06 0L8.22 12.78a.75.75 0 0 1 0-1.06l6.5-6.5a.75.75 0 1 1 1.06 1.06L9.81 12l5.97 5.72a.75.75 0 0 1 0 1.56Z" clip-rule="evenodd"/>
+                            </svg>
+                        </button>
+                        <div class="carousel-dots" id="carouselDots"></div>
+                        <button class="carousel-btn" id="nextBtn" aria-label="Next">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="14" height="14">
+                                <path fill-rule="evenodd" d="M8.22 4.72a.75.75 0 0 1 1.06 0l6.5 6.5a.75.75 0 0 1 0 1.06l-6.5 6.5a.75.75 0 0 1-1.06-1.06L14.19 12 8.22 6.28a.75.75 0 0 1 0-1.56Z" clip-rule="evenodd"/>
+                            </svg>
+                        </button>
+                    </div>
+
+                </div>
+            </section>
+
         </article>
-        <aside></aside>
     </main>
+
+    <!-- footer — exact same structure as the game pages (h6 + socials + footer-info) -->
     <footer>
-
+        <h6>GameUX Atlas</h6>
+        <ul class="socials">
+            <li>
+                <a href="https://www.facebook.com/profile.php?id=61575774944293" class="social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987H7.898v-2.89h2.54V9.845c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/>
+                    </svg>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/gameux_atlas/" class="social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                </a>
+            </li>
+            <li>
+                <a href="https://x.com/GameUX_Atlas?s=20" class="social-link" aria-label="Twitter / X" target="_blank" rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.261 5.635 5.903-5.635zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+        <div class="footer-info">
+            <span>&copy; Group 5</span>
+            <span>CIP 1101</span>
+            <span>2026</span>
+            <span>GameUX Atlas</span>
+        </div>
     </footer>
+
+    <!-- back-to-top ring button — same SVG as the game pages -->
+    <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top" title="Back to top">
+        <svg viewBox="0 0 56 56" width="56" height="56" aria-hidden="true" focusable="false">
+            <circle class="btn-bg"             cx="28" cy="28" r="27"/>
+            <circle class="btn-progress-track" cx="28" cy="28" r="22"/>
+            <circle class="btn-progress"       cx="28" cy="28" r="22" id="backToTopProgress"/>
+            <path class="btn-icon" d="M28 36V20"/>
+            <path class="btn-icon" d="M21.5 26.5L28 20l6.5 6.5"/>
+        </svg>
+    </button>
+
 </body>
-
 <script>
-    // detect scroll and add class to header
-    const header = document.querySelector('header');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 0) {
-            header.classList.add('init');
-        } else {
-            header.classList.remove('init');
-        }
-    });
-</script>
+    // carousel: shows N cards at a time depending on screen width
+    const track     = document.getElementById('carouselTrack');
+    const prevBtn   = document.getElementById('prevBtn');
+    const nextBtn   = document.getElementById('nextBtn');
+    const dotsWrap  = document.getElementById('carouselDots');
+    const pageLabel = document.getElementById('carouselPageLabel');
+    const allCards  = Array.from(track.querySelectorAll('.game-card'));
 
+    let current = 0;
+    let pages   = 0;
+
+    // how many cards fit on screen at this width
+    function getVisible() {
+        const w = window.innerWidth;
+        if (w >= 62 * 16) return 4;  // xl and up
+        if (w >= 48 * 16) return 3;  // lg
+        if (w >= 36 * 16) return 2;  // md
+        return 1;                     // sm
+    }
+
+    // rebuild the dot buttons whenever pages change
+    function buildDots(n) {
+        dotsWrap.innerHTML = '';
+        for (let i = 0; i < n; i++) {
+            const d = document.createElement('button');
+            d.className = 'c-dot' + (i === 0 ? ' active' : '');
+            d.setAttribute('aria-label', `Go to page ${i + 1}`);
+            d.addEventListener('click', () => goTo(i));
+            dotsWrap.appendChild(d);
+        }
+    }
+
+    // show/hide the right cards for a given page
+    function goTo(page) {
+        const visible = getVisible();
+        const start   = page * visible;
+        current = page;
+
+        allCards.forEach((card, idx) => {
+            card.style.display = (idx >= start && idx < start + visible) ? '' : 'none';
+        });
+
+        dotsWrap.querySelectorAll('.c-dot').forEach((d, i) => {
+            d.classList.toggle('active', i === page);
+        });
+
+        if (pageLabel) pageLabel.textContent = `Page ${page + 1} of ${pages}`;
+
+        prevBtn.disabled = page === 0;
+        nextBtn.disabled = page === pages - 1;
+    }
+
+    // recalculate on load and whenever the window resizes
+    function initCarousel() {
+        const visible = getVisible();
+        pages = Math.ceil(allCards.length / visible);
+        buildDots(pages);
+        goTo(Math.min(current, pages - 1));
+    }
+
+    prevBtn.addEventListener('click', () => goTo((current - 1 + pages) % pages));
+    nextBtn.addEventListener('click', () => goTo((current + 1) % pages));
+    window.addEventListener('resize', initCarousel);
+    initCarousel();
+
+    // back-to-top button: appears after 160px of scroll, ring fills as you scroll down
+    const progressRadius        = 22;
+    const progressCircumference = 2 * Math.PI * progressRadius;
+    const backToTopBtn          = document.getElementById('backToTop');
+    const progressCircle        = document.getElementById('backToTopProgress');
+
+    if (progressCircle) {
+        progressCircle.style.strokeDasharray  = String(progressCircumference);
+        progressCircle.style.strokeDashoffset = String(progressCircumference);
+    }
+
+    function updateBackToTop() {
+        const scrollTop   = window.scrollY || document.documentElement.scrollTop;
+        const scrollableH = document.documentElement.scrollHeight - window.innerHeight;
+        const progress    = scrollableH > 0 ? Math.min(scrollTop / scrollableH, 1) : 0;
+
+        if (progressCircle) {
+            progressCircle.style.strokeDashoffset = String(progressCircumference * (1 - progress));
+        }
+
+        backToTopBtn.classList.toggle('is-visible', scrollTop > 160);
+    }
+
+    backToTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    window.addEventListener('scroll', updateBackToTop, { passive: true });
+    window.addEventListener('resize', updateBackToTop);
+    updateBackToTop();
+</script>
 </html>
