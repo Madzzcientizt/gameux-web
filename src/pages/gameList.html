@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend:wght@100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Manrope:wght@200..800&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../styles/styles.css" type="text/css">
+    <link rel="stylesheet" href="../styles/sizeChecker.css" type="text/css">
+    <link rel="stylesheet" href="../styles/game.css" type="text/css">
+
+    <!-- Custom Styles ------------------------------------------------------------------------------------------ -->
+    <style>
+        .game-list-page {
+            width: 100%;
+            max-width: var(--t-maxwidth);
+            margin: 0 auto;
+            padding: 2.25rem 1rem 3rem;
+            --game-cover-ratio: 2 / 3;
+        }
+        
+        .game-controls {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .controls-shell {
+            width: min(100%, 68rem);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: stretch;
+            gap: 0.85rem;
+            background: radial-gradient(circle at 12% 22%, color-mix(in oklab, var(--t-color-primary) 12%, transparent 88%), transparent 34%), radial-gradient(circle at 88% 78%, color-mix(in oklab, var(--t-color-accent) 12%, transparent 88%), transparent 32%), var(--t-color-base-100);
+            border: 1px solid var(--t-color-base-300);
+            border-radius: 999px;
+            padding: 0.9rem;
+            box-shadow: 0 12px 28px rgba(var(--t-color-primary-rgb), 0.08);
+        }
+        
+        .filter-dropdown,
+        .sort-dropdown {
+            position: relative;
+            flex: 0 0 auto;
+        }
+        
+        .filter-toggle,
+        .sort-toggle,
+        .search-input {
+            border: 1px solid var(--t-color-base-300);
+            border-radius: 999px;
+            background-color: var(--t-color-base-100);
+            color: var(--t-color-base-content);
+            font-weight: 600;
+            box-shadow: 0 8px 24px rgba(var(--t-color-primary-rgb), 0.06);
+            min-height: 3.25rem;
+        }
+        
+        .filter-toggle {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.55rem;
+            justify-content: center;
+            padding: 0.55rem 1.05rem;
+            cursor: pointer;
+            width: 100%;
+            min-width: 10rem;
+        }
+        
+        .sort-toggle {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            justify-content: center;
+            padding: 0.55rem 1rem;
+            cursor: pointer;
+            width: 100%;
+            min-width: 12rem;
+        }
+        
+        .sort-kicker {
+            font-size: 0.82rem;
+            opacity: 0.8;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+        
+        .filter-toggle .pill-count {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 1.5rem;
+            height: 1.5rem;
+            padding: 0 0.45rem;
+            border-radius: 999px;
+            background: var(--t-color-primary);
+            color: var(--t-color-primary-content);
+            font-size: 0.8rem;
+            line-height: 1;
+        }
+        
+        .filter-panel,
+        .sort-panel {
+            position: absolute;
+            top: calc(100% + 0.5rem);
+            left: 0;
+            z-index: 30;
+            width: min(24rem, 90vw);
+            background: var(--t-color-base-100);
+            border: 1px solid var(--t-color-base-300);
+            border-radius: 1rem;
+            box-shadow: 0 18px 50px rgba(0, 0, 0, 0.14);
+            padding: 0.9rem;
+            display: none;
+        }
+        
+        .sort-panel {
+            width: min(16rem, 90vw);
+            padding: 0.55rem;
+        }
+        
+        .filter-panel.is-open,
+        .sort-panel.is-open {
+            display: block;
+        }
+        
+        .filter-panel-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .filter-panel-header strong {
+            font-size: 1rem;
+        }
+        
+        .filter-actions {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .filter-action-btn {
+            border: 1px solid var(--t-color-base-300);
+            background: var(--t-color-base-100);
+            color: var(--t-color-base-content);
+            border-radius: 999px;
+            padding: 0.35rem 0.7rem;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+        
+        .sort-options {
+            display: grid;
+            gap: 0.35rem;
+        }
+        
+        .sort-options label {
+            display: flex;
+            align-items: center;
+            gap: 0.55rem;
+            cursor: pointer;
+            border-radius: 0.75rem;
+            padding: 0.55rem 0.65rem;
+            transition: background-color 150ms ease;
+        }
+        
+        .sort-options label:hover {
+            background-color: var(--t-color-base-200);
+        }
+        
+        .sort-options input {
+            accent-color: var(--t-color-primary);
+        }
+        
+        .genre-checklist {
+            display: grid;
+            gap: 0.55rem;
+            max-height: 18rem;
+            overflow: auto;
+            padding-right: 0.25rem;
+        }
+        
+        .genre-checklist label {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            align-items: start;
+            gap: 0.65rem;
+            padding: 0.65rem 0.8rem;
+            border-radius: 0.8rem;
+            cursor: pointer;
+            transition: background-color 160ms ease;
+        }
+        
+        .genre-checklist label:hover {
+            background-color: var(--t-color-base-200);
+        }
+        
+        .genre-checklist input {
+            accent-color: var(--t-color-primary);
+            margin-top: 0.2rem;
+        }
+        
+        .genre-checklist span {
+            overflow-wrap: anywhere;
+            line-height: 1.25;
+        }
+        
+        .search-input {
+            padding: 0.55rem 1rem;
+            min-width: 0;
+            width: 100%;
+            flex: 1 1 14rem;
+        }
+        
+        .results-meta {
+            font-size: 0.95rem;
+            color: color-mix(in oklab, var(--t-color-base-content) 75%, white 25%);
+            margin-bottom: 1rem;
+        }
+        
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+            gap: 1rem;
+            align-items: start;
+            align-content: start;
+            min-height: 0;
+        }
+        
+        .game-card {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            border-radius: 1rem;
+            overflow: hidden;
+            background-color: var(--t-color-base-100);
+            border: 1px solid var(--t-color-base-300);
+            box-shadow: 0 10px 20px rgba(var(--t-color-primary-rgb), 0.08);
+            transform: translateY(0);
+            transition: transform 220ms ease, box-shadow 220ms ease;
+            animation: rise-in 450ms ease both;
+            align-self: start;
+        }
+        
+        .game-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 30px rgba(var(--t-color-primary-rgb), 0.2);
+        }
+        
+        .game-card figure {
+            margin: 0;
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: var(--game-cover-ratio);
+            line-height: 0;
+        }
+        
+        .game-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 280ms ease;
+        }
+        
+        .game-card picture {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .game-card:hover img {
+            transform: scale(1.04);
+        }
+        
+        .game-card figcaption {
+            position: absolute;
+            inset: auto 0 0;
+            padding: 0.85rem 0.8rem 0.8rem;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.02));
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            gap: 0.35rem;
+        }
+        
+        .game-title {
+            margin: 0;
+            font-family: var(--bs-font-serif);
+            font-size: 1.1rem;
+            line-height: 1.08;
+            text-wrap: balance;
+        }
+        
+        .game-genre {
+            font-size: 0.8rem;
+            opacity: 0.92;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            font-weight: 700;
+            font-family: var(--bs-font-sans-serif);
+            line-height: 1.1;
+            overflow-wrap: anywhere;
+        }
+        
+        .empty-state {
+            border: 2px dashed var(--t-color-base-300);
+            border-radius: 0.9rem;
+            padding: 2rem;
+            text-align: center;
+            background-color: color-mix(in oklab, var(--t-color-base-100) 80%, var(--t-color-primary) 20%);
+        }
+        
+        .load-sentinel-wrap {
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+            min-height: 2.25rem;
+        }
+        
+        .load-sentinel {
+            font-size: 0.82rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            color: color-mix(in oklab, var(--t-color-base-content) 65%, white 35%);
+            transition: opacity 180ms ease;
+        }
+        
+        .load-sentinel.is-hidden {
+            opacity: 0;
+        }
+        
+        .back-to-top {
+            position: fixed;
+            right: 1.25rem;
+            bottom: 1.25rem;
+            width: 3.5rem;
+            height: 3.5rem;
+            border: 0;
+            border-radius: var(--t-radius-selector);
+            background-color: transparent;
+            padding: 0;
+            display: grid;
+            place-items: center;
+            z-index: 1001;
+            opacity: 0;
+            transform: translateY(0.5rem) scale(0.96);
+            pointer-events: none;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+            cursor: pointer;
+        }
+        
+        .back-to-top.is-visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            pointer-events: auto;
+        }
+        
+        .back-to-top .btn-bg {
+            fill: var(--t-color-base-100);
+            stroke: var(--t-color-base-300);
+            stroke-width: 1.5;
+        }
+        
+        .back-to-top .btn-progress-track {
+            fill: none;
+            stroke: var(--t-color-base-300);
+            stroke-width: 3;
+            opacity: 0.35;
+        }
+        
+        .back-to-top .btn-progress {
+            fill: none;
+            stroke: var(--t-color-primary);
+            stroke-width: 3;
+            stroke-linecap: round;
+            transform: rotate(-90deg);
+            transform-origin: 28px 28px;
+            transition: stroke-dashoffset 0.1s linear;
+        }
+        
+        .back-to-top .btn-icon {
+            fill: none;
+            stroke: var(--t-color-primary);
+            stroke-width: 1.8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+        
+        .back-to-top:hover .btn-bg {
+            fill: var(--t-color-base-200);
+        }
+        
+        @media (width >=36rem) {
+            .game-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+        
+        @media (width >=48rem) {
+            .controls-shell {
+                padding: 1rem 1.05rem;
+                gap: 0.9rem;
+            }
+            .filter-toggle,
+            .sort-toggle,
+            .search-input {
+                min-height: 3.35rem;
+            }
+            .filter-toggle {
+                width: auto;
+                min-width: 12rem;
+            }
+            .game-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+        }
+        
+        @media (width >=62rem) {
+            .controls-shell {
+                gap: 1rem;
+            }
+            .search-input {
+                max-width: 22rem;
+            }
+            .game-grid {
+                grid-template-columns: repeat(4, minmax(0, 1fr));
+            }
+        }
+        
+        @media (width >=75rem) {
+            .game-grid {
+                grid-template-columns: repeat(5, minmax(0, 1fr));
+            }
+        }
+        
+        @media (width >=87.5rem) {
+            .game-grid {
+                grid-template-columns: repeat(6, minmax(0, 1fr));
+            }
+        }
+        
+        @media (width < 48rem) {
+            .controls-shell {
+                width: 100%;
+                border-radius: 1.5rem;
+                padding: 0.85rem;
+            }
+            .filter-dropdown,
+            .sort-dropdown,
+            .search-input,
+            .sort-toggle {
+                width: 100%;
+            }
+            .filter-panel {
+                width: min(28rem, 92vw);
+            }
+            .sort-panel {
+                width: min(28rem, 92vw);
+            }
+            .back-to-top {
+                right: 0.9rem;
+                bottom: 0.9rem;
+                width: 3.1rem;
+                height: 3.1rem;
+            }
+            .back-to-top svg {
+                width: 50px;
+                height: 50px;
+            }
+        }
+        
+        @media (width < 36rem) {
+            .game-list-page {
+                padding: 1.5rem 0.75rem 2.5rem;
+            }
+            .game-title {
+                font-size: 1rem;
+            }
+        }
+        
+        @keyframes rise-in {
+            from {
+                opacity: 0;
+                transform: translateY(14px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+    <!-- Custom Styles ------------------------------------------------------------------------------------------ -->
+
+    <title>Game List - GameUX</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-light navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="../index.html">
+                    <img src="../../public/gameux.png" alt="Logo" class="navbar-logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon" style="width: 1em;"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="../../index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="./gameList.html">Game List</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <article class="game-list-page">
+            <div class="game-controls">
+                <div class="controls-shell">
+                    <div class="filter-dropdown">
+                        <button class="filter-toggle" id="filterToggle" type="button" aria-expanded="false" aria-controls="filterPanel">
+                            Filters
+                            <span class="pill-count" id="genreCount">0</span>
+                        </button>
+
+                        <div class="filter-panel" id="filterPanel" role="menu" aria-label="Filter genres">
+                            <div class="filter-panel-header">
+                                <strong>Genres</strong>
+                                <div class="filter-actions">
+                                    <button class="filter-action-btn" id="selectAllGenres" type="button">All</button>
+                                    <button class="filter-action-btn" id="clearGenres" type="button">Clear</button>
+                                </div>
+                            </div>
+                            <div class="genre-checklist" id="genreChecklist"></div>
+                        </div>
+                    </div>
+
+                    <input class="search-input" id="titleSearch" type="search" placeholder="Search by title" aria-label="Search games by title">
+
+                    <div class="sort-dropdown">
+                        <button class="sort-toggle" id="sortToggle" type="button" aria-expanded="false" aria-controls="sortPanel">
+                            <span class="sort-kicker">Sort</span>
+                            <span id="sortLabel">Title A-Z</span>
+                        </button>
+
+                        <div class="sort-panel" id="sortPanel" role="menu" aria-label="Sort options">
+                            <div class="sort-options" id="sortOptions">
+                                <label>
+                                    <input type="radio" name="sortOption" value="title-asc" checked>
+                                    <span>Title A-Z</span>
+                                </label>
+                                <label>
+                                    <input type="radio" name="sortOption" value="title-desc">
+                                    <span>Title Z-A</span>
+                                </label>
+                                <label>
+                                    <input type="radio" name="sortOption" value="genre-asc">
+                                    <span>Genre A-Z</span>
+                                </label>
+                                <label>
+                                    <input type="radio" name="sortOption" value="genre-desc">
+                                    <span>Genre Z-A</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p class="results-meta" id="resultsMeta">Showing 0 games</p>
+
+            <section class="game-grid" id="gameGrid" aria-live="polite"></section>
+            <div class="load-sentinel-wrap">
+                <div class="load-sentinel" id="loadSentinel" aria-hidden="true">Loading more...</div>
+            </div>
+        </article>
+    </main>
+    <footer>
+        <h6>GameUX Atlas</h6>
+        <ul class="socials"></ul>
+        <div class="footer-info">
+            <span>&copy; Group 5</span>
+            <span>CIP 1101</span>
+            <span>2026</span>
+            <span>GameUX Atlas</span>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top" title="Back to top">
+        <svg viewBox="0 0 56 56" width="56" height="56" aria-hidden="true" focusable="false">
+            <circle class="btn-bg" cx="28" cy="28" r="27"></circle>
+            <circle class="btn-progress-track" cx="28" cy="28" r="22"></circle>
+            <circle class="btn-progress" id="back-to-top-progress" cx="28" cy="28" r="22"></circle>
+            <path class="btn-icon" d="M28 36V20"></path>
+            <path class="btn-icon" d="M21.5 26.5L28 20l6.5 6.5"></path>
+        </svg>
+    </button>
+
+    <script src="../data/gamesCatalog.js"></script>
+    <script>
+        const games = Array.isArray(window.gameCatalog) ? window.gameCatalog : [];
+
+        const gameGrid = document.getElementById("gameGrid");
+        const genreChecklist = document.getElementById("genreChecklist");
+        const filterToggle = document.getElementById("filterToggle");
+        const filterPanel = document.getElementById("filterPanel");
+        const genreCount = document.getElementById("genreCount");
+        const titleSearch = document.getElementById("titleSearch");
+        const sortToggle = document.getElementById("sortToggle");
+        const sortPanel = document.getElementById("sortPanel");
+        const sortOptions = document.getElementById("sortOptions");
+        const sortLabel = document.getElementById("sortLabel");
+        const selectAllGenres = document.getElementById("selectAllGenres");
+        const clearGenres = document.getElementById("clearGenres");
+        const resultsMeta = document.getElementById("resultsMeta");
+        const loadSentinel = document.getElementById("loadSentinel");
+        const backToTopButton = document.getElementById("back-to-top");
+        const backToTopProgress = document.getElementById("back-to-top-progress");
+
+        const INITIAL_BATCH_SIZE = 24;
+        const BATCH_STEP = 12;
+
+        function sanitizeGames(rawGames) {
+            return rawGames
+                .filter((game) => game && game.title && game.genre && game.image && game.href)
+                .map((game) => ({
+                    title: String(game.title),
+                    genre: String(game.genre),
+                    image: String(game.image),
+                    href: String(game.href)
+                }));
+        }
+
+        const safeGames = sanitizeGames(games);
+        const genres = [...new Set(safeGames.map((game) => game.genre).sort((a, b) => a.localeCompare(b)))];
+
+        const state = {
+            selectedGenres: new Set(genres),
+            sortBy: "title-asc",
+            filteredGames: [],
+            visibleCount: 0,
+            renderedCount: 0,
+            isLoadingMore: false
+        };
+
+        function sortGames(gameList) {
+            const sorted = [...gameList];
+
+            switch (state.sortBy) {
+                case "title-desc":
+                    sorted.sort((a, b) => b.title.localeCompare(a.title));
+                    break;
+                case "genre-asc":
+                    sorted.sort((a, b) => a.genre.localeCompare(b.genre) || a.title.localeCompare(b.title));
+                    break;
+                case "genre-desc":
+                    sorted.sort((a, b) => b.genre.localeCompare(a.genre) || a.title.localeCompare(b.title));
+                    break;
+                case "title-asc":
+                default:
+                    sorted.sort((a, b) => a.title.localeCompare(b.title));
+                    break;
+            }
+
+            return sorted;
+        }
+
+        function updateGenreCount() {
+            genreCount.textContent = state.selectedGenres.size;
+        }
+
+        function getSortText(sortValue) {
+            switch (sortValue) {
+                case "title-desc":
+                    return "Title Z-A";
+                case "genre-asc":
+                    return "Genre A-Z";
+                case "genre-desc":
+                    return "Genre Z-A";
+                case "title-asc":
+                default:
+                    return "Title A-Z";
+            }
+        }
+
+        function renderSortOptions() {
+            const activeInput = sortOptions.querySelector(`input[value="${state.sortBy}"]`);
+            if (activeInput) {
+                activeInput.checked = true;
+            }
+
+            sortLabel.textContent = getSortText(state.sortBy);
+        }
+
+        function renderGenres() {
+            genreChecklist.innerHTML = genres
+                .map((genre) => {
+                    const checked = state.selectedGenres.has(genre);
+                    return `
+                        <label>
+                            <input type="checkbox" data-genre="${genre}" ${checked ? "checked" : ""}>
+                            <span>${genre}</span>
+                        </label>
+                    `;
+                })
+                .join("");
+
+            updateGenreCount();
+        }
+
+        function getFilteredGames() {
+            const searchTerm = titleSearch.value.trim().toLowerCase();
+
+            const filteredGames = safeGames.filter((game) => {
+                const matchesSearch = !searchTerm || game.title.toLowerCase().includes(searchTerm);
+                const matchesGenre = state.selectedGenres.has(game.genre);
+                return matchesSearch && matchesGenre;
+            });
+
+            return sortGames(filteredGames);
+        }
+
+        function getGameCardsMarkup(gameList, startIndex = 0) {
+            return gameList
+                .map((game, index) => `
+                    <a href="${game.href}" class="game-card" style="animation-delay:${Math.min((startIndex + index) * 55, 320)}ms">
+                        <figure>
+                            <img src="${game.image}" alt="${game.title} cover art" loading="lazy" decoding="async">
+                            <figcaption>
+                                <h2 class="game-title">${game.title}</h2>
+                                <span class="game-genre">${game.genre}</span>
+                            </figcaption>
+                        </figure>
+                    </a>
+                `)
+                .join("");
+        }
+
+        function updateLoadSentinelVisibility() {
+            const hasMore = state.visibleCount < state.filteredGames.length;
+            loadSentinel.classList.toggle("is-hidden", !hasMore);
+        }
+
+        function renderVisibleGames(resetGrid = true) {
+            const total = state.filteredGames.length;
+            const visibleGames = state.filteredGames.slice(0, state.visibleCount);
+
+            resultsMeta.textContent = `Showing ${visibleGames.length} of ${total} game${total === 1 ? "" : "s"}`;
+
+            if (total === 0) {
+                gameGrid.innerHTML = `<div class="empty-state">No games match this genre filter.</div>`;
+                state.renderedCount = 0;
+                updateLoadSentinelVisibility();
+                return;
+            }
+
+            if (resetGrid) {
+                gameGrid.innerHTML = getGameCardsMarkup(visibleGames, 0);
+                state.renderedCount = visibleGames.length;
+                updateLoadSentinelVisibility();
+                return;
+            }
+
+            const nextBatch = state.filteredGames.slice(state.renderedCount, state.visibleCount);
+            if (nextBatch.length > 0) {
+                gameGrid.insertAdjacentHTML("beforeend", getGameCardsMarkup(nextBatch, state.renderedCount));
+                state.renderedCount += nextBatch.length;
+            }
+
+            updateLoadSentinelVisibility();
+        }
+
+        function loadMoreGames() {
+            if (state.isLoadingMore || state.visibleCount >= state.filteredGames.length) {
+                return;
+            }
+
+            state.isLoadingMore = true;
+            state.visibleCount = Math.min(state.visibleCount + BATCH_STEP, state.filteredGames.length);
+            renderVisibleGames(false);
+            state.isLoadingMore = false;
+
+            const stillHasMore = state.visibleCount < state.filteredGames.length;
+            if (stillHasMore && window.innerHeight >= document.body.scrollHeight - 80) {
+                loadMoreGames();
+            }
+        }
+
+        function renderGames() {
+            state.filteredGames = getFilteredGames();
+            state.visibleCount = Math.min(INITIAL_BATCH_SIZE, state.filteredGames.length);
+            renderVisibleGames(true);
+        }
+
+        filterToggle.addEventListener("click", () => {
+            sortPanel.classList.remove("is-open");
+            sortToggle.setAttribute("aria-expanded", "false");
+
+            const isOpen = filterPanel.classList.toggle("is-open");
+            filterToggle.setAttribute("aria-expanded", String(isOpen));
+        });
+
+        sortToggle.addEventListener("click", () => {
+            filterPanel.classList.remove("is-open");
+            filterToggle.setAttribute("aria-expanded", "false");
+
+            const isOpen = sortPanel.classList.toggle("is-open");
+            sortToggle.setAttribute("aria-expanded", String(isOpen));
+        });
+
+        document.addEventListener("click", (event) => {
+            if (
+                filterPanel.contains(event.target) ||
+                filterToggle.contains(event.target) ||
+                sortPanel.contains(event.target) ||
+                sortToggle.contains(event.target)
+            ) {
+                return;
+            }
+
+            filterPanel.classList.remove("is-open");
+            filterToggle.setAttribute("aria-expanded", "false");
+            sortPanel.classList.remove("is-open");
+            sortToggle.setAttribute("aria-expanded", "false");
+        });
+
+        genreChecklist.addEventListener("change", (event) => {
+            const checkbox = event.target.closest("input[data-genre]");
+            if (!checkbox) {
+                return;
+            }
+
+            if (checkbox.checked) {
+                state.selectedGenres.add(checkbox.dataset.genre);
+            } else {
+                state.selectedGenres.delete(checkbox.dataset.genre);
+            }
+
+            updateGenreCount();
+            renderGames();
+        });
+
+        sortOptions.addEventListener("change", (event) => {
+            const sortInput = event.target.closest("input[name='sortOption']");
+            if (!sortInput) {
+                return;
+            }
+
+            state.sortBy = sortInput.value;
+            renderSortOptions();
+            renderGames();
+
+            sortPanel.classList.remove("is-open");
+            sortToggle.setAttribute("aria-expanded", "false");
+        });
+
+        titleSearch.addEventListener("input", renderGames);
+
+        selectAllGenres.addEventListener("click", () => {
+            state.selectedGenres = new Set(genres);
+            renderGenres();
+            renderGames();
+        });
+
+        clearGenres.addEventListener("click", () => {
+            state.selectedGenres = new Set();
+            renderGenres();
+            renderGames();
+        });
+
+        const loadMoreObserver = new IntersectionObserver((entries) => {
+            for (const entry of entries) {
+                if (entry.isIntersecting) {
+                    loadMoreGames();
+                }
+            }
+        }, {
+            rootMargin: "650px 0px"
+        });
+
+        loadMoreObserver.observe(loadSentinel);
+
+        renderGenres();
+        renderSortOptions();
+        renderGames();
+
+        // Back-to-top button with circular scroll progress
+        const progressRadius = 22;
+        const progressCircumference = 2 * Math.PI * progressRadius;
+
+        if (backToTopProgress) {
+            backToTopProgress.style.strokeDasharray = String(progressCircumference);
+            backToTopProgress.style.strokeDashoffset = String(progressCircumference);
+        }
+
+        function updateBackToTop() {
+            if (!backToTopButton || !backToTopProgress) {
+                return;
+            }
+
+            const scrollTop = window.scrollY || document.documentElement.scrollTop;
+            const scrollableHeight =
+                document.documentElement.scrollHeight - window.innerHeight;
+            const progress = scrollableHeight > 0 ? Math.min(scrollTop / scrollableHeight, 1) : 0;
+            const dashOffset = progressCircumference * (1 - progress);
+
+            backToTopProgress.style.strokeDashoffset = String(dashOffset);
+            backToTopButton.classList.toggle("is-visible", scrollTop > 160);
+        }
+
+        if (backToTopButton) {
+            backToTopButton.addEventListener("click", () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+            });
+        }
+
+        window.addEventListener("scroll", updateBackToTop, {
+            passive: true
+        });
+        window.addEventListener("resize", updateBackToTop);
+        updateBackToTop();
+    </script>
+</body>
+
+</html>
