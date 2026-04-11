@@ -211,8 +211,8 @@ window.gameCatalog = [{
     {
         title: "Friday Night Funkin'",
         genre: "Rhythm",
-        image: "../../public/posters/fnf_poster.jpg",
-        href: "./gamesList/fnf.html"
+        image: "../../public/posters/fridayNightFunkin_poster.jpg",
+        href: "./gamesList/fridayNightFunkin.html"
     },
     {
         title: "Genshin Impact",
@@ -494,7 +494,7 @@ window.gameCatalog = [{
         title: "Doki Doki Literature Club",
         genre: "Visual Novel",
         image: "../../public/posters/ddlc_poster.jpg",
-        href: "./gamesList/ddlc.html"
+        href: "./gamesList/dokiDokiLiteratureClub.html"
     },
     {
         title: "The Division",
