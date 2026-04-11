@@ -140,7 +140,7 @@ window.gameCatalog = [{
         title: "Cyberpunk 2077",
         genre: "RPG",
         image: "../../public/posters/cyberpunk2077_poster.jpg",
-        href: "./gamesList/cyberpunk2077.html"
+        href: "./gamesList/cyberpunk.html"
     },
     {
         title: "Ghost of Tsushima",
@@ -152,7 +152,7 @@ window.gameCatalog = [{
         title: "Assassin's Creed",
         genre: "Action",
         image: "../../public/posters/assassinsCreed_poster.jpg",
-        href: "./gamesList/assassinsCreed.html"
+        href: "./gamesList/assassinsCreedBlackFlag.html"
     },
     {
         title: "Dying Light",
@@ -163,8 +163,8 @@ window.gameCatalog = [{
     {
         title: "Resident Evil",
         genre: "Horror",
-        image: "../../public/posters/residentEvil_poster.jpg",
-        href: "./gamesList/residentEvil.html"
+        image: "../../public/posters/residentEvil4_poster.jpg",
+        href: "./gamesList/residentEvil4.html"
     },
     {
         title: "Warframe",
@@ -173,7 +173,7 @@ window.gameCatalog = [{
         href: "./gamesList/warframe.html"
     },
     {
-        title: "Need for Speed",
+        title: "Need for Speed Heat",
         genre: "Racing",
         image: "../../public/posters/needForSpeed_poster.jpg",
         href: "./gamesList/needForSpeed.html"
@@ -302,13 +302,13 @@ window.gameCatalog = [{
         title: "Ghost Recon",
         genre: "Shooter",
         image: "../../public/posters/ghostRecon_poster.jpg",
-        href: "./gamesList/ghostRecon.html"
+        href: "./gamesList/ghostReconWildlands.html"
     },
     {
         title: "Yu-Gi-Oh! Master Duel",
         genre: "Card Game",
         image: "../../public/posters/masterDuel_poster.jpg",
-        href: "./gamesList/masterDuel.html"
+        href: "./gamesList/yugiohMasterDuel.html"
     },
     {
         title: "Umamusume: Pretty Derby",
@@ -320,7 +320,7 @@ window.gameCatalog = [{
         title: "Arknights: Endfield",
         genre: "RPG",
         image: "../../public/posters/endfield_poster.jpg",
-        href: "./gamesList/endfield.html"
+        href: "./gamesList/arknightsEndfield.html"
     },
     {
         title: "Fallout",
@@ -353,7 +353,7 @@ window.gameCatalog = [{
         href: "./gamesList/sekiro.html"
     },
     {
-        title: "Seven Days to Die",
+        title: "7 Days to Die",
         genre: "Survival",
         image: "../../public/posters/7daysToDie_poster.jpg",
         href: "./gamesList/7daysToDie.html"
@@ -380,7 +380,7 @@ window.gameCatalog = [{
         title: "Left 4 Dead 2",
         genre: "FPS",
         image: "../../public/posters/left4Dead2_poster.jpg",
-        href: "./gamesList/left4Dead2.html"
+        href: "./gamesList/left4Dead.html"
     },
     {
         title: "Crossfire",
@@ -395,10 +395,10 @@ window.gameCatalog = [{
         href: "./gamesList/itTakesTwo.html"
     },
     {
-        title: "Grand Theft Auto V",
+        title: "Grand Theft Auto San Andreas",
         genre: "Action",
-        image: "../../public/posters/gtaV_poster.jpg",
-        href: "./gamesList/gtaV.html"
+        image: "../../public/posters/grandTheftAuto_poster.jpg",
+        href: "./gamesList/grandTheftAuto.html"
     },
     {
         title: "Prototype",
@@ -407,9 +407,9 @@ window.gameCatalog = [{
         href: "./gamesList/prototype.html"
     },
     {
-        title: "Toy Story",
+        title: "Toy Story 3",
         genre: "Platformer",
-        image: "../../public/posters/toyStory_poster.jpg",
+        image: "../../public/posters/toyStory3_poster.jpg",
         href: "./gamesList/toyStory.html"
     },
     {
@@ -506,7 +506,7 @@ window.gameCatalog = [{
         title: "DJMAX Respect V",
         genre: "Rhythm",
         image: "../../public/posters/djmax_poster.jpg",
-        href: "./gamesList/djmax.html"
+        href: "./gamesList/djmaxRespectV.html"
     },
     {
         title: "Project Sekai",
@@ -560,6 +560,24 @@ window.gameCatalog = [{
         title: "Lies of P",
         genre: "RPG",
         image: "../../public/posters/liesOfP_poster.jpg",
-        href: "./gamesList/liesOfP.html"
+        href: "./gamesList/liesOfPi.html"
+    },
+    {
+        title: "Uncharted 4: A Thief's End",
+        genre: "Action",
+        image: "../../public/posters/uncharted_poster.jpg",
+        href: "./gamesList/uncharted.html"
+    },
+    {
+        title: "Tomb Raider",
+        genre: "Action",
+        image: "../../public/posters/laraCroftTombRaider_poster.jpg",
+        href: "./gamesList/laraCroftTombRaider.html"
+    },
+    {
+        title: "Omori",
+        genre: "RPG",
+        image: "../../public/posters/omori_poster.jpg",
+        href: "./gamesList/omori.html"
     }
 ];
