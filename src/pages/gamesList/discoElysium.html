@@ -1,0 +1,2135 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend:wght@100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Manrope:wght@200..800&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+        rel="stylesheet" />
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../styles/styles.css" type="text/css" />
+    <link rel="stylesheet" href="../../styles/sizeChecker.css" type="text/css" />
+    <link rel="stylesheet" href="../../styles/game.css" typeF="text/css" />
+
+    <!-- Custom Styles -------------------------------------------------------------------------- -->
+    <style>
+        nav.game-info-nav label {
+            width: calc(100% / 5) !important;
+        }
+
+        .game-sections {
+            &#short-description {
+
+                &>h2 {
+                    font-weight: 900;
+                    font-size: 2.5em;
+                }
+
+                &>p {
+                    text-align: justify;
+                    margin-bottom: 1em;
+                }
+
+                &>.list-style {
+                    list-style: none;
+                    float: right;
+                    background-color: var(--t-color-base-100);
+                    padding: 2em;
+                    margin-left: 2em;
+                    margin-bottom: 2em;
+                    border-radius: var(--t-radius-field);
+                    border: var(--t-border) solid var(--t-color-base-300);
+
+                    &>h6 {
+                        font-weight: 900;
+                    }
+
+                    &>li {
+                        margin-left: 1em;
+                        margin-bottom: 1em;
+                        position: relative;
+
+                        &::before {
+                            content: '';
+                            display: block;
+                            position: absolute;
+                            width: 0.2em;
+                            height: 1em;
+                            background-color: var(--t-color-primary);
+                            border-radius: 1em;
+                            left: -0.75em;
+                            top: calc(50% - 0.5em);
+                        }
+                    }
+                }
+            }
+
+            &#ui-components {
+                margin-bottom: 2em;
+
+                &>h2 {
+                    font-weight: 900;
+                    font-size: 2.5em;
+                }
+
+                & .major-components {
+                    display: grid;
+                    grid-template-rows: 1fr;
+                    grid-template-columns: 50% 1fr;
+                    gap: 1em;
+                    margin: 2em 0;
+                }
+
+                & .major-component {
+                    background-color: var(--t-color-base-100);
+                    border-radius: var(--t-radius-field);
+                    padding: 1em;
+                    height: auto;
+                    position: relative;
+                    display: flex;
+                    align-items: flex-start;
+                    flex-direction: column;
+                    gap: 1em;
+                    min-height: 15em;
+                    border: var(--t-border) solid var(--t-color-base-300);
+
+                    &:first-child {
+                        grid-column: 1 / -1;
+                        width: 100%;
+                        flex-direction: row;
+                    }
+
+                    &:not(:first-child) {
+                        flex-direction: column;
+                    }
+
+                    & figure {
+                        position: relative;
+                        margin-bottom: 0;
+                        width: 100%;
+                        height: auto;
+
+                        & figcaption {
+                            font-size: 0.9em;
+                            color: var(--t-color-light);
+                            margin-top: 0.5em;
+                            position: absolute;
+                            bottom: 0.5em;
+                            right: 0.5em;
+                        }
+                    }
+
+                    & a {
+                        flex-shrink: 0;
+                        margin-left: auto;
+
+                        & img {
+                            display: block;
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                            border-radius: 0.25em;
+                        }
+                    }
+
+                    & .count {
+                        font-weight: 700;
+                        font-size: 1.2em;
+                        font-family: var(--bs-font-monospace);
+                        color: var(--t-color-secondary);
+                        display: block;
+                    }
+
+                    & .header-text {
+                        font-weight: 700;
+                        font-size: 2.5em;
+                        font-family: var(--bs-font-serif);
+                    }
+
+                    & ul {
+                        list-style: none;
+                        margin-left: 1em;
+                        margin-top: 2em;
+
+                        & h6 {
+                            font-weight: 900;
+                        }
+
+                        & li {
+                            margin-left: 1em;
+                            margin-bottom: 0.5em;
+                            position: relative;
+
+                            &::before {
+                                content: '';
+                                display: block;
+                                position: absolute;
+                                width: 0.2em;
+                                height: 1em;
+                                background-color: var(--t-color-primary);
+                                border-radius: 1em;
+                                left: -0.75em;
+                                top: calc(50% - 0.5em);
+                            }
+                        }
+                    }
+                }
+
+                & .evaluation {
+                    display: grid;
+                    grid-template-columns: 50% 1fr;
+                    gap: 1em;
+
+                    & h2 {
+                        font-weight: 900;
+                        font-size: 2.5em;
+                    }
+
+                    & figure {
+                        position: relative;
+                        margin-bottom: 0;
+                        width: 100%;
+                        height: auto;
+
+                        & figcaption {
+                            font-size: 0.9em;
+                            color: var(--t-color-dark);
+                            margin-top: 0.5em;
+                            position: absolute;
+                            bottom: 0.5em;
+                            right: 0.5em;
+                        }
+                    }
+
+                    & a {
+                        flex-shrink: 0;
+                        margin-left: auto;
+
+                        & img {
+                            width: 100% !important;
+                            height: auto !important;
+                            margin-bottom: 1em;
+                        }
+                    }
+                }
+
+                @media (width < 48rem) {
+                    & .fittslaw {
+                        grid-template-columns: 1fr;
+                    }
+                }
+
+                & .mathmodel {
+                    margin: 1em 0;
+                    padding: 1em;
+                    position: relative;
+                    padding-left: 2em;
+                    background-color: var(--t-color-base-300);
+                    border-radius: var(--t-radius-field);
+                    overflow: hidden;
+
+                    &::before {
+                        content: '';
+                        display: block;
+                        position: absolute;
+                        width: 0.5em;
+                        height: 100%;
+                        background-color: var(--t-color-primary);
+                        left: 0;
+                        top: 0;
+                    }
+
+                    & h6 {
+                        font-family: var(--bs-font-monospace);
+                        color: var(--t-color-dark);
+                        font-weight: 300;
+                    }
+
+                    & span {
+                        font-size: 2em
+                    }
+                }
+
+                @media (width < 48rem) {
+                    & .major-components {
+                        grid-template-columns: 1fr;
+                        gap: 1em;
+                    }
+
+                    & .major-component {
+                        &:first-child {
+                            flex-direction: column;
+                        }
+
+                        & figure {
+                            width: 100%;
+
+                            & figcaption {
+                                bottom: 1em;
+                            }
+                        }
+
+                        & a {
+                            margin-left: 0;
+                            width: 100%;
+
+                            & img {
+                                width: 100% !important;
+                                height: auto !important;
+                                margin-bottom: 1em;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &#user-interaction {
+                margin-bottom: 2em;
+
+                &>h2 {
+                    font-weight: 900;
+                    font-size: 2.5em;
+                }
+
+                & h3 {
+                    font-weight: 900;
+                    font-size: 2.5em;
+                }
+
+
+                & .multi-modal-feedback {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 1em;
+                    padding-top: 1em;
+
+                    @media (width < 48rem) {
+                        grid-template-columns: 1fr !important;
+                    }
+
+                    & figure {
+                        margin: auto;
+                        width: 100%;
+                        height: auto;
+
+                        & img {
+                            width: 100% !important;
+                            height: auto !important;
+                        }
+                    }
+                }
+
+                & ul {
+                    list-style: none;
+                    padding: 0;
+
+                    & li {
+                        margin-top: 2em;
+                        display: flex;
+                        flex-direction: row;
+
+                        & h6 {
+                            font-weight: 700;
+                            font-size: 1.5em;
+                            margin-bottom: 0.5em;
+                        }
+
+                        & .logo-svg {
+                            height: 5em;
+                            flex-shrink: 0;
+                            background-color: var(--t-color-secondary);
+                            color: var(--t-color-base-100);
+                            aspect-ratio: 1 / 1;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: center;
+                            padding: 1em;
+                            border-radius: var(--t-radius-field);
+                            margin: auto;
+                            margin-right: 1em;
+
+                            & svg {
+                                width: 100%;
+                                height: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &#hci-principles {
+                margin-bottom: 2em;
+
+                &>h2 {
+                    font-weight: 900;
+                    font-size: 2.5em;
+                }
+                & .signifiers-affordance {
+                    margin-top: 2em;
+                    padding: 1.25em;
+                    border-radius: var(--t-radius-field);
+                    background-color: var(--t-color-base-100);
+                    border: var(--t-border) solid var(--t-color-base-300);
+
+                    & h3 {
+                        margin-bottom: 0.75em;
+                    }
+
+                    & .feedback-intro {
+                        padding: 1em;
+                        border-radius: var(--t-radius-field);
+                        background-color: var(--t-color-base-200);
+                        border: var(--t-border) solid var(--t-color-base-300);
+                        margin-bottom: 1em;
+
+                        & p {
+                            margin: 0;
+                            text-align: justify;
+                            line-height: 1.55;
+                        }
+                    }
+
+                    & ul {
+                        list-style: none;
+                        padding: 0;
+                        margin: 0;
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        gap: 1em;
+
+                        @media (width < 48rem) {
+                            grid-template-columns: 1fr;
+                        }
+
+                        & li {
+                            margin: 0;
+                            display: flex;
+                            flex-direction: column;
+                            gap: 0.85em;
+                            padding: 1em;
+                            border-radius: var(--t-radius-field);
+                            background-color: var(--t-color-base-200);
+                            border: var(--t-border) solid var(--t-color-base-300);
+
+                            & h6 {
+                                font-weight: 700;
+                                font-size: 1.15em;
+                                margin: 0;
+                            }
+
+                            & .logo-svg {
+                                width: 3em;
+                                height: 3em;
+                                flex-shrink: 0;
+                                background-color: var(--t-color-secondary);
+                                color: var(--t-color-base-100);
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                padding: 0.75em;
+                                border-radius: var(--t-radius-selector);
+
+                                & svg {
+                                    width: 100%;
+                                    height: 100%;
+                                    overflow: visible;
+                                    display: block;
+                                }
+                            }
+
+                            & p {
+                                margin: 0;
+                                text-align: justify;
+                                line-height: 1.5;
+                            }
+                        }
+                    }
+                }
+
+                & .mental-models {
+                    margin-top: 2em;
+                    padding: 1em;
+                    border-radius: var(--t-radius-field);
+                    background-color: var(--t-color-base-100);
+                    border: var(--t-border) solid var(--t-color-base-300);
+
+                    &>h3 {
+                        font-weight: 900;
+                        font-size: 2em;
+                    }
+
+                    & .mental-models-content {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        gap: 1em;
+
+                        @media (width < 48rem) {
+                            grid-template-columns: 1fr !important;
+                        }
+
+                        & h6 {
+                            font-weight: 700;
+                            font-size: 1.2em;
+                            margin-bottom: 0.5em;
+                        }
+
+                        & .primary-modalities {
+                            list-style: none;
+                            padding: 1em;
+                            background-color: var(--t-color-base-200);
+                            border-radius: var(--t-radius-field);
+                            margin-bottom: 0;
+
+
+                            & li {
+                                margin-left: 1em;
+                                margin-bottom: 0.5em;
+                                position: relative;
+
+                                &::before {
+                                    content: '';
+                                    display: block;
+                                    position: absolute;
+                                    width: 0.2em;
+                                    height: 1em;
+                                    background-color: var(--t-color-primary);
+                                    border-radius: 1em;
+                                    left: -0.75em;
+                                    top: calc(50% - 0.5em);
+                                }
+                            }
+                        }
+                    }
+                }
+
+                & .spatial-congruence {
+                    padding: 1em;
+                    margin-top: 2em;
+
+                    & h2 {
+                        font-weight: 900;
+                        font-size: 2.5em;
+                    }
+                }
+
+                & .cognitive-load-bifurcation {
+                    margin: 2em 0;
+                    padding: 1em;
+                    border-radius: var(--t-radius-field);
+                    background-color: var(--t-color-base-100);
+                    border: var(--t-border) solid var(--t-color-base-300);
+
+                    &>h2 {
+                        font-weight: 900;
+                        font-size: 2em;
+                    }
+
+                    & table {
+                        width: 100%;
+                        border-collapse: separate;
+                        border-spacing: 0;
+                        border: var(--t-border) solid var(--t-color-base-300);
+                        border-radius: var(--t-radius-field);
+                        overflow: hidden;
+                        background-color: var(--t-color-base-200);
+                    }
+
+                    & th,
+                    & td {
+                        padding: 1em;
+                        vertical-align: top;
+                    }
+
+                    & thead th {
+                        font-weight: 800;
+                        font-size: 1.05em;
+                        background-color: var(--t-color-base-300);
+                        border-bottom: 1px solid var(--t-color-base-300);
+                    }
+
+                    & th+th,
+                    & td+td {
+                        border-left: 1px solid var(--t-color-base-300);
+                    }
+
+                    & tbody td {
+                        border-bottom: 1px solid var(--t-color-base-300);
+                    }
+
+                    & tbody tr:last-child td {
+                        border-bottom: 0;
+                    }
+
+                    & td h6 {
+                        font-weight: 700;
+                        font-size: 1.15em;
+                        margin-bottom: 0.5em;
+                    }
+
+                    & td p {
+                        margin-bottom: 0;
+                    }
+
+                    @media (width < 48rem) {
+
+                        & table,
+                        & thead,
+                        & tbody,
+                        & tr,
+                        & th,
+                        & td {
+                            display: block;
+                            width: 100%;
+                        }
+
+                        & thead {
+                            display: none;
+                        }
+
+                        & tbody tr {
+                            border-bottom: 1px solid var(--t-color-base-300);
+                            padding: 0.5em;
+                        }
+
+                        & tbody tr:last-child {
+                            border-bottom: 0;
+                        }
+
+                        & td {
+                            border: 0;
+                            border-radius: var(--t-radius-field);
+                            background-color: var(--t-color-base-100);
+                            margin-bottom: 0.75em;
+                        }
+
+                        & td::before {
+                            display: block;
+                            font-weight: 700;
+                            font-size: 0.85em;
+                            text-transform: uppercase;
+                            letter-spacing: 0.04em;
+                            color: var(--t-color-primary);
+                            margin-bottom: 0.5em;
+                        }
+
+                        & td:nth-child(1)::before {
+                            content: 'Extrinsic Load';
+                        }
+
+                        & td:nth-child(2)::before {
+                            content: 'Intrinsic Focus';
+                        }
+                    }
+                }
+            }
+
+            &#ui-ux-weaknesses {
+                margin-bottom: 2em;
+
+                &>h2 {
+                    font-weight: 900;
+                    font-size: 2.5em;
+                }
+
+                &>p {
+                    text-align: justify;
+                    margin-bottom: 2em;
+                }
+
+                & table {
+                    width: 100%;
+                    border-collapse: separate;
+                    border-spacing: 0;
+                    border: var(--t-border) solid var(--t-color-base-300);
+                    border-radius: var(--t-radius-field);
+                    overflow: hidden;
+                    background-color: var(--t-color-base-100);
+                }
+
+                & th,
+                & td {
+                    padding: 1em;
+                    vertical-align: top;
+                }
+
+                & td {
+                    position: relative;
+                    padding-right: 4.25em;
+                }
+
+                & thead th {
+                    font-weight: 800;
+                    font-size: 1.05em;
+                    background-color: var(--t-color-base-300);
+                    border-bottom: 1px solid var(--t-color-base-300);
+                }
+
+                & th+th,
+                & td+td {
+                    border-left: 1px solid var(--t-color-base-300);
+                }
+
+                & tbody td {
+                    border-bottom: 1px solid var(--t-color-base-300);
+                }
+
+                & tbody tr:last-child td {
+                    border-bottom: 0;
+                }
+
+                & .badge {
+                    font-size: 0.75em;
+                    font-weight: 400;
+                    border-radius: var(--t-radius-selector);
+                    padding: 0.35em 0.75em;
+                    margin-left: 0.5em;
+                    vertical-align: middle;
+                    border: var(--t-border) solid transparent;
+                }
+
+                & .badge-success {
+                    background-color: var(--t-color-success);
+                    color: color-mix(in oklab, var(--t-color-success-content) 70%, var(--t-color-success));
+                    border-color: color-mix(in oklab, var(--t-color-success) 65%, var(--t-color-dark));
+                }
+
+                & .badge-danger {
+                    background-color: var(--t-color-error);
+                    color: color-mix(in oklab, var(--t-color-error-content) 70%, var(--t-color-error));
+                    border-color: color-mix(in oklab, var(--t-color-error) 65%, var(--t-color-dark));
+                }
+
+                & .sw-item-head {
+                    display: block;
+                    margin-bottom: 0.75em;
+                }
+
+                & .sw-icon {
+                    width: 2.75em;
+                    height: 2.75em;
+                    color: var(--t-color-base-300);
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-shrink: 0;
+                    position: absolute;
+                    top: 0.75em;
+                    right: 0.75em;
+                }
+
+                & .sw-icon svg {
+                    width: 1.5em;
+                    height: 1.5em;
+                }
+
+                & .label {
+                    display: inline-block;
+                    font-family: var(--bs-font-monospace);
+                    font-size: 0.9em;
+                    font-weight: 700;
+                    color: var(--t-color-secondary);
+                    letter-spacing: 0.03em;
+                }
+
+                & td h6 {
+                    font-weight: 700;
+                    font-size: 1.2em;
+                    margin-bottom: 0.5em;
+                }
+
+                & td p {
+                    margin-bottom: 0;
+                    text-align: justify;
+                }
+
+                @media (width < 48rem) {
+
+                    & table,
+                    & thead,
+                    & tbody,
+                    & tr,
+                    & th,
+                    & td {
+                        display: block;
+                        width: 100%;
+                    }
+
+                    & thead {
+                        display: none;
+                    }
+
+                    & tbody tr {
+                        border-bottom: 1px solid var(--t-color-base-300);
+                        padding: 0.5em;
+                        background-color: var(--t-color-base-200);
+                    }
+
+                    & tbody tr:last-child {
+                        border-bottom: 0;
+                    }
+
+                    & td {
+                        border: 0;
+                        border-radius: var(--t-radius-field);
+                        background-color: var(--t-color-base-100);
+                        margin-bottom: 0.75em;
+                    }
+
+                    & td::before {
+                        display: block;
+                        font-weight: 700;
+                        font-size: 0.85em;
+                        text-transform: uppercase;
+                        letter-spacing: 0.04em;
+                        margin-bottom: 0.5em;
+                    }
+
+                    & td:nth-child(1)::before {
+                        content: 'System Strengths';
+                        color: color-mix(in oklab, var(--t-color-success) 70%, var(--t-color-dark));
+                    }
+
+                    & td:nth-child(2)::before {
+                        content: 'System Weaknesses';
+                        color: color-mix(in oklab, var(--t-color-error) 70%, var(--t-color-dark));
+                    }
+                }
+            }
+        }
+
+
+        & .list-style-area {
+            margin: 2em 0;
+            width: 100%;
+            background-color: var(--t-color-base-100);
+            border: var(--t-border) solid var(--t-color-base-300);
+            padding: 1em;
+            border-radius: var(--t-radius-field);
+
+            & ol {
+                list-style: none;
+                margin-left: 0;
+                padding-left: 0;
+                margin-top: 2em;
+                display: grid;
+                gap: 1em;
+
+                &.two-columns {
+                    grid-template-columns: 1fr 1fr;
+                }
+
+                &.three-columns {
+                    grid-template-columns: 1fr 1fr 1fr;
+                }
+
+                &.four-columns {
+                    grid-template-columns: 1fr 1fr 1fr 1fr;
+                }
+
+                @media (width < 48rem) {
+                    &.md-one-columns {
+                        grid-template-columns: 1fr !important;
+                    }
+
+                    &.md-two-columns {
+                        grid-template-columns: 1fr 1fr !important;
+                    }
+                }
+
+                & li {
+                    position: relative;
+
+                    &::before {
+                        font-weight: 700;
+                        font-size: 5em;
+                        font-family: var(--bs-font-monospace);
+                        color: var(--t-color-base-200);
+                        position: absolute;
+                        top: -0.5em;
+                    }
+
+                    &:nth-child(1)::before {
+                        content: '01';
+                    }
+
+                    &:nth-child(2)::before {
+                        content: '02';
+                    }
+
+                    &:nth-child(3)::before {
+                        content: '03';
+                    }
+
+                    &:nth-child(4)::before {
+                        content: '04';
+                    }
+
+                    @media (width > 48rem) {
+                        &::before {
+                            left: 0;
+                        }
+                    }
+
+                    @media (width < 48rem) {
+                        &::before {
+                            right: 0;
+                        }
+                    }
+
+                    & h6 {
+                        font-weight: 700;
+                        font-size: 1.5em;
+                        position: relative;
+
+                        &::after {
+                            content: '';
+                            display: block;
+                            width: 100%;
+                            height: 1px;
+                            background-color: var(--t-color-base-300);
+                            margin-top: 0.5em;
+                        }
+                    }
+                }
+            }
+        }
+
+        .footnote {
+            width: 100%;
+            background-color: rgba(var(--t-color-primary-rgb), 0.1);
+            padding: 2em;
+            border-radius: var(--t-radius-field);
+
+            &::before {
+                content: 'Note:';
+                font-weight: 700;
+                font-size: 1.2em;
+                color: var(--t-color-primary);
+                display: block;
+                margin-bottom: 0.5em;
+            }
+
+            &.summary::before {
+                content: 'Summary:';
+            }
+        }
+
+        .back-to-top {
+            position: fixed;
+            right: 1.25rem;
+            bottom: 1.25rem;
+            width: 3.5rem;
+            height: 3.5rem;
+            border: 0;
+            border-radius: var(--t-radius-selector);
+            background-color: transparent;
+            padding: 0;
+            display: grid;
+            place-items: center;
+            z-index: 1001;
+            opacity: 0;
+            transform: translateY(0.5rem) scale(0.96);
+            pointer-events: none;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+            cursor: pointer;
+        }
+
+        .back-to-top.is-visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            pointer-events: auto;
+        }
+
+        .back-to-top .btn-bg {
+            fill: var(--t-color-base-100);
+            stroke: var(--t-color-base-300);
+            stroke-width: 1.5;
+        }
+
+        .back-to-top .btn-progress-track {
+            fill: none;
+            stroke: var(--t-color-base-300);
+            stroke-width: 3;
+            opacity: 0.35;
+        }
+
+        .back-to-top .btn-progress {
+            fill: none;
+            stroke: var(--t-color-primary);
+            stroke-width: 3;
+            stroke-linecap: round;
+            transform: rotate(-90deg);
+            transform-origin: 28px 28px;
+            transition: stroke-dashoffset 0.1s linear;
+        }
+
+        .back-to-top .btn-icon {
+            fill: none;
+            stroke: var(--t-color-primary);
+            stroke-width: 1.8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .back-to-top:hover .btn-bg {
+            fill: var(--t-color-base-200);
+        }
+
+        /* YouTube Ban Fallback Styling */
+        .video-fallback-message {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(var(--t-color-primary-rgb), 0.05) 0%, rgba(59.939% 0.191 335.171, 0.03) 100%);
+            border-radius: var(--t-radius-field);
+            padding: 2em;
+            z-index: 10;
+            backdrop-filter: blur(4px);
+        }
+
+        .fallback-content {
+            text-align: center;
+            max-width: 90%;
+        }
+
+        .fallback-icon {
+            width: 3.5em;
+            height: 3.5em;
+            color: var(--t-color-accent);
+            margin: 0 auto 1em;
+            stroke: var(--t-color-accent);
+        }
+
+        .fallback-content h4 {
+            font-weight: 700;
+            font-size: 1.5em;
+            color: var(--t-color-dark);
+            margin-bottom: 0.5em;
+        }
+
+        .fallback-content p {
+            color: var(--t-color-dark);
+            font-size: 0.95em;
+            margin-bottom: 1.5em;
+            text-indent: 0;
+        }
+
+        .fallback-actions {
+            display: flex;
+            gap: 1em;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 1.5em;
+        }
+
+        .btn-fallback {
+            padding: 0.75em 1.5em;
+            border: none;
+            border-radius: var(--t-radius-field);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            font-size: 0.9em;
+            white-space: nowrap;
+        }
+
+        .btn-retry {
+            background: linear-gradient(135deg, var(--t-color-primary) 0%, var(--t-color-accent) 100%);
+            color: var(--t-color-primary-content);
+            box-shadow: 0 4px 12px rgba(var(--t-color-primary-rgb), 0.3);
+        }
+
+        .btn-retry:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(var(--t-color-primary-rgb), 0.4);
+        }
+
+        .btn-local {
+            background-color: var(--t-color-secondary);
+            color: var(--t-color-secondary-content);
+            box-shadow: 0 4px 12px rgba(42.551% 0.161 282.339, 0.3);
+        }
+
+        .btn-local:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(42.551% 0.161 282.339, 0.4);
+        }
+
+        .fallback-hint {
+            color: var(--t-color-dark);
+            font-size: 0.85em;
+            margin: 0;
+        }
+
+        .game-video-wrp {
+            position: relative;
+        }
+    </style>
+    <!-- Custom Styles -------------------------------------------------------------------------- -->
+
+    <title id="title">GameName - GameUX</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-light navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="../../index.html">
+                    <img src="../../../public/gameux.png" alt="Logo" class="navbar-logo" />
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent">
+                    <span class="navbar-toggler-icon" style="width: 1em"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">Game List</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <nav class="breadcrumb-nav" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="../gameList.html">Game List</a>
+            </li>
+            <li class="breadcrumb-item active game-name">Game name</li>
+        </ol>
+    </nav>
+    <main>
+        <article class="wide">
+            <section class="header-section">
+                <img class="game-poster-content game-poster-background-style" />
+                <h1 class="game-name game-name-header" title="Game Name">
+                    Game name
+                </h1>
+                <div class="game-header">
+                    <span class="game-header-cont">
+                        <div class="game-info-bar">
+                            <span class="game-date-info">
+                                <span class="date-released" title="Date Released">Date Released</span>
+                                <span class="days-ago" title="Days Age">11 months ago</span>
+                            </span>
+                            <span class="game-badge">Full Release</span>
+                            <span class="publisher" title="Publisher">Publisher</span>
+                        </div>
+                    </span>
+                    <div class="game-header-rating">
+                        <table class="game-user-rating-cont">
+                            <tr>
+                                <td rowspan="2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <path fill-rule="evenodd"
+                                            d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </td>
+                                <td class="game-user-rating">0</td>
+                            </tr>
+                            <tr>
+                                <td class="game-user-ratings">0 user ratings</td>
+                            </tr>
+                        </table>
+                        <table class="game-critic-rating-cont">
+                            <tr>
+                                <td rowspan="2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <path fill-rule="evenodd"
+                                            d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </td>
+                                <td class="game-critic-rating">0</td>
+                            </tr>
+                            <tr>
+                                <td class="game-critic-ratings">0 critic ratings</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="video-game-container">
+                    <a class="game-poster" id="game-poster">
+                        <img class="game-poster-img" id="game-poster-img" alt="Game Poster" target="images"
+                            title="Osu! Game Poster" />
+                    </a>
+                    <div class="game-video-wrp">
+                        <video class="game-video" id="game-video" controls>
+                            <source type="video/mp4" id="game-video-source" />
+                            Your browser does not support the video tag.
+                        </video>
+                        <iframe class="game-video" id="game-video-yt" frameborder="0" allowfullscreen hidden></iframe>
+                        <div class="video-fallback-message" id="video-fallback" hidden>
+                            <div class="fallback-content">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" class="fallback-icon">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                                </svg>
+                                <h4>YouTube is Blocked on Your Network</h4>
+                                <p>It appears YouTube is not accessible in your current network environment.</p>
+                                <div class="fallback-actions">
+                                    <button id="retry-youtube-btn" class="btn-fallback btn-retry" type="button">Retry
+                                        YouTube</button>
+                                    <button id="use-local-video-btn" class="btn-fallback btn-local" type="button">Use
+                                        Local Video</button>
+                                </div>
+                                <p class="fallback-hint">💡 Try connecting through a different network or VPN to access
+                                    YouTube content.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="game-rating">
+                        <table class="game-user-rating-cont">
+                            <tr>
+                                <td rowspan="2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <path fill-rule="evenodd"
+                                            d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </td>
+                                <td class="game-user-rating">0</td>
+                            </tr>
+                            <tr>
+                                <td class="game-user-ratings">0 user ratings</td>
+                            </tr>
+                        </table>
+                        <table class="game-critic-rating-cont">
+                            <tr>
+                                <td rowspan="2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <path fill-rule="evenodd"
+                                            d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </td>
+                                <td class="game-critic-rating">0</td>
+                            </tr>
+                            <tr>
+                                <td class="game-critic-ratings">0 critic ratings</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <ul class="game-list-data">
+                    <li class="game-list-data-item">
+                        Genres:
+                        <ul id="genres"></ul>
+                    </li>
+                    <li class="game-list-data-item">
+                        Platforms:
+                        <ul id="platforms"></ul>
+                    </li>
+                    <li class="game-list-data-item">
+                        Editions:
+                        <ul id="editions"></ul>
+                    </li>
+                </ul>
+                <p class="game-description" id="game-description">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
+                    aliquam consequatur iusto corrupti magni similique, non delectus
+                    illum esse ullam ad iure exercitationem doloribus ipsum at molestias
+                    et enim accusamus.
+                </p>
+            </section>
+        </article>
+        <div class="game-info-nav-container">
+            <div class="game-info-nav-wrap">
+                <button class="game-info-nav-arrow left" id="game-info-nav-left" type="button"
+                    aria-label="Scroll sections left" hidden>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
+                        width="20" height="20">
+                        <path fill-rule="evenodd"
+                            d="M15.78 19.28a.75.75 0 0 1-1.06 0L8.22 12.78a.75.75 0 0 1 0-1.06l6.5-6.5a.75.75 0 1 1 1.06 1.06L9.81 12l5.97 5.72a.75.75 0 0 1 0 1.56Z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </button>
+                <nav class="game-info-nav" id="game-info-nav" role="tablist">
+                    <label role="tab"><input type="radio" name="game-section" value="short-description"
+                            checked="checked" />
+                        Overview</label>
+                    <label role="tab"><input type="radio" name="game-section" value="ui-components" /> UI
+                        Components</label>
+                    <label role="tab"><input type="radio" name="game-section" value="user-interaction" />
+                        Interaction</label>
+                    <label role="tab"><input type="radio" name="game-section" value="hci-principles" />
+                        HCI Principles</label>
+                    <label role="tab"><input type="radio" name="game-section" value="ui-ux-weaknesses" />
+                        Analysis</label>
+                </nav>
+                <button class="game-info-nav-arrow right" id="game-info-nav-right" type="button"
+                    aria-label="Scroll sections right" hidden>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
+                        width="20" height="20">
+                        <path fill-rule="evenodd"
+                            d="M8.22 4.72a.75.75 0 0 1 1.06 0l6.5 6.5a.75.75 0 0 1 0 1.06l-6.5 6.5a.75.75 0 1 1-1.06-1.06L14.19 12 8.22 6.28a.75.75 0 0 1 0-1.56Z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- 
+        
+        Sections ==================================================
+        
+        -->
+        <article>
+            <div class="game-sections-stage">
+                <section class="game-sections" id="short-description">
+                    <h2>Overview</h2>
+                    <p>
+                        Disco Elysium is a groundbreaking isometric CRPG that redefines the genre by trading traditional combat for psychological warfare and philosophical inquiry. Developed by ZA/UM and led by Estonian novelist Robert Kurvitz, the game is set in the seaside district of Martinaise within the decaying city of Revachol. You awaken as a hungover, amnesiac detective tasked with solving a gruesome murder, but the investigation quickly evolves into a surreal journey of self-discovery. Featuring a striking, painterly art style and a melancholic soundtrack by the band Sea Power, the game immerses you in a world where every conversation carries the weight of a life-or-death struggle.
+                    </p>
+                    <p>
+                        The heart of the experience lies in its innovative skill system, which personifies 24 distinct facets of the protagonist's psyche. These interior voices—such as the cold analysis of Logic, the primal urges of Electrochemistry, or the Lynchian surrealism of Inland Empire—constantly interject, argue, and influence your perception of the world. As you navigate the political unrest and social disparities of Revachol, you must reconstruct your shattered identity and confront historical traumas. Whether you choose to be a revolutionary hero, a pathetic disaster, or something in between, the game offers a darkly comedic and deeply moving exploration of what it means to be human in a collapsing reality.
+                    </p>
+                    <ul class="metrics-list">
+                        <li>
+                            <h6>Cognitive Load</h6>
+                            <div class="value">Extreme</div>
+                            <div class="desc">Sustaining multiple internal "voices" while managing complex political ideologies and personal trauma.</div>
+                        </li>
+                        <li>
+                            <h6>Response Time</h6>
+                            <div class="value">Variable (High)</div>
+                            <div class="desc">Evaluating branching dialogue options and probabilistic risks (2d6) during high-stakes social checks.</div>
+                        </li>
+                        <li>
+                            <h6>Visual Reaction Time</h6>
+                            <div class="value">Persistent</div>
+                            <div class="desc">Identifying pulsing "thought orbs" and environmental signifiers amidst a dense, painterly landscape.</div>
+                        </li>
+                    </ul>
+                </section>
+                <section class="game-sections" id="ui-components">
+                    <h2>UI Components</h2>
+                    <div class="major-components">
+                        <div class="major-component">
+                            <figure>
+                                <a href="../../../public/gamesContent/discoElysium/portraits.png" title="Disco Elysium Portraits"
+                                    target="images">
+                                    <img src="../../../public/gamesContent/discoElysium/portraits.png" alt="Portraits">
+                                </a>
+                                <figcaption>FIG 1.1: Portraits</figcaption>
+                            </figure>
+                            <div>
+                                <span class="count">[ ELEMENT_01 ]</span>
+                                <span class="header-text">Character Identification</span>
+                                <p>
+                                    The grid of portraits exemplifies the game’s use of painterly, expressionistic aesthetics to convey deep character lore through non-textual cues. These assets serve as meta-diegetic UI elements, providing a visual shorthand for a character's internal state and social standing that transcends simple identification. By utilizing distinct brushwork and color palettes for each NPC, the interface creates a cognitive map that helps the player navigate the complex social landscape of Martinaise without relying on standardized, immersion-breaking icons.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="major-component">
+                            <figure>
+                                <a href="../../../public/gamesContent/discoElysium/roam.jpg" title="Disco Elysium Roaming"
+                                    target="images">
+                                    <img src="../../../public/gamesContent/discoElysium/roam.jpg" alt="Roaming">
+                                </a>
+                                <figcaption>FIG 1.2: Roaming</figcaption>
+                            </figure>
+                            <div>
+                                <span class="count">[ ELEMENT_02 ]</span>
+                                <span class="header-text">Environmental Information Scent and Navigation</span>
+                                <p>
+                                    In the investigation scene, the UI uses contextual signifiers like colored "orbs" to guide player attention toward interactable elements within a cluttered isometric view. This design follows the theory of information foraging, where the interface provides just enough visual "scent" to encourage exploration without cluttering the screen with permanent markers. The small portraits in the bottom corner act as a persistent status HUD, keeping the player tethered to their character's condition and their companion’s presence during open-world navigation.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="major-component">
+                            <figure>
+                                <a href="../../../public/gamesContent/discoElysium/check.jpg" title="Disco Elysium Check"
+                                    target="images">
+                                    <img src="../../../public/gamesContent/discoElysium/check.jpg" alt="Check">
+                                </a>
+                                <figcaption>FIG 1.3: UI Components</figcaption>
+                            </figure>
+                            <div>
+                                <span class="count">[ ELEMENT_03 ]</span>
+                                <span class="header-text">Diegetic Integration of Dialogue and Skill Interactions</span>
+                                <p>
+                                    This scene showcases diegetic and spatial UI design where the dialogue box and dice roll overlays feel tethered to the physical environment. The transparency and font choice ensure that the narrative remains the focal point, while the "Authority" skill check represents a psychological system feedback loop that visualizes the protagonist's internal struggle. This layout minimizes cognitive load by placing the most critical decision-making tools directly over the action, maintaining a seamless flow between player agency and narrative progression.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="major-component">
+                            <figure>
+                                <a href="../../../public/gamesContent/discoElysium/character_sheet.jpg" title="Disco Elysium Character Sheet"
+                                    target="images">
+                                    <img src="../../../public/gamesContent/discoElysium/character_sheet.jpg" alt="Character Sheet">
+                                </a>
+                                <figcaption>FIG 1.4: Character Sheet</figcaption>
+                            </figure>
+                            <div>
+                                <span class="count">[ ELEMENT_04 ]</span>
+                                <span class="header-text">Multimodal Skill Sheets and Symbolic Taxonomy</span>
+                                <p>
+                                    The character sheet functions as a hierarchical taxonomy of the self, dividing the human experience into four primary attributes and twenty-four distinct sub-skills. Each skill is represented by a haunting, evocative icon that serves as a symbolic mnemonic, helping the player associate a specific visual style with a specific "voice" in their head. This system moves beyond traditional stat-tracking by presenting the player's personality as a fragmented but organized collective of specialized cognitive tools.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="major-component">
+                            <figure>
+                                <a href="../../../public/gamesContent/discoElysium/tc.jpg" title="Disco Elysium Thought Cabinet"
+                                    target="images">
+                                    <img src="../../../public/gamesContent/discoElysium/tc.jpg" alt="Thought Cabinet">
+                                </a>
+                                <figcaption>FIG 1.5: Thought Cabinet</figcaption>
+                            </figure>
+                            <div>
+                                <span class="count">[ ELEMENT_05 ]</span>
+                                <span class="header-text">Thought Cabinet and Internalized Cognitive Systems</span>
+                                <p>
+                                    The Thought Cabinet is a sophisticated conceptual mapping interface that visualizes the protagonist's mental development as a tangible inventory. This screen utilizes gamified abstract iconography to represent complex sociopolitical and philosophical ideas, turning internal monologue into a strategic resource-management system. It functions as a "mental workbench" where the passage of time—a core mechanic—is linked to the evolution of the character's worldview, bridging the gap between narrative growth and RPG progression.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <h2>The Gulf of Evaluation</h2>
+                    <div class="evaluation">
+                        <div>
+                            <p>
+                                In Disco Elysium, Gulf of Evaluation is the effort a user must make to interpret the state of the system. Disco Elysium closes this gap through extreme transparency. Before you commit to an action, the game tells you your exact percentage of success based on the formula:
+                            </p>
+                            <div class="mathmodel">
+                                <h6>[ POINTING ACCURACY MODEL ]</h6>
+                                <span>P(Success) = P(X + Y+ 2d6 >= Difficulty)</span>
+                            </div>
+                            <p>
+                                Where X is your base skill and Y is your modifiers. By exposing the math, the UI ensures the player understands why they failed, preventing the frustration of "hidden" mechanics and making the system feel fair even when it's cruel.
+                            </p>
+                        </div>
+                        <div>
+                            <figure>
+                                <a href="../../../public/gamesContent/discoElysium/check_success.jpg" title="Disco Elysium Probability Mechanics"
+                                    target="images">
+                                    <img src="../../../public/gamesContent/discoElysium/check_success.jpg" alt="Probability Mechanics">
+                                </a>
+                                <figcaption>FIG 1.6: Probability Mechanics</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="list-style-area">
+                        <h3 class="text-center">Interactive Model Summary</h3>
+                        <!-- <div class="text-center"></div> -->
+                        <ol class="three-columns md-one-columns">
+                            <li>
+                                <h6>Passive Data</h6>
+                                <p>
+                                    Health, Morale, and Clock. These elements are anchored to the lower HUD, using low-saturation colors to stay present but unobtrusive, ensuring the player can monitor their fragile mental and physical state while reading.
+                                </p>
+                            </li>
+                            <li>
+                                <h6>Active Feedback</h6>
+                                <p>
+                                    Skill pings and dice roll results. These are transient, appearing in the dialogue ticker or as floating "thought orbs" to signal internal state changes and probabilistic outcomes without breaking immersion.
+                                </p>
+                            </li>
+                            <li>
+                                <h6>Contextual Tools</h6>
+                                <p>
+                                    Inventory and internal ideologies. These full-screen interfaces are hidden during exploration and dialogue to eliminate clutter, appearing only when the player needs to perform deep "mental maintenance" or re-equip items.
+                                </p>
+                            </li>
+                        </ol>
+                    </div>
+                </section>
+                <section class="game-sections" id="user-interaction">
+                    <h2>User Interaction</h2>
+                    <p>
+                        The interaction cycle in Disco Elysium is built on a "Observe-Internalize-React" model. Unlike traditional RPGs that focus on external combat, this loop prioritizes cognitive processing.
+                    </p>
+                    <div class="list-style-area">
+                        <h3 class="text-center">Core Gameplay Loop</h3>
+                        <div class="text-center">Investigate to Reflect</div>
+                        <ol class="four-columns md-two-columns">
+                            <li>
+                                <h6>Environmental Foraging</h6>
+                                <p>
+                                    The player navigates the isometric space to track Information Scents, identifying pulsing colored orbs that signify interactable narrative "patches."
+                                </p>
+                            </li>
+                            <li>
+                                <h6>Dialogue Interaction</h6>
+                                <p>
+                                    Triggering an object shifts the interface to the Vertical Ticker, a centralized high-density text zone where all environmental and internal data is processed.
+                                </p>
+                            </li>
+                            <li>
+                                <h6>Probabilistic Intervention</h6>
+                                <p>
+                                    The player encounters Skill Checks, evaluating the visible success odds before committing to a dice-roll action that determines the path forward.
+                                </p>
+                            </li>
+                            <li>
+                                <h6>Reflective Adaptation</h6>
+                                <p>
+                                    System outcomes (Success/Failure) provide "Thoughts" or XP, forcing the player to enter the Thought Cabinet to reconfigure their character’s mental model for future loops.
+                                </p>
+                            </li>
+                        </ol>
+                    </div>
+                    <h3>Multi-Modal Feedback Matrix</h3>
+                    <div class="multi-modal-feedback">
+                        <div>
+                            <p>
+                                Disco Elysium communicates the state of the protagonist’s psyche through a layered approach to feedback, ensuring the player feels "attacked" or "rewarded" across different sensory channels.
+                            </p>
+                        </div>
+                        <div>
+                            <figure>
+                                <a href="../../../public/gamesContent/discoElysium/basement.jpg" title="Disco Elysium Feedback Matrix"
+                                    target="images">
+                                    <img src="../../../public/gamesContent/discoElysium/basement.jpg"
+                                        alt="Disco Elysium Feedback Matrix">
+                                </a>
+                                <figcaption>FIG 1.7: Disco Elysium Feedback Matrix</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                    <ul>
+                        <li>
+                            <div class="logo-svg">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25l4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h6>Audio Feedback</h6>
+                                <p>
+                                    The "ping" of a passive skill check or the rattling sound of dice provides a tactile, auditory satisfaction that grounds the abstract act of "thinking." These sounds act as Affective Feedback, triggering a Pavlovian response of curiosity or dread depending on the specific chime used.
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="logo-svg">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                                </svg>
+
+                            </div>
+                            <div>
+                                <h6>Visual Feedback</h6>
+                                <p>
+                                    Each of the four primary attributes (Intellect, Psyche, Physique, Motorics) is color-coded (Blue, Purple, Red, Yellow). When a skill "interjects" in the dialogue box, the color immediately tells the player which part of their brain is speaking before they even read the name, reducing Cognitive Load.
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="logo-svg">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M7.864 4.243A7.5 7.5 0 0 1 19.5 10.5c0 2.92-.556 5.709-1.568 8.268M5.742 6.364A7.465 7.465 0 0 0 4.5 10.5a7.464 7.464 0 0 1-1.15 3.993m1.989 3.559A11.209 11.209 0 0 0 8.25 10.5a3.75 3.75 0 1 1 7.5 0c0 .527-.021 1.049-.064 1.565M12 10.5a14.94 14.94 0 0 1-3.6 9.75m6.633-4.596a18.666 18.666 0 0 1-2.485 5.33" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h6>Tactile Feedback</h6>
+                                <p>
+                                    On supported controllers, the game uses subtle vibrations to mimic a heartbeat or the physical "thud" of a door being kicked. This bridges the gap between the character's physical state and the player's physical body, reinforcing the game's focus on the Visceral Level of design.
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+                <section class="game-sections" id="hci-principles">
+                    <h2>HCI Principles</h2>
+                    <div class="signifiers-affordance">
+                        <h3>Signifiers and Affordances</h3>
+                        <div class="feedback-intro">
+                            <p>In HCI, an affordance is what an object can do, while a signifier is the signal that tells you how to do it. Disco Elysium uses a minimalist signifier system to keep the player immersed in the art while maintaining high usability.</p>
+                        </div>
+                        <ul>
+                            <li>
+                                <div>
+                                    <h6>Thought Orbs as Signifiers</h6>
+                                    <p>The primary signifier in the game world is the "orb." By pulsing or changing color based on the associated skill (e.g., Red for Physical Instrument), the orb signals the affordance of interaction. You don't need a "Press E to Inspect" prompt because the visual language has already trained you to know that "Glowing Circle = Narrative Content."</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <h6>Color-Coded Taxonomy</h6>
+                                    <p>The UI uses color as a persistent signifier. Blue always signifies Logic/Intellect, and Purple always signifies Psyche. This reduces the time a player spends identifying which part of their character is acting, allowing for Rapid Recognition over slow, conscious recall.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="signifiers-affordance">
+                        <h3>Spatial Mapping and Diegetic Design</h3>
+                        <div class="feedback-intro">
+                            <p>The game’s UI exists on a spectrum from Non-Diegetic (menus) to Spatial (elements in the world).</p>
+                        </div>
+                        <ul>
+                            <li>
+                                <div>
+                                    <h6>The Character Sheet as a "Self-Map"</h6>
+                                    <p>The layout of the 24 skills isn't just a list; it’s a spatial representation of a human body and mind. High-level stats are mapped to the top, while granular skills are grouped below. This Natural Mapping makes it intuitive that "Intellect" (the head) would govern "Logic" and "Rhetoric."</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <h6>Spatial Proximity</h6>
+                                    <p>When a passive skill check occurs, the text often appears physically close to the character or object it refers to. This maintains Spatial Contiguity, a principle stating that people learn/process better when related words and pictures are near each other rather than far apart.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="cognitive-load-bifurcation">
+                        <h2>Cognitive Load Bifurcation</h2>
+                        <p style="text-align: justify; margin-bottom: 2em;">
+                            The interface distinguishes the Extrinsic Complexity of attribute point allocation and inventory management from the Intrinsic Challenge of navigating social minefields and personal trauma, creating an intellectually demanding experience centered on self-definition.
+                        </p>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Extrinsic Load</th>
+                                    <th>Intrinsic Focus</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <h6>Attribute and Skill Taxonomy</h6>
+                                        <p>
+                                            The character sheet provides abstract access to 24 sub-skills, requiring the player to manage the mathematical burden of skill points and clothing modifiers to optimize situational success.
+                                        </p>
+                                    </td>
+                                    <td>
+                                        <h6>Psychological Negotiation</h6>
+                                        <p>
+                                            Players focus entirely on internal monologues, negotiating with competing "voices" in the protagonist's head to solve the central murder and maintain sanity.
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <h6>Ideological Inventory Management</h6>
+                                        <p>
+                                            The Thought Cabinet acts as a "mental workbench" where players manage the research time and slot constraints of abstract political and philosophical theories.
+                                        </p>
+                                    </td>
+                                    <td>
+                                        <h6>Existential Investigation</h6>
+                                        <p>
+                                            Unraveling the non-linear plot and decoding the motives of Martinaise’s citizens requires active psychological engagement with a world built on historical failure and surrealism.
+                                        </p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+                <section class="game-sections" id="ui-ux-weaknesses">
+                    <h2>Strengths and Weaknesses Analysis</h2>
+                    <p>
+                        A comprehensive evaluation of the UI/UX design of Disco Elysium reveals a complex interplay of innovative strengths and notable weaknesses that shape the player's experience. The game's commitment to narrative-aesthetic synthesis and postmodern personality creates a deeply immersive world, but its steep learning curve and unconventional mapping may alienate some players. Below is a detailed analysis of these aspects, categorized into system strengths and weaknesses.
+                    </p>
+
+                    <table style="margin-bottom: 2em;">
+                        <thead>
+                            <tr>
+                                <th>System Strengths <span class="badge badge-success">Positive_Vectors</span></th>
+                                <th>System Weaknesses <span class="badge badge-danger">Negative_Vectors</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="sw-item-head">
+                                        <span class="sw-icon" aria-hidden="true">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M12 3v2.25m0 13.5V21m9-9h-2.25M5.25 12H3m15.364 6.364-1.59-1.59M7.226 7.226l-1.59-1.59m12.728 0-1.59 1.59M7.226 16.774l-1.59 1.59" />
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                                            </svg>
+                                        </span>
+                                        <span class="label">01_SYMBIOSIS</span>
+                                    </div>
+                                    <h6>
+                                        Meta-Diegetic Symbiosis
+                                    </h6>
+                                    <p>
+                                        The interface functions as a cognitive extension of the protagonist’s fractured mind, bridging the gap between player and character. By treating skills as conversational agents rather than static numbers, the UI transforms traditional RPG "stat-checking" into an active, emotional dialogue that feels entirely native to the world.
+                                    </p>
+                                </td>
+                                <td>
+                                    <div class="sw-item-head">
+                                        <span class="sw-icon" aria-hidden="true">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75M6.75 10.5h10.5A2.25 2.25 0 0 1 19.5 12.75v6A2.25 2.25 0 0 1 17.25 21H6.75A2.25 2.25 0 0 1 4.5 18.75v-6A2.25 2.25 0 0 1 6.75 10.5Z" />
+                                            </svg>
+                                        </span>
+                                        <span class="label">01_SATURATION</span>
+                                    </div>
+                                    <h6>Cognitive Saturation</h6>
+                                    <p>
+                                        The text-heavy nature of the interface creates a high barrier to entry for users prone to cognitive overload or visual fatigue. While the vertical scroll is efficient, the sheer volume of data—between internal monologues, environmental descriptions, and skill interjections—can occasionally turn a gaming session into a taxing reading exercise.
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="sw-item-head">
+                                        <span class="sw-icon" aria-hidden="true">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25l4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z" />
+                                            </svg>
+                                        </span>
+                                        <span class="label">02_CONSOLIDATION</span>
+                                    </div>
+                                    <h6>Ergonomic Consolidation</h6>
+                                    <p>
+                                        The decision to anchor almost all narrative interaction to a single vertical ticker on the right side of the screen is a masterstroke in reducing visual search time. This design minimizes eye travel and reduces cognitive fatigue, allowing the player to maintain focus on the prose and the isometric world simultaneously without scanning disparate corners of the screen.
+                                    </p>
+                                </td>
+                                <td>
+                                    <div class="sw-item-head">
+                                        <span class="sw-icon" aria-hidden="true">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M12 9v4.5m0 3.75h.008v.008H12v-.008ZM10.29 3.86l-7.5 13A1.5 1.5 0 0 0 4.09 19h15.82a1.5 1.5 0 0 0 1.3-2.14l-7.5-13a1.5 1.5 0 0 0-2.6 0Z" />
+                                            </svg>
+                                        </span>
+                                        <span class="label">02_AFFORDANCE</span>
+                                    </div>
+                                    <h6>Affordance Camouflage</h6>
+                                    <p>
+                                        The game’s commitment to its painterly, atmospheric art style often leads to visibility issues where interactive "orbs" or environmental cues blend too seamlessly into the background. This creates a "pixel-hunting" scenario that forces players to lean on rhythmic clicking or constant scanning, which can break the otherwise seamless narrative immersion.
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="sw-item-head">
+                                        <span class="sw-icon" aria-hidden="true">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor" class="size-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
+                                            </svg>
+                                        </span>
+                                        <span class="label">03_SEMIOTICS</span>
+                                    </div>
+                                    <h6>Mnemonic Semiotics</h6>
+                                    <p>
+                                        Every component, from the painterly portraits to the grotesque skill icons, carries a heavy "information scent" that reinforces the game’s themes of decay and introspection. This expressive aesthetic turns a utilitarian system into a mnemonic device, making complex psychological categories immediately recognizable through distinct visual styles rather than just text labels.
+                                    </p>
+                                </td>
+                                <td>
+                                    <div class="sw-item-head">
+                                        <span class="sw-icon" aria-hidden="true">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor" class="size-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M3.98 8.223A10.477 10.477 0 0 0 1.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.451 10.451 0 0 1 12 4.5c4.756 0 8.773 3.162 10.065 7.498a10.522 10.522 0 0 1-4.293 5.774M6.228 6.228 3 3m3.228 3.228 3.65 3.65m7.894 7.894L21 21m-3.228-3.228-3.65-3.65m0 0a3 3 0 1 0-4.243-4.243m4.242 4.242L9.88 9.88" />
+                                            </svg>
+                                        </span>
+                                        <span class="label">03_FRICTION</span>
+                                    </div>
+                                    <h6>Modal Friction</h6>
+                                    <p>
+                                        While the in-game ticker is streamlined, the deeper management screens—specifically the Thought Cabinet and Inventory—feel spatially disconnected from the core gameplay loop. Moving between these nested menus often requires multiple clicks and transitions that interrupt the "flow" state, creating a mechanical clunkiness that contrasts with the fluid elegance of the dialogue system.
+                                    </p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="footnote summary">
+                        <p>
+                            Disco Elysium redefines interactive storytelling by transforming traditional RPG menus into a psychological interface that mirrors the protagonist’s internal cognitive state. Through the use of meta-diegetic components and information foraging mechanics, the UI facilitates a deep, multimodal dialogue between the player’s agency and the character's fractured subconscious.
+                        </p>
+                    </div>
+                </section>
+            </div>
+        </article>
+    </main>
+    <footer>
+        <h6>GameUX Atlas</h6>
+        <ul class="socials"></ul>
+        <div class="footer-info">
+            <span>&copy; Group 5</span>
+            <span>CIP 1101</span>
+            <span>2026</span>
+            <span>GameUX Atlas</span>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top" title="Back to top">
+        <svg viewBox="0 0 56 56" width="56" height="56" aria-hidden="true" focusable="false">
+            <circle class="btn-bg" cx="28" cy="28" r="27"></circle>
+            <circle class="btn-progress-track" cx="28" cy="28" r="22"></circle>
+            <circle class="btn-progress" id="back-to-top-progress" cx="28" cy="28" r="22"></circle>
+            <path class="btn-icon" d="M28 36V20"></path>
+            <path class="btn-icon" d="M21.5 26.5L28 20l6.5 6.5"></path>
+        </svg>
+    </button>
+</body>
+
+<script>
+    // VARIABLES
+    const GAMENAME = "Disco Elysium";
+    const DATERELEASED = "10/15/2019"; // MM/DD/YYYY
+    const PUBLISHER = 'ZA/UM Studio';
+    const BADGE = "Full Release";
+    // Pre-Alpha
+    // Alpha
+    // Beta
+    // Early Access
+    // Full Release
+    const POSTERURL = "../../../public/posters/discoElysium_poster.jpg";
+    const POSTERALTTEXT = "Disco Elysium Game Poster";
+    const VIDEOURL = "../../../public/videos/discoElysium_trailer.mp4";
+    const VIDEOURLYT = "https://www.youtube.com/P-UY6IyI03Q"; // Placeholder YouTube URL
+    const YTVID = true;
+
+    const GAMEUSERSTARS = "8.5";
+    const GAMEUSERRATINGS = "2,042";
+
+    const HASCRITICS = true; // Set to false if there are no critic ratings
+    const GAMECRITICSTARS = "91";
+    const GAMECRITICRATINGS = "64";
+
+    const GENRES = ["Noir", "Detective", "Isometric CRPG", "Dialogue Tree", "Point-and-click adventure", "Open World", "Comedy", "Satire"];
+    const PLATFORMS = ["PC", "PlayStation 4", "PlayStation 5", "Google Stadia", "XBOX One", "Nintendo Switch"];
+    const EDITIONS = ["Disco Elysium The Final Cut"];
+
+    const DESCRIPTION =
+        "Disco Elysium is a 2019 groundbreaking isometric CRPG that eschews traditional combat in favor of complex psychological warfare and deep philosophical inquiry. Featuring an amnesiac detective waking up on a decaying city in deep political conflict and social disparity, investigating a cryptic crime that is connected to the heart of the chaotic reality of Revachol.";
+
+    // Document Variables
+    const sectionRadios = Array.from(
+        document.querySelectorAll('input[name="game-section"]'),
+    );
+    const gameSections = Array.from(
+        document.querySelectorAll(".game-sections"),
+    );
+    const gameInfoNav = document.getElementById("game-info-nav");
+    const gameInfoNavLeft = document.getElementById("game-info-nav-left");
+    const gameInfoNavRight = document.getElementById("game-info-nav-right");
+    const backToTopButton = document.getElementById("back-to-top");
+    const backToTopProgress = document.getElementById("back-to-top-progress");
+
+    // -- Implementation --
+    document.getElementById("title").textContent = GAMENAME + " - GameUX"; // Set page title
+    for (let el of document.getElementsByClassName("game-name")) {
+        el.textContent = GAMENAME;
+    } // Set game name
+    for (let el of document.getElementsByClassName("date-released")) {
+        el.textContent = DATERELEASED;
+    } // Set date released
+    for (let el of document.getElementsByClassName("publisher")) {
+        el.textContent = PUBLISHER;
+    } // Set publisher
+    for (let el of document.getElementsByClassName("game-badge")) {
+        el.textContent = BADGE;
+    } // Set badge
+    for (let el of document.getElementsByClassName("game-user-rating")) {
+        el.textContent = GAMEUSERSTARS;
+    } // Set user rating
+    for (let el of document.getElementsByClassName("game-user-ratings")) {
+        el.textContent = GAMEUSERRATINGS + " user ratings";
+    } // Set user ratings
+    for (let el of document.getElementsByClassName("game-critic-rating")) {
+        el.textContent = GAMECRITICSTARS;
+    } // Set critic rating
+    for (let el of document.getElementsByClassName("game-critic-ratings")) {
+        el.textContent = GAMECRITICRATINGS + " critic ratings";
+    } // Set critic ratings
+    for (let el of document.getElementsByClassName("game-poster-content")) {
+        el.src = POSTERURL;
+    } // Set poster content
+    document.getElementById("game-poster-img").src = POSTERURL; // Set poster image
+    document.getElementById("game-poster-img").title =
+        GAMENAME + " Game Poster"; // Set poster image title
+    document.getElementById("game-poster").href = POSTERURL; // Set poster link
+    document.getElementById("game-description").textContent = DESCRIPTION; // Set game description
+    document.getElementById("game-poster-img").alt = POSTERALTTEXT; // Set poster image alt text
+    // Video / YouTube toggle: show iframe when YTVID is true, otherwise show <video> with source
+    const videoEl = document.getElementById("game-video");
+    const videoSourceEl = document.getElementById("game-video-source");
+    const ytEl = document.getElementById("game-video-yt");
+    if (YTVID) {
+        if (ytEl) {
+            ytEl.src = VIDEOURLYT;
+            ytEl.hidden = false;
+        }
+        if (videoEl) {
+            videoEl.hidden = true;
+            try {
+                videoEl.pause();
+            } catch (e) { }
+        }
+    } else {
+        if (videoSourceEl) {
+            videoSourceEl.src = VIDEOURL;
+        }
+        if (videoEl) {
+            videoEl.hidden = false;
+            try {
+                videoEl.load();
+            } catch (e) { }
+        }
+        if (ytEl) {
+            ytEl.hidden = true;
+            ytEl.src = "";
+        }
+    }
+
+    for (let genre of GENRES) {
+        // Set genres
+        let li = document.createElement("li");
+        li.textContent = genre;
+        document.getElementById("genres").appendChild(li);
+    }
+
+    for (let platform of PLATFORMS) {
+        // Set platforms
+        let li = document.createElement("li");
+        li.textContent = platform;
+        document.getElementById("platforms").appendChild(li);
+    }
+
+    for (let edition of EDITIONS) {
+        // Set editions
+        let li = document.createElement("li");
+        li.textContent = edition;
+        document.getElementById("editions").appendChild(li);
+    }
+
+    // Hide critic ratings
+    if (!HASCRITICS) {
+        for (let el of document.getElementsByClassName(
+            "game-critic-rating-cont",
+        )) {
+            el.classList.add("hidden");
+        }
+    }
+
+    // Calculate days ago
+    let timeDiff = new Date().getTime() - new Date(DATERELEASED).getTime();
+    let daysAgo = Math.floor(timeDiff / (1000 * 3600 * 24));
+    if (daysAgo > 365) {
+        let yearsAgo = Math.floor(daysAgo / 365);
+        for (let el of document.getElementsByClassName("days-ago")) {
+            el.textContent = "(" + yearsAgo + " years ago)";
+        }
+    } else {
+        for (let el of document.getElementsByClassName("days-ago")) {
+            el.textContent = "(" + daysAgo + " days ago)";
+        }
+    }
+
+    // Sections navigation
+    function showGameSection(sectionId) {
+        for (let section of gameSections) {
+            let isActive = section.id === sectionId;
+            section.classList.toggle("is-active", isActive);
+            section.setAttribute("aria-hidden", String(!isActive));
+        }
+    }
+
+    function getSectionIdFromHash() {
+        const rawHash = window.location.hash || "";
+        const hash = rawHash.startsWith("#") ? rawHash.slice(1) : rawHash;
+        if (!hash) {
+            return null;
+        }
+        return gameSections.some((section) => section.id === hash) ? hash : null;
+    }
+
+    function syncSectionFromHash() {
+        const hashSectionId = getSectionIdFromHash();
+        if (!hashSectionId) {
+            return false;
+        }
+
+        const matchingRadio = sectionRadios.find((radio) => radio.value === hashSectionId);
+        if (matchingRadio) {
+            matchingRadio.checked = true;
+        }
+        showGameSection(hashSectionId);
+        return true;
+    }
+
+    const defaultSection = document.querySelector(
+        'input[name="game-section"]:checked',
+    );
+    if (!syncSectionFromHash()) {
+        showGameSection(
+            defaultSection ? defaultSection.value : "short-description",
+        );
+    }
+
+    for (let radio of sectionRadios) {
+        radio.addEventListener("change", () => {
+            if (!radio.checked) {
+                return;
+            }
+            showGameSection(radio.value);
+            if (history.replaceState) {
+                history.replaceState(null, "", `#${radio.value}`);
+            } else {
+                window.location.hash = radio.value;
+            }
+        });
+    }
+
+    window.addEventListener("hashchange", () => {
+        syncSectionFromHash();
+    });
+
+    // Game info nav
+    function updateGameInfoNavArrows() {
+        if (!gameInfoNav || !gameInfoNavLeft || !gameInfoNavRight) {
+            return;
+        }
+
+        const maxScrollLeft = gameInfoNav.scrollWidth - gameInfoNav.clientWidth;
+        const canScroll = maxScrollLeft > 1;
+        const canScrollLeft = canScroll && gameInfoNav.scrollLeft > 1;
+        const canScrollRight =
+            canScroll && gameInfoNav.scrollLeft < maxScrollLeft - 1;
+
+        gameInfoNavLeft.hidden = !canScrollLeft;
+        gameInfoNavRight.hidden = !canScrollRight;
+    }
+
+    if (gameInfoNav) {
+        gameInfoNav.addEventListener("scroll", updateGameInfoNavArrows);
+        updateGameInfoNavArrows();
+    }
+
+    if (gameInfoNavLeft) {
+        gameInfoNavLeft.addEventListener("click", () => {
+            if (gameInfoNav) {
+                gameInfoNav.scrollBy({ left: -200, behavior: "smooth" });
+            }
+        });
+    }
+
+    if (gameInfoNavRight) {
+        gameInfoNavRight.addEventListener("click", () => {
+            if (gameInfoNav) {
+                gameInfoNav.scrollBy({ left: 200, behavior: "smooth" });
+            }
+        });
+    }
+
+    // Back to top button
+    function updateBackToTopVisibility() {
+        if (!backToTopButton) {
+            return;
+        }
+
+        const scrollTop = window.scrollY;
+        const documentHeight = document.documentElement.scrollHeight;
+        const windowHeight = window.innerHeight;
+        const scrollProgress = scrollTop / (documentHeight - windowHeight);
+
+        backToTopButton.classList.toggle("is-visible", scrollTop > 300);
+
+        if (backToTopProgress) {
+            const circumference = 2 * Math.PI * 22;
+            const strokeDashoffset = circumference * (1 - scrollProgress);
+            backToTopProgress.style.strokeDashoffset = strokeDashoffset;
+        }
+    }
+
+    window.addEventListener("scroll", updateBackToTopVisibility);
+    updateBackToTopVisibility();
+
+    if (backToTopButton) {
+        backToTopButton.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    }
+
+    // YouTube fallback handling
+    const retryYouTubeBtn = document.getElementById("retry-youtube-btn");
+    const useLocalVideoBtn = document.getElementById("use-local-video-btn");
+    const videoFallback = document.getElementById("video-fallback");
+
+    function retryYouTube() {
+        if (ytEl && VIDEOURLYT) {
+            ytEl.src = VIDEOURLYT;
+            ytEl.hidden = false;
+            videoEl.hidden = true;
+            videoFallback.hidden = true;
+        }
+    }
+
+    function useLocalVideo() {
+        if (videoSourceEl && VIDEOURL) {
+            videoSourceEl.src = VIDEOURL;
+            videoEl.hidden = false;
+            ytEl.hidden = true;
+            ytEl.src = "";
+            videoFallback.hidden = true;
+            try {
+                videoEl.load();
+            } catch (e) { }
+        }
+    }
+
+    if (retryYouTubeBtn) {
+        retryYouTubeBtn.addEventListener("click", retryYouTube);
+    }
+
+    if (useLocalVideoBtn) {
+        useLocalVideoBtn.addEventListener("click", useLocalVideo);
+    }
+
+    // Handle YouTube load errors
+    if (ytEl) {
+        ytEl.addEventListener("error", () => {
+            if (videoFallback) {
+                videoFallback.hidden = false;
+            }
+        });
+    }
+</script>
+
+</html>
