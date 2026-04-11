@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="../../styles/sizeChecker.css" type="text/css" />
     <link rel="stylesheet" href="../../styles/game.css" type="text/css" />
 
-    <!-- Custom Styles ------------------------------------------------------------------------------------------ -->
+    <!-- Custom Styles -------------------------------------------------------------------------- -->
     <style>
         nav.game-info-nav label {
             width: calc(100% / 5) !important;
@@ -863,7 +863,6 @@
             opacity: 0;
             transform: translateY(0.5rem) scale(0.96);
             pointer-events: none;
-            transition: opacity 0.2s ease, transform 0.2s ease;
             cursor: pointer;
         }
 
@@ -1000,7 +999,7 @@
             position: relative;
         }
     </style>
-    <!-- Custom Styles ------------------------------------------------------------------------------------------ -->
+    <!-- Custom Styles -------------------------------------------------------------------------- -->
 
     <title id="title">GameName - GameUX</title>
 </head>
@@ -1097,7 +1096,7 @@
                 <div class="video-game-container">
                     <a class="game-poster" id="game-poster">
                         <img class="game-poster-img" id="game-poster-img" alt="Game Poster" target="images"
-                            title="Arknights: Endfield Game Poster" />
+                            title="Rhythm Heaven Game Poster" />
                     </a>
                     <div class="game-video-wrp">
                         <video class="game-video" id="game-video" controls>
@@ -1210,7 +1209,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
                         width="20" height="20">
                         <path fill-rule="evenodd"
-                            d="M8.22 4.72a.75.75 0 0 1 1.06 0l6.5 6.5a.75.75 0 0 1 0 1.06l-6.5 6.5a.75.75 0 0 1-1.06-1.06L14.19 12 8.22 6.28a.75.75 0 0 1 0-1.56Z"
+                            d="M8.22 4.72a.75.75 0 0 1 1.06 0l6.5 6.5a.75.75 0 0 1 0 1.06l-6.5 6.5a.75.75 0 1 1-1.06-1.06L14.19 12 8.22 6.28a.75.75 0 0 1 0-1.56Z"
                             clip-rule="evenodd" />
                     </svg>
                 </button>
@@ -1227,34 +1226,32 @@
                 <section class="game-sections" id="short-description">
                     <h2>Overview</h2>
                     <ul class="list-style">
-                        <h2>Arknights: Endfield builds:</h2>
-                        <li>Standard Edition</li>
-                        <li>Deluxe Edition</li>
-                        <li>Collector's Edition</li>
+                        <h2>Rhythm Heaven builds:</h2>
+                        <li>Rhythm Heaven</li>
+                        <li>Rhythm Heaven Fever</li>
+                        <li>Rhythm Heaven Megamix</li>
                     </ul>
                     <p>
-                        Arknights: Endfield is a mobile strategy RPG developed and published by Yostar. Released on December 1, 2023, for iOS and Android platforms, with PC support following later.
-                        The gameplay centers around turn-based tactical combat where players command squads of operators with unique abilities to battle against infected enemies. Players collect and develop characters through gacha mechanics while managing resources and making strategic decisions in both combat and base management.
+                        Rhythm Heaven is a rhythm-based puzzle game developed by Nintendo for the Nintendo DS, released in 2008. The game features a collection of mini-games where players must synchronize their actions with on-screen cues and audio rhythms. Unlike traditional rhythm games that focus on musical performance, Rhythm Heaven emphasizes timing and coordination through whimsical, often humorous challenges that blend music with visual comedy.
                     </p>
                     <p>
-                        As a prequel to the main Arknights series, Endfield introduces new characters and storylines while maintaining the core gameplay loop of squad-based strategy. The game's mobile interface must accommodate complex tactical systems, character management, and resource allocation while remaining accessible to strategy game enthusiasts.
-                        The combination of gacha collection and deep tactical gameplay creates unique HCI challenges in balancing accessibility with strategic complexity.
+                        The gameplay revolves around "rhythm games" that require precise timing using the DS stylus, buttons, and microphone. Each mini-game has unique sound effects and animations, creating a distinctive auditory-visual experience. The game's charm lies in its creative approach to rhythm mechanics, where players aren't just hitting notes but participating in absurd, delightful scenarios that require perfect timing.
                     </p>
                     <ul class="metrics-list">
                         <li>
                             <h6>Cognitive Load</h6>
-                            <div class="value">High</div>
-                            <div class="desc">Number of simultaneous elements a player tracks</div>
+                            <div class="value">Medium</div>
+                            <div class="desc">Contextual understanding of mini-game scenarios</div>
                         </li>
                         <li>
                             <h6>Response Time</h6>
-                            <div class="value">&pm; 20ms to &pm; 150ms</div>
-                            <div class="desc">Time between user action and system feedback</div>
+                            <div class="value">&pm; 100ms to &pm; 300ms</div>
+                            <div class="desc">Time between visual cue and player action</div>
                         </li>
                         <li>
                             <h6>Visual Reaction Time</h6>
-                            <div class="value">~150ms to ~1200ms</div>
-                            <div class="desc">Time for a player to respond to visual stimuli</div>
+                            <div class="value">~200ms to ~800ms</div>
+                            <div class="desc">Time for players to process and respond to rhythm cues</div>
                         </li>
                     </ul>
                 </section>
@@ -1263,143 +1260,142 @@
                     <div class="major-components">
                         <div class="major-component">
                             <figure>
-                                <a href="../../../public/gamesContent/arknightsEndfield/tacticalGrid.jpg" title="Arknights: Endfield Open World Map"
+                                <a href="../../../public/gamesContent/rhythmHeaven/rhythmCues.png" title="Rhythm Heaven Rhythm Cues"
                                     target="images">
-                                    <img src="../../../public/gamesContent/arknightsEndfield/tacticalGrid.jpg" alt="Open World Map">
+                                    <img src="../../../public/gamesContent/rhythmHeaven/rhythmCues.png" alt="Rhythm Cues">
                                 </a>
-                                <figcaption>FIG 1.1: Open World Map</figcaption>
+                                <figcaption>FIG 1.1: Rhythm Cues</figcaption>
                             </figure>
                             <div>
                                 <span class="count">[ ELEMENT_01 ]</span>
-                                <span class="header-text">Open World Map</span>
+                                <span class="header-text">Rhythm Cues</span>
                                 <p>
-                                    Arknights: Endfield features an open-world interface where players explore regions, find missions, and track story events. The world map balances exploration cues and navigation data so players can move freely while staying oriented.
+                                    The core gameplay elements in Rhythm Heaven are the rhythm cues - visual and audio indicators that guide player timing. These include bouncing balls, marching characters, and various animated elements that players must synchronize with using stylus taps, button presses, or microphone input.
                                 </p>
                                 <ul>
                                     <h6>Visual Feedback</h6>
-                                    <li>Location Markers</li>
-                                    <li>Route Guidance</li>
-                                    <li>Interactive Waypoints</li>
+                                    <li>Animated character movements</li>
+                                    <li>Color-coded timing indicators</li>
+                                    <li>Sequential action sequences</li>
                                 </ul>
                             </div>
                         </div>
                         <div class="major-component">
                             <figure>
-                                <a href="../../../public/gamesContent/arknightsEndfield/operatorCards.jpg" title="Arknights: Endfield Operator Roster"
+                                <a href="../../../public/gamesContent/rhythmHeaven/miniGames.png" title="Rhythm Heaven Mini-Games"
                                     target="images">
-                                    <img src="../../../public/gamesContent/arknightsEndfield/operatorCards.jpg" alt="Operator Roster">
+                                    <img src="../../../public/gamesContent/rhythmHeaven/miniGames.png" alt="Mini-Games">
                                 </a>
-                                <figcaption>FIG 1.2: Operator Roster</figcaption>
+                                <figcaption>FIG 1.2: Mini-Games</figcaption>
                             </figure>
                             <div>
                                 <span class="count">[ ELEMENT_02 ]</span>
-                                <span class="header-text">Operator Roster</span>
+                                <span class="header-text">Mini-Game Framework</span>
                                 <p>
-                                    The roster panel shows operator stats, roles, and deployment costs. Players use this interface to manage squads, review unit synergies, and prepare for tactical engagements.
+                                    Each level consists of self-contained mini-games with unique themes and mechanics. Players progress through increasingly complex rhythm challenges, with each mini-game teaching specific timing patterns through contextual scenarios.
                                 </p>
                             </div>
                         </div>
                         <div class="major-component">
                             <figure>
-                                <a href="../../../public/gamesContent/arknightsEndfield/abilityInterface.png" title="Arknights: Endfield Ability Interface"
+                                <a href="../../../public/gamesContent/rhythmHeaven/feedbackSystem.png" title="Rhythm Heaven Feedback System"
                                     target="images">
-                                    <img src="../../../public/gamesContent/arknightsEndfield/abilityInterface.png" alt="Ability Interface">
+                                    <img src="../../../public/gamesContent/rhythmHeaven/feedbackSystem.png" alt="Feedback System">
                                 </a>
-                                <figcaption>FIG 1.3: Ability Interface</figcaption>
+                                <figcaption>FIG 1.3: Feedback System</figcaption>
                             </figure>
                             <div>
                                 <span class="count">[ ELEMENT_03 ]</span>
-                                <span class="header-text">Ability Interface</span>
+                                <span class="header-text">Judgement & Feedback</span>
                                 <p>
-                                    The ability activation system allows players to trigger special skills and ultimates. Timing and positioning are critical for maximizing ability effectiveness in combat.
+                                    The game provides immediate visual and audio feedback for timing accuracy. Perfect timing triggers celebratory animations and sound effects, while misses result in comedic failure states that maintain engagement through humor.
                                 </p>
                             </div>
                         </div>
                     </div>
-                    <h2>Strategic Decision Making in Arknights: Endfield</h2>
+                    <h2>Fitt's Law in Contextual Rhythm Interaction</h2>
                     <div class="fittslaw">
                         <div>
                             <p>
-                                Arknights: Endfield requires players to make tactical decisions based on squad composition, deployment resources, and evolving enemy behavior. The interface must support these choices with clear, contextualized information.
+                                Rhythm Heaven applies Fitt's Law through contextual target acquisition. Instead of abstract circles, targets are integrated into narrative scenarios where the "target size" is determined by the mini-game's thematic requirements.
                             </p>
                             <div class="mathmodel">
-                                <h6>[ DECISION MODEL ]</h6>
-                                <span>D(t) = f(deployment, unit_synergy, ability_cooldowns, enemy_threats)</span>
+                                <h6>[ MATHEMATICAL MODEL ]</h6>
+                                <span>MT = a + b * log<sub>2</sub>(2D/W)</span>
                             </div>
                             <p>
-                                Information hierarchy should surface mission-critical details while minimizing unnecessary complexity. This allows players to react quickly without losing sight of long-term strategy.
+                                In Rhythm Heaven, target width (W) is contextual - a bouncing ball might require precise stylus positioning, while a marching character allows for more forgiving timing. The distance (D) factor is minimized through predictive cueing, where upcoming actions are foreshadowed through animation sequences.
                             </p>
                         </div>
                         <div>
                             <figure>
-                                <a href="../../../public/gamesContent/arknightsEndfield/combatInterface.png" title="Arknights: Endfield Combat Interface"
+                                <a href="../../../public/gamesContent/rhythmHeaven/timingWindows.png" title="Rhythm Heaven Timing Windows"
                                     target="images">
-                                    <img src="../../../public/gamesContent/arknightsEndfield/combatInterface.png" alt="Combat Interface">
+                                    <img src="../../../public/gamesContent/rhythmHeaven/timingWindows.png" alt="Timing Windows">
                                 </a>
-                                <figcaption>FIG 1.4: Combat Interface</figcaption>
+                                <figcaption>FIG 1.4: Timing Windows</figcaption>
                             </figure>
                         </div>
                     </div>
                     <div class="list-style-area">
                         <h3 class="text-center">Visual Hierarchy Breakdown</h3>
-                        <div class="text-center">Information Architecture in Arknights: Endfield</div>
+                        <div class="text-center">Contextual Rhythm Integration</div>
                         <ol class="three-columns md-one-columns">
                             <li>
-                                <h6>Active Units</h6>
+                                <h6>Character Focus</h6>
                                 <p>
-                                    The interface emphasizes currently selected operators and their available actions. Clear highlighting helps players execute tactics quickly.
+                                    Primary attention is drawn to animated characters whose movements indicate timing requirements, creating an intuitive connection between visual cues and required actions.
                                 </p>
                             </li>
                             <li>
-                                <h6>Environmental Context</h6>
+                                <h6>Rhythm Indicators</h6>
                                 <p>
-                                    Terrain effects, enemy positions, and hazard zones are displayed to support strategic planning and risk assessment.
+                                    Secondary visual elements like bouncing balls or marching lines provide precise timing guidance, supporting the character's primary rhythm cues.
                                 </p>
                             </li>
                             <li>
-                                <h6>Resource Management</h6>
+                                <h6>Background Context</h6>
                                 <p>
-                                    Tertiary focus on deployment points, ability cooldowns, and health bars. Critical for long-term strategic planning but not immediate tactical decisions.
+                                    Tertiary elements establish the mini-game's theme and narrative, providing context without competing for attention during rhythm execution.
                                 </p>
                             </li>
                         </ol>
                     </div>
                     <div class="footnote">
-                        All component analysis is based on standard Arknights: Endfield tactical interface design. The isometric grid system prioritizes spatial reasoning while maintaining clear information hierarchy for strategic gameplay.
+                        All component analysis is based on Rhythm Heaven's mini-game framework. Variability in mini-game themes may alter visual hierarchy but remains anchored to fundamental rhythm timing principles.
                     </div>
                 </section>
                 <section class="game-sections" id="user-interaction">
                     <h2>User Interaction</h2>
                     <p>
-                        An investigation into the neuro-mechanical feedback loops of tactical interfaces,
-                        specifically analyzing Arknights: Endfield interaction flow.
+                        An investigation into the contextual rhythm interaction model of Rhythm Heaven, analyzing how the game transforms abstract timing mechanics into engaging, narrative-driven experiences.
                     </p>
                     <div class="list-style-area">
                         <h3 class="text-center">Core Gameplay Loop</h3>
-                        <div class="text-center"></div>
+                        <div class="text-center">Contextual Rhythm Engagement</div>
                         <ol class="four-columns md-two-columns">
                             <li>
                                 <h6>Observe</h6>
                                 <p>
-                                    Players scan the battlefield for enemy positions, operator statuses, and environmental hazards.
+                                    Players watch animated characters and visual cues that establish the rhythm pattern and timing requirements for each mini-game.
                                 </p>
                             </li>
                             <li>
-                                <h6>Plan</h6>
+                                <h6>Anticipate</h6>
                                 <p>
-                                    Tactical decisions are made based on deployment points, cooldowns, and the current combat state.
+                                    Through repeated viewing of practice segments, players internalize the timing patterns and prepare for live performance.
                                 </p>
                             </li>
                             <li>
                                 <h6>Execute</h6>
                                 <p>
-                                    Commands are issued through touch or click input to move operators, activate skills, and use abilities.
+                                    Players perform synchronized actions using stylus, buttons, or microphone input, matching the established rhythm cues.
                                 </p>
                             </li>
                             <li>
-                                <h6>Adapt</h6>
+                                <h6>Evaluate</h6>
                                 <p>
-                                    Players adjust strategy in response to enemy reactions, shifting objectives, and damage outcomes.
+                                    Immediate visual and audio feedback confirms timing accuracy, with perfect synchronization triggering celebratory responses.
                                 </p>
                             </li>
                         </ol>
@@ -1408,17 +1404,17 @@
                     <div class="multi-modal-feedback">
                         <div>
                             <p>
-                                Arknights: Endfield uses a layered feedback system to confirm tactical choices through sound, visuals, and touch.
+                                Rhythm Heaven employs a sophisticated feedback system that transforms timing precision into emotional responses. The game's success lies in its ability to make rhythm interaction feel like participation in a comedic performance rather than mechanical repetition.
                             </p>
                         </div>
                         <div>
                             <figure>
-                                <a href="../../../public/gamesContent/arknightsEndfield/operatorActionFlow.png" title="Arknights: Endfield Action Feedback"
+                                <a href="../../../public/gamesContent/rhythmHeaven/feedbackLoop.png" title="Rhythm Heaven Feedback Loop"
                                     target="images">
-                                    <img src="../../../public/gamesContent/arknightsEndfield/operatorActionFlow.png"
-                                        alt="Arknights: Endfield Action Feedback">
+                                    <img src="../../../public/gamesContent/rhythmHeaven/feedbackLoop.png"
+                                        alt="Rhythm Heaven Feedback Loop">
                                 </a>
-                                <figcaption>FIG 1.5: Operator Action Feedback</figcaption>
+                                <figcaption>FIG 1.5: Rhythm Heaven Feedback Loop</figcaption>
                             </figure>
                         </div>
                     </div>
@@ -1434,7 +1430,7 @@
                             <div>
                                 <h6>Audio Feedback</h6>
                                 <p>
-                                    Skill activation cues, enemy alert sounds, and combat effects help players recognize when actions land and threats emerge.
+                                    Distinctive sound effects and musical cues provide immediate confirmation of timing accuracy. Perfect synchronization triggers celebratory melodies, while misses result in comedic sound effects that maintain engagement.
                                 </p>
                             </div>
                         </li>
@@ -1452,7 +1448,7 @@
                             <div>
                                 <h6>Visual Feedback</h6>
                                 <p>
-                                    Target highlights, action previews, and damage indicators confirm successful ability use and enemy responses.
+                                    Animated character reactions and visual effects provide immediate feedback. Perfect timing triggers joyful celebrations, while timing errors result in humorous failure animations that preserve player motivation.
                                 </p>
                             </div>
                         </li>
@@ -1467,7 +1463,7 @@
                             <div>
                                 <h6>Haptic Feedback</h6>
                                 <p>
-                                    Vibration cues on mobile devices reinforce ability execution and incoming damage, supporting quick tactical adjustments.
+                                    Button presses and stylus interactions provide tactile confirmation. The DS microphone input adds a unique physical dimension, requiring players to blow or make sounds for certain rhythm challenges.
                                 </p>
                             </div>
                         </li>
@@ -1480,17 +1476,15 @@
                         <div class="cybernetic-content">
                             <div>
                                 <p style="text-align: justify;">
-                                    Arknights: Endfield uses a multi-modal feedback architecture that provides immediate visual,
-                                    auditory, and haptic confirmation of decisions. The feedback loop keeps players informed
-                                    about ability results and battlefield changes during tactical encounters.
+                                    Rhythm Heaven implements a contextual feedback system that transforms mechanical timing into emotional engagement. The game's cybernetic loops operate through narrative framing, where rhythm precision becomes character performance rather than abstract accuracy.
                                 </p>
                             </div>
                             <div>
                                 <ul class="primary-modalities">
                                     <h6>Primary Modalities</h6>
-                                    <li><strong>Visual</strong>: Enemy ranges, ability indicators, and operator statuses.</li>
-                                    <li><strong>Auditory</strong>: Ability cues, alert sounds, and combat feedback tones.</li>
-                                    <li><strong>Structural</strong>: Deployment points, cooldown timers, and resource meters.</li>
+                                    <li><strong>Visual</strong>: Character animations and visual effects that respond to player timing</li>
+                                    <li><strong>Auditory</strong>: Distinctive sound effects and musical cues synchronized with actions</li>
+                                    <li><strong>Narrative</strong>: Story-driven feedback where timing accuracy affects character outcomes</li>
                                 </ul>
                             </div>
                         </div>
@@ -1498,17 +1492,13 @@
                     <div class="spatial-congruence">
                         <h2>Spatial Congruence</h2>
                         <p style="text-align: justify;">
-                            The spatial arrangement of interface elements in Arknights: Endfield supports intuitive tactical
-                            decision-making and reduces cognitive load. Enemy markers, operator cards, and ability panels are
-                            positioned to clearly relate the battlefield state to the player's next action.
+                            Rhythm Heaven achieves spatial congruence through embodied interaction. The DS touchscreen and stylus create a direct mapping between visual cues and physical actions, while the microphone adds a unique spatial dimension where player proximity to the device affects input quality.
                         </p>
                     </div>
                     <div class="cognitive-load-bifurcation">
                         <h2>Cognitive Load Bifurcation</h2>
                         <p style="text-align: justify; margin-bottom: 2em;">
-                            The central success of the Arknights: Endfield interface is reducing unnecessary input complexity
-                            so players can focus on tactical decision-making, while preserving the intrinsic challenge of
-                            squad composition and battlefield strategy.
+                            The game's genius lies in transforming complex rhythm mechanics into accessible, context-rich experiences. By embedding timing challenges within narrative scenarios, Rhythm Heaven reduces extrinsic cognitive load while maximizing intrinsic engagement.
                         </p>
                         <table>
                             <thead>
@@ -1520,29 +1510,29 @@
                             <tbody>
                                 <tr>
                                     <td>
-                                        <h6>Minimalist HUD</h6>
+                                        <h6>Narrative Framing</h6>
                                         <p>
-                                            Non-essential data is pushed to the periphery, keeping the battlefield and action cues central.
+                                            Complex timing mechanics are presented as character actions and story scenarios, making abstract rhythm patterns feel like intuitive participation.
                                         </p>
                                     </td>
                                     <td>
-                                        <h6>Strategic Focus</h6>
+                                        <h6>Rhythm Mastery</h6>
                                         <p>
-                                            Players dedicate cognitive effort to positioning, ability timing, and enemy management.
+                                            Players focus entirely on timing precision within the context of each mini-game's unique mechanical requirements.
                                         </p>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <h6>Contextual Markers</h6>
+                                        <h6>Progressive Disclosure</h6>
                                         <p>
-                                            Clear visual indicators and tooltips reduce uncertainty during complex tactical choices.
+                                            New rhythm patterns are introduced gradually through practice segments, allowing players to build confidence before live performance.
                                         </p>
                                     </td>
                                     <td>
-                                        <h6>Situational Awareness</h6>
+                                        <h6>Emotional Investment</h6>
                                         <p>
-                                            The interface supports flow by keeping players aware of evolving threats and resource states.
+                                            The humorous character reactions create emotional stakes, where timing accuracy feels like successful performance rather than mechanical precision.
                                         </p>
                                     </td>
                                 </tr>
@@ -1551,16 +1541,14 @@
                     </div>
                     <div class="footnote">
                         <q>
-                            The interface is a bridge that must vanish. In Arknights: Endfield, the UX design achieves this by
-                            prioritizing tactical clarity and responsive feedback over unnecessary visual complexity.
+                            Rhythm Heaven demonstrates that the most effective HCI occurs when interface mechanics become invisible, allowing users to focus entirely on the task's inherent challenges and emotional rewards.
                         </q>
                     </div>
                 </section>
                 <section class="game-sections" id="ui-ux-weaknesses">
                     <h2>Strengths and Weaknesses Analysis</h2>
                     <p>
-                        A comprehensive breakdown of the Arknights: Endfield interface paradigm. Evaluating the balance
-                        between deep tactical systems and mobile-friendly accessibility.
+                        A comprehensive evaluation of Rhythm Heaven's contextual rhythm approach, examining how narrative framing transforms mechanical timing challenges into accessible, emotionally engaging experiences.
                     </p>
 
                     <table style="margin-bottom: 2em;">
@@ -1583,12 +1571,13 @@
                                                     d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
                                             </svg>
                                         </span>
-                                        <span class="label">01_LOGISTICS</span>
+                                        <span class="label">01_ACCESSIBILITY</span>
                                     </div>
-                                    <h6>Integrated Factory Systems</h6>
+                                    <h6>
+                                        Exceptional Accessibility
+                                    </h6>
                                     <p>
-                                        The seamless integration between real-time combat and industrial automation creates a unique gameplay 
-                                        loop. Building efficient power grids and resource pipelines provides a tangible sense of progression.
+                                        Through narrative framing and progressive difficulty, Rhythm Heaven makes complex rhythm mechanics accessible to players of all skill levels. The contextual scenarios transform abstract timing into intuitive character actions.
                                     </p>
                                 </td>
                                 <td>
@@ -1600,12 +1589,11 @@
                                                     d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75M6.75 10.5h10.5A2.25 2.25 0 0 1 19.5 12.75v6A2.25 2.25 0 0 1 17.25 21H6.75A2.25 2.25 0 0 1 4.5 18.75v-6A2.25 2.25 0 0 1 6.75 10.5Z" />
                                             </svg>
                                         </span>
-                                        <span class="label">01_COMPLEXITY</span>
+                                        <span class="label">01_PLATFORM_LIMIT</span>
                                     </div>
-                                    <h6>High Management Burden</h6>
+                                    <h6>Platform Limitations</h6>
                                     <p>
-                                        The "Factory-RPG" hybrid introduces massive mechanical depth. Managing logistics while 
-                                        simultaneously handling party-based combat creates a daunting cognitive load for casual players.
+                                        As a DS-exclusive title, the game's innovative touchscreen and microphone mechanics are inaccessible to players on other platforms, limiting its potential audience.
                                     </p>
                                 </td>
                             </tr>
@@ -1617,14 +1605,13 @@
                                                 stroke-width="1.5" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round"
                                                     d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25l4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z" />
-                                            </svg>
+                                                </svg>
                                         </span>
-                                        <span class="label">02_SYNERGY</span>
+                                        <span class="label">02_EMOTIONAL_FEEDBACK</span>
                                     </div>
-                                    <h6>Tactical Combat Depth</h6>
+                                    <h6>Emotional Feedback Design</h6>
                                     <p>
-                                        The elemental reaction system and party-swapping mechanics reward strategic preparation. 
-                                        Visual and audio cues clearly communicate when "Resonance" effects are triggered.
+                                        The game's use of humor and character reactions creates emotional investment in rhythm precision. Perfect timing feels like successful performance, while mistakes result in endearing failures that maintain motivation.
                                     </p>
                                 </td>
                                 <td>
@@ -1636,12 +1623,11 @@
                                                     d="M12 9v4.5m0 3.75h.008v.008H12v-.008ZM10.29 3.86l-7.5 13A1.5 1.5 0 0 0 4.09 19h15.82a1.5 1.5 0 0 0 1.3-2.14l-7.5-13a1.5 1.5 0 0 0-2.6 0Z" />
                                             </svg>
                                         </span>
-                                        <span class="label">02_FRICTION</span>
+                                        <span class="label">02_REPETITION</span>
                                     </div>
-                                    <h6>Navigation Friction</h6>
+                                    <h6>Repetitive Structure</h6>
                                     <p>
-                                        Terrain traversal and manual cable-laying can occasionally feel cumbersome. The lack of an 
-                                        unrestricted fast-travel system forces repetitive travel through industrial zones.
+                                        While effective for learning, the practice-then-perform structure can feel repetitive, especially for players who quickly master the timing patterns.
                                     </p>
                                 </td>
                             </tr>
@@ -1655,12 +1641,11 @@
                                                     d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
                                             </svg>
                                         </span>
-                                        <span class="label">03_WORLD</span>
+                                        <span class="label">03_CREATIVE_ECOSYSTEM</span>
                                     </div>
-                                    <h6>Cohesive Aesthetic Design</h6>
+                                    <h6>Creative Mini-Game Ecosystem</h6>
                                     <p>
-                                        The "Industrial-Chic" visual identity is consistently applied from UI to environment. 
-                                        The world feels lived-in, grounded by a technical logic that respects the IP's lore.
+                                        The diverse collection of mini-games demonstrates remarkable creativity in rhythm mechanics, with each scenario offering unique timing challenges that keep the experience fresh and engaging.
                                     </p>
                                 </td>
                                 <td>
@@ -1669,15 +1654,14 @@
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                                 stroke-width="1.5" stroke="currentColor" class="size-6">
                                                 <path stroke-linecap="round" stroke-linejoin="round"
-                                                    d="M3.98 8.223A10.477 10.477 0 0 0 1.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.451 10.451 0 0 1 12 4.5c4.756 0 8.773 3.162 10.065 7.498a10.522 10.522 0 0 1-4.293 5.774M6.228 6.228 3 3m3.228 3.228 3.65 3.65m7.894 7.894L21 21m-3.228-3.228-3.65-3.65m0 0a3 3 0 1 0-4.243-4.243m4.242 4.242L9.88 9.88" />
+                                                    d="M3.98 8.223A10.477 10.477 0 0 0 1.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228 3 3m3.228 3.228 3.65 3.65m7.894 7.894L21 21m-3.228-3.228-3.65-3.65m0 0a3 3 0 1 0-4.243-4.243m4.242 4.242L9.88 9.88" />
                                             </svg>
                                         </span>
-                                        <span class="label">03_DENSITY</span>
+                                        <span class="label">03_SHORT_DURATION</span>
                                     </div>
-                                    <h6>Resource Scarcity</h6>
+                                    <h6>Short Game Duration</h6>
                                     <p>
-                                        The economy can feel overly restrictive during the mid-game. Balancing advanced component 
-                                        crafting against unit upgrades often leads to progress bottlenecks that stall exploration.
+                                        The game's brevity, while focused, may leave players wanting more content. The mini-game format, while excellent for short sessions, lacks the depth of longer rhythm experiences.
                                     </p>
                                 </td>
                             </tr>
@@ -1685,9 +1669,7 @@
                     </table>
                     <div class="footnote summary">
                         <p>
-                            The Arknights: Endfield interface seeks to balance strategic depth and mobile accessibility.
-                            Its strength lies in clear battlefield feedback and resource visibility, while its weakness
-                            appears when menu density and monetization systems distract from tactical gameplay.
+                            Rhythm Heaven represents a masterful application of HCI principles to rhythm gaming. By embedding mechanical precision within narrative contexts, the game achieves what few rhythm titles accomplish: making complex timing mechanics feel <u>intuitively accessible</u> and <u>emotionally rewarding</u>. Its primary limitation stems from platform constraints that prevent broader accessibility. The game's approach demonstrates that the most effective interfaces are those that transform cognitive challenges into engaging, story-driven experiences.
                         </p>
                     </div>
                 </section>
@@ -1718,34 +1700,34 @@
 
 <script>
     // VARIABLES
-    const GAMENAME = "Arknights: Endfield";
-    const DATERELEASED = "12/01/2023"; // MM/DD/YYYY
-    const PUBLISHER = 'Yostar';
+    const GAMENAME = "Rhythm Heaven";
+    const DATERELEASED = "07/21/2008"; // MM/DD/YYYY
+    const PUBLISHER = 'Nintendo';
     const BADGE = "Full Release";
     // Pre-Alpha
     // Alpha
     // Beta
     // Early Access
     // Full Release
-    const POSTERURL = "../../../public/posters/arknightsEndfield_poster.png";
-    const POSTERALTTEXT = "Arknights: Endfield Game Poster";
-    const VIDEOURL = "../../../public/videos/arknightsEndfield_trailer.mp4";
-    const VIDEOURLYT = "https://www.youtube.com/embed/oJ00ggFb8A0";
+    const POSTERURL = "../../../public/posters/rhythmHeaven_poster.jpg";
+    const POSTERALTTEXT = "Rhythm Heaven Game Poster";
+    const VIDEOURL = "../../../public/videos/rhythm_heaven_trailer.mp4";
+    const VIDEOURLYT = "https://www.youtube.com/embed/rEYpflE1mJk"; // Placeholder
     const YTVID = true;
 
-    const GAMEUSERSTARS = "5.7";
-    const GAMEUSERRATINGS = "162";
+    const GAMEUSERSTARS = "8.2";
+    const GAMEUSERRATINGS = "106";
 
     const HASCRITICS = true; // Set to false if there are no critic ratings
-    const GAMECRITICSTARS = "78";
-    const GAMECRITICRATINGS = "21";
+    const GAMECRITICSTARS = "83";
+    const GAMECRITICRATINGS = "48";
 
-    const GENRES = ["Strategy", "RPG", "Gacha"];
-    const PLATFORMS = ["iOS", "Android", "PC"];
-    const EDITIONS = ["Standard Edition", "Deluxe Edition", "Collector's Edition"];
+    const GENRES = ["Rhythm", "Music", "Puzzle"];
+    const PLATFORMS = ["Nintendo DS"];
+    const EDITIONS = ["Standard Edition"];
 
     const DESCRIPTION =
-        "Arknights: Endfield is a prequel to the popular Arknights series, set in the same universe but focusing on different characters and storylines. Players command a squad of operators in turn-based tactical combat against mysterious enemies, combining gacha collection with deep strategic gameplay and narrative elements.";
+        "Rhythm Heaven is a rhythm-based puzzle game developed by Nintendo for the Nintendo DS. Players tap, swipe, and blow into the microphone to match rhythms in various mini-games, each with unique sound effects and animations. The game emphasizes timing and coordination through creative, whimsical challenges that blend music with visual gags.";
 
     // Document Variables
     const sectionRadios = Array.from(
@@ -1945,52 +1927,49 @@
         gameInfoNavRight.hidden = !canScrollRight;
     }
 
-    function scrollGameInfoNavBy(distance) {
-        if (!gameInfoNav) {
-            return;
-        }
-        gameInfoNav.scrollBy({ left: distance, behavior: "smooth" });
-    }
-
-    if (gameInfoNav && gameInfoNavLeft && gameInfoNavRight) {
+    if (gameInfoNav) {
         gameInfoNav.addEventListener("scroll", updateGameInfoNavArrows);
-        gameInfoNavLeft.addEventListener("click", () => {
-            scrollGameInfoNavBy(
-                -Math.max(200, Math.floor(gameInfoNav.clientWidth * 0.5)),
-            );
-        });
-        gameInfoNavRight.addEventListener("click", () => {
-            scrollGameInfoNavBy(
-                Math.max(200, Math.floor(gameInfoNav.clientWidth * 0.5)),
-            );
-        });
-        window.addEventListener("resize", updateGameInfoNavArrows);
         updateGameInfoNavArrows();
     }
 
-    // Back-to-top button with circular scroll progress
-    const progressRadius = 22;
-    const progressCircumference = 2 * Math.PI * progressRadius;
-
-    if (backToTopProgress) {
-        backToTopProgress.style.strokeDasharray = String(progressCircumference);
-        backToTopProgress.style.strokeDashoffset = String(progressCircumference);
+    if (gameInfoNavLeft) {
+        gameInfoNavLeft.addEventListener("click", () => {
+            if (gameInfoNav) {
+                gameInfoNav.scrollBy({ left: -200, behavior: "smooth" });
+            }
+        });
     }
 
-    function updateBackToTop() {
-        if (!backToTopButton || !backToTopProgress) {
+    if (gameInfoNavRight) {
+        gameInfoNavRight.addEventListener("click", () => {
+            if (gameInfoNav) {
+                gameInfoNav.scrollBy({ left: 200, behavior: "smooth" });
+            }
+        });
+    }
+
+    // Back to top button
+    function updateBackToTopVisibility() {
+        if (!backToTopButton) {
             return;
         }
 
-        const scrollTop = window.scrollY || document.documentElement.scrollTop;
-        const scrollableHeight =
-            document.documentElement.scrollHeight - window.innerHeight;
-        const progress = scrollableHeight > 0 ? Math.min(scrollTop / scrollableHeight, 1) : 0;
-        const dashOffset = progressCircumference * (1 - progress);
+        const scrollTop = window.scrollY;
+        const documentHeight = document.documentElement.scrollHeight;
+        const windowHeight = window.innerHeight;
+        const scrollProgress = scrollTop / (documentHeight - windowHeight);
 
-        backToTopProgress.style.strokeDashoffset = String(dashOffset);
-        backToTopButton.classList.toggle("is-visible", scrollTop > 160);
+        backToTopButton.classList.toggle("is-visible", scrollTop > 300);
+
+        if (backToTopProgress) {
+            const circumference = 2 * Math.PI * 22;
+            const strokeDashoffset = circumference * (1 - scrollProgress);
+            backToTopProgress.style.strokeDashoffset = strokeDashoffset;
+        }
     }
+
+    window.addEventListener("scroll", updateBackToTopVisibility);
+    updateBackToTopVisibility();
 
     if (backToTopButton) {
         backToTopButton.addEventListener("click", () => {
@@ -1998,9 +1977,49 @@
         });
     }
 
-    window.addEventListener("scroll", updateBackToTop, { passive: true });
-    window.addEventListener("resize", updateBackToTop);
-    updateBackToTop();
+    // YouTube fallback handling
+    const retryYouTubeBtn = document.getElementById("retry-youtube-btn");
+    const useLocalVideoBtn = document.getElementById("use-local-video-btn");
+    const videoFallback = document.getElementById("video-fallback");
+
+    function retryYouTube() {
+        if (ytEl && VIDEOURLYT) {
+            ytEl.src = VIDEOURLYT;
+            ytEl.hidden = false;
+            videoEl.hidden = true;
+            videoFallback.hidden = true;
+        }
+    }
+
+    function useLocalVideo() {
+        if (videoSourceEl && VIDEOURL) {
+            videoSourceEl.src = VIDEOURL;
+            videoEl.hidden = false;
+            ytEl.hidden = true;
+            ytEl.src = "";
+            videoFallback.hidden = true;
+            try {
+                videoEl.load();
+            } catch (e) { }
+        }
+    }
+
+    if (retryYouTubeBtn) {
+        retryYouTubeBtn.addEventListener("click", retryYouTube);
+    }
+
+    if (useLocalVideoBtn) {
+        useLocalVideoBtn.addEventListener("click", useLocalVideo);
+    }
+
+    // Handle YouTube load errors
+    if (ytEl) {
+        ytEl.addEventListener("error", () => {
+            if (videoFallback) {
+                videoFallback.hidden = false;
+            }
+        });
+    }
 </script>
 
 </html>

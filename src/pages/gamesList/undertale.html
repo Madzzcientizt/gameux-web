@@ -1097,7 +1097,7 @@
                 <div class="video-game-container">
                     <a class="game-poster" id="game-poster">
                         <img class="game-poster-img" id="game-poster-img" alt="Game Poster" target="images"
-                            title="Arknights: Endfield Game Poster" />
+                            title="Undertale Game Poster" />
                     </a>
                     <div class="game-video-wrp">
                         <video class="game-video" id="game-video" controls>
@@ -1227,34 +1227,32 @@
                 <section class="game-sections" id="short-description">
                     <h2>Overview</h2>
                     <ul class="list-style">
-                        <h2>Arknights: Endfield builds:</h2>
-                        <li>Standard Edition</li>
-                        <li>Deluxe Edition</li>
-                        <li>Collector's Edition</li>
+                        <h6>Game Routes:</h6>
+                        <li>Pacifist (Spare all)</li>
+                        <li>Neutral (Mixed)</li>
+                        <li>Genocide (Kill all)</li>
                     </ul>
                     <p>
-                        Arknights: Endfield is a mobile strategy RPG developed and published by Yostar. Released on December 1, 2023, for iOS and Android platforms, with PC support following later.
-                        The gameplay centers around turn-based tactical combat where players command squads of operators with unique abilities to battle against infected enemies. Players collect and develop characters through gacha mechanics while managing resources and making strategic decisions in both combat and base management.
+                        Undertale is a role-playing game created by indie developer Toby Fox. Players control a child who falls into the Underground, a sealed world inhabited by monsters. What sets Undertale apart is its morality system: every encounter offers the choice to FIGHT or ACT/MERCY, leading to vastly different narratives and endings.
                     </p>
                     <p>
-                        As a prequel to the main Arknights series, Endfield introduces new characters and storylines while maintaining the core gameplay loop of squad-based strategy. The game's mobile interface must accommodate complex tactical systems, character management, and resource allocation while remaining accessible to strategy game enthusiasts.
-                        The combination of gacha collection and deep tactical gameplay creates unique HCI challenges in balancing accessibility with strategic complexity.
+                        Combat blends bullet-hell dodging (move SOUL heart to avoid attacks) with dialogue-based resolution. This dual mechanic creates unique HCI challenges: survival under pressure while making emotionally weighty decisions. The pixel art style and chiptune soundtrack enhance the retro feel while supporting precise timing.
                     </p>
                     <ul class="metrics-list">
                         <li>
                             <h6>Cognitive Load</h6>
-                            <div class="value">High</div>
-                            <div class="desc">Number of simultaneous elements a player tracks</div>
+                            <div class="value">Dual High</div>
+                            <div class="desc">Simultaneous survival + moral decision-making</div>
                         </li>
                         <li>
-                            <h6>Response Time</h6>
-                            <div class="value">&pm; 20ms to &pm; 150ms</div>
-                            <div class="desc">Time between user action and system feedback</div>
+                            <h6>Dodge Response</h6>
+                            <div class="value">< 200ms</div>
+                            <div class="desc">Bullet avoidance reaction window</div>
                         </li>
                         <li>
-                            <h6>Visual Reaction Time</h6>
-                            <div class="value">~150ms to ~1200ms</div>
-                            <div class="desc">Time for a player to respond to visual stimuli</div>
+                            <h6>Choice Time</h6>
+                            <div class="value">2-10s</div>
+                            <div class="desc">Deliberate moral decision intervals</div>
                         </li>
                     </ul>
                 </section>
@@ -1263,162 +1261,155 @@
                     <div class="major-components">
                         <div class="major-component">
                             <figure>
-                                <a href="../../../public/gamesContent/arknightsEndfield/tacticalGrid.jpg" title="Arknights: Endfield Open World Map"
-                                    target="images">
-                                    <img src="../../../public/gamesContent/arknightsEndfield/tacticalGrid.jpg" alt="Open World Map">
+                                <a href="../../../public/gamesContent/undertale/soulHeart.png" title="Undertale SOUL Heart" target="images">
+                                    <img src="../../../public/gamesContent/undertale/soulHeart.png" alt="SOUL Heart">
                                 </a>
-                                <figcaption>FIG 1.1: Open World Map</figcaption>
+                                <figcaption>FIG 1.1: SOUL Heart</figcaption>
                             </figure>
                             <div>
                                 <span class="count">[ ELEMENT_01 ]</span>
-                                <span class="header-text">Open World Map</span>
+                                <span class="header-text">SOUL Heart</span>
                                 <p>
-                                    Arknights: Endfield features an open-world interface where players explore regions, find missions, and track story events. The world map balances exploration cues and navigation data so players can move freely while staying oriented.
+                                    The controllable red heart representing the player&#39;s soul during bullet hell combat. Constrained to a box, it provides direct 1:1 cursor mapping for dodging patterned attacks.
                                 </p>
                                 <ul>
-                                    <h6>Visual Feedback</h6>
-                                    <li>Location Markers</li>
-                                    <li>Route Guidance</li>
-                                    <li>Interactive Waypoints</li>
+                                    <h6>Interaction Properties</h6>
+                                    <li>Fixed bounds prevent overshoot errors</li>
+                                    <li>Color indicates mode (red=fight, cyan=gravity)</li>
+                                    <li>Precise pixel movement required</li>
                                 </ul>
                             </div>
                         </div>
                         <div class="major-component">
                             <figure>
-                                <a href="../../../public/gamesContent/arknightsEndfield/operatorCards.jpg" title="Arknights: Endfield Operator Roster"
-                                    target="images">
-                                    <img src="../../../public/gamesContent/arknightsEndfield/operatorCards.jpg" alt="Operator Roster">
+                                <a href="../../../public/gamesContent/undertale/combatMenu.png" title="Undertale Combat Menu" target="images">
+                                    <img src="../../../public/gamesContent/undertale/combatMenu.png" alt="Combat Menu">
                                 </a>
-                                <figcaption>FIG 1.2: Operator Roster</figcaption>
+                                <figcaption>FIG 1.2: Combat Menu</figcaption>
                             </figure>
                             <div>
                                 <span class="count">[ ELEMENT_02 ]</span>
-                                <span class="header-text">Operator Roster</span>
+                                <span class="header-text">Combat Menu</span>
                                 <p>
-                                    The roster panel shows operator stats, roles, and deployment costs. Players use this interface to manage squads, review unit synergies, and prepare for tactical engagements.
+                                    Four-option radial menu (FIGHT, ACT, ITEM, MERCY) switches combat phases. Critical for moral decision-making under time pressure from incoming attacks.
                                 </p>
                             </div>
                         </div>
                         <div class="major-component">
                             <figure>
-                                <a href="../../../public/gamesContent/arknightsEndfield/abilityInterface.png" title="Arknights: Endfield Ability Interface"
-                                    target="images">
-                                    <img src="../../../public/gamesContent/arknightsEndfield/abilityInterface.png" alt="Ability Interface">
+                                <a href="../../../public/gamesContent/undertale/bulletPatterns.png" title="Undertale Bullet Patterns" target="images">
+                                    <img src="../../../public/gamesContent/undertale/bulletPatterns.png" alt="Bullet Patterns">
                                 </a>
-                                <figcaption>FIG 1.3: Ability Interface</figcaption>
+                                <figcaption>FIG 1.3: Bullet Patterns</figcaption>
                             </figure>
                             <div>
                                 <span class="count">[ ELEMENT_03 ]</span>
-                                <span class="header-text">Ability Interface</span>
+                                <span class="header-text">Bullet Patterns</span>
                                 <p>
-                                    The ability activation system allows players to trigger special skills and ultimates. Timing and positioning are critical for maximizing ability effectiveness in combat.
+                                    Procedurally generated attack vectors testing spatial awareness, prediction, and sustained motor control within the SOUL box constraints.
                                 </p>
                             </div>
                         </div>
                     </div>
-                    <h2>Strategic Decision Making in Arknights: Endfield</h2>
+                    <h2>Fitts&#39;s Law Application to Bullet Hell Dodging</h2>
                     <div class="fittslaw">
                         <div>
                             <p>
-                                Arknights: Endfield requires players to make tactical decisions based on squad composition, deployment resources, and evolving enemy behavior. The interface must support these choices with clear, contextualized information.
+                                Fitts&#39;s Law governs SOUL movement to safe zones amidst bullet density. Small safe gaps create high Index of Difficulty (ID) requiring precise motor control under time pressure.
                             </p>
                             <div class="mathmodel">
-                                <h6>[ DECISION MODEL ]</h6>
-                                <span>D(t) = f(deployment, unit_synergy, ability_cooldowns, enemy_threats)</span>
+                                <h6>[ MATHEMATICAL MODEL ]</h6>
+                                <span>MT = a + b &times; log<sub>2</sub>(2D/W + 1)</span>
                             </div>
                             <p>
-                                Information hierarchy should surface mission-critical details while minimizing unnecessary complexity. This allows players to react quickly without losing sight of long-term strategy.
+                                Where D = distance to safe zone, W = bullet gap width. Undertale modulates ID by pattern density, speed, and box constraints, scaling difficulty physiologically realistically.
                             </p>
                         </div>
                         <div>
                             <figure>
-                                <a href="../../../public/gamesContent/arknightsEndfield/combatInterface.png" title="Arknights: Endfield Combat Interface"
-                                    target="images">
-                                    <img src="../../../public/gamesContent/arknightsEndfield/combatInterface.png" alt="Combat Interface">
+                                <a href="../../../public/gamesContent/undertale/dialogue.jpg" title="Undertale Dialogue" target="images">
+                                    <img src="../../../public/gamesContent/undertale/dialogue.jpg" alt="Dialogue Box">
                                 </a>
-                                <figcaption>FIG 1.4: Combat Interface</figcaption>
+                                <figcaption>FIG 1.4: Dialogue Box Progression</figcaption>
                             </figure>
                         </div>
                     </div>
                     <div class="list-style-area">
-                        <h3 class="text-center">Visual Hierarchy Breakdown</h3>
-                        <div class="text-center">Information Architecture in Arknights: Endfield</div>
+                        <h3 class="text-center">Visual Processing Priority</h3>
+                        <div class="text-center">Attention Allocation Model</div>
                         <ol class="three-columns md-one-columns">
                             <li>
-                                <h6>Active Units</h6>
+                                <h6>Imminent Threats</h6>
                                 <p>
-                                    The interface emphasizes currently selected operators and their available actions. Clear highlighting helps players execute tactics quickly.
+                                    Fast-moving bullets receive foveal priority. Color/size coding aids rapid threat assessment.
                                 </p>
                             </li>
                             <li>
-                                <h6>Environmental Context</h6>
+                                <h6>Pattern Structure</h6>
                                 <p>
-                                    Terrain effects, enemy positions, and hazard zones are displayed to support strategic planning and risk assessment.
+                                    Peripheral vision tracks overall flow vectors while fovea handles local avoidance.
                                 </p>
                             </li>
                             <li>
-                                <h6>Resource Management</h6>
+                                <h6>Narrative Context</h6>
                                 <p>
-                                    Tertiary focus on deployment points, ability cooldowns, and health bars. Critical for long-term strategic planning but not immediate tactical decisions.
+                                    Background dialogue provides emotional context without visual interference during peak motor demand.
                                 </p>
                             </li>
                         </ol>
                     </div>
                     <div class="footnote">
-                        All component analysis is based on standard Arknights: Endfield tactical interface design. The isometric grid system prioritizes spatial reasoning while maintaining clear information hierarchy for strategic gameplay.
+                        UI elements maintain consistent proportions across resolutions while pattern scaling preserves physiological challenge levels.
                     </div>
                 </section>
                 <section class="game-sections" id="user-interaction">
                     <h2>User Interaction</h2>
                     <p>
-                        An investigation into the neuro-mechanical feedback loops of tactical interfaces,
-                        specifically analyzing Arknights: Endfield interaction flow.
+                        Analysis of Undertale&#39;s hybrid combat system blending bullet-hell survival with moral choice architecture.
                     </p>
                     <div class="list-style-area">
-                        <h3 class="text-center">Core Gameplay Loop</h3>
-                        <div class="text-center"></div>
+                        <h3 class="text-center">Combat Decision Cycle</h3>
                         <ol class="four-columns md-two-columns">
                             <li>
-                                <h6>Observe</h6>
+                                <h6>Dodge</h6>
                                 <p>
-                                    Players scan the battlefield for enemy positions, operator statuses, and environmental hazards.
+                                    Survive bullet phase by maneuvering SOUL within box constraints.
                                 </p>
                             </li>
                             <li>
-                                <h6>Plan</h6>
+                                <h6>Assess</h6>
                                 <p>
-                                    Tactical decisions are made based on deployment points, cooldowns, and the current combat state.
+                                    Read enemy emotional state via expressions/dialogue during attack window.
                                 </p>
                             </li>
                             <li>
-                                <h6>Execute</h6>
+                                <h6>Choose</h6>
                                 <p>
-                                    Commands are issued through touch or click input to move operators, activate skills, and use abilities.
+                                    Select FIGHT/ACT/ITEM/MERCY based on survival success + narrative context.
                                 </p>
                             </li>
                             <li>
-                                <h6>Adapt</h6>
+                                <h6>Follow</h6>
                                 <p>
-                                    Players adjust strategy in response to enemy reactions, shifting objectives, and damage outcomes.
+                                    Continuity of interaction via sliders, spinners, or rapid-fire response for stream
+                                    patterns.
                                 </p>
                             </li>
                         </ol>
                     </div>
-                    <h3>Multi-Modal Feedback Matrix</h3>
+                                <h3>Multi-Modal Feedback Matrix</h3>
                     <div class="multi-modal-feedback">
                         <div>
                             <p>
-                                Arknights: Endfield uses a layered feedback system to confirm tactical choices through sound, visuals, and touch.
+                                Undertale provides layered feedback during combat: bullet impact sounds, screen shake for hits, SOUL color/mode changes for gravity shifts, and expressive enemy animations/dialogue changes confirming ACT success.
                             </p>
                         </div>
                         <div>
                             <figure>
-                                <a href="../../../public/gamesContent/arknightsEndfield/operatorActionFlow.png" title="Arknights: Endfield Action Feedback"
-                                    target="images">
-                                    <img src="../../../public/gamesContent/arknightsEndfield/operatorActionFlow.png"
-                                        alt="Arknights: Endfield Action Feedback">
+                                <a href="../../../public/gamesContent/undertale/feedback.jpg" title="Undertale Feedback" target="images">
+                                    <img src="../../../public/gamesContent/undertale/feedback.jpg" alt="SOUL Feedback">
                                 </a>
-                                <figcaption>FIG 1.5: Operator Action Feedback</figcaption>
+                                <figcaption>FIG 1.5: Multi-Modal Combat Feedback</figcaption>
                             </figure>
                         </div>
                     </div>
@@ -1434,7 +1425,7 @@
                             <div>
                                 <h6>Audio Feedback</h6>
                                 <p>
-                                    Skill activation cues, enemy alert sounds, and combat effects help players recognize when actions land and threats emerge.
+                                    Distinct attack sounds, bullet impact SFX, expressive voice lines during ACT dialogue, and dynamic music shifts based on route progression provide rich auditory context.
                                 </p>
                             </div>
                         </li>
@@ -1452,7 +1443,7 @@
                             <div>
                                 <h6>Visual Feedback</h6>
                                 <p>
-                                    Target highlights, action previews, and damage indicators confirm successful ability use and enemy responses.
+                                    Screen shake on hits, SOUL color changes indicating mode shifts, enemy expression changes confirming successful ACT choices, bullet destruction particles.
                                 </p>
                             </div>
                         </li>
@@ -1467,7 +1458,7 @@
                             <div>
                                 <h6>Haptic Feedback</h6>
                                 <p>
-                                    Vibration cues on mobile devices reinforce ability execution and incoming damage, supporting quick tactical adjustments.
+                                    Console versions provide controller rumble during intense bullet patterns and boss attacks, providing physical feedback synchronized with on-screen intensity.
                                 </p>
                             </div>
                         </li>
@@ -1479,37 +1470,31 @@
                         <h3>Cybernetic Feedback Loops</h3>
                         <div class="cybernetic-content">
                             <div>
-                                <p style="text-align: justify;">
-                                    Arknights: Endfield uses a multi-modal feedback architecture that provides immediate visual,
-                                    auditory, and haptic confirmation of decisions. The feedback loop keeps players informed
-                                    about ability results and battlefield changes during tactical encounters.
-                                </p>
+                    <p style="text-align: justify;">
+                        Undertale employs a multi-modal feedback system blending bullet-hell survival with moral choices. Immediate visual (bullet destruction, SOUL flashes), auditory (impact SFX, dynamic music), and narrative feedback (enemy expressions) close loops rapidly during high-pressure encounters.
+                    </p>
                             </div>
                             <div>
                                 <ul class="primary-modalities">
                                     <h6>Primary Modalities</h6>
-                                    <li><strong>Visual</strong>: Enemy ranges, ability indicators, and operator statuses.</li>
-                                    <li><strong>Auditory</strong>: Ability cues, alert sounds, and combat feedback tones.</li>
-                                    <li><strong>Structural</strong>: Deployment points, cooldown timers, and resource meters.</li>
+                                    <li><strong>Visual</strong>: Bullet destruction, SOUL flashes, enemy expressions</li>
+                                    <li><strong>Auditory</strong>: Impact SFX, dynamic music shifts, expressive lines</li>
+                                    <li><strong>Structural</strong>: HP changes, mercy outcomes</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                     <div class="spatial-congruence">
                         <h2>Spatial Congruence</h2>
-                        <p style="text-align: justify;">
-                            The spatial arrangement of interface elements in Arknights: Endfield supports intuitive tactical
-                            decision-making and reduces cognitive load. Enemy markers, operator cards, and ability panels are
-                            positioned to clearly relate the battlefield state to the player's next action.
-                        </p>
+                            <p style="text-align: justify;">
+                                Undertale's battle box provides direct spatial mapping for SOUL movement, eliminating translation latency. Bullets spawn with predictable patterns, guiding peripheral vision while foveal focus handles precise dodging. This absolute positioning supports intuitive survival under pressure.
+                            </p>
                     </div>
                     <div class="cognitive-load-bifurcation">
                         <h2>Cognitive Load Bifurcation</h2>
-                        <p style="text-align: justify; margin-bottom: 2em;">
-                            The central success of the Arknights: Endfield interface is reducing unnecessary input complexity
-                            so players can focus on tactical decision-making, while preserving the intrinsic challenge of
-                            squad composition and battlefield strategy.
-                        </p>
+                            <p style="text-align: justify; margin-bottom: 2em;">
+                                Undertale bifurcates cognitive load: intuitive SOUL dodging minimizes Extrinsic Load, channeling Intrinsic Load into moral decisions under survival pressure.
+                            </p>
                         <table>
                             <thead>
                                 <tr>
@@ -1522,27 +1507,31 @@
                                     <td>
                                         <h6>Minimalist HUD</h6>
                                         <p>
-                                            Non-essential data is pushed to the periphery, keeping the battlefield and action cues central.
+                                            Non-essential data is pushed to the periphery (corners), keeping the central
+                                            visual fovea clear for hit-circle tracking.
                                         </p>
                                     </td>
                                     <td>
-                                        <h6>Strategic Focus</h6>
+                                        <h6>Kinesthetic Mastery</h6>
                                         <p>
-                                            Players dedicate cognitive effort to positioning, ability timing, and enemy management.
+                                            The user's entire cognitive budget is spent on rhythm synchronization and
+                                            spatial precision.
                                         </p>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <h6>Contextual Markers</h6>
+                                        <h6>Color Coding</h6>
                                         <p>
-                                            Clear visual indicators and tooltips reduce uncertainty during complex tactical choices.
+                                            Consistent hue association for combo sequences reduces the need for the
+                                            brain to parse "next-action" logic.
                                         </p>
                                     </td>
                                     <td>
-                                        <h6>Situational Awareness</h6>
+                                        <h6>Flow State Entry</h6>
                                         <p>
-                                            The interface supports flow by keeping players aware of evolving threats and resource states.
+                                            By removing interface friction, the system facilitates rapid entry into
+                                            'Flow,' where awareness and action merge.
                                         </p>
                                     </td>
                                 </tr>
@@ -1551,16 +1540,14 @@
                     </div>
                     <div class="footnote">
                         <q>
-                            The interface is a bridge that must vanish. In Arknights: Endfield, the UX design achieves this by
-                            prioritizing tactical clarity and responsive feedback over unnecessary visual complexity.
+                            The interface vanishes into action. Undertale's design prioritizes mechanical empathy over ornamentation, fusing survival skill with moral depth.
                         </q>
                     </div>
                 </section>
                 <section class="game-sections" id="ui-ux-weaknesses">
                     <h2>Strengths and Weaknesses Analysis</h2>
                     <p>
-                        A comprehensive breakdown of the Arknights: Endfield interface paradigm. Evaluating the balance
-                        between deep tactical systems and mobile-friendly accessibility.
+                        A comprehensive breakdown of Undertale's hybrid bullet-hell morality system. Evaluating tension between survival dodging, moral choices, and emotional consequence feedback.
                     </p>
 
                     <table style="margin-bottom: 2em;">
@@ -1583,12 +1570,13 @@
                                                     d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
                                             </svg>
                                         </span>
-                                        <span class="label">01_LOGISTICS</span>
+                                        <span class="label">01_MORALDEPTH</span>
                                     </div>
-                                    <h6>Integrated Factory Systems</h6>
+                                    <h6>
+                                        Moral Choice Architecture
+                                    </h6>
                                     <p>
-                                        The seamless integration between real-time combat and industrial automation creates a unique gameplay 
-                                        loop. Building efficient power grids and resource pipelines provides a tangible sense of progression.
+                                        ACT/MERCY options create branching narratives with Pacifist/Neutral/Genocide routes. Choices persist across playthroughs, providing deep consequence visibility and replay motivation.
                                     </p>
                                 </td>
                                 <td>
@@ -1600,12 +1588,11 @@
                                                     d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75M6.75 10.5h10.5A2.25 2.25 0 0 1 19.5 12.75v6A2.25 2.25 0 0 1 17.25 21H6.75A2.25 2.25 0 0 1 4.5 18.75v-6A2.25 2.25 0 0 1 6.75 10.5Z" />
                                             </svg>
                                         </span>
-                                        <span class="label">01_COMPLEXITY</span>
+                                        <span class="label">01_DUALLOAD</span>
                                     </div>
-                                    <h6>High Management Burden</h6>
+                                    <h6>Dual Cognitive Load</h6>
                                     <p>
-                                        The "Factory-RPG" hybrid introduces massive mechanical depth. Managing logistics while 
-                                        simultaneously handling party-based combat creates a daunting cognitive load for casual players.
+                                        Simultaneous bullet dodging + reading ACT options/spare conditions under time pressure creates high mental overload, especially in complex encounters like Muffet or Undyne.
                                     </p>
                                 </td>
                             </tr>
@@ -1619,12 +1606,11 @@
                                                     d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25l4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z" />
                                             </svg>
                                         </span>
-                                        <span class="label">02_SYNERGY</span>
+                                        <span class="label">02_EMOTIONALFEEDBACK</span>
                                     </div>
-                                    <h6>Tactical Combat Depth</h6>
+                                    <h6>Expressive Enemy Feedback</h6>
                                     <p>
-                                        The elemental reaction system and party-swapping mechanics reward strategic preparation. 
-                                        Visual and audio cues clearly communicate when "Resonance" effects are triggered.
+                                        Enemy facial expressions and dialogue change based on ACT success (spare conditions met). Screen shake, bullet destruction particles, dynamic music shifts provide multi-modal confirmation of choices.
                                     </p>
                                 </td>
                                 <td>
@@ -1636,12 +1622,11 @@
                                                     d="M12 9v4.5m0 3.75h.008v.008H12v-.008ZM10.29 3.86l-7.5 13A1.5 1.5 0 0 0 4.09 19h15.82a1.5 1.5 0 0 0 1.3-2.14l-7.5-13a1.5 1.5 0 0 0-2.6 0Z" />
                                             </svg>
                                         </span>
-                                        <span class="label">02_FRICTION</span>
+                                        <span class="label">02_PATTERNCLUTTER</span>
                                     </div>
-                                    <h6>Navigation Friction</h6>
+                                    <h6>Bullet Pattern Clutter</h6>
                                     <p>
-                                        Terrain traversal and manual cable-laying can occasionally feel cumbersome. The lack of an 
-                                        unrestricted fast-travel system forces repetitive travel through industrial zones.
+                                        Dense, multi-phase patterns (e.g. Photoshop Flowey&#39;s 300+ bullet types) overwhelm peripheral vision. Genocide route increases visual complexity and speed, reducing readability.
                                     </p>
                                 </td>
                             </tr>
@@ -1655,12 +1640,11 @@
                                                     d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
                                             </svg>
                                         </span>
-                                        <span class="label">03_WORLD</span>
+                                        <span class="label">03_SOULMODES</span>
                                     </div>
-                                    <h6>Cohesive Aesthetic Design</h6>
+                                    <h6>Dynamic SOUL Modes</h6>
                                     <p>
-                                        The "Industrial-Chic" visual identity is consistently applied from UI to environment. 
-                                        The world feels lived-in, grounded by a technical logic that respects the IP's lore.
+                                        SOUL color/shape changes per enemy (red=move, cyan=gravity walk, blue=force-move, green=shield, purple=persevere, yellow=focus). Provides mode-specific challenges and visual/tactile feedback.
                                     </p>
                                 </td>
                                 <td>
@@ -1672,12 +1656,13 @@
                                                     d="M3.98 8.223A10.477 10.477 0 0 0 1.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.451 10.451 0 0 1 12 4.5c4.756 0 8.773 3.162 10.065 7.498a10.522 10.522 0 0 1-4.293 5.774M6.228 6.228 3 3m3.228 3.228 3.65 3.65m7.894 7.894L21 21m-3.228-3.228-3.65-3.65m0 0a3 3 0 1 0-4.243-4.243m4.242 4.242L9.88 9.88" />
                                             </svg>
                                         </span>
-                                        <span class="label">03_DENSITY</span>
+                                        <span class="label">03_NOISE</span>
                                     </div>
-                                    <h6>Resource Scarcity</h6>
+                                    <h6>Visual Clutter</h6>
                                     <p>
-                                        The economy can feel overly restrictive during the mid-game. Balancing advanced component 
-                                        crafting against unit upgrades often leads to progress bottlenecks that stall exploration.
+                                        At high difficulty levels, the signal-to-noise ratio degrades. "Note density"
+                                        can lead to visual saturation, making it difficult for the user to parse the
+                                        primary task.
                                     </p>
                                 </td>
                             </tr>
@@ -1685,9 +1670,7 @@
                     </table>
                     <div class="footnote summary">
                         <p>
-                            The Arknights: Endfield interface seeks to balance strategic depth and mobile accessibility.
-                            Its strength lies in clear battlefield feedback and resource visibility, while its weakness
-                            appears when menu density and monetization systems distract from tactical gameplay.
+                            Undertale fuses bullet-hell precision with moral choice HCI. Strengths in emotional depth from mechanical mastery contrast with dual-load challenges, where engaged players face intense cognitive/physical demands without compromise.
                         </p>
                     </div>
                 </section>
@@ -1717,35 +1700,35 @@
 </body>
 
 <script>
-    // VARIABLES
-    const GAMENAME = "Arknights: Endfield";
-    const DATERELEASED = "12/01/2023"; // MM/DD/YYYY
-    const PUBLISHER = 'Yostar';
+// VARIABLES
+    const GAMENAME = "Undertale";
+    const DATERELEASED = "09/15/2015"; // MM/DD/YYYY
+    const PUBLISHER = "Toby Fox";
     const BADGE = "Full Release";
     // Pre-Alpha
     // Alpha
     // Beta
     // Early Access
-    // Full Release
-    const POSTERURL = "../../../public/posters/arknightsEndfield_poster.png";
-    const POSTERALTTEXT = "Arknights: Endfield Game Poster";
-    const VIDEOURL = "../../../public/videos/arknightsEndfield_trailer.mp4";
-    const VIDEOURLYT = "https://www.youtube.com/embed/oJ00ggFb8A0";
+    // Full Release 
+    const POSTERURL = "../../../public/posters/undertale_poster.jpg";
+    const POSTERALTTEXT = "Undertale Game Poster";
+    const VIDEOURL = "../../../public/videos/undertale_trailer.mp4";
+    const VIDEOURLYT = "https://www.youtube.com/embed/1Hojv0m3TqA";
     const YTVID = true;
 
-    const GAMEUSERSTARS = "5.7";
-    const GAMEUSERRATINGS = "162";
+    const GAMEUSERSTARS = "8.7";
+    const GAMEUSERRATINGS = "7779";
 
-    const HASCRITICS = true; // Set to false if there are no critic ratings
-    const GAMECRITICSTARS = "78";
-    const GAMECRITICRATINGS = "21";
+    const HASCRITICS = true;
+    const GAMECRITICSTARS = "9.2";
+    const GAMECRITICRATINGS = "43";
 
-    const GENRES = ["Strategy", "RPG", "Gacha"];
-    const PLATFORMS = ["iOS", "Android", "PC"];
-    const EDITIONS = ["Standard Edition", "Deluxe Edition", "Collector's Edition"];
+    const GENRES = ["RPG", "Bullet Hell"];
+    const PLATFORMS = ["PC", "PS4", "Vita", "Switch"];
+    const EDITIONS = ["Original", "Anniversary"];
 
-    const DESCRIPTION =
-        "Arknights: Endfield is a prequel to the popular Arknights series, set in the same universe but focusing on different characters and storylines. Players command a squad of operators in turn-based tactical combat against mysterious enemies, combining gacha collection with deep strategic gameplay and narrative elements.";
+    const DESCRIPTION = "Undertale is an RPG where players control a human child who has fallen into an underground monster world. Unlike traditional RPGs, players can choose to fight or spare enemies, leading to multiple endings (Pacifist, Neutral, Genocide) based on moral choices. Features bullet-hell combat with a dodging SOUL heart, pixel art, and emotionally impactful narrative.";
+
 
     // Document Variables
     const sectionRadios = Array.from(

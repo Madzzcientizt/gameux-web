@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="../../styles/sizeChecker.css" type="text/css" />
     <link rel="stylesheet" href="../../styles/game.css" type="text/css" />
 
-    <!-- Custom Styles ------------------------------------------------------------------------------------------ -->
+    <!-- Custom Styles -------------------------------------------------------------------------- -->
     <style>
         nav.game-info-nav label {
             width: calc(100% / 5) !important;
@@ -863,7 +863,6 @@
             opacity: 0;
             transform: translateY(0.5rem) scale(0.96);
             pointer-events: none;
-            transition: opacity 0.2s ease, transform 0.2s ease;
             cursor: pointer;
         }
 
@@ -1000,7 +999,7 @@
             position: relative;
         }
     </style>
-    <!-- Custom Styles ------------------------------------------------------------------------------------------ -->
+    <!-- Custom Styles -------------------------------------------------------------------------- -->
 
     <title id="title">GameName - GameUX</title>
 </head>
@@ -1097,7 +1096,7 @@
                 <div class="video-game-container">
                     <a class="game-poster" id="game-poster">
                         <img class="game-poster-img" id="game-poster-img" alt="Game Poster" target="images"
-                            title="Arknights: Endfield Game Poster" />
+                            title="Osu! Game Poster" />
                     </a>
                     <div class="game-video-wrp">
                         <video class="game-video" id="game-video" controls>
@@ -1210,7 +1209,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
                         width="20" height="20">
                         <path fill-rule="evenodd"
-                            d="M8.22 4.72a.75.75 0 0 1 1.06 0l6.5 6.5a.75.75 0 0 1 0 1.06l-6.5 6.5a.75.75 0 0 1-1.06-1.06L14.19 12 8.22 6.28a.75.75 0 0 1 0-1.56Z"
+                            d="M8.22 4.72a.75.75 0 0 1 1.06 0l6.5 6.5a.75.75 0 0 1 0 1.06l-6.5 6.5a.75.75 0 1 1-1.06-1.06L14.19 12 8.22 6.28a.75.75 0 0 1 0-1.56Z"
                             clip-rule="evenodd" />
                     </svg>
                 </button>
@@ -1227,34 +1226,35 @@
                 <section class="game-sections" id="short-description">
                     <h2>Overview</h2>
                     <ul class="list-style">
-                        <h2>Arknights: Endfield builds:</h2>
-                        <li>Standard Edition</li>
-                        <li>Deluxe Edition</li>
-                        <li>Collector's Edition</li>
+                        <h2>Fallout series:</h2>
+                        <li>Fallout (1997)</li>
+                        <li>Fallout 2 (1998)</li>
+                        <li>Fallout 3 (2008)</li>
+                        <li>Fallout: New Vegas (2010)</li>
+                        <li>Fallout 4 (2015)</li>
                     </ul>
                     <p>
-                        Arknights: Endfield is a mobile strategy RPG developed and published by Yostar. Released on December 1, 2023, for iOS and Android platforms, with PC support following later.
-                        The gameplay centers around turn-based tactical combat where players command squads of operators with unique abilities to battle against infected enemies. Players collect and develop characters through gacha mechanics while managing resources and making strategic decisions in both combat and base management.
+                        Fallout is a post-apocalyptic role-playing video game series developed by Bethesda Game Studios (formerly Interplay Entertainment). The original Fallout, released in 1997, established the franchise's signature blend of retro-futuristic aesthetics, turn-based combat, and moral choice-driven narratives set in a nuclear-devastated world.
+                        The gameplay combines isometric exploration, dialogue trees, and tactical combat with a unique SPECIAL character system (Strength, Perception, Endurance, Charisma, Intelligence, Agility, Luck) that influences player abilities and story outcomes.
                     </p>
                     <p>
-                        As a prequel to the main Arknights series, Endfield introduces new characters and storylines while maintaining the core gameplay loop of squad-based strategy. The game's mobile interface must accommodate complex tactical systems, character management, and resource allocation while remaining accessible to strategy game enthusiasts.
-                        The combination of gacha collection and deep tactical gameplay creates unique HCI challenges in balancing accessibility with strategic complexity.
+                        Unlike modern RPGs, Fallout emphasizes consequence-driven storytelling where player decisions can lead to multiple endings, faction alliances, and long-term world changes. The interface balances complex character management with intuitive exploration mechanics, creating a distinctive HCI paradigm that has influenced countless games in the genre.
                     </p>
                     <ul class="metrics-list">
                         <li>
                             <h6>Cognitive Load</h6>
-                            <div class="value">High</div>
-                            <div class="desc">Number of simultaneous elements a player tracks</div>
+                            <div class="value">Medium-High</div>
+                            <div class="desc">Managing multiple systems simultaneously</div>
                         </li>
                         <li>
                             <h6>Response Time</h6>
-                            <div class="value">&pm; 20ms to &pm; 150ms</div>
-                            <div class="desc">Time between user action and system feedback</div>
+                            <div class="value">Turn-based</div>
+                            <div class="desc">No real-time pressure in combat</div>
                         </li>
                         <li>
-                            <h6>Visual Reaction Time</h6>
-                            <div class="value">~150ms to ~1200ms</div>
-                            <div class="desc">Time for a player to respond to visual stimuli</div>
+                            <h6>Decision Complexity</h6>
+                            <div class="value">High</div>
+                            <div class="desc">Moral choices with long-term consequences</div>
                         </li>
                     </ul>
                 </section>
@@ -1263,181 +1263,165 @@
                     <div class="major-components">
                         <div class="major-component">
                             <figure>
-                                <a href="../../../public/gamesContent/arknightsEndfield/tacticalGrid.jpg" title="Arknights: Endfield Open World Map"
+                                <a href="../../../public/gamesContent/fallout/isometric_view.jpg" title="Fallout Isometric View"
                                     target="images">
-                                    <img src="../../../public/gamesContent/arknightsEndfield/tacticalGrid.jpg" alt="Open World Map">
+                                    <img src="../../../public/gamesContent/fallout/isometric_view.jpg" alt="Isometric View">
                                 </a>
-                                <figcaption>FIG 1.1: Open World Map</figcaption>
+                                <figcaption>FIG 1.1: Isometric Exploration View</figcaption>
                             </figure>
                             <div>
                                 <span class="count">[ ELEMENT_01 ]</span>
-                                <span class="header-text">Open World Map</span>
+                                <span class="header-text">Isometric World View</span>
                                 <p>
-                                    Arknights: Endfield features an open-world interface where players explore regions, find missions, and track story events. The world map balances exploration cues and navigation data so players can move freely while staying oriented.
+                                    The core navigation interface uses a 45-degree isometric projection that provides depth perception while maintaining clear spatial relationships. Players can rotate the view in 90-degree increments to explore the wasteland environment.
                                 </p>
                                 <ul>
                                     <h6>Visual Feedback</h6>
-                                    <li>Location Markers</li>
-                                    <li>Route Guidance</li>
-                                    <li>Interactive Waypoints</li>
+                                    <li>Grid-based movement system</li>
+                                    <li>Elevation indicators for terrain</li>
+                                    <li>Interactive object highlighting</li>
                                 </ul>
                             </div>
                         </div>
                         <div class="major-component">
                             <figure>
-                                <a href="../../../public/gamesContent/arknightsEndfield/operatorCards.jpg" title="Arknights: Endfield Operator Roster"
+                                <a href="../../../public/gamesContent/fallout/dialogue_interface.jpg" title="Fallout Dialogue Interface"
                                     target="images">
-                                    <img src="../../../public/gamesContent/arknightsEndfield/operatorCards.jpg" alt="Operator Roster">
+                                    <img src="../../../public/gamesContent/fallout/dialogue_interface.jpg" alt="Dialogue Interface">
                                 </a>
-                                <figcaption>FIG 1.2: Operator Roster</figcaption>
+                                <figcaption>FIG 1.2: Dialogue System</figcaption>
                             </figure>
                             <div>
                                 <span class="count">[ ELEMENT_02 ]</span>
-                                <span class="header-text">Operator Roster</span>
+                                <span class="header-text">Dialogue Interface</span>
                                 <p>
-                                    The roster panel shows operator stats, roles, and deployment costs. Players use this interface to manage squads, review unit synergies, and prepare for tactical engagements.
+                                    Branching conversation trees with skill checks that determine dialogue options. The interface displays character portraits, dialogue text, and available responses with color-coded skill requirements.
                                 </p>
                             </div>
                         </div>
                         <div class="major-component">
                             <figure>
-                                <a href="../../../public/gamesContent/arknightsEndfield/abilityInterface.png" title="Arknights: Endfield Ability Interface"
+                                <a href="../../../public/gamesContent/fallout/inventory_system.png" title="Fallout Inventory System"
                                     target="images">
-                                    <img src="../../../public/gamesContent/arknightsEndfield/abilityInterface.png" alt="Ability Interface">
+                                    <img src="../../../public/gamesContent/fallout/inventory_system.png" alt="Inventory System">
                                 </a>
-                                <figcaption>FIG 1.3: Ability Interface</figcaption>
+                                <figcaption>FIG 1.3: Inventory Management</figcaption>
                             </figure>
                             <div>
                                 <span class="count">[ ELEMENT_03 ]</span>
-                                <span class="header-text">Ability Interface</span>
+                                <span class="header-text">Inventory Grid</span>
                                 <p>
-                                    The ability activation system allows players to trigger special skills and ultimates. Timing and positioning are critical for maximizing ability effectiveness in combat.
+                                    A grid-based inventory system with drag-and-drop functionality. Items are represented by icons with weight and value indicators, requiring players to manage carrying capacity strategically.
                                 </p>
                             </div>
                         </div>
                     </div>
-                    <h2>Strategic Decision Making in Arknights: Endfield</h2>
+                    <h2>Information Architecture in Complex RPG Systems</h2>
                     <div class="fittslaw">
                         <div>
                             <p>
-                                Arknights: Endfield requires players to make tactical decisions based on squad composition, deployment resources, and evolving enemy behavior. The interface must support these choices with clear, contextualized information.
+                                Fallout's interface design follows information hierarchy principles where critical gameplay data is prioritized over aesthetic elements. The HUD provides essential information without overwhelming the player during exploration.
                             </p>
                             <div class="mathmodel">
-                                <h6>[ DECISION MODEL ]</h6>
-                                <span>D(t) = f(deployment, unit_synergy, ability_cooldowns, enemy_threats)</span>
+                                <h6>[ COGNITIVE LOAD MODEL ]</h6>
+                                <span>CL = I × (1 - E) + E × (1 - A)</span>
                             </div>
                             <p>
-                                Information hierarchy should surface mission-critical details while minimizing unnecessary complexity. This allows players to react quickly without losing sight of long-term strategy.
+                                Where CL is cognitive load, I is intrinsic complexity, E is extrinsic interface friction, and A is automation level. Fallout minimizes E through intuitive iconography and consistent interaction patterns.
                             </p>
                         </div>
                         <div>
                             <figure>
-                                <a href="../../../public/gamesContent/arknightsEndfield/combatInterface.png" title="Arknights: Endfield Combat Interface"
+                                <a href="../../../public/gamesContent/fallout/character_stats.jpg" title="Fallout Character Stats"
                                     target="images">
-                                    <img src="../../../public/gamesContent/arknightsEndfield/combatInterface.png" alt="Combat Interface">
+                                    <img src="../../../public/gamesContent/fallout/character_stats.jpg" alt="Character Stats">
                                 </a>
-                                <figcaption>FIG 1.4: Combat Interface</figcaption>
+                                <figcaption>FIG 1.4: SPECIAL Character System</figcaption>
                             </figure>
                         </div>
                     </div>
                     <div class="list-style-area">
-                        <h3 class="text-center">Visual Hierarchy Breakdown</h3>
-                        <div class="text-center">Information Architecture in Arknights: Endfield</div>
+                        <h3 class="text-center">Interface Layering Strategy</h3>
+                        <div class="text-center">Progressive Information Disclosure</div>
                         <ol class="three-columns md-one-columns">
                             <li>
-                                <h6>Active Units</h6>
+                                <h6>Primary Layer</h6>
                                 <p>
-                                    The interface emphasizes currently selected operators and their available actions. Clear highlighting helps players execute tactics quickly.
+                                    Core navigation and immediate threats. Health, action points, and visible enemies take precedence in the visual hierarchy.
                                 </p>
                             </li>
                             <li>
-                                <h6>Environmental Context</h6>
+                                <h6>Secondary Layer</h6>
                                 <p>
-                                    Terrain effects, enemy positions, and hazard zones are displayed to support strategic planning and risk assessment.
+                                    Contextual information accessed via mouse hover or right-click. Item descriptions, NPC dialogue options, and environmental details.
                                 </p>
                             </li>
                             <li>
-                                <h6>Resource Management</h6>
+                                <h6>Tertiary Layer</h6>
                                 <p>
-                                    Tertiary focus on deployment points, ability cooldowns, and health bars. Critical for long-term strategic planning but not immediate tactical decisions.
+                                    Deep systems like character stats, quest logs, and world map are accessed through dedicated menus, reducing cognitive load during active gameplay.
                                 </p>
                             </li>
                         </ol>
                     </div>
                     <div class="footnote">
-                        All component analysis is based on standard Arknights: Endfield tactical interface design. The isometric grid system prioritizes spatial reasoning while maintaining clear information hierarchy for strategic gameplay.
+                        All component analysis is based on the original Fallout engine. Modern remasters maintain the core interface philosophy while improving visual fidelity and accessibility features.
                     </div>
                 </section>
                 <section class="game-sections" id="user-interaction">
                     <h2>User Interaction</h2>
                     <p>
-                        An investigation into the neuro-mechanical feedback loops of tactical interfaces,
-                        specifically analyzing Arknights: Endfield interaction flow.
+                        An analysis of Fallout's turn-based interaction paradigm, examining how the interface supports complex decision-making in a post-apocalyptic setting.
                     </p>
                     <div class="list-style-area">
                         <h3 class="text-center">Core Gameplay Loop</h3>
-                        <div class="text-center"></div>
+                        <div class="text-center">Strategic Resource Management</div>
                         <ol class="four-columns md-two-columns">
                             <li>
-                                <h6>Observe</h6>
+                                <h6>Explore</h6>
                                 <p>
-                                    Players scan the battlefield for enemy positions, operator statuses, and environmental hazards.
+                                    Navigate the isometric world, discovering locations, NPCs, and resources through mouse-driven movement and interaction.
                                 </p>
                             </li>
                             <li>
-                                <h6>Plan</h6>
+                                <h6>Interact</h6>
                                 <p>
-                                    Tactical decisions are made based on deployment points, cooldowns, and the current combat state.
+                                    Engage with the environment through context-sensitive actions: talking, looting, hacking, or combat initiation.
                                 </p>
                             </li>
                             <li>
-                                <h6>Execute</h6>
+                                <h6>Decide</h6>
                                 <p>
-                                    Commands are issued through touch or click input to move operators, activate skills, and use abilities.
+                                    Make choices that affect character development, faction relationships, and story outcomes through dialogue trees and moral decisions.
                                 </p>
                             </li>
                             <li>
-                                <h6>Adapt</h6>
+                                <h6>Manage</h6>
                                 <p>
-                                    Players adjust strategy in response to enemy reactions, shifting objectives, and damage outcomes.
+                                    Balance resources like health, ammunition, and carrying capacity while planning for long-term survival in the wasteland.
                                 </p>
                             </li>
                         </ol>
                     </div>
-                    <h3>Multi-Modal Feedback Matrix</h3>
+                    <h3>Multi-Modal Feedback in Turn-Based Systems</h3>
                     <div class="multi-modal-feedback">
                         <div>
                             <p>
-                                Arknights: Endfield uses a layered feedback system to confirm tactical choices through sound, visuals, and touch.
+                                Unlike real-time games, Fallout's turn-based combat allows for deliberate decision-making with clear feedback loops. Each action provides immediate visual and textual confirmation of outcomes.
                             </p>
                         </div>
                         <div>
                             <figure>
-                                <a href="../../../public/gamesContent/arknightsEndfield/operatorActionFlow.png" title="Arknights: Endfield Action Feedback"
+                                <a href="../../../public/gamesContent/fallout/combat_feedback.png" title="Fallout Combat Feedback"
                                     target="images">
-                                    <img src="../../../public/gamesContent/arknightsEndfield/operatorActionFlow.png"
-                                        alt="Arknights: Endfield Action Feedback">
+                                    <img src="../../../public/gamesContent/fallout/combat_feedback.png"
+                                        alt="Fallout Combat Feedback">
                                 </a>
-                                <figcaption>FIG 1.5: Operator Action Feedback</figcaption>
+                                <figcaption>FIG 1.5: Turn-Based Combat Feedback</figcaption>
                             </figure>
                         </div>
                     </div>
                     <ul>
-                        <li>
-                            <div class="logo-svg">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25l4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z" />
-                                </svg>
-                            </div>
-                            <div>
-                                <h6>Audio Feedback</h6>
-                                <p>
-                                    Skill activation cues, enemy alert sounds, and combat effects help players recognize when actions land and threats emerge.
-                                </p>
-                            </div>
-                        </li>
                         <li>
                             <div class="logo-svg">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -1452,7 +1436,22 @@
                             <div>
                                 <h6>Visual Feedback</h6>
                                 <p>
-                                    Target highlights, action previews, and damage indicators confirm successful ability use and enemy responses.
+                                    Clear damage numbers, status effects, and animation sequences provide immediate understanding of action outcomes. Color-coded health bars and status icons communicate character states.
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="logo-svg">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25l4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h6>Audio Feedback</h6>
+                                <p>
+                                    Distinct sound effects for different actions (gunshots, explosions, dialogue) and ambient wasteland audio create immersion. Combat music and sound cues enhance tension during encounters.
                                 </p>
                             </div>
                         </li>
@@ -1465,9 +1464,9 @@
                                 </svg>
                             </div>
                             <div>
-                                <h6>Haptic Feedback</h6>
+                                <h6>Tactile Feedback</h6>
                                 <p>
-                                    Vibration cues on mobile devices reinforce ability execution and incoming damage, supporting quick tactical adjustments.
+                                    Mouse clicks and keyboard input provide physical confirmation of actions. The weight of inventory management creates a tangible sense of resource scarcity.
                                 </p>
                             </div>
                         </li>
@@ -1480,17 +1479,15 @@
                         <div class="cybernetic-content">
                             <div>
                                 <p style="text-align: justify;">
-                                    Arknights: Endfield uses a multi-modal feedback architecture that provides immediate visual,
-                                    auditory, and haptic confirmation of decisions. The feedback loop keeps players informed
-                                    about ability results and battlefield changes during tactical encounters.
+                                    Fallout's turn-based combat system creates extended feedback loops where player actions have delayed but significant consequences. The interface supports strategic planning with clear state representation and predictable outcomes.
                                 </p>
                             </div>
                             <div>
                                 <ul class="primary-modalities">
                                     <h6>Primary Modalities</h6>
-                                    <li><strong>Visual</strong>: Enemy ranges, ability indicators, and operator statuses.</li>
-                                    <li><strong>Auditory</strong>: Ability cues, alert sounds, and combat feedback tones.</li>
-                                    <li><strong>Structural</strong>: Deployment points, cooldown timers, and resource meters.</li>
+                                    <li><strong>Visual</strong>: Damage numbers, status effects, inventory changes, dialogue portraits</li>
+                                    <li><strong>Textual</strong>: Detailed combat logs, skill check results, quest updates</li>
+                                    <li><strong>Structural</strong>: Health/Action Point bars, faction reputation meters</li>
                                 </ul>
                             </div>
                         </div>
@@ -1498,17 +1495,13 @@
                     <div class="spatial-congruence">
                         <h2>Spatial Congruence</h2>
                         <p style="text-align: justify;">
-                            The spatial arrangement of interface elements in Arknights: Endfield supports intuitive tactical
-                            decision-making and reduces cognitive load. Enemy markers, operator cards, and ability panels are
-                            positioned to clearly relate the battlefield state to the player's next action.
+                            Fallout's isometric perspective provides excellent spatial congruence for navigation and combat. The 45-degree viewing angle allows players to see elevation changes, object interactions, and enemy positions clearly. Movement is grid-based but feels natural due to the 3D-like depth perception.
                         </p>
                     </div>
                     <div class="cognitive-load-bifurcation">
                         <h2>Cognitive Load Bifurcation</h2>
                         <p style="text-align: justify; margin-bottom: 2em;">
-                            The central success of the Arknights: Endfield interface is reducing unnecessary input complexity
-                            so players can focus on tactical decision-making, while preserving the intrinsic challenge of
-                            squad composition and battlefield strategy.
+                            Fallout masterfully balances complex RPG mechanics with an interface that progressively discloses information. The system reduces extrinsic load through intuitive iconography while allowing deep engagement with intrinsic game systems.
                         </p>
                         <table>
                             <thead>
@@ -1520,29 +1513,29 @@
                             <tbody>
                                 <tr>
                                     <td>
-                                        <h6>Minimalist HUD</h6>
+                                        <h6>Context Menus</h6>
                                         <p>
-                                            Non-essential data is pushed to the periphery, keeping the battlefield and action cues central.
+                                            Right-click interactions provide immediate access to relevant actions, reducing the need to navigate complex menus during exploration.
                                         </p>
                                     </td>
                                     <td>
-                                        <h6>Strategic Focus</h6>
+                                        <h6>Character Building</h6>
                                         <p>
-                                            Players dedicate cognitive effort to positioning, ability timing, and enemy management.
+                                            The SPECIAL system and skill trees create meaningful choices that affect gameplay outcomes and replayability.
                                         </p>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <h6>Contextual Markers</h6>
+                                        <h6>Visual Consistency</h6>
                                         <p>
-                                            Clear visual indicators and tooltips reduce uncertainty during complex tactical choices.
+                                            Consistent iconography and color schemes across all interface elements minimize learning overhead.
                                         </p>
                                     </td>
                                     <td>
-                                        <h6>Situational Awareness</h6>
+                                        <h6>Moral Complexity</h6>
                                         <p>
-                                            The interface supports flow by keeping players aware of evolving threats and resource states.
+                                            Dialogue choices and faction relationships create branching narratives with long-term consequences.
                                         </p>
                                     </td>
                                 </tr>
@@ -1551,16 +1544,14 @@
                     </div>
                     <div class="footnote">
                         <q>
-                            The interface is a bridge that must vanish. In Arknights: Endfield, the UX design achieves this by
-                            prioritizing tactical clarity and responsive feedback over unnecessary visual complexity.
+                            Fallout's interface succeeds by making complexity feel earned rather than imposed. Each layer of depth is accessible when the player is ready for it.
                         </q>
                     </div>
                 </section>
                 <section class="game-sections" id="ui-ux-weaknesses">
                     <h2>Strengths and Weaknesses Analysis</h2>
                     <p>
-                        A comprehensive breakdown of the Arknights: Endfield interface paradigm. Evaluating the balance
-                        between deep tactical systems and mobile-friendly accessibility.
+                        A comprehensive breakdown of the Fallout interface paradigm. Evaluating how the turn-based RPG interface balances complex systems with accessibility in a post-apocalyptic setting.
                     </p>
 
                     <table style="margin-bottom: 2em;">
@@ -1583,12 +1574,13 @@
                                                     d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
                                             </svg>
                                         </span>
-                                        <span class="label">01_LOGISTICS</span>
+                                        <span class="label">01_DEPTH</span>
                                     </div>
-                                    <h6>Integrated Factory Systems</h6>
+                                    <h6>
+                                        Systemic Depth
+                                    </h6>
                                     <p>
-                                        The seamless integration between real-time combat and industrial automation creates a unique gameplay 
-                                        loop. Building efficient power grids and resource pipelines provides a tangible sense of progression.
+                                        The SPECIAL character system and complex faction relationships create meaningful player agency. Each decision feels weighty and consequential.
                                     </p>
                                 </td>
                                 <td>
@@ -1600,12 +1592,11 @@
                                                     d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75M6.75 10.5h10.5A2.25 2.25 0 0 1 19.5 12.75v6A2.25 2.25 0 0 1 17.25 21H6.75A2.25 2.25 0 0 1 4.5 18.75v-6A2.25 2.25 0 0 1 6.75 10.5Z" />
                                             </svg>
                                         </span>
-                                        <span class="label">01_COMPLEXITY</span>
+                                        <span class="label">01_OVERLOAD</span>
                                     </div>
-                                    <h6>High Management Burden</h6>
+                                    <h6>Information Overload</h6>
                                     <p>
-                                        The "Factory-RPG" hybrid introduces massive mechanical depth. Managing logistics while 
-                                        simultaneously handling party-based combat creates a daunting cognitive load for casual players.
+                                        The sheer number of systems (perks, skills, factions, quests) can overwhelm new players. The learning curve is steep despite the turn-based pace.
                                     </p>
                                 </td>
                             </tr>
@@ -1619,12 +1610,11 @@
                                                     d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25l4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z" />
                                             </svg>
                                         </span>
-                                        <span class="label">02_SYNERGY</span>
+                                        <span class="label">02_NARRATIVE</span>
                                     </div>
-                                    <h6>Tactical Combat Depth</h6>
+                                    <h6>Rich Narrative Integration</h6>
                                     <p>
-                                        The elemental reaction system and party-swapping mechanics reward strategic preparation. 
-                                        Visual and audio cues clearly communicate when "Resonance" effects are triggered.
+                                        Dialogue choices directly impact story outcomes and world state. The interface supports complex moral decision-making without breaking immersion.
                                     </p>
                                 </td>
                                 <td>
@@ -1636,12 +1626,11 @@
                                                     d="M12 9v4.5m0 3.75h.008v.008H12v-.008ZM10.29 3.86l-7.5 13A1.5 1.5 0 0 0 4.09 19h15.82a1.5 1.5 0 0 0 1.3-2.14l-7.5-13a1.5 1.5 0 0 0-2.6 0Z" />
                                             </svg>
                                         </span>
-                                        <span class="label">02_FRICTION</span>
+                                        <span class="label">02_DATED</span>
                                     </div>
-                                    <h6>Navigation Friction</h6>
+                                    <h6>Dated Interface Design</h6>
                                     <p>
-                                        Terrain traversal and manual cable-laying can occasionally feel cumbersome. The lack of an 
-                                        unrestricted fast-travel system forces repetitive travel through industrial zones.
+                                        Despite remasters, the core UI retains 1990s design patterns. Modern players may find the interface unintuitive compared to contemporary RPGs.
                                     </p>
                                 </td>
                             </tr>
@@ -1655,12 +1644,11 @@
                                                     d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
                                             </svg>
                                         </span>
-                                        <span class="label">03_WORLD</span>
+                                        <span class="label">03_ECOSYSTEM</span>
                                     </div>
-                                    <h6>Cohesive Aesthetic Design</h6>
+                                    <h6>Modding Community</h6>
                                     <p>
-                                        The "Industrial-Chic" visual identity is consistently applied from UI to environment. 
-                                        The world feels lived-in, grounded by a technical logic that respects the IP's lore.
+                                        Extensive mod support allows players to customize and expand the game world, creating new interface challenges and opportunities.
                                     </p>
                                 </td>
                                 <td>
@@ -1672,12 +1660,11 @@
                                                     d="M3.98 8.223A10.477 10.477 0 0 0 1.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.451 10.451 0 0 1 12 4.5c4.756 0 8.773 3.162 10.065 7.498a10.522 10.522 0 0 1-4.293 5.774M6.228 6.228 3 3m3.228 3.228 3.65 3.65m7.894 7.894L21 21m-3.228-3.228-3.65-3.65m0 0a3 3 0 1 0-4.243-4.243m4.242 4.242L9.88 9.88" />
                                             </svg>
                                         </span>
-                                        <span class="label">03_DENSITY</span>
+                                        <span class="label">03_BUGS</span>
                                     </div>
-                                    <h6>Resource Scarcity</h6>
+                                    <h6>Technical Issues</h6>
                                     <p>
-                                        The economy can feel overly restrictive during the mid-game. Balancing advanced component 
-                                        crafting against unit upgrades often leads to progress bottlenecks that stall exploration.
+                                        Combat can feel clunky with pathfinding problems and AI quirks. The turn-based system sometimes feels unresponsive to player intentions.
                                     </p>
                                 </td>
                             </tr>
@@ -1685,9 +1672,7 @@
                     </table>
                     <div class="footnote summary">
                         <p>
-                            The Arknights: Endfield interface seeks to balance strategic depth and mobile accessibility.
-                            Its strength lies in clear battlefield feedback and resource visibility, while its weakness
-                            appears when menu density and monetization systems distract from tactical gameplay.
+                            Fallout's interface represents a bridge between classic and modern RPG design. Its <u>systemic complexity</u> creates enduring appeal, but the dated UI patterns create accessibility barriers for contemporary players. The game's strength lies in making players feel like active participants in a living world, even as the interface occasionally gets in the way of that immersion.
                         </p>
                     </div>
                 </section>
@@ -1718,34 +1703,34 @@
 
 <script>
     // VARIABLES
-    const GAMENAME = "Arknights: Endfield";
-    const DATERELEASED = "12/01/2023"; // MM/DD/YYYY
-    const PUBLISHER = 'Yostar';
+    const GAMENAME = "Fallout";
+    const DATERELEASED = "10/10/1997"; // MM/DD/YYYY
+    const PUBLISHER = 'Interplay Entertainment';
     const BADGE = "Full Release";
     // Pre-Alpha
     // Alpha
     // Beta
     // Early Access
     // Full Release
-    const POSTERURL = "../../../public/posters/arknightsEndfield_poster.png";
-    const POSTERALTTEXT = "Arknights: Endfield Game Poster";
-    const VIDEOURL = "../../../public/videos/arknightsEndfield_trailer.mp4";
-    const VIDEOURLYT = "https://www.youtube.com/embed/oJ00ggFb8A0";
+    const POSTERURL = "../../../public/posters/fallout_poster.jpg";
+    const POSTERALTTEXT = "Fallout Game Poster";
+    const VIDEOURL = "../../../public/videos/fallout_trailer.mp4";
+    const VIDEOURLYT = "https://www.youtube.com/embed/jJtzeMyy-QY"; // Placeholder YouTube URL
     const YTVID = true;
 
-    const GAMEUSERSTARS = "5.7";
-    const GAMEUSERRATINGS = "162";
+    const GAMEUSERSTARS = "7.5";
+    const GAMEUSERRATINGS = "2070";
 
     const HASCRITICS = true; // Set to false if there are no critic ratings
-    const GAMECRITICSTARS = "78";
-    const GAMECRITICRATINGS = "21";
+    const GAMECRITICSTARS = "73";
+    const GAMECRITICRATINGS = "55";
 
-    const GENRES = ["Strategy", "RPG", "Gacha"];
-    const PLATFORMS = ["iOS", "Android", "PC"];
-    const EDITIONS = ["Standard Edition", "Deluxe Edition", "Collector's Edition"];
+    const GENRES = ["RPG", "Post-Apocalyptic", "Turn-Based"];
+    const PLATFORMS = ["PC", "Mac", "PlayStation 4", "Xbox One", "Nintendo Switch"];
+    const EDITIONS = ["Fallout", "Fallout 2", "Fallout Tactics", "Fallout: Brotherhood of Steel"];
 
     const DESCRIPTION =
-        "Arknights: Endfield is a prequel to the popular Arknights series, set in the same universe but focusing on different characters and storylines. Players command a squad of operators in turn-based tactical combat against mysterious enemies, combining gacha collection with deep strategic gameplay and narrative elements.";
+        "Fallout is a post-apocalyptic role-playing video game developed by Interplay Entertainment and published by Interplay. It is the first game in the Fallout series and is set in a world devastated by nuclear war. The player assumes the role of a Vault Dweller, emerging from an underground bunker to explore the wasteland and uncover the truth about the apocalypse.";
 
     // Document Variables
     const sectionRadios = Array.from(
@@ -1945,52 +1930,49 @@
         gameInfoNavRight.hidden = !canScrollRight;
     }
 
-    function scrollGameInfoNavBy(distance) {
-        if (!gameInfoNav) {
-            return;
-        }
-        gameInfoNav.scrollBy({ left: distance, behavior: "smooth" });
-    }
-
-    if (gameInfoNav && gameInfoNavLeft && gameInfoNavRight) {
+    if (gameInfoNav) {
         gameInfoNav.addEventListener("scroll", updateGameInfoNavArrows);
-        gameInfoNavLeft.addEventListener("click", () => {
-            scrollGameInfoNavBy(
-                -Math.max(200, Math.floor(gameInfoNav.clientWidth * 0.5)),
-            );
-        });
-        gameInfoNavRight.addEventListener("click", () => {
-            scrollGameInfoNavBy(
-                Math.max(200, Math.floor(gameInfoNav.clientWidth * 0.5)),
-            );
-        });
-        window.addEventListener("resize", updateGameInfoNavArrows);
         updateGameInfoNavArrows();
     }
 
-    // Back-to-top button with circular scroll progress
-    const progressRadius = 22;
-    const progressCircumference = 2 * Math.PI * progressRadius;
-
-    if (backToTopProgress) {
-        backToTopProgress.style.strokeDasharray = String(progressCircumference);
-        backToTopProgress.style.strokeDashoffset = String(progressCircumference);
+    if (gameInfoNavLeft) {
+        gameInfoNavLeft.addEventListener("click", () => {
+            if (gameInfoNav) {
+                gameInfoNav.scrollBy({ left: -200, behavior: "smooth" });
+            }
+        });
     }
 
-    function updateBackToTop() {
-        if (!backToTopButton || !backToTopProgress) {
+    if (gameInfoNavRight) {
+        gameInfoNavRight.addEventListener("click", () => {
+            if (gameInfoNav) {
+                gameInfoNav.scrollBy({ left: 200, behavior: "smooth" });
+            }
+        });
+    }
+
+    // Back to top button
+    function updateBackToTopVisibility() {
+        if (!backToTopButton) {
             return;
         }
 
-        const scrollTop = window.scrollY || document.documentElement.scrollTop;
-        const scrollableHeight =
-            document.documentElement.scrollHeight - window.innerHeight;
-        const progress = scrollableHeight > 0 ? Math.min(scrollTop / scrollableHeight, 1) : 0;
-        const dashOffset = progressCircumference * (1 - progress);
+        const scrollTop = window.scrollY;
+        const documentHeight = document.documentElement.scrollHeight;
+        const windowHeight = window.innerHeight;
+        const scrollProgress = scrollTop / (documentHeight - windowHeight);
 
-        backToTopProgress.style.strokeDashoffset = String(dashOffset);
-        backToTopButton.classList.toggle("is-visible", scrollTop > 160);
+        backToTopButton.classList.toggle("is-visible", scrollTop > 300);
+
+        if (backToTopProgress) {
+            const circumference = 2 * Math.PI * 22;
+            const strokeDashoffset = circumference * (1 - scrollProgress);
+            backToTopProgress.style.strokeDashoffset = strokeDashoffset;
+        }
     }
+
+    window.addEventListener("scroll", updateBackToTopVisibility);
+    updateBackToTopVisibility();
 
     if (backToTopButton) {
         backToTopButton.addEventListener("click", () => {
@@ -1998,9 +1980,49 @@
         });
     }
 
-    window.addEventListener("scroll", updateBackToTop, { passive: true });
-    window.addEventListener("resize", updateBackToTop);
-    updateBackToTop();
+    // YouTube fallback handling
+    const retryYouTubeBtn = document.getElementById("retry-youtube-btn");
+    const useLocalVideoBtn = document.getElementById("use-local-video-btn");
+    const videoFallback = document.getElementById("video-fallback");
+
+    function retryYouTube() {
+        if (ytEl && VIDEOURLYT) {
+            ytEl.src = VIDEOURLYT;
+            ytEl.hidden = false;
+            videoEl.hidden = true;
+            videoFallback.hidden = true;
+        }
+    }
+
+    function useLocalVideo() {
+        if (videoSourceEl && VIDEOURL) {
+            videoSourceEl.src = VIDEOURL;
+            videoEl.hidden = false;
+            ytEl.hidden = true;
+            ytEl.src = "";
+            videoFallback.hidden = true;
+            try {
+                videoEl.load();
+            } catch (e) { }
+        }
+    }
+
+    if (retryYouTubeBtn) {
+        retryYouTubeBtn.addEventListener("click", retryYouTube);
+    }
+
+    if (useLocalVideoBtn) {
+        useLocalVideoBtn.addEventListener("click", useLocalVideo);
+    }
+
+    // Handle YouTube load errors
+    if (ytEl) {
+        ytEl.addEventListener("error", () => {
+            if (videoFallback) {
+                videoFallback.hidden = false;
+            }
+        });
+    }
 </script>
 
 </html>

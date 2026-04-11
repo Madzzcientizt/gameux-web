@@ -22,9 +22,9 @@
     <!-- Styles -->
     <link rel="stylesheet" href="../../styles/styles.css" type="text/css" />
     <link rel="stylesheet" href="../../styles/sizeChecker.css" type="text/css" />
-    <link rel="stylesheet" href="../../styles/game.css" type="text/css" />
+    <link rel="stylesheet" href="../../styles/game.css" typeF="text/css" />
 
-    <!-- Custom Styles ------------------------------------------------------------------------------------------ -->
+    <!-- Custom Styles -------------------------------------------------------------------------- -->
     <style>
         nav.game-info-nav label {
             width: calc(100% / 5) !important;
@@ -1000,7 +1000,7 @@
             position: relative;
         }
     </style>
-    <!-- Custom Styles ------------------------------------------------------------------------------------------ -->
+    <!-- Custom Styles -------------------------------------------------------------------------- -->
 
     <title id="title">GameName - GameUX</title>
 </head>
@@ -1097,7 +1097,7 @@
                 <div class="video-game-container">
                     <a class="game-poster" id="game-poster">
                         <img class="game-poster-img" id="game-poster-img" alt="Game Poster" target="images"
-                            title="Arknights: Endfield Game Poster" />
+                            title="Osu! Game Poster" />
                     </a>
                     <div class="game-video-wrp">
                         <video class="game-video" id="game-video" controls>
@@ -1210,7 +1210,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
                         width="20" height="20">
                         <path fill-rule="evenodd"
-                            d="M8.22 4.72a.75.75 0 0 1 1.06 0l6.5 6.5a.75.75 0 0 1 0 1.06l-6.5 6.5a.75.75 0 0 1-1.06-1.06L14.19 12 8.22 6.28a.75.75 0 0 1 0-1.56Z"
+                            d="M8.22 4.72a.75.75 0 0 1 1.06 0l6.5 6.5a.75.75 0 0 1 0 1.06l-6.5 6.5a.75.75 0 1 1-1.06-1.06L14.19 12 8.22 6.28a.75.75 0 0 1 0-1.56Z"
                             clip-rule="evenodd" />
                     </svg>
                 </button>
@@ -1227,34 +1227,40 @@
                 <section class="game-sections" id="short-description">
                     <h2>Overview</h2>
                     <ul class="list-style">
-                        <h2>Arknights: Endfield builds:</h2>
-                        <li>Standard Edition</li>
-                        <li>Deluxe Edition</li>
-                        <li>Collector's Edition</li>
+                        <h2>Ace Attorney series:</h2>
+                        <li>Phoenix Wright: Ace Attorney</li>
+                        <li>Phoenix Wright: Ace Attorney - Justice for All</li>
+                        <li>Phoenix Wright: Ace Attorney - Trials and Tribulations</li>
                     </ul>
                     <p>
-                        Arknights: Endfield is a mobile strategy RPG developed and published by Yostar. Released on December 1, 2023, for iOS and Android platforms, with PC support following later.
-                        The gameplay centers around turn-based tactical combat where players command squads of operators with unique abilities to battle against infected enemies. Players collect and develop characters through gacha mechanics while managing resources and making strategic decisions in both combat and base management.
+                        Ace Attorney is a visual novel adventure game series developed and published by Capcom, 
+                        featuring courtroom drama and puzzle-solving gameplay. Players assume the role of defense 
+                        attorneys, gathering evidence, cross-examining witnesses, and presenting arguments in court 
+                        to prove their client's innocence. The series is renowned for its unique blend of legal 
+                        simulation, mystery, and humor, with distinctive art style and memorable characters.
                     </p>
                     <p>
-                        As a prequel to the main Arknights series, Endfield introduces new characters and storylines while maintaining the core gameplay loop of squad-based strategy. The game's mobile interface must accommodate complex tactical systems, character management, and resource allocation while remaining accessible to strategy game enthusiasts.
-                        The combination of gacha collection and deep tactical gameplay creates unique HCI challenges in balancing accessibility with strategic complexity.
+                        Unlike traditional adventure games, Ace Attorney focuses on investigation and courtroom 
+                        proceedings rather than action or exploration. The gameplay revolves around presenting 
+                        evidence, pointing out contradictions in testimonies, and making logical deductions to 
+                        solve cases. This creates a unique HCI paradigm centered on text-based interaction and 
+                        puzzle-solving mechanics.
                     </p>
                     <ul class="metrics-list">
                         <li>
                             <h6>Cognitive Load</h6>
-                            <div class="value">High</div>
-                            <div class="desc">Number of simultaneous elements a player tracks</div>
+                            <div class="value">Medium-High</div>
+                            <div class="desc">Evidence management and logical reasoning required</div>
                         </li>
                         <li>
                             <h6>Response Time</h6>
-                            <div class="value">&pm; 20ms to &pm; 150ms</div>
-                            <div class="desc">Time between user action and system feedback</div>
+                            <div class="value">5-30 seconds</div>
+                            <div class="desc">Time for evidence presentation and testimony analysis</div>
                         </li>
                         <li>
                             <h6>Visual Reaction Time</h6>
-                            <div class="value">~150ms to ~1200ms</div>
-                            <div class="desc">Time for a player to respond to visual stimuli</div>
+                            <div class="value">2-10 seconds</div>
+                            <div class="desc">Time to process text and identify contradictions</div>
                         </li>
                     </ul>
                 </section>
@@ -1263,162 +1269,183 @@
                     <div class="major-components">
                         <div class="major-component">
                             <figure>
-                                <a href="../../../public/gamesContent/arknightsEndfield/tacticalGrid.jpg" title="Arknights: Endfield Open World Map"
+                                <a href="../../../public/gamesContent/aceAttorney/courtroom.jpg" title="Ace Attorney Courtroom"
                                     target="images">
-                                    <img src="../../../public/gamesContent/arknightsEndfield/tacticalGrid.jpg" alt="Open World Map">
+                                    <img src="../../../public/gamesContent/aceAttorney/courtroom.jpg" alt="Courtroom Interface">
                                 </a>
-                                <figcaption>FIG 1.1: Open World Map</figcaption>
+                                <figcaption>FIG 1.1: Courtroom Interface</figcaption>
                             </figure>
                             <div>
                                 <span class="count">[ ELEMENT_01 ]</span>
-                                <span class="header-text">Open World Map</span>
+                                <span class="header-text">Courtroom Interface</span>
                                 <p>
-                                    Arknights: Endfield features an open-world interface where players explore regions, find missions, and track story events. The world map balances exploration cues and navigation data so players can move freely while staying oriented.
+                                    The central gameplay area where trials take place. Features character sprites, 
+                                    background art, and dialogue boxes. Players interact through pointing and selecting 
+                                    options during cross-examinations.
                                 </p>
                                 <ul>
                                     <h6>Visual Feedback</h6>
-                                    <li>Location Markers</li>
-                                    <li>Route Guidance</li>
-                                    <li>Interactive Waypoints</li>
+                                    <li>Character animations and expressions</li>
+                                    <li>Background transitions</li>
+                                    <li>Text-based dialogue presentation</li>
                                 </ul>
                             </div>
                         </div>
                         <div class="major-component">
                             <figure>
-                                <a href="../../../public/gamesContent/arknightsEndfield/operatorCards.jpg" title="Arknights: Endfield Operator Roster"
+                                <a href="../../../public/gamesContent/aceAttorney/evidence.png" title="Ace Attorney Evidence Menu"
                                     target="images">
-                                    <img src="../../../public/gamesContent/arknightsEndfield/operatorCards.jpg" alt="Operator Roster">
+                                    <img src="../../../public/gamesContent/aceAttorney/evidence.png" alt="Evidence Menu">
                                 </a>
-                                <figcaption>FIG 1.2: Operator Roster</figcaption>
+                                <figcaption>FIG 1.2: Evidence Menu</figcaption>
                             </figure>
                             <div>
                                 <span class="count">[ ELEMENT_02 ]</span>
-                                <span class="header-text">Operator Roster</span>
+                                <span class="header-text">Evidence Management</span>
                                 <p>
-                                    The roster panel shows operator stats, roles, and deployment costs. Players use this interface to manage squads, review unit synergies, and prepare for tactical engagements.
+                                    Grid-based inventory system for storing and organizing evidence collected during 
+                                    investigations. Players must navigate this menu to present evidence during trials, 
+                                    requiring spatial memory and categorization skills.
                                 </p>
                             </div>
                         </div>
                         <div class="major-component">
                             <figure>
-                                <a href="../../../public/gamesContent/arknightsEndfield/abilityInterface.png" title="Arknights: Endfield Ability Interface"
+                                <a href="../../../public/gamesContent/aceAttorney/testimony.jpg" title="Ace Attorney Testimony"
                                     target="images">
-                                    <img src="../../../public/gamesContent/arknightsEndfield/abilityInterface.png" alt="Ability Interface">
+                                    <img src="../../../public/gamesContent/aceAttorney/testimony.jpg" alt="Testimony System">
                                 </a>
-                                <figcaption>FIG 1.3: Ability Interface</figcaption>
+                                <figcaption>FIG 1.3: Testimony System</figcaption>
                             </figure>
                             <div>
                                 <span class="count">[ ELEMENT_03 ]</span>
-                                <span class="header-text">Ability Interface</span>
+                                <span class="header-text">Testimony Interface</span>
                                 <p>
-                                    The ability activation system allows players to trigger special skills and ultimates. Timing and positioning are critical for maximizing ability effectiveness in combat.
+                                    Sequential presentation of witness statements with interactive elements. Players 
+                                    can press witnesses on specific statements, requiring precise timing and 
+                                    selection accuracy.
                                 </p>
                             </div>
                         </div>
                     </div>
-                    <h2>Strategic Decision Making in Arknights: Endfield</h2>
+                    <h2>Pointing Mechanics in Visual Novel Interfaces</h2>
                     <div class="fittslaw">
                         <div>
                             <p>
-                                Arknights: Endfield requires players to make tactical decisions based on squad composition, deployment resources, and evolving enemy behavior. The interface must support these choices with clear, contextualized information.
+                                While Fitt's Law traditionally applies to target acquisition in graphical interfaces, 
+                                Ace Attorney adapts pointing mechanics for text-based interaction. The "Press" command 
+                                requires players to click on specific text segments within time windows.
                             </p>
                             <div class="mathmodel">
-                                <h6>[ DECISION MODEL ]</h6>
-                                <span>D(t) = f(deployment, unit_synergy, ability_cooldowns, enemy_threats)</span>
+                                <h6>[ POINTING ACCURACY MODEL ]</h6>
+                                <span>Accuracy = 1 / (1 + e^(-k × (TimeWindow - ReactionTime)))</span>
                             </div>
                             <p>
-                                Information hierarchy should surface mission-critical details while minimizing unnecessary complexity. This allows players to react quickly without losing sight of long-term strategy.
+                                In Ace Attorney, pointing accuracy depends on the size of clickable text areas and 
+                                the time pressure applied. Smaller text segments and faster presentations increase 
+                                cognitive load and pointing difficulty.
                             </p>
                         </div>
                         <div>
                             <figure>
-                                <a href="../../../public/gamesContent/arknightsEndfield/combatInterface.png" title="Arknights: Endfield Combat Interface"
+                                <a href="../../../public/gamesContent/aceAttorney/contradiction.jpg" title="Ace Attorney Contradictions"
                                     target="images">
-                                    <img src="../../../public/gamesContent/arknightsEndfield/combatInterface.png" alt="Combat Interface">
+                                    <img src="../../../public/gamesContent/aceAttorney/contradiction.jpg" alt="Contradiction Detection">
                                 </a>
-                                <figcaption>FIG 1.4: Combat Interface</figcaption>
+                                <figcaption>FIG 1.4: Contradiction Detection</figcaption>
                             </figure>
                         </div>
                     </div>
                     <div class="list-style-area">
-                        <h3 class="text-center">Visual Hierarchy Breakdown</h3>
-                        <div class="text-center">Information Architecture in Arknights: Endfield</div>
+                        <h3 class="text-center">Interface Hierarchy Breakdown</h3>
+                        <div class="text-center">Information Layering in Courtroom Drama</div>
                         <ol class="three-columns md-one-columns">
                             <li>
-                                <h6>Active Units</h6>
+                                <h6>Character Focus</h6>
                                 <p>
-                                    The interface emphasizes currently selected operators and their available actions. Clear highlighting helps players execute tactics quickly.
+                                    Large character sprites and expressions dominate the visual field, conveying 
+                                    emotional states and reactions.
                                 </p>
                             </li>
                             <li>
-                                <h6>Environmental Context</h6>
+                                <h6>Dialogue Priority</h6>
                                 <p>
-                                    Terrain effects, enemy positions, and hazard zones are displayed to support strategic planning and risk assessment.
+                                    Text boxes overlay backgrounds, ensuring narrative content remains the primary 
+                                    focus during conversations.
                                 </p>
                             </li>
                             <li>
-                                <h6>Resource Management</h6>
+                                <h6>Interactive Elements</h6>
                                 <p>
-                                    Tertiary focus on deployment points, ability cooldowns, and health bars. Critical for long-term strategic planning but not immediate tactical decisions.
+                                    Subtle highlighting and cursor changes indicate interactive areas, guiding 
+                                    player attention to clickable content.
                                 </p>
                             </li>
                         </ol>
                     </div>
                     <div class="footnote">
-                        All component analysis is based on standard Arknights: Endfield tactical interface design. The isometric grid system prioritizes spatial reasoning while maintaining clear information hierarchy for strategic gameplay.
+                        All component analysis is based on traditional Ace Attorney interface design. Modern ports 
+                        may include touch-optimized controls but maintain core pointing mechanics. Variability in 
+                        localization affects text density and pointing accuracy.
                     </div>
                 </section>
                 <section class="game-sections" id="user-interaction">
                     <h2>User Interaction</h2>
                     <p>
-                        An investigation into the neuro-mechanical feedback loops of tactical interfaces,
-                        specifically analyzing Arknights: Endfield interaction flow.
+                        An examination of the investigation and courtroom interaction paradigms in Ace Attorney's 
+                        visual novel framework, focusing on evidence management and logical deduction mechanics.
                     </p>
                     <div class="list-style-area">
                         <h3 class="text-center">Core Gameplay Loop</h3>
-                        <div class="text-center"></div>
+                        <div class="text-center">Investigation to Verdict</div>
                         <ol class="four-columns md-two-columns">
                             <li>
-                                <h6>Observe</h6>
+                                <h6>Investigate</h6>
                                 <p>
-                                    Players scan the battlefield for enemy positions, operator statuses, and environmental hazards.
+                                    Gather evidence by examining crime scenes, interviewing witnesses, and collecting 
+                                    physical items through point-and-click interaction.
                                 </p>
                             </li>
                             <li>
-                                <h6>Plan</h6>
+                                <h6>Analyze</h6>
                                 <p>
-                                    Tactical decisions are made based on deployment points, cooldowns, and the current combat state.
+                                    Review collected evidence in the Court Record, connecting clues and building 
+                                    logical arguments.
                                 </p>
                             </li>
                             <li>
-                                <h6>Execute</h6>
+                                <h6>Present</h6>
                                 <p>
-                                    Commands are issued through touch or click input to move operators, activate skills, and use abilities.
+                                    Select and present evidence during cross-examinations, timing interactions 
+                                    precisely to interrupt testimonies.
                                 </p>
                             </li>
                             <li>
-                                <h6>Adapt</h6>
+                                <h6>Deduct</h6>
                                 <p>
-                                    Players adjust strategy in response to enemy reactions, shifting objectives, and damage outcomes.
+                                    Make logical connections between evidence pieces to expose contradictions and 
+                                    prove innocence.
                                 </p>
                             </li>
                         </ol>
                     </div>
-                    <h3>Multi-Modal Feedback Matrix</h3>
+                    <h3>Multi-Modal Feedback in Courtroom Drama</h3>
                     <div class="multi-modal-feedback">
                         <div>
                             <p>
-                                Arknights: Endfield uses a layered feedback system to confirm tactical choices through sound, visuals, and touch.
+                                Ace Attorney employs distinct sensory feedback patterns for different interaction 
+                                outcomes. Correct logical deductions receive positive reinforcement, while incorrect 
+                                choices trigger penalty states that maintain narrative tension.
                             </p>
                         </div>
                         <div>
                             <figure>
-                                <a href="../../../public/gamesContent/arknightsEndfield/operatorActionFlow.png" title="Arknights: Endfield Action Feedback"
+                                <a href="../../../public/gamesContent/aceAttorney/feedback.jpg" title="Ace Attorney Feedback Systems"
                                     target="images">
-                                    <img src="../../../public/gamesContent/arknightsEndfield/operatorActionFlow.png"
-                                        alt="Arknights: Endfield Action Feedback">
+                                    <img src="../../../public/gamesContent/aceAttorney/feedback.jpg"
+                                        alt="Ace Attorney Feedback Systems">
                                 </a>
-                                <figcaption>FIG 1.5: Operator Action Feedback</figcaption>
+                                <figcaption>FIG 1.5: Ace Attorney Feedback Systems</figcaption>
                             </figure>
                         </div>
                     </div>
@@ -1434,7 +1461,9 @@
                             <div>
                                 <h6>Audio Feedback</h6>
                                 <p>
-                                    Skill activation cues, enemy alert sounds, and combat effects help players recognize when actions land and threats emerge.
+                                    Distinct sound effects for correct presentations ("Objection!" voice clips) versus 
+                                    incorrect choices (penalty buzzers). Background music shifts based on trial 
+                                    momentum and dramatic tension.
                                 </p>
                             </div>
                         </li>
@@ -1452,7 +1481,9 @@
                             <div>
                                 <h6>Visual Feedback</h6>
                                 <p>
-                                    Target highlights, action previews, and damage indicators confirm successful ability use and enemy responses.
+                                    Character sprites react with animations and expressions. Correct deductions show 
+                                    "HOLD IT!" or "TAKE THAT!" poses, while incorrect choices display penalty screens 
+                                    with health bar reductions.
                                 </p>
                             </div>
                         </li>
@@ -1465,9 +1496,11 @@
                                 </svg>
                             </div>
                             <div>
-                                <h6>Haptic Feedback</h6>
+                                <h6>Tactile Feedback</h6>
                                 <p>
-                                    Vibration cues on mobile devices reinforce ability execution and incoming damage, supporting quick tactical adjustments.
+                                    Controller vibration on modern ports provides confirmation for button presses 
+                                    and penalty states. Touch screen interactions on mobile versions offer direct 
+                                    manipulation feedback.
                                 </p>
                             </div>
                         </li>
@@ -1480,17 +1513,18 @@
                         <div class="cybernetic-content">
                             <div>
                                 <p style="text-align: justify;">
-                                    Arknights: Endfield uses a multi-modal feedback architecture that provides immediate visual,
-                                    auditory, and haptic confirmation of decisions. The feedback loop keeps players informed
-                                    about ability results and battlefield changes during tactical encounters.
+                                    Ace Attorney implements a narrative-driven feedback architecture where player 
+                                    decisions create branching storylines with immediate emotional and logical 
+                                    consequences. The feedback loop operates on a dialogue-response cycle, with 
+                                    evidence presentation serving as the critical junction point.
                                 </p>
                             </div>
                             <div>
                                 <ul class="primary-modalities">
                                     <h6>Primary Modalities</h6>
-                                    <li><strong>Visual</strong>: Enemy ranges, ability indicators, and operator statuses.</li>
-                                    <li><strong>Auditory</strong>: Ability cues, alert sounds, and combat feedback tones.</li>
-                                    <li><strong>Structural</strong>: Deployment points, cooldown timers, and resource meters.</li>
+                                    <li><strong>Visual</strong>: Character reactions, evidence animations, health bar changes</li>
+                                    <li><strong>Auditory</strong>: Voice acting, sound effects for correct/incorrect actions</li>
+                                    <li><strong>Narrative</strong>: Story progression based on logical deductions</li>
                                 </ul>
                             </div>
                         </div>
@@ -1498,17 +1532,19 @@
                     <div class="spatial-congruence">
                         <h2>Spatial Congruence</h2>
                         <p style="text-align: justify;">
-                            The spatial arrangement of interface elements in Arknights: Endfield supports intuitive tactical
-                            decision-making and reduces cognitive load. Enemy markers, operator cards, and ability panels are
-                            positioned to clearly relate the battlefield state to the player's next action.
+                            Ace Attorney's interface maintains spatial consistency between investigation and courtroom 
+                            phases. The Court Record serves as a persistent spatial metaphor, allowing players to 
+                            navigate evidence collections using consistent interaction patterns. Pointing mechanics 
+                            in testimonies create direct spatial mapping between text selection and logical 
+                            intervention.
                         </p>
                     </div>
                     <div class="cognitive-load-bifurcation">
                         <h2>Cognitive Load Bifurcation</h2>
                         <p style="text-align: justify; margin-bottom: 2em;">
-                            The central success of the Arknights: Endfield interface is reducing unnecessary input complexity
-                            so players can focus on tactical decision-making, while preserving the intrinsic challenge of
-                            squad composition and battlefield strategy.
+                            The interface elegantly separates the extrinsic complexity of evidence management from 
+                            the intrinsic challenge of logical reasoning, creating a balanced cognitive experience 
+                            that supports puzzle-solving without overwhelming the player.
                         </p>
                         <table>
                             <thead>
@@ -1520,29 +1556,33 @@
                             <tbody>
                                 <tr>
                                     <td>
-                                        <h6>Minimalist HUD</h6>
+                                        <h6>Organized Evidence System</h6>
                                         <p>
-                                            Non-essential data is pushed to the periphery, keeping the battlefield and action cues central.
+                                            The Court Record provides structured access to evidence, profiles, and 
+                                            testimonies, reducing the cognitive burden of information management.
                                         </p>
                                     </td>
                                     <td>
-                                        <h6>Strategic Focus</h6>
+                                        <h6>Logical Deduction</h6>
                                         <p>
-                                            Players dedicate cognitive effort to positioning, ability timing, and enemy management.
+                                            Players focus entirely on connecting evidence, identifying contradictions, 
+                                            and building coherent arguments to solve cases.
                                         </p>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <h6>Contextual Markers</h6>
+                                        <h6>Guided Interaction</h6>
                                         <p>
-                                            Clear visual indicators and tooltips reduce uncertainty during complex tactical choices.
+                                            Clear visual cues and tutorialization help players learn interaction 
+                                            patterns without disrupting the narrative flow.
                                         </p>
                                     </td>
                                     <td>
-                                        <h6>Situational Awareness</h6>
+                                        <h6>Narrative Comprehension</h6>
                                         <p>
-                                            The interface supports flow by keeping players aware of evolving threats and resource states.
+                                            Understanding character motivations, plot developments, and case 
+                                            mysteries requires active engagement with the story elements.
                                         </p>
                                     </td>
                                 </tr>
@@ -1551,16 +1591,17 @@
                     </div>
                     <div class="footnote">
                         <q>
-                            The interface is a bridge that must vanish. In Arknights: Endfield, the UX design achieves this by
-                            prioritizing tactical clarity and responsive feedback over unnecessary visual complexity.
+                            In Ace Attorney, the interface becomes invisible not through minimalism, but through 
+                            familiarity. The complex evidence system transforms from an obstacle into an extension 
+                            of the player's deductive reasoning.
                         </q>
                     </div>
                 </section>
                 <section class="game-sections" id="ui-ux-weaknesses">
                     <h2>Strengths and Weaknesses Analysis</h2>
                     <p>
-                        A comprehensive breakdown of the Arknights: Endfield interface paradigm. Evaluating the balance
-                        between deep tactical systems and mobile-friendly accessibility.
+                        A comprehensive evaluation of Ace Attorney's visual novel interface, examining the balance 
+                        between narrative engagement and puzzle-solving mechanics in courtroom drama.
                     </p>
 
                     <table style="margin-bottom: 2em;">
@@ -1583,12 +1624,15 @@
                                                     d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
                                             </svg>
                                         </span>
-                                        <span class="label">01_LOGISTICS</span>
+                                        <span class="label">01_NARRATIVE</span>
                                     </div>
-                                    <h6>Integrated Factory Systems</h6>
+                                    <h6>
+                                        Narrative Integration
+                                    </h6>
                                     <p>
-                                        The seamless integration between real-time combat and industrial automation creates a unique gameplay 
-                                        loop. Building efficient power grids and resource pipelines provides a tangible sense of progression.
+                                        The interface seamlessly integrates with the story, using visual novel 
+                                        conventions to create an immersive courtroom experience. Character expressions 
+                                        and dialogue delivery enhance emotional engagement.
                                     </p>
                                 </td>
                                 <td>
@@ -1600,12 +1644,13 @@
                                                     d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75M6.75 10.5h10.5A2.25 2.25 0 0 1 19.5 12.75v6A2.25 2.25 0 0 1 17.25 21H6.75A2.25 2.25 0 0 1 4.5 18.75v-6A2.25 2.25 0 0 1 6.75 10.5Z" />
                                             </svg>
                                         </span>
-                                        <span class="label">01_COMPLEXITY</span>
+                                        <span class="label">01_PACING</span>
                                     </div>
-                                    <h6>High Management Burden</h6>
+                                    <h6>Pacing Interruptions</h6>
                                     <p>
-                                        The "Factory-RPG" hybrid introduces massive mechanical depth. Managing logistics while 
-                                        simultaneously handling party-based combat creates a daunting cognitive load for casual players.
+                                        Frequent menu transitions and evidence management breaks narrative flow. 
+                                        The investigation-courtroom cycle can feel disjointed, disrupting immersion 
+                                        in the story.
                                     </p>
                                 </td>
                             </tr>
@@ -1619,12 +1664,13 @@
                                                     d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25l4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z" />
                                             </svg>
                                         </span>
-                                        <span class="label">02_SYNERGY</span>
+                                        <span class="label">02_FEEDBACK</span>
                                     </div>
-                                    <h6>Tactical Combat Depth</h6>
+                                    <h6>Clear Logical Feedback</h6>
                                     <p>
-                                        The elemental reaction system and party-swapping mechanics reward strategic preparation. 
-                                        Visual and audio cues clearly communicate when "Resonance" effects are triggered.
+                                        The system provides immediate and clear feedback for correct and incorrect 
+                                        deductions. Visual and audio cues reinforce learning, helping players 
+                                        understand logical connections.
                                     </p>
                                 </td>
                                 <td>
@@ -1636,12 +1682,12 @@
                                                     d="M12 9v4.5m0 3.75h.008v.008H12v-.008ZM10.29 3.86l-7.5 13A1.5 1.5 0 0 0 4.09 19h15.82a1.5 1.5 0 0 0 1.3-2.14l-7.5-13a1.5 1.5 0 0 0-2.6 0Z" />
                                             </svg>
                                         </span>
-                                        <span class="label">02_FRICTION</span>
+                                        <span class="label">02_COMPLEXITY</span>
                                     </div>
-                                    <h6>Navigation Friction</h6>
+                                    <h6>Evidence Management Complexity</h6>
                                     <p>
-                                        Terrain traversal and manual cable-laying can occasionally feel cumbersome. The lack of an 
-                                        unrestricted fast-travel system forces repetitive travel through industrial zones.
+                                        The Court Record system can become overwhelming with large amounts of evidence. 
+                                        Players may struggle to organize and recall information across multiple cases.
                                     </p>
                                 </td>
                             </tr>
@@ -1655,12 +1701,13 @@
                                                     d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
                                             </svg>
                                         </span>
-                                        <span class="label">03_WORLD</span>
+                                        <span class="label">03_CHARACTER</span>
                                     </div>
-                                    <h6>Cohesive Aesthetic Design</h6>
+                                    <h6>Character-driven Design</h6>
                                     <p>
-                                        The "Industrial-Chic" visual identity is consistently applied from UI to environment. 
-                                        The world feels lived-in, grounded by a technical logic that respects the IP's lore.
+                                        Strong character designs and voice acting create memorable personalities that 
+                                        enhance replayability. The series builds emotional connections that extend 
+                                        beyond individual gameplay sessions.
                                     </p>
                                 </td>
                                 <td>
@@ -1672,12 +1719,13 @@
                                                     d="M3.98 8.223A10.477 10.477 0 0 0 1.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.451 10.451 0 0 1 12 4.5c4.756 0 8.773 3.162 10.065 7.498a10.522 10.522 0 0 1-4.293 5.774M6.228 6.228 3 3m3.228 3.228 3.65 3.65m7.894 7.894L21 21m-3.228-3.228-3.65-3.65m0 0a3 3 0 1 0-4.243-4.243m4.242 4.242L9.88 9.88" />
                                             </svg>
                                         </span>
-                                        <span class="label">03_DENSITY</span>
+                                        <span class="label">03_LOCALIZATION</span>
                                     </div>
-                                    <h6>Resource Scarcity</h6>
+                                    <h6>Localization Challenges</h6>
                                     <p>
-                                        The economy can feel overly restrictive during the mid-game. Balancing advanced component 
-                                        crafting against unit upgrades often leads to progress bottlenecks that stall exploration.
+                                        Cultural references and wordplay can be lost in translation. Some puns and 
+                                        jokes may not translate well, potentially reducing the humor and charm of 
+                                        the original Japanese version.
                                     </p>
                                 </td>
                             </tr>
@@ -1685,9 +1733,12 @@
                     </table>
                     <div class="footnote summary">
                         <p>
-                            The Arknights: Endfield interface seeks to balance strategic depth and mobile accessibility.
-                            Its strength lies in clear battlefield feedback and resource visibility, while its weakness
-                            appears when menu density and monetization systems distract from tactical gameplay.
+                            Ace Attorney represents a masterful blend of visual novel mechanics and puzzle-solving, 
+                            where the interface serves the narrative without dominating it. While its <u>evidence 
+                            management system</u> creates occasional complexity, this same system enables the 
+                            sophisticated logical gameplay that defines the series. The result is a paradox: a 
+                            game that is simultaneously accessible to newcomers yet offers profound depth for 
+                            dedicated players.
                         </p>
                     </div>
                 </section>
@@ -1718,34 +1769,34 @@
 
 <script>
     // VARIABLES
-    const GAMENAME = "Arknights: Endfield";
-    const DATERELEASED = "12/01/2023"; // MM/DD/YYYY
-    const PUBLISHER = 'Yostar';
+    const GAMENAME = "Ace Attorney";
+    const DATERELEASED = "10/12/2001"; // MM/DD/YYYY
+    const PUBLISHER = 'Capcom';
     const BADGE = "Full Release";
     // Pre-Alpha
     // Alpha
     // Beta
     // Early Access
     // Full Release
-    const POSTERURL = "../../../public/posters/arknightsEndfield_poster.png";
-    const POSTERALTTEXT = "Arknights: Endfield Game Poster";
-    const VIDEOURL = "../../../public/videos/arknightsEndfield_trailer.mp4";
-    const VIDEOURLYT = "https://www.youtube.com/embed/oJ00ggFb8A0";
+    const POSTERURL = "../../../public/posters/aceAttorney_poster.jpg";
+    const POSTERALTTEXT = "Ace Attorney Game Poster";
+    const VIDEOURL = "../../../public/videos/ace_attorney_trailer.mp4";
+    const VIDEOURLYT = "https://www.youtube.com/embed/PnYpTj_aUoA"; // Placeholder YouTube URL
     const YTVID = true;
 
-    const GAMEUSERSTARS = "5.7";
-    const GAMEUSERRATINGS = "162";
+    const GAMEUSERSTARS = "8.5";
+    const GAMEUSERRATINGS = "245";
 
     const HASCRITICS = true; // Set to false if there are no critic ratings
-    const GAMECRITICSTARS = "78";
-    const GAMECRITICRATINGS = "21";
+    const GAMECRITICSTARS = "82";
+    const GAMECRITICRATINGS = "42";
 
-    const GENRES = ["Strategy", "RPG", "Gacha"];
-    const PLATFORMS = ["iOS", "Android", "PC"];
-    const EDITIONS = ["Standard Edition", "Deluxe Edition", "Collector's Edition"];
+    const GENRES = ["Visual Novel", "Adventure", "Puzzle"];
+    const PLATFORMS = ["PC", "PlayStation", "Nintendo DS", "Nintendo 3DS", "iOS", "Android"];
+    const EDITIONS = ["Phoenix Wright: Ace Attorney", "Phoenix Wright: Ace Attorney - Justice for All", "Phoenix Wright: Ace Attorney - Trials and Tribulations"];
 
     const DESCRIPTION =
-        "Arknights: Endfield is a prequel to the popular Arknights series, set in the same universe but focusing on different characters and storylines. Players command a squad of operators in turn-based tactical combat against mysterious enemies, combining gacha collection with deep strategic gameplay and narrative elements.";
+        "Ace Attorney is a visual novel adventure game series developed by Capcom, featuring courtroom drama and puzzle-solving gameplay. Players take on the role of defense attorneys, gathering evidence, cross-examining witnesses, and presenting arguments in court to prove their client's innocence. The series is known for its unique blend of legal simulation, mystery, and humor.";
 
     // Document Variables
     const sectionRadios = Array.from(
@@ -1945,52 +1996,49 @@
         gameInfoNavRight.hidden = !canScrollRight;
     }
 
-    function scrollGameInfoNavBy(distance) {
-        if (!gameInfoNav) {
-            return;
-        }
-        gameInfoNav.scrollBy({ left: distance, behavior: "smooth" });
-    }
-
-    if (gameInfoNav && gameInfoNavLeft && gameInfoNavRight) {
+    if (gameInfoNav) {
         gameInfoNav.addEventListener("scroll", updateGameInfoNavArrows);
-        gameInfoNavLeft.addEventListener("click", () => {
-            scrollGameInfoNavBy(
-                -Math.max(200, Math.floor(gameInfoNav.clientWidth * 0.5)),
-            );
-        });
-        gameInfoNavRight.addEventListener("click", () => {
-            scrollGameInfoNavBy(
-                Math.max(200, Math.floor(gameInfoNav.clientWidth * 0.5)),
-            );
-        });
-        window.addEventListener("resize", updateGameInfoNavArrows);
         updateGameInfoNavArrows();
     }
 
-    // Back-to-top button with circular scroll progress
-    const progressRadius = 22;
-    const progressCircumference = 2 * Math.PI * progressRadius;
-
-    if (backToTopProgress) {
-        backToTopProgress.style.strokeDasharray = String(progressCircumference);
-        backToTopProgress.style.strokeDashoffset = String(progressCircumference);
+    if (gameInfoNavLeft) {
+        gameInfoNavLeft.addEventListener("click", () => {
+            if (gameInfoNav) {
+                gameInfoNav.scrollBy({ left: -200, behavior: "smooth" });
+            }
+        });
     }
 
-    function updateBackToTop() {
-        if (!backToTopButton || !backToTopProgress) {
+    if (gameInfoNavRight) {
+        gameInfoNavRight.addEventListener("click", () => {
+            if (gameInfoNav) {
+                gameInfoNav.scrollBy({ left: 200, behavior: "smooth" });
+            }
+        });
+    }
+
+    // Back to top button
+    function updateBackToTopVisibility() {
+        if (!backToTopButton) {
             return;
         }
 
-        const scrollTop = window.scrollY || document.documentElement.scrollTop;
-        const scrollableHeight =
-            document.documentElement.scrollHeight - window.innerHeight;
-        const progress = scrollableHeight > 0 ? Math.min(scrollTop / scrollableHeight, 1) : 0;
-        const dashOffset = progressCircumference * (1 - progress);
+        const scrollTop = window.scrollY;
+        const documentHeight = document.documentElement.scrollHeight;
+        const windowHeight = window.innerHeight;
+        const scrollProgress = scrollTop / (documentHeight - windowHeight);
 
-        backToTopProgress.style.strokeDashoffset = String(dashOffset);
-        backToTopButton.classList.toggle("is-visible", scrollTop > 160);
+        backToTopButton.classList.toggle("is-visible", scrollTop > 300);
+
+        if (backToTopProgress) {
+            const circumference = 2 * Math.PI * 22;
+            const strokeDashoffset = circumference * (1 - scrollProgress);
+            backToTopProgress.style.strokeDashoffset = strokeDashoffset;
+        }
     }
+
+    window.addEventListener("scroll", updateBackToTopVisibility);
+    updateBackToTopVisibility();
 
     if (backToTopButton) {
         backToTopButton.addEventListener("click", () => {
@@ -1998,9 +2046,49 @@
         });
     }
 
-    window.addEventListener("scroll", updateBackToTop, { passive: true });
-    window.addEventListener("resize", updateBackToTop);
-    updateBackToTop();
+    // YouTube fallback handling
+    const retryYouTubeBtn = document.getElementById("retry-youtube-btn");
+    const useLocalVideoBtn = document.getElementById("use-local-video-btn");
+    const videoFallback = document.getElementById("video-fallback");
+
+    function retryYouTube() {
+        if (ytEl && VIDEOURLYT) {
+            ytEl.src = VIDEOURLYT;
+            ytEl.hidden = false;
+            videoEl.hidden = true;
+            videoFallback.hidden = true;
+        }
+    }
+
+    function useLocalVideo() {
+        if (videoSourceEl && VIDEOURL) {
+            videoSourceEl.src = VIDEOURL;
+            videoEl.hidden = false;
+            ytEl.hidden = true;
+            ytEl.src = "";
+            videoFallback.hidden = true;
+            try {
+                videoEl.load();
+            } catch (e) { }
+        }
+    }
+
+    if (retryYouTubeBtn) {
+        retryYouTubeBtn.addEventListener("click", retryYouTube);
+    }
+
+    if (useLocalVideoBtn) {
+        useLocalVideoBtn.addEventListener("click", useLocalVideo);
+    }
+
+    // Handle YouTube load errors
+    if (ytEl) {
+        ytEl.addEventListener("error", () => {
+            if (videoFallback) {
+                videoFallback.hidden = false;
+            }
+        });
+    }
 </script>
 
 </html>

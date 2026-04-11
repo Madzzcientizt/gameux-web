@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="../../styles/sizeChecker.css" type="text/css" />
     <link rel="stylesheet" href="../../styles/game.css" type="text/css" />
 
-    <!-- Custom Styles ------------------------------------------------------------------------------------------ -->
+    <!-- Custom Styles -------------------------------------------------------------------------- -->
     <style>
         nav.game-info-nav label {
             width: calc(100% / 5) !important;
@@ -1000,9 +1000,9 @@
             position: relative;
         }
     </style>
-    <!-- Custom Styles ------------------------------------------------------------------------------------------ -->
+    <!-- Custom Styles -------------------------------------------------------------------------- -->
 
-    <title id="title">GameName - GameUX</title>
+    <title id="title">Kingdom Hearts - GameUX</title>
 </head>
 
 <body>
@@ -1040,15 +1040,15 @@
             <li class="breadcrumb-item">
                 <a href="../gameList.html">Game List</a>
             </li>
-            <li class="breadcrumb-item active game-name">Game name</li>
+            <li class="breadcrumb-item active game-name">Kingdom Hearts</li>
         </ol>
     </nav>
     <main>
         <article class="wide">
             <section class="header-section">
                 <img class="game-poster-content game-poster-background-style" />
-                <h1 class="game-name game-name-header" title="Game Name">
-                    Game name
+                <h1 class="game-name game-name-header" title="Kingdom Hearts">
+                    Kingdom Hearts
                 </h1>
                 <div class="game-header">
                     <span class="game-header-cont">
@@ -1097,7 +1097,7 @@
                 <div class="video-game-container">
                     <a class="game-poster" id="game-poster">
                         <img class="game-poster-img" id="game-poster-img" alt="Game Poster" target="images"
-                            title="Arknights: Endfield Game Poster" />
+                            title="Kingdom Hearts Game Poster" />
                     </a>
                     <div class="game-video-wrp">
                         <video class="game-video" id="game-video" controls>
@@ -1210,51 +1210,58 @@
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
                         width="20" height="20">
                         <path fill-rule="evenodd"
-                            d="M8.22 4.72a.75.75 0 0 1 1.06 0l6.5 6.5a.75.75 0 0 1 0 1.06l-6.5 6.5a.75.75 0 0 1-1.06-1.06L14.19 12 8.22 6.28a.75.75 0 0 1 0-1.56Z"
+                            d="M8.22 4.72a.75.75 0 0 1 1.06 0l6.5 6.5a.75.75 0 0 1 0 1.06l-6.5 6.5a.75.75 0 1 1-1.06-1.06L14.19 12 8.22 6.28a.75.75 0 0 1 0-1.56Z"
                             clip-rule="evenodd" />
                     </svg>
                 </button>
             </div>
         </div>
 
-        <!-- 
-        
+        <!--
+
         Sections ==================================================
-        
+
         -->
         <article>
             <div class="game-sections-stage">
                 <section class="game-sections" id="short-description">
                     <h2>Overview</h2>
                     <ul class="list-style">
-                        <h2>Arknights: Endfield builds:</h2>
-                        <li>Standard Edition</li>
-                        <li>Deluxe Edition</li>
-                        <li>Collector's Edition</li>
+                        <h2>Kingdom Hearts series features:</h2>
+                        <li>Real-time action RPG combat</li>
+                        <li>Command deck system</li>
+                        <li>Disney and Final Fantasy crossover</li>
+                        <li>Complex combo mechanics</li>
                     </ul>
                     <p>
-                        Arknights: Endfield is a mobile strategy RPG developed and published by Yostar. Released on December 1, 2023, for iOS and Android platforms, with PC support following later.
-                        The gameplay centers around turn-based tactical combat where players command squads of operators with unique abilities to battle against infected enemies. Players collect and develop characters through gacha mechanics while managing resources and making strategic decisions in both combat and base management.
+                        Kingdom Hearts is an action role-playing game series developed and published by Square Enix.
+                        Created by Tetsuya Nomura and featuring collaboration with Disney, the series combines real-time
+                        combat with command-based input systems. The gameplay revolves around controlling Sora, who
+                        wields a magical Keyblade weapon to battle enemies in a unique fusion of Disney worlds and
+                        original Square Enix content.
                     </p>
                     <p>
-                        As a prequel to the main Arknights series, Endfield introduces new characters and storylines while maintaining the core gameplay loop of squad-based strategy. The game's mobile interface must accommodate complex tactical systems, character management, and resource allocation while remaining accessible to strategy game enthusiasts.
-                        The combination of gacha collection and deep tactical gameplay creates unique HCI challenges in balancing accessibility with strategic complexity.
+                        The combat system is particularly notable for HCI research due to its command deck mechanic,
+                        where players select and execute abilities from a deck of command cards. This creates complex
+                        decision-making scenarios where players must manage resources, timing, and spatial awareness
+                        simultaneously. The interface must balance the fluidity of real-time action with the cognitive
+                        demands of strategic command selection.
                     </p>
                     <ul class="metrics-list">
                         <li>
-                            <h6>Cognitive Load</h6>
+                            <h6>Command Selection Time</h6>
+                            <div class="value">200-500ms</div>
+                            <div class="desc">Time to select and execute commands</div>
+                        </li>
+                        <li>
+                            <h6>Combo Chain Complexity</h6>
                             <div class="value">High</div>
-                            <div class="desc">Number of simultaneous elements a player tracks</div>
+                            <div class="desc">Multiple simultaneous input streams</div>
                         </li>
                         <li>
-                            <h6>Response Time</h6>
-                            <div class="value">&pm; 20ms to &pm; 150ms</div>
-                            <div class="desc">Time between user action and system feedback</div>
-                        </li>
-                        <li>
-                            <h6>Visual Reaction Time</h6>
-                            <div class="value">~150ms to ~1200ms</div>
-                            <div class="desc">Time for a player to respond to visual stimuli</div>
+                            <h6>Resource Management</h6>
+                            <div class="value">Multi-layered</div>
+                            <div class="desc">HP, MP, command deck, and timing</div>
                         </li>
                     </ul>
                 </section>
@@ -1263,162 +1270,185 @@
                     <div class="major-components">
                         <div class="major-component">
                             <figure>
-                                <a href="../../../public/gamesContent/arknightsEndfield/tacticalGrid.jpg" title="Arknights: Endfield Open World Map"
+                                <a href="../../../public/gamesContent/kingdomhearts/commandDeck.png" title="Kingdom Hearts Command Deck"
                                     target="images">
-                                    <img src="../../../public/gamesContent/arknightsEndfield/tacticalGrid.jpg" alt="Open World Map">
+                                    <img src="../../../public/gamesContent/kingdomhearts/commandDeck.png" alt="Command Deck">
                                 </a>
-                                <figcaption>FIG 1.1: Open World Map</figcaption>
+                                <figcaption>FIG 1.1: Command Deck</figcaption>
                             </figure>
                             <div>
                                 <span class="count">[ ELEMENT_01 ]</span>
-                                <span class="header-text">Open World Map</span>
+                                <span class="header-text">Command Deck</span>
                                 <p>
-                                    Arknights: Endfield features an open-world interface where players explore regions, find missions, and track story events. The world map balances exploration cues and navigation data so players can move freely while staying oriented.
+                                    The central gameplay mechanic where players select commands from a deck of cards
+                                    representing different abilities. The deck appears as a circular arrangement of
+                                    command icons that players can select during combat. Each command has different
+                                    costs, effects, and cooldowns, requiring strategic deck management.
                                 </p>
                                 <ul>
                                     <h6>Visual Feedback</h6>
-                                    <li>Location Markers</li>
-                                    <li>Route Guidance</li>
-                                    <li>Interactive Waypoints</li>
+                                    <li>Real-time deck rotation and highlighting</li>
+                                    <li>MP cost visualization for each command</li>
+                                    <li>Cooldown indicators and availability states</li>
                                 </ul>
                             </div>
                         </div>
                         <div class="major-component">
                             <figure>
-                                <a href="../../../public/gamesContent/arknightsEndfield/operatorCards.jpg" title="Arknights: Endfield Operator Roster"
+                                <a href="../../../public/gamesContent/kingdomhearts/healthBars.png" title="Kingdom Hearts Health/MP Bars"
                                     target="images">
-                                    <img src="../../../public/gamesContent/arknightsEndfield/operatorCards.jpg" alt="Operator Roster">
+                                    <img src="../../../public/gamesContent/kingdomhearts/healthBars.png" alt="Health/MP Bars">
                                 </a>
-                                <figcaption>FIG 1.2: Operator Roster</figcaption>
+                                <figcaption>FIG 1.2: Health and MP Bars</figcaption>
                             </figure>
                             <div>
                                 <span class="count">[ ELEMENT_02 ]</span>
-                                <span class="header-text">Operator Roster</span>
+                                <span class="header-text">Resource Bars</span>
                                 <p>
-                                    The roster panel shows operator stats, roles, and deployment costs. Players use this interface to manage squads, review unit synergies, and prepare for tactical engagements.
+                                    Dual resource tracking system showing health (HP) and magic points (MP). The bars
+                                    are positioned at the bottom of the screen with clear visual distinctions between
+                                    the two resources. MP is consumed by command usage and regenerates over time or
+                                    through specific actions.
                                 </p>
                             </div>
                         </div>
                         <div class="major-component">
                             <figure>
-                                <a href="../../../public/gamesContent/arknightsEndfield/abilityInterface.png" title="Arknights: Endfield Ability Interface"
+                                <a href="../../../public/gamesContent/kingdomhearts/targetLock.png" title="Kingdom Hearts Target Lock"
                                     target="images">
-                                    <img src="../../../public/gamesContent/arknightsEndfield/abilityInterface.png" alt="Ability Interface">
+                                    <img src="../../../public/gamesContent/kingdomhearts/targetLock.png" alt="Target Lock">
                                 </a>
-                                <figcaption>FIG 1.3: Ability Interface</figcaption>
+                                <figcaption>FIG 1.3: Target Lock System</figcaption>
                             </figure>
                             <div>
                                 <span class="count">[ ELEMENT_03 ]</span>
-                                <span class="header-text">Ability Interface</span>
+                                <span class="header-text">Target Lock</span>
                                 <p>
-                                    The ability activation system allows players to trigger special skills and ultimates. Timing and positioning are critical for maximizing ability effectiveness in combat.
+                                    A targeting system that allows players to lock onto enemies for consistent
+                                    tracking during combat. The lock indicator appears as a circular reticle around
+                                    the targeted enemy, with additional visual cues showing enemy health and status
+                                    effects.
                                 </p>
                             </div>
                         </div>
                     </div>
-                    <h2>Strategic Decision Making in Arknights: Endfield</h2>
+                    <h2>Fitt's Law in Real-Time Command Selection</h2>
                     <div class="fittslaw">
                         <div>
                             <p>
-                                Arknights: Endfield requires players to make tactical decisions based on squad composition, deployment resources, and evolving enemy behavior. The interface must support these choices with clear, contextualized information.
+                                Kingdom Hearts' command deck presents a unique application of Fitt's Law where targets
+                                are dynamically arranged in a circular pattern. The selection time depends on both the
+                                angular distance to the desired command and the current deck rotation state.
                             </p>
                             <div class="mathmodel">
-                                <h6>[ DECISION MODEL ]</h6>
-                                <span>D(t) = f(deployment, unit_synergy, ability_cooldowns, enemy_threats)</span>
+                                <h6>[ MATHEMATICAL MODEL ]</h6>
+                                <span>MT = a + b * log<sub>2</sub>(2A/W)</span>
                             </div>
                             <p>
-                                Information hierarchy should surface mission-critical details while minimizing unnecessary complexity. This allows players to react quickly without losing sight of long-term strategy.
+                                Where A represents the angular distance in radians rather than linear distance D.
+                                The circular arrangement means that optimal command placement becomes crucial for
+                                minimizing selection time during high-pressure combat scenarios.
                             </p>
                         </div>
                         <div>
                             <figure>
-                                <a href="../../../public/gamesContent/arknightsEndfield/combatInterface.png" title="Arknights: Endfield Combat Interface"
+                                <a href="../../../public/gamesContent/kingdomhearts/commandSelection.png" title="Kingdom Hearts Command Selection"
                                     target="images">
-                                    <img src="../../../public/gamesContent/arknightsEndfield/combatInterface.png" alt="Combat Interface">
+                                    <img src="../../../public/gamesContent/kingdomhearts/commandSelection.png" alt="Command Selection">
                                 </a>
-                                <figcaption>FIG 1.4: Combat Interface</figcaption>
+                                <figcaption>FIG 1.4: Command Selection Interface</figcaption>
                             </figure>
                         </div>
                     </div>
                     <div class="list-style-area">
-                        <h3 class="text-center">Visual Hierarchy Breakdown</h3>
-                        <div class="text-center">Information Architecture in Arknights: Endfield</div>
+                        <h3 class="text-center">Command Deck Hierarchy</h3>
+                        <div class="text-center">Strategic Command Organization</div>
                         <ol class="three-columns md-one-columns">
                             <li>
-                                <h6>Active Units</h6>
+                                <h6>High Priority</h6>
                                 <p>
-                                    The interface emphasizes currently selected operators and their available actions. Clear highlighting helps players execute tactics quickly.
+                                    Offensive commands and healing abilities positioned for quick access during
+                                    critical moments, minimizing selection time when immediate action is required.
                                 </p>
                             </li>
                             <li>
-                                <h6>Environmental Context</h6>
+                                <h6>Utility Commands</h6>
                                 <p>
-                                    Terrain effects, enemy positions, and hazard zones are displayed to support strategic planning and risk assessment.
+                                    Support abilities and status effects placed in secondary positions, accessible
+                                    when combat flow allows for strategic command selection.
                                 </p>
                             </li>
                             <li>
-                                <h6>Resource Management</h6>
+                                <h6>Special Abilities</h6>
                                 <p>
-                                    Tertiary focus on deployment points, ability cooldowns, and health bars. Critical for long-term strategic planning but not immediate tactical decisions.
+                                    Powerful but resource-intensive commands positioned for deliberate selection,
+                                    requiring conscious deck navigation and resource management.
                                 </p>
                             </li>
                         </ol>
                     </div>
                     <div class="footnote">
-                        All component analysis is based on standard Arknights: Endfield tactical interface design. The isometric grid system prioritizes spatial reasoning while maintaining clear information hierarchy for strategic gameplay.
+                        All component analysis is based on Kingdom Hearts standard combat interface. Command deck
+                        positioning varies by game version but maintains core circular selection principles.
                     </div>
                 </section>
                 <section class="game-sections" id="user-interaction">
                     <h2>User Interaction</h2>
                     <p>
-                        An investigation into the neuro-mechanical feedback loops of tactical interfaces,
-                        specifically analyzing Arknights: Endfield interaction flow.
+                        An investigation into the command-based combat system of Kingdom Hearts, analyzing how players
+                        manage simultaneous input streams and resource allocation in real-time action.
                     </p>
                     <div class="list-style-area">
-                        <h3 class="text-center">Core Gameplay Loop</h3>
-                        <div class="text-center"></div>
+                        <h3 class="text-center">Combat Interaction Flow</h3>
+                        <div class="text-center">Multi-Stream Input Processing</div>
                         <ol class="four-columns md-two-columns">
                             <li>
                                 <h6>Observe</h6>
                                 <p>
-                                    Players scan the battlefield for enemy positions, operator statuses, and environmental hazards.
+                                    Monitor enemy positions, health bars, and available commands while maintaining
+                                    spatial awareness of the battlefield.
                                 </p>
                             </li>
                             <li>
-                                <h6>Plan</h6>
+                                <h6>Navigate</h6>
                                 <p>
-                                    Tactical decisions are made based on deployment points, cooldowns, and the current combat state.
+                                    Move Sora through the environment using analog stick input while simultaneously
+                                    preparing for command selection.
+                                </p>
+                            </li>
+                            <li>
+                                <h6>Select</h6>
+                                <p>
+                                    Choose appropriate commands from the rotating deck based on tactical situation,
+                                    MP availability, and timing requirements.
                                 </p>
                             </li>
                             <li>
                                 <h6>Execute</h6>
                                 <p>
-                                    Commands are issued through touch or click input to move operators, activate skills, and use abilities.
-                                </p>
-                            </li>
-                            <li>
-                                <h6>Adapt</h6>
-                                <p>
-                                    Players adjust strategy in response to enemy reactions, shifting objectives, and damage outcomes.
+                                    Time command execution with enemy attack patterns, managing multiple input streams
+                                    simultaneously.
                                 </p>
                             </li>
                         </ol>
                     </div>
-                    <h3>Multi-Modal Feedback Matrix</h3>
+                    <h3>Multi-Modal Combat Feedback</h3>
                     <div class="multi-modal-feedback">
                         <div>
                             <p>
-                                Arknights: Endfield uses a layered feedback system to confirm tactical choices through sound, visuals, and touch.
+                                Kingdom Hearts combat system relies on layered sensory feedback to maintain player
+                                immersion during complex command execution. The interface must communicate success,
+                                failure, and system state across multiple channels simultaneously.
                             </p>
                         </div>
                         <div>
                             <figure>
-                                <a href="../../../public/gamesContent/arknightsEndfield/operatorActionFlow.png" title="Arknights: Endfield Action Feedback"
+                                <a href="../../../public/gamesContent/kingdomhearts/combatFeedback.png" title="Kingdom Hearts Combat Feedback"
                                     target="images">
-                                    <img src="../../../public/gamesContent/arknightsEndfield/operatorActionFlow.png"
-                                        alt="Arknights: Endfield Action Feedback">
+                                    <img src="../../../public/gamesContent/kingdomhearts/combatFeedback.png"
+                                        alt="Kingdom Hearts Combat Feedback">
                                 </a>
-                                <figcaption>FIG 1.5: Operator Action Feedback</figcaption>
+                                <figcaption>FIG 1.5: Combat Feedback Systems</figcaption>
                             </figure>
                         </div>
                     </div>
@@ -1432,9 +1462,11 @@
                                 </svg>
                             </div>
                             <div>
-                                <h6>Audio Feedback</h6>
+                                <h6>Audio Command Feedback</h6>
                                 <p>
-                                    Skill activation cues, enemy alert sounds, and combat effects help players recognize when actions land and threats emerge.
+                                    Distinct sound effects for command selection, execution, and impact. Successful
+                                    command chains produce musical cues that reinforce rhythm and timing, while failed
+                                    commands provide clear error feedback.
                                 </p>
                             </div>
                         </li>
@@ -1450,9 +1482,11 @@
 
                             </div>
                             <div>
-                                <h6>Visual Feedback</h6>
+                                <h6>Visual Command States</h6>
                                 <p>
-                                    Target highlights, action previews, and damage indicators confirm successful ability use and enemy responses.
+                                    Dynamic visual feedback showing command availability, selection highlighting, and
+                                    execution animations. The command deck rotates and highlights to show available
+                                    actions, with cooldown states clearly indicated.
                                 </p>
                             </div>
                         </li>
@@ -1465,9 +1499,11 @@
                                 </svg>
                             </div>
                             <div>
-                                <h6>Haptic Feedback</h6>
+                                <h6>Haptic Combat Response</h6>
                                 <p>
-                                    Vibration cues on mobile devices reinforce ability execution and incoming damage, supporting quick tactical adjustments.
+                                    Controller vibration patterns that correspond to command execution, enemy hits,
+                                    and special ability activations. The haptic feedback provides physical
+                                    confirmation of successful command chains and combat impacts.
                                 </p>
                             </div>
                         </li>
@@ -1476,39 +1512,41 @@
                 <section class="game-sections" id="hci-principles">
                     <h2>HCI Principles</h2>
                     <div class="cybernetic-feedback-loops">
-                        <h3>Cybernetic Feedback Loops</h3>
+                        <h3>Cybernetic Command Loops</h3>
                         <div class="cybernetic-content">
                             <div>
                                 <p style="text-align: justify;">
-                                    Arknights: Endfield uses a multi-modal feedback architecture that provides immediate visual,
-                                    auditory, and haptic confirmation of decisions. The feedback loop keeps players informed
-                                    about ability results and battlefield changes during tactical encounters.
+                                    Kingdom Hearts implements a sophisticated cybernetic system where command selection,
+                                    resource management, and combat execution form interconnected feedback loops. The
+                                    interface must maintain coherence across multiple cognitive streams while providing
+                                    clear feedback about the consequences of tactical decisions.
                                 </p>
                             </div>
                             <div>
                                 <ul class="primary-modalities">
                                     <h6>Primary Modalities</h6>
-                                    <li><strong>Visual</strong>: Enemy ranges, ability indicators, and operator statuses.</li>
-                                    <li><strong>Auditory</strong>: Ability cues, alert sounds, and combat feedback tones.</li>
-                                    <li><strong>Structural</strong>: Deployment points, cooldown timers, and resource meters.</li>
+                                    <li><strong>Command</strong>: Deck selection, MP costs, cooldown timers</li>
+                                    <li><strong>Combat</strong>: Health tracking, target locking, combo chains</li>
+                                    <li><strong>Navigation</strong>: Spatial positioning, environmental interaction</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                     <div class="spatial-congruence">
-                        <h2>Spatial Congruence</h2>
+                        <h2>Command Congruence</h2>
                         <p style="text-align: justify;">
-                            The spatial arrangement of interface elements in Arknights: Endfield supports intuitive tactical
-                            decision-making and reduces cognitive load. Enemy markers, operator cards, and ability panels are
-                            positioned to clearly relate the battlefield state to the player's next action.
+                            The spatial arrangement of commands in Kingdom Hearts follows principles of cognitive
+                            congruence, where frequently used commands are positioned for optimal access. The circular
+                            deck layout creates a mental model where command importance corresponds to physical
+                            proximity to the selection cursor, reducing cognitive load during high-pressure combat.
                         </p>
                     </div>
                     <div class="cognitive-load-bifurcation">
                         <h2>Cognitive Load Bifurcation</h2>
                         <p style="text-align: justify; margin-bottom: 2em;">
-                            The central success of the Arknights: Endfield interface is reducing unnecessary input complexity
-                            so players can focus on tactical decision-making, while preserving the intrinsic challenge of
-                            squad composition and battlefield strategy.
+                            Kingdom Hearts represents the pinnacle of cognitive load management in action games. The
+                            command deck system elegantly bifurcates complex strategic decisions from real-time motor
+                            execution, allowing players to focus on tactics while maintaining combat fluidity.
                         </p>
                         <table>
                             <thead>
@@ -1520,29 +1558,33 @@
                             <tbody>
                                 <tr>
                                     <td>
-                                        <h6>Minimalist HUD</h6>
+                                        <h6>Command Management</h6>
                                         <p>
-                                            Non-essential data is pushed to the periphery, keeping the battlefield and action cues central.
+                                            Deck organization, MP monitoring, and cooldown tracking create significant
+                                            extrinsic cognitive load that must be managed alongside combat execution.
                                         </p>
                                     </td>
                                     <td>
-                                        <h6>Strategic Focus</h6>
+                                        <h6>Combat Flow</h6>
                                         <p>
-                                            Players dedicate cognitive effort to positioning, ability timing, and enemy management.
+                                            The intrinsic challenge lies in maintaining combat momentum through
+                                            precise timing, positioning, and command sequencing in real-time action.
                                         </p>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <h6>Contextual Markers</h6>
+                                        <h6>Resource Allocation</h6>
                                         <p>
-                                            Clear visual indicators and tooltips reduce uncertainty during complex tactical choices.
+                                            Strategic decisions about when to use powerful commands versus conserving
+                                            MP for critical moments adds layers of tactical complexity.
                                         </p>
                                     </td>
                                     <td>
-                                        <h6>Situational Awareness</h6>
+                                        <h6>Combo Mastery</h6>
                                         <p>
-                                            The interface supports flow by keeping players aware of evolving threats and resource states.
+                                            Building and maintaining command chains requires deep understanding of
+                                            ability synergies and enemy attack patterns.
                                         </p>
                                     </td>
                                 </tr>
@@ -1551,16 +1593,18 @@
                     </div>
                     <div class="footnote">
                         <q>
-                            The interface is a bridge that must vanish. In Arknights: Endfield, the UX design achieves this by
-                            prioritizing tactical clarity and responsive feedback over unnecessary visual complexity.
+                            Kingdom Hearts demonstrates how complex strategic interfaces can coexist with fluid action
+                            gameplay, creating a cybernetic bridge between deliberate planning and instinctive
+                            execution.
                         </q>
                     </div>
                 </section>
                 <section class="game-sections" id="ui-ux-weaknesses">
                     <h2>Strengths and Weaknesses Analysis</h2>
                     <p>
-                        A comprehensive breakdown of the Arknights: Endfield interface paradigm. Evaluating the balance
-                        between deep tactical systems and mobile-friendly accessibility.
+                        A comprehensive evaluation of Kingdom Hearts' command-based combat interface. Analyzing the
+                        unique HCI challenges of managing strategic command selection within real-time action
+                        gameplay.
                     </p>
 
                     <table style="margin-bottom: 2em;">
@@ -1583,12 +1627,13 @@
                                                     d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
                                             </svg>
                                         </span>
-                                        <span class="label">01_LOGISTICS</span>
+                                        <span class="label">01_STRATEGIC_DEPTH</span>
                                     </div>
-                                    <h6>Integrated Factory Systems</h6>
+                                    <h6>Strategic Depth</h6>
                                     <p>
-                                        The seamless integration between real-time combat and industrial automation creates a unique gameplay 
-                                        loop. Building efficient power grids and resource pipelines provides a tangible sense of progression.
+                                        The command deck system provides unparalleled strategic depth, allowing players
+                                        to customize their combat approach and adapt to different enemy types and
+                                        situations through intelligent command selection.
                                     </p>
                                 </td>
                                 <td>
@@ -1600,12 +1645,13 @@
                                                     d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75M6.75 10.5h10.5A2.25 2.25 0 0 1 19.5 12.75v6A2.25 2.25 0 0 1 17.25 21H6.75A2.25 2.25 0 0 1 4.5 18.75v-6A2.25 2.25 0 0 1 6.75 10.5Z" />
                                             </svg>
                                         </span>
-                                        <span class="label">01_COMPLEXITY</span>
+                                        <span class="label">01_COGNITIVE_OVERLOAD</span>
                                     </div>
-                                    <h6>High Management Burden</h6>
+                                    <h6>Cognitive Overload</h6>
                                     <p>
-                                        The "Factory-RPG" hybrid introduces massive mechanical depth. Managing logistics while 
-                                        simultaneously handling party-based combat creates a daunting cognitive load for casual players.
+                                        Managing command selection, MP costs, cooldowns, and combat timing
+                                        simultaneously creates significant cognitive demands that can overwhelm
+                                        inexperienced players.
                                     </p>
                                 </td>
                             </tr>
@@ -1619,12 +1665,13 @@
                                                     d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25l4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z" />
                                             </svg>
                                         </span>
-                                        <span class="label">02_SYNERGY</span>
+                                        <span class="label">02_ADAPTIVE_FEEDBACK</span>
                                     </div>
-                                    <h6>Tactical Combat Depth</h6>
+                                    <h6>Adaptive Feedback</h6>
                                     <p>
-                                        The elemental reaction system and party-swapping mechanics reward strategic preparation. 
-                                        Visual and audio cues clearly communicate when "Resonance" effects are triggered.
+                                        Multi-modal feedback systems provide clear communication about command
+                                        availability, success, and failure states, helping players learn and adapt
+                                        their strategies over time.
                                     </p>
                                 </td>
                                 <td>
@@ -1636,12 +1683,13 @@
                                                     d="M12 9v4.5m0 3.75h.008v.008H12v-.008ZM10.29 3.86l-7.5 13A1.5 1.5 0 0 0 4.09 19h15.82a1.5 1.5 0 0 0 1.3-2.14l-7.5-13a1.5 1.5 0 0 0-2.6 0Z" />
                                             </svg>
                                         </span>
-                                        <span class="label">02_FRICTION</span>
+                                        <span class="label">02_COMMAND_COMPLEXITY</span>
                                     </div>
-                                    <h6>Navigation Friction</h6>
+                                    <h6>Command Complexity</h6>
                                     <p>
-                                        Terrain traversal and manual cable-laying can occasionally feel cumbersome. The lack of an 
-                                        unrestricted fast-travel system forces repetitive travel through industrial zones.
+                                        The large number of available commands and their various interactions can be
+                                        overwhelming, requiring extensive learning time to master effective deck
+                                        construction and command sequencing.
                                     </p>
                                 </td>
                             </tr>
@@ -1652,15 +1700,16 @@
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                                 stroke-width="1.5" stroke="currentColor" class="size-6">
                                                 <path stroke-linecap="round" stroke-linejoin="round"
-                                                    d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
+                                                    d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037 .666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
                                             </svg>
                                         </span>
-                                        <span class="label">03_WORLD</span>
+                                        <span class="label">03_CUSTOMIZATION</span>
                                     </div>
-                                    <h6>Cohesive Aesthetic Design</h6>
+                                    <h6>Deep Customization</h6>
                                     <p>
-                                        The "Industrial-Chic" visual identity is consistently applied from UI to environment. 
-                                        The world feels lived-in, grounded by a technical logic that respects the IP's lore.
+                                        Players can extensively customize their command decks, allowing for personalized
+                                        playstyles and strategic variety that keeps the combat system fresh across
+                                        multiple playthroughs.
                                     </p>
                                 </td>
                                 <td>
@@ -1669,15 +1718,16 @@
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                                 stroke-width="1.5" stroke="currentColor" class="size-6">
                                                 <path stroke-linecap="round" stroke-linejoin="round"
-                                                    d="M3.98 8.223A10.477 10.477 0 0 0 1.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.451 10.451 0 0 1 12 4.5c4.756 0 8.773 3.162 10.065 7.498a10.522 10.522 0 0 1-4.293 5.774M6.228 6.228 3 3m3.228 3.228 3.65 3.65m7.894 7.894L21 21m-3.228-3.228-3.65-3.65m0 0a3 3 0 1 0-4.243-4.243m4.242 4.242L9.88 9.88" />
+                                                    d="M3.98 8.223A10.477 10.477 0 0 0 1.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228 3 3m3.228 3.228 3.65 3.65m7.894 7.894L21 21m-3.228-3.228-3.65-3.65m0 0a3 3 0 1 0-4.243-4.243m4.242 4.242L9.88 9.88" />
                                             </svg>
                                         </span>
-                                        <span class="label">03_DENSITY</span>
+                                        <span class="label">03_LEARNING_BARRIER</span>
                                     </div>
-                                    <h6>Resource Scarcity</h6>
+                                    <h6>High Learning Barrier</h6>
                                     <p>
-                                        The economy can feel overly restrictive during the mid-game. Balancing advanced component 
-                                        crafting against unit upgrades often leads to progress bottlenecks that stall exploration.
+                                        The combination of real-time action and strategic command management creates a
+                                        steep learning curve that can be intimidating for players accustomed to more
+                                        straightforward action games.
                                     </p>
                                 </td>
                             </tr>
@@ -1685,9 +1735,14 @@
                     </table>
                     <div class="footnote summary">
                         <p>
-                            The Arknights: Endfield interface seeks to balance strategic depth and mobile accessibility.
-                            Its strength lies in clear battlefield feedback and resource visibility, while its weakness
-                            appears when menu density and monetization systems distract from tactical gameplay.
+                            Kingdom Hearts represents a masterful balance between complex strategic depth and
+                            accessible action gameplay. While the command deck system introduces significant cognitive
+                            demands, it creates a uniquely engaging combat experience that rewards both tactical
+                            planning and instinctive execution. The system's greatest strength—its ability to blend
+                            deliberate strategy with fluid action—is also its most significant challenge, requiring
+                            players to master multiple cognitive domains simultaneously. This creates a gameplay
+                            experience that transcends traditional action-RPG boundaries, offering depth and
+                            complexity that few other games can match.
                         </p>
                     </div>
                 </section>
@@ -1718,34 +1773,34 @@
 
 <script>
     // VARIABLES
-    const GAMENAME = "Arknights: Endfield";
-    const DATERELEASED = "12/01/2023"; // MM/DD/YYYY
-    const PUBLISHER = 'Yostar';
+    const GAMENAME = "Kingdom Hearts";
+    const DATERELEASED = "03/28/2002"; // MM/DD/YYYY
+    const PUBLISHER = "Square Enix";
     const BADGE = "Full Release";
     // Pre-Alpha
     // Alpha
     // Beta
     // Early Access
     // Full Release
-    const POSTERURL = "../../../public/posters/arknightsEndfield_poster.png";
-    const POSTERALTTEXT = "Arknights: Endfield Game Poster";
-    const VIDEOURL = "../../../public/videos/arknightsEndfield_trailer.mp4";
-    const VIDEOURLYT = "https://www.youtube.com/embed/oJ00ggFb8A0";
+    const POSTERURL = "../../../public/posters/kingdomhearts_poster.jpg";
+    const POSTERALTTEXT = "Kingdom Hearts Game Poster";
+    const VIDEOURL = "../../../public/videos/kingdomhearts_trailer.mp4";
+    const VIDEOURLYT = "https://www.youtube.com/embed/CzgrMWisdU0"; // Placeholder - replace with actual video
     const YTVID = true;
 
-    const GAMEUSERSTARS = "5.7";
-    const GAMEUSERRATINGS = "162";
+    const GAMEUSERSTARS = "8.5";
+    const GAMEUSERRATINGS = "125";
 
-    const HASCRITICS = true; // Set to false if there are no critic ratings
-    const GAMECRITICSTARS = "78";
-    const GAMECRITICRATINGS = "21";
+    const HASCRITICS = false; // Set to false if there are no critic ratings
+    const GAMECRITICSTARS = "0";
+    const GAMECRITICRATINGS = "0";
 
-    const GENRES = ["Strategy", "RPG", "Gacha"];
-    const PLATFORMS = ["iOS", "Android", "PC"];
-    const EDITIONS = ["Standard Edition", "Deluxe Edition", "Collector's Edition"];
+    const GENRES = ["Action RPG", "Real-Time Combat", "Disney Crossover"];
+    const PLATFORMS = ["PlayStation 2", "PC", "Xbox One", "Nintendo Switch"];
+    const EDITIONS = ["Standard Edition", "Final Mix", "HD Remaster"];
 
     const DESCRIPTION =
-        "Arknights: Endfield is a prequel to the popular Arknights series, set in the same universe but focusing on different characters and storylines. Players command a squad of operators in turn-based tactical combat against mysterious enemies, combining gacha collection with deep strategic gameplay and narrative elements.";
+        "Kingdom Hearts is an action role-playing game series developed by Square Enix that combines Disney and Final Fantasy universes. Players control Sora, a young boy who wields a magical Keyblade weapon to battle the forces of darkness across various Disney worlds. The series is renowned for its innovative command-based combat system where players select abilities from a rotating deck of command cards during real-time action.";
 
     // Document Variables
     const sectionRadios = Array.from(
