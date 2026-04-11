@@ -561,5 +561,17 @@ window.gameCatalog = [{
         genre: "RPG",
         image: "../../public/posters/liesOfP_poster.jpg",
         href: "./gamesList/liesOfP.html"
+    },
+    {
+        title: "Uncharted 4: A Thief's End",
+        genre: "Action",
+        image: "../../public/posters/uncharted_poster.jpg",
+        href: "./gamesList/uncharted.html"
+    },
+    {
+        title: "Tomb Raider",
+        genre: "Action",
+        image: "../../public/posters/laraCroftTombRaider_poster.jpg",
+        href: "./gamesList/laraCroftTombRaider.html"
     }
 ];
