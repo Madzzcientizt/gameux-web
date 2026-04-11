@@ -337,9 +337,9 @@
     let daysAgo = Math.floor(timeDiff / (1000 * 3600 * 24));
     if (daysAgo > 365) {
         let yearsAgo = Math.floor(daysAgo / 365);
-        for (let el of document.getElementsByClassName('days-ago')) { el.textContent = "(" + yearsAgo + " years ago)"; }
+        for (let el of document.getElementsByClassName('days-ago')) { el.textContent = "(" + yearsAgo + (yearsAgo === 1 ? " year ago)" : " years ago)"); }
     } else {
-        for (let el of document.getElementsByClassName('days-ago')) { el.textContent = "(" + daysAgo + " days ago)"; }
+        for (let el of document.getElementsByClassName('days-ago')) { el.textContent = "(" + daysAgo + (daysAgo === 1 ? " day ago)" : " days ago)"); }
     }
 
     // Sections navigation
