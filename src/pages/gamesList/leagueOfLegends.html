@@ -891,14 +891,20 @@
         bottom: 1.25rem;
         width: 3.5rem;
         height: 3.5rem;
+        border: 0;
+        border-radius: var(--t-radius-selector);
+        background-color: transparent;
+        padding: 0;
+        display: grid;
+        place-items: center;
         z-index: 1001;
-        cursor: pointer;
         opacity: 0;
+        transform: translateY(0.5rem) scale(0.96);
         pointer-events: none;
         transition:
           opacity 0.2s ease,
           transform 0.2s ease;
-        transform: translateY(0.5rem);
+        cursor: pointer;
       }
 
       .back-to-top.is-visible {
@@ -907,15 +913,39 @@
         transform: translateY(0);
       }
 
-      .back-to-top svg {
-        width: 100%;
-        height: 100%;
+      .back-to-top .btn-bg {
+        fill: var(--t-color-base-100);
+        stroke: var(--t-color-base-300);
+        stroke-width: 1.5;
+      }
+
+      .back-to-top .btn-progress-track {
+        fill: none;
+        stroke: var(--t-color-base-300);
+        stroke-width: 3;
+        opacity: 0.35;
       }
 
       .back-to-top .btn-progress {
+        fill: none;
+        stroke: var(--t-color-primary);
+        stroke-width: 3;
+        stroke-linecap: round;
         transform: rotate(-90deg);
-        transform-origin: center;
+        transform-origin: 28px 28px;
         transition: stroke-dashoffset 0.1s linear;
+      }
+
+      .back-to-top .btn-icon {
+        fill: none;
+        stroke: var(--t-color-primary);
+        stroke-width: 1.8;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .back-to-top:hover .btn-bg {
+        fill: var(--t-color-base-200);
       }
 
       .hidden {
@@ -931,7 +961,7 @@
         <nav class="navbar navbar-light navbar-expand-lg">
             <div class="container-fluid">
                 <a class="navbar-brand" href="../../index.html">
-                    <img src="../../../public/gameux.png" alt="Logo" class="navbar-logo" />
+                    <img src="../../../public/gameux.jpg" alt="Logo" class="navbar-logo" />
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon" style="width: 1em"></span>
@@ -1188,7 +1218,7 @@
               tactical decision-making synchronized with intense mechanical
               execution (high APM). Due to the nature of the competitive ladder
               and continuous balance patches, it became heavily connected to
-              global esports culture. Because of the game's demand for extreme
+              global Esports culture. Because of the game's demand for extreme
               visual-motor coordination, multi-tasking, and map awareness, it
               serves as a perfect case study for HCI. It must balance vibrant
               ability aesthetics with strict technical performance and clarity.
@@ -1226,12 +1256,12 @@
               <div class="major-component">
                 <figure>
                   <a
-                    href="../../../public/gamesContent/lol/champions.png"
+                    href="../../../public/gamesContent/leagueOfLegends/champions.jpg"
                     title="LoL Champions"
                     target="images"
                   >
                     <img
-                      src="../../../public/gamesContent/lol/champions.png"
+                      src="../../../public/gamesContent/leagueOfLegends//champions.jpg"
                       alt="Champions"
                     />
                   </a>
@@ -1257,12 +1287,12 @@
               <div class="major-component">
                 <figure>
                   <a
-                    href="../../../public/gamesContent/lol/skillshots.jpg"
+                    href="../../../public/gamesContent/leagueOfLegends//skillshots.jpg"
                     title="LoL Skillshot Indicators"
                     target="images"
                   >
                     <img
-                      src="../../../public/gamesContent/lol/skillshots.jpg"
+                      src="../../../public/gamesContent/leagueOfLegends//skillshots.jpg"
                       alt="Skillshots"
                     />
                   </a>
@@ -1283,12 +1313,12 @@
               <div class="major-component">
                 <figure>
                   <a
-                    href="../../../public/gamesContent/lol/minimap.png"
+                    href="../../../public/gamesContent/leagueOfLegends//minimap.jpg"
                     title="LoL Minimap"
                     target="images"
                   >
                     <img
-                      src="../../../public/gamesContent/lol/minimap.png"
+                      src="../../../public/gamesContent/leagueOfLegends//minimap.jpg"
                       alt="Minimap"
                     />
                   </a>
@@ -1331,12 +1361,12 @@
               <div>
                 <figure>
                   <a
-                    href="../../../public/gamesContent/lol/lolTargeting.png"
+                    href="../../../public/gamesContent/leagueOfLegends/targeting.jpg"
                     title="LoL Targeting Interactions"
                     target="images"
                   >
                     <img
-                      src="../../../public/gamesContent/lol/lolTargeting.png"
+                      src="../../../public/gamesContent/leagueOfLegends/targeting.jpg"
                       alt="Targeting"
                     />
                   </a>
@@ -1441,12 +1471,12 @@
               <div>
                 <figure>
                   <a
-                    href="../../../public/gamesContent/lol/inputFeedback.png"
+                    href="../../../public/gamesContent/leagueOfLegends//inputFeedback.jpg"
                     title="LoL Input to Feedback"
                     target="images"
                   >
                     <img
-                      src="../../../public/gamesContent/lol/inputFeedback.png"
+                      src="../../../public/gamesContent/leagueOfLegends//inputFeedback.jpg"
                       alt="LoL Input to Feedback"
                     />
                   </a>
@@ -1871,7 +1901,44 @@
       </article>
     </main>
 
-    <footer></footer>
+    <footer>
+      <h6>GameUX Atlas</h6>
+      <ul class="socials"></ul>
+      <div class="footer-info">
+        <span>&copy; Group 5</span>
+        <span>CIP 1101</span>
+        <span>2026</span>
+        <span>GameUX Atlas</span>
+      </div>
+    </footer>
+    <button
+      class="back-to-top"
+      id="back-to-top"
+      type="button"
+      aria-label="Back to top"
+      title="Back to top"
+    >
+      <svg
+        viewBox="0 0 56 56"
+        width="56"
+        height="56"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <circle class="btn-bg" cx="28" cy="28" r="27"></circle>
+        <circle class="btn-progress-track" cx="28" cy="28" r="22"></circle>
+        <circle
+          class="btn-progress"
+          id="back-to-top-progress"
+          cx="28"
+          cy="28"
+          r="22"
+        ></circle>
+        <path class="btn-icon" d="M28 36V20"></path>
+        <path class="btn-icon" d="M21.5 26.5L28 20l6.5 6.5"></path>
+      </svg>
+    </button>
+  </body>
 
     <script>
       // VARIABLES
@@ -1882,131 +1949,134 @@
       const POSTERURL = "../../../public/posters/leagueOfLegends_poster.jpg";
       const POSTERALTTEXT = "League of Legends Poster";
       const VIDEOURL = "../../../public/videos/leagueOfLegends_trailer.mp4";
-      const VIDEOURLYT = "https://www.youtube.com/embed/aR-KAldshAE";
+      const VIDEOURLYT =
+        "https://www.youtube.com/embed/aR-KAldshAE?si=5cvXJkO97hidScvu";
       const YTVID = true;
 
-      const GAMEUSERSTARS = "7.2";
-      const GAMEUSERRATINGS = "1,000,000+";
+    const GAMEUSERSTARS = "7.2";
+    const GAMEUSERRATINGS = "1,000,000+";
 
-      const HASCRITICS = true;
-      const GAMECRITICSTARS = "7.8";
-      const GAMECRITICRATINGS = "37";
+    const HASCRITICS = true;
+    const GAMECRITICSTARS = "7.8";
+    const GAMECRITICRATINGS = "37";
 
-      const GENRES = ["MOBA", "Strategy", "Action"];
-      const PLATFORMS = ["PC", "Mac"];
-      const EDITIONS = ["Standard Edition"];
+    const GENRES = ["MOBA", "Strategy", "Action"];
+    const PLATFORMS = ["PC", "Mac"];
+    const EDITIONS = ["Standard Edition"];
 
-      const DESCRIPTION =
-        "League of Legends (LoL) is a high-intensity, team-based Multiplayer Online Battle Arena (MOBA) that blends real-time strategy with role-playing elements. Since its release by Riot Games in 2009, it has become one of the most played and influential competitive titles in the world.";
+    const DESCRIPTION =
+      "League of Legends (LoL) is a high-intensity, team-based Multiplayer Online Battle Arena (MOBA) that blends real-time strategy with role-playing elements. Since its release by Riot Games in 2009, it has become one of the most played and influential competitive titles in the world.";
 
-      // -- Document Variables --
-      const sectionRadios = Array.from(
-        document.querySelectorAll('input[name="game-section"]'),
-      );
-      const gameSections = Array.from(
-        document.querySelectorAll(".game-sections"),
-      );
-      const gameInfoNav = document.getElementById("game-info-nav");
-      const gameInfoNavLeft = document.getElementById("game-info-nav-left");
-      const gameInfoNavRight = document.getElementById("game-info-nav-right");
+    // -- Document Variables --
+    const sectionRadios = Array.from(
+      document.querySelectorAll('input[name="game-section"]'),
+    );
+    const gameSections = Array.from(
+      document.querySelectorAll(".game-sections"),
+    );
+    const gameInfoNav = document.getElementById("game-info-nav");
+    const gameInfoNavLeft = document.getElementById("game-info-nav-left");
+    const gameInfoNavRight = document.getElementById("game-info-nav-right");
+    const backToTopButton = document.getElementById("back-to-top");
+    const backToTopProgress = document.getElementById("back-to-top-progress");
 
-      // -- Implementation --
-      document.getElementById("title").textContent = GAMENAME + " - GameUX"; // Set page title
-      for (let el of document.getElementsByClassName("game-name")) {
-        el.textContent = GAMENAME;
-      } // Set game name
-      for (let el of document.getElementsByClassName("date-released")) {
-        el.textContent = DATERELEASED;
-      } // Set date released
-      for (let el of document.getElementsByClassName("publisher")) {
-        el.textContent = PUBLISHER;
-      } // Set publisher
-      for (let el of document.getElementsByClassName("game-badge")) {
-        el.textContent = BADGE;
-      } // Set badge
-      for (let el of document.getElementsByClassName("game-user-rating")) {
-        el.textContent = GAMEUSERSTARS;
-      } // Set user rating
-      for (let el of document.getElementsByClassName("game-user-ratings")) {
-        el.textContent = GAMEUSERRATINGS + " user ratings";
-      } // Set user ratings
-      for (let el of document.getElementsByClassName("game-critic-rating")) {
-        el.textContent = GAMECRITICSTARS;
-      } // Set critic rating
-      for (let el of document.getElementsByClassName("game-critic-ratings")) {
-        el.textContent = GAMECRITICRATINGS + " critic ratings";
-      } // Set critic ratings
-      for (let el of document.getElementsByClassName("game-poster-content")) {
-        el.src = POSTERURL;
-      } // Set poster content
-      document.getElementById("game-poster-img").src = POSTERURL; // Set poster image
-      document.getElementById("game-poster-img").title =
-        GAMENAME + " Game Poster"; // Set poster image title
-      document.getElementById("game-poster").href = POSTERURL; // Set poster link
-      document.getElementById("game-description").textContent = DESCRIPTION; // Set game description
-      document.getElementById("game-poster-img").alt = POSTERALTTEXT;
+    // -- Implementation --
+    document.getElementById("title").textContent = GAMENAME + " - GameUX"; // Set page title
+    for (let el of document.getElementsByClassName("game-name")) {
+      el.textContent = GAMENAME;
+    } // Set game name
+    for (let el of document.getElementsByClassName("date-released")) {
+      el.textContent = DATERELEASED;
+    } // Set date released
+    for (let el of document.getElementsByClassName("publisher")) {
+      el.textContent = PUBLISHER;
+    } // Set publisher
+    for (let el of document.getElementsByClassName("game-badge")) {
+      el.textContent = BADGE;
+    } // Set badge
+    for (let el of document.getElementsByClassName("game-user-rating")) {
+      el.textContent = GAMEUSERSTARS;
+    } // Set user rating
+    for (let el of document.getElementsByClassName("game-user-ratings")) {
+      el.textContent = GAMEUSERRATINGS + " user ratings";
+    } // Set user ratings
+    for (let el of document.getElementsByClassName("game-critic-rating")) {
+      el.textContent = GAMECRITICSTARS;
+    } // Set critic rating
+    for (let el of document.getElementsByClassName("game-critic-ratings")) {
+      el.textContent = GAMECRITICRATINGS + " critic ratings";
+    } // Set critic ratings
+    for (let el of document.getElementsByClassName("game-poster-content")) {
+      el.src = POSTERURL;
+    } // Set poster content
+    document.getElementById("game-poster-img").src = POSTERURL; // Set poster image
+    document.getElementById("game-poster-img").title =
+      GAMENAME + " Game Poster"; // Set poster image title
+    document.getElementById("game-poster").href = POSTERURL; // Set poster link
+    document.getElementById("game-description").textContent = DESCRIPTION; // Set game description
+    document.getElementById("game-poster-img").alt = POSTERALTTEXT;
 
-      // Video / YouTube Toggle Logic
-      const videoEl = document.getElementById("game-video");
-      const videoSourceEl = document.getElementById("game-video-source");
-      const ytEl = document.getElementById("game-video-yt");
-      if (YTVID) {
-        if (ytEl) {
-          ytEl.src = VIDEOURLYT;
-          ytEl.hidden = false;
-        }
-        if (videoEl) {
-          videoEl.hidden = true;
-          try {
-            videoEl.pause();
-          } catch (e) {}
-        }
-      } else {
-        if (videoSourceEl) {
-          videoSourceEl.src = VIDEOURL;
-        }
-        if (videoEl) {
-          videoEl.hidden = false;
-          try {
-            videoEl.load();
-          } catch (e) {}
-        }
-        if (ytEl) {
-          ytEl.hidden = true;
-          ytEl.src = "";
-        }
+    // Video / YouTube Toggle Logic
+    const videoEl = document.getElementById("game-video");
+    const videoSourceEl = document.getElementById("game-video-source");
+    const ytEl = document.getElementById("game-video-yt");
+    if (YTVID) {
+      if (ytEl) {
+        ytEl.src = VIDEOURLYT;
+        ytEl.hidden = false;
       }
-
-      // Lists
-      for (let genre of GENRES) {
-        // Set genres
-        let li = document.createElement("li");
-        li.textContent = genre;
-        document.getElementById("genres").appendChild(li);
+      if (videoEl) {
+        videoEl.hidden = true;
+        try {
+          videoEl.pause();
+        } catch (e) {}
       }
-
-      for (let platform of PLATFORMS) {
-        // Set platforms
-        let li = document.createElement("li");
-        li.textContent = platform;
-        document.getElementById("platforms").appendChild(li);
+    } else {
+      if (videoSourceEl) {
+        videoSourceEl.src = VIDEOURL;
       }
-
-      for (let edition of EDITIONS) {
-        // Set editions
-        let li = document.createElement("li");
-        li.textContent = edition;
-        document.getElementById("editions").appendChild(li);
+      if (videoEl) {
+        videoEl.hidden = false;
+        try {
+          videoEl.load();
+        } catch (e) {}
       }
-
-      // Critic Visibility
-      if (!HASCRITICS) {
-        for (let el of document.getElementsByClassName(
-          "game-critic-rating-cont",
-        )) {
-          el.classList.add("hidden");
-        }
+      if (ytEl) {
+        ytEl.hidden = true;
+        ytEl.src = "";
       }
+    }
+
+    // Lists
+    for (let genre of GENRES) {
+      // Set genres
+      let li = document.createElement("li");
+      li.textContent = genre;
+      document.getElementById("genres").appendChild(li);
+    }
+
+    for (let platform of PLATFORMS) {
+      // Set platforms
+      let li = document.createElement("li");
+      li.textContent = platform;
+      document.getElementById("platforms").appendChild(li);
+    }
+
+    for (let edition of EDITIONS) {
+      // Set editions
+      let li = document.createElement("li");
+      li.textContent = edition;
+      document.getElementById("editions").appendChild(li);
+    }
+
+    // Critic Visibility
+    if (!HASCRITICS) {
+      for (let el of document.getElementsByClassName(
+        "game-critic-rating-cont",
+      )) {
+        el.classList.add("hidden");
+      }
+    }
 
       // Days/Years Calculation
       let timeDiff = new Date().getTime() - new Date(DATERELEASED).getTime();
@@ -2014,77 +2084,111 @@
       if (daysAgo > 365) {
         let yearsAgo = Math.floor(daysAgo / 365);
         for (let el of document.getElementsByClassName("days-ago")) {
-          el.textContent = "(" + yearsAgo + (yearsAgo === 1 ? " year ago)" : " years ago)");
+          el.textContent = "(" + yearsAgo + " years ago)";
         }
       } else {
         for (let el of document.getElementsByClassName("days-ago")) {
-          el.textContent = "(" + daysAgo + (daysAgo === 1 ? " day ago)" : " days ago)");
+          el.textContent = "(" + daysAgo + " days ago)";
         }
       }
 
-      // Section Navigation
-      function showGameSection(sectionId) {
-        for (let section of gameSections) {
-          let isActive = section.id === sectionId;
-          section.classList.toggle("is-active", isActive);
-          section.setAttribute("aria-hidden", String(!isActive));
-        }
+    // Section Navigation
+    function showGameSection(sectionId) {
+      for (let section of gameSections) {
+        let isActive = section.id === sectionId;
+        section.classList.toggle("is-active", isActive);
+        section.setAttribute("aria-hidden", String(!isActive));
       }
+    }
 
-      const defaultSection = document.querySelector(
-        'input[name="game-section"]:checked',
-      );
-      showGameSection(
-        defaultSection ? defaultSection.value : "short-description",
-      );
+    const defaultSection = document.querySelector(
+      'input[name="game-section"]:checked',
+    );
+    showGameSection(
+      defaultSection ? defaultSection.value : "short-description",
+    );
 
-      for (let radio of sectionRadios) {
-        radio.addEventListener("change", () => {
-          if (!radio.checked) {
-            return;
-          }
-          showGameSection(radio.value);
-        });
-      }
-
-      // Scroll Navigation Arrows
-      function updateGameInfoNavArrows() {
-        if (!gameInfoNav || !gameInfoNavLeft || !gameInfoNavRight) {
+    for (let radio of sectionRadios) {
+      radio.addEventListener("change", () => {
+        if (!radio.checked) {
           return;
         }
+        showGameSection(radio.value);
+      });
+    }
 
-        const maxScrollLeft = gameInfoNav.scrollWidth - gameInfoNav.clientWidth;
-        const canScroll = maxScrollLeft > 1;
-        const canScrollLeft = canScroll && gameInfoNav.scrollLeft > 1;
-        const canScrollRight =
-          canScroll && gameInfoNav.scrollLeft < maxScrollLeft - 1;
-
-        gameInfoNavLeft.hidden = !canScrollLeft;
-        gameInfoNavRight.hidden = !canScrollRight;
+    // Scroll Navigation Arrows
+    function updateGameInfoNavArrows() {
+      if (!gameInfoNav || !gameInfoNavLeft || !gameInfoNavRight) {
+        return;
       }
 
-      function scrollGameInfoNavBy(distance) {
-        if (!gameInfoNav) {
-          return;
-        }
-        gameInfoNav.scrollBy({ left: distance, behavior: "smooth" });
+      const maxScrollLeft = gameInfoNav.scrollWidth - gameInfoNav.clientWidth;
+      const canScroll = maxScrollLeft > 1;
+      const canScrollLeft = canScroll && gameInfoNav.scrollLeft > 1;
+      const canScrollRight =
+        canScroll && gameInfoNav.scrollLeft < maxScrollLeft - 1;
+
+      gameInfoNavLeft.hidden = !canScrollLeft;
+      gameInfoNavRight.hidden = !canScrollRight;
+    }
+
+    function scrollGameInfoNavBy(distance) {
+      if (!gameInfoNav) {
+        return;
+      }
+      gameInfoNav.scrollBy({ left: distance, behavior: "smooth" });
+    }
+
+    if (gameInfoNav && gameInfoNavLeft && gameInfoNavRight) {
+      gameInfoNav.addEventListener("scroll", updateGameInfoNavArrows);
+      gameInfoNavLeft.addEventListener("click", () => {
+        scrollGameInfoNavBy(
+          -Math.max(200, Math.floor(gameInfoNav.clientWidth * 0.5)),
+        );
+      });
+      gameInfoNavRight.addEventListener("click", () => {
+        scrollGameInfoNavBy(
+          Math.max(200, Math.floor(gameInfoNav.clientWidth * 0.5)),
+        );
+      });
+      window.addEventListener("resize", updateGameInfoNavArrows);
+      updateGameInfoNavArrows();
+    }
+
+    // Back-to-top button
+    const progressRadius = 22;
+    const progressCircumference = 2 * Math.PI * progressRadius;
+
+    if (backToTopProgress) {
+      backToTopProgress.style.strokeDasharray = String(progressCircumference);
+      backToTopProgress.style.strokeDashoffset = String(progressCircumference);
+    }
+
+    function updateBackToTop() {
+      if (!backToTopButton || !backToTopProgress) {
+        return;
       }
 
-      if (gameInfoNav && gameInfoNavLeft && gameInfoNavRight) {
-        gameInfoNav.addEventListener("scroll", updateGameInfoNavArrows);
-        gameInfoNavLeft.addEventListener("click", () => {
-          scrollGameInfoNavBy(
-            -Math.max(200, Math.floor(gameInfoNav.clientWidth * 0.5)),
-          );
-        });
-        gameInfoNavRight.addEventListener("click", () => {
-          scrollGameInfoNavBy(
-            Math.max(200, Math.floor(gameInfoNav.clientWidth * 0.5)),
-          );
-        });
-        window.addEventListener("resize", updateGameInfoNavArrows);
-        updateGameInfoNavArrows();
-      }
-    </script>
-  </body>
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      const scrollableHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
+      const progress =
+        scrollableHeight > 0 ? Math.min(scrollTop / scrollableHeight, 1) : 0;
+      const dashOffset = progressCircumference * (1 - progress);
+
+      backToTopProgress.style.strokeDashoffset = String(dashOffset);
+      backToTopButton.classList.toggle("is-visible", scrollTop > 160);
+    }
+
+    if (backToTopButton) {
+      backToTopButton.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    }
+
+    window.addEventListener("scroll", updateBackToTop, { passive: true });
+    window.addEventListener("resize", updateBackToTop);
+    updateBackToTop();
+  </script>
 </html>

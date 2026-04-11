@@ -905,14 +905,20 @@
         bottom: 1.25rem;
         width: 3.5rem;
         height: 3.5rem;
+        border: 0;
+        border-radius: var(--t-radius-selector);
+        background-color: transparent;
+        padding: 0;
+        display: grid;
+        place-items: center;
         z-index: 1001;
-        cursor: pointer;
         opacity: 0;
+        transform: translateY(0.5rem) scale(0.96);
         pointer-events: none;
         transition:
           opacity 0.2s ease,
           transform 0.2s ease;
-        transform: translateY(0.5rem);
+        cursor: pointer;
       }
 
       .back-to-top.is-visible {
@@ -921,15 +927,39 @@
         transform: translateY(0);
       }
 
-      .back-to-top svg {
-        width: 100%;
-        height: 100%;
+      .back-to-top .btn-bg {
+        fill: var(--t-color-base-100);
+        stroke: var(--t-color-base-300);
+        stroke-width: 1.5;
+      }
+
+      .back-to-top .btn-progress-track {
+        fill: none;
+        stroke: var(--t-color-base-300);
+        stroke-width: 3;
+        opacity: 0.35;
       }
 
       .back-to-top .btn-progress {
+        fill: none;
+        stroke: var(--t-color-primary);
+        stroke-width: 3;
+        stroke-linecap: round;
         transform: rotate(-90deg);
-        transform-origin: center;
+        transform-origin: 28px 28px;
         transition: stroke-dashoffset 0.1s linear;
+      }
+
+      .back-to-top .btn-icon {
+        fill: none;
+        stroke: var(--t-color-primary);
+        stroke-width: 1.8;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .back-to-top:hover .btn-bg {
+        fill: var(--t-color-base-200);
       }
 
       .hidden {
@@ -1242,12 +1272,12 @@
               <div class="major-component">
                 <figure>
                   <a
-                    href="../../../public/gamesContent/fnf/strumline.jpg"
+                    href="../../../public/gamesContent/fridayNightFunkin/strumline.jpg"
                     title="The Strumline"
                     target="images"
                   >
                     <img
-                      src="../../../public/gamesContent/fnf/strumline.jpg"
+                      src="../../../public/gamesContent/fridayNightFunkin/strumline.jpg"
                       alt="4-Panel Note Highway"
                     />
                   </a>
@@ -1259,27 +1289,23 @@
                   <p>
                     The absolute focal point of the interface. Four static
                     arrows sit at the top (or bottom) of the screen,
-                    representing the Left, Down, Up, and Right inputs. Colored
-                    notes scroll toward these static targets, acting as the
-                    primary visual stimuli for interaction.
+                    representing the Left, Down, Up, and Right inputs.When a
+                    note aligns perfectly with the receptor, the character on
+                    screen reacts with a specific animation and vocal snippet,
+                    creating a seamless loop between the player's tactile input
+                    and the character’s performance.
                   </p>
-                  <ul>
-                    <h6>Visual Feedback</h6>
-                    <li>Note Splashes (Confirming "Sick" hits)</li>
-                    <li>Sustained Hold-Note Trails</li>
-                    <li>Ghost Tapping / Miss Animations</li>
-                  </ul>
                 </div>
               </div>
               <div class="major-component">
                 <figure>
                   <a
-                    href="../../../public/gamesContent/fnf/healthbar.jpg"
+                    href="../../../public/gamesContent/fridayNightFunkin/healthbar.jpg"
                     title="Tug-of-War Health Bar"
                     target="images"
                   >
                     <img
-                      src="../../../public/gamesContent/fnf/healthbar.jpg"
+                      src="../../../public/gamesContent/fridayNightFunkin/healthbar.jpg"
                       alt="Health Bar with Character Icons"
                     />
                   </a>
@@ -1300,12 +1326,12 @@
               <div class="major-component">
                 <figure>
                   <a
-                    href="../../../public/gamesContent/fnf/characters.png"
+                    href="../../../public/gamesContent/fridayNightFunkin//characters.png"
                     title="Character Animations"
                     target="images"
                   >
                     <img
-                      src="../../../public/gamesContent/fnf/characters.png"
+                      src="../../../public/gamesContent/fridayNightFunkin//characters.png"
                       alt="Boyfriend and Daddy Dearest"
                     />
                   </a>
@@ -1355,12 +1381,12 @@
               <div>
                 <figure>
                   <a
-                    href="../../../public/gamesContent/fnf/timing.png"
+                    href="../../../public/gamesContent/fridayNightFunkin//timing.png"
                     title="Note Hit Windows"
                     target="images"
                   >
                     <img
-                      src="../../../public/gamesContent/fnf/timing.png"
+                      src="../../../public/gamesContent/fridayNightFunkin//timing.png"
                       alt="Note Hit Windows"
                     />
                   </a>
@@ -1460,18 +1486,29 @@
                   Rhythm games live and die by their feedback latency. FNF
                   employs a robust, multi-layered system to ensure that every
                   keystroke feels inherently connected to the music being
-                  generated.
+                  generated. <br> <br>This matrix spans three core channels: audio,
+                  visual, and haptic-like responsiveness. On the audio side,
+                  every input is synchronized to beat-aligned sound cues,
+                  reinforcing timing accuracy through immediate sonic
+                  confirmation. <br>Visually, note hit effects, character
+                  animations, and UI flashes react in frame-perfect alignment
+                  with player actions, creating a strong sense of
+                  cause-and-effect between pressing a key and seeing the
+                  performance respond. <br>Finally, ultra-low input buffering and
+                  consistent frame pacing simulate a tactile snappiness, the game “feels” responsive in the
+                  player’s fingers, reducing perceived latency and deepening
+                  immersion.
                 </p>
               </div>
               <div>
                 <figure>
                   <a
-                    href="../../../public/gamesContent/fnf/feedbackLoop.png"
+                    href="../../../public/gamesContent/fridayNightFunkin//feedbackLoop.png"
                     title="FNF Feedback Loop"
                     target="images"
                   >
                     <img
-                      src="../../../public/gamesContent/fnf/feedbackLoop.png"
+                      src="../../../public/gamesContent/fridayNightFunkin//feedbackLoop.png"
                       alt="FNF Audio-Visual Loop"
                     />
                   </a>
@@ -1846,218 +1883,327 @@
       </article>
     </main>
 
-    <script>
-      // VARIABLES - UPDATED FOR FRIDAY NIGHT FUNKIN'
-      const GAMENAME = "Friday Night Funkin'";
-      const DATERELEASED = "11/01/2020";
-      const PUBLISHER = "The Funkin' Crew";
-      const BADGE = "Open Source";
-      const POSTERURL = "../../../public/posters/fridayNightFunkin_poster.jpg";
-      const POSTERALTTEXT = "Friday Night Funkin' Poster";
-      const VIDEOURL = "../../../public/videos/fridayNightFunkin_trailer.mp4";
-      const VIDEOURLYT = "https://www.youtube.com/embed/V_8-aXv5BqY"; // Placeholder FNF Trailer ID
-      const YTVID = true;
+    <footer>
+      <h6>GameUX Atlas</h6>
+      <ul class="socials"></ul>
+      <div class="footer-info">
+        <span>&copy; Group 5</span>
+        <span>CIP 1101</span>
+        <span>2026</span>
+        <span>GameUX Atlas</span>
+      </div>
+    </footer>
+    <button
+      class="back-to-top"
+      id="back-to-top"
+      type="button"
+      aria-label="Back to top"
+      title="Back to top"
+    >
+      <svg
+        viewBox="0 0 56 56"
+        width="56"
+        height="56"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <circle class="btn-bg" cx="28" cy="28" r="27"></circle>
+        <circle class="btn-progress-track" cx="28" cy="28" r="22"></circle>
+        <circle
+          class="btn-progress"
+          id="back-to-top-progress"
+          cx="28"
+          cy="28"
+          r="22"
+        ></circle>
+        <path class="btn-icon" d="M28 36V20"></path>
+        <path class="btn-icon" d="M21.5 26.5L28 20l6.5 6.5"></path>
+      </svg>
+    </button>
+  </body>
 
-      const GAMEUSERSTARS = "8.9";
-      const GAMEUSERRATINGS = "150,000+";
+  <script>
+    // VARIABLES
+    const GAMENAME = "Friday Night Funkin'";
+    const DATERELEASED = "11/01/2020";
+    const PUBLISHER = "The Funkin' Crew";
+    const BADGE = "Open Source";
+    const POSTERURL = "../../../public/posters/fridayNightFunkin_poster.jpg";
+    const POSTERALTTEXT = "Friday Night Funkin' Poster";
+    const VIDEOURL = "../../../public/videos/fridayNightFunkin_trailer.mp4";
+    const VIDEOURLYT = "https://www.youtube.com/embed/zHyt69mJnj8?si=IOwivNjBTJ-qXO25"; 
+    const YTVID = true;
 
-      const HASCRITICS = true;
-      const GAMECRITICSTARS = "8.0";
-      const GAMECRITICRATINGS = "15";
+    const GAMEUSERSTARS = "8.9";
+    const GAMEUSERRATINGS = "150,000+";
 
-      const GENRES = ["Rhythm", "Music", "Indie"];
-      const PLATFORMS = ["PC", "Browser"];
-      const EDITIONS = ["Base Game"];
+    const HASCRITICS = true;
+    const GAMECRITICSTARS = "8.0";
+    const GAMECRITICRATINGS = "15";
 
-      const DESCRIPTION =
-        "Friday Night Funkin' is a massively popular open-source rhythm game created originally for Ludum Dare 47. Players take control of 'Boyfriend' and must hit notes in time to the music to win rap battles against a colorful cast of opponents. The game utilizes a classic 4-panel VSRG (Vertical Scrolling Rhythm Game) interface, testing players on timing, pattern recognition, and extreme response times.";
+    const GENRES = ["Rhythm", "Music", "Indie"];
+    const PLATFORMS = ["PC", "Browser"];
+    const EDITIONS = ["Base Game"];
 
-      // -- Document Variables --
-      const sectionRadios = Array.from(
-        document.querySelectorAll('input[name="game-section"]'),
+    const DESCRIPTION =
+      "Friday Night Funkin' is a massively popular open-source rhythm game created originally for Ludum Dare 47. Players take control of 'Boyfriend' and must hit notes in time to the music to win rap battles against a colorful cast of opponents. The game utilizes a classic 4-panel VSRG (Vertical Scrolling Rhythm Game) interface, testing players on timing, pattern recognition, and extreme response times.";
+
+    // Document Variables
+    const sectionRadios = Array.from(
+      document.querySelectorAll('input[name="game-section"]'),
+    );
+    const gameSections = Array.from(
+      document.querySelectorAll(".game-sections"),
+    );
+    const gameInfoNav = document.getElementById("game-info-nav");
+    const gameInfoNavLeft = document.getElementById("game-info-nav-left");
+    const gameInfoNavRight = document.getElementById("game-info-nav-right");
+    const backToTopButton = document.getElementById("back-to-top");
+    const backToTopProgress = document.getElementById("back-to-top-progress");
+
+    // -- Implementation --
+    document.getElementById("title").textContent = GAMENAME + " - GameUX"; // Set page title
+    for (let el of document.getElementsByClassName("game-name")) {
+      el.textContent = GAMENAME;
+    } // Set game name
+    for (let el of document.getElementsByClassName("date-released")) {
+      el.textContent = DATERELEASED;
+    } // Set date released
+    for (let el of document.getElementsByClassName("publisher")) {
+      el.textContent = PUBLISHER;
+    } // Set publisher
+    for (let el of document.getElementsByClassName("game-badge")) {
+      el.textContent = BADGE;
+    } // Set badge
+    for (let el of document.getElementsByClassName("game-user-rating")) {
+      el.textContent = GAMEUSERSTARS;
+    } // Set user rating
+    for (let el of document.getElementsByClassName("game-user-ratings")) {
+      el.textContent = GAMEUSERRATINGS + " user ratings";
+    } // Set user ratings
+    for (let el of document.getElementsByClassName("game-critic-rating")) {
+      el.textContent = GAMECRITICSTARS;
+    } // Set critic rating
+    for (let el of document.getElementsByClassName("game-critic-ratings")) {
+      el.textContent = GAMECRITICRATINGS + " critic ratings";
+    } // Set critic ratings
+    for (let el of document.getElementsByClassName("game-poster-content")) {
+      el.src = POSTERURL;
+    } // Set poster content
+    document.getElementById("game-poster-img").src = POSTERURL; // Set poster image
+    document.getElementById("game-poster-img").title =
+      GAMENAME + " Game Poster"; // Set poster image title
+    document.getElementById("game-poster").href = POSTERURL; // Set poster link
+    document.getElementById("game-description").textContent = DESCRIPTION; // Set game description
+    document.getElementById("game-poster-img").alt = POSTERALTTEXT; // Set poster image alt text
+    // Video / YouTube toggle: show iframe when YTVID is true, otherwise show <video> with source
+    const videoEl = document.getElementById("game-video");
+    const videoSourceEl = document.getElementById("game-video-source");
+    const ytEl = document.getElementById("game-video-yt");
+    if (YTVID) {
+      if (ytEl) {
+        ytEl.src = VIDEOURLYT;
+        ytEl.hidden = false;
+      }
+      if (videoEl) {
+        videoEl.hidden = true;
+        try {
+          videoEl.pause();
+        } catch (e) {}
+      }
+    } else {
+      if (videoSourceEl) {
+        videoSourceEl.src = VIDEOURL;
+      }
+      if (videoEl) {
+        videoEl.hidden = false;
+        try {
+          videoEl.load();
+        } catch (e) {}
+      }
+      if (ytEl) {
+        ytEl.hidden = true;
+        ytEl.src = "";
+      }
+    }
+
+    for (let genre of GENRES) {
+      // Set genres
+      let li = document.createElement("li");
+      li.textContent = genre;
+      document.getElementById("genres").appendChild(li);
+    }
+
+    for (let platform of PLATFORMS) {
+      // Set platforms
+      let li = document.createElement("li");
+      li.textContent = platform;
+      document.getElementById("platforms").appendChild(li);
+    }
+
+    for (let edition of EDITIONS) {
+      // Set editions
+      let li = document.createElement("li");
+      li.textContent = edition;
+      document.getElementById("editions").appendChild(li);
+    }
+
+    // Hide critic ratings
+    if (!HASCRITICS) {
+      for (let el of document.getElementsByClassName(
+        "game-critic-rating-cont",
+      )) {
+        el.classList.add("hidden");
+      }
+    }
+
+    // Calculate days ago
+    let timeDiff = new Date().getTime() - new Date(DATERELEASED).getTime();
+    let daysAgo = Math.floor(timeDiff / (1000 * 3600 * 24));
+    if (daysAgo > 365) {
+      let yearsAgo = Math.floor(daysAgo / 365);
+      for (let el of document.getElementsByClassName("days-ago")) {
+        el.textContent = "(" + yearsAgo + " years ago)";
+      }
+    } else {
+      for (let el of document.getElementsByClassName("days-ago")) {
+        el.textContent = "(" + daysAgo + " days ago)";
+      }
+    }
+
+    // Sections navigation
+    function showGameSection(sectionId) {
+      for (let section of gameSections) {
+        let isActive = section.id === sectionId;
+        section.classList.toggle("is-active", isActive);
+        section.setAttribute("aria-hidden", String(!isActive));
+      }
+    }
+
+    function getSectionIdFromHash() {
+      const rawHash = window.location.hash || "";
+      const hash = rawHash.startsWith("#") ? rawHash.slice(1) : rawHash;
+      if (!hash) {
+        return null;
+      }
+      return gameSections.some((section) => section.id === hash) ? hash : null;
+    }
+
+    function syncSectionFromHash() {
+      const hashSectionId = getSectionIdFromHash();
+      if (!hashSectionId) {
+        return false;
+      }
+
+      const matchingRadio = sectionRadios.find(
+        (radio) => radio.value === hashSectionId,
       );
-      const gameSections = Array.from(
-        document.querySelectorAll(".game-sections"),
-      );
-      const gameInfoNav = document.getElementById("game-info-nav");
-      const gameInfoNavLeft = document.getElementById("game-info-nav-left");
-      const gameInfoNavRight = document.getElementById("game-info-nav-right");
-
-      // -- Implementation --
-      document.getElementById("title").textContent = GAMENAME + " - GameUX"; // Set page title
-      for (let el of document.getElementsByClassName("game-name")) {
-        el.textContent = GAMENAME;
-      } // Set game name
-      for (let el of document.getElementsByClassName("date-released")) {
-        el.textContent = DATERELEASED;
-      } // Set date released
-      for (let el of document.getElementsByClassName("publisher")) {
-        el.textContent = PUBLISHER;
-      } // Set publisher
-      for (let el of document.getElementsByClassName("game-badge")) {
-        el.textContent = BADGE;
-      } // Set badge
-      for (let el of document.getElementsByClassName("game-user-rating")) {
-        el.textContent = GAMEUSERSTARS;
-      } // Set user rating
-      for (let el of document.getElementsByClassName("game-user-ratings")) {
-        el.textContent = GAMEUSERRATINGS + " user ratings";
-      } // Set user ratings
-      for (let el of document.getElementsByClassName("game-critic-rating")) {
-        el.textContent = GAMECRITICSTARS;
-      } // Set critic rating
-      for (let el of document.getElementsByClassName("game-critic-ratings")) {
-        el.textContent = GAMECRITICRATINGS + " critic ratings";
-      } // Set critic ratings
-      for (let el of document.getElementsByClassName("game-poster-content")) {
-        el.src = POSTERURL;
-      } // Set poster content
-      document.getElementById("game-poster-img").src = POSTERURL; // Set poster image
-      document.getElementById("game-poster-img").title =
-        GAMENAME + " Game Poster"; // Set poster image title
-      document.getElementById("game-poster").href = POSTERURL; // Set poster link
-      document.getElementById("game-description").textContent = DESCRIPTION; // Set game description
-      document.getElementById("game-poster-img").alt = POSTERALTTEXT;
-
-      // Video / YouTube Toggle Logic
-      const videoEl = document.getElementById("game-video");
-      const videoSourceEl = document.getElementById("game-video-source");
-      const ytEl = document.getElementById("game-video-yt");
-      if (YTVID) {
-        if (ytEl) {
-          ytEl.src = VIDEOURLYT;
-          ytEl.hidden = false;
-        }
-        if (videoEl) {
-          videoEl.hidden = true;
-          try {
-            videoEl.pause();
-          } catch (e) {}
-        }
-      } else {
-        if (videoSourceEl) {
-          videoSourceEl.src = VIDEOURL;
-        }
-        if (videoEl) {
-          videoEl.hidden = false;
-          try {
-            videoEl.load();
-          } catch (e) {}
-        }
-        if (ytEl) {
-          ytEl.hidden = true;
-          ytEl.src = "";
-        }
+      if (matchingRadio) {
+        matchingRadio.checked = true;
       }
+      showGameSection(hashSectionId);
+      return true;
+    }
 
-      // Lists
-      for (let genre of GENRES) {
-        // Set genres
-        let li = document.createElement("li");
-        li.textContent = genre;
-        document.getElementById("genres").appendChild(li);
-      }
-
-      for (let platform of PLATFORMS) {
-        // Set platforms
-        let li = document.createElement("li");
-        li.textContent = platform;
-        document.getElementById("platforms").appendChild(li);
-      }
-
-      for (let edition of EDITIONS) {
-        // Set editions
-        let li = document.createElement("li");
-        li.textContent = edition;
-        document.getElementById("editions").appendChild(li);
-      }
-
-      // Critic Visibility
-      if (!HASCRITICS) {
-        for (let el of document.getElementsByClassName(
-          "game-critic-rating-cont",
-        )) {
-          el.classList.add("hidden");
-        }
-      }
-
-      // Days/Years Calculation
-      let timeDiff = new Date().getTime() - new Date(DATERELEASED).getTime();
-      let daysAgo = Math.floor(timeDiff / (1000 * 3600 * 24));
-      if (daysAgo > 365) {
-        let yearsAgo = Math.floor(daysAgo / 365);
-        for (let el of document.getElementsByClassName("days-ago")) {
-          el.textContent = "(" + yearsAgo + " years ago)";
-        }
-      } else {
-        for (let el of document.getElementsByClassName("days-ago")) {
-          el.textContent = "(" + daysAgo + " days ago)";
-        }
-      }
-
-      // Section Navigation
-      function showGameSection(sectionId) {
-        for (let section of gameSections) {
-          let isActive = section.id === sectionId;
-          section.classList.toggle("is-active", isActive);
-          section.setAttribute("aria-hidden", String(!isActive));
-        }
-      }
-
-      const defaultSection = document.querySelector(
-        'input[name="game-section"]:checked',
-      );
+    const defaultSection = document.querySelector(
+      'input[name="game-section"]:checked',
+    );
+    if (!syncSectionFromHash()) {
       showGameSection(
         defaultSection ? defaultSection.value : "short-description",
       );
+    }
 
-      for (let radio of sectionRadios) {
-        radio.addEventListener("change", () => {
-          if (!radio.checked) {
-            return;
-          }
-          showGameSection(radio.value);
-        });
-      }
-
-      // Scroll Navigation Arrows
-      function updateGameInfoNavArrows() {
-        if (!gameInfoNav || !gameInfoNavLeft || !gameInfoNavRight) {
+    for (let radio of sectionRadios) {
+      radio.addEventListener("change", () => {
+        if (!radio.checked) {
           return;
         }
-
-        const maxScrollLeft = gameInfoNav.scrollWidth - gameInfoNav.clientWidth;
-        const canScroll = maxScrollLeft > 1;
-        const canScrollLeft = canScroll && gameInfoNav.scrollLeft > 1;
-        const canScrollRight =
-          canScroll && gameInfoNav.scrollLeft < maxScrollLeft - 1;
-
-        gameInfoNavLeft.hidden = !canScrollLeft;
-        gameInfoNavRight.hidden = !canScrollRight;
-      }
-
-      function scrollGameInfoNavBy(distance) {
-        if (!gameInfoNav) {
-          return;
+        showGameSection(radio.value);
+        if (history.replaceState) {
+          history.replaceState(null, "", `#${radio.value}`);
+        } else {
+          window.location.hash = radio.value;
         }
-        gameInfoNav.scrollBy({ left: distance, behavior: "smooth" });
+      });
+    }
+
+    window.addEventListener("hashchange", () => {
+      syncSectionFromHash();
+    });
+
+    // Game info nav
+    function updateGameInfoNavArrows() {
+      if (!gameInfoNav || !gameInfoNavLeft || !gameInfoNavRight) {
+        return;
       }
 
-      if (gameInfoNav && gameInfoNavLeft && gameInfoNavRight) {
-        gameInfoNav.addEventListener("scroll", updateGameInfoNavArrows);
-        gameInfoNavLeft.addEventListener("click", () => {
-          scrollGameInfoNavBy(
-            -Math.max(200, Math.floor(gameInfoNav.clientWidth * 0.5)),
-          );
-        });
-        gameInfoNavRight.addEventListener("click", () => {
-          scrollGameInfoNavBy(
-            Math.max(200, Math.floor(gameInfoNav.clientWidth * 0.5)),
-          );
-        });
-        window.addEventListener("resize", updateGameInfoNavArrows);
-        updateGameInfoNavArrows();
+      const maxScrollLeft = gameInfoNav.scrollWidth - gameInfoNav.clientWidth;
+      const canScroll = maxScrollLeft > 1;
+      const canScrollLeft = canScroll && gameInfoNav.scrollLeft > 1;
+      const canScrollRight =
+        canScroll && gameInfoNav.scrollLeft < maxScrollLeft - 1;
+
+      gameInfoNavLeft.hidden = !canScrollLeft;
+      gameInfoNavRight.hidden = !canScrollRight;
+    }
+
+    function scrollGameInfoNavBy(distance) {
+      if (!gameInfoNav) {
+        return;
       }
-    </script>
-  </body>
+      gameInfoNav.scrollBy({ left: distance, behavior: "smooth" });
+    }
+
+    if (gameInfoNav && gameInfoNavLeft && gameInfoNavRight) {
+      gameInfoNav.addEventListener("scroll", updateGameInfoNavArrows);
+      gameInfoNavLeft.addEventListener("click", () => {
+        scrollGameInfoNavBy(
+          -Math.max(200, Math.floor(gameInfoNav.clientWidth * 0.5)),
+        );
+      });
+      gameInfoNavRight.addEventListener("click", () => {
+        scrollGameInfoNavBy(
+          Math.max(200, Math.floor(gameInfoNav.clientWidth * 0.5)),
+        );
+      });
+      window.addEventListener("resize", updateGameInfoNavArrows);
+      updateGameInfoNavArrows();
+    }
+
+    // Back-to-top button 
+    const progressRadius = 22;
+    const progressCircumference = 2 * Math.PI * progressRadius;
+
+    if (backToTopProgress) {
+      backToTopProgress.style.strokeDasharray = String(progressCircumference);
+      backToTopProgress.style.strokeDashoffset = String(progressCircumference);
+    }
+
+    function updateBackToTop() {
+      if (!backToTopButton || !backToTopProgress) {
+        return;
+      }
+
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      const scrollableHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
+      const progress =
+        scrollableHeight > 0 ? Math.min(scrollTop / scrollableHeight, 1) : 0;
+      const dashOffset = progressCircumference * (1 - progress);
+
+      backToTopProgress.style.strokeDashoffset = String(dashOffset);
+      backToTopButton.classList.toggle("is-visible", scrollTop > 160);
+    }
+
+    if (backToTopButton) {
+      backToTopButton.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    }
+
+    window.addEventListener("scroll", updateBackToTop, { passive: true });
+    window.addEventListener("resize", updateBackToTop);
+    updateBackToTop();
+  </script>
 </html>

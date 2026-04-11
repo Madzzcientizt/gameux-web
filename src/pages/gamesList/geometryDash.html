@@ -50,120 +50,8 @@
         display: none;
         width: 100%;
 
-<<<<<<< HEAD
-    </footer>
-</body>
-
-<script>
-    // VARIABLES
-    const GAMENAME = "Geometry Dash";
-    const DATERELEASED = "08/13/2013"; // MM/DD/YYYY
-    const PUBLISHER = 'RobTop Games';
-    const BADGE = "Full Release";
-    // Pre-Alpha
-    // Alpha
-    // Beta
-    // Early Access
-    // Full Release
-    const POSTERURL = "../../../public/posters/geometryDash_poster.jpg";
-    const POSTERALTTEXT = "GeometryDash Game Poster";
-    const VIDEOURL = "../../../public/videos/geometryDash_trailer.mp4";
-    const VIDEOURLYT = "https://www.youtube.com/embed/k90y6PIzIaE?si=WpvX2ZZjutEIPOrn";
-    const YTVID = true;
-
-    const GAMEUSERSTARS = "9.1";
-    const GAMEUSERRATINGS = "850,000";
-
-    const HASCRITICS = true;           // Set to false if there are no critic ratings
-    const GAMECRITICSTARS = "0";
-    const GAMECRITICRATINGS = "0";
-
-    const GENRES = ["Rhythm", "Platformer", "Action"];
-    const PLATFORMS = ["PC", "iOS", "Android", "Mac"];
-    const EDITIONS = ["Lite", "Meltdown", "World", "SubZero", "Full Version"];
-
-    const DESCRIPTION = "Jump and fly your way through danger in this rhythm-based action platformer! Prepare for a near impossible challenge in the world of Geometry Dash. Push your skills to the limit as you jump, fly and flip your way through dangerous passages and spiky obstacles.";
-
-    // Document Variables
-    const sectionRadios = Array.from(document.querySelectorAll('input[name="game-section"]'));
-    const gameSections = Array.from(document.querySelectorAll('.game-sections'));
-    const gameInfoNav = document.getElementById('game-info-nav');
-    const gameInfoNavLeft = document.getElementById('game-info-nav-left');
-    const gameInfoNavRight = document.getElementById('game-info-nav-right');
-
-    // -- Implementation --
-    document.getElementById('title').textContent = GAMENAME + " - GameUX";                                                          // Set page title
-    for (let el of document.getElementsByClassName('game-name')) { el.textContent = GAMENAME; }                                     // Set game name
-    for (let el of document.getElementsByClassName('date-released')) { el.textContent = DATERELEASED; }                             // Set date released
-    for (let el of document.getElementsByClassName('publisher')) { el.textContent = PUBLISHER; }                                    // Set publisher
-    for (let el of document.getElementsByClassName('game-badge')) { el.textContent = BADGE; }                                       // Set badge
-    for (let el of document.getElementsByClassName('game-user-rating')) { el.textContent = GAMEUSERSTARS; }                         // Set user rating
-    for (let el of document.getElementsByClassName('game-user-ratings')) { el.textContent = GAMEUSERRATINGS + " user ratings"; }    // Set user ratings
-    for (let el of document.getElementsByClassName('game-critic-rating')) { el.textContent = GAMECRITICSTARS; }                     // Set critic rating
-    for (let el of document.getElementsByClassName('game-critic-ratings')) { el.textContent = GAMECRITICRATINGS + " critic ratings"; } // Set critic ratings
-    for (let el of document.getElementsByClassName('game-poster-content')) { el.src = POSTERURL; }                                  // Set poster content
-    
-    document.getElementById('game-poster-img').src = POSTERURL;                                                                     // Set poster image
-    document.getElementById('game-poster-img').title = GAMENAME + " Game Poster";                                                   // Set poster image title
-    document.getElementById('game-poster').href = POSTERURL;                                                                        // Set poster link
-    document.getElementById('game-description').textContent = DESCRIPTION;                                                          // Set game description
-    document.getElementById('game-poster-img').alt = POSTERALTTEXT;                                                                 // Set poster image alt text
-    // Video / YouTube toggle: show iframe when YTVID is true, otherwise show <video> with source
-    const videoEl = document.getElementById('game-video');
-    const videoSourceEl = document.getElementById('game-video-source');
-    const ytEl = document.getElementById('game-video-yt');
-    if (YTVID) {
-        if (ytEl) { ytEl.src = VIDEOURLYT; ytEl.hidden = false; }
-        if (videoEl) { videoEl.hidden = true; try { videoEl.pause(); } catch (e) {} }
-    } else {
-        if (videoSourceEl) { videoSourceEl.src = VIDEOURL; }
-        if (videoEl) { videoEl.hidden = false; try { videoEl.load(); } catch (e) {} }
-        if (ytEl) { ytEl.hidden = true; ytEl.src = ''; }
-    }
-
-    for (let genre of GENRES) { // Set genres
-        let li = document.createElement('li');
-        li.textContent = genre;
-        document.getElementById('genres').appendChild(li);
-    }
-
-    for (let platform of PLATFORMS) { // Set platforms
-        let li = document.createElement('li');
-        li.textContent = platform;
-        document.getElementById('platforms').appendChild(li);
-    }
-
-    for (let edition of EDITIONS) { // Set editions
-        let li = document.createElement('li');
-        li.textContent = edition;
-        document.getElementById('editions').appendChild(li);
-    }
-
-    // Hide critic ratings
-    if (!HASCRITICS) {
-        for (let el of document.getElementsByClassName('game-critic-rating-cont')) { el.classList.add('hidden'); }
-    }
-
-    // Calculate days ago
-    let timeDiff = new Date().getTime() - new Date(DATERELEASED).getTime();
-    let daysAgo = Math.floor(timeDiff / (1000 * 3600 * 24));
-    if (daysAgo > 365) {
-        let yearsAgo = Math.floor(daysAgo / 365);
-        for (let el of document.getElementsByClassName('days-ago')) { el.textContent = "(" + yearsAgo + (yearsAgo === 1 ? " year ago)" : " years ago)"); }
-    } else {
-        for (let el of document.getElementsByClassName('days-ago')) { el.textContent = "(" + daysAgo + (daysAgo === 1 ? " day ago)" : " days ago)"); }
-    }
-
-    // Sections navigation
-    function showGameSection(sectionId) {
-        for (let section of gameSections) {
-            let isActive = section.id === sectionId;
-            section.classList.toggle('is-active', isActive);
-            section.setAttribute('aria-hidden', String(!isActive));
-=======
         &.is-active {
           display: block;
->>>>>>> 9da5a15 (Revised 10 pages--Added 2 more Game pages)
         }
 
         &#short-description {
@@ -1017,14 +905,20 @@
         bottom: 1.25rem;
         width: 3.5rem;
         height: 3.5rem;
+        border: 0;
+        border-radius: var(--t-radius-selector);
+        background-color: transparent;
+        padding: 0;
+        display: grid;
+        place-items: center;
         z-index: 1001;
-        cursor: pointer;
         opacity: 0;
+        transform: translateY(0.5rem) scale(0.96);
         pointer-events: none;
         transition:
           opacity 0.2s ease,
           transform 0.2s ease;
-        transform: translateY(0.5rem);
+        cursor: pointer;
       }
 
       .back-to-top.is-visible {
@@ -1033,15 +927,39 @@
         transform: translateY(0);
       }
 
-      .back-to-top svg {
-        width: 100%;
-        height: 100%;
+      .back-to-top .btn-bg {
+        fill: var(--t-color-base-100);
+        stroke: var(--t-color-base-300);
+        stroke-width: 1.5;
+      }
+
+      .back-to-top .btn-progress-track {
+        fill: none;
+        stroke: var(--t-color-base-300);
+        stroke-width: 3;
+        opacity: 0.35;
       }
 
       .back-to-top .btn-progress {
+        fill: none;
+        stroke: var(--t-color-primary);
+        stroke-width: 3;
+        stroke-linecap: round;
         transform: rotate(-90deg);
-        transform-origin: center;
+        transform-origin: 28px 28px;
         transition: stroke-dashoffset 0.1s linear;
+      }
+
+      .back-to-top .btn-icon {
+        fill: none;
+        stroke: var(--t-color-primary);
+        stroke-width: 1.8;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .back-to-top:hover .btn-bg {
+        fill: var(--t-color-base-200);
       }
 
       .hidden {
@@ -1352,12 +1270,12 @@
               <div class="major-component">
                 <figure>
                   <a
-                    href="../../../public/gamesContent/geometryDash/playerIcon.png"
+                    href="../../../public/gamesContent/geometryDash/playerIcon.jpg"
                     title="Geometry Dash Player Icon"
                     target="images"
                   >
                     <img
-                      src="../../../public/gamesContent/geometryDash/playerIcon.png"
+                      src="../../../public/gamesContent/geometryDash/playerIcon.jpg"
                       alt="Player Icon"
                     />
                   </a>
@@ -2000,7 +1918,45 @@
       </article>
     </main>
 
-    <footer></footer>
+    <footer>
+      <h6>GameUX Atlas</h6>
+      <ul class="socials"></ul>
+      <div class="footer-info">
+        <span>&copy; Group 5</span>
+        <span>CIP 1101</span>
+        <span>2026</span>
+        <span>GameUX Atlas</span>
+      </div>
+    </footer>
+    <button
+      class="back-to-top"
+      id="back-to-top"
+      type="button"
+      aria-label="Back to top"
+      title="Back to top"
+    >
+      <svg
+        viewBox="0 0 56 56"
+        width="56"
+        height="56"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <circle class="btn-bg" cx="28" cy="28" r="27"></circle>
+        <circle class="btn-progress-track" cx="28" cy="28" r="22"></circle>
+        <circle
+          class="btn-progress"
+          id="back-to-top-progress"
+          cx="28"
+          cy="28"
+          r="22"
+        ></circle>
+        <path class="btn-icon" d="M28 36V20"></path>
+        <path class="btn-icon" d="M21.5 26.5L28 20l6.5 6.5"></path>
+      </svg>
+    </button>
+  </body>
+
 
     <script>
       // VARIABLES
@@ -2034,192 +1990,260 @@
       const DESCRIPTION =
         "Jump and fly your way through danger in this rhythm-based action platformer! Geometry Dash takes the core of a simple one-touch game and elevates it with an incredible soundtrack, robust level editor, and near-impossible challenges.";
 
-      // -- Document Variables --
-      const sectionRadios = Array.from(
+      // Document Variables
+    const sectionRadios = Array.from(
         document.querySelectorAll('input[name="game-section"]'),
-      );
-      const gameSections = Array.from(
+    );
+    const gameSections = Array.from(
         document.querySelectorAll(".game-sections"),
-      );
-      const gameInfoNav = document.getElementById("game-info-nav");
-      const gameInfoNavLeft = document.getElementById("game-info-nav-left");
-      const gameInfoNavRight = document.getElementById("game-info-nav-right");
+    );
+    const gameInfoNav = document.getElementById("game-info-nav");
+    const gameInfoNavLeft = document.getElementById("game-info-nav-left");
+    const gameInfoNavRight = document.getElementById("game-info-nav-right");
+    const backToTopButton = document.getElementById("back-to-top");
+    const backToTopProgress = document.getElementById("back-to-top-progress");
 
-      // -- Implementation --
-      document.getElementById("title").textContent = GAMENAME + " - GameUX"; // Set page title
-      for (let el of document.getElementsByClassName("game-name")) {
+    // -- Implementation --
+    document.getElementById("title").textContent = GAMENAME + " - GameUX"; // Set page title
+    for (let el of document.getElementsByClassName("game-name")) {
         el.textContent = GAMENAME;
-      } // Set game name
-      for (let el of document.getElementsByClassName("date-released")) {
+    } // Set game name
+    for (let el of document.getElementsByClassName("date-released")) {
         el.textContent = DATERELEASED;
-      } // Set date released
-      for (let el of document.getElementsByClassName("publisher")) {
+    } // Set date released
+    for (let el of document.getElementsByClassName("publisher")) {
         el.textContent = PUBLISHER;
-      } // Set publisher
-      for (let el of document.getElementsByClassName("game-badge")) {
+    } // Set publisher
+    for (let el of document.getElementsByClassName("game-badge")) {
         el.textContent = BADGE;
-      } // Set badge
-      for (let el of document.getElementsByClassName("game-user-rating")) {
+    } // Set badge
+    for (let el of document.getElementsByClassName("game-user-rating")) {
         el.textContent = GAMEUSERSTARS;
-      } // Set user rating
-      for (let el of document.getElementsByClassName("game-user-ratings")) {
+    } // Set user rating
+    for (let el of document.getElementsByClassName("game-user-ratings")) {
         el.textContent = GAMEUSERRATINGS + " user ratings";
-      } // Set user ratings
-      for (let el of document.getElementsByClassName("game-critic-rating")) {
+    } // Set user ratings
+    for (let el of document.getElementsByClassName("game-critic-rating")) {
         el.textContent = GAMECRITICSTARS;
-      } // Set critic rating
-      for (let el of document.getElementsByClassName("game-critic-ratings")) {
+    } // Set critic rating
+    for (let el of document.getElementsByClassName("game-critic-ratings")) {
         el.textContent = GAMECRITICRATINGS + " critic ratings";
-      } // Set critic ratings
-      for (let el of document.getElementsByClassName("game-poster-content")) {
+    } // Set critic ratings
+    for (let el of document.getElementsByClassName("game-poster-content")) {
         el.src = POSTERURL;
-      } // Set poster content
-      document.getElementById("game-poster-img").src = POSTERURL; // Set poster image
-      document.getElementById("game-poster-img").title =
+    } // Set poster content
+    document.getElementById("game-poster-img").src = POSTERURL; // Set poster image
+    document.getElementById("game-poster-img").title =
         GAMENAME + " Game Poster"; // Set poster image title
-      document.getElementById("game-poster").href = POSTERURL; // Set poster link
-      document.getElementById("game-description").textContent = DESCRIPTION; // Set game description
-      document.getElementById("game-poster-img").alt = POSTERALTTEXT;
-
-      // Video / YouTube Toggle Logic
-      const videoEl = document.getElementById("game-video");
-      const videoSourceEl = document.getElementById("game-video-source");
-      const ytEl = document.getElementById("game-video-yt");
-      if (YTVID) {
+    document.getElementById("game-poster").href = POSTERURL; // Set poster link
+    document.getElementById("game-description").textContent = DESCRIPTION; // Set game description
+    document.getElementById("game-poster-img").alt = POSTERALTTEXT; // Set poster image alt text
+    // Video / YouTube toggle: show iframe when YTVID is true, otherwise show <video> with source
+    const videoEl = document.getElementById("game-video");
+    const videoSourceEl = document.getElementById("game-video-source");
+    const ytEl = document.getElementById("game-video-yt");
+    if (YTVID) {
         if (ytEl) {
-          ytEl.src = VIDEOURLYT;
-          ytEl.hidden = false;
+            ytEl.src = VIDEOURLYT;
+            ytEl.hidden = false;
         }
         if (videoEl) {
-          videoEl.hidden = true;
-          try {
-            videoEl.pause();
-          } catch (e) {}
+            videoEl.hidden = true;
+            try {
+                videoEl.pause();
+            } catch (e) { }
         }
-      } else {
+    } else {
         if (videoSourceEl) {
-          videoSourceEl.src = VIDEOURL;
+            videoSourceEl.src = VIDEOURL;
         }
         if (videoEl) {
-          videoEl.hidden = false;
-          try {
-            videoEl.load();
-          } catch (e) {}
+            videoEl.hidden = false;
+            try {
+                videoEl.load();
+            } catch (e) { }
         }
         if (ytEl) {
-          ytEl.hidden = true;
-          ytEl.src = "";
+            ytEl.hidden = true;
+            ytEl.src = "";
         }
-      }
+    }
 
-      // Lists
-      for (let genre of GENRES) {
+    for (let genre of GENRES) {
         // Set genres
         let li = document.createElement("li");
         li.textContent = genre;
         document.getElementById("genres").appendChild(li);
-      }
+    }
 
-      for (let platform of PLATFORMS) {
+    for (let platform of PLATFORMS) {
         // Set platforms
         let li = document.createElement("li");
         li.textContent = platform;
         document.getElementById("platforms").appendChild(li);
-      }
+    }
 
-      for (let edition of EDITIONS) {
+    for (let edition of EDITIONS) {
         // Set editions
         let li = document.createElement("li");
         li.textContent = edition;
         document.getElementById("editions").appendChild(li);
-      }
+    }
 
-      // Critic Visibility
-      if (!HASCRITICS) {
+    // Hide critic ratings
+    if (!HASCRITICS) {
         for (let el of document.getElementsByClassName(
-          "game-critic-rating-cont",
+            "game-critic-rating-cont",
         )) {
-          el.classList.add("hidden");
+            el.classList.add("hidden");
         }
-      }
+    }
 
-      // Days/Years Calculation
-      let timeDiff = new Date().getTime() - new Date(DATERELEASED).getTime();
-      let daysAgo = Math.floor(timeDiff / (1000 * 3600 * 24));
-      if (daysAgo > 365) {
+    // Calculate days ago
+    let timeDiff = new Date().getTime() - new Date(DATERELEASED).getTime();
+    let daysAgo = Math.floor(timeDiff / (1000 * 3600 * 24));
+    if (daysAgo > 365) {
         let yearsAgo = Math.floor(daysAgo / 365);
         for (let el of document.getElementsByClassName("days-ago")) {
-          el.textContent = "(" + yearsAgo + " years ago)";
+            el.textContent = "(" + yearsAgo + " years ago)";
         }
-      } else {
+    } else {
         for (let el of document.getElementsByClassName("days-ago")) {
-          el.textContent = "(" + daysAgo + " days ago)";
+            el.textContent = "(" + daysAgo + " days ago)";
         }
-      }
+    }
 
-      // Section Navigation
-      function showGameSection(sectionId) {
+    // Sections navigation
+    function showGameSection(sectionId) {
         for (let section of gameSections) {
-          let isActive = section.id === sectionId;
-          section.classList.toggle("is-active", isActive);
-          section.setAttribute("aria-hidden", String(!isActive));
+            let isActive = section.id === sectionId;
+            section.classList.toggle("is-active", isActive);
+            section.setAttribute("aria-hidden", String(!isActive));
         }
-      }
+    }
 
-      const defaultSection = document.querySelector(
+    function getSectionIdFromHash() {
+        const rawHash = window.location.hash || "";
+        const hash = rawHash.startsWith("#") ? rawHash.slice(1) : rawHash;
+        if (!hash) {
+            return null;
+        }
+        return gameSections.some((section) => section.id === hash) ? hash : null;
+    }
+
+    function syncSectionFromHash() {
+        const hashSectionId = getSectionIdFromHash();
+        if (!hashSectionId) {
+            return false;
+        }
+
+        const matchingRadio = sectionRadios.find((radio) => radio.value === hashSectionId);
+        if (matchingRadio) {
+            matchingRadio.checked = true;
+        }
+        showGameSection(hashSectionId);
+        return true;
+    }
+
+    const defaultSection = document.querySelector(
         'input[name="game-section"]:checked',
-      );
-      showGameSection(
-        defaultSection ? defaultSection.value : "short-description",
-      );
+    );
+    if (!syncSectionFromHash()) {
+        showGameSection(
+            defaultSection ? defaultSection.value : "short-description",
+        );
+    }
 
-      for (let radio of sectionRadios) {
+    for (let radio of sectionRadios) {
         radio.addEventListener("change", () => {
-          if (!radio.checked) {
-            return;
-          }
-          showGameSection(radio.value);
+            if (!radio.checked) {
+                return;
+            }
+            showGameSection(radio.value);
+            if (history.replaceState) {
+                history.replaceState(null, "", `#${radio.value}`);
+            } else {
+                window.location.hash = radio.value;
+            }
         });
-      }
+    }
 
-      // Scroll Navigation Arrows
-      function updateGameInfoNavArrows() {
+    window.addEventListener("hashchange", () => {
+        syncSectionFromHash();
+    });
+
+    // Game info nav
+    function updateGameInfoNavArrows() {
         if (!gameInfoNav || !gameInfoNavLeft || !gameInfoNavRight) {
-          return;
+            return;
         }
 
         const maxScrollLeft = gameInfoNav.scrollWidth - gameInfoNav.clientWidth;
         const canScroll = maxScrollLeft > 1;
         const canScrollLeft = canScroll && gameInfoNav.scrollLeft > 1;
         const canScrollRight =
-          canScroll && gameInfoNav.scrollLeft < maxScrollLeft - 1;
+            canScroll && gameInfoNav.scrollLeft < maxScrollLeft - 1;
 
         gameInfoNavLeft.hidden = !canScrollLeft;
         gameInfoNavRight.hidden = !canScrollRight;
-      }
+    }
 
-      function scrollGameInfoNavBy(distance) {
+    function scrollGameInfoNavBy(distance) {
         if (!gameInfoNav) {
-          return;
+            return;
         }
         gameInfoNav.scrollBy({ left: distance, behavior: "smooth" });
-      }
+    }
 
-      if (gameInfoNav && gameInfoNavLeft && gameInfoNavRight) {
+    if (gameInfoNav && gameInfoNavLeft && gameInfoNavRight) {
         gameInfoNav.addEventListener("scroll", updateGameInfoNavArrows);
         gameInfoNavLeft.addEventListener("click", () => {
-          scrollGameInfoNavBy(
-            -Math.max(200, Math.floor(gameInfoNav.clientWidth * 0.5)),
-          );
+            scrollGameInfoNavBy(
+                -Math.max(200, Math.floor(gameInfoNav.clientWidth * 0.5)),
+            );
         });
         gameInfoNavRight.addEventListener("click", () => {
-          scrollGameInfoNavBy(
-            Math.max(200, Math.floor(gameInfoNav.clientWidth * 0.5)),
-          );
+            scrollGameInfoNavBy(
+                Math.max(200, Math.floor(gameInfoNav.clientWidth * 0.5)),
+            );
         });
         window.addEventListener("resize", updateGameInfoNavArrows);
         updateGameInfoNavArrows();
-      }
-    </script>
-  </body>
+    }
+
+    // Back-to-top button
+    const progressRadius = 22;
+    const progressCircumference = 2 * Math.PI * progressRadius;
+
+    if (backToTopProgress) {
+        backToTopProgress.style.strokeDasharray = String(progressCircumference);
+        backToTopProgress.style.strokeDashoffset = String(progressCircumference);
+    }
+
+    function updateBackToTop() {
+        if (!backToTopButton || !backToTopProgress) {
+            return;
+        }
+
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        const scrollableHeight =
+            document.documentElement.scrollHeight - window.innerHeight;
+        const progress = scrollableHeight > 0 ? Math.min(scrollTop / scrollableHeight, 1) : 0;
+        const dashOffset = progressCircumference * (1 - progress);
+
+        backToTopProgress.style.strokeDashoffset = String(dashOffset);
+        backToTopButton.classList.toggle("is-visible", scrollTop > 160);
+    }
+
+    if (backToTopButton) {
+        backToTopButton.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    }
+
+    window.addEventListener("scroll", updateBackToTop, { passive: true });
+    window.addEventListener("resize", updateBackToTop);
+    updateBackToTop();
+</script>
+
 </html>

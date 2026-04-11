@@ -24,7 +24,11 @@
     ></script>
 
     <link rel="stylesheet" href="../../styles/styles.css" type="text/css" />
-    <link rel="stylesheet" href="../../styles/sizeChecker.css" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="../../styles/sizeChecker.css"
+      type="text/css"
+    />
     <link rel="stylesheet" href="../../styles/game.css" type="text/css" />
     <style>
       nav.game-info-nav {
@@ -901,14 +905,20 @@
         bottom: 1.25rem;
         width: 3.5rem;
         height: 3.5rem;
+        border: 0;
+        border-radius: var(--t-radius-selector);
+        background-color: transparent;
+        padding: 0;
+        display: grid;
+        place-items: center;
         z-index: 1001;
-        cursor: pointer;
         opacity: 0;
+        transform: translateY(0.5rem) scale(0.96);
         pointer-events: none;
         transition:
           opacity 0.2s ease,
           transform 0.2s ease;
-        transform: translateY(0.5rem);
+        cursor: pointer;
       }
 
       .back-to-top.is-visible {
@@ -917,15 +927,39 @@
         transform: translateY(0);
       }
 
-      .back-to-top svg {
-        width: 100%;
-        height: 100%;
+      .back-to-top .btn-bg {
+        fill: var(--t-color-base-100);
+        stroke: var(--t-color-base-300);
+        stroke-width: 1.5;
+      }
+
+      .back-to-top .btn-progress-track {
+        fill: none;
+        stroke: var(--t-color-base-300);
+        stroke-width: 3;
+        opacity: 0.35;
       }
 
       .back-to-top .btn-progress {
+        fill: none;
+        stroke: var(--t-color-primary);
+        stroke-width: 3;
+        stroke-linecap: round;
         transform: rotate(-90deg);
-        transform-origin: center;
+        transform-origin: 28px 28px;
         transition: stroke-dashoffset 0.1s linear;
+      }
+
+      .back-to-top .btn-icon {
+        fill: none;
+        stroke: var(--t-color-primary);
+        stroke-width: 1.8;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .back-to-top:hover .btn-bg {
+        fill: var(--t-color-base-200);
       }
 
       .hidden {
@@ -941,7 +975,11 @@
       <nav class="navbar navbar-light navbar-expand-lg">
         <div class="container-fluid">
           <a class="navbar-brand" href="../../index.html">
-            <img src="../../../public/gameux.png" alt="Logo" class="navbar-logo" />
+            <img
+              src="../../../public/gameux.png"
+              alt="Logo"
+              class="navbar-logo"
+            />
           </a>
           <button
             class="navbar-toggler"
@@ -999,8 +1037,16 @@
               <table class="game-critic-rating-cont">
                 <tr>
                   <td rowspan="2">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                      <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z" clip-rule="evenodd" />
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                        clip-rule="evenodd"
+                      />
                     </svg>
                   </td>
                   <td class="game-critic-rating">0</td>
@@ -1013,22 +1059,40 @@
           </div>
           <div class="video-game-container">
             <a class="game-poster" id="game-poster">
-              <img class="game-poster-img" id="game-poster-img" alt="Genshin Poster" />
+              <img
+                class="game-poster-img"
+                id="game-poster-img"
+                alt="Genshin Poster"
+              />
             </a>
             <div class="game-video-wrp">
               <video class="game-video" id="game-video" controls>
                 <source type="video/mp4" id="game-video-source" />
                 Your browser does not support the video tag.
               </video>
-              <iframe class="game-video" id="game-video-yt" frameborder="0" allowfullscreen hidden></iframe>
+              <iframe
+                class="game-video"
+                id="game-video-yt"
+                frameborder="0"
+                allowfullscreen
+                hidden
+              ></iframe>
             </div>
 
             <div class="game-rating">
               <table class="game-user-rating-cont">
                 <tr>
                   <td rowspan="2">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                      <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z" clip-rule="evenodd" />
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                        clip-rule="evenodd"
+                      />
                     </svg>
                   </td>
                   <td class="game-user-rating">0</td>
@@ -1040,8 +1104,16 @@
               <table class="game-critic-rating-cont">
                 <tr>
                   <td rowspan="2">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                      <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z" clip-rule="evenodd" />
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                        clip-rule="evenodd"
+                      />
                     </svg>
                   </td>
                   <td class="game-critic-rating">0</td>
@@ -1074,15 +1146,60 @@
       <div class="game-info-nav-container">
         <div class="game-info-nav-wrap">
           <nav class="game-info-nav" id="game-info-nav" role="tablist">
-            <label role="tab"><input type="radio" name="game-section" value="short-description" checked="checked" /> Overview</label>
-            <label role="tab"><input type="radio" name="game-section" value="ui-components" /> UI Components</label>
-            <label role="tab"><input type="radio" name="game-section" value="user-interaction" /> Interaction</label>
-            <label role="tab"><input type="radio" name="game-section" value="hci-principles" /> HCI Principles</label>
-            <label role="tab"><input type="radio" name="game-section" value="ui-ux-weaknesses" /> Analysis</label>
+            <label role="tab"
+              ><input
+                type="radio"
+                name="game-section"
+                value="short-description"
+                checked="checked"
+              />
+              Overview</label
+            >
+            <label role="tab"
+              ><input type="radio" name="game-section" value="ui-components" />
+              UI Components</label
+            >
+            <label role="tab"
+              ><input
+                type="radio"
+                name="game-section"
+                value="user-interaction"
+              />
+              Interaction</label
+            >
+            <label role="tab"
+              ><input type="radio" name="game-section" value="hci-principles" />
+              HCI Principles</label
+            >
+            <label role="tab"
+              ><input
+                type="radio"
+                name="game-section"
+                value="ui-ux-weaknesses"
+              />
+              Analysis</label
+            >
           </nav>
-          <button class="game-info-nav-arrow right" id="game-info-nav-right" type="button" aria-label="Scroll sections right" hidden="">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="20" height="20">
-              <path fill-rule="evenodd" d="M8.22 4.72a.75.75 0 0 1 1.06 0l6.5 6.5a.75.75 0 0 1 0 1.06l-6.5 6.5a.75.75 0 0 1-1.06-1.06L14.19 12 8.22 6.28a.75.75 0 0 1 0-1.56Z" clip-rule="evenodd"></path>
+          <button
+            class="game-info-nav-arrow right"
+            id="game-info-nav-right"
+            type="button"
+            aria-label="Scroll sections right"
+            hidden=""
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+              width="20"
+              height="20"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M8.22 4.72a.75.75 0 0 1 1.06 0l6.5 6.5a.75.75 0 0 1 0 1.06l-6.5 6.5a.75.75 0 0 1-1.06-1.06L14.19 12 8.22 6.28a.75.75 0 0 1 0-1.56Z"
+                clip-rule="evenodd"
+              ></path>
             </svg>
           </button>
         </div>
@@ -1090,7 +1207,11 @@
 
       <article>
         <div class="game-sections-stage">
-          <section class="game-sections is-active" id="short-description" aria-hidden="false">
+          <section
+            class="game-sections is-active"
+            id="short-description"
+            aria-hidden="false"
+          >
             <h2>Overview</h2>
             <ul class="list-style">
               <h2>Core Gameplay Loops:</h2>
@@ -1099,31 +1220,45 @@
               <li>"Inventory Management Simulator" (Gacha/Grind)</li>
             </ul>
             <p>
-              Genshin Impact is a massive, free-to-play action RPG developed by HoYoverse. Set in the sprawling fantasy world of Teyvat, players control the "Traveler" and build a party of four distinct characters, chaining elemental attacks to trigger cascading combat reactions. 
+              Genshin Impact is a massive, free-to-play action RPG developed by
+              HoYoverse. Set in the sprawling fantasy world of Teyvat, players
+              control the "Traveler" and build a party of four distinct
+              characters, chaining elemental attacks to trigger cascading combat
+              reactions.
             </p>
             <p>
-              From a UI/UX perspective, Genshin Impact is a fascinating contradiction. It must seamlessly blend the spatial 3D navigation of a sweeping open-world adventure with the dense, spreadsheet-heavy menus of a mobile gacha game. It demands high-speed mechanical execution during boss fights while simultaneously employing complex psychological UX patterns (like the dreaded "Red Dot Notification" syndrome) to drive daily user retention.
+              From a UI/UX perspective, Genshin Impact is a fascinating
+              contradiction. It must seamlessly blend the spatial 3D navigation
+              of a sweeping open-world adventure with the dense,
+              spreadsheet-heavy menus of a mobile gacha game. It demands
+              high-speed mechanical execution during boss fights while
+              simultaneously employing complex psychological UX patterns (like
+              the dreaded "Red Dot Notification" syndrome) to drive daily user
+              retention.
             </p>
             <ul class="metrics-list">
               <li>
                 <h6>Cognitive Load</h6>
                 <div class="value">Variable (Low to Overwhelming)</div>
                 <div class="desc">
-                  Low during exploration; extreme when managing artifacts, weapon refinements, and team synergy stats.
+                  Low during exploration; extreme when managing artifacts,
+                  weapon refinements, and team synergy stats.
                 </div>
               </li>
               <li>
                 <h6>Interaction Frequency</h6>
                 <div class="value">High APM (Combat)</div>
                 <div class="desc">
-                  Requires constant character swapping (1-4 keys) to maximize elemental cooldowns.
+                  Requires constant character swapping (1-4 keys) to maximize
+                  elemental cooldowns.
                 </div>
               </li>
               <li>
                 <h6>Retention Mechanics</h6>
                 <div class="value">Skinner Box Design</div>
                 <div class="desc">
-                  Utilizes variable-ratio reward schedules to maximize the dopamine feedback loop of the Wish system.
+                  Utilizes variable-ratio reward schedules to maximize the
+                  dopamine feedback loop of the Wish system.
                 </div>
               </li>
             </ul>
@@ -1134,8 +1269,15 @@
             <div class="major-components">
               <div class="major-component">
                 <figure>
-                  <a href="../../../public/gamesContent/genshin/radial.jpg" title="The Radial Menu" target="images">
-                    <img src="../../../public/gamesContent/genshin/radial.jpg" alt="Quick Select Wheel" />
+                  <a
+                    href="../../../public/gamesContent/genshin/radial.jpg"
+                    title="The Radial Menu"
+                    target="images"
+                  >
+                    <img
+                      src="../../../public/gamesContent/genshin/radial.jpg"
+                      alt="Quick Select Wheel"
+                    />
                   </a>
                   <figcaption>FIG 1.1: The Shortcut Wheel</figcaption>
                 </figure>
@@ -1143,7 +1285,11 @@
                   <span class="count">[ ELEMENT_01 ]</span>
                   <span class="header-text">The Radial Menu</span>
                   <p>
-                    A staple of cross-platform design, the radial menu allows players to quickly access the Map, Inventory, Character Screen, or Quest Log without memorizing a dozen hotkeys. It bridges the gap between controller joysticks and keyboard-mouse setups.
+                    A staple of cross-platform design, the radial menu allows
+                    players to quickly access the Map, Inventory, Character
+                    Screen, or Quest Log without memorizing a dozen hotkeys. It
+                    bridges the gap between controller joysticks and
+                    keyboard-mouse setups.
                   </p>
                   <ul>
                     <h6>Functionality</h6>
@@ -1154,8 +1300,15 @@
               </div>
               <div class="major-component">
                 <figure>
-                  <a href="../../../public/gamesContent/genshin/wish.jpg" title="The Wish Screen" target="images">
-                    <img src="../../../public/gamesContent/genshin/wish.jpg" alt="Gacha Pull Screen" />
+                  <a
+                    href="../../../public/gamesContent/genshin/wish.jpg"
+                    title="The Wish Screen"
+                    target="images"
+                  >
+                    <img
+                      src="../../../public/gamesContent/genshin/wish.jpg"
+                      alt="Gacha Pull Screen"
+                    />
                   </a>
                   <figcaption>FIG 1.2: The Gacha Slot Machine</figcaption>
                 </figure>
@@ -1163,14 +1316,25 @@
                   <span class="count">[ ELEMENT_02 ]</span>
                   <span class="header-text">The "Wish" Screen</span>
                   <p>
-                    The monetization engine. The UI here is deliberately distinct from the rest of the game—utilizing opulent gold trims, specific audio stingers, and an unskippable "falling star" animation to build anticipation before revealing the reward.
+                    The monetization engine. The UI here is deliberately
+                    distinct from the rest of the game—utilizing opulent gold
+                    trims, specific audio stingers, and an unskippable "falling
+                    star" animation to build anticipation before revealing the
+                    reward.
                   </p>
                 </div>
               </div>
               <div class="major-component">
                 <figure>
-                  <a href="../../../public/gamesContent/genshin/party.png" title="Party Status HUD" target="images">
-                    <img src="../../../public/gamesContent/genshin/party.png" alt="Party Lineup" />
+                  <a
+                    href="../../../public/gamesContent/genshin/party.png"
+                    title="Party Status HUD"
+                    target="images"
+                  >
+                    <img
+                      src="../../../public/gamesContent/genshin/party.png"
+                      alt="Party Lineup"
+                    />
                   </a>
                   <figcaption>FIG 1.3: The Party Sidebar</figcaption>
                 </figure>
@@ -1178,7 +1342,10 @@
                   <span class="count">[ ELEMENT_03 ]</span>
                   <span class="header-text">Combat Roster</span>
                   <p>
-                    Anchored to the right (or dynamically mapped to the D-Pad), this HUD element displays the health, elemental burst readiness, and active status effects of your off-field characters, crucial for timing combo rotations.
+                    Anchored to the right (or dynamically mapped to the D-Pad),
+                    this HUD element displays the health, elemental burst
+                    readiness, and active status effects of your off-field
+                    characters, crucial for timing combo rotations.
                   </p>
                 </div>
               </div>
@@ -1188,20 +1355,37 @@
             <div class="fittslaw">
               <div>
                 <p>
-                  In UI design, the "Red Dot" indicator is used to notify a user of unread information or a claimable reward. Genshin Impact heavily weaponizes this. Because Fitt's Law states that target acquisition speed relies on size and distance, the game places these bright red notification badges on almost every primary menu icon.
+                  In UI design, the "Red Dot" indicator is used to notify a user
+                  of unread information or a claimable reward. Genshin Impact
+                  heavily weaponizes this. Because Fitt's Law states that target
+                  acquisition speed relies on size and distance, the game places
+                  these bright red notification badges on almost every primary
+                  menu icon.
                 </p>
                 <div class="mathmodel">
                   <h6>[ PSYCHOLOGICAL MODEL ]</h6>
                   <span>Compulsion Loop = Trigger → Action → Reward</span>
                 </div>
                 <p>
-                  The user's eye is immediately drawn to the high-contrast red dots against the calm, translucent UI panels. To "clear" the dot, the player must navigate deeply into sub-menus (e.g., claiming a daily commission or a battle pass tier). This creates a highly effective, albeit fatiguing, daily interaction habit.
+                  The user's eye is immediately drawn to the high-contrast red
+                  dots against the calm, translucent UI panels. To "clear" the
+                  dot, the player must navigate deeply into sub-menus (e.g.,
+                  claiming a daily commission or a battle pass tier). This
+                  creates a highly effective, albeit fatiguing, daily
+                  interaction habit.
                 </p>
               </div>
               <div>
                 <figure>
-                  <a href="../../../public/gamesContent/genshin/reddots.png" title="Menu Notifications" target="images">
-                    <img src="../../../public/gamesContent/genshin/reddots.png" alt="UI with red dots" />
+                  <a
+                    href="../../../public/gamesContent/genshin/reddots.png"
+                    title="Menu Notifications"
+                    target="images"
+                  >
+                    <img
+                      src="../../../public/gamesContent/genshin/reddots.png"
+                      alt="UI with red dots"
+                    />
                   </a>
                   <figcaption>FIG 1.4: Notification Overload</figcaption>
                 </figure>
@@ -1215,32 +1399,50 @@
                 <li>
                   <h6>Immediate Combat</h6>
                   <p>
-                    Centered on the 3D character model. Huge, colorful particle effects trigger during "Elemental Reactions" (e.g., Overload, Freeze), dominating the visual space to confirm damage outputs.
+                    Centered on the 3D character model. Huge, colorful particle
+                    effects trigger during "Elemental Reactions" (e.g.,
+                    Overload, Freeze), dominating the visual space to confirm
+                    damage outputs.
                   </p>
                 </li>
                 <li>
                   <h6>Navigation Aids</h6>
                   <p>
-                    The top-left Minimap and floating spatial waypoints. These elements glow softly, providing constant geographic orientation without intruding on the active combat space.
+                    The top-left Minimap and floating spatial waypoints. These
+                    elements glow softly, providing constant geographic
+                    orientation without intruding on the active combat space.
                   </p>
                 </li>
                 <li>
                   <h6>System Maintenance</h6>
                   <p>
-                    Tucked away under hotkeys or radial menus. The screen remains incredibly clean during open-world traversal until the player actively chooses to engage with Paimon's domain (the pause menu).
+                    Tucked away under hotkeys or radial menus. The screen
+                    remains incredibly clean during open-world traversal until
+                    the player actively chooses to engage with Paimon's domain
+                    (the pause menu).
                   </p>
                 </li>
               </ol>
             </div>
             <div class="footnote">
-              The genius of Genshin's UI is its "Progressive Disclosure." By default, the screen is as clean as a single-player console adventure. It only transforms into a dense, spreadsheet-style MMO interface when the player explicitly opens the character or inventory screens.
+              The genius of Genshin's UI is its "Progressive Disclosure." By
+              default, the screen is as clean as a single-player console
+              adventure. It only transforms into a dense, spreadsheet-style MMO
+              interface when the player explicitly opens the character or
+              inventory screens.
             </div>
           </section>
 
-          <section class="game-sections" id="user-interaction" aria-hidden="true">
+          <section
+            class="game-sections"
+            id="user-interaction"
+            aria-hidden="true"
+          >
             <h2>User Interaction</h2>
             <p>
-              A breakdown of the rapid-swap combat mechanics and the multi-modal feedback loops designed to make both combat and gacha pulls inherently satisfying.
+              A breakdown of the rapid-swap combat mechanics and the multi-modal
+              feedback loops designed to make both combat and gacha pulls
+              inherently satisfying.
             </p>
             <div class="list-style-area">
               <h3 class="text-center">The Elemental Swap Loop</h3>
@@ -1248,25 +1450,29 @@
                 <li>
                   <h6>Apply (Primer)</h6>
                   <p>
-                    Cast a foundational element (e.g., Hydro) on an enemy using Character A.
+                    Cast a foundational element (e.g., Hydro) on an enemy using
+                    Character A.
                   </p>
                 </li>
                 <li>
                   <h6>Swap</h6>
                   <p>
-                    Instantaneously press 1-4 to bring Character B onto the field, swapping out the UI abilities.
+                    Instantaneously press 1-4 to bring Character B onto the
+                    field, swapping out the UI abilities.
                   </p>
                 </li>
                 <li>
                   <h6>React (Detonator)</h6>
                   <p>
-                    Cast a secondary element (e.g., Pyro) to trigger a "Vaporize" reaction for massive damage.
+                    Cast a secondary element (e.g., Pyro) to trigger a
+                    "Vaporize" reaction for massive damage.
                   </p>
                 </li>
                 <li>
                   <h6>Battery</h6>
                   <p>
-                    Collect the resulting elemental energy particles to charge the team's ultimate "Burst" abilities.
+                    Collect the resulting elemental energy particles to charge
+                    the team's ultimate "Burst" abilities.
                   </p>
                 </li>
               </ol>
@@ -1275,13 +1481,23 @@
             <div class="multi-modal-feedback">
               <div>
                 <p>
-                  Whether you are cracking open a treasure chest in the wild or securing a 5-star character in the Wish menu, HoYoverse relies on a synchronized blast of sensory feedback to enforce the reward cycle.
+                  Whether you are cracking open a treasure chest in the wild or
+                  securing a 5-star character in the Wish menu, HoYoverse relies
+                  on a synchronized blast of sensory feedback to enforce the
+                  reward cycle.
                 </p>
               </div>
               <div>
                 <figure>
-                  <a href="../../../public/gamesContent/genshin/gachaFeedback.png" title="Wish Animation Feedback" target="images">
-                    <img src="../../../public/gamesContent/genshin/gachaFeedback.png" alt="Genshin Pull Animation" />
+                  <a
+                    href="../../../public/gamesContent/genshin/gachaFeedback.png"
+                    title="Wish Animation Feedback"
+                    target="images"
+                  >
+                    <img
+                      src="../../../public/gamesContent/genshin/gachaFeedback.png"
+                      alt="Genshin Pull Animation"
+                    />
                   </a>
                   <figcaption>FIG 1.5: The Anticipation-Reward Loop</figcaption>
                 </figure>
@@ -1290,41 +1506,86 @@
             <ul>
               <li>
                 <div class="logo-svg">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25l4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z"></path>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25l4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z"
+                    ></path>
                   </svg>
                 </div>
                 <div>
                   <h6>Audio Feedback</h6>
                   <p>
-                    Loot collection triggers ascending, musical chime effects. During combat, distinct sound cues ring out when an off-field character's Burst is fully charged, removing the need to constantly monitor the UI sidebar.
+                    Loot collection triggers ascending, musical chime effects.
+                    During combat, distinct sound cues ring out when an
+                    off-field character's Burst is fully charged, removing the
+                    need to constantly monitor the UI sidebar.
                   </p>
                 </div>
               </li>
               <li>
                 <div class="logo-svg">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z"></path>
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"></path>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z"
+                    ></path>
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                    ></path>
                   </svg>
                 </div>
                 <div>
                   <h6>Visual Feedback</h6>
                   <p>
-                    The Wish screen changes color meteorically—Blue for 3-star, Purple for 4-star, and Gold for a highly coveted 5-star drop. In combat, damage numbers are color-coded by element (e.g., Green for Dendro, Purple for Electro) to parse chaotic skirmishes.
+                    The Wish screen changes color meteorically—Blue for 3-star,
+                    Purple for 4-star, and Gold for a highly coveted 5-star
+                    drop. In combat, damage numbers are color-coded by element
+                    (e.g., Green for Dendro, Purple for Electro) to parse
+                    chaotic skirmishes.
                   </p>
                 </div>
               </li>
               <li>
                 <div class="logo-svg">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M7.864 4.243A7.5 7.5 0 0 1 19.5 10.5c0 2.92-.556 5.709-1.568 8.268M5.742 6.364A7.465 7.465 0 0 0 4.5 10.5a7.464 7.464 0 0 1-1.15 3.993m1.989 3.559A11.209 11.209 0 0 0 8.25 10.5a3.75 3.75 0 1 1 7.5 0c0 .527-.021 1.049-.064 1.565M12 10.5a14.94 14.94 0 0 1-3.6 9.75m6.633-4.596a18.666 18.666 0 0 1-2.485 5.33"></path>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="size-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M7.864 4.243A7.5 7.5 0 0 1 19.5 10.5c0 2.92-.556 5.709-1.568 8.268M5.742 6.364A7.465 7.465 0 0 0 4.5 10.5a7.464 7.464 0 0 1-1.15 3.993m1.989 3.559A11.209 11.209 0 0 0 8.25 10.5a3.75 3.75 0 1 1 7.5 0c0 .527-.021 1.049-.064 1.565M12 10.5a14.94 14.94 0 0 1-3.6 9.75m6.633-4.596a18.666 18.666 0 0 1-2.485 5.33"
+                    ></path>
                   </svg>
                 </div>
                 <div>
                   <h6>Input/Tactile Fidelity</h6>
                   <p>
-                    Hit-stop mechanics (momentarily freezing the animation upon striking an enemy) gives heavy weapons like Claymores a satisfying, weighty feel, translating digital damage into a perceived tactile "crunch."
+                    Hit-stop mechanics (momentarily freezing the animation upon
+                    striking an enemy) gives heavy weapons like Claymores a
+                    satisfying, weighty feel, translating digital damage into a
+                    perceived tactile "crunch."
                   </p>
                 </div>
               </li>
@@ -1338,17 +1599,23 @@
               <div class="cybernetic-content">
                 <div>
                   <p style="text-align: justify">
-                    Designing an interface that works flawlessly on a 6-inch mobile touchscreen and a 60-inch 4K television is an immense HCI challenge. Genshin Impact solves this by using massive, thumb-friendly tap targets on mobile that seamlessly map to bumper buttons and D-pads on console controllers.
+                    Designing an interface that works flawlessly on a 6-inch
+                    mobile touchscreen and a 60-inch 4K television is an immense
+                    HCI challenge. Genshin Impact solves this by using massive,
+                    thumb-friendly tap targets on mobile that seamlessly map to
+                    bumper buttons and D-pads on console controllers.
                   </p>
                 </div>
                 <div>
                   <ul class="primary-modalities">
                     <h6>Adaptive Modalities</h6>
                     <li>
-                      <strong>Mobile</strong>: Tap-to-loot lists appear next to the character; abilities are large virtual buttons.
+                      <strong>Mobile</strong>: Tap-to-loot lists appear next to
+                      the character; abilities are large virtual buttons.
                     </li>
                     <li>
-                      <strong>Console</strong>: Radial menus take over for mouse cursors; AoE targeting snaps to enemies.
+                      <strong>Console</strong>: Radial menus take over for mouse
+                      cursors; AoE targeting snaps to enemies.
                     </li>
                   </ul>
                 </div>
@@ -1358,14 +1625,23 @@
             <div class="spatial-congruence">
               <h2>Spatial Cartography & Waypoints</h2>
               <p style="text-align: justify">
-                The map UI is crucial to the game's exploration loop. Custom pins allow players to create their own spatial logic, marking resource farming routes or unsolved puzzles. The inclusion of an "elevation indicator" on the minimap drastically reduces spatial confusion, preventing players from endlessly searching a mountain peak for an objective that is actually located in a subterranean cave network below them.
+                The map UI is crucial to the game's exploration loop. Custom
+                pins allow players to create their own spatial logic, marking
+                resource farming routes or unsolved puzzles. The inclusion of an
+                "elevation indicator" on the minimap drastically reduces spatial
+                confusion, preventing players from endlessly searching a
+                mountain peak for an objective that is actually located in a
+                subterranean cave network below them.
               </p>
             </div>
 
             <div class="cognitive-load-bifurcation">
               <h2>Information Density & The Artifact Grind</h2>
               <p style="text-align: justify; margin-bottom: 2em">
-                While exploration is light on cognitive load, the end-game "Artifact" system (gear optimization) is intensely heavy. Managing thousands of items requires exceptional filtering and sorting UI tools to prevent analysis paralysis.
+                While exploration is light on cognitive load, the end-game
+                "Artifact" system (gear optimization) is intensely heavy.
+                Managing thousands of items requires exceptional filtering and
+                sorting UI tools to prevent analysis paralysis.
               </p>
               <table>
                 <thead>
@@ -1379,13 +1655,17 @@
                     <td>
                       <h6>Filtering Tools</h6>
                       <p>
-                        UI drop-downs allow users to sort gear by main-stats, sub-stats, or set bonuses, mechanically offloading the burden of manual searching.
+                        UI drop-downs allow users to sort gear by main-stats,
+                        sub-stats, or set bonuses, mechanically offloading the
+                        burden of manual searching.
                       </p>
                     </td>
                     <td>
                       <h6>Theorycrafting Mastery</h6>
                       <p>
-                        Calculating complex damage multipliers and team synergies, requiring a deep understanding of internal game math.
+                        Calculating complex damage multipliers and team
+                        synergies, requiring a deep understanding of internal
+                        game math.
                       </p>
                     </td>
                   </tr>
@@ -1393,13 +1673,16 @@
                     <td>
                       <h6>Locking Mechanisms</h6>
                       <p>
-                        A simple "padlock" icon prevents users from accidentally deleting or consuming high-value gear during mass upgrades.
+                        A simple "padlock" icon prevents users from accidentally
+                        deleting or consuming high-value gear during mass
+                        upgrades.
                       </p>
                     </td>
                     <td>
                       <h6>Resource Management</h6>
                       <p>
-                        Balancing "Resin" (the daily stamina currency) against which domains to run for maximum account progression.
+                        Balancing "Resin" (the daily stamina currency) against
+                        which domains to run for maximum account progression.
                       </p>
                     </td>
                   </tr>
@@ -1408,15 +1691,24 @@
             </div>
             <div class="footnote">
               <q>
-                The UI is a masterclass in shifting states. It is entirely unobtrusive while climbing a mountain, yet highly robust when calculating the percentage differentials of a critical damage circlet in the menu screen.
+                The UI is a masterclass in shifting states. It is entirely
+                unobtrusive while climbing a mountain, yet highly robust when
+                calculating the percentage differentials of a critical damage
+                circlet in the menu screen.
               </q>
             </div>
           </section>
 
-          <section class="game-sections" id="ui-ux-weaknesses" aria-hidden="true">
+          <section
+            class="game-sections"
+            id="ui-ux-weaknesses"
+            aria-hidden="true"
+          >
             <h2>Strengths and Weaknesses Analysis</h2>
             <p>
-              Evaluating the friction between an expansive, beautiful open world and the restrictive, sometimes fatiguing systems of live-service monetization.
+              Evaluating the friction between an expansive, beautiful open world
+              and the restrictive, sometimes fatiguing systems of live-service
+              monetization.
             </p>
 
             <table style="margin-bottom: 2em">
@@ -1437,30 +1729,60 @@
                   <td>
                     <div class="sw-item-head">
                       <span class="sw-icon" aria-hidden="true">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m0 13.5V21m9-9h-2.25M5.25 12H3m15.364 6.364-1.59-1.59M7.226 7.226l-1.59-1.59m12.728 0-1.59 1.59M7.226 16.774l-1.59 1.59"></path>
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"></path>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M12 3v2.25m0 13.5V21m9-9h-2.25M5.25 12H3m15.364 6.364-1.59-1.59M7.226 7.226l-1.59-1.59m12.728 0-1.59 1.59M7.226 16.774l-1.59 1.59"
+                          ></path>
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                          ></path>
                         </svg>
                       </span>
                       <span class="label">01_AESTHETIC</span>
                     </div>
                     <h6>Visual Clarity & Polish</h6>
                     <p>
-                      The UI utilizes a clean, translucent "frosted glass" aesthetic. It manages to present a staggering amount of RPG data (stats, lore, weapon details) without ever feeling claustrophobic or visually heavy.
+                      The UI utilizes a clean, translucent "frosted glass"
+                      aesthetic. It manages to present a staggering amount of
+                      RPG data (stats, lore, weapon details) without ever
+                      feeling claustrophobic or visually heavy.
                     </p>
                   </td>
                   <td>
                     <div class="sw-item-head">
                       <span class="sw-icon" aria-hidden="true">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75M6.75 10.5h10.5A2.25 2.25 0 0 1 19.5 12.75v6A2.25 2.25 0 0 1 17.25 21H6.75A2.25 2.25 0 0 1 4.5 18.75v-6A2.25 2.25 0 0 1 6.75 10.5Z"></path>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75M6.75 10.5h10.5A2.25 2.25 0 0 1 19.5 12.75v6A2.25 2.25 0 0 1 17.25 21H6.75A2.25 2.25 0 0 1 4.5 18.75v-6A2.25 2.25 0 0 1 6.75 10.5Z"
+                          ></path>
                         </svg>
                       </span>
                       <span class="label">01_MENU_FATIGUE</span>
                     </div>
                     <h6>Menu Nesting</h6>
                     <p>
-                      Because it is a live-service game with constant events, players often have to click through three or four nested event pages just to claim a reward, leading to click-fatigue and "chore-like" gameplay loops.
+                      Because it is a live-service game with constant events,
+                      players often have to click through three or four nested
+                      event pages just to claim a reward, leading to
+                      click-fatigue and "chore-like" gameplay loops.
                     </p>
                   </td>
                 </tr>
@@ -1468,29 +1790,55 @@
                   <td>
                     <div class="sw-item-head">
                       <span class="sw-icon" aria-hidden="true">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25l4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z"></path>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25l4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z"
+                          ></path>
                         </svg>
                       </span>
                       <span class="label">02_SYNERGY</span>
                     </div>
                     <h6>Combat State Legibility</h6>
                     <p>
-                      The elemental reaction system is conveyed perfectly through color and distinct sound design, allowing players to track complex chained explosions using peripheral vision while focusing on dodging.
+                      The elemental reaction system is conveyed perfectly
+                      through color and distinct sound design, allowing players
+                      to track complex chained explosions using peripheral
+                      vision while focusing on dodging.
                     </p>
                   </td>
                   <td>
                     <div class="sw-item-head">
                       <span class="sw-icon" aria-hidden="true">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v4.5m0 3.75h.008v.008H12v-.008ZM10.29 3.86l-7.5 13A1.5 1.5 0 0 0 4.09 19h15.82a1.5 1.5 0 0 0 1.3-2.14l-7.5-13a1.5 1.5 0 0 0-2.6 0Z"></path>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M12 9v4.5m0 3.75h.008v.008H12v-.008ZM10.29 3.86l-7.5 13A1.5 1.5 0 0 0 4.09 19h15.82a1.5 1.5 0 0 0 1.3-2.14l-7.5-13a1.5 1.5 0 0 0-2.6 0Z"
+                          ></path>
                         </svg>
                       </span>
                       <span class="label">02_CLUTTER</span>
                     </div>
                     <h6>Unskippable Dialogue</h6>
                     <p>
-                      The narrative delivery interface suffers from prolonged, unskippable dialogue sequences. Paimon's constant interruptions can sever the player's flow state, turning exciting exploration into passive reading.
+                      The narrative delivery interface suffers from prolonged,
+                      unskippable dialogue sequences. Paimon's constant
+                      interruptions can sever the player's flow state, turning
+                      exciting exploration into passive reading.
                     </p>
                   </td>
                 </tr>
@@ -1498,7 +1846,12 @@
             </table>
             <div class="footnote summary">
               <p>
-                Genshin Impact succeeds by executing two vastly different interfaces simultaneously. It offers the <u>spatial freedom</u> and uncluttered HUD of a premium console RPG, while hiding the mathematically dense, habit-forming retention systems of a mobile gacha game just beneath a layer of sleek, frosted-glass menus.
+                Genshin Impact succeeds by executing two vastly different
+                interfaces simultaneously. It offers the
+                <u>spatial freedom</u> and uncluttered HUD of a premium console
+                RPG, while hiding the mathematically dense, habit-forming
+                retention systems of a mobile gacha game just beneath a layer of
+                sleek, frosted-glass menus.
               </p>
             </div>
           </section>
@@ -1506,202 +1859,328 @@
       </article>
     </main>
 
-    <script>
-      // VARIABLES - UPDATED FOR GENSHIN IMPACT
-      const GAMENAME = "Genshin Impact";
-      const DATERELEASED = "09/28/2020";
-      const PUBLISHER = "HoYoverse";
-      const BADGE = "Live Service";
-      const POSTERURL = "../../../public/posters/genshinImpact_poster.jpg";
-      const POSTERALTTEXT = "Genshin Impact Poster";
-      const VIDEOURL = "../../../public/videos/genshinImpact_trailer.mp4";
-      const VIDEOURLYT = "https://www.youtube.com/embed/TAlKhARUcoY?si=iAOlZ5PUTK5ae6Cx";
-      const YTVID = true;
-
-      const GAMEUSERSTARS = "8.2";
-      const GAMEUSERRATINGS = "200,000+";
-
-      const HASCRITICS = true;
-      const GAMECRITICSTARS = "8.4";
-      const GAMECRITICRATINGS = "52";
-
-      const GENRES = ["Action RPG", "Open World", "Gacha"];
-      const PLATFORMS = ["PC", "Mobile", "PS4", "PS5"];
-      const EDITIONS = ["Free to Play"];
-
-      const DESCRIPTION =
-        "Genshin Impact is an open-world action RPG that features a massive, continuously expanding map, a complex elemental combat system, and gacha monetization mechanics. Players form a party of four characters, rapidly swapping between them to trigger devastating elemental reactions while exploring the diverse nations of Teyvat.";
-
-      // -- Document Variables --
-      const sectionRadios = Array.from(document.querySelectorAll('input[name="game-section"]'));
-      const gameSections = Array.from(document.querySelectorAll(".game-sections"));
-      const gameInfoNav = document.getElementById("game-info-nav");
-      const gameInfoNavLeft = document.getElementById("game-info-nav-left");
-      const gameInfoNavRight = document.getElementById("game-info-nav-right");
-
-      // -- Implementation --
-      document.getElementById("title").textContent = GAMENAME + " - GameUX"; // Set page title
-      for (let el of document.getElementsByClassName("game-name")) {
-        el.textContent = GAMENAME;
-      } // Set game name
-      for (let el of document.getElementsByClassName("date-released")) {
-        el.textContent = DATERELEASED;
-      } // Set date released
-      for (let el of document.getElementsByClassName("publisher")) {
-        el.textContent = PUBLISHER;
-      } // Set publisher
-      for (let el of document.getElementsByClassName("game-badge")) {
-        el.textContent = BADGE;
-      } // Set badge
-      for (let el of document.getElementsByClassName("game-user-rating")) {
-        el.textContent = GAMEUSERSTARS;
-      } // Set user rating
-      for (let el of document.getElementsByClassName("game-user-ratings")) {
-        el.textContent = GAMEUSERRATINGS + " user ratings";
-      } // Set user ratings
-      for (let el of document.getElementsByClassName("game-critic-rating")) {
-        el.textContent = GAMECRITICSTARS;
-      } // Set critic rating
-      for (let el of document.getElementsByClassName("game-critic-ratings")) {
-        el.textContent = GAMECRITICRATINGS + " critic ratings";
-      } // Set critic ratings
-      for (let el of document.getElementsByClassName("game-poster-content")) {
-        el.src = POSTERURL;
-      } // Set poster content
-      document.getElementById("game-poster-img").src = POSTERURL; // Set poster image
-      document.getElementById("game-poster-img").title = GAMENAME + " Game Poster"; // Set poster image title
-      document.getElementById("game-poster").href = POSTERURL; // Set poster link
-      document.getElementById("game-description").textContent = DESCRIPTION; // Set game description
-      document.getElementById("game-poster-img").alt = POSTERALTTEXT;
-
-      // Video / YouTube Toggle Logic
-      const videoEl = document.getElementById("game-video");
-      const videoSourceEl = document.getElementById("game-video-source");
-      const ytEl = document.getElementById("game-video-yt");
-      if (YTVID) {
-        if (ytEl) {
-          ytEl.src = VIDEOURLYT;
-          ytEl.hidden = false;
-        }
-        if (videoEl) {
-          videoEl.hidden = true;
-          try {
-            videoEl.pause();
-          } catch (e) {}
-        }
-      } else {
-        if (videoSourceEl) {
-          videoSourceEl.src = VIDEOURL;
-        }
-        if (videoEl) {
-          videoEl.hidden = false;
-          try {
-            videoEl.load();
-          } catch (e) {}
-        }
-        if (ytEl) {
-          ytEl.hidden = true;
-          ytEl.src = "";
-        }
-      }
-
-      // Lists
-      for (let genre of GENRES) {
-        // Set genres
-        let li = document.createElement("li");
-        li.textContent = genre;
-        document.getElementById("genres").appendChild(li);
-      }
-
-      for (let platform of PLATFORMS) {
-        // Set platforms
-        let li = document.createElement("li");
-        li.textContent = platform;
-        document.getElementById("platforms").appendChild(li);
-      }
-
-      for (let edition of EDITIONS) {
-        // Set editions
-        let li = document.createElement("li");
-        li.textContent = edition;
-        document.getElementById("editions").appendChild(li);
-      }
-
-      // Critic Visibility
-      if (!HASCRITICS) {
-        for (let el of document.getElementsByClassName("game-critic-rating-cont")) {
-          el.classList.add("hidden");
-        }
-      }
-
-      // Days/Years Calculation
-      let timeDiff = new Date().getTime() - new Date(DATERELEASED).getTime();
-      let daysAgo = Math.floor(timeDiff / (1000 * 3600 * 24));
-      if (daysAgo > 365) {
-        let yearsAgo = Math.floor(daysAgo / 365);
-        for (let el of document.getElementsByClassName("days-ago")) {
-          el.textContent = "(" + yearsAgo + " years ago)";
-        }
-      } else {
-        for (let el of document.getElementsByClassName("days-ago")) {
-          el.textContent = "(" + daysAgo + " days ago)";
-        }
-      }
-
-      // Section Navigation
-      function showGameSection(sectionId) {
-        for (let section of gameSections) {
-          let isActive = section.id === sectionId;
-          section.classList.toggle("is-active", isActive);
-          section.setAttribute("aria-hidden", String(!isActive));
-        }
-      }
-
-      const defaultSection = document.querySelector('input[name="game-section"]:checked');
-      showGameSection(defaultSection ? defaultSection.value : "short-description");
-
-      for (let radio of sectionRadios) {
-        radio.addEventListener("change", () => {
-          if (!radio.checked) {
-            return;
-          }
-          showGameSection(radio.value);
-        });
-      }
-
-      // Scroll Navigation Arrows
-      function updateGameInfoNavArrows() {
-        if (!gameInfoNav || !gameInfoNavLeft || !gameInfoNavRight) {
-          return;
-        }
-
-        const maxScrollLeft = gameInfoNav.scrollWidth - gameInfoNav.clientWidth;
-        const canScroll = maxScrollLeft > 1;
-        const canScrollLeft = canScroll && gameInfoNav.scrollLeft > 1;
-        const canScrollRight = canScroll && gameInfoNav.scrollLeft < maxScrollLeft - 1;
-
-        gameInfoNavLeft.hidden = !canScrollLeft;
-        gameInfoNavRight.hidden = !canScrollRight;
-      }
-
-      function scrollGameInfoNavBy(distance) {
-        if (!gameInfoNav) {
-          return;
-        }
-        gameInfoNav.scrollBy({ left: distance, behavior: "smooth" });
-      }
-
-      if (gameInfoNav && gameInfoNavLeft && gameInfoNavRight) {
-        gameInfoNav.addEventListener("scroll", updateGameInfoNavArrows);
-        gameInfoNavLeft.addEventListener("click", () => {
-          scrollGameInfoNavBy(-Math.max(200, Math.floor(gameInfoNav.clientWidth * 0.5)));
-        });
-        gameInfoNavRight.addEventListener("click", () => {
-          scrollGameInfoNavBy(Math.max(200, Math.floor(gameInfoNav.clientWidth * 0.5)));
-        });
-        window.addEventListener("resize", updateGameInfoNavArrows);
-        updateGameInfoNavArrows();
-      }
-    </script>
+    <footer>
+      <h6>GameUX Atlas</h6>
+      <ul class="socials"></ul>
+      <div class="footer-info">
+        <span>&copy; Group 5</span>
+        <span>CIP 1101</span>
+        <span>2026</span>
+        <span>GameUX Atlas</span>
+      </div>
+    </footer>
+    <button
+      class="back-to-top"
+      id="back-to-top"
+      type="button"
+      aria-label="Back to top"
+      title="Back to top"
+    >
+      <svg
+        viewBox="0 0 56 56"
+        width="56"
+        height="56"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <circle class="btn-bg" cx="28" cy="28" r="27"></circle>
+        <circle class="btn-progress-track" cx="28" cy="28" r="22"></circle>
+        <circle
+          class="btn-progress"
+          id="back-to-top-progress"
+          cx="28"
+          cy="28"
+          r="22"
+        ></circle>
+        <path class="btn-icon" d="M28 36V20"></path>
+        <path class="btn-icon" d="M21.5 26.5L28 20l6.5 6.5"></path>
+      </svg>
+    </button>
   </body>
+
+  <script>
+    // VARIABLES - UPDATED FOR GENSHIN IMPACT
+    const GAMENAME = "Genshin Impact";
+    const DATERELEASED = "09/28/2020";
+    const PUBLISHER = "HoYoverse";
+    const BADGE = "Live Service";
+    const POSTERURL = "../../../public/posters/genshinImpact_poster.jpg";
+    const POSTERALTTEXT = "Genshin Impact Poster";
+    const VIDEOURL = "../../../public/videos/genshinImpact_trailer.mp4";
+    const VIDEOURLYT =
+      "https://www.youtube.com/embed/TAlKhARUcoY?si=iAOlZ5PUTK5ae6Cx";
+    const YTVID = true;
+
+    const GAMEUSERSTARS = "8.2";
+    const GAMEUSERRATINGS = "200,000+";
+
+    const HASCRITICS = true;
+    const GAMECRITICSTARS = "8.4";
+    const GAMECRITICRATINGS = "52";
+
+    const GENRES = ["Action RPG", "Open World", "Gacha"];
+    const PLATFORMS = ["PC", "Mobile", "PS4", "PS5"];
+    const EDITIONS = ["Free to Play"];
+
+    const DESCRIPTION =
+      "Genshin Impact is an open-world action RPG that features a massive, continuously expanding map, a complex elemental combat system, and gacha monetization mechanics. Players form a party of four characters, rapidly swapping between them to trigger devastating elemental reactions while exploring the diverse nations of Teyvat.";
+
+    // Document Variables
+    const sectionRadios = Array.from(
+      document.querySelectorAll('input[name="game-section"]'),
+    );
+    const gameSections = Array.from(
+      document.querySelectorAll(".game-sections"),
+    );
+    const gameInfoNav = document.getElementById("game-info-nav");
+    const gameInfoNavLeft = document.getElementById("game-info-nav-left");
+    const gameInfoNavRight = document.getElementById("game-info-nav-right");
+    const backToTopButton = document.getElementById("back-to-top");
+    const backToTopProgress = document.getElementById("back-to-top-progress");
+
+    // -- Implementation --
+    document.getElementById("title").textContent = GAMENAME + " - GameUX"; // Set page title
+    for (let el of document.getElementsByClassName("game-name")) {
+      el.textContent = GAMENAME;
+    } // Set game name
+    for (let el of document.getElementsByClassName("date-released")) {
+      el.textContent = DATERELEASED;
+    } // Set date released
+    for (let el of document.getElementsByClassName("publisher")) {
+      el.textContent = PUBLISHER;
+    } // Set publisher
+    for (let el of document.getElementsByClassName("game-badge")) {
+      el.textContent = BADGE;
+    } // Set badge
+    for (let el of document.getElementsByClassName("game-user-rating")) {
+      el.textContent = GAMEUSERSTARS;
+    } // Set user rating
+    for (let el of document.getElementsByClassName("game-user-ratings")) {
+      el.textContent = GAMEUSERRATINGS + " user ratings";
+    } // Set user ratings
+    for (let el of document.getElementsByClassName("game-critic-rating")) {
+      el.textContent = GAMECRITICSTARS;
+    } // Set critic rating
+    for (let el of document.getElementsByClassName("game-critic-ratings")) {
+      el.textContent = GAMECRITICRATINGS + " critic ratings";
+    } // Set critic ratings
+    for (let el of document.getElementsByClassName("game-poster-content")) {
+      el.src = POSTERURL;
+    } // Set poster content
+    document.getElementById("game-poster-img").src = POSTERURL; // Set poster image
+    document.getElementById("game-poster-img").title =
+      GAMENAME + " Game Poster"; // Set poster image title
+    document.getElementById("game-poster").href = POSTERURL; // Set poster link
+    document.getElementById("game-description").textContent = DESCRIPTION; // Set game description
+    document.getElementById("game-poster-img").alt = POSTERALTTEXT; // Set poster image alt text
+    // Video / YouTube toggle: show iframe when YTVID is true, otherwise show <video> with source
+    const videoEl = document.getElementById("game-video");
+    const videoSourceEl = document.getElementById("game-video-source");
+    const ytEl = document.getElementById("game-video-yt");
+    if (YTVID) {
+      if (ytEl) {
+        ytEl.src = VIDEOURLYT;
+        ytEl.hidden = false;
+      }
+      if (videoEl) {
+        videoEl.hidden = true;
+        try {
+          videoEl.pause();
+        } catch (e) {}
+      }
+    } else {
+      if (videoSourceEl) {
+        videoSourceEl.src = VIDEOURL;
+      }
+      if (videoEl) {
+        videoEl.hidden = false;
+        try {
+          videoEl.load();
+        } catch (e) {}
+      }
+      if (ytEl) {
+        ytEl.hidden = true;
+        ytEl.src = "";
+      }
+    }
+
+    for (let genre of GENRES) {
+      // Set genres
+      let li = document.createElement("li");
+      li.textContent = genre;
+      document.getElementById("genres").appendChild(li);
+    }
+
+    for (let platform of PLATFORMS) {
+      // Set platforms
+      let li = document.createElement("li");
+      li.textContent = platform;
+      document.getElementById("platforms").appendChild(li);
+    }
+
+    for (let edition of EDITIONS) {
+      // Set editions
+      let li = document.createElement("li");
+      li.textContent = edition;
+      document.getElementById("editions").appendChild(li);
+    }
+
+    // Hide critic ratings
+    if (!HASCRITICS) {
+      for (let el of document.getElementsByClassName(
+        "game-critic-rating-cont",
+      )) {
+        el.classList.add("hidden");
+      }
+    }
+
+    // Calculate days ago
+    let timeDiff = new Date().getTime() - new Date(DATERELEASED).getTime();
+    let daysAgo = Math.floor(timeDiff / (1000 * 3600 * 24));
+    if (daysAgo > 365) {
+      let yearsAgo = Math.floor(daysAgo / 365);
+      for (let el of document.getElementsByClassName("days-ago")) {
+        el.textContent = "(" + yearsAgo + " years ago)";
+      }
+    } else {
+      for (let el of document.getElementsByClassName("days-ago")) {
+        el.textContent = "(" + daysAgo + " days ago)";
+      }
+    }
+
+    // Sections navigation
+    function showGameSection(sectionId) {
+      for (let section of gameSections) {
+        let isActive = section.id === sectionId;
+        section.classList.toggle("is-active", isActive);
+        section.setAttribute("aria-hidden", String(!isActive));
+      }
+    }
+
+    function getSectionIdFromHash() {
+      const rawHash = window.location.hash || "";
+      const hash = rawHash.startsWith("#") ? rawHash.slice(1) : rawHash;
+      if (!hash) {
+        return null;
+      }
+      return gameSections.some((section) => section.id === hash) ? hash : null;
+    }
+
+    function syncSectionFromHash() {
+      const hashSectionId = getSectionIdFromHash();
+      if (!hashSectionId) {
+        return false;
+      }
+
+      const matchingRadio = sectionRadios.find(
+        (radio) => radio.value === hashSectionId,
+      );
+      if (matchingRadio) {
+        matchingRadio.checked = true;
+      }
+      showGameSection(hashSectionId);
+      return true;
+    }
+
+    const defaultSection = document.querySelector(
+      'input[name="game-section"]:checked',
+    );
+    if (!syncSectionFromHash()) {
+      showGameSection(
+        defaultSection ? defaultSection.value : "short-description",
+      );
+    }
+
+    for (let radio of sectionRadios) {
+      radio.addEventListener("change", () => {
+        if (!radio.checked) {
+          return;
+        }
+        showGameSection(radio.value);
+        if (history.replaceState) {
+          history.replaceState(null, "", `#${radio.value}`);
+        } else {
+          window.location.hash = radio.value;
+        }
+      });
+    }
+
+    window.addEventListener("hashchange", () => {
+      syncSectionFromHash();
+    });
+
+    // Game info nav
+    function updateGameInfoNavArrows() {
+      if (!gameInfoNav || !gameInfoNavLeft || !gameInfoNavRight) {
+        return;
+      }
+
+      const maxScrollLeft = gameInfoNav.scrollWidth - gameInfoNav.clientWidth;
+      const canScroll = maxScrollLeft > 1;
+      const canScrollLeft = canScroll && gameInfoNav.scrollLeft > 1;
+      const canScrollRight =
+        canScroll && gameInfoNav.scrollLeft < maxScrollLeft - 1;
+
+      gameInfoNavLeft.hidden = !canScrollLeft;
+      gameInfoNavRight.hidden = !canScrollRight;
+    }
+
+    function scrollGameInfoNavBy(distance) {
+      if (!gameInfoNav) {
+        return;
+      }
+      gameInfoNav.scrollBy({ left: distance, behavior: "smooth" });
+    }
+
+    if (gameInfoNav && gameInfoNavLeft && gameInfoNavRight) {
+      gameInfoNav.addEventListener("scroll", updateGameInfoNavArrows);
+      gameInfoNavLeft.addEventListener("click", () => {
+        scrollGameInfoNavBy(
+          -Math.max(200, Math.floor(gameInfoNav.clientWidth * 0.5)),
+        );
+      });
+      gameInfoNavRight.addEventListener("click", () => {
+        scrollGameInfoNavBy(
+          Math.max(200, Math.floor(gameInfoNav.clientWidth * 0.5)),
+        );
+      });
+      window.addEventListener("resize", updateGameInfoNavArrows);
+      updateGameInfoNavArrows();
+    }
+
+    // Back-to-top button with circular scroll progress
+    const progressRadius = 22;
+    const progressCircumference = 2 * Math.PI * progressRadius;
+
+    if (backToTopProgress) {
+      backToTopProgress.style.strokeDasharray = String(progressCircumference);
+      backToTopProgress.style.strokeDashoffset = String(progressCircumference);
+    }
+
+    function updateBackToTop() {
+      if (!backToTopButton || !backToTopProgress) {
+        return;
+      }
+
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      const scrollableHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
+      const progress =
+        scrollableHeight > 0 ? Math.min(scrollTop / scrollableHeight, 1) : 0;
+      const dashOffset = progressCircumference * (1 - progress);
+
+      backToTopProgress.style.strokeDashoffset = String(dashOffset);
+      backToTopButton.classList.toggle("is-visible", scrollTop > 160);
+    }
+
+    if (backToTopButton) {
+      backToTopButton.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    }
+
+    window.addEventListener("scroll", updateBackToTop, { passive: true });
+    window.addEventListener("resize", updateBackToTop);
+    updateBackToTop();
+  </script>
 </html>
