@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,30 +8,296 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend:wght@100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Manrope:wght@200..800&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend:wght@100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Manrope:wght@200..800&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
         rel="stylesheet">
 
     <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 
     <!-- Styles -->
     <link rel="stylesheet" href="../styles/styles.css" type="text/css">
     <link rel="stylesheet" href="../styles/sizeChecker.css" type="text/css">
     <link rel="stylesheet" href="../styles/about.css" type="text/css">
+    <link rel="stylesheet" href="../styles/index.css" type="text/css">
 
     <!-- Custom Styles ------------------------------------------------------------------------------------------ -->
     <style>
+        .about-page {
+            width: 100%;
+            max-width: var(--t-maxwidth);
+            margin: 0 auto;
+            padding: 1rem 1rem 1.5rem;
+        }
         
+        .about-page section {
+            min-height: auto;
+        }
+        
+        .about-hero {
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--t-color-base-300);
+            border-radius: 1.25rem;
+            padding: clamp(0.9rem, 1.8vw, 1.25rem);
+            background: radial-gradient(circle at 0% 0%, rgba(var(--t-color-primary-rgb), 0.2), transparent 42%), radial-gradient(circle at 100% 100%, rgba(66, 185, 131, 0.16), transparent 38%), linear-gradient(180deg, var(--t-color-base-100), var(--t-color-base-200));
+            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.09);
+        }
+        
+        .about-kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            border: 1px solid var(--t-color-base-300);
+            border-radius: 999px;
+            padding: 0.35rem 0.75rem;
+            font-family: "Lexend", sans-serif;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            background-color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 0.8rem;
+        }
+        
+        .about-title {
+            font-family: "DM Serif Display", serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 0.45rem;
+        }
+        
+        .about-subtitle {
+            max-width: 50rem;
+            margin-bottom: 0.5rem;
+            color: var(--t-color-base-content);
+        }
+        
+        .hero-team-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            gap: 0.35rem;
+            grid-template-columns: 1fr;
+        }
+        
+        .hero-team-list li {
+            border: 1px solid var(--t-color-base-300);
+            border-radius: 0.75rem;
+            padding: 0.45rem 0.7rem;
+            background-color: rgba(255, 255, 255, 0.75);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .about-grid {
+            margin-top: 0.55rem;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0.55rem;
+            align-items: start;
+        }
+        
+        .about-card {
+            border: 1px solid var(--t-color-base-300);
+            background: var(--t-color-base-100);
+            border-radius: 1rem;
+            padding: 0.75rem;
+        }
+        
+        .about-card h2,
+        .about-card h3 {
+            font-family: "DM Serif Display", serif;
+            margin-bottom: 0.45rem;
+        }
+        
+        .about-card p {
+            margin-bottom: 0.5rem;
+            text-align: justify;
+        }
+        
+        .about-points {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            gap: 0.55rem;
+        }
+        
+        .about-points li {
+            position: relative;
+            padding-left: 0.95rem;
+        }
+        
+        .about-points li::before {
+            content: "";
+            position: absolute;
+            width: 0.28rem;
+            height: 100%;
+            border-radius: 999px;
+            left: 0;
+            top: 0;
+            background-color: var(--t-color-primary);
+        }
+        
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-top: 0.45rem;
+        }
+        
+        .project-tags span {
+            border: 1px solid var(--t-color-base-300);
+            border-radius: 999px;
+            padding: 0.3rem 0.65rem;
+            font-size: 0.85rem;
+            background-color: var(--t-color-base-200);
+        }
+        
+        .group-layout {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0.5rem;
+        }
+        
+        .group-photo-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0.6rem;
+        }
+        
+        .group-photo-wrap {
+            border-radius: 1rem;
+            overflow: hidden;
+            border: 1px solid var(--t-color-base-300);
+            background-color: var(--t-color-base-200);
+            min-height: 16rem;
+            position: relative;
+            display: grid;
+            place-items: center;
+        }
+        
+        .group-photo-wrap img {
+            width: 100%;
+            max-width: 100%;
+            height: 100%;
+            max-height: 15rem;
+            object-fit: cover;
+            filter: drop-shadow(0 12px 20px rgba(0, 0, 0, 0.2));
+        }
+        
+        .group-photo-caption {
+            position: absolute;
+            left: 0.75rem;
+            bottom: 0.75rem;
+            font-size: 0.8rem;
+            border-radius: 999px;
+            border: 1px solid var(--t-color-base-300);
+            background: rgba(255, 255, 255, 0.88);
+            padding: 0.35rem 0.65rem;
+            margin: 0;
+        }
+        
+        .team-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            gap: 0.65rem;
+        }
+        
+        .team-list li {
+            border: 1px solid var(--t-color-base-300);
+            border-radius: 0.85rem;
+            padding: 0.75rem;
+            background-color: var(--t-color-base-100);
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            align-items: center;
+        }
+        
+        .team-role {
+            font-size: 0.82rem;
+            font-family: var(--bs-font-monospace);
+            color: var(--t-color-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+        
+        .cta-box {
+            margin-top: 0.75rem;
+            padding: 0.85rem;
+            border-radius: 1rem;
+            border: 1px solid var(--t-color-base-300);
+            background-color: rgba(var(--t-color-primary-rgb), 0.09);
+        }
+        
+        .cta-box p {
+            margin-bottom: 0.75rem;
+            text-align: left;
+        }
+        
+        .about-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+        }
+        
+        .about-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.55rem 1rem;
+            border-radius: 999px;
+            border: 1px solid var(--t-color-base-300);
+            text-decoration: none;
+            color: inherit;
+            font-weight: 600;
+            background: var(--t-color-base-100);
+            transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+        }
+        
+        .about-btn:hover {
+            transform: translateY(-2px);
+            border-color: var(--t-color-primary);
+            box-shadow: 0 10px 20px rgba(var(--t-color-primary-rgb), 0.15);
+        }
+        
+        .about-btn.primary {
+            background-color: var(--t-color-primary);
+            color: var(--t-color-primary-content);
+            border-color: var(--t-color-primary);
+        }
+        
+        @media (min-width: 62rem) {
+            .about-grid {
+                grid-template-columns: 1.05fr 0.95fr;
+            }
+            .hero-team-list {
+                grid-template-columns: 1fr 1fr;
+            }
+            .group-layout {
+                grid-template-columns: 1fr;
+            }
+            .group-photo-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .group-photo-wrap {
+                min-height: 20rem;
+            }
+            .group-photo-wrap img {
+                max-height: 19rem;
+            }
+        }
     </style>
     <!-- Custom Styles ------------------------------------------------------------------------------------------ -->
 
     <title>About - GameUX</title>
 </head>
+
 <body>
     <header>
         <nav class="navbar navbar-light navbar-expand-lg">
@@ -38,24 +305,22 @@
                 <a class="navbar-brand" href="../index.html">
                     <img src="../../public/gameux.png" alt="Logo" class="navbar-logo">
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon" style="width: 1em;"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            <a class="nav-link" href="../../index.html">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Game List</a>
+                            <a class="nav-link" href="./gameList.html">Game List</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">About</a>
+                            <a class="nav-link active" aria-current="page" href="./about.html">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Contact</a>
+                            <a class="nav-link" href="./contact.html">Contact</a>
                         </li>
                     </ul>
                 </div>
@@ -63,10 +328,159 @@
         </nav>
     </header>
     <main>
-        
+        <article class="about-page">
+            <section class="about-hero">
+                <span class="about-kicker">[ Group 5 | CIP 1101 ]</span>
+                <h1 class="about-title">About GameUX Atlas</h1>
+                <p class="about-subtitle">
+                    This page explains who we are and what this website is for. We built GameUX Atlas as a class project to study how game interfaces guide players, deliver feedback, and shape user behavior.
+                </p>
+                <ul class="hero-team-list">
+                    <li>
+                        <span>Group 5 Team Leader</span>
+                        <span class="team-role">John Gabrielle Valencerina</span>
+                    </li>
+                    <li>
+                        <span>Group 5 Team Member</span>
+                        <span class="team-role">Sean Kirby Reales</span>
+                    </li>
+                    <li>
+                        <span>Group 5 Team Member</span>
+                        <span class="team-role">Lixter Niño Dinawanao</span>
+                    </li>
+                    <li>
+                        <span>Group 5 Team Member</span>
+                        <span class="team-role">Louiegie Roldan</span>
+                    </li>
+                    <li>
+                        <span>Group 5 Team Member</span>
+                        <span class="team-role">Vincent Laureano Palanas</span>
+                    </li>
+                    <li>
+                        <span>Group 5 Team Member</span>
+                        <span class="team-role">Mark Andrew Mateo</span>
+                    </li>
+                    <li>
+                        <span>Group 5 Team Member</span>
+                        <span class="team-role">Garnette Kyle Valenzuela</span>
+                    </li>
+                    <li>
+                        <span>Group 5 Team Member</span>
+                        <span class="team-role">Basher Sultan</span>
+                    </li>
+                </ul>
+                <div class="group-layout">
+                    <div class="group-photo-grid">
+                        <figure class="group-photo-wrap">
+                            <a href="../../public/grouppic1.jpg" target="_blank" rel="noopener noreferrer" aria-label="Open group photo 01 in a new tab">
+                                <img src="../../public/grouppic1.jpg" alt="Group 5 photo placeholder 1">
+                            </a>
+                            <figcaption class="group-photo-caption">Group photo 01</figcaption>
+                        </figure>
+                        <figure class="group-photo-wrap">
+                            <a href="../../public/grouppic2.jpg" target="_blank" rel="noopener noreferrer" aria-label="Open group photo 02 in a new tab">
+                                <img src="../../public/grouppic2.jpg" alt="Group 5 photo placeholder 2">
+                            </a>
+                            <figcaption class="group-photo-caption">Group photo 02</figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </section>
+
+            <section class="about-grid">
+                <div class="about-card">
+                    <h2>What This Website Is About</h2>
+                    <p>
+                        GameUX Atlas is a collection of game UX case studies. Each game page follows the same structure: an overview of the game, a breakdown of UI components, a look at user interaction, an HCI principles section, and a strengths-and-weaknesses analysis.
+                    </p>
+                    <p>
+                        Instead of presenting games as simple reviews, we document how different genres communicate information, guide player action, and support decision-making through interface design. The goal is to make those design patterns easier to understand for students,
+                        players, and aspiring designers.
+                    </p>
+                    <ul class="about-points">
+                        <li>
+                            <strong>Framework:</strong> Human-Computer Interaction applied to real game systems across genres like action RPGs, platformers, rhythm games, and tactical titles.
+                        </li>
+                        <li>
+                            <strong>Approach:</strong> Analyze -> Deconstruct -> Compare -> Document.
+                        </li>
+                        <li>
+                            <strong>Output:</strong> Reusable references for UI/UX critique, class discussion, and design review.
+                        </li>
+                    </ul>
+                    <div class="project-tags" aria-label="Project tags">
+                        <span>UI Analysis</span>
+                        <span>UX Patterns</span>
+                        <span>Game Studies</span>
+                        <span>HCI Principles</span>
+                    </div>
+                </div>
+
+                <div class="about-card">
+                    <h3>Project Scope</h3>
+                    <ul class="about-points">
+                        <li>
+                            Compare how different games structure information, feedback, and control.
+                        </li>
+                        <li>
+                            Identify strengths and weaknesses in clarity, readability, responsiveness, and player guidance.
+                        </li>
+                        <li>
+                            Highlight how each interface supports the pace and goals of its genre.
+                        </li>
+                        <li>
+                            Present observations grounded in real player interaction and HCI principles.
+                        </li>
+                    </ul>
+
+                    <div class="cta-box">
+                        <p>
+                            Want to explore the analyses? Start at the game list and open any featured game page.
+                        </p>
+                        <div class="about-actions">
+                            <a class="about-btn primary" href="./gameList.html">Browse Game List</a>
+                            <a class="about-btn" href="./contact.html">Contact The Team</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </article>
     </main>
     <footer>
-
+        <h6>GameUX Atlas</h6>
+        <ul class="socials">
+            <li>
+                <a href="https://www.facebook.com/profile.php?id=61575774944293" class="social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987H7.898v-2.89h2.54V9.845c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" />
+                    </svg>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/gameux_atlas/" class="social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                    </svg>
+                </a>
+            </li>
+            <li>
+                <a href="https://x.com/GameUX_Atlas?s=20" class="social-link" aria-label="Twitter / X" target="_blank" rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.261 5.635 5.903-5.635zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                    </svg>
+                </a>
+            </li>
+        </ul>
+        <div class="footer-info">
+            <span>&copy; Group 5</span>
+            <span>CIP 1101</span>
+            <span>2026</span>
+            <span>GameUX Atlas</span>
+        </div>
     </footer>
 </body>
+
 </html>

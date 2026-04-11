@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,14 +8,12 @@
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend:wght@100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Manrope:wght@200..800&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend:wght@100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Manrope:wght@200..800&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+        rel="stylesheet">
 
     <!-- bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 
     <!-- our styles -->
     <link rel="stylesheet" href="./src/styles/styles.css" type="text/css">
@@ -23,6 +22,7 @@
 
     <title>Home - GameUX Atlas</title>
 </head>
+
 <body>
 
     <!-- navbar -->
@@ -32,9 +32,7 @@
                 <a class="navbar-brand" href="./index.html">
                     <img src="./public/gameux.png" alt="GameUX Atlas Logo" class="navbar-logo">
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon" style="width:1em"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -49,7 +47,7 @@
                             <a class="nav-link" href="./src/pages/about.html">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Contact</a>
+                            <a class="nav-link" href="./src/pages/contact.html">Contact</a>
                         </li>
                     </ul>
                 </div>
@@ -71,8 +69,7 @@
                     <h1 class="hero-heading">Game UX Atlas</h1>
 
                     <p class="hero-desc">
-                        A game design analysis website that documents HCI principles across video games —
-                        from UI feedback loops to diegetic interfaces and user control systems.
+                        A game design analysis website that documents HCI principles across video games — from UI feedback loops to diegetic interfaces and user control systems.
                     </p>
 
                     <div class="hero-chips">
@@ -90,8 +87,7 @@
                     <!-- subtle scroll cue at the bottom -->
                     <div class="hero-scroll-cue" aria-hidden="true">
                         <span>scroll</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M12 5v14M5 12l7 7 7-7"/>
                         </svg>
                     </div>
@@ -404,23 +400,23 @@
 </body>
 <script>
     // carousel: shows N cards at a time depending on screen width
-    const track     = document.getElementById('carouselTrack');
-    const prevBtn   = document.getElementById('prevBtn');
-    const nextBtn   = document.getElementById('nextBtn');
-    const dotsWrap  = document.getElementById('carouselDots');
+    const track = document.getElementById('carouselTrack');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const dotsWrap = document.getElementById('carouselDots');
     const pageLabel = document.getElementById('carouselPageLabel');
-    const allCards  = Array.from(track.querySelectorAll('.game-card'));
+    const allCards = Array.from(track.querySelectorAll('.game-card'));
 
     let current = 0;
-    let pages   = 0;
+    let pages = 0;
 
     // how many cards fit on screen at this width
     function getVisible() {
         const w = window.innerWidth;
-        if (w >= 62 * 16) return 4;  // xl and up
-        if (w >= 48 * 16) return 3;  // lg
-        if (w >= 36 * 16) return 2;  // md
-        return 1;                     // sm
+        if (w >= 62 * 16) return 4; // xl and up
+        if (w >= 48 * 16) return 3; // lg
+        if (w >= 36 * 16) return 2; // md
+        return 1; // sm
     }
 
     // rebuild the dot buttons whenever pages change
@@ -438,7 +434,7 @@
     // show/hide the right cards for a given page
     function goTo(page) {
         const visible = getVisible();
-        const start   = page * visible;
+        const start = page * visible;
         current = page;
 
         allCards.forEach((card, idx) => {
@@ -469,20 +465,20 @@
     initCarousel();
 
     // back-to-top button: appears after 160px of scroll, ring fills as you scroll down
-    const progressRadius        = 22;
+    const progressRadius = 22;
     const progressCircumference = 2 * Math.PI * progressRadius;
-    const backToTopBtn          = document.getElementById('backToTop');
-    const progressCircle        = document.getElementById('backToTopProgress');
+    const backToTopBtn = document.getElementById('backToTop');
+    const progressCircle = document.getElementById('backToTopProgress');
 
     if (progressCircle) {
-        progressCircle.style.strokeDasharray  = String(progressCircumference);
+        progressCircle.style.strokeDasharray = String(progressCircumference);
         progressCircle.style.strokeDashoffset = String(progressCircumference);
     }
 
     function updateBackToTop() {
-        const scrollTop   = window.scrollY || document.documentElement.scrollTop;
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
         const scrollableH = document.documentElement.scrollHeight - window.innerHeight;
-        const progress    = scrollableH > 0 ? Math.min(scrollTop / scrollableH, 1) : 0;
+        const progress = scrollableH > 0 ? Math.min(scrollTop / scrollableH, 1) : 0;
 
         if (progressCircle) {
             progressCircle.style.strokeDashoffset = String(progressCircumference * (1 - progress));
@@ -491,9 +487,15 @@
         backToTopBtn.classList.toggle('is-visible', scrollTop > 160);
     }
 
-    backToTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-    window.addEventListener('scroll', updateBackToTop, { passive: true });
+    backToTopBtn.addEventListener('click', () => window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    }));
+    window.addEventListener('scroll', updateBackToTop, {
+        passive: true
+    });
     window.addEventListener('resize', updateBackToTop);
     updateBackToTop();
 </script>
+
 </html>
