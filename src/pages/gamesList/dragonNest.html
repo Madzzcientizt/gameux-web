@@ -967,7 +967,7 @@
       }
     </style>
 
-    <title id="title">Geometry Dash - GameUX</title>
+    <title id="title">Dragon Nest - GameUX</title>
   </head>
 
   <body>
@@ -1013,7 +1013,7 @@
         <li class="breadcrumb-item">
           <a href="../gameList.html">Game List</a>
         </li>
-        <li class="breadcrumb-item active game-name">Geometry Dash</li>
+        <li class="breadcrumb-item active game-name">Dragon Nest</li>
       </ol>
     </nav>
 
@@ -1021,16 +1021,16 @@
       <article class="wide">
         <section class="header-section">
           <img class="game-poster-content game-poster-background-style" />
-          <h1 class="game-name game-name-header">Geometry Dash</h1>
+          <h1 class="game-name game-name-header">Dragon Nest</h1>
           <div class="game-header">
             <span class="game-header-cont">
               <div class="game-info-bar">
                 <span class="game-date-info">
-                  <span class="date-released">August 13, 2013</span>
+                  <span class="date-released">March 4, 2010</span>
                   <span class="days-ago"></span>
                 </span>
-                <span class="game-badge">Full Release</span>
-                <span class="publisher">RobTop Games</span>
+                <span class="game-badge">Live Service</span>
+                <span class="publisher">Eyedentity Games</span>
               </div>
             </span>
             <div class="game-header-rating">
@@ -1062,7 +1062,7 @@
               <img
                 class="game-poster-img"
                 id="game-poster-img"
-                alt="Geometry Dash Poster"
+                alt="Dragon Nest Poster"
               />
             </a>
             <div class="game-video-wrp">
@@ -1145,6 +1145,28 @@
 
       <div class="game-info-nav-container">
         <div class="game-info-nav-wrap">
+          <button
+            class="game-info-nav-arrow left"
+            id="game-info-nav-left"
+            type="button"
+            aria-label="Scroll sections left"
+            hidden
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+              width="20"
+              height="20"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M15.78 19.28a.75.75 0 0 1-1.06 0L8.22 12.78a.75.75 0 0 1 0-1.06l6.5-6.5a.75.75 0 1 1 1.06 1.06L9.81 12l5.97 5.72a.75.75 0 0 1 0 1.56Z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </button>
           <nav class="game-info-nav" id="game-info-nav" role="tablist">
             <label role="tab"
               ><input
@@ -1185,7 +1207,7 @@
             id="game-info-nav-right"
             type="button"
             aria-label="Scroll sections right"
-            hidden=""
+            hidden
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -1199,7 +1221,7 @@
                 fill-rule="evenodd"
                 d="M8.22 4.72a.75.75 0 0 1 1.06 0l6.5 6.5a.75.75 0 0 1 0 1.06l-6.5 6.5a.75.75 0 0 1-1.06-1.06L14.19 12 8.22 6.28a.75.75 0 0 1 0-1.56Z"
                 clip-rule="evenodd"
-              ></path>
+              />
             </svg>
           </button>
         </div>
@@ -1214,218 +1236,224 @@
           >
             <h2>Overview</h2>
             <ul class="list-style">
-              <h2>Geometry Dash Modes:</h2>
-              <li>Normal Mode</li>
-              <li>Practice Mode</li>
-              <li>Platformer Mode (2.2)</li>
+              <h2>Core Gameplay Loops:</h2>
+              <li>Non-Targeting Action Combat</li>
+              <li>Aerial Juggling & Combo Chaining</li>
+              <li>Instance-Based Dungeon Crawling</li>
             </ul>
             <p>
-              Geometry Dash is a rhythm-based action platformer developed and
-              published by Robert Topala (known as RobTop Games). Released in
-              August 2013, the game has evolved from a simple mobile app into a
-              massive, community-driven ecosystem. The core gameplay involves
-              navigating a customized icon through a series of obstacles,
-              primarily relying on a single input: a screen tap, mouse click, or
-              key press to jump or change gravity.
+              Dragon Nest is a free-to-play fantasy action MMORPG developed by
+              Eyedentity Games. Released in 2010, it stood out from the crowd of
+              traditional point-and-click MMOs by introducing a highly dynamic,
+              non-targeting combat system. Players use a WASD + Mouse look
+              interface, requiring actual physical aiming and dodging rather
+              than relying on tab-targeting and passive stat checks.
             </p>
             <p>
-              Unlike traditional platformers, Geometry Dash auto-scrolls at set
-              speeds. There is no spatial aiming or complex input sequences—only
-              binary inputs perfectly timed to a pulsing electronic soundtrack.
-              This distills Human-Computer Interaction to its absolute rawest
-              form: visual anticipation and millisecond-perfect motor response.
-              It serves as an incredible case study for flow state induction
-              through minimalist interface design and immediate feedback loops.
+              From an HCI standpoint, Dragon Nest represents an intense bridging
+              of genres: the high APM (Actions Per Minute) and twitch-reaction
+              demands of a fighting game or third-person shooter, combined with
+              the dense skill bars and cooldown management of a traditional
+              MMORPG. This creates a highly rewarding but ergonomically taxing
+              UX, where keyboard layout optimization becomes critical to
+              survival.
             </p>
             <ul class="metrics-list">
               <li>
                 <h6>Cognitive Load</h6>
-                <div class="value">Moderate</div>
+                <div class="value">High</div>
                 <div class="desc">
-                  Low structural complexity (one button) but extremely high
-                  demands on sustained attention and pattern recognition.
+                  Simultaneously tracking boss attack telegraphs, crosshair
+                  placement, and 10+ skill cooldown timers.
                 </div>
               </li>
               <li>
-                <h6>Response Time</h6>
-                <div class="value">Instant (Local)</div>
+                <h6>Interaction Frequency</h6>
+                <div class="value">Extreme APM</div>
                 <div class="desc">
-                  Zero server latency. Input responsiveness is tied purely to
-                  local hardware polling rates and monitor refresh rates.
+                  Relentless keystrokes required to maintain aerial juggles and
+                  chain frame-perfect combos.
                 </div>
               </li>
               <li>
-                <h6>Visual Reaction Time</h6>
-                <div class="value">~150ms to ~200ms</div>
+                <h6>Spatial Targeting</h6>
+                <div class="value">Manual (Crosshair)</div>
                 <div class="desc">
-                  Time required to process an upcoming obstacle and trigger a
-                  motor response, often aided by rhythmic anticipation.
+                  No tab-lock; hitboxes are strictly tied to 3D weapon models
+                  and projective trajectories.
                 </div>
               </li>
             </ul>
           </section>
+
           <section class="game-sections" id="ui-components" aria-hidden="true">
             <h2>UI Components</h2>
             <div class="major-components">
               <div class="major-component">
                 <figure>
                   <a
-                    href="../../../public/gamesContent/geometryDash/playerIcon.jpg"
-                    title="Geometry Dash Player Icon"
+                    href="../../../public/gamesContent/dragonnest/crosshair.jpg"
+                    title="The Dynamic Crosshair"
                     target="images"
                   >
                     <img
-                      src="../../../public/gamesContent/geometryDash/playerIcon.jpg"
-                      alt="Player Icon"
+                      src="../../../public/gamesContent/dragonnest/crosshair.jpg"
+                      alt="Action Combat Crosshair"
                     />
                   </a>
-                  <figcaption>FIG 1.1: The Player Icon (Cube)</figcaption>
+                  <figcaption>FIG 1.1: Center-Screen Focus (AI Generated)</figcaption>
                 </figure>
                 <div>
                   <span class="count">[ ELEMENT_01 ]</span>
-                  <span class="header-text">The Player Icon</span>
+                  <span class="header-text">The Action Crosshair</span>
                   <p>
-                    The focal point of the screen. The icon automatically moves
-                    forward, and the user's only control is manipulating its
-                    vertical axis (jumping, flying, reversing gravity). It
-                    represents the absolute center of the user's spatial
-                    awareness.
+                    The permanent anchor of the player's vision. Unlike
+                    traditional MMO cursors, the mouse is locked to camera
+                    movement. The crosshair dynamically reacts—turning red when
+                    hovering over an enemy hitbox within valid skill range,
+                    providing instant, crucial spatial feedback.
                   </p>
                   <ul>
-                    <h6>Visual Feedback</h6>
-                    <li>Particle Trails on movement</li>
-                    <li>Death explosion animation</li>
-                    <li>Form changes (Ship, UFO, Wave)</li>
+                    <h6>Functionality</h6>
+                    <li>Replaces tab-targeting completely</li>
+                    <li>Dictates projective spell vectors</li>
                   </ul>
                 </div>
               </div>
               <div class="major-component">
                 <figure>
                   <a
-                    href="../../../public/gamesContent/geometryDash/obstacles.jpg"
-                    title="Geometry Dash Obstacles"
+                    href="../../../public/gamesContent/dragonnest/hotbar.jpg"
+                    title="The Skill Hotbar"
                     target="images"
                   >
                     <img
-                      src="../../../public/gamesContent/geometryDash/obstacles.jpg"
-                      alt="Obstacles"
+                      src="../../../public/gamesContent/dragonnest/hotbar.jpg"
+                      alt="Dense MMO Skill Bar"
                     />
                   </a>
-                  <figcaption>FIG 1.2: Spikes and Hazards</figcaption>
+                  <figcaption>FIG 1.2: Cooldown Management</figcaption>
                 </figure>
                 <div>
                   <span class="count">[ ELEMENT_02 ]</span>
-                  <span class="header-text">Hazards</span>
+                  <span class="header-text">The Extended Hotbar</span>
                   <p>
-                    Static or moving geometric shapes (spikes, saws, walls) that
-                    define the fail-state boundaries. Their contrast against the
-                    background is crucial for rapid cognitive processing and
-                    determining the exact jump timing window.
+                    A massive UI panel located at the bottom of the screen
+                    housing rows of active skills. Players must map these to
+                    numbers (1-0), function keys, or surrounding letter keys.
+                    Monitoring the sweep animations of these cooldowns is a
+                    primary cognitive load factor.
                   </p>
                 </div>
               </div>
               <div class="major-component">
                 <figure>
                   <a
-                    href="../../../public/gamesContent/geometryDash/portals.png"
-                    title="Geometry Dash Portals"
+                    href="../../../public/gamesContent/dragonnest/combo.png"
+                    title="Combo Counter"
                     target="images"
                   >
                     <img
-                      src="../../../public/gamesContent/geometryDash/portals.png"
-                      alt="Portals and Orbs"
+                      src="../../../public/gamesContent/dragonnest/combo.png"
+                      alt="Combo Counter UI"
                     />
                   </a>
-                  <figcaption>FIG 1.3: Portals & Orbs</figcaption>
+                  <figcaption>FIG 1.3: The Combo Meter (AI Generated)</figcaption>
                 </figure>
                 <div>
                   <span class="count">[ ELEMENT_03 ]</span>
-                  <span class="header-text">Portals & Jump Rings</span>
+                  <span class="header-text">Combo & Super Armor HUD</span>
                   <p>
-                    Interactive environmental objects. Jump rings (orbs) require
-                    a mid-air click, while portals automatically alter the
-                    physics engine (speed, gravity, size, or form) the moment
-                    the icon passes through them, demanding instant mental
-                    recalibration.
+                    A prominently displayed hit counter that scales in size with
+                    the combo length, providing continuous dopamine feedback.
+                    Additionally, hidden "Super Armor" (stagger resistance)
+                    meters must be intuitively gauged by the player during boss
+                    fights.
                   </p>
                 </div>
               </div>
             </div>
-            <h2>Fitts' Law Transposed: Temporal Targeting</h2>
+
+            <h2>Keyboard Ergonomics & Skill Bloat</h2>
             <div class="fittslaw">
               <div>
                 <p>
-                  Traditional Fitts' Law involves spatial targeting—moving a
-                  cursor to a physical box on screen. Because Geometry Dash uses
-                  a global screen input (any click anywhere activates the jump),
-                  the spatial dimension is removed. Instead, the law must be
-                  translated into <strong>temporal precision</strong>.
+                  In Dragon Nest, Fitts's Law does not apply to clicking targets
+                  on the screen, but rather to the physical geography of the
+                  player's keyboard. With movement locked to WASD, the player's
+                  left hand becomes a bottleneck for executing 15-20 different
+                  active skills in rapid succession.
                 </p>
                 <div class="mathmodel">
-                  <h6>[ TEMPORAL TARGETING MODEL ]</h6>
-                  <span>Difficulty ∝ Speed / Window of Safe Frames</span>
+                  <h6>[ PHYSICAL MODEL ]</h6>
+                  <span>Execution Delay = Distance from WASD</span>
                 </div>
                 <p>
-                  In Geometry Dash, the "target width" (W) is actually a window
-                  of time. If a gap between spikes requires a 5-frame precision
-                  jump, that is the target. As the game speed increases (via
-                  speed portals), the physical distance remains the same, but
-                  the safe temporal window shrinks drastically, rapidly
-                  increasing the Index of Difficulty.
+                  Keys like `Q`, `E`, `R`, and `F` have a near-zero travel time,
+                  making them prime targets for emergency i-frame dodges or
+                  combo extenders. Reaching for `7`, `8`, or `9` mid-combat
+                  introduces severe mechanical friction and movement penalties,
+                  forcing advanced players to heavily customize their keybinds
+                  to maintain high APM flow.
                 </p>
               </div>
               <div>
                 <figure>
                   <a
-                    href="../../../public/gamesContent/geometryDash/temporalTargeting.png"
-                    title="Temporal Targeting Visualized"
+                    href="../../../public/gamesContent/dragonnest/keybinds.png"
+                    title="Keyboard Mapping Map"
                     target="images"
                   >
                     <img
-                      src="../../../public/gamesContent/geometryDash/temporalTargeting.png"
-                      alt="Temporal Targeting"
+                      src="../../../public/gamesContent/dragonnest/keybinds.png"
+                      alt="Optimal Keybind Layout"
                     />
                   </a>
-                  <figcaption>FIG 1.4: Jump Hitboxes & Time Windows</figcaption>
+                  <figcaption>FIG 1.4: WASD Proximity Zones</figcaption>
                 </figure>
               </div>
             </div>
+
             <div class="list-style-area">
               <h3 class="text-center">Visual Hierarchy Breakdown</h3>
-              <div class="text-center">A Subtractive UI Approach</div>
+              <div class="text-center">Action Combat Focus</div>
               <ol class="three-columns md-one-columns">
                 <li>
-                  <h6>Foreground (Action)</h6>
+                  <h6>Primary Focus (Center)</h6>
                   <p>
-                    Primary focus. The player icon, lethal obstacles, and
-                    interactive orbs. These must be instantly distinguishable to
-                    survive.
+                    The Crosshair and the enemy model. Players must watch for
+                    boss "tells"—specific bodily animations or ground markers
+                    that telegraph incoming devastating attacks requiring an
+                    immediate dodge.
                   </p>
                 </li>
                 <li>
-                  <h6>Midground (Structure)</h6>
+                  <h6>Secondary Focus (Bottom)</h6>
                   <p>
-                    Secondary focus. Safe platforms and block outlines that
-                    provide context for where the player can land.
+                    The Hotbar and HP/MP pools. Advanced players use peripheral
+                    vision to track the dark overlay "sweep" of a cooldown
+                    finishing, rather than looking directly at the skill icon.
                   </p>
                 </li>
                 <li>
-                  <h6>Background (Aesthetic)</h6>
+                  <h6>Tertiary Focus (Periphery)</h6>
                   <p>
-                    Tertiary focus. Pulsing colors and decorative elements that
-                    sync with the music to induce flow, but possess no collision
-                    hitboxes.
+                    Party frames and the minimap. During intense 8-player "Nest"
+                    raids, these become vital for coordinating group mechanics,
+                    though they contribute heavily to visual clutter.
                   </p>
                 </li>
               </ol>
             </div>
             <div class="footnote">
-              Note: In community-created "Demon" levels, this visual hierarchy
-              is frequently intentionally broken or overloaded to artificially
-              increase difficulty, relying entirely on rote memorization over
-              raw reaction.
+              The interface demands "Eye-Splitting." Because the game relies on
+              aiming rather than tab-targeting, the player cannot afford to look
+              down at their skill bar. This forces a steep learning curve where
+              players must build perfect muscle memory for their cooldown
+              rotations.
             </div>
           </section>
+
           <section
             class="game-sections"
             id="user-interaction"
@@ -1433,40 +1461,42 @@
           >
             <h2>User Interaction</h2>
             <p>
-              An investigation into the neuro-mechanical feedback loops of
-              one-button rhythm platforms, specifically analyzing the Geometry
-              Dash interaction model.
+              A breakdown of the high-speed tactical decision-making required to
+              juggle enemies, chain combos, and survive lethal raid mechanics
+              through invincibility framing.
             </p>
             <div class="list-style-area">
-              <h3 class="text-center">Core Gameplay Loop</h3>
-              <div class="text-center"></div>
+              <h3 class="text-center">The Combat Loop</h3>
               <ol class="four-columns md-two-columns">
                 <li>
-                  <h6>See & Hear</h6>
+                  <h6>Engage (Aim)</h6>
                   <p>
-                    Visual obstacles approach from the right side of the screen,
-                    synced with audio cues from the music track.
+                    Align the crosshair with the target, utilizing movement
+                    skills to close distance while avoiding incoming
+                    projectiles.
                   </p>
                 </li>
                 <li>
-                  <h6>Anticipate</h6>
+                  <h6>Break (Super Armor)</h6>
                   <p>
-                    The brain aligns the visual gap with the rhythm of the song
-                    to calculate the exact millisecond to act.
+                    Utilize specific "high-impact" skills designed to deplete
+                    the enemy's hidden stagger resistance (Super Armor).
                   </p>
                 </li>
                 <li>
-                  <h6>Trigger</h6>
+                  <h6>Juggle (Combo)</h6>
                   <p>
-                    A single binary input (mouse click, spacebar, or screen
-                    tap). No complex chords or aiming required.
+                    Once staggered or launched, rapidly execute a memorized
+                    sequence of low-cooldown skills to keep the enemy suspended
+                    in the air.
                   </p>
                 </li>
                 <li>
-                  <h6>Evaluate</h6>
+                  <h6>Evade (I-Frame)</h6>
                   <p>
-                    Immediate result: the icon successfully clears the gap, or
-                    crashes resulting in an instant level reset.
+                    Press `Shift` (or a specific dodge skill) to activate a
+                    fractional second of invulnerability to phase through a boss
+                    counter-attack.
                   </p>
                 </li>
               </ol>
@@ -1475,28 +1505,25 @@
             <div class="multi-modal-feedback">
               <div>
                 <p>
-                  Because the game relies on a single input, the feedback it
-                  provides must be incredibly rich to compensate. The
-                  environment itself becomes the interface. The audio, visual
-                  pulsing, and level design all work in concert to confirm or
-                  reject the player's timing.
+                  To make a high-speed action game satisfying, the system must
+                  provide robust, immediate feedback for every landed blow.
+                  Dragon Nest excels at translating numerical data into
+                  visceral, tactile sensations.
                 </p>
               </div>
               <div>
                 <figure>
                   <a
-                    href="../../../public/gamesContent/geometryDash/gdFeedback.png"
-                    title="Geometry Dash Audio-Visual Sync"
+                    href="../../../public/gamesContent/dragonnest/hitstop.png"
+                    title="Hitstop Mechanics"
                     target="images"
                   >
                     <img
-                      src="../../../public/gamesContent/geometryDash/gdFeedback.png"
-                      alt="Audio Visual Sync"
+                      src="../../../public/gamesContent/dragonnest/hitstop.png"
+                      alt="Combat Feedback"
                     />
                   </a>
-                  <figcaption>
-                    FIG 1.5: Environmental Audio-Visual Sync
-                  </figcaption>
+                  <figcaption>FIG 1.5: Hitstop and Camera Shake</figcaption>
                 </figure>
               </div>
             </div>
@@ -1520,10 +1547,10 @@
                 <div>
                   <h6>Audio Feedback</h6>
                   <p>
-                    The soundtrack is the most critical feedback layer. The
-                    layout of the level is mapped perfectly to the beats, drops,
-                    and melodies of the song. A successful sequence of jumps
-                    feels and sounds like the player is "playing" the music.
+                    Every class has distinct vocal grunts and spell incantations
+                    that serve as auditory cues for animation commitments. Crits
+                    produce a sharp, highly recognizable slicing or explosive
+                    sound, immediately validating the player's build choices.
                   </p>
                 </div>
               </li>
@@ -1549,12 +1576,12 @@
                   </svg>
                 </div>
                 <div>
-                  <h6>Visual Feedback</h6>
+                  <h6>Visual Feedback (Telegraphs)</h6>
                   <p>
-                    Backgrounds pulse to the beat of the song. Successful orb
-                    clicks emit particle bursts. A failure results in a jarring,
-                    immediate shatter animation and the cessation of the music,
-                    providing instant negative reinforcement.
+                    Unlike modern MMOs that rely heavily on bright red geometric
+                    shapes painted on the floor (AoE markers), early Dragon Nest
+                    required players to watch the actual boss model. A dragon
+                    lifting its right claw is the UI signal to dodge left.
                   </p>
                 </div>
               </li>
@@ -1576,116 +1603,114 @@
                   </svg>
                 </div>
                 <div>
-                  <h6>Input/Tactile Fidelity</h6>
+                  <h6>Input/Tactile Fidelity (Hitstop)</h6>
                   <p>
-                    Because the input is so minimal, players often develop heavy
-                    tactile reliance on the "click" sound of their mouse or the
-                    tap on their phone screen. This physical sound blends with
-                    the game's audio to create a personalized rhythmic feedback
-                    loop.
+                    The game employs aggressive "Hitstop"—a technique where the
+                    animation of both the attacker and defender freezes for a
+                    few milliseconds upon a successful strike. Combined with
+                    screen shake, this gives attacks a heavy, kinetic weight
+                    despite being a digital medium.
                   </p>
                 </div>
               </li>
             </ul>
           </section>
+
           <section class="game-sections" id="hci-principles" aria-hidden="true">
             <h2>HCI Principles</h2>
             <div class="cybernetic-feedback-loops">
-              <h3>Cybernetic Feedback Loops</h3>
+              <h3>Invincibility Frames (I-Frames)</h3>
               <div class="cybernetic-content">
                 <div>
                   <p style="text-align: justify">
-                    Geometry Dash utilizes a brutally efficient cybernetic loop
-                    based on trial and error. The penalty for failure is an
-                    immediate respawn at the start of the level. This near-zero
-                    downtime between failure and the next attempt minimizes
-                    frustration latency, keeping the player trapped in a highly
-                    addictive "Action-Perception-Correction" cycle.
+                    A core pillar of Dragon Nest's design is the I-Frame. Rather
+                    than relying entirely on healers to out-sustain damage,
+                    players are given specific dodge skills that grant total
+                    invulnerability for a fraction of a second. This shifts the
+                    survival paradigm from "UI Health Management" to
+                    "Spatial-Temporal Execution."
                   </p>
                 </div>
                 <div>
                   <ul class="primary-modalities">
-                    <h6>Primary Modalities</h6>
+                    <h6>Execution Requirements</h6>
                     <li>
-                      <strong>Visual</strong>: Constant forward scrolling,
-                      background pulsing, particle emissions.
+                      <strong>Timing Precision</strong>: Dodging too early
+                      leaves the player exposed to the tail-end of an attack
+                      hitbox.
                     </li>
                     <li>
-                      <strong>Auditory</strong>: Synchronized soundtrack,
-                      satisfying click/jump sound effects, harsh death sound.
-                    </li>
-                    <li>
-                      <strong>Structural</strong>: A persistent progress bar (0%
-                      to 100%) at the top of the screen serving as the only HUD
-                      element.
+                      <strong>Animation Commitment</strong>: Players cannot
+                      cancel heavy attack animations instantly, requiring
+                      strategic foresight before committing to a long combo.
                     </li>
                   </ul>
                 </div>
               </div>
             </div>
+
             <div class="spatial-congruence">
-              <h2>Spatial Congruence</h2>
+              <h2>Spatial Congruence & Instanced Dungeons</h2>
               <p style="text-align: justify">
-                The spatial model in Geometry Dash is highly restrictive. The
-                camera is locked to the player icon, meaning the environment
-                moves around the user, rather than the user moving through the
-                environment. This framing technique forces the player's eyes
-                slightly ahead of the icon (to the right side of the screen) to
-                parse incoming data, effectively splitting visual processing
-                between the current icon state (peripheral) and the upcoming
-                obstacle (focal).
+                Because the combat requires immense server-side calculation for
+                physics, hitboxes, and multi-hit juggles, the game limits
+                open-world exploration. It relies entirely on instanced
+                "Dungeons" and "Nests." This creates a highly contained spatial
+                arena, allowing the UX to focus entirely on the tight geometry
+                of the boss arena rather than rendering distant, irrelevant
+                landscapes.
               </p>
             </div>
+
             <div class="cognitive-load-bifurcation">
-              <h2>Cognitive Load Bifurcation</h2>
+              <h2>The Problem of Skill Bloat</h2>
               <p style="text-align: justify; margin-bottom: 2em">
-                Geometry Dash represents the absolute minimization of Extrinsic
-                Load. Because there is no inventory, no map, and no complex
-                controls to learn, 100% of the player's cognitive capacity is
-                poured into the Intrinsic Load of rhythmic timing and pattern
-                recognition.
+                As an MMO ages, developers continually add new skills to
+                maintain progression. In an action game, this inevitably leads
+                to "Skill Bloat," where the cognitive load of managing the UI
+                actively fights against the freedom of the combat system.
               </p>
               <table>
                 <thead>
                   <tr>
-                    <th>Extrinsic Zero-Point</th>
-                    <th>Intrinsic Saturation</th>
+                    <th>Extrinsic Organization</th>
+                    <th>Intrinsic Focus</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <td>
-                      <h6>Zero HUD Interference</h6>
+                      <h6>Hotbar Pagination</h6>
                       <p>
-                        Aside from an optional, thin progress bar at the top
-                        edge of the screen, the entire display is devoted solely
-                        to the gameplay area.
+                        Forcing players to use the `~` key to swap between
+                        Hotbar Page 1 and Page 2 mid-combat is an HCI failure,
+                        as it breaks the continuous flow of action.
                       </p>
                     </td>
                     <td>
-                      <h6>Rote Memorization</h6>
+                      <h6>Muscle Memory Chunking</h6>
                       <p>
-                        In higher difficulties, the speed exceeds human reaction
-                        time. The cognitive load shifts from reacting to
-                        recalling memorized motor-patterns.
+                        Players adapt by linking skills mentally (e.g., "Skill 3
+                        always follows Skill 4"), reducing the need to look at
+                        the UI to check 15 individual cooldowns.
                       </p>
                     </td>
                   </tr>
                   <tr>
                     <td>
-                      <h6>Universal Input</h6>
+                      <h6>Macro Systems</h6>
                       <p>
-                        No matter the vehicle (cube, ship, ball, UFO), the input
-                        method (click/hold) remains identical. The brain never
-                        has to search for the right button.
+                        Some players resort to third-party mouse macros to
+                        condense three sequential buffs into a single keystroke
+                        to save keyboard real estate.
                       </p>
                     </td>
                     <td>
-                      <h6>Sensory Flow State</h6>
+                      <h6>Class Design (Awakenings)</h6>
                       <p>
-                        The perfect alignment of visual obstacles with audio
-                        beats allows players to bypass conscious thought,
-                        entering a deep state of automatic mechanical execution.
+                        Later updates attempted to solve bloat by upgrading
+                        existing skills (altering their properties) rather than
+                        adding entirely new buttons to the UI.
                       </p>
                     </td>
                   </tr>
@@ -1694,12 +1719,14 @@
             </div>
             <div class="footnote">
               <q>
-                The interface is non-existent. The screen is the controller, the
-                music is the prompt, and the gameplay is the pure, unfiltered
-                measurement of human rhythmic precision.
+                The ultimate goal of action-MMO UI design is to make the
+                interface disappear. The more time the player spends looking at
+                the bottom of the screen, the less time they are engaged with
+                the visceral physics of the combat engine.
               </q>
             </div>
           </section>
+
           <section
             class="game-sections"
             id="ui-ux-weaknesses"
@@ -1707,10 +1734,9 @@
           >
             <h2>Strengths and Weaknesses Analysis</h2>
             <p>
-              A comprehensive breakdown of the minimalist rhythm platformer
-              paradigm. Evaluating how a system built on a single button press
-              can still face profound UX hurdles when scaled by a massive
-              community.
+              Evaluating the friction between an incredibly responsive,
+              high-skill combat engine and the aging, cluttered legacy systems
+              of classic MMORPG design.
             </p>
 
             <table style="margin-bottom: 2em">
@@ -1750,13 +1776,14 @@
                           ></path>
                         </svg>
                       </span>
-                      <span class="label">01_ACCESSIBILITY</span>
+                      <span class="label">01_FLUIDITY</span>
                     </div>
-                    <h6>Mechanical Accessibility</h6>
+                    <h6>Unmatched Combat Flow</h6>
                     <p>
-                      Because it only requires one button, it is immediately
-                      playable by anyone. There are no complex control schemes
-                      to learn, removing mechanical barriers to entry.
+                      The core engine provides an incredibly satisfying sense of
+                      kinetic impact. The combination of hitstop, screen shake,
+                      and seamless animation cancelling creates a flow state
+                      rarely achieved in traditional MMOs.
                     </p>
                   </td>
                   <td>
@@ -1776,14 +1803,14 @@
                           ></path>
                         </svg>
                       </span>
-                      <span class="label">01_PUNISHING</span>
+                      <span class="label">01_CLUTTER</span>
                     </div>
-                    <h6>Zero Margin for Error</h6>
+                    <h6>Visual Effect Overload</h6>
                     <p>
-                      The game offers no dynamic difficulty adjustment or damage
-                      states. A failure at 99% of a level requires starting
-                      completely over from 0%, which can lead to extreme
-                      psychological frustration.
+                      In 8-player raid environments, the overlapping particle
+                      effects of 8 different players simultaneously unleashing
+                      ultimate abilities completely obscures the boss, making
+                      visual telegraphs impossible to read.
                     </p>
                   </td>
                 </tr>
@@ -1805,13 +1832,14 @@
                           ></path>
                         </svg>
                       </span>
-                      <span class="label">02_LOOP</span>
+                      <span class="label">02_SKILL_CEILING</span>
                     </div>
-                    <h6>Instant Feedback Loop</h6>
+                    <h6>High PvP Expression</h6>
                     <p>
-                      The death-to-respawn time is practically instantaneous.
-                      This immediate reset keeps users engaged and prevents them
-                      from disengaging mentally after a failure.
+                      The equalized PvP arenas rely entirely on mechanical
+                      skill. The UI supports this by giving players precise
+                      control over micro-movements, turning matches into
+                      complex, high-speed chess games.
                     </p>
                   </td>
                   <td>
@@ -1831,72 +1859,14 @@
                           ></path>
                         </svg>
                       </span>
-                      <span class="label">02_HEALTH</span>
+                      <span class="label">02_FATIGUE</span>
                     </div>
-                    <h6>Sensory Hazards</h6>
+                    <h6>Ergonomic Strain</h6>
                     <p>
-                      Heavy reliance on flashing colors, strobe effects, and
-                      screen-shaking makes the game inherently inaccessible to
-                      players with photosensitive epilepsy or severe motion
-                      sickness.
-                    </p>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="sw-item-head">
-                      <span class="sw-icon" aria-hidden="true">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke-width="1.5"
-                          stroke="currentColor"
-                          class="size-6"
-                        >
-                          <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z"
-                          ></path>
-                        </svg>
-                      </span>
-                      <span class="label">03_CREATOR</span>
-                    </div>
-                    <h6>Level Editor Integration</h6>
-                    <p>
-                      The robust in-game editor empowers players to become
-                      designers. The seamless transition between playing and
-                      creating fosters a self-sustaining ecosystem of infinite
-                      content.
-                    </p>
-                  </td>
-                  <td>
-                    <div class="sw-item-head">
-                      <span class="sw-icon" aria-hidden="true">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke-width="1.5"
-                          stroke="currentColor"
-                          class="size-6"
-                        >
-                          <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            d="M3.98 8.223A10.477 10.477 0 0 0 1.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.451 10.451 0 0 1 12 4.5c4.756 0 8.773 3.162 10.065 7.498a10.522 10.522 0 0 1-4.293 5.774M6.228 6.228 3 3m3.228 3.228 3.65 3.65m7.894 7.894L21 21m-3.228-3.228-3.65-3.65m0 0a3 3 0 1 0-4.243-4.243m4.242 4.242L9.88 9.88"
-                          ></path>
-                        </svg>
-                      </span>
-                      <span class="label">03_NOISE</span>
-                    </div>
-                    <h6>Community UX Degradation</h6>
-                    <p>
-                      In modern, user-created "Demon" levels, extreme decorative
-                      clutter often completely obscures the actual hitboxes and
-                      gameplay paths, turning the game into a test of
-                      brute-force memorization rather than sight-reading.
+                      The requirement to repeatedly stretch the left hand across
+                      the keyboard to hit secondary and tertiary skill hotkeys
+                      while simultaneously maintaining WASD movement leads to
+                      physical hand fatigue over extended sessions.
                     </p>
                   </td>
                 </tr>
@@ -1904,13 +1874,12 @@
             </table>
             <div class="footnote summary">
               <p>
-                Geometry Dash proves that HCI does not need to be structurally
-                complex to be infinitely deep. By reducing user input to a
-                single, binary trigger, it shifts the entire burden of
-                interaction from <u>learning controls</u> to
-                <u>mastering timing</u>. However, as the community pushes the
-                limits of the engine, it highlights the breaking point where
-                aesthetic expression severely compromises interface clarity.
+                Dragon Nest remains a benchmark for action combat in the MMO
+                space. While its aging UI struggles to gracefully contain the
+                sheer volume of skills added over a decade of live service, its
+                <u>crosshair-based, physics-driven gameplay</u> perfectly
+                demonstrates how visceral, tactile feedback can transcend
+                traditional tab-targeting mechanics.
               </p>
             </div>
           </section>
@@ -1957,45 +1926,39 @@
     </button>
   </body>
 
+  <script>
+    // VARIABLES
+    const GAMENAME = "Dragon Nest";
+    const DATERELEASED = "03/04/2010";
+    const PUBLISHER = "Eyedentity Games";
+    const BADGE = "Live Service";
+    const POSTERURL = "../../../public/posters/dragonNest_poster.jpg";
+    const POSTERALTTEXT = "Dragon Nest Poster";
+    const VIDEOURL = "../../../public/videos/dragonNest_trailer.mp4";
+    const VIDEOURLYT =
+      "https://www.youtube.com/embed/Xm1fXkTsIXQ?si=9kk2qYTPM7WTc-kX";
+    const YTVID = true;
 
-    <script>
-      // VARIABLES
-      const GAMENAME = "Geometry Dash";
-      const DATERELEASED = "08/13/2013";
-      const PUBLISHER = "RobTop Games";
-      const BADGE = "Full Release";
-      const POSTERURL = "../../../public/posters/geometryDash_poster.jpg";
-      const POSTERALTTEXT = "Geometry Dash Poster";
-      const VIDEOURL = "../../../public/videos/geometryDash_trailer.mp4";
-      const VIDEOURLYT = "https://www.youtube.com/embed/k90y6PIzIaE"; // Official Trailer
-      const YTVID = true;
+    const GAMEUSERSTARS = "7.8";
+    const GAMEUSERRATINGS = "100,000+";
 
-      const GAMEUSERSTARS = "8.6";
-      const GAMEUSERRATINGS = "1,500,000+";
+    const HASCRITICS = true;
+    const GAMECRITICSTARS = "7.5";
+    const GAMECRITICRATINGS = "28";
 
-      const HASCRITICS = true;
-      const GAMECRITICSTARS = "8.0";
-      const GAMECRITICRATINGS = "15";
+    const GENRES = ["Action RPG", "MMORPG", "Hack and Slash"];
+    const PLATFORMS = ["PC"];
+    const EDITIONS = ["Free to Play"];
 
-      const GENRES = ["Platformer", "Rhythm", "Arcade"];
-      const PLATFORMS = ["iOS", "Android", "PC", "Mac"];
-      const EDITIONS = [
-        "Standard Edition",
-        "Lite",
-        "Meltdown",
-        "World",
-        "SubZero",
-      ];
+    const DESCRIPTION =
+      "Dragon Nest is a free-to-play fantasy MMORPG that revolutionized the genre upon its release with a fast-paced, non-targeting combat system. Players utilize a crosshair and WASD movement to chain together massive combos, juggle enemies in the air, and dodge lethal raid mechanics using precise invincibility frames.";
 
-      const DESCRIPTION =
-        "Jump and fly your way through danger in this rhythm-based action platformer! Geometry Dash takes the core of a simple one-touch game and elevates it with an incredible soundtrack, robust level editor, and near-impossible challenges.";
-
-      // Document Variables
+    // Document Variables
     const sectionRadios = Array.from(
-        document.querySelectorAll('input[name="game-section"]'),
+      document.querySelectorAll('input[name="game-section"]'),
     );
     const gameSections = Array.from(
-        document.querySelectorAll(".game-sections"),
+      document.querySelectorAll(".game-sections"),
     );
     const gameInfoNav = document.getElementById("game-info-nav");
     const gameInfoNavLeft = document.getElementById("game-info-nav-left");
@@ -2006,35 +1969,35 @@
     // -- Implementation --
     document.getElementById("title").textContent = GAMENAME + " - GameUX"; // Set page title
     for (let el of document.getElementsByClassName("game-name")) {
-        el.textContent = GAMENAME;
+      el.textContent = GAMENAME;
     } // Set game name
     for (let el of document.getElementsByClassName("date-released")) {
-        el.textContent = DATERELEASED;
+      el.textContent = DATERELEASED;
     } // Set date released
     for (let el of document.getElementsByClassName("publisher")) {
-        el.textContent = PUBLISHER;
+      el.textContent = PUBLISHER;
     } // Set publisher
     for (let el of document.getElementsByClassName("game-badge")) {
-        el.textContent = BADGE;
+      el.textContent = BADGE;
     } // Set badge
     for (let el of document.getElementsByClassName("game-user-rating")) {
-        el.textContent = GAMEUSERSTARS;
+      el.textContent = GAMEUSERSTARS;
     } // Set user rating
     for (let el of document.getElementsByClassName("game-user-ratings")) {
-        el.textContent = GAMEUSERRATINGS + " user ratings";
+      el.textContent = GAMEUSERRATINGS + " user ratings";
     } // Set user ratings
     for (let el of document.getElementsByClassName("game-critic-rating")) {
-        el.textContent = GAMECRITICSTARS;
+      el.textContent = GAMECRITICSTARS;
     } // Set critic rating
     for (let el of document.getElementsByClassName("game-critic-ratings")) {
-        el.textContent = GAMECRITICRATINGS + " critic ratings";
+      el.textContent = GAMECRITICRATINGS + " critic ratings";
     } // Set critic ratings
     for (let el of document.getElementsByClassName("game-poster-content")) {
-        el.src = POSTERURL;
+      el.src = POSTERURL;
     } // Set poster content
     document.getElementById("game-poster-img").src = POSTERURL; // Set poster image
     document.getElementById("game-poster-img").title =
-        GAMENAME + " Game Poster"; // Set poster image title
+      GAMENAME + " Game Poster"; // Set poster image title
     document.getElementById("game-poster").href = POSTERURL; // Set poster link
     document.getElementById("game-description").textContent = DESCRIPTION; // Set game description
     document.getElementById("game-poster-img").alt = POSTERALTTEXT; // Set poster image alt text
@@ -2043,207 +2006,209 @@
     const videoSourceEl = document.getElementById("game-video-source");
     const ytEl = document.getElementById("game-video-yt");
     if (YTVID) {
-        if (ytEl) {
-            ytEl.src = VIDEOURLYT;
-            ytEl.hidden = false;
-        }
-        if (videoEl) {
-            videoEl.hidden = true;
-            try {
-                videoEl.pause();
-            } catch (e) { }
-        }
+      if (ytEl) {
+        ytEl.src = VIDEOURLYT;
+        ytEl.hidden = false;
+      }
+      if (videoEl) {
+        videoEl.hidden = true;
+        try {
+          videoEl.pause();
+        } catch (e) {}
+      }
     } else {
-        if (videoSourceEl) {
-            videoSourceEl.src = VIDEOURL;
-        }
-        if (videoEl) {
-            videoEl.hidden = false;
-            try {
-                videoEl.load();
-            } catch (e) { }
-        }
-        if (ytEl) {
-            ytEl.hidden = true;
-            ytEl.src = "";
-        }
+      if (videoSourceEl) {
+        videoSourceEl.src = VIDEOURL;
+      }
+      if (videoEl) {
+        videoEl.hidden = false;
+        try {
+          videoEl.load();
+        } catch (e) {}
+      }
+      if (ytEl) {
+        ytEl.hidden = true;
+        ytEl.src = "";
+      }
     }
 
     for (let genre of GENRES) {
-        // Set genres
-        let li = document.createElement("li");
-        li.textContent = genre;
-        document.getElementById("genres").appendChild(li);
+      // Set genres
+      let li = document.createElement("li");
+      li.textContent = genre;
+      document.getElementById("genres").appendChild(li);
     }
 
     for (let platform of PLATFORMS) {
-        // Set platforms
-        let li = document.createElement("li");
-        li.textContent = platform;
-        document.getElementById("platforms").appendChild(li);
+      // Set platforms
+      let li = document.createElement("li");
+      li.textContent = platform;
+      document.getElementById("platforms").appendChild(li);
     }
 
     for (let edition of EDITIONS) {
-        // Set editions
-        let li = document.createElement("li");
-        li.textContent = edition;
-        document.getElementById("editions").appendChild(li);
+      // Set editions
+      let li = document.createElement("li");
+      li.textContent = edition;
+      document.getElementById("editions").appendChild(li);
     }
 
     // Hide critic ratings
     if (!HASCRITICS) {
-        for (let el of document.getElementsByClassName(
-            "game-critic-rating-cont",
-        )) {
-            el.classList.add("hidden");
-        }
+      for (let el of document.getElementsByClassName(
+        "game-critic-rating-cont",
+      )) {
+        el.classList.add("hidden");
+      }
     }
 
     // Calculate days ago
     let timeDiff = new Date().getTime() - new Date(DATERELEASED).getTime();
     let daysAgo = Math.floor(timeDiff / (1000 * 3600 * 24));
     if (daysAgo > 365) {
-        let yearsAgo = Math.floor(daysAgo / 365);
-        for (let el of document.getElementsByClassName("days-ago")) {
-            el.textContent = "(" + yearsAgo + " years ago)";
-        }
+      let yearsAgo = Math.floor(daysAgo / 365);
+      for (let el of document.getElementsByClassName("days-ago")) {
+        el.textContent = "(" + yearsAgo + " years ago)";
+      }
     } else {
-        for (let el of document.getElementsByClassName("days-ago")) {
-            el.textContent = "(" + daysAgo + " days ago)";
-        }
+      for (let el of document.getElementsByClassName("days-ago")) {
+        el.textContent = "(" + daysAgo + " days ago)";
+      }
     }
 
     // Sections navigation
     function showGameSection(sectionId) {
-        for (let section of gameSections) {
-            let isActive = section.id === sectionId;
-            section.classList.toggle("is-active", isActive);
-            section.setAttribute("aria-hidden", String(!isActive));
-        }
+      for (let section of gameSections) {
+        let isActive = section.id === sectionId;
+        section.classList.toggle("is-active", isActive);
+        section.setAttribute("aria-hidden", String(!isActive));
+      }
     }
 
     function getSectionIdFromHash() {
-        const rawHash = window.location.hash || "";
-        const hash = rawHash.startsWith("#") ? rawHash.slice(1) : rawHash;
-        if (!hash) {
-            return null;
-        }
-        return gameSections.some((section) => section.id === hash) ? hash : null;
+      const rawHash = window.location.hash || "";
+      const hash = rawHash.startsWith("#") ? rawHash.slice(1) : rawHash;
+      if (!hash) {
+        return null;
+      }
+      return gameSections.some((section) => section.id === hash) ? hash : null;
     }
 
     function syncSectionFromHash() {
-        const hashSectionId = getSectionIdFromHash();
-        if (!hashSectionId) {
-            return false;
-        }
+      const hashSectionId = getSectionIdFromHash();
+      if (!hashSectionId) {
+        return false;
+      }
 
-        const matchingRadio = sectionRadios.find((radio) => radio.value === hashSectionId);
-        if (matchingRadio) {
-            matchingRadio.checked = true;
-        }
-        showGameSection(hashSectionId);
-        return true;
+      const matchingRadio = sectionRadios.find(
+        (radio) => radio.value === hashSectionId,
+      );
+      if (matchingRadio) {
+        matchingRadio.checked = true;
+      }
+      showGameSection(hashSectionId);
+      return true;
     }
 
     const defaultSection = document.querySelector(
-        'input[name="game-section"]:checked',
+      'input[name="game-section"]:checked',
     );
     if (!syncSectionFromHash()) {
-        showGameSection(
-            defaultSection ? defaultSection.value : "short-description",
-        );
+      showGameSection(
+        defaultSection ? defaultSection.value : "short-description",
+      );
     }
 
     for (let radio of sectionRadios) {
-        radio.addEventListener("change", () => {
-            if (!radio.checked) {
-                return;
-            }
-            showGameSection(radio.value);
-            if (history.replaceState) {
-                history.replaceState(null, "", `#${radio.value}`);
-            } else {
-                window.location.hash = radio.value;
-            }
-        });
+      radio.addEventListener("change", () => {
+        if (!radio.checked) {
+          return;
+        }
+        showGameSection(radio.value);
+        if (history.replaceState) {
+          history.replaceState(null, "", `#${radio.value}`);
+        } else {
+          window.location.hash = radio.value;
+        }
+      });
     }
 
     window.addEventListener("hashchange", () => {
-        syncSectionFromHash();
+      syncSectionFromHash();
     });
 
     // Game info nav
     function updateGameInfoNavArrows() {
-        if (!gameInfoNav || !gameInfoNavLeft || !gameInfoNavRight) {
-            return;
-        }
+      if (!gameInfoNav || !gameInfoNavLeft || !gameInfoNavRight) {
+        return;
+      }
 
-        const maxScrollLeft = gameInfoNav.scrollWidth - gameInfoNav.clientWidth;
-        const canScroll = maxScrollLeft > 1;
-        const canScrollLeft = canScroll && gameInfoNav.scrollLeft > 1;
-        const canScrollRight =
-            canScroll && gameInfoNav.scrollLeft < maxScrollLeft - 1;
+      const maxScrollLeft = gameInfoNav.scrollWidth - gameInfoNav.clientWidth;
+      const canScroll = maxScrollLeft > 1;
+      const canScrollLeft = canScroll && gameInfoNav.scrollLeft > 1;
+      const canScrollRight =
+        canScroll && gameInfoNav.scrollLeft < maxScrollLeft - 1;
 
-        gameInfoNavLeft.hidden = !canScrollLeft;
-        gameInfoNavRight.hidden = !canScrollRight;
+      gameInfoNavLeft.hidden = !canScrollLeft;
+      gameInfoNavRight.hidden = !canScrollRight;
     }
 
     function scrollGameInfoNavBy(distance) {
-        if (!gameInfoNav) {
-            return;
-        }
-        gameInfoNav.scrollBy({ left: distance, behavior: "smooth" });
+      if (!gameInfoNav) {
+        return;
+      }
+      gameInfoNav.scrollBy({ left: distance, behavior: "smooth" });
     }
 
     if (gameInfoNav && gameInfoNavLeft && gameInfoNavRight) {
-        gameInfoNav.addEventListener("scroll", updateGameInfoNavArrows);
-        gameInfoNavLeft.addEventListener("click", () => {
-            scrollGameInfoNavBy(
-                -Math.max(200, Math.floor(gameInfoNav.clientWidth * 0.5)),
-            );
-        });
-        gameInfoNavRight.addEventListener("click", () => {
-            scrollGameInfoNavBy(
-                Math.max(200, Math.floor(gameInfoNav.clientWidth * 0.5)),
-            );
-        });
-        window.addEventListener("resize", updateGameInfoNavArrows);
-        updateGameInfoNavArrows();
+      gameInfoNav.addEventListener("scroll", updateGameInfoNavArrows);
+      gameInfoNavLeft.addEventListener("click", () => {
+        scrollGameInfoNavBy(
+          -Math.max(200, Math.floor(gameInfoNav.clientWidth * 0.5)),
+        );
+      });
+      gameInfoNavRight.addEventListener("click", () => {
+        scrollGameInfoNavBy(
+          Math.max(200, Math.floor(gameInfoNav.clientWidth * 0.5)),
+        );
+      });
+      window.addEventListener("resize", updateGameInfoNavArrows);
+      updateGameInfoNavArrows();
     }
 
-    // Back-to-top button
+    // Back-to-top button with circular scroll progress
     const progressRadius = 22;
     const progressCircumference = 2 * Math.PI * progressRadius;
 
     if (backToTopProgress) {
-        backToTopProgress.style.strokeDasharray = String(progressCircumference);
-        backToTopProgress.style.strokeDashoffset = String(progressCircumference);
+      backToTopProgress.style.strokeDasharray = String(progressCircumference);
+      backToTopProgress.style.strokeDashoffset = String(progressCircumference);
     }
 
     function updateBackToTop() {
-        if (!backToTopButton || !backToTopProgress) {
-            return;
-        }
+      if (!backToTopButton || !backToTopProgress) {
+        return;
+      }
 
-        const scrollTop = window.scrollY || document.documentElement.scrollTop;
-        const scrollableHeight =
-            document.documentElement.scrollHeight - window.innerHeight;
-        const progress = scrollableHeight > 0 ? Math.min(scrollTop / scrollableHeight, 1) : 0;
-        const dashOffset = progressCircumference * (1 - progress);
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      const scrollableHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
+      const progress =
+        scrollableHeight > 0 ? Math.min(scrollTop / scrollableHeight, 1) : 0;
+      const dashOffset = progressCircumference * (1 - progress);
 
-        backToTopProgress.style.strokeDashoffset = String(dashOffset);
-        backToTopButton.classList.toggle("is-visible", scrollTop > 160);
+      backToTopProgress.style.strokeDashoffset = String(dashOffset);
+      backToTopButton.classList.toggle("is-visible", scrollTop > 160);
     }
 
     if (backToTopButton) {
-        backToTopButton.addEventListener("click", () => {
-            window.scrollTo({ top: 0, behavior: "smooth" });
-        });
+      backToTopButton.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
     }
 
     window.addEventListener("scroll", updateBackToTop, { passive: true });
     window.addEventListener("resize", updateBackToTop);
     updateBackToTop();
-</script>
-
+  </script>
 </html>

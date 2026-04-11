@@ -967,7 +967,7 @@
       }
     </style>
 
-    <title id="title">Geometry Dash - GameUX</title>
+    <title id="title">Dispatch - GameUX</title>
   </head>
 
   <body>
@@ -1013,7 +1013,7 @@
         <li class="breadcrumb-item">
           <a href="../gameList.html">Game List</a>
         </li>
-        <li class="breadcrumb-item active game-name">Geometry Dash</li>
+        <li class="breadcrumb-item active game-name">Dispatch</li>
       </ol>
     </nav>
 
@@ -1021,16 +1021,16 @@
       <article class="wide">
         <section class="header-section">
           <img class="game-poster-content game-poster-background-style" />
-          <h1 class="game-name game-name-header">Geometry Dash</h1>
+          <h1 class="game-name game-name-header">Dispatch</h1>
           <div class="game-header">
             <span class="game-header-cont">
               <div class="game-info-bar">
                 <span class="game-date-info">
-                  <span class="date-released">August 13, 2013</span>
+                  <span class="date-released">Various</span>
                   <span class="days-ago"></span>
                 </span>
-                <span class="game-badge">Full Release</span>
-                <span class="publisher">RobTop Games</span>
+                <span class="game-badge">Simulator / Narrative</span>
+                <span class="publisher">Indie Studios</span>
               </div>
             </span>
             <div class="game-header-rating">
@@ -1062,7 +1062,7 @@
               <img
                 class="game-poster-img"
                 id="game-poster-img"
-                alt="Geometry Dash Poster"
+                alt="Dispatch Poster"
               />
             </a>
             <div class="game-video-wrp">
@@ -1145,6 +1145,28 @@
 
       <div class="game-info-nav-container">
         <div class="game-info-nav-wrap">
+          <button
+            class="game-info-nav-arrow left"
+            id="game-info-nav-left"
+            type="button"
+            aria-label="Scroll sections left"
+            hidden
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+              width="20"
+              height="20"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M15.78 19.28a.75.75 0 0 1-1.06 0L8.22 12.78a.75.75 0 0 1 0-1.06l6.5-6.5a.75.75 0 1 1 1.06 1.06L9.81 12l5.97 5.72a.75.75 0 0 1 0 1.56Z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </button>
           <nav class="game-info-nav" id="game-info-nav" role="tablist">
             <label role="tab"
               ><input
@@ -1185,7 +1207,7 @@
             id="game-info-nav-right"
             type="button"
             aria-label="Scroll sections right"
-            hidden=""
+            hidden
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -1199,12 +1221,11 @@
                 fill-rule="evenodd"
                 d="M8.22 4.72a.75.75 0 0 1 1.06 0l6.5 6.5a.75.75 0 0 1 0 1.06l-6.5 6.5a.75.75 0 0 1-1.06-1.06L14.19 12 8.22 6.28a.75.75 0 0 1 0-1.56Z"
                 clip-rule="evenodd"
-              ></path>
+              />
             </svg>
           </button>
         </div>
       </div>
-
       <article>
         <div class="game-sections-stage">
           <section
@@ -1214,218 +1235,223 @@
           >
             <h2>Overview</h2>
             <ul class="list-style">
-              <h2>Geometry Dash Modes:</h2>
-              <li>Normal Mode</li>
-              <li>Practice Mode</li>
-              <li>Platformer Mode (2.2)</li>
+              <h2>Core Gameplay Mechanics:</h2>
+              <li>Information Triage</li>
+              <li>Audio-Visual Asymmetry</li>
+              <li>Resource Routing & Map Logistics</li>
             </ul>
             <p>
-              Geometry Dash is a rhythm-based action platformer developed and
-              published by Robert Topala (known as RobTop Games). Released in
-              August 2013, the game has evolved from a simple mobile app into a
-              massive, community-driven ecosystem. The core gameplay involves
-              navigating a customized icon through a series of obstacles,
-              primarily relying on a single input: a screen tap, mouse click, or
-              key press to jump or change gravity.
+              The "Dispatch" genre (typified by games where you play an
+              emergency operator or command-center liaison) strips away
+              traditional 3D avatars and action-based gameplay. Instead, the
+              player is locked to a sterile, tactical terminal screen. They must
+              manage incoming distress calls, extract critical information from
+              panicked voices, and deploy limited resources (police, fire,
+              medical) to geographical points on a map.
             </p>
             <p>
-              Unlike traditional platformers, Geometry Dash auto-scrolls at set
-              speeds. There is no spatial aiming or complex input sequences—only
-              binary inputs perfectly timed to a pulsing electronic soundtrack.
-              This distills Human-Computer Interaction to its absolute rawest
-              form: visual anticipation and millisecond-perfect motor response.
-              It serves as an incredible case study for flow state induction
-              through minimalist interface design and immediate feedback loops.
+              From an HCI standpoint, this genre is a fascinating study in
+              "Information Overload" and "Blind Execution." The UI provides no
+              visual confirmation of the actual events happening on the ground.
+              The player must build a mental model of a life-or-death situation
+              entirely through auditory cues and abstract, moving dots on a GPS
+              interface. This massive asymmetry creates profound psychological
+              tension.
             </p>
             <ul class="metrics-list">
               <li>
                 <h6>Cognitive Load</h6>
-                <div class="value">Moderate</div>
+                <div class="value">Overwhelming</div>
                 <div class="desc">
-                  Low structural complexity (one button) but extremely high
-                  demands on sustained attention and pattern recognition.
+                  Requires simultaneous listening, typing, map reading, and
+                  multi-threaded resource tracking.
                 </div>
               </li>
               <li>
-                <h6>Response Time</h6>
-                <div class="value">Instant (Local)</div>
+                <h6>Interaction Frequency</h6>
+                <div class="value">Burst & Wait</div>
                 <div class="desc">
-                  Zero server latency. Input responsiveness is tied purely to
-                  local hardware polling rates and monitor refresh rates.
+                  Frantic clicking during triage, followed by agonizing waiting
+                  periods for units to arrive.
                 </div>
               </li>
               <li>
-                <h6>Visual Reaction Time</h6>
-                <div class="value">~150ms to ~200ms</div>
+                <h6>Spatial Targeting</h6>
+                <div class="value">Abstract / GPS</div>
                 <div class="desc">
-                  Time required to process an upcoming obstacle and trigger a
-                  motor response, often aided by rhythmic anticipation.
+                  Geographical mapping requiring players to calculate optimal
+                  routes based on street grids, not line-of-sight.
                 </div>
               </li>
             </ul>
           </section>
+
           <section class="game-sections" id="ui-components" aria-hidden="true">
             <h2>UI Components</h2>
             <div class="major-components">
               <div class="major-component">
                 <figure>
                   <a
-                    href="../../../public/gamesContent/geometryDash/playerIcon.jpg"
-                    title="Geometry Dash Player Icon"
+                    href="../../../public/gamesContent/dispatch/terminal.jpg"
+                    title="The Command Terminal"
                     target="images"
                   >
                     <img
-                      src="../../../public/gamesContent/geometryDash/playerIcon.jpg"
-                      alt="Player Icon"
+                      src="../../../public/gamesContent/dispatch/terminal.jpg"
+                      alt="Sterile Map Interface"
                     />
                   </a>
-                  <figcaption>FIG 1.1: The Player Icon (Cube)</figcaption>
+                  <figcaption>FIG 1.1: The Tactical Map</figcaption>
                 </figure>
                 <div>
                   <span class="count">[ ELEMENT_01 ]</span>
-                  <span class="header-text">The Player Icon</span>
+                  <span class="header-text">The Command Map</span>
                   <p>
-                    The focal point of the screen. The icon automatically moves
-                    forward, and the user's only control is manipulating its
-                    vertical axis (jumping, flying, reversing gravity). It
-                    represents the absolute center of the user's spatial
-                    awareness.
+                    The primary visual anchor. It is deliberately sterile, using
+                    high-contrast colors (often dark mode with neon vectors) to
+                    display street grids, unit locations, and incident markers.
+                    It removes all emotional context from the visuals, forcing
+                    the audio to carry the emotional weight.
                   </p>
                   <ul>
-                    <h6>Visual Feedback</h6>
-                    <li>Particle Trails on movement</li>
-                    <li>Death explosion animation</li>
-                    <li>Form changes (Ship, UFO, Wave)</li>
+                    <h6>Functionality</h6>
+                    <li>Provides absolute spatial data</li>
+                    <li>
+                      Lacks qualitative data (the severity of a dot is only
+                      known via audio)
+                    </li>
                   </ul>
                 </div>
               </div>
               <div class="major-component">
                 <figure>
                   <a
-                    href="../../../public/gamesContent/geometryDash/obstacles.jpg"
-                    title="Geometry Dash Obstacles"
+                    href="../../../public/gamesContent/dispatch/dialogue.jpg"
+                    title="Call Prompts"
                     target="images"
                   >
                     <img
-                      src="../../../public/gamesContent/geometryDash/obstacles.jpg"
-                      alt="Obstacles"
+                      src="../../../public/gamesContent/dispatch/dialogue.jpg"
+                      alt="Dialogue Choice UI"
                     />
                   </a>
-                  <figcaption>FIG 1.2: Spikes and Hazards</figcaption>
+                  <figcaption>FIG 1.2: Information Extraction</figcaption>
                 </figure>
                 <div>
                   <span class="count">[ ELEMENT_02 ]</span>
-                  <span class="header-text">Hazards</span>
+                  <span class="header-text">Dialogue / Triage Prompts</span>
                   <p>
-                    Static or moving geometric shapes (spikes, saws, walls) that
-                    define the fail-state boundaries. Their contrast against the
-                    background is crucial for rapid cognitive processing and
-                    determining the exact jump timing window.
+                    A text-based UI panel where the player selects responses to
+                    a caller. Unlike a standard RPG dialogue wheel where choices
+                    lead to narrative lore, these prompts are functional tools
+                    used to extract variables: Location, Injury Status, Suspect
+                    Description.
                   </p>
                 </div>
               </div>
               <div class="major-component">
                 <figure>
                   <a
-                    href="../../../public/gamesContent/geometryDash/portals.png"
-                    title="Geometry Dash Portals"
+                    href="../../../public/gamesContent/dispatch/units.png"
+                    title="Unit Roster"
                     target="images"
                   >
                     <img
-                      src="../../../public/gamesContent/geometryDash/portals.png"
-                      alt="Portals and Orbs"
+                      src="../../../public/gamesContent/dispatch/units.png"
+                      alt="Resource Management Bar"
                     />
                   </a>
-                  <figcaption>FIG 1.3: Portals & Orbs</figcaption>
+                  <figcaption>FIG 1.3: The Resource Roster</figcaption>
                 </figure>
                 <div>
                   <span class="count">[ ELEMENT_03 ]</span>
-                  <span class="header-text">Portals & Jump Rings</span>
+                  <span class="header-text">Unit Status Boards</span>
                   <p>
-                    Interactive environmental objects. Jump rings (orbs) require
-                    a mid-air click, while portals automatically alter the
-                    physics engine (speed, gravity, size, or form) the moment
-                    the icon passes through them, demanding instant mental
-                    recalibration.
+                    A peripheral UI element tracking the availability of field
+                    units (e.g., Squad 3 is en route, Medic 2 is busy). It acts
+                    as a constant stressor, visually reminding the player of
+                    their dwindling capacity to respond to the next emergency.
                   </p>
                 </div>
               </div>
             </div>
-            <h2>Fitts' Law Transposed: Temporal Targeting</h2>
+
+            <h2>Auditory-Visual Asymmetry</h2>
             <div class="fittslaw">
               <div>
                 <p>
-                  Traditional Fitts' Law involves spatial targeting—moving a
-                  cursor to a physical box on screen. Because Geometry Dash uses
-                  a global screen input (any click anywhere activates the jump),
-                  the spatial dimension is removed. Instead, the law must be
-                  translated into <strong>temporal precision</strong>.
+                  In traditional gaming, seeing is believing. The UI and the 3D
+                  world confirm each other. In a Dispatch game, the UI is blind
+                  to the reality of the situation. The interface intentionally
+                  starves the player of visual confirmation.
                 </p>
                 <div class="mathmodel">
-                  <h6>[ TEMPORAL TARGETING MODEL ]</h6>
-                  <span>Difficulty ∝ Speed / Window of Safe Frames</span>
+                  <h6>[ PSYCHOLOGICAL MODEL ]</h6>
+                  <span>Tension = Severity of Audio - Clarity of Visuals</span>
                 </div>
                 <p>
-                  In Geometry Dash, the "target width" (W) is actually a window
-                  of time. If a gap between spikes requires a 5-frame precision
-                  jump, that is the target. As the game speed increases (via
-                  speed portals), the physical distance remains the same, but
-                  the safe temporal window shrinks drastically, rapidly
-                  increasing the Index of Difficulty.
+                  Hearing a frantic caller describe an escalating break-in while
+                  staring at a completely static, unmoving blue dot on a digital
+                  map forces the player's imagination to do the heavy lifting.
+                  The interface becomes a cold, unfeeling barrier between the
+                  player and the human tragedy they are managing.
                 </p>
               </div>
               <div>
                 <figure>
                   <a
-                    href="../../../public/gamesContent/geometryDash/temporalTargeting.png"
-                    title="Temporal Targeting Visualized"
+                    href="../../../public/gamesContent/dispatch/audio.png"
+                    title="Audio Waveforms"
                     target="images"
                   >
                     <img
-                      src="../../../public/gamesContent/geometryDash/temporalTargeting.png"
-                      alt="Temporal Targeting"
+                      src="../../../public/gamesContent/dispatch/audio.png"
+                      alt="Audio UI Waveform"
                     />
                   </a>
-                  <figcaption>FIG 1.4: Jump Hitboxes & Time Windows</figcaption>
+                  <figcaption>FIG 1.4: The Weight of Sound</figcaption>
                 </figure>
               </div>
             </div>
+
             <div class="list-style-area">
               <h3 class="text-center">Visual Hierarchy Breakdown</h3>
-              <div class="text-center">A Subtractive UI Approach</div>
+              <div class="text-center">Clinical vs. Critical</div>
               <ol class="three-columns md-one-columns">
                 <li>
-                  <h6>Foreground (Action)</h6>
+                  <h6>Critical Alerts (Red/Flashing)</h6>
                   <p>
-                    Primary focus. The player icon, lethal obstacles, and
-                    interactive orbs. These must be instantly distinguishable to
-                    survive.
+                    Incoming calls and urgent status updates break the sterile
+                    color palette. These demand immediate clicks and interrupt
+                    whatever workflow the player is currently executing.
                   </p>
                 </li>
                 <li>
-                  <h6>Midground (Structure)</h6>
+                  <h6>Active Workload (Center Map)</h6>
                   <p>
-                    Secondary focus. Safe platforms and block outlines that
-                    provide context for where the player can land.
+                    The geographical routing puzzle. Players must track the ETA
+                    of moving units against the perceived urgency of an incident
+                    timer.
                   </p>
                 </li>
                 <li>
-                  <h6>Background (Aesthetic)</h6>
+                  <h6>Data Logs (Periphery)</h6>
                   <p>
-                    Tertiary focus. Pulsing colors and decorative elements that
-                    sync with the music to induce flow, but possess no collision
-                    hitboxes.
+                    Text transcripts and standard operating procedures. The UI
+                    often requires players to cross-reference an in-game manual
+                    or database to make the correct dispatch decision.
                   </p>
                 </li>
               </ol>
             </div>
             <div class="footnote">
-              Note: In community-created "Demon" levels, this visual hierarchy
-              is frequently intentionally broken or overloaded to artificially
-              increase difficulty, relying entirely on rote memorization over
-              raw reaction.
+              The genius of the Dispatch UI is that it weaponizes "waiting."
+              After clicking a button to deploy a unit, the player has no agency
+              but to watch a timer count down while the audio of the emergency
+              continues to play in their ear.
             </div>
           </section>
+
           <section
             class="game-sections"
             id="user-interaction"
@@ -1433,40 +1459,41 @@
           >
             <h2>User Interaction</h2>
             <p>
-              An investigation into the neuro-mechanical feedback loops of
-              one-button rhythm platforms, specifically analyzing the Geometry
-              Dash interaction model.
+              A breakdown of the triage loop and how players process raw,
+              disorganized human panic into clean, executable digital commands.
             </p>
             <div class="list-style-area">
-              <h3 class="text-center">Core Gameplay Loop</h3>
-              <div class="text-center"></div>
+              <h3 class="text-center">The Triage Loop</h3>
               <ol class="four-columns md-two-columns">
                 <li>
-                  <h6>See & Hear</h6>
+                  <h6>Receive (Listen)</h6>
                   <p>
-                    Visual obstacles approach from the right side of the screen,
-                    synced with audio cues from the music track.
+                    Answer the ping. The player must actively listen past the
+                    caller's panic to isolate critical data points.
                   </p>
                 </li>
                 <li>
-                  <h6>Anticipate</h6>
+                  <h6>Extract (Prompt)</h6>
                   <p>
-                    The brain aligns the visual gap with the rhythm of the song
-                    to calculate the exact millisecond to act.
+                    Use dialogue UI to calm the caller or press for specific
+                    details (e.g., "Are they armed?", "What is the exact
+                    address?").
                   </p>
                 </li>
                 <li>
-                  <h6>Trigger</h6>
+                  <h6>Allocate (Route)</h6>
                   <p>
-                    A single binary input (mouse click, spacebar, or screen
-                    tap). No complex chords or aiming required.
+                    Select the appropriate resource from the sidebar (Police vs.
+                    Medic) and click the geographical coordinate on the map to
+                    deploy.
                   </p>
                 </li>
                 <li>
-                  <h6>Evaluate</h6>
+                  <h6>Monitor (Wait)</h6>
                   <p>
-                    Immediate result: the icon successfully clears the gap, or
-                    crashes resulting in an instant level reset.
+                    Track the progress of the dispatched unit on the map while
+                    maintaining verbal contact with the caller to update the
+                    situation.
                   </p>
                 </li>
               </ol>
@@ -1475,28 +1502,25 @@
             <div class="multi-modal-feedback">
               <div>
                 <p>
-                  Because the game relies on a single input, the feedback it
-                  provides must be incredibly rich to compensate. The
-                  environment itself becomes the interface. The audio, visual
-                  pulsing, and level design all work in concert to confirm or
-                  reject the player's timing.
+                  Because the visual feedback is strictly functional (a dot
+                  changes color from yellow to green when it arrives), the
+                  auditory feedback must carry the entire narrative and
+                  emotional spectrum of the game.
                 </p>
               </div>
               <div>
                 <figure>
                   <a
-                    href="../../../public/gamesContent/geometryDash/gdFeedback.png"
-                    title="Geometry Dash Audio-Visual Sync"
+                    href="../../../public/gamesContent/dispatch/triage.png"
+                    title="Triage Mechanics"
                     target="images"
                   >
                     <img
-                      src="../../../public/gamesContent/geometryDash/gdFeedback.png"
-                      alt="Audio Visual Sync"
+                      src="../../../public/gamesContent/dispatch/triage.png"
+                      alt="Dispatching a unit"
                     />
                   </a>
-                  <figcaption>
-                    FIG 1.5: Environmental Audio-Visual Sync
-                  </figcaption>
+                  <figcaption>FIG 1.5: Blind Deployment</figcaption>
                 </figure>
               </div>
             </div>
@@ -1518,12 +1542,12 @@
                   </svg>
                 </div>
                 <div>
-                  <h6>Audio Feedback</h6>
+                  <h6>Auditory Fidelity</h6>
                   <p>
-                    The soundtrack is the most critical feedback layer. The
-                    layout of the level is mapped perfectly to the beats, drops,
-                    and melodies of the song. A successful sequence of jumps
-                    feels and sounds like the player is "playing" the music.
+                    The game relies on highly realistic voice acting, ambient
+                    background noise (sirens, screaming, static), and the
+                    rhythmic, clinical beeps of the terminal to create a stark
+                    contrast between human chaos and systemic order.
                   </p>
                 </div>
               </li>
@@ -1549,12 +1573,13 @@
                   </svg>
                 </div>
                 <div>
-                  <h6>Visual Feedback</h6>
+                  <h6>Visual Validation (Or Lack Thereof)</h6>
                   <p>
-                    Backgrounds pulse to the beat of the song. Successful orb
-                    clicks emit particle bursts. A failure results in a jarring,
-                    immediate shatter animation and the cessation of the music,
-                    providing instant negative reinforcement.
+                    When a unit arrives, the player does not see a cinematic
+                    rescue. They see a progress bar fill up, followed by a dry
+                    text update ("Situation Resolved" or "Casualties Reported").
+                    This clinical UI response heightens the feeling of being a
+                    disconnected cog in a machine.
                   </p>
                 </div>
               </li>
@@ -1576,116 +1601,112 @@
                   </svg>
                 </div>
                 <div>
-                  <h6>Input/Tactile Fidelity</h6>
+                  <h6>Input Urgency</h6>
                   <p>
-                    Because the input is so minimal, players often develop heavy
-                    tactile reliance on the "click" sound of their mouse or the
-                    tap on their phone screen. This physical sound blends with
-                    the game's audio to create a personalized rhythmic feedback
-                    loop.
+                    The UI demands rapid context-switching. The player's mouse
+                    must fly between the dialogue panel on the left, the unit
+                    roster on the right, and the map in the center, physically
+                    manifesting the frantic nature of a dispatch center.
                   </p>
                 </div>
               </li>
             </ul>
           </section>
+
           <section class="game-sections" id="hci-principles" aria-hidden="true">
             <h2>HCI Principles</h2>
             <div class="cybernetic-feedback-loops">
-              <h3>Cybernetic Feedback Loops</h3>
+              <h3>Cognitive Load and Multi-threading</h3>
               <div class="cybernetic-content">
                 <div>
                   <p style="text-align: justify">
-                    Geometry Dash utilizes a brutally efficient cybernetic loop
-                    based on trial and error. The penalty for failure is an
-                    immediate respawn at the start of the level. This near-zero
-                    downtime between failure and the next attempt minimizes
-                    frustration latency, keeping the player trapped in a highly
-                    addictive "Action-Perception-Correction" cycle.
+                    Dispatch interfaces are designed to test a user's working
+                    memory. A player might be actively listening to a hostage
+                    situation on the phone while simultaneously keeping an eye
+                    on a speeding ticket icon across town to ensure the police
+                    unit clears in time to be routed elsewhere. The UI does not
+                    hold the player's hand; if they forget to check a timer, a
+                    virtual person dies.
                   </p>
                 </div>
                 <div>
                   <ul class="primary-modalities">
-                    <h6>Primary Modalities</h6>
+                    <h6>Managing Overload</h6>
                     <li>
-                      <strong>Visual</strong>: Constant forward scrolling,
-                      background pulsing, particle emissions.
+                      <strong>UI Compartmentalization</strong>: Grouping tasks
+                      into strict zones (Map Center, Comms Left, Units Right)
+                      allows for muscle-memory navigation.
                     </li>
                     <li>
-                      <strong>Auditory</strong>: Synchronized soundtrack,
-                      satisfying click/jump sound effects, harsh death sound.
-                    </li>
-                    <li>
-                      <strong>Structural</strong>: A persistent progress bar (0%
-                      to 100%) at the top of the screen serving as the only HUD
-                      element.
+                      <strong>Color Coding</strong>: Using universal hazard
+                      colors (Red for Fire, Blue for Police, White for Medical)
+                      to reduce reading time.
                     </li>
                   </ul>
                 </div>
               </div>
             </div>
+
             <div class="spatial-congruence">
-              <h2>Spatial Congruence</h2>
+              <h2>Data Entry as Gameplay</h2>
               <p style="text-align: justify">
-                The spatial model in Geometry Dash is highly restrictive. The
-                camera is locked to the player icon, meaning the environment
-                moves around the user, rather than the user moving through the
-                environment. This framing technique forces the player's eyes
-                slightly ahead of the icon (to the right side of the screen) to
-                parse incoming data, effectively splitting visual processing
-                between the current icon state (peripheral) and the upcoming
-                obstacle (focal).
+                In many Dispatch games, the player must actually type or
+                physically click to categorize a call (e.g., tagging a call as a
+                "10-50: Traffic Accident"). By gamifying standard office
+                data-entry protocols, the game forces the player to adopt a
+                clinical, procedural mindset, sharply contrasting with the
+                emotional panic of the callers on the line.
               </p>
             </div>
+
             <div class="cognitive-load-bifurcation">
-              <h2>Cognitive Load Bifurcation</h2>
+              <h2>The Problem of UI Sterility</h2>
               <p style="text-align: justify; margin-bottom: 2em">
-                Geometry Dash represents the absolute minimization of Extrinsic
-                Load. Because there is no inventory, no map, and no complex
-                controls to learn, 100% of the player's cognitive capacity is
-                poured into the Intrinsic Load of rhythmic timing and pattern
-                recognition.
+                The core challenge of designing a Dispatch game is making a
+                spreadsheet and a map feel engaging over a long play session.
               </p>
               <table>
                 <thead>
                   <tr>
-                    <th>Extrinsic Zero-Point</th>
-                    <th>Intrinsic Saturation</th>
+                    <th>Extrinsic Organization</th>
+                    <th>Intrinsic Engagement</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <td>
-                      <h6>Zero HUD Interference</h6>
+                      <h6>Abstract Icons</h6>
                       <p>
-                        Aside from an optional, thin progress bar at the top
-                        edge of the screen, the entire display is devoted solely
-                        to the gameplay area.
+                        A bank robbery is just a flashing red circle. The UI
+                        provides no cinematic spectacle to reward the player for
+                        solving the puzzle.
                       </p>
                     </td>
                     <td>
-                      <h6>Rote Memorization</h6>
+                      <h6>Narrative Pacing</h6>
                       <p>
-                        In higher difficulties, the speed exceeds human reaction
-                        time. The cognitive load shifts from reacting to
-                        recalling memorized motor-patterns.
+                        The game must carefully script the audio logs to build
+                        an overarching narrative (e.g., a city-wide conspiracy)
+                        out of seemingly random, isolated map icons.
                       </p>
                     </td>
                   </tr>
                   <tr>
                     <td>
-                      <h6>Universal Input</h6>
+                      <h6>Repetitive Loops</h6>
                       <p>
-                        No matter the vehicle (cube, ship, ball, UFO), the input
-                        method (click/hold) remains identical. The brain never
-                        has to search for the right button.
+                        The physical action is always the same: Answer call >
+                        Click map > Send unit. The UI itself never evolves into
+                        complex combos.
                       </p>
                     </td>
                     <td>
-                      <h6>Sensory Flow State</h6>
+                      <h6>Moral Dilemmas</h6>
                       <p>
-                        The perfect alignment of visual obstacles with audio
-                        beats allows players to bypass conscious thought,
-                        entering a deep state of automatic mechanical execution.
+                        Engagement is maintained through resource scarcity.
+                        Forcing the player to decide between sending the last
+                        ambulance to a heart attack victim or a multi-car pileup
+                        using only a minimalist UI prompt.
                       </p>
                     </td>
                   </tr>
@@ -1694,12 +1715,14 @@
             </div>
             <div class="footnote">
               <q>
-                The interface is non-existent. The screen is the controller, the
-                music is the prompt, and the gameplay is the pure, unfiltered
-                measurement of human rhythmic precision.
+                By restricting the player to a terminal interface, the Dispatch
+                genre proves that UI doesn't need to be flashy to be terrifying.
+                Sometimes, a blinking cursor and a countdown timer are the most
+                stressful mechanics in gaming.
               </q>
             </div>
           </section>
+
           <section
             class="game-sections"
             id="ui-ux-weaknesses"
@@ -1707,10 +1730,9 @@
           >
             <h2>Strengths and Weaknesses Analysis</h2>
             <p>
-              A comprehensive breakdown of the minimalist rhythm platformer
-              paradigm. Evaluating how a system built on a single button press
-              can still face profound UX hurdles when scaled by a massive
-              community.
+              Evaluating the friction between an incredibly immersive,
+              audio-driven premise and the inherent limitations of staring at a
+              static map.
             </p>
 
             <table style="margin-bottom: 2em">
@@ -1750,13 +1772,14 @@
                           ></path>
                         </svg>
                       </span>
-                      <span class="label">01_ACCESSIBILITY</span>
+                      <span class="label">01_IMMERSION</span>
                     </div>
-                    <h6>Mechanical Accessibility</h6>
+                    <h6>Psychological Engagement</h6>
                     <p>
-                      Because it only requires one button, it is immediately
-                      playable by anyone. There are no complex control schemes
-                      to learn, removing mechanical barriers to entry.
+                      Because the UI hides the visual reality of the game world,
+                      it forces the player's imagination to construct the
+                      horrific or intense scenes, resulting in a deeply
+                      personal, customized sense of immersion.
                     </p>
                   </td>
                   <td>
@@ -1776,14 +1799,15 @@
                           ></path>
                         </svg>
                       </span>
-                      <span class="label">01_PUNISHING</span>
+                      <span class="label">01_ACCESSIBILITY</span>
                     </div>
-                    <h6>Zero Margin for Error</h6>
+                    <h6>Audio Reliance</h6>
                     <p>
-                      The game offers no dynamic difficulty adjustment or damage
-                      states. A failure at 99% of a level requires starting
-                      completely over from 0%, which can lead to extreme
-                      psychological frustration.
+                      Games in this genre completely fall apart if not heavily
+                      subtitled for hearing-impaired players. Relying entirely
+                      on audio cues (like hearing a subtle gunshot in the
+                      background of a call) creates massive accessibility
+                      hurdles.
                     </p>
                   </td>
                 </tr>
@@ -1805,13 +1829,14 @@
                           ></path>
                         </svg>
                       </span>
-                      <span class="label">02_LOOP</span>
+                      <span class="label">02_CLARITY</span>
                     </div>
-                    <h6>Instant Feedback Loop</h6>
+                    <h6>High-Contrast Minimalism</h6>
                     <p>
-                      The death-to-respawn time is practically instantaneous.
-                      This immediate reset keeps users engaged and prevents them
-                      from disengaging mentally after a failure.
+                      The use of stark wireframe maps and distinct,
+                      high-contrast UI colors allows players to quickly scan the
+                      screen and parse massive amounts of data efficiently
+                      without visual clutter.
                     </p>
                   </td>
                   <td>
@@ -1831,72 +1856,15 @@
                           ></path>
                         </svg>
                       </span>
-                      <span class="label">02_HEALTH</span>
+                      <span class="label">02_FATIGUE</span>
                     </div>
-                    <h6>Sensory Hazards</h6>
+                    <h6>Visual Monotony</h6>
                     <p>
-                      Heavy reliance on flashing colors, strobe effects, and
-                      screen-shaking makes the game inherently inaccessible to
-                      players with photosensitive epilepsy or severe motion
-                      sickness.
-                    </p>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="sw-item-head">
-                      <span class="sw-icon" aria-hidden="true">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke-width="1.5"
-                          stroke="currentColor"
-                          class="size-6"
-                        >
-                          <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z"
-                          ></path>
-                        </svg>
-                      </span>
-                      <span class="label">03_CREATOR</span>
-                    </div>
-                    <h6>Level Editor Integration</h6>
-                    <p>
-                      The robust in-game editor empowers players to become
-                      designers. The seamless transition between playing and
-                      creating fosters a self-sustaining ecosystem of infinite
-                      content.
-                    </p>
-                  </td>
-                  <td>
-                    <div class="sw-item-head">
-                      <span class="sw-icon" aria-hidden="true">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke-width="1.5"
-                          stroke="currentColor"
-                          class="size-6"
-                        >
-                          <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            d="M3.98 8.223A10.477 10.477 0 0 0 1.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.451 10.451 0 0 1 12 4.5c4.756 0 8.773 3.162 10.065 7.498a10.522 10.522 0 0 1-4.293 5.774M6.228 6.228 3 3m3.228 3.228 3.65 3.65m7.894 7.894L21 21m-3.228-3.228-3.65-3.65m0 0a3 3 0 1 0-4.243-4.243m4.242 4.242L9.88 9.88"
-                          ></path>
-                        </svg>
-                      </span>
-                      <span class="label">03_NOISE</span>
-                    </div>
-                    <h6>Community UX Degradation</h6>
-                    <p>
-                      In modern, user-created "Demon" levels, extreme decorative
-                      clutter often completely obscures the actual hitboxes and
-                      gameplay paths, turning the game into a test of
-                      brute-force memorization rather than sight-reading.
+                      Staring at the same unmoving map interface for hours on
+                      end can lead to severe visual fatigue. The lack of dynamic
+                      visual rewards (like seeing a fire actually extinguished)
+                      can make the gameplay loop eventually feel like genuine
+                      workplace labor.
                     </p>
                   </td>
                 </tr>
@@ -1904,13 +1872,12 @@
             </table>
             <div class="footnote summary">
               <p>
-                Geometry Dash proves that HCI does not need to be structurally
-                complex to be infinitely deep. By reducing user input to a
-                single, binary trigger, it shifts the entire burden of
-                interaction from <u>learning controls</u> to
-                <u>mastering timing</u>. However, as the community pushes the
-                limits of the engine, it highlights the breaking point where
-                aesthetic expression severely compromises interface clarity.
+                The Dispatch genre succeeds by turning
+                <u>Information Triage</u> into gameplay. By confining the player
+                to a sterile, abstract terminal and forcing them to rely on
+                visceral audio logs, the UI itself becomes the primary source of
+                tension, bridging the gap between clinical data management and
+                human tragedy.
               </p>
             </div>
           </section>
@@ -1957,45 +1924,39 @@
     </button>
   </body>
 
+  <script>
+    // VARIABLES - UPDATED FOR DISPATCH
+    const GAMENAME = "Dispatch";
+    const DATERELEASED = "Various";
+    const PUBLISHER = "Indie Studios";
+    const BADGE = "Simulator / Narrative";
+    const POSTERURL = "../../../public/posters/dispatch_poster.jpg";
+    const POSTERALTTEXT = "Dispatch Terminal Poster";
+    const VIDEOURL = "../../../public/videos/dispatch_trailer.mp4";
+    const VIDEOURLYT =
+      "https://www.youtube.com/embed/gRL_0P2JZNk?si=IxvgbLz-vKI8g3Jn";
+    const YTVID = true;
 
-    <script>
-      // VARIABLES
-      const GAMENAME = "Geometry Dash";
-      const DATERELEASED = "08/13/2013";
-      const PUBLISHER = "RobTop Games";
-      const BADGE = "Full Release";
-      const POSTERURL = "../../../public/posters/geometryDash_poster.jpg";
-      const POSTERALTTEXT = "Geometry Dash Poster";
-      const VIDEOURL = "../../../public/videos/geometryDash_trailer.mp4";
-      const VIDEOURLYT = "https://www.youtube.com/embed/k90y6PIzIaE"; // Official Trailer
-      const YTVID = true;
+    const GAMEUSERSTARS = "8.2";
+    const GAMEUSERRATINGS = "15,000+";
 
-      const GAMEUSERSTARS = "8.6";
-      const GAMEUSERRATINGS = "1,500,000+";
+    const HASCRITICS = true;
+    const GAMECRITICSTARS = "7.9";
+    const GAMECRITICRATINGS = "20";
 
-      const HASCRITICS = true;
-      const GAMECRITICSTARS = "8.0";
-      const GAMECRITICRATINGS = "15";
+    const GENRES = ["Simulator", "Strategy", "Narrative Audio"];
+    const PLATFORMS = ["PC", "Mobile"];
+    const EDITIONS = ["Standard Edition"];
 
-      const GENRES = ["Platformer", "Rhythm", "Arcade"];
-      const PLATFORMS = ["iOS", "Android", "PC", "Mac"];
-      const EDITIONS = [
-        "Standard Edition",
-        "Lite",
-        "Meltdown",
-        "World",
-        "SubZero",
-      ];
+    const DESCRIPTION =
+      "The 'Dispatch' genre strips away traditional avatars and action combat, locking the player behind a high-stress command terminal. Players must answer harrowing emergency calls, extract crucial information from panicked civilians, and deploy limited police, fire, and medical resources across a stark digital map, relying entirely on their spatial reasoning and auditory processing.";
 
-      const DESCRIPTION =
-        "Jump and fly your way through danger in this rhythm-based action platformer! Geometry Dash takes the core of a simple one-touch game and elevates it with an incredible soundtrack, robust level editor, and near-impossible challenges.";
-
-      // Document Variables
+    // Document Variables
     const sectionRadios = Array.from(
-        document.querySelectorAll('input[name="game-section"]'),
+      document.querySelectorAll('input[name="game-section"]'),
     );
     const gameSections = Array.from(
-        document.querySelectorAll(".game-sections"),
+      document.querySelectorAll(".game-sections"),
     );
     const gameInfoNav = document.getElementById("game-info-nav");
     const gameInfoNavLeft = document.getElementById("game-info-nav-left");
@@ -2006,35 +1967,35 @@
     // -- Implementation --
     document.getElementById("title").textContent = GAMENAME + " - GameUX"; // Set page title
     for (let el of document.getElementsByClassName("game-name")) {
-        el.textContent = GAMENAME;
+      el.textContent = GAMENAME;
     } // Set game name
     for (let el of document.getElementsByClassName("date-released")) {
-        el.textContent = DATERELEASED;
+      el.textContent = DATERELEASED;
     } // Set date released
     for (let el of document.getElementsByClassName("publisher")) {
-        el.textContent = PUBLISHER;
+      el.textContent = PUBLISHER;
     } // Set publisher
     for (let el of document.getElementsByClassName("game-badge")) {
-        el.textContent = BADGE;
+      el.textContent = BADGE;
     } // Set badge
     for (let el of document.getElementsByClassName("game-user-rating")) {
-        el.textContent = GAMEUSERSTARS;
+      el.textContent = GAMEUSERSTARS;
     } // Set user rating
     for (let el of document.getElementsByClassName("game-user-ratings")) {
-        el.textContent = GAMEUSERRATINGS + " user ratings";
+      el.textContent = GAMEUSERRATINGS + " user ratings";
     } // Set user ratings
     for (let el of document.getElementsByClassName("game-critic-rating")) {
-        el.textContent = GAMECRITICSTARS;
+      el.textContent = GAMECRITICSTARS;
     } // Set critic rating
     for (let el of document.getElementsByClassName("game-critic-ratings")) {
-        el.textContent = GAMECRITICRATINGS + " critic ratings";
+      el.textContent = GAMECRITICRATINGS + " critic ratings";
     } // Set critic ratings
     for (let el of document.getElementsByClassName("game-poster-content")) {
-        el.src = POSTERURL;
+      el.src = POSTERURL;
     } // Set poster content
     document.getElementById("game-poster-img").src = POSTERURL; // Set poster image
     document.getElementById("game-poster-img").title =
-        GAMENAME + " Game Poster"; // Set poster image title
+      GAMENAME + " Game Poster"; // Set poster image title
     document.getElementById("game-poster").href = POSTERURL; // Set poster link
     document.getElementById("game-description").textContent = DESCRIPTION; // Set game description
     document.getElementById("game-poster-img").alt = POSTERALTTEXT; // Set poster image alt text
@@ -2043,207 +2004,209 @@
     const videoSourceEl = document.getElementById("game-video-source");
     const ytEl = document.getElementById("game-video-yt");
     if (YTVID) {
-        if (ytEl) {
-            ytEl.src = VIDEOURLYT;
-            ytEl.hidden = false;
-        }
-        if (videoEl) {
-            videoEl.hidden = true;
-            try {
-                videoEl.pause();
-            } catch (e) { }
-        }
+      if (ytEl) {
+        ytEl.src = VIDEOURLYT;
+        ytEl.hidden = false;
+      }
+      if (videoEl) {
+        videoEl.hidden = true;
+        try {
+          videoEl.pause();
+        } catch (e) {}
+      }
     } else {
-        if (videoSourceEl) {
-            videoSourceEl.src = VIDEOURL;
-        }
-        if (videoEl) {
-            videoEl.hidden = false;
-            try {
-                videoEl.load();
-            } catch (e) { }
-        }
-        if (ytEl) {
-            ytEl.hidden = true;
-            ytEl.src = "";
-        }
+      if (videoSourceEl) {
+        videoSourceEl.src = VIDEOURL;
+      }
+      if (videoEl) {
+        videoEl.hidden = false;
+        try {
+          videoEl.load();
+        } catch (e) {}
+      }
+      if (ytEl) {
+        ytEl.hidden = true;
+        ytEl.src = "";
+      }
     }
 
     for (let genre of GENRES) {
-        // Set genres
-        let li = document.createElement("li");
-        li.textContent = genre;
-        document.getElementById("genres").appendChild(li);
+      // Set genres
+      let li = document.createElement("li");
+      li.textContent = genre;
+      document.getElementById("genres").appendChild(li);
     }
 
     for (let platform of PLATFORMS) {
-        // Set platforms
-        let li = document.createElement("li");
-        li.textContent = platform;
-        document.getElementById("platforms").appendChild(li);
+      // Set platforms
+      let li = document.createElement("li");
+      li.textContent = platform;
+      document.getElementById("platforms").appendChild(li);
     }
 
     for (let edition of EDITIONS) {
-        // Set editions
-        let li = document.createElement("li");
-        li.textContent = edition;
-        document.getElementById("editions").appendChild(li);
+      // Set editions
+      let li = document.createElement("li");
+      li.textContent = edition;
+      document.getElementById("editions").appendChild(li);
     }
 
     // Hide critic ratings
     if (!HASCRITICS) {
-        for (let el of document.getElementsByClassName(
-            "game-critic-rating-cont",
-        )) {
-            el.classList.add("hidden");
-        }
+      for (let el of document.getElementsByClassName(
+        "game-critic-rating-cont",
+      )) {
+        el.classList.add("hidden");
+      }
     }
 
     // Calculate days ago
     let timeDiff = new Date().getTime() - new Date(DATERELEASED).getTime();
     let daysAgo = Math.floor(timeDiff / (1000 * 3600 * 24));
     if (daysAgo > 365) {
-        let yearsAgo = Math.floor(daysAgo / 365);
-        for (let el of document.getElementsByClassName("days-ago")) {
-            el.textContent = "(" + yearsAgo + " years ago)";
-        }
+      let yearsAgo = Math.floor(daysAgo / 365);
+      for (let el of document.getElementsByClassName("days-ago")) {
+        el.textContent = "(" + yearsAgo + " years ago)";
+      }
     } else {
-        for (let el of document.getElementsByClassName("days-ago")) {
-            el.textContent = "(" + daysAgo + " days ago)";
-        }
+      for (let el of document.getElementsByClassName("days-ago")) {
+        el.textContent = "(" + daysAgo + " days ago)";
+      }
     }
 
     // Sections navigation
     function showGameSection(sectionId) {
-        for (let section of gameSections) {
-            let isActive = section.id === sectionId;
-            section.classList.toggle("is-active", isActive);
-            section.setAttribute("aria-hidden", String(!isActive));
-        }
+      for (let section of gameSections) {
+        let isActive = section.id === sectionId;
+        section.classList.toggle("is-active", isActive);
+        section.setAttribute("aria-hidden", String(!isActive));
+      }
     }
 
     function getSectionIdFromHash() {
-        const rawHash = window.location.hash || "";
-        const hash = rawHash.startsWith("#") ? rawHash.slice(1) : rawHash;
-        if (!hash) {
-            return null;
-        }
-        return gameSections.some((section) => section.id === hash) ? hash : null;
+      const rawHash = window.location.hash || "";
+      const hash = rawHash.startsWith("#") ? rawHash.slice(1) : rawHash;
+      if (!hash) {
+        return null;
+      }
+      return gameSections.some((section) => section.id === hash) ? hash : null;
     }
 
     function syncSectionFromHash() {
-        const hashSectionId = getSectionIdFromHash();
-        if (!hashSectionId) {
-            return false;
-        }
+      const hashSectionId = getSectionIdFromHash();
+      if (!hashSectionId) {
+        return false;
+      }
 
-        const matchingRadio = sectionRadios.find((radio) => radio.value === hashSectionId);
-        if (matchingRadio) {
-            matchingRadio.checked = true;
-        }
-        showGameSection(hashSectionId);
-        return true;
+      const matchingRadio = sectionRadios.find(
+        (radio) => radio.value === hashSectionId,
+      );
+      if (matchingRadio) {
+        matchingRadio.checked = true;
+      }
+      showGameSection(hashSectionId);
+      return true;
     }
 
     const defaultSection = document.querySelector(
-        'input[name="game-section"]:checked',
+      'input[name="game-section"]:checked',
     );
     if (!syncSectionFromHash()) {
-        showGameSection(
-            defaultSection ? defaultSection.value : "short-description",
-        );
+      showGameSection(
+        defaultSection ? defaultSection.value : "short-description",
+      );
     }
 
     for (let radio of sectionRadios) {
-        radio.addEventListener("change", () => {
-            if (!radio.checked) {
-                return;
-            }
-            showGameSection(radio.value);
-            if (history.replaceState) {
-                history.replaceState(null, "", `#${radio.value}`);
-            } else {
-                window.location.hash = radio.value;
-            }
-        });
+      radio.addEventListener("change", () => {
+        if (!radio.checked) {
+          return;
+        }
+        showGameSection(radio.value);
+        if (history.replaceState) {
+          history.replaceState(null, "", `#${radio.value}`);
+        } else {
+          window.location.hash = radio.value;
+        }
+      });
     }
 
     window.addEventListener("hashchange", () => {
-        syncSectionFromHash();
+      syncSectionFromHash();
     });
 
     // Game info nav
     function updateGameInfoNavArrows() {
-        if (!gameInfoNav || !gameInfoNavLeft || !gameInfoNavRight) {
-            return;
-        }
+      if (!gameInfoNav || !gameInfoNavLeft || !gameInfoNavRight) {
+        return;
+      }
 
-        const maxScrollLeft = gameInfoNav.scrollWidth - gameInfoNav.clientWidth;
-        const canScroll = maxScrollLeft > 1;
-        const canScrollLeft = canScroll && gameInfoNav.scrollLeft > 1;
-        const canScrollRight =
-            canScroll && gameInfoNav.scrollLeft < maxScrollLeft - 1;
+      const maxScrollLeft = gameInfoNav.scrollWidth - gameInfoNav.clientWidth;
+      const canScroll = maxScrollLeft > 1;
+      const canScrollLeft = canScroll && gameInfoNav.scrollLeft > 1;
+      const canScrollRight =
+        canScroll && gameInfoNav.scrollLeft < maxScrollLeft - 1;
 
-        gameInfoNavLeft.hidden = !canScrollLeft;
-        gameInfoNavRight.hidden = !canScrollRight;
+      gameInfoNavLeft.hidden = !canScrollLeft;
+      gameInfoNavRight.hidden = !canScrollRight;
     }
 
     function scrollGameInfoNavBy(distance) {
-        if (!gameInfoNav) {
-            return;
-        }
-        gameInfoNav.scrollBy({ left: distance, behavior: "smooth" });
+      if (!gameInfoNav) {
+        return;
+      }
+      gameInfoNav.scrollBy({ left: distance, behavior: "smooth" });
     }
 
     if (gameInfoNav && gameInfoNavLeft && gameInfoNavRight) {
-        gameInfoNav.addEventListener("scroll", updateGameInfoNavArrows);
-        gameInfoNavLeft.addEventListener("click", () => {
-            scrollGameInfoNavBy(
-                -Math.max(200, Math.floor(gameInfoNav.clientWidth * 0.5)),
-            );
-        });
-        gameInfoNavRight.addEventListener("click", () => {
-            scrollGameInfoNavBy(
-                Math.max(200, Math.floor(gameInfoNav.clientWidth * 0.5)),
-            );
-        });
-        window.addEventListener("resize", updateGameInfoNavArrows);
-        updateGameInfoNavArrows();
+      gameInfoNav.addEventListener("scroll", updateGameInfoNavArrows);
+      gameInfoNavLeft.addEventListener("click", () => {
+        scrollGameInfoNavBy(
+          -Math.max(200, Math.floor(gameInfoNav.clientWidth * 0.5)),
+        );
+      });
+      gameInfoNavRight.addEventListener("click", () => {
+        scrollGameInfoNavBy(
+          Math.max(200, Math.floor(gameInfoNav.clientWidth * 0.5)),
+        );
+      });
+      window.addEventListener("resize", updateGameInfoNavArrows);
+      updateGameInfoNavArrows();
     }
 
-    // Back-to-top button
+    // Back-to-top button with circular scroll progress
     const progressRadius = 22;
     const progressCircumference = 2 * Math.PI * progressRadius;
 
     if (backToTopProgress) {
-        backToTopProgress.style.strokeDasharray = String(progressCircumference);
-        backToTopProgress.style.strokeDashoffset = String(progressCircumference);
+      backToTopProgress.style.strokeDasharray = String(progressCircumference);
+      backToTopProgress.style.strokeDashoffset = String(progressCircumference);
     }
 
     function updateBackToTop() {
-        if (!backToTopButton || !backToTopProgress) {
-            return;
-        }
+      if (!backToTopButton || !backToTopProgress) {
+        return;
+      }
 
-        const scrollTop = window.scrollY || document.documentElement.scrollTop;
-        const scrollableHeight =
-            document.documentElement.scrollHeight - window.innerHeight;
-        const progress = scrollableHeight > 0 ? Math.min(scrollTop / scrollableHeight, 1) : 0;
-        const dashOffset = progressCircumference * (1 - progress);
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      const scrollableHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
+      const progress =
+        scrollableHeight > 0 ? Math.min(scrollTop / scrollableHeight, 1) : 0;
+      const dashOffset = progressCircumference * (1 - progress);
 
-        backToTopProgress.style.strokeDashoffset = String(dashOffset);
-        backToTopButton.classList.toggle("is-visible", scrollTop > 160);
+      backToTopProgress.style.strokeDashoffset = String(dashOffset);
+      backToTopButton.classList.toggle("is-visible", scrollTop > 160);
     }
 
     if (backToTopButton) {
-        backToTopButton.addEventListener("click", () => {
-            window.scrollTo({ top: 0, behavior: "smooth" });
-        });
+      backToTopButton.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
     }
 
     window.addEventListener("scroll", updateBackToTop, { passive: true });
     window.addEventListener("resize", updateBackToTop);
     updateBackToTop();
-</script>
-
+  </script>
 </html>
