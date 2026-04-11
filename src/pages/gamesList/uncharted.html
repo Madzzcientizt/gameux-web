@@ -8,16 +8,12 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend:wght@100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Manrope:wght@200..800&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend:wght@100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Manrope:wght@200..800&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
         rel="stylesheet" />
 
     <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 
     <!-- Styles -->
     <link rel="stylesheet" href="../../styles/styles.css" type="text/css" />
@@ -29,20 +25,17 @@
         nav.game-info-nav label {
             width: calc(100% / 5) !important;
         }
-
+        
         .game-sections {
             &#short-description {
-
                 &>h2 {
                     font-weight: 900;
                     font-size: 2.5em;
                 }
-
                 &>p {
                     text-align: justify;
                     margin-bottom: 1em;
                 }
-
                 &>.list-style {
                     list-style: none;
                     float: right;
@@ -52,16 +45,13 @@
                     margin-bottom: 2em;
                     border-radius: var(--t-radius-field);
                     border: var(--t-border) solid var(--t-color-base-300);
-
                     &>h6 {
                         font-weight: 900;
                     }
-
                     &>li {
                         margin-left: 1em;
                         margin-bottom: 1em;
                         position: relative;
-
                         &::before {
                             content: '';
                             display: block;
@@ -76,15 +66,12 @@
                     }
                 }
             }
-
             &#ui-components {
                 margin-bottom: 2em;
-
                 &>h2 {
                     font-weight: 900;
                     font-size: 2.5em;
                 }
-
                 & .major-components {
                     display: grid;
                     grid-template-rows: 1fr;
@@ -92,7 +79,6 @@
                     gap: 1em;
                     margin: 2em 0;
                 }
-
                 & .major-component {
                     background-color: var(--t-color-base-100);
                     border-radius: var(--t-radius-field);
@@ -105,23 +91,19 @@
                     gap: 1em;
                     min-height: 15em;
                     border: var(--t-border) solid var(--t-color-base-300);
-
                     &:first-child {
                         grid-column: 1 / -1;
                         width: 100%;
                         flex-direction: row;
                     }
-
                     &:not(:first-child) {
                         flex-direction: column;
                     }
-
                     & figure {
                         position: relative;
                         margin-bottom: 0;
                         width: 100%;
                         height: auto;
-
                         & figcaption {
                             font-size: 0.9em;
                             color: var(--t-color-light);
@@ -131,11 +113,9 @@
                             right: 0.5em;
                         }
                     }
-
                     & a {
                         flex-shrink: 0;
                         margin-left: auto;
-
                         & img {
                             display: block;
                             width: 100%;
@@ -144,7 +124,6 @@
                             border-radius: 0.25em;
                         }
                     }
-
                     & .count {
                         font-weight: 700;
                         font-size: 1.2em;
@@ -152,27 +131,22 @@
                         color: var(--t-color-secondary);
                         display: block;
                     }
-
                     & .header-text {
                         font-weight: 700;
                         font-size: 2.5em;
                         font-family: var(--bs-font-serif);
                     }
-
                     & ul {
                         list-style: none;
                         margin-left: 1em;
                         margin-top: 2em;
-
                         & h6 {
                             font-weight: 900;
                         }
-
                         & li {
                             margin-left: 1em;
                             margin-bottom: 0.5em;
                             position: relative;
-
                             &::before {
                                 content: '';
                                 display: block;
@@ -187,23 +161,19 @@
                         }
                     }
                 }
-
                 & .fittslaw {
                     display: grid;
                     grid-template-columns: 50% 1fr;
                     gap: 1em;
-
                     & h2 {
                         font-weight: 900;
                         font-size: 2.5em;
                     }
-
                     & figure {
                         position: relative;
                         margin-bottom: 0;
                         width: 100%;
                         height: auto;
-
                         & figcaption {
                             font-size: 0.9em;
                             color: var(--t-color-dark);
@@ -213,11 +183,9 @@
                             right: 0.5em;
                         }
                     }
-
                     & a {
                         flex-shrink: 0;
                         margin-left: auto;
-
                         & img {
                             width: 100% !important;
                             height: auto !important;
@@ -225,13 +193,11 @@
                         }
                     }
                 }
-
                 @media (width < 48rem) {
                     & .fittslaw {
                         grid-template-columns: 1fr;
                     }
                 }
-
                 & .mathmodel {
                     margin: 1em 0;
                     padding: 1em;
@@ -240,7 +206,6 @@
                     background-color: var(--t-color-base-300);
                     border-radius: var(--t-radius-field);
                     overflow: hidden;
-
                     &::before {
                         content: '';
                         display: block;
@@ -251,41 +216,33 @@
                         left: 0;
                         top: 0;
                     }
-
                     & h6 {
                         font-family: var(--bs-font-monospace);
                         color: var(--t-color-dark);
                         font-weight: 300;
                     }
-
                     & span {
                         font-size: 2em
                     }
                 }
-
                 @media (width < 48rem) {
                     & .major-components {
                         grid-template-columns: 1fr;
                         gap: 1em;
                     }
-
                     & .major-component {
                         &:first-child {
                             flex-direction: column;
                         }
-
                         & figure {
                             width: 100%;
-
                             & figcaption {
                                 bottom: 1em;
                             }
                         }
-
                         & a {
                             margin-left: 0;
                             width: 100%;
-
                             & img {
                                 width: 100% !important;
                                 height: auto !important;
@@ -295,58 +252,46 @@
                     }
                 }
             }
-
             &#user-interaction {
                 margin-bottom: 2em;
-
                 &>h2 {
                     font-weight: 900;
                     font-size: 2.5em;
                 }
-
                 & h3 {
                     font-weight: 900;
                     font-size: 2.5em;
                 }
-
-
                 & .multi-modal-feedback {
                     display: grid;
                     grid-template-columns: 1fr 1fr;
                     gap: 1em;
                     padding-top: 1em;
-
                     @media (width < 48rem) {
                         grid-template-columns: 1fr !important;
                     }
-
                     & figure {
                         margin: auto;
                         width: 100%;
                         height: auto;
-
                         & img {
                             width: 100% !important;
                             height: auto !important;
                         }
                     }
                 }
-
                 & ul {
                     list-style: none;
                     padding: 0;
-
                     & li {
                         margin-top: 2em;
                         display: flex;
                         flex-direction: row;
-
                         & h6 {
                             font-weight: 700;
                             font-size: 1.5em;
                             margin-bottom: 0.5em;
                         }
-
                         & .logo-svg {
                             height: 5em;
                             flex-shrink: 0;
@@ -361,7 +306,6 @@
                             border-radius: var(--t-radius-field);
                             margin: auto;
                             margin-right: 1em;
-
                             & svg {
                                 width: 100%;
                                 height: 100%;
@@ -370,55 +314,44 @@
                     }
                 }
             }
-
             &#hci-principles {
                 margin-bottom: 2em;
-
                 &>h2 {
                     font-weight: 900;
                     font-size: 2.5em;
                 }
-
                 & .cybernetic-feedback-loops {
                     margin-top: 2em;
                     padding: 1em;
                     border-radius: var(--t-radius-field);
                     background-color: var(--t-color-base-100);
                     border: var(--t-border) solid var(--t-color-base-300);
-
                     &>h3 {
                         font-weight: 900;
                         font-size: 2em;
                     }
-
                     & .cybernetic-content {
                         display: grid;
                         grid-template-columns: 1fr 1fr;
                         gap: 1em;
-
                         @media (width < 48rem) {
                             grid-template-columns: 1fr !important;
                         }
-
                         & h6 {
                             font-weight: 700;
                             font-size: 1.2em;
                             margin-bottom: 0.5em;
                         }
-
                         & .primary-modalities {
                             list-style: none;
                             padding: 1em;
                             background-color: var(--t-color-base-200);
                             border-radius: var(--t-radius-field);
                             margin-bottom: 0;
-
-
                             & li {
                                 margin-left: 1em;
                                 margin-bottom: 0.5em;
                                 position: relative;
-
                                 &::before {
                                     content: '';
                                     display: block;
@@ -434,29 +367,24 @@
                         }
                     }
                 }
-
                 & .spatial-congruence {
                     padding: 1em;
                     margin-top: 2em;
-
                     & h2 {
                         font-weight: 900;
                         font-size: 2.5em;
                     }
                 }
-
                 & .cognitive-load-bifurcation {
                     margin: 2em 0;
                     padding: 1em;
                     border-radius: var(--t-radius-field);
                     background-color: var(--t-color-base-100);
                     border: var(--t-border) solid var(--t-color-base-300);
-
                     &>h2 {
                         font-weight: 900;
                         font-size: 2em;
                     }
-
                     & table {
                         width: 100%;
                         border-collapse: separate;
@@ -466,45 +394,36 @@
                         overflow: hidden;
                         background-color: var(--t-color-base-200);
                     }
-
                     & th,
                     & td {
                         padding: 1em;
                         vertical-align: top;
                     }
-
                     & thead th {
                         font-weight: 800;
                         font-size: 1.05em;
                         background-color: var(--t-color-base-300);
                         border-bottom: 1px solid var(--t-color-base-300);
                     }
-
                     & th+th,
                     & td+td {
                         border-left: 1px solid var(--t-color-base-300);
                     }
-
                     & tbody td {
                         border-bottom: 1px solid var(--t-color-base-300);
                     }
-
                     & tbody tr:last-child td {
                         border-bottom: 0;
                     }
-
                     & td h6 {
                         font-weight: 700;
                         font-size: 1.15em;
                         margin-bottom: 0.5em;
                     }
-
                     & td p {
                         margin-bottom: 0;
                     }
-
                     @media (width < 48rem) {
-
                         & table,
                         & thead,
                         & tbody,
@@ -514,27 +433,22 @@
                             display: block;
                             width: 100%;
                         }
-
                         & thead {
                             display: none;
                         }
-
                         & tbody tr {
                             border-bottom: 1px solid var(--t-color-base-300);
                             padding: 0.5em;
                         }
-
                         & tbody tr:last-child {
                             border-bottom: 0;
                         }
-
                         & td {
                             border: 0;
                             border-radius: var(--t-radius-field);
                             background-color: var(--t-color-base-100);
                             margin-bottom: 0.75em;
                         }
-
                         & td::before {
                             display: block;
                             font-weight: 700;
@@ -544,31 +458,25 @@
                             color: var(--t-color-primary);
                             margin-bottom: 0.5em;
                         }
-
                         & td:nth-child(1)::before {
                             content: 'Extrinsic Load';
                         }
-
                         & td:nth-child(2)::before {
                             content: 'Intrinsic Focus';
                         }
                     }
                 }
             }
-
             &#ui-ux-weaknesses {
                 margin-bottom: 2em;
-
                 &>h2 {
                     font-weight: 900;
                     font-size: 2.5em;
                 }
-
                 &>p {
                     text-align: justify;
                     margin-bottom: 2em;
                 }
-
                 & table {
                     width: 100%;
                     border-collapse: separate;
@@ -578,38 +486,31 @@
                     overflow: hidden;
                     background-color: var(--t-color-base-100);
                 }
-
                 & th,
                 & td {
                     padding: 1em;
                     vertical-align: top;
                 }
-
                 & td {
                     position: relative;
                     padding-right: 4.25em;
                 }
-
                 & thead th {
                     font-weight: 800;
                     font-size: 1.05em;
                     background-color: var(--t-color-base-300);
                     border-bottom: 1px solid var(--t-color-base-300);
                 }
-
                 & th+th,
                 & td+td {
                     border-left: 1px solid var(--t-color-base-300);
                 }
-
                 & tbody td {
                     border-bottom: 1px solid var(--t-color-base-300);
                 }
-
                 & tbody tr:last-child td {
                     border-bottom: 0;
                 }
-
                 & .badge {
                     font-size: 0.75em;
                     font-weight: 400;
@@ -619,24 +520,20 @@
                     vertical-align: middle;
                     border: var(--t-border) solid transparent;
                 }
-
                 & .badge-success {
                     background-color: var(--t-color-success);
                     color: color-mix(in oklab, var(--t-color-success-content) 70%, var(--t-color-success));
                     border-color: color-mix(in oklab, var(--t-color-success) 65%, var(--t-color-dark));
                 }
-
                 & .badge-danger {
                     background-color: var(--t-color-error);
                     color: color-mix(in oklab, var(--t-color-error-content) 70%, var(--t-color-error));
                     border-color: color-mix(in oklab, var(--t-color-error) 65%, var(--t-color-dark));
                 }
-
                 & .sw-item-head {
                     display: block;
                     margin-bottom: 0.75em;
                 }
-
                 & .sw-icon {
                     width: 2.75em;
                     height: 2.75em;
@@ -649,12 +546,10 @@
                     top: 0.75em;
                     right: 0.75em;
                 }
-
                 & .sw-icon svg {
                     width: 1.5em;
                     height: 1.5em;
                 }
-
                 & .label {
                     display: inline-block;
                     font-family: var(--bs-font-monospace);
@@ -663,20 +558,16 @@
                     color: var(--t-color-secondary);
                     letter-spacing: 0.03em;
                 }
-
                 & td h6 {
                     font-weight: 700;
                     font-size: 1.2em;
                     margin-bottom: 0.5em;
                 }
-
                 & td p {
                     margin-bottom: 0;
                     text-align: justify;
                 }
-
                 @media (width < 48rem) {
-
                     & table,
                     & thead,
                     & tbody,
@@ -686,28 +577,23 @@
                         display: block;
                         width: 100%;
                     }
-
                     & thead {
                         display: none;
                     }
-
                     & tbody tr {
                         border-bottom: 1px solid var(--t-color-base-300);
                         padding: 0.5em;
                         background-color: var(--t-color-base-200);
                     }
-
                     & tbody tr:last-child {
                         border-bottom: 0;
                     }
-
                     & td {
                         border: 0;
                         border-radius: var(--t-radius-field);
                         background-color: var(--t-color-base-100);
                         margin-bottom: 0.75em;
                     }
-
                     & td::before {
                         display: block;
                         font-weight: 700;
@@ -716,12 +602,10 @@
                         letter-spacing: 0.04em;
                         margin-bottom: 0.5em;
                     }
-
                     & td:nth-child(1)::before {
                         content: 'System Strengths';
                         color: color-mix(in oklab, var(--t-color-success) 70%, var(--t-color-dark));
                     }
-
                     & td:nth-child(2)::before {
                         content: 'System Weaknesses';
                         color: color-mix(in oklab, var(--t-color-error) 70%, var(--t-color-dark));
@@ -729,8 +613,7 @@
                 }
             }
         }
-
-
+        
         & .list-style-area {
             margin: 2em 0;
             width: 100%;
@@ -738,7 +621,6 @@
             border: var(--t-border) solid var(--t-color-base-300);
             padding: 1em;
             border-radius: var(--t-radius-field);
-
             & ol {
                 list-style: none;
                 margin-left: 0;
@@ -746,32 +628,25 @@
                 margin-top: 2em;
                 display: grid;
                 gap: 1em;
-
                 &.two-columns {
                     grid-template-columns: 1fr 1fr;
                 }
-
                 &.three-columns {
                     grid-template-columns: 1fr 1fr 1fr;
                 }
-
                 &.four-columns {
                     grid-template-columns: 1fr 1fr 1fr 1fr;
                 }
-
                 @media (width < 48rem) {
                     &.md-one-columns {
                         grid-template-columns: 1fr !important;
                     }
-
                     &.md-two-columns {
                         grid-template-columns: 1fr 1fr !important;
                     }
                 }
-
                 & li {
                     position: relative;
-
                     &::before {
                         font-weight: 700;
                         font-size: 5em;
@@ -780,40 +655,32 @@
                         position: absolute;
                         top: -0.5em;
                     }
-
                     &:nth-child(1)::before {
                         content: '01';
                     }
-
                     &:nth-child(2)::before {
                         content: '02';
                     }
-
                     &:nth-child(3)::before {
                         content: '03';
                     }
-
                     &:nth-child(4)::before {
                         content: '04';
                     }
-
                     @media (width > 48rem) {
                         &::before {
                             left: 0;
                         }
                     }
-
                     @media (width < 48rem) {
                         &::before {
                             right: 0;
                         }
                     }
-
                     & h6 {
                         font-weight: 700;
                         font-size: 1.5em;
                         position: relative;
-
                         &::after {
                             content: '';
                             display: block;
@@ -826,13 +693,12 @@
                 }
             }
         }
-
+        
         .footnote {
             width: 100%;
             background-color: rgba(var(--t-color-primary-rgb), 0.1);
             padding: 2em;
             border-radius: var(--t-radius-field);
-
             &::before {
                 content: 'Note:';
                 font-weight: 700;
@@ -841,12 +707,11 @@
                 display: block;
                 margin-bottom: 0.5em;
             }
-
             &.summary::before {
                 content: 'Summary:';
             }
         }
-
+        
         .back-to-top {
             position: fixed;
             right: 1.25rem;
@@ -866,26 +731,26 @@
             transition: opacity 0.2s ease, transform 0.2s ease;
             cursor: pointer;
         }
-
+        
         .back-to-top.is-visible {
             opacity: 1;
             transform: translateY(0) scale(1);
             pointer-events: auto;
         }
-
+        
         .back-to-top .btn-bg {
             fill: var(--t-color-base-100);
             stroke: var(--t-color-base-300);
             stroke-width: 1.5;
         }
-
+        
         .back-to-top .btn-progress-track {
             fill: none;
             stroke: var(--t-color-base-300);
             stroke-width: 3;
             opacity: 0.35;
         }
-
+        
         .back-to-top .btn-progress {
             fill: none;
             stroke: var(--t-color-primary);
@@ -895,7 +760,7 @@
             transform-origin: 28px 28px;
             transition: stroke-dashoffset 0.1s linear;
         }
-
+        
         .back-to-top .btn-icon {
             fill: none;
             stroke: var(--t-color-primary);
@@ -903,12 +768,12 @@
             stroke-linecap: round;
             stroke-linejoin: round;
         }
-
+        
         .back-to-top:hover .btn-bg {
             fill: var(--t-color-base-200);
         }
-
         /* YouTube Ban Fallback Styling */
+        
         .video-fallback-message {
             position: absolute;
             inset: 0;
@@ -921,12 +786,12 @@
             z-index: 10;
             backdrop-filter: blur(4px);
         }
-
+        
         .fallback-content {
             text-align: center;
             max-width: 90%;
         }
-
+        
         .fallback-icon {
             width: 3.5em;
             height: 3.5em;
@@ -934,21 +799,21 @@
             margin: 0 auto 1em;
             stroke: var(--t-color-accent);
         }
-
+        
         .fallback-content h4 {
             font-weight: 700;
             font-size: 1.5em;
             color: var(--t-color-dark);
             margin-bottom: 0.5em;
         }
-
+        
         .fallback-content p {
             color: var(--t-color-dark);
             font-size: 0.95em;
             margin-bottom: 1.5em;
             text-indent: 0;
         }
-
+        
         .fallback-actions {
             display: flex;
             gap: 1em;
@@ -956,7 +821,7 @@
             flex-wrap: wrap;
             margin-bottom: 1.5em;
         }
-
+        
         .btn-fallback {
             padding: 0.75em 1.5em;
             border: none;
@@ -967,35 +832,35 @@
             font-size: 0.9em;
             white-space: nowrap;
         }
-
+        
         .btn-retry {
             background: linear-gradient(135deg, var(--t-color-primary) 0%, var(--t-color-accent) 100%);
             color: var(--t-color-primary-content);
             box-shadow: 0 4px 12px rgba(var(--t-color-primary-rgb), 0.3);
         }
-
+        
         .btn-retry:hover {
             transform: translateY(-2px);
             box-shadow: 0 6px 16px rgba(var(--t-color-primary-rgb), 0.4);
         }
-
+        
         .btn-local {
             background-color: var(--t-color-secondary);
             color: var(--t-color-secondary-content);
             box-shadow: 0 4px 12px rgba(42.551% 0.161 282.339, 0.3);
         }
-
+        
         .btn-local:hover {
             transform: translateY(-2px);
             box-shadow: 0 6px 16px rgba(42.551% 0.161 282.339, 0.4);
         }
-
+        
         .fallback-hint {
             color: var(--t-color-dark);
             font-size: 0.85em;
             margin: 0;
         }
-
+        
         .game-video-wrp {
             position: relative;
         }
@@ -1012,8 +877,7 @@
                 <a class="navbar-brand" href="../../index.html">
                     <img src="../../../public/gameux.png" alt="Logo" class="navbar-logo" />
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
                     <span class="navbar-toggler-icon" style="width: 1em"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -1055,49 +919,48 @@
                         <div class="game-info-bar">
                             <span class="game-date-info">
                                 <span class="date-released" title="Date Released">Date Released</span>
-                                <span class="days-ago" title="Days Age">11 months ago</span>
-                            </span>
-                            <span class="game-badge">Full Release</span>
-                            <span class="publisher" title="Publisher">Publisher</span>
-                        </div>
+                    <span class="days-ago" title="Days Age">11 months ago</span>
                     </span>
-                    <div class="game-header-rating">
-                        <table class="game-user-rating-cont">
-                            <tr>
-                                <td rowspan="2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <span class="game-badge">Full Release</span>
+                    <span class="publisher" title="Publisher">Publisher</span>
+                </div>
+                </span>
+                <div class="game-header-rating">
+                    <table class="game-user-rating-cont">
+                        <tr>
+                            <td rowspan="2">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
                                         <path fill-rule="evenodd"
                                             d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
                                             clip-rule="evenodd" />
                                     </svg>
-                                </td>
-                                <td class="game-user-rating">0</td>
-                            </tr>
-                            <tr>
-                                <td class="game-user-ratings">0 user ratings</td>
-                            </tr>
-                        </table>
-                        <table class="game-critic-rating-cont">
-                            <tr>
-                                <td rowspan="2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            </td>
+                            <td class="game-user-rating">0</td>
+                        </tr>
+                        <tr>
+                            <td class="game-user-ratings">0 user ratings</td>
+                        </tr>
+                    </table>
+                    <table class="game-critic-rating-cont">
+                        <tr>
+                            <td rowspan="2">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
                                         <path fill-rule="evenodd"
                                             d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
                                             clip-rule="evenodd" />
                                     </svg>
-                                </td>
-                                <td class="game-critic-rating">0</td>
-                            </tr>
-                            <tr>
-                                <td class="game-critic-ratings">0 critic ratings</td>
-                            </tr>
-                        </table>
-                    </div>
+                            </td>
+                            <td class="game-critic-rating">0</td>
+                        </tr>
+                        <tr>
+                            <td class="game-critic-ratings">0 critic ratings</td>
+                        </tr>
+                    </table>
+                </div>
                 </div>
                 <div class="video-game-container">
                     <a class="game-poster" id="game-poster">
-                        <img class="game-poster-img" id="game-poster-img" alt="Game Poster" target="images"
-                            title="Uncharted 4 Game Poster" />
+                        <img class="game-poster-img" id="game-poster-img" alt="Game Poster" target="images" title="Uncharted 4 Game Poster" />
                     </a>
                     <div class="game-video-wrp">
                         <video class="game-video" id="game-video" controls>
@@ -1107,8 +970,7 @@
                         <iframe class="game-video" id="game-video-yt" frameborder="0" allowfullscreen hidden></iframe>
                         <div class="video-fallback-message" id="video-fallback" hidden>
                             <div class="fallback-content">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-width="2" class="fallback-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="fallback-icon">
                                     <circle cx="12" cy="12" r="10"></circle>
                                     <line x1="12" y1="8" x2="12" y2="12"></line>
                                     <line x1="12" y1="16" x2="12.01" y2="16"></line>
@@ -1121,8 +983,7 @@
                                     <button id="use-local-video-btn" class="btn-fallback btn-local" type="button">Use
                                         Local Video</button>
                                 </div>
-                                <p class="fallback-hint">💡 Try connecting through a different network or VPN to access
-                                    YouTube content.</p>
+                                <p class="fallback-hint">💡 Try connecting through a different network or VPN to access YouTube content.</p>
                             </div>
                         </div>
                     </div>
@@ -1174,17 +1035,13 @@
                     </li>
                 </ul>
                 <p class="game-description" id="game-description">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
-                    aliquam consequatur iusto corrupti magni similique, non delectus
-                    illum esse ullam ad iure exercitationem doloribus ipsum at molestias
-                    et enim accusamus.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas aliquam consequatur iusto corrupti magni similique, non delectus illum esse ullam ad iure exercitationem doloribus ipsum at molestias et enim accusamus.
                 </p>
             </section>
         </article>
         <div class="game-info-nav-container">
             <div class="game-info-nav-wrap">
-                <button class="game-info-nav-arrow left" id="game-info-nav-left" type="button" aria-label="Scroll left"
-                    hidden>
+                <button class="game-info-nav-arrow left" id="game-info-nav-left" type="button" aria-label="Scroll left" hidden>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                         <path fill-rule="evenodd"
                             d="M15.78 19.28a.75.75 0 0 1-1.06 0L8.22 12.78a.75.75 0 0 1 0-1.06l6.5-6.5a.75.75 0 1 1 1.06 1.06L9.81 12l5.97 5.72a.75.75 0 0 1 0 1.56Z"
@@ -1203,8 +1060,7 @@
                     <label><input type="radio" name="game-section" value="ui-ux-weaknesses" />
                         Strengths & Weaknesses</label>
                 </nav>
-                <button class="game-info-nav-arrow right" id="game-info-nav-right" type="button"
-                    aria-label="Scroll right" hidden>
+                <button class="game-info-nav-arrow right" id="game-info-nav-right" type="button" aria-label="Scroll right" hidden>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                         <path fill-rule="evenodd"
                             d="M8.22 4.72a.75.75 0 0 1 1.06 0l6.5 6.5a.75.75 0 0 1 0 1.06l-6.5 6.5a.75.75 0 0 1-1.06-1.06L14.19 12 8.22 6.28a.75.75 0 0 1 0-1.56Z"
@@ -1225,10 +1081,12 @@
                         <li>Libertalia Collector's Edition</li>
                     </ul>
                     <p>
-                        Uncharted 4: A Thief's End is an action-adventure game developed by Naughty Dog and published by Sony Interactive Entertainment. Released on May 10, 2016 for PlayStation 4, it concludes the story of Nathan Drake — a treasure hunter pulled out of retirement by his long-lost brother Sam for one final adventure in search of the legendary pirate colony of Libertalia. A Legacy of Thieves Collection brought the game to PC in October 2022.
+                        Uncharted 4: A Thief's End is an action-adventure game developed by Naughty Dog and published by Sony Interactive Entertainment. Released on May 10, 2016 for PlayStation 4, it concludes the story of Nathan Drake — a treasure hunter pulled out of retirement
+                        by his long-lost brother Sam for one final adventure in search of the legendary pirate colony of Libertalia. A Legacy of Thieves Collection brought the game to PC in October 2022.
                     </p>
                     <p>
-                        Uncharted 4 represents Naughty Dog's most ambitious HCI achievement in the series — blending fluid third-person climbing, cover-based combat, vehicle traversal, and stealth into a cinematic package that makes the transition between gameplay and storytelling nearly invisible. Its interface design philosophy prioritizes the player feeling like they are inside a summer blockbuster rather than reading a screen.
+                        Uncharted 4 represents Naughty Dog's most ambitious HCI achievement in the series — blending fluid third-person climbing, cover-based combat, vehicle traversal, and stealth into a cinematic package that makes the transition between gameplay and storytelling
+                        nearly invisible. Its interface design philosophy prioritizes the player feeling like they are inside a summer blockbuster rather than reading a screen.
                     </p>
                 </section>
                 <section class="game-sections" id="ui-components">
@@ -1245,7 +1103,8 @@
                                 <span class="count">[ ELEMENT_01 ]</span>
                                 <span class="header-text">Cinematic HUD</span>
                                 <p>
-                                    Uncharted 4 uses an extremely minimal HUD — health is communicated through a subtle white screen-edge flash and regenerates automatically via cover, eliminating persistent health bars. Ammo counters appear only when a weapon is drawn and fade when not actively needed. The design philosophy is to keep the player's eyes on the world, not the interface.
+                                    Uncharted 4 uses an extremely minimal HUD — health is communicated through a subtle white screen-edge flash and regenerates automatically via cover, eliminating persistent health bars. Ammo counters appear only when a weapon is drawn and fade when not
+                                    actively needed. The design philosophy is to keep the player's eyes on the world, not the interface.
                                 </p>
                                 <ul>
                                     <h6>Design Principles</h6>
@@ -1266,7 +1125,8 @@
                                 <span class="count">[ ELEMENT_02 ]</span>
                                 <span class="header-text">Grapple Hook Traversal</span>
                                 <p>
-                                    The grapple hook is Uncharted 4's primary new traversal tool — anchoring to ledges and tree branches to enable sweeping momentum-based movement. Its HCI design is elegant: anchor points are subtle but visually distinct, and the hook fires on a single button press with no aiming UI required. The system communicates its possibilities through environmental design rather than HUD prompts.
+                                    The grapple hook is Uncharted 4's primary new traversal tool — anchoring to ledges and tree branches to enable sweeping momentum-based movement. Its HCI design is elegant: anchor points are subtle but visually distinct, and the hook fires on a single
+                                    button press with no aiming UI required. The system communicates its possibilities through environmental design rather than HUD prompts.
                                 </p>
                             </div>
                         </div>
@@ -1281,7 +1141,8 @@
                                 <span class="count">[ ELEMENT_03 ]</span>
                                 <span class="header-text">Fluid Cover System</span>
                                 <p>
-                                    The cover system uses a single contextual button to snap Drake to surfaces, peek, lean out, and vault — reducing cognitive overhead to a single interaction verb. The system intelligently reads the environment to determine whether Nathan climbs over or slides under an obstacle, making multi-part traversal sequences feel continuous and uninterrupted.
+                                    The cover system uses a single contextual button to snap Drake to surfaces, peek, lean out, and vault — reducing cognitive overhead to a single interaction verb. The system intelligently reads the environment to determine whether Nathan climbs over or
+                                    slides under an obstacle, making multi-part traversal sequences feel continuous and uninterrupted.
                                 </p>
                             </div>
                         </div>
@@ -1290,14 +1151,16 @@
                     <div class="fittslaw">
                         <div>
                             <p>
-                                Fitt's Law maps directly to Uncharted 4's aiming design. The soft aim-assist snaps the reticle toward enemy torsos, reducing effective distance (D) to the target. The aim window (W) is generous by design — Naughty Dog prioritizes narrative momentum over mechanical friction, ensuring players spend less time fighting the controls and more time experiencing the story.
+                                Fitt's Law maps directly to Uncharted 4's aiming design. The soft aim-assist snaps the reticle toward enemy torsos, reducing effective distance (D) to the target. The aim window (W) is generous by design — Naughty Dog prioritizes narrative momentum over
+                                mechanical friction, ensuring players spend less time fighting the controls and more time experiencing the story.
                             </p>
                             <div class="mathmodel">
                                 <h6>[ MATHEMATICAL MODEL ]</h6>
                                 <span>MT = a + b * log<sub>2</sub>(2D/W)</span>
                             </div>
                             <p>
-                                Uncharted 4 deliberately maximizes W (effective target width via aim assist) and minimizes D (snap-to-target distance) to lower MT — keeping combat fast and readable rather than demanding. The design prioritizes cinematic flow over technical skill expression, an intentional HCI trade-off that makes the game broadly accessible while maintaining moment-to-moment tension.
+                                Uncharted 4 deliberately maximizes W (effective target width via aim assist) and minimizes D (snap-to-target distance) to lower MT — keeping combat fast and readable rather than demanding. The design prioritizes cinematic flow over technical skill expression,
+                                an intentional HCI trade-off that makes the game broadly accessible while maintaining moment-to-moment tension.
                             </p>
                         </div>
                         <div>
@@ -1315,7 +1178,8 @@
                         <ol class="three-columns md-one-columns">
                             <li>
                                 <h6>World & Character</h6>
-                                <p>Primary focus at all times. Naughty Dog's environmental design communicates traversal paths, cover positions, and narrative beats without overlays — white paint on ledges, yellow rope on climbable elements, and enemy positioning are the HUD.</p>
+                                <p>Primary focus at all times. Naughty Dog's environmental design communicates traversal paths, cover positions, and narrative beats without overlays — white paint on ledges, yellow rope on climbable elements, and enemy positioning
+                                    are the HUD.</p>
                             </li>
                             <li>
                                 <h6>Combat Feedback</h6>
@@ -1350,7 +1214,9 @@
                             </li>
                             <li>
                                 <h6>Engage</h6>
-                                <p>Combat offers player choice between aggressive gunfighting, stealth takedowns, or hybrid approaches that flow naturally between states. The cover system and grapple enable creative positioning without breaking the game's pacing.</p>
+                                <p>Combat offers player choice between aggressive gunfighting, stealth takedowns, or hybrid approaches that flow naturally between states. The cover system and grapple enable creative positioning without breaking the game's
+                                    pacing.
+                                </p>
                             </li>
                             <li>
                                 <h6>Experience</h6>
@@ -1362,7 +1228,8 @@
                     <div class="multi-modal-feedback">
                         <div>
                             <p>
-                                Uncharted 4's feedback architecture is designed to be felt rather than read. The DualShock 4's rumble, Nathan's vocal performance, and environmental audio work in concert to communicate game state — keeping the player informed without surfacing data on screen.
+                                Uncharted 4's feedback architecture is designed to be felt rather than read. The DualShock 4's rumble, Nathan's vocal performance, and environmental audio work in concert to communicate game state — keeping the player informed without surfacing data on
+                                screen.
                             </p>
                         </div>
                         <div>
@@ -1383,7 +1250,8 @@
                             </div>
                             <div>
                                 <h6>Audio Feedback</h6>
-                                <p>Nathan and Sam's real-time banter during traversal sequences communicates environmental awareness — they call out handholds, warn of enemy positions, and react to near-misses. This dialogue-as-HUD approach eliminates the need for waypoint markers in many traversal sections, using voice performance as a directional audio cue system.</p>
+                                <p>Nathan and Sam's real-time banter during traversal sequences communicates environmental awareness — they call out handholds, warn of enemy positions, and react to near-misses. This dialogue-as-HUD approach eliminates the
+                                    need for waypoint markers in many traversal sections, using voice performance as a directional audio cue system.</p>
                             </div>
                         </li>
                         <li>
@@ -1395,7 +1263,8 @@
                             </div>
                             <div>
                                 <h6>Visual Feedback</h6>
-                                <p>White painted ledges and yellow rope subtly mark climbable surfaces without breaking visual realism. Hit sparks and enemy stumble animations confirm combat success. The letterbox cinematic bars that slide in during story moments act as a visual signal that the game is transitioning modes — an elegant UX convention the player learns without being taught.</p>
+                                <p>White painted ledges and yellow rope subtly mark climbable surfaces without breaking visual realism. Hit sparks and enemy stumble animations confirm combat success. The letterbox cinematic bars that slide in during story
+                                    moments act as a visual signal that the game is transitioning modes — an elegant UX convention the player learns without being taught.</p>
                             </div>
                         </li>
                         <li>
@@ -1406,7 +1275,8 @@
                             </div>
                             <div>
                                 <h6>Haptic Feedback</h6>
-                                <p>The DualShock 4 rumble differentiates weapon types — pistol shots produce brief pulses while explosions deliver sustained vibration. Rope swings generate escalating rumble at the swing's apex, and Drake's footing on unstable surfaces produces subtle irregular feedback that alerts the player to traversal risk before a fall occurs.</p>
+                                <p>The DualShock 4 rumble differentiates weapon types — pistol shots produce brief pulses while explosions deliver sustained vibration. Rope swings generate escalating rumble at the swing's apex, and Drake's footing on unstable
+                                    surfaces produces subtle irregular feedback that alerts the player to traversal risk before a fall occurs.</p>
                             </div>
                         </li>
                     </ul>
@@ -1418,7 +1288,8 @@
                         <div class="cybernetic-content">
                             <div>
                                 <p style="text-align: justify;">
-                                    Uncharted 4's feedback loop is engineered around the concept of seamless mode blending — the game continuously slides between traversal, combat, stealth, and cinematic narrative without hard mode switches. Each state transition is managed through audio, animation, and subtle HUD changes rather than explicit UI signals, making the game's internal state machine invisible to the player.
+                                    Uncharted 4's feedback loop is engineered around the concept of seamless mode blending — the game continuously slides between traversal, combat, stealth, and cinematic narrative without hard mode switches. Each state transition is managed through audio,
+                                    animation, and subtle HUD changes rather than explicit UI signals, making the game's internal state machine invisible to the player.
                                 </p>
                             </div>
                             <div>
@@ -1434,7 +1305,8 @@
                     <div class="spatial-congruence">
                         <h2>Spatial Congruence & Environmental Storytelling</h2>
                         <p style="text-align: justify;">
-                            Uncharted 4 achieves spatial congruence by embedding navigation, combat, and narrative information directly into the environment. Traversal paths are marked with subtle real-world logic — wet rock reflects light, handholds are worn smooth, structural anchors are visually distinct from decorative elements. The player's mental model maps directly to how the world works physically, eliminating the need for waypoint markers across the vast majority of the game's traversal sections.
+                            Uncharted 4 achieves spatial congruence by embedding navigation, combat, and narrative information directly into the environment. Traversal paths are marked with subtle real-world logic — wet rock reflects light, handholds are worn smooth, structural
+                            anchors are visually distinct from decorative elements. The player's mental model maps directly to how the world works physically, eliminating the need for waypoint markers across the vast majority of the game's traversal sections.
                         </p>
                     </div>
                     <div class="cognitive-load-bifurcation">
@@ -1451,12 +1323,24 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><h6>Auto-Regenerating Health</h6><p>Removing the health management system eliminates a cognitive management task, letting players focus on tactical positioning and momentum rather than resource economy.</p></td>
-                                    <td><h6>Narrative Engagement</h6><p>The player's attention is directed toward character relationships, environmental storytelling, and the emotional weight of Nathan's final adventure rather than mechanical systems.</p></td>
+                                    <td>
+                                        <h6>Auto-Regenerating Health</h6>
+                                        <p>Removing the health management system eliminates a cognitive management task, letting players focus on tactical positioning and momentum rather than resource economy.</p>
+                                    </td>
+                                    <td>
+                                        <h6>Narrative Engagement</h6>
+                                        <p>The player's attention is directed toward character relationships, environmental storytelling, and the emotional weight of Nathan's final adventure rather than mechanical systems.</p>
+                                    </td>
                                 </tr>
                                 <tr>
-                                    <td><h6>Contextual Button Prompts</h6><p>Prompts appear only when in range, removing persistent UI noise during exploration and cinematics — the player is never reading a cluttered screen during story moments.</p></td>
-                                    <td><h6>Traversal Problem-Solving</h6><p>Environmental navigation demands spatial reasoning and momentum management — the complexity is in the world's design, not the interface's complexity.</p></td>
+                                    <td>
+                                        <h6>Contextual Button Prompts</h6>
+                                        <p>Prompts appear only when in range, removing persistent UI noise during exploration and cinematics — the player is never reading a cluttered screen during story moments.</p>
+                                    </td>
+                                    <td>
+                                        <h6>Traversal Problem-Solving</h6>
+                                        <p>Environmental navigation demands spatial reasoning and momentum management — the complexity is in the world's design, not the interface's complexity.</p>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -1487,7 +1371,8 @@
                                         <span class="label">01_IMMERSION</span>
                                     </div>
                                     <h6>Seamless Mode Blending</h6>
-                                    <p>The invisible transitions between traversal, combat, stealth, and cinematics create an unprecedented sense of flow. Players experience the game as a continuous lived adventure rather than a sequence of distinct gameplay modes with loading states between them.</p>
+                                    <p>The invisible transitions between traversal, combat, stealth, and cinematics create an unprecedented sense of flow. Players experience the game as a continuous lived adventure rather than a sequence of distinct gameplay
+                                        modes with loading states between them.</p>
                                 </td>
                                 <td>
                                     <div class="sw-item-head">
@@ -1495,7 +1380,8 @@
                                         <span class="label">01_DEPTH</span>
                                     </div>
                                     <h6>Shallow Mechanical Depth</h6>
-                                    <p>The prioritization of cinematic accessibility over mechanical challenge means combat lacks the depth of contemporaries. Players who seek systemic engagement find combat resolves quickly and offers limited build or tactical expression — a deliberate trade-off that not all players embrace.</p>
+                                    <p>The prioritization of cinematic accessibility over mechanical challenge means combat lacks the depth of contemporaries. Players who seek systemic engagement find combat resolves quickly and offers limited build or tactical
+                                        expression — a deliberate trade-off that not all players embrace.</p>
                                 </td>
                             </tr>
                             <tr>
@@ -1505,7 +1391,8 @@
                                         <span class="label">02_TRAVERSAL</span>
                                     </div>
                                     <h6>Traversal Feel & Momentum</h6>
-                                    <p>The grapple hook and rope swing introduce genuine momentum-based traversal that rewards spatial awareness and timing. The physicality of Drake's movement communicates weight and consequence — each swing and slide feels authored rather than mechanical.</p>
+                                    <p>The grapple hook and rope swing introduce genuine momentum-based traversal that rewards spatial awareness and timing. The physicality of Drake's movement communicates weight and consequence — each swing and slide feels
+                                        authored rather than mechanical.</p>
                                 </td>
                                 <td>
                                     <div class="sw-item-head">
@@ -1513,7 +1400,8 @@
                                         <span class="label">02_LINEARITY</span>
                                     </div>
                                     <h6>Path Ambiguity in Open Areas</h6>
-                                    <p>The game's broader open environments in chapters like Scotland and Madagascar can create spatial confusion — the subtle environmental traversal cues that work perfectly in linear sections become harder to parse when the solution space expands, occasionally producing player disorientation without adequate HCI support.</p>
+                                    <p>The game's broader open environments in chapters like Scotland and Madagascar can create spatial confusion — the subtle environmental traversal cues that work perfectly in linear sections become harder to parse when
+                                        the solution space expands, occasionally producing player disorientation without adequate HCI support.</p>
                                 </td>
                             </tr>
                             <tr>
@@ -1523,7 +1411,8 @@
                                         <span class="label">03_ACCESSIBILITY</span>
                                     </div>
                                     <h6>Broad Player Accessibility</h6>
-                                    <p>The generous aim assist, auto-regenerating health, and clear contextual prompts make Uncharted 4 one of the most accessible action-adventure games of its generation — welcoming non-traditional gamers into the experience without sacrificing the sense of adventure for skilled players.</p>
+                                    <p>The generous aim assist, auto-regenerating health, and clear contextual prompts make Uncharted 4 one of the most accessible action-adventure games of its generation — welcoming non-traditional gamers into the experience
+                                        without sacrificing the sense of adventure for skilled players.</p>
                                 </td>
                                 <td>
                                     <div class="sw-item-head">
@@ -1531,14 +1420,16 @@
                                         <span class="label">03_AGENCY</span>
                                     </div>
                                     <h6>Constrained Player Agency</h6>
-                                    <p>The cinematic-first design necessarily constrains player freedom. Scripted traversal sequences, forced walk-and-talk sections, and unskippable environmental set-pieces prioritize authorial vision over player agency — a valid creative choice that nonetheless limits the HCI expressiveness available to players who want to engage on their own terms.</p>
+                                    <p>The cinematic-first design necessarily constrains player freedom. Scripted traversal sequences, forced walk-and-talk sections, and unskippable environmental set-pieces prioritize authorial vision over player agency
+                                        — a valid creative choice that nonetheless limits the HCI expressiveness available to players who want to engage on their own terms.</p>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                     <div class="footnote summary">
                         <p>
-                            Uncharted 4's HCI is a masterclass in cinematic integration — the interface retreats so successfully that millions of players completed the game without consciously engaging with a single HUD element. Its trade-off is deliberate: mechanical depth is sacrificed for emotional depth, and the player's agency is shaped by narrative necessity. Whether that trade-off is a strength or weakness depends entirely on what you believe games are for.
+                            Uncharted 4's HCI is a masterclass in cinematic integration — the interface retreats so successfully that millions of players completed the game without consciously engaging with a single HUD element. Its trade-off is deliberate: mechanical depth is sacrificed
+                            for emotional depth, and the player's agency is shaped by narrative necessity. Whether that trade-off is a strength or weakness depends entirely on what you believe games are for.
                         </p>
                     </div>
                 </section>
@@ -1578,10 +1469,10 @@
     // Beta
     // Early Access
     // Full Release
-    const POSTERURL = "https://cdn.cloudflare.steamstatic.com/steam/apps/1659420/library_600x900.jpg";
+    const POSTERURL = "../../../public/posters/uncharted_poster.jpg";
     const POSTERALTTEXT = "Uncharted 4 Game Poster";
     const VIDEOURL = "../../../public/videos/uncharted_trailer.mp4";
-    const VIDEOURLYT = "https://www.youtube.com/embed/gNvLwy-iMOk?si=2C-2iOx3rY_vxzpv";
+    const VIDEOURLYT = "https://www.youtube.com/embed/hh5HV4iic1Y";
     const YTVID = true;
 
     const GAMEUSERSTARS = "9.1";
@@ -1639,10 +1530,16 @@
     } // Set critic ratings
     for (let el of document.getElementsByClassName("game-poster-content")) {
         el.src = POSTERURL;
-        el.onerror = function(){this.onerror=null;this.src="../../../public/posters/uncharted_poster.jpg";}
+        el.onerror = function() {
+            this.onerror = null;
+            this.src = "../../../public/posters/uncharted_poster.jpg";
+        }
     } // Set poster content
     document.getElementById("game-poster-img").src = POSTERURL; // Set poster image
-    document.getElementById("game-poster-img").onerror = function(){this.onerror=null;this.src="../../../public/posters/uncharted_poster.jpg";};
+    document.getElementById("game-poster-img").onerror = function() {
+        this.onerror = null;
+        this.src = "../../../public/posters/uncharted_poster.jpg";
+    };
     document.getElementById("game-poster-img").title =
         GAMENAME + " Game Poster"; // Set poster image title
     document.getElementById("game-poster").href = POSTERURL; // Set poster link
@@ -1661,7 +1558,7 @@
             videoEl.hidden = true;
             try {
                 videoEl.pause();
-            } catch (e) { }
+            } catch (e) {}
         }
     } else {
         if (videoSourceEl) {
@@ -1671,7 +1568,7 @@
             videoEl.hidden = false;
             try {
                 videoEl.load();
-            } catch (e) { }
+            } catch (e) {}
         }
         if (ytEl) {
             ytEl.hidden = true;
@@ -1703,8 +1600,8 @@
     // Hide critic ratings
     if (!HASCRITICS) {
         for (let el of document.getElementsByClassName(
-            "game-critic-rating-cont",
-        )) {
+                "game-critic-rating-cont",
+            )) {
             el.classList.add("hidden");
         }
     }
@@ -1802,15 +1699,16 @@
         if (!gameInfoNav) {
             return;
         }
-        gameInfoNav.scrollBy({ left: distance, behavior: "smooth" });
+        gameInfoNav.scrollBy({
+            left: distance,
+            behavior: "smooth"
+        });
     }
 
     if (gameInfoNav && gameInfoNavLeft && gameInfoNavRight) {
         gameInfoNav.addEventListener("scroll", updateGameInfoNavArrows);
         gameInfoNavLeft.addEventListener("click", () => {
-            scrollGameInfoNavBy(
-                -Math.max(200, Math.floor(gameInfoNav.clientWidth * 0.5)),
-            );
+            scrollGameInfoNavBy(-Math.max(200, Math.floor(gameInfoNav.clientWidth * 0.5)), );
         });
         gameInfoNavRight.addEventListener("click", () => {
             scrollGameInfoNavBy(
@@ -1847,11 +1745,16 @@
 
     if (backToTopButton) {
         backToTopButton.addEventListener("click", () => {
-            window.scrollTo({ top: 0, behavior: "smooth" });
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
         });
     }
 
-    window.addEventListener("scroll", updateBackToTop, { passive: true });
+    window.addEventListener("scroll", updateBackToTop, {
+        passive: true
+    });
     window.addEventListener("resize", updateBackToTop);
     updateBackToTop();
 </script>
