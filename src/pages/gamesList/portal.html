@@ -1,0 +1,1959 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend:wght@100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Manrope:wght@200..800&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+        rel="stylesheet" />
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../styles/styles.css" type="text/css" />
+    <link rel="stylesheet" href="../../styles/sizeChecker.css" type="text/css" />
+    <link rel="stylesheet" href="../../styles/game.css" type="text/css" />
+
+    <!-- Custom Styles ------------------------------------------------------------------------------------------ -->
+    <style>
+        nav.game-info-nav label {
+            width: calc(100% / 5) !important;
+        }
+
+        .game-sections {
+            &#short-description {
+
+                &>h2 {
+                    font-weight: 900;
+                    font-size: 2.5em;
+                }
+
+                &>p {
+                    text-align: justify;
+                    margin-bottom: 1em;
+                }
+
+                &>.list-style {
+                    list-style: none;
+                    float: right;
+                    background-color: var(--t-color-base-100);
+                    padding: 2em;
+                    margin-left: 2em;
+                    margin-bottom: 2em;
+                    border-radius: var(--t-radius-field);
+                    border: var(--t-border) solid var(--t-color-base-300);
+
+                    &>h6 {
+                        font-weight: 900;
+                    }
+
+                    &>li {
+                        margin-left: 1em;
+                        margin-bottom: 1em;
+                        position: relative;
+
+                        &::before {
+                            content: '';
+                            display: block;
+                            position: absolute;
+                            width: 0.2em;
+                            height: 1em;
+                            background-color: var(--t-color-primary);
+                            border-radius: 1em;
+                            left: -0.75em;
+                            top: calc(50% - 0.5em);
+                        }
+                    }
+                }
+            }
+
+            &#ui-components {
+                margin-bottom: 2em;
+
+                &>h2 {
+                    font-weight: 900;
+                    font-size: 2.5em;
+                }
+
+                & .major-components {
+                    display: grid;
+                    grid-template-rows: 1fr;
+                    grid-template-columns: 50% 1fr;
+                    gap: 1em;
+                    margin: 2em 0;
+                }
+
+                & .major-component {
+                    background-color: var(--t-color-base-100);
+                    border-radius: var(--t-radius-field);
+                    padding: 1em;
+                    height: auto;
+                    position: relative;
+                    display: flex;
+                    align-items: flex-start;
+                    flex-direction: column;
+                    gap: 1em;
+                    min-height: 15em;
+                    border: var(--t-border) solid var(--t-color-base-300);
+
+                    &:not(:first-child) {
+                        flex-direction: column;
+                    }
+
+                    & figure {
+                        position: relative;
+                        margin-bottom: 0;
+                        width: 100%;
+                        height: auto;
+
+                        & figcaption {
+                            font-size: 0.9em;
+                            color: var(--t-color-light);
+                            margin-top: 0.5em;
+                            position: absolute;
+                            bottom: 0.5em;
+                            right: 0.5em;
+                        }
+                    }
+
+                    & a {
+                        flex-shrink: 0;
+                        margin-left: auto;
+
+                        & img {
+                            display: block;
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                            border-radius: 0.25em;
+                        }
+                    }
+
+                    & .count {
+                        font-weight: 700;
+                        font-size: 1.2em;
+                        font-family: var(--bs-font-monospace);
+                        color: var(--t-color-secondary);
+                        display: block;
+                    }
+
+                    & .header-text {
+                        font-weight: 700;
+                        font-size: 2.5em;
+                        font-family: var(--bs-font-serif);
+                    }
+
+                    & ul {
+                        list-style: none;
+                        margin-left: 1em;
+                        margin-top: 2em;
+
+                        & h6 {
+                            font-weight: 900;
+                        }
+
+                        & li {
+                            margin-left: 1em;
+                            margin-bottom: 0.5em;
+                            position: relative;
+
+                            &::before {
+                                content: '';
+                                display: block;
+                                position: absolute;
+                                width: 0.2em;
+                                height: 1em;
+                                background-color: var(--t-color-primary);
+                                border-radius: 1em;
+                                left: -0.75em;
+                                top: calc(50% - 0.5em);
+                            }
+                        }
+                    }
+                }
+
+                & .fittslaw {
+                    display: grid;
+                    grid-template-columns: 50% 1fr;
+                    gap: 1em;
+
+                    & h2 {
+                        font-weight: 900;
+                        font-size: 2.5em;
+                    }
+
+                    & figure {
+                        position: relative;
+                        margin-bottom: 0;
+                        width: 100%;
+                        height: auto;
+
+                        & figcaption {
+                            font-size: 0.9em;
+                            color: var(--t-color-dark);
+                            margin-top: 0.5em;
+                            position: absolute;
+                            bottom: 0.5em;
+                            right: 0.5em;
+                        }
+                    }
+
+                    & a {
+                        flex-shrink: 0;
+                        margin-left: auto;
+
+                        & img {
+                            width: 100% !important;
+                            height: auto !important;
+                            margin-bottom: 1em;
+                        }
+                    }
+                }
+
+                @media (width < 48rem) {
+                    & .fittslaw {
+                        grid-template-columns: 1fr;
+                    }
+                }
+
+                & .ui-split-panels {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 1em;
+                    align-items: start;
+                    margin-top: 2em;
+
+                    @media (width < 48rem) {
+                        grid-template-columns: 1fr;
+                    }
+                }
+
+                & .ui-split-panels .fittslaw {
+                    display: block;
+                }
+
+                & .ui-split-panels .list-style-area {
+                    margin: 0;
+                }
+
+                & .mathmodel {
+                    margin: 1em 0;
+                    padding: 1em;
+                    position: relative;
+                    padding-left: 2em;
+                    background-color: var(--t-color-base-300);
+                    border-radius: var(--t-radius-field);
+                    overflow: hidden;
+
+                    &::before {
+                        content: '';
+                        display: block;
+                        position: absolute;
+                        width: 0.5em;
+                        height: 100%;
+                        background-color: var(--t-color-primary);
+                        left: 0;
+                        top: 0;
+                    }
+
+                    & h6 {
+                        font-family: var(--bs-font-monospace);
+                        color: var(--t-color-dark);
+                        font-weight: 300;
+                    }
+
+                    & span {
+                        font-size: 2em
+                    }
+                }
+
+                @media (width < 48rem) {
+                    & .major-components {
+                        grid-template-columns: 1fr;
+                        gap: 1em;
+                    }
+
+                    & .major-component {
+                        &:first-child {
+                            flex-direction: column;
+                        }
+
+                        & figure {
+                            width: 100%;
+
+                            & figcaption {
+                                bottom: 1em;
+                            }
+                        }
+
+                        & a {
+                            margin-left: 0;
+                            width: 100%;
+
+                            & img {
+                                width: 100% !important;
+                                height: auto !important;
+                                margin-bottom: 1em;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &#user-interaction {
+                margin-bottom: 2em;
+
+                &>h2 {
+                    font-weight: 900;
+                    font-size: 2.5em;
+                }
+
+                & h3 {
+                    font-weight: 900;
+                    font-size: 2.5em;
+                }
+
+
+                & .multi-modal-feedback {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 1em;
+                    padding-top: 1em;
+
+                    @media (width < 48rem) {
+                        grid-template-columns: 1fr !important;
+                    }
+
+                    & figure {
+                        margin: auto;
+                        width: 100%;
+                        height: auto;
+
+                        & img {
+                            width: 100% !important;
+                            height: auto !important;
+                        }
+                    }
+                }
+
+                & ul {
+                    list-style: none;
+                    padding: 0;
+
+                    & li {
+                        margin-top: 2em;
+                        display: flex;
+                        flex-direction: row;
+
+                        & h6 {
+                            font-weight: 700;
+                            font-size: 1.5em;
+                            margin-bottom: 0.5em;
+                        }
+
+                        & .logo-svg {
+                            height: 5em;
+                            flex-shrink: 0;
+                            background-color: var(--t-color-secondary);
+                            color: var(--t-color-base-100);
+                            aspect-ratio: 1 / 1;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: center;
+                            padding: 1em;
+                            border-radius: var(--t-radius-field);
+                            margin: auto;
+                            margin-right: 1em;
+
+                            & svg {
+                                width: 100%;
+                                height: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &#hci-principles {
+                margin-bottom: 2em;
+
+                &>h2 {
+                    font-weight: 900;
+                    font-size: 2.5em;
+                }
+
+                & .cybernetic-feedback-loops {
+                    margin-top: 2em;
+                    padding: 1em;
+                    border-radius: var(--t-radius-field);
+                    background-color: var(--t-color-base-100);
+                    border: var(--t-border) solid var(--t-color-base-300);
+
+                    &>h3 {
+                        font-weight: 900;
+                        font-size: 2em;
+                    }
+
+                    & .cybernetic-content {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        gap: 1em;
+
+                        @media (width < 48rem) {
+                            grid-template-columns: 1fr !important;
+                        }
+
+                        & h6 {
+                            font-weight: 700;
+                            font-size: 1.2em;
+                            margin-bottom: 0.5em;
+                        }
+
+                        & .primary-modalities {
+                            list-style: none;
+                            padding: 1em;
+                            background-color: var(--t-color-base-200);
+                            border-radius: var(--t-radius-field);
+                            margin-bottom: 0;
+
+
+                            & li {
+                                margin-left: 1em;
+                                margin-bottom: 0.5em;
+                                position: relative;
+
+                                &::before {
+                                    content: '';
+                                    display: block;
+                                    position: absolute;
+                                    width: 0.2em;
+                                    height: 1em;
+                                    background-color: var(--t-color-primary);
+                                    border-radius: 1em;
+                                    left: -0.75em;
+                                    top: calc(50% - 0.5em);
+                                }
+                            }
+                        }
+                    }
+                }
+
+                & .spatial-congruence {
+                    padding: 1em;
+                    margin-top: 2em;
+
+                    & h2 {
+                        font-weight: 900;
+                        font-size: 2.5em;
+                    }
+                }
+
+                & .cognitive-load-bifurcation {
+                    margin: 2em 0;
+                    padding: 1em;
+                    border-radius: var(--t-radius-field);
+                    background-color: var(--t-color-base-100);
+                    border: var(--t-border) solid var(--t-color-base-300);
+
+                    &>h2 {
+                        font-weight: 900;
+                        font-size: 2em;
+                    }
+
+                    & table {
+                        width: 100%;
+                        margin-top: 2em;
+                        border-collapse: separate;
+                        border-spacing: 0;
+                        border: var(--t-border) solid var(--t-color-base-300);
+                        border-radius: var(--t-radius-field);
+                        overflow: hidden;
+                        background-color: var(--t-color-base-200);
+                    }
+
+                    & th,
+                    & td {
+                        padding: 1em;
+                        vertical-align: top;
+                    }
+
+                    & thead th {
+                        font-weight: 800;
+                        font-size: 1.05em;
+                        background-color: var(--t-color-base-300);
+                        border-bottom: 1px solid var(--t-color-base-300);
+                    }
+
+                    & th+th,
+                    & td+td {
+                        border-left: 1px solid var(--t-color-base-300);
+                    }
+
+                    & tbody td {
+                        border-bottom: 1px solid var(--t-color-base-300);
+                    }
+
+                    & tbody tr:last-child td {
+                        border-bottom: 0;
+                    }
+
+                    & td h6 {
+                        font-weight: 700;
+                        font-size: 1.15em;
+                        margin-bottom: 0.5em;
+                    }
+
+                    & td p {
+                        margin-bottom: 0;
+                    }
+
+                    @media (width < 48rem) {
+
+                        & table,
+                        & thead,
+                        & tbody,
+                        & tr,
+                        & th,
+                        & td {
+                            display: block;
+                            width: 100%;
+                        }
+
+                        & thead {
+                            display: none;
+                        }
+
+                        & tbody tr {
+                            border-bottom: 1px solid var(--t-color-base-300);
+                            padding: 0.5em;
+                        }
+
+                        & tbody tr:last-child {
+                            border-bottom: 0;
+                        }
+
+                        & td {
+                            border: 0;
+                            border-radius: var(--t-radius-field);
+                            background-color: var(--t-color-base-100);
+                            margin-bottom: 0.75em;
+                        }
+
+                        & td::before {
+                            display: block;
+                            font-weight: 700;
+                            font-size: 0.85em;
+                            text-transform: uppercase;
+                            letter-spacing: 0.04em;
+                            color: var(--t-color-primary);
+                            margin-bottom: 0.5em;
+                        }
+
+                        & td:nth-child(1)::before {
+                            content: 'Extrinsic Load';
+                        }
+
+                        & td:nth-child(2)::before {
+                            content: 'Intrinsic Focus';
+                        }
+                    }
+                }
+            }
+
+            &#ui-ux-weaknesses {
+                margin-bottom: 2em;
+
+                &>h2 {
+                    font-weight: 900;
+                    font-size: 2.5em;
+                }
+
+                &>p {
+                    text-align: justify;
+                    margin-bottom: 2em;
+                }
+
+                & table {
+                    width: 100%;
+                    border-collapse: separate;
+                    border-spacing: 0;
+                    border: var(--t-border) solid var(--t-color-base-300);
+                    border-radius: var(--t-radius-field);
+                    overflow: hidden;
+                    background-color: var(--t-color-base-100);
+                }
+
+                & th,
+                & td {
+                    padding: 1em;
+                    vertical-align: top;
+                }
+
+                & td {
+                    position: relative;
+                    padding-right: 4.25em;
+                }
+
+                & thead th {
+                    font-weight: 800;
+                    font-size: 1.05em;
+                    background-color: var(--t-color-base-300);
+                    border-bottom: 1px solid var(--t-color-base-300);
+                }
+
+                & th+th,
+                & td+td {
+                    border-left: 1px solid var(--t-color-base-300);
+                }
+
+                & tbody td {
+                    border-bottom: 1px solid var(--t-color-base-300);
+                }
+
+                & tbody tr:last-child td {
+                    border-bottom: 0;
+                }
+
+                & .badge {
+                    font-size: 0.75em;
+                    font-weight: 400;
+                    border-radius: var(--t-radius-selector);
+                    padding: 0.35em 0.75em;
+                    margin-left: 0.5em;
+                    vertical-align: middle;
+                    border: var(--t-border) solid transparent;
+                }
+
+                & .badge-success {
+                    background-color: var(--t-color-success);
+                    color: color-mix(in oklab, var(--t-color-success-content) 70%, var(--t-color-success));
+                    border-color: color-mix(in oklab, var(--t-color-success) 65%, var(--t-color-dark));
+                }
+
+                & .badge-danger {
+                    background-color: var(--t-color-error);
+                    color: color-mix(in oklab, var(--t-color-error-content) 70%, var(--t-color-error));
+                    border-color: color-mix(in oklab, var(--t-color-error) 65%, var(--t-color-dark));
+                }
+
+                & .sw-item-head {
+                    display: block;
+                    margin-bottom: 0.75em;
+                }
+
+                & .sw-icon {
+                    width: 2.75em;
+                    height: 2.75em;
+                    color: var(--t-color-base-300);
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-shrink: 0;
+                    position: absolute;
+                    top: 0.75em;
+                    right: 0.75em;
+                }
+
+                & .sw-icon svg {
+                    width: 1.5em;
+                    height: 1.5em;
+                }
+
+                & .label {
+                    display: inline-block;
+                    font-family: var(--bs-font-monospace);
+                    font-size: 0.9em;
+                    font-weight: 700;
+                    color: var(--t-color-secondary);
+                    letter-spacing: 0.03em;
+                }
+
+                & td h6 {
+                    font-weight: 700;
+                    font-size: 1.2em;
+                    margin-bottom: 0.5em;
+                }
+
+                & td p {
+                    margin-bottom: 0;
+                    text-align: justify;
+                }
+
+                @media (width < 48rem) {
+
+                    & table,
+                    & thead,
+                    & tbody,
+                    & tr,
+                    & th,
+                    & td {
+                        display: block;
+                        width: 100%;
+                    }
+
+                    & thead {
+                        display: none;
+                    }
+
+                    & tbody tr {
+                        border-bottom: 1px solid var(--t-color-base-300);
+                        padding: 0.5em;
+                        background-color: var(--t-color-base-200);
+                    }
+
+                    & tbody tr:last-child {
+                        border-bottom: 0;
+                    }
+
+                    & td {
+                        border: 0;
+                        border-radius: var(--t-radius-field);
+                        background-color: var(--t-color-base-100);
+                        margin-bottom: 0.75em;
+                    }
+
+                    & td::before {
+                        display: block;
+                        font-weight: 700;
+                        font-size: 0.85em;
+                        text-transform: uppercase;
+                        letter-spacing: 0.04em;
+                        margin-bottom: 0.5em;
+                    }
+
+                    & td:nth-child(1)::before {
+                        content: 'System Strengths';
+                        color: color-mix(in oklab, var(--t-color-success) 70%, var(--t-color-dark));
+                    }
+
+                    & td:nth-child(2)::before {
+                        content: 'System Weaknesses';
+                        color: color-mix(in oklab, var(--t-color-error) 70%, var(--t-color-dark));
+                    }
+                }
+            }
+        }
+
+
+        & .list-style-area {
+            margin: 2em 0;
+            width: 100%;
+            background-color: var(--t-color-base-100);
+            border: var(--t-border) solid var(--t-color-base-300);
+            padding: 1em;
+            border-radius: var(--t-radius-field);
+
+            & ol {
+                list-style: none;
+                margin-left: 0;
+                padding-left: 0;
+                margin-top: 2em;
+                display: grid;
+                gap: 1em;
+
+                &.two-columns {
+                    grid-template-columns: 1fr 1fr;
+                }
+
+                &.three-columns {
+                    grid-template-columns: 1fr 1fr 1fr;
+                }
+
+                &.four-columns {
+                    grid-template-columns: 1fr 1fr 1fr 1fr;
+                }
+
+                @media (width < 48rem) {
+                    &.md-one-columns {
+                        grid-template-columns: 1fr !important;
+                    }
+
+                    &.md-two-columns {
+                        grid-template-columns: 1fr 1fr !important;
+                    }
+                }
+
+                & li {
+                    position: relative;
+
+                    &::before {
+                        font-weight: 700;
+                        font-size: 5em;
+                        font-family: var(--bs-font-monospace);
+                        color: var(--t-color-base-200);
+                        position: absolute;
+                        top: -0.5em;
+                    }
+
+                    &:nth-child(1)::before {
+                        content: '01';
+                    }
+
+                    &:nth-child(2)::before {
+                        content: '02';
+                    }
+
+                    &:nth-child(3)::before {
+                        content: '03';
+                    }
+
+                    &:nth-child(4)::before {
+                        content: '04';
+                    }
+
+                    @media (width > 48rem) {
+                        &::before {
+                            left: 0;
+                        }
+                    }
+
+                    @media (width < 48rem) {
+                        &::before {
+                            right: 0;
+                        }
+                    }
+
+                    & h6 {
+                        font-weight: 700;
+                        font-size: 1.5em;
+                        position: relative;
+
+                        &::after {
+                            content: '';
+                            display: block;
+                            width: 100%;
+                            height: 1px;
+                            background-color: var(--t-color-base-300);
+                            margin-top: 0.5em;
+                        }
+                    }
+                }
+            }
+        }
+
+        .footnote {
+            width: 100%;
+            background-color: rgba(var(--t-color-primary-rgb), 0.1);
+            padding: 2em;
+            border-radius: var(--t-radius-field);
+
+            &::before {
+                content: 'Note:';
+                font-weight: 700;
+                font-size: 1.2em;
+                color: var(--t-color-primary);
+                display: block;
+                margin-bottom: 0.5em;
+            }
+
+            &.summary::before {
+                content: 'Summary:';
+            }
+        }
+
+        .back-to-top {
+            position: fixed;
+            right: 1.25rem;
+            bottom: 1.25rem;
+            width: 3.5rem;
+            height: 3.5rem;
+            border: 0;
+            border-radius: var(--t-radius-selector);
+            background-color: transparent;
+            padding: 0;
+            display: grid;
+            place-items: center;
+            z-index: 1001;
+            opacity: 0;
+            transform: translateY(0.5rem) scale(0.96);
+            pointer-events: none;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+            cursor: pointer;
+        }
+
+        .back-to-top.is-visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            pointer-events: auto;
+        }
+
+        .back-to-top .btn-bg {
+            fill: var(--t-color-base-100);
+            stroke: var(--t-color-base-300);
+            stroke-width: 1.5;
+        }
+
+        .back-to-top .btn-progress-track {
+            fill: none;
+            stroke: var(--t-color-base-300);
+            stroke-width: 3;
+            opacity: 0.35;
+        }
+
+        .back-to-top .btn-progress {
+            fill: none;
+            stroke: var(--t-color-primary);
+            stroke-width: 3;
+            stroke-linecap: round;
+            transform: rotate(-90deg);
+            transform-origin: 28px 28px;
+            transition: stroke-dashoffset 0.1s linear;
+        }
+
+        .back-to-top .btn-icon {
+            fill: none;
+            stroke: var(--t-color-primary);
+            stroke-width: 1.8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .back-to-top:hover .btn-bg {
+            fill: var(--t-color-base-200);
+        }
+
+        /* YouTube Ban Fallback Styling */
+        .video-fallback-message {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(var(--t-color-primary-rgb), 0.05) 0%, rgba(59.939% 0.191 335.171, 0.03) 100%);
+            border-radius: var(--t-radius-field);
+            padding: 2em;
+            z-index: 10;
+            backdrop-filter: blur(4px);
+        }
+
+        .fallback-content {
+            text-align: center;
+            max-width: 90%;
+        }
+
+        .fallback-icon {
+            width: 3.5em;
+            height: 3.5em;
+            color: var(--t-color-accent);
+            margin: 0 auto 1em;
+            stroke: var(--t-color-accent);
+        }
+
+        .fallback-content h4 {
+            font-weight: 700;
+            font-size: 1.5em;
+            color: var(--t-color-dark);
+            margin-bottom: 0.5em;
+        }
+
+        .fallback-content p {
+            color: var(--t-color-dark);
+            font-size: 0.95em;
+            margin-bottom: 1.5em;
+            text-indent: 0;
+        }
+
+        .fallback-actions {
+            display: flex;
+            gap: 1em;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 1.5em;
+        }
+
+        .btn-fallback {
+            padding: 0.75em 1.5em;
+            border: none;
+            border-radius: var(--t-radius-field);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            font-size: 0.9em;
+            white-space: nowrap;
+        }
+
+        .btn-retry {
+            background: linear-gradient(135deg, var(--t-color-primary) 0%, var(--t-color-accent) 100%);
+            color: var(--t-color-primary-content);
+            box-shadow: 0 4px 12px rgba(var(--t-color-primary-rgb), 0.3);
+        }
+
+        .btn-retry:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(var(--t-color-primary-rgb), 0.4);
+        }
+
+        .btn-local {
+            background-color: var(--t-color-secondary);
+            color: var(--t-color-secondary-content);
+            box-shadow: 0 4px 12px rgba(42.551% 0.161 282.339, 0.3);
+        }
+
+        .btn-local:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(42.551% 0.161 282.339, 0.4);
+        }
+
+        .fallback-hint {
+            color: var(--t-color-dark);
+            font-size: 0.85em;
+            margin: 0;
+        }
+
+        .game-video-wrp {
+            position: relative;
+        }
+    </style>
+    <!-- Custom Styles ------------------------------------------------------------------------------------------ -->
+
+    <title id="title">GameName - GameUX</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-light navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="../../index.html">
+                    <img src="../../../public/gameux.png" alt="Logo" class="navbar-logo" />
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent">
+                    <span class="navbar-toggler-icon" style="width: 1em"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">Game List</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <nav class="breadcrumb-nav" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="../gameList.html">Game List</a>
+            </li>
+            <li class="breadcrumb-item active game-name">Game name</li>
+        </ol>
+    </nav>
+    <main>
+        <article class="wide">
+            <section class="header-section">
+                <img class="game-poster-content game-poster-background-style" />
+                <h1 class="game-name game-name-header" title="Game Name">
+                    Game name
+                </h1>
+                <div class="game-header">
+                    <span class="game-header-cont">
+                        <div class="game-info-bar">
+                            <span class="game-date-info">
+                                <span class="date-released" title="Date Released">Date Released</span>
+                                <span class="days-ago" title="Days Age">11 months ago</span>
+                            </span>
+                            <span class="game-badge">Full Release</span>
+                            <span class="publisher" title="Publisher">Publisher</span>
+                        </div>
+                    </span>
+                    <div class="game-header-rating">
+                        <table class="game-user-rating-cont">
+                            <tr>
+                                <td rowspan="2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <path fill-rule="evenodd"
+                                            d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </td>
+                                <td class="game-user-rating">0</td>
+                            </tr>
+                            <tr>
+                                <td class="game-user-ratings">0 user ratings</td>
+                            </tr>
+                        </table>
+                        <table class="game-critic-rating-cont">
+                            <tr>
+                                <td rowspan="2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <path fill-rule="evenodd"
+                                            d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </td>
+                                <td class="game-critic-rating">0</td>
+                            </tr>
+                            <tr>
+                                <td class="game-critic-ratings">0 critic ratings</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="video-game-container">
+                    <a class="game-poster" id="game-poster">
+                        <img class="game-poster-img" id="game-poster-img" alt="Game Poster" target="images"
+                            title="Osu! Game Poster" />
+                    </a>
+                    <div class="game-video-wrp">
+                        <video class="game-video" id="game-video" controls>
+                            <source type="video/mp4" id="game-video-source" />
+                            Your browser does not support the video tag.
+                        </video>
+                        <iframe class="game-video" id="game-video-yt" frameborder="0" allowfullscreen hidden></iframe>
+                        <div class="video-fallback-message" id="video-fallback" hidden>
+                            <div class="fallback-content">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" class="fallback-icon">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                                </svg>
+                                <h4>YouTube is Blocked on Your Network</h4>
+                                <p>It appears YouTube is not accessible in your current network environment.</p>
+                                <div class="fallback-actions">
+                                    <button id="retry-youtube-btn" class="btn-fallback btn-retry" type="button">Retry
+                                        YouTube</button>
+                                    <button id="use-local-video-btn" class="btn-fallback btn-local" type="button">Use
+                                        Local Video</button>
+                                </div>
+                                <p class="fallback-hint">💡 Try connecting through a different network or VPN to access
+                                    YouTube content.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="game-rating">
+                        <table class="game-user-rating-cont">
+                            <tr>
+                                <td rowspan="2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <path fill-rule="evenodd"
+                                            d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </td>
+                                <td class="game-user-rating">0</td>
+                            </tr>
+                            <tr>
+                                <td class="game-user-ratings">0 user ratings</td>
+                            </tr>
+                        </table>
+                        <table class="game-critic-rating-cont">
+                            <tr>
+                                <td rowspan="2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <path fill-rule="evenodd"
+                                            d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </td>
+                                <td class="game-critic-rating">0</td>
+                            </tr>
+                            <tr>
+                                <td class="game-critic-ratings">0 critic ratings</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <ul class="game-list-data">
+                    <li class="game-list-data-item">
+                        Genres:
+                        <ul id="genres"></ul>
+                    </li>
+                    <li class="game-list-data-item">
+                        Platforms:
+                        <ul id="platforms"></ul>
+                    </li>
+                    <li class="game-list-data-item">
+                        Editions:
+                        <ul id="editions"></ul>
+                    </li>
+                </ul>
+                <p class="game-description" id="game-description">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
+                    aliquam consequatur iusto corrupti magni similique, non delectus
+                    illum esse ullam ad iure exercitationem doloribus ipsum at molestias
+                    et enim accusamus.
+                </p>
+            </section>
+        </article>
+        <div class="game-info-nav-container">
+            <div class="game-info-nav-wrap">
+                <button class="game-info-nav-arrow left" id="game-info-nav-left" type="button"
+                    aria-label="Scroll sections left" hidden>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
+                        width="20" height="20">
+                        <path fill-rule="evenodd"
+                            d="M15.78 19.28a.75.75 0 0 1-1.06 0L8.22 12.78a.75.75 0 0 1 0-1.06l6.5-6.5a.75.75 0 1 1 1.06 1.06L9.81 12l5.97 5.72a.75.75 0 0 1 0 1.56Z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </button>
+                <nav class="game-info-nav" id="game-info-nav" role="tablist">
+                    <label role="tab"><input type="radio" name="game-section" value="short-description"
+                            checked="checked" />
+                        Overview</label>
+                    <label role="tab"><input type="radio" name="game-section" value="ui-components" /> UI
+                        Components</label>
+                    <label role="tab"><input type="radio" name="game-section" value="user-interaction" />
+                        Interaction</label>
+                    <label role="tab"><input type="radio" name="game-section" value="hci-principles" />
+                        HCI Principles</label>
+                    <label role="tab"><input type="radio" name="game-section" value="ui-ux-weaknesses" />
+                        Analysis</label>
+                </nav>
+                <button class="game-info-nav-arrow right" id="game-info-nav-right" type="button"
+                    aria-label="Scroll sections right" hidden>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
+                        width="20" height="20">
+                        <path fill-rule="evenodd"
+                            d="M8.22 4.72a.75.75 0 0 1 1.06 0l6.5 6.5a.75.75 0 0 1 0 1.06l-6.5 6.5a.75.75 0 0 1-1.06-1.06L14.19 12 8.22 6.28a.75.75 0 0 1 0-1.56Z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- 
+        
+        Sections ==================================================
+        
+        -->
+        <article>
+            <div class="game-sections-stage">
+                <section class="game-sections" id="short-description">
+
+                    <h2>Overview</h2>
+                    <ul class="list-style">
+                        <h2>Portal Engine Builds:</h2>
+                        <li>Source Engine Original (2007)</li>
+                        <li>Portal: Still Alive (Xbox 360)</li>
+                        <li>Portal with RTX (Nvidia Lightspeed)</li>
+                    </ul>
+                    <p>
+                        Portal (2007) represents a masterclass in subverting traditional UI design. Rather than relying
+                        on heads-up displays, Valve designed the game as a series of sterile laboratory tests where the
+                        environment itself conveys all necessary instruction, consequence, and spatial mapping.
+                    </p>
+                    <p>
+                        From an HCI perspective, the genius of Portal is how effectively it onboards a completely
+                        non-intuitive, non-Euclidean interaction model (creating localized wormholes) without ever
+                        forcing the user to read a tutorial. By utilizing strict environmental affordances, minimalist
+                        sterile textures, and invisible physics tutorials, the user subconsciously internalizes rapid
+                        momentum conservation principles.
+                    </p>
+                    <ul class="metrics-list">
+                        <li>
+                            <h6>Cognitive Load</h6>
+                            <div class="value">Extreme</div>
+                            <div class="desc">Constant non-linear spatial mapping and momentum vector calculations.
+                            </div>
+                        </li>
+                        <li>
+                            <h6>Response Time</h6>
+                            <div class="value">&pm; 50ms</div>
+                            <div class="desc">Immediate kinetic teleportation requiring near-zero input lag.</div>
+                        </li>
+                        <li>
+                            <h6>Sensory Load</h6>
+                            <div class="value">Isolated</div>
+                            <div class="desc">Lack of combat noise heightens cognitive puzzle focus.</div>
+                        </li>
+                    </ul>
+
+                </section>
+                <section class="game-sections" id="ui-components">
+
+                    <h2>UI Components</h2>
+                    <div class="major-components">
+                        <div class="major-component">
+                            <figure>
+                                <a href="../../../public/gamesContent/portal/portalReticle.png" title="Dynamic Reticle"
+                                    target="images">
+                                    <img src="../../../public/gamesContent/portal/portalReticle.png"
+                                        alt="Portal Reticle">
+                                </a>
+                                <figcaption>FIG 1.1: The Dynamic State Reticle</figcaption>
+                            </figure>
+                            <div>
+                                <span class="count">[ ELEMENT_01 ]</span>
+                                <span class="header-text">Dual-State Reticle</span>
+                                <p>
+                                    Portal's primary UI element is a masterclass in compressed information. Because
+                                    knowing which portals are currently active in the world is critical, the crosshair
+                                    itself alters its state to prevent eye travel.
+                                </p>
+                                <ul>
+                                    <h6>State Feedback Matrix</h6>
+                                    <li><strong>Empty Circle:</strong> Neither portal is placed.</li>
+                                    <li><strong>Left Blue Curve:</strong> A blue portal currently exists.</li>
+                                    <li><strong>Right Orange Curve:</strong> An orange portal currently exists.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="major-component">
+                            <figure>
+                                <a href="../../../public/gamesContent/portal/momentumDiagram.png"
+                                    title="Momentum Diagram" target="images">
+                                    <img src="../../../public/gamesContent/portal/momentumDiagram.png"
+                                        alt="Momentum Physics Diagram">
+                                </a>
+                                <figcaption style="color: var(--t-color-dark);">FIG 1.2: Conservation of Momentum
+                                </figcaption>
+                            </figure>
+                            <div>
+                                <span class="count">[ ELEMENT_02 ]</span>
+                                <span class="header-text">Kinematic Wayfinding</span>
+                                <p>
+                                    The level design physically forces the player to engage in high-velocity flings to
+                                    traverse gaps. This encodes the absolute rule ("Speedy thing goes in, speedy thing
+                                    comes out") through visceral kinesthetic feedback rather than arbitrary text menus.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <h2>Fitts's Law in High Velocity</h2>
+                    <div class="ui-split-panels">
+                        <div class="fittslaw">
+                            <div>
+                                <p>
+                                    Target acquisition in Portal often occurs <em>while the player is falling
+                                        rapidly</em> through repeating loops. Target width dynamically shrinks
+                                    mathematically as the player's velocity increases due to vanishing time frames.
+                                </p>
+                                <div class="mathmodel">
+                                    <h6>[ MATHEMATICAL MODEL ]</h6>
+                                    <span>MT = a + b * log<sub>2</sub>(A/W + 1)</span>
+                                </div>
+                                <p>
+                                    To mitigate user frustration, Valve dramatically exaggerated the collision hitboxes
+                                    of portal placements explicitly on key surfaces meant for high-speed flinging,
+                                    artificially inflating <em>W</em> on the fly.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="list-style-area">
+                            <h3 class="text-center" style="font-weight: 900;">Gestalt Principles of Level Design</h3>
+                            <div class="text-center">How Information is Filtered in Aperture Science</div>
+                            <ol class="three-columns md-one-columns">
+                                <li>
+                                    <h6>Law of Similarity</h6>
+                                    <p>
+                                        Only white moon-dust concrete accepts portals, grouping interactable surfaces
+                                        naturally.
+                                    </p>
+                                </li>
+                                <li>
+                                    <h6>Law of Continuity</h6>
+                                    <p>
+                                        Dot-matrix floor lines connect buttons to doors, tracing visual paths for the
+                                        eye.
+                                    </p>
+                                </li>
+                                <li>
+                                    <h6>Sensory Grouping</h6>
+                                    <p>
+                                        Toxic pits are visually and audibly separated from sterile safe zones.
+                                    </p>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+
+                </section>
+                <section class="game-sections" id="user-interaction">
+
+                    <h2>User Interaction</h2>
+                    <p>
+                        The core cybernetic loop of Portal demands rapid spatial hypothesis testing. Players learn
+                        through trial and literal error, observing kinetic physics reactions to update their mental
+                        models.
+                    </p>
+                    <div class="list-style-area">
+                        <h3 class="text-center">The Spatial Puzzle Loop</h3>
+                        <ol class="four-columns md-two-columns">
+                            <li>
+                                <h6>Surveying</h6>
+                                <p>Map the room mentally, isolating 'White' surfaces from 'Dark' surfaces without
+                                    firing.</p>
+                            </li>
+                            <li>
+                                <h6>Hypothesizing</h6>
+                                <p>Construct a conceptual traversal chain (e.g. "If I place Orange there, and Blue
+                                    here...").</p>
+                            </li>
+                            <li>
+                                <h6>Executing</h6>
+                                <p>Deploy portals (Mouse 1 / Mouse 2) and commit to the physics engine (jumping into the
+                                    void).</p>
+                            </li>
+                            <li>
+                                <h6>Orienting</h6>
+                                <p>Upon exiting a horizontal portal vertically, violently orient pitch/yaw to establish
+                                    spatial congruence.</p>
+                            </li>
+                        </ol>
+                    </div>
+
+                    <h3>Multi-Modal Feedback Matrix</h3>
+                    <div class="multi-modal-feedback">
+                        <div>
+                            <p>
+                                Without traditional game elements like health bars, ammo counters, or damage numbers,
+                                Portal relies completely on audiovisual environmental cues to validate user input
+                                instantly.
+                            </p>
+                        </div>
+                        <ul>
+                            <li>
+                                <div class="logo-svg">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25l4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h6>Auditory Validation Failure</h6>
+                                    <p>
+                                        A distinct, sharp electronic 'buzz' / 'whoosh' plays when an invalid portal
+                                        surface is shot, instantly alerting the user of mechanical failure without them
+                                        needing to visually check the hitmarker.
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="logo-svg">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h6>Recursive Transparency</h6>
+                                    <p>
+                                        Looking directly through a portal renders a 1:1 view of the destination. This
+                                        real-time render-in-render acts as the ultimate user interface—a literal window
+                                        to the player's goal, verifying spatial connectivity.
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                </section>
+                <section class="game-sections" id="hci-principles">
+
+                    <h2>HCI Principles</h2>
+                    <div class="spatial-congruence">
+                        <h2>Safe Conceptual Destruction</h2>
+                        <p>
+                            The human brain naturally assumes Euclidean geometry. A room is a box; walls are permanent
+                            boundaries. Portal systematically shatters this mental model. To do so without causing UX
+                            frustration, the game drops the player into inescapable glass boxes with pre-existing
+                            portals, safely enforcing them to master "looking at themselves" before acquiring the portal
+                            gun.
+                        </p>
+                        <div class="list-style-area">
+                            <ol class="two-columns md-one-columns">
+                                <li>
+                                    <h6>Controlled Environment</h6>
+                                    <p>The glass box provides a completely safe space with zero time pressure, allowing
+                                        the user to experiment at their own pace.</p>
+                                </li>
+                                <li>
+                                    <h6>Observation First</h6>
+                                    <p>By showing the reaction before providing the tool, the mental model is updated
+                                        passively before requiring active input.</p>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="cognitive-load-bifurcation">
+                        <h2>Spatial De-Coupling</h2>
+                        <p>
+                            The intersection of raycasts vs bounding boxes in user perception is continually challenged.
+                            A player can have half their body in a horizontal plane and half in a vertical plane
+                            simultaneously.
+                        </p>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Extrinsic Simplification</th>
+                                    <th>Intrinsic Complexity</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <h6>UI Elimination</h6>
+                                        <p>Zero minimaps, zero ammo counters. Complete removal of extrinsic UI systems
+                                            means 100% of brain-processing power is available for the puzzle.</p>
+                                    </td>
+                                    <td>
+                                        <h6>Momentum Tracking</h6>
+                                        <p>Because the task involves tracking velocity arcs through recursive infinite
+                                            loops, the intrinsic cognitive load forces peak concentration.</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <h6>Clinical Environment</h6>
+                                        <p>By making the textures uniformly white or grey, any anomaly (a red button, an
+                                            orange portal) commands the user's attention flawlessly via high contrast.
+                                        </p>
+                                    </td>
+                                    <td>
+                                        <h6>Vestibular Disconnect</h6>
+                                        <p>When the camera mathematics forcibly flips orientational axes instantly, it
+                                            breaks the connection between the inner ear and the visual cortex.</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="list-style-area">
+                        <h3 class="text-center">Diegetic Consistency and Signifiers</h3>
+                        <div class="text-center">
+                            A core pillar of HCI is ensuring that objects clearly signify their use (Affordances).
+                            Because Portal strips away text pop-ups, it must rely entirely on diegetic signifiers to
+                            communicate logic.
+                        </div>
+                        <ol class="two-columns md-one-columns">
+                            <li>
+                                <h6>The Weighted Storage Cube</h6>
+                                <p>Its size and handles suggest it can be picked up. Its flat surfaces imply it can act
+                                    as a step. The glowing pink heart variants (Companion Cube) create emotional
+                                    attachment, leveraging psychology.</p>
+                            </li>
+                            <li>
+                                <h6>Turret Design Language</h6>
+                                <p>Turrets are painted pristine white, matching the friendly testing environment, but
+                                    emit a bright red laser sight. This creates immediate cognitive dissonance: clean
+                                    geometry paired with threat.</p>
+                            </li>
+                        </ol>
+                    </div>
+
+                </section>
+                <section class="game-sections" id="ui-ux-weaknesses">
+
+                    <h2>Strengths and Weaknesses Analysis</h2>
+                    <p>
+                        Breaking down the friction points of navigating Euclidean vectors across non-Euclidean digital
+                        architecture.
+                    </p>
+                    <table style="margin-bottom: 2em;">
+                        <thead>
+                            <tr>
+                                <th>System Strengths <span class="badge badge-success">Positive_Vectors</span></th>
+                                <th>System Weaknesses <span class="badge badge-danger">Negative_Vectors</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="sw-item-head">
+                                        <span class="label">01_ONBOARDING</span>
+                                    </div>
+                                    <h6>Masterclass Onboarding</h6>
+                                    <p>The pacing introduces complex mechanics purely via interaction. No text overlays,
+                                        no pausing, just pure experiential learning.</p>
+                                </td>
+                                <td>
+                                    <div class="sw-item-head">
+                                        <span class="label">01_NAUSEA</span>
+                                    </div>
+                                    <h6>Simulator Sickness Vulnerability</h6>
+                                    <p>The rapid reorientation of pitch/yaw vectors upon traversing
+                                        horizontal-to-vertical portals frequently induces motion sickness in
+                                        unacclimated users.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="sw-item-head">
+                                        <span class="label">02_COMPRESSION</span>
+                                    </div>
+                                    <h6>Information Compression</h6>
+                                    <p>The dual-state portal reticle pushes complex state-machine tracking directly into
+                                        the foveal action center seamlessly.</p>
+                                </td>
+                                <td>
+                                    <div class="sw-item-head">
+                                        <span class="label">02_BUMPING</span>
+                                    </div>
+                                    <h6>Portal Bumping Friction</h6>
+                                    <p>Attempting to precisely place portals adjacent to one another sometimes results
+                                        in the engine "bumping" or overriding the previous portal without explicitly
+                                        communicating the collision box logic to the user.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="sw-item-head">
+                                        <span class="label">03_AFFORDANCE</span>
+                                    </div>
+                                    <h6>Flawless Affordance Filtering</h6>
+                                    <p>Rigidly tieing mechanics to simple textures (White = Valid, Dark = Invalid)
+                                        vastly reduces the user's sensory processing load compared to games with
+                                        cluttered, highly detailed realistic textures.</p>
+                                </td>
+                                <td>
+                                    <div class="sw-item-head">
+                                        <span class="label">03_FRUSTRATION</span>
+                                    </div>
+                                    <h6>Execution vs Recognition Gap</h6>
+                                    <p>Players often instantly "solve" the puzzle mentally but fail repeatedly on the
+                                        physical execution of the momentum fall, shifting the game from cognitive
+                                        problem solving to frustrating twitch mechanics.</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="footnote summary">
+                        <p>
+                            Portal remains the industry gold standard for teaching non-intuitive, complex 3D mechanics
+                            purely through environmental UX design. Its avoidance of text tutorials in favor of
+                            experiential geometric feedback prevents cognitive dissonance and secures its position as an
+                            HCI masterpiece despite its potential to trigger kinetic simulator adaptation issues.
+                        </p>
+                    </div>
+
+                </section>
+            </div>
+        </article>
+    </main>
+    <footer>
+        <h6>GameUX Atlas</h6>
+        <ul class="socials"></ul>
+        <div class="footer-info">
+            <span>&copy; Group 5</span>
+            <span>CIP 1101</span>
+            <span>2026</span>
+            <span>GameUX Atlas</span>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top" title="Back to top">
+        <svg viewBox="0 0 56 56" width="56" height="56" aria-hidden="true" focusable="false">
+            <circle class="btn-bg" cx="28" cy="28" r="27"></circle>
+            <circle class="btn-progress-track" cx="28" cy="28" r="22"></circle>
+            <circle class="btn-progress" id="back-to-top-progress" cx="28" cy="28" r="22"></circle>
+            <path class="btn-icon" d="M28 36V20"></path>
+            <path class="btn-icon" d="M21.5 26.5L28 20l6.5 6.5"></path>
+        </svg>
+    </button>
+</body>
+
+<script>
+    // VARIABLES
+    const GAMENAME = "Portal";
+    const DATERELEASED = "10/10/2007"; // MM/DD/YYYY
+    const PUBLISHER = 'Valve Corporation';
+    const BADGE = "Full Release";
+    // Pre-Alpha
+    // Alpha
+    // Beta
+    // Early Access
+    // Full Release
+    const POSTERURL = "../../../public/posters/portal_poster.jpg";
+    const POSTERALTTEXT = "Portal Game Poster";
+    const VIDEOURL = "../../../public/videos/portal_trailer.mp4";
+    const VIDEOURLYT = "https://www.youtube.com/embed/TluRVBhmf8w?si=Zr_Fsj09nTRUuJcb";
+    const YTVID = true;
+
+    const GAMEUSERSTARS = "9.0";
+    const GAMEUSERRATINGS = "16k";
+
+    const HASCRITICS = true; // Set to false if there are no critic ratings
+    const GAMECRITICSTARS = "9.2";
+    const GAMECRITICRATINGS = "171";
+
+    const GENRES = ["Puzzle", "Platformer", "Action"];
+    const PLATFORMS = ["PC", "Mac", "Linux", "Xbox 360", "PlayStation 3"];
+    const EDITIONS = ["Portal", "Portal 2", "Portal: Still Alive", "Portal with RTX", "Portal: Companion Collection"];
+
+    const DESCRIPTION = "A test subject wakes up in a scientific facility controlled by a sadistic artificial intelligence and must escape with the help of the only instrument she has--a gun that makes portals. A groundbreaking puzzle game featuring physics-defying portal mechanics and dark humor.";
+
+    // Document Variables
+    const sectionRadios = Array.from(
+        document.querySelectorAll('input[name="game-section"]'),
+    );
+    const gameSections = Array.from(
+        document.querySelectorAll(".game-sections"),
+    );
+    const gameInfoNav = document.getElementById("game-info-nav");
+    const gameInfoNavLeft = document.getElementById("game-info-nav-left");
+    const gameInfoNavRight = document.getElementById("game-info-nav-right");
+    const backToTopButton = document.getElementById("back-to-top");
+    const backToTopProgress = document.getElementById("back-to-top-progress");
+
+    // -- Implementation --
+    document.getElementById("title").textContent = GAMENAME + " - GameUX"; // Set page title
+    for (let el of document.getElementsByClassName("game-name")) {
+        el.textContent = GAMENAME;
+    } // Set game name
+    for (let el of document.getElementsByClassName("date-released")) {
+        el.textContent = DATERELEASED;
+    } // Set date released
+    for (let el of document.getElementsByClassName("publisher")) {
+        el.textContent = PUBLISHER;
+    } // Set publisher
+    for (let el of document.getElementsByClassName("game-badge")) {
+        el.textContent = BADGE;
+    } // Set badge
+    for (let el of document.getElementsByClassName("game-user-rating")) {
+        el.textContent = GAMEUSERSTARS;
+    } // Set user rating
+    for (let el of document.getElementsByClassName("game-user-ratings")) {
+        el.textContent = GAMEUSERRATINGS + " user ratings";
+    } // Set user ratings
+    for (let el of document.getElementsByClassName("game-critic-rating")) {
+        el.textContent = GAMECRITICSTARS;
+    } // Set critic rating
+    for (let el of document.getElementsByClassName("game-critic-ratings")) {
+        el.textContent = GAMECRITICRATINGS + " critic ratings";
+    } // Set critic ratings
+    for (let el of document.getElementsByClassName("game-poster-content")) {
+        el.src = POSTERURL;
+    } // Set poster content
+    document.getElementById("game-poster-img").src = POSTERURL; // Set poster image
+    document.getElementById("game-poster-img").title =
+        GAMENAME + " Game Poster"; // Set poster image title
+    document.getElementById("game-poster").href = POSTERURL; // Set poster link
+    document.getElementById("game-description").textContent = DESCRIPTION; // Set game description
+    document.getElementById("game-poster-img").alt = POSTERALTTEXT; // Set poster image alt text
+    // Video / YouTube toggle: show iframe when YTVID is true, otherwise show <video> with source
+    const videoEl = document.getElementById("game-video");
+    const videoSourceEl = document.getElementById("game-video-source");
+    const ytEl = document.getElementById("game-video-yt");
+    if (YTVID) {
+        if (ytEl) {
+            ytEl.src = VIDEOURLYT;
+            ytEl.hidden = false;
+        }
+        if (videoEl) {
+            videoEl.hidden = true;
+            try {
+                videoEl.pause();
+            } catch (e) { }
+        }
+    } else {
+        if (videoSourceEl) {
+            videoSourceEl.src = VIDEOURL;
+        }
+        if (videoEl) {
+            videoEl.hidden = false;
+            try {
+                videoEl.load();
+            } catch (e) { }
+        }
+        if (ytEl) {
+            ytEl.hidden = true;
+            ytEl.src = "";
+        }
+    }
+
+    for (let genre of GENRES) {
+        // Set genres
+        let li = document.createElement("li");
+        li.textContent = genre;
+        document.getElementById("genres").appendChild(li);
+    }
+
+    for (let platform of PLATFORMS) {
+        // Set platforms
+        let li = document.createElement("li");
+        li.textContent = platform;
+        document.getElementById("platforms").appendChild(li);
+    }
+
+    for (let edition of EDITIONS) {
+        // Set editions
+        let li = document.createElement("li");
+        li.textContent = edition;
+        document.getElementById("editions").appendChild(li);
+    }
+
+    // Hide critic ratings
+    if (!HASCRITICS) {
+        for (let el of document.getElementsByClassName(
+            "game-critic-rating-cont",
+        )) {
+            el.classList.add("hidden");
+        }
+    }
+
+    // Calculate days ago
+    let timeDiff = new Date().getTime() - new Date(DATERELEASED).getTime();
+    let daysAgo = Math.floor(timeDiff / (1000 * 3600 * 24));
+    if (daysAgo > 365) {
+        let yearsAgo = Math.floor(daysAgo / 365);
+        for (let el of document.getElementsByClassName("days-ago")) {
+            el.textContent = "(" + yearsAgo + " years ago)";
+        }
+    } else {
+        for (let el of document.getElementsByClassName("days-ago")) {
+            el.textContent = "(" + daysAgo + " days ago)";
+        }
+    }
+
+    // Sections navigation
+    function showGameSection(sectionId) {
+        for (let section of gameSections) {
+            let isActive = section.id === sectionId;
+            section.classList.toggle("is-active", isActive);
+            section.setAttribute("aria-hidden", String(!isActive));
+        }
+    }
+
+    function getSectionIdFromHash() {
+        const rawHash = window.location.hash || "";
+        const hash = rawHash.startsWith("#") ? rawHash.slice(1) : rawHash;
+        if (!hash) {
+            return null;
+        }
+        return gameSections.some((section) => section.id === hash) ? hash : null;
+    }
+
+    function syncSectionFromHash() {
+        const hashSectionId = getSectionIdFromHash();
+        if (!hashSectionId) {
+            return false;
+        }
+
+        const matchingRadio = sectionRadios.find((radio) => radio.value === hashSectionId);
+        if (matchingRadio) {
+            matchingRadio.checked = true;
+        }
+        showGameSection(hashSectionId);
+        return true;
+    }
+
+    const defaultSection = document.querySelector(
+        'input[name="game-section"]:checked',
+    );
+    if (!syncSectionFromHash()) {
+        showGameSection(
+            defaultSection ? defaultSection.value : "short-description",
+        );
+    }
+
+    for (let radio of sectionRadios) {
+        radio.addEventListener("change", () => {
+            if (!radio.checked) {
+                return;
+            }
+            showGameSection(radio.value);
+            if (history.replaceState) {
+                history.replaceState(null, "", `#${radio.value}`);
+            } else {
+                window.location.hash = radio.value;
+            }
+        });
+    }
+
+    window.addEventListener("hashchange", () => {
+        syncSectionFromHash();
+    });
+
+    // Game info nav
+    function updateGameInfoNavArrows() {
+        if (!gameInfoNav || !gameInfoNavLeft || !gameInfoNavRight) {
+            return;
+        }
+
+        const maxScrollLeft = gameInfoNav.scrollWidth - gameInfoNav.clientWidth;
+        const canScroll = maxScrollLeft > 1;
+        const canScrollLeft = canScroll && gameInfoNav.scrollLeft > 1;
+        const canScrollRight =
+            canScroll && gameInfoNav.scrollLeft < maxScrollLeft - 1;
+
+        gameInfoNavLeft.hidden = !canScrollLeft;
+        gameInfoNavRight.hidden = !canScrollRight;
+    }
+
+    function scrollGameInfoNavBy(distance) {
+        if (!gameInfoNav) {
+            return;
+        }
+        gameInfoNav.scrollBy({ left: distance, behavior: "smooth" });
+    }
+
+    if (gameInfoNav && gameInfoNavLeft && gameInfoNavRight) {
+        gameInfoNav.addEventListener("scroll", updateGameInfoNavArrows);
+        gameInfoNavLeft.addEventListener("click", () => {
+            scrollGameInfoNavBy(
+                -Math.max(200, Math.floor(gameInfoNav.clientWidth * 0.5)),
+            );
+        });
+        gameInfoNavRight.addEventListener("click", () => {
+            scrollGameInfoNavBy(
+                Math.max(200, Math.floor(gameInfoNav.clientWidth * 0.5)),
+            );
+        });
+        window.addEventListener("resize", updateGameInfoNavArrows);
+        updateGameInfoNavArrows();
+    }
+
+    // Back-to-top button with circular scroll progress
+    const progressRadius = 22;
+    const progressCircumference = 2 * Math.PI * progressRadius;
+
+    if (backToTopProgress) {
+        backToTopProgress.style.strokeDasharray = String(progressCircumference);
+        backToTopProgress.style.strokeDashoffset = String(progressCircumference);
+    }
+
+    function updateBackToTop() {
+        if (!backToTopButton || !backToTopProgress) {
+            return;
+        }
+
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        const scrollableHeight =
+            document.documentElement.scrollHeight - window.innerHeight;
+        const progress = scrollableHeight > 0 ? Math.min(scrollTop / scrollableHeight, 1) : 0;
+        const dashOffset = progressCircumference * (1 - progress);
+
+        backToTopProgress.style.strokeDashoffset = String(dashOffset);
+        backToTopButton.classList.toggle("is-visible", scrollTop > 160);
+    }
+
+    if (backToTopButton) {
+        backToTopButton.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    }
+
+    window.addEventListener("scroll", updateBackToTop, { passive: true });
+    window.addEventListener("resize", updateBackToTop);
+    updateBackToTop();
+</script>
+
+</html>

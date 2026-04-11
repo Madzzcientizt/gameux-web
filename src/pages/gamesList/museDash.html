@@ -1,0 +1,2085 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend:wght@100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Manrope:wght@200..800&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+        rel="stylesheet" />
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../styles/styles.css" type="text/css" />
+    <link rel="stylesheet" href="../../styles/sizeChecker.css" type="text/css" />
+    <link rel="stylesheet" href="../../styles/game.css" type="text/css" />
+
+    <!-- Custom Styles ------------------------------------------------------------------------------------------ -->
+    <style>
+        nav.game-info-nav label {
+            width: calc(100% / 5) !important;
+        }
+
+        .game-sections {
+            &#short-description {
+
+                &>h2 {
+                    font-weight: 900;
+                    font-size: 2.5em;
+                }
+
+                &>p {
+                    text-align: justify;
+                    margin-bottom: 1em;
+                }
+
+                &>.list-style {
+                    list-style: none;
+                    float: right;
+                    background-color: var(--t-color-base-100);
+                    padding: 2em;
+                    margin-left: 2em;
+                    margin-bottom: 2em;
+                    border-radius: var(--t-radius-field);
+                    border: var(--t-border) solid var(--t-color-base-300);
+
+                    &>h6 {
+                        font-weight: 900;
+                    }
+
+                    &>li {
+                        margin-left: 1em;
+                        margin-bottom: 1em;
+                        position: relative;
+
+                        &::before {
+                            content: '';
+                            display: block;
+                            position: absolute;
+                            width: 0.2em;
+                            height: 1em;
+                            background-color: var(--t-color-primary);
+                            border-radius: 1em;
+                            left: -0.75em;
+                            top: calc(50% - 0.5em);
+                        }
+                    }
+                }
+            }
+
+            &#ui-components {
+                margin-bottom: 2em;
+
+                &>h2 {
+                    font-weight: 900;
+                    font-size: 2.5em;
+                }
+
+                & .major-components {
+                    display: grid;
+                    grid-template-rows: 1fr;
+                    grid-template-columns: 50% 1fr;
+                    gap: 1em;
+                    margin: 2em 0;
+                }
+
+                & .major-component {
+                    background-color: var(--t-color-base-100);
+                    border-radius: var(--t-radius-field);
+                    padding: 1em;
+                    height: auto;
+                    position: relative;
+                    display: flex;
+                    align-items: flex-start;
+                    flex-direction: column;
+                    gap: 1em;
+                    min-height: 15em;
+                    border: var(--t-border) solid var(--t-color-base-300);
+
+                    &:first-child {
+                        grid-column: 1 / -1;
+                        width: 100%;
+                        flex-direction: row;
+                    }
+
+                    &:last-child {
+                        grid-column: 1 / -1;
+                        width: 100%;
+                        flex-direction: row-reverse;
+                    }
+
+                    &:not(:first-child):not(:last-child) {
+                        flex-direction: column;
+                    }
+
+                    & figure {
+                        position: relative;
+                        margin-bottom: 0;
+                        width: 100%;
+                        height: auto;
+
+                        & figcaption {
+                            font-size: 0.9em;
+                            color: var(--t-color-light);
+                            margin-top: 0.5em;
+                            position: absolute;
+                            bottom: 0.5em;
+                            right: 0.5em;
+                        }
+                    }
+
+                    & a {
+                        flex-shrink: 0;
+                        margin-left: auto;
+
+                        & img {
+                            display: block;
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                            border-radius: 0.25em;
+                        }
+                    }
+
+                    & .count {
+                        font-weight: 700;
+                        font-size: 1.2em;
+                        font-family: var(--bs-font-monospace);
+                        color: var(--t-color-secondary);
+                        display: block;
+                    }
+
+                    & .header-text {
+                        font-weight: 700;
+                        font-size: 2.5em;
+                        font-family: var(--bs-font-serif);
+                    }
+
+                    & ul {
+                        list-style: none;
+                        margin-left: 1em;
+                        margin-top: 2em;
+
+                        & h6 {
+                            font-weight: 900;
+                        }
+
+                        & li {
+                            margin-left: 1em;
+                            margin-bottom: 0.5em;
+                            position: relative;
+
+                            &::before {
+                                content: '';
+                                display: block;
+                                position: absolute;
+                                width: 0.2em;
+                                height: 1em;
+                                background-color: var(--t-color-primary);
+                                border-radius: 1em;
+                                left: -0.75em;
+                                top: calc(50% - 0.5em);
+                            }
+                        }
+                    }
+                }
+
+                & .fittslaw {
+                    display: grid;
+                    grid-template-columns: 50% 1fr;
+                    gap: 1em;
+
+                    & h2 {
+                        font-weight: 900;
+                        font-size: 2.5em;
+                    }
+
+                    & figure {
+                        position: relative;
+                        margin-bottom: 0;
+                        width: 100%;
+                        height: auto;
+
+                        & figcaption {
+                            font-size: 0.9em;
+                            color: var(--t-color-dark);
+                            margin-top: 0.5em;
+                            position: absolute;
+                            bottom: 0.5em;
+                            right: 0.5em;
+                        }
+                    }
+
+                    & a {
+                        flex-shrink: 0;
+                        margin-left: auto;
+
+                        & img {
+                            width: 100% !important;
+                            height: auto !important;
+                            margin-bottom: 1em;
+                        }
+                    }
+                }
+
+                & .ui-split-panels {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 1em;
+                    align-items: start;
+                    margin-top: 2em;
+
+                    @media (width < 48rem) {
+                        grid-template-columns: 1fr;
+                    }
+                }
+
+                & .ui-split-panels .fittslaw {
+                    display: block;
+                }
+
+                & .ui-split-panels .list-style-area {
+                    margin: 0;
+                }
+
+                @media (width < 48rem) {
+                    & .fittslaw {
+                        grid-template-columns: 1fr;
+                    }
+                }
+
+                & .mathmodel {
+                    margin: 1em 0;
+                    padding: 1em;
+                    position: relative;
+                    padding-left: 2em;
+                    background-color: var(--t-color-base-300);
+                    border-radius: var(--t-radius-field);
+                    overflow: hidden;
+
+                    &::before {
+                        content: '';
+                        display: block;
+                        position: absolute;
+                        width: 0.5em;
+                        height: 100%;
+                        background-color: var(--t-color-primary);
+                        left: 0;
+                        top: 0;
+                    }
+
+                    & h6 {
+                        font-family: var(--bs-font-monospace);
+                        color: var(--t-color-dark);
+                        font-weight: 300;
+                    }
+
+                    & span {
+                        font-size: 2em
+                    }
+                }
+
+                @media (width < 48rem) {
+                    & .major-components {
+                        grid-template-columns: 1fr;
+                        gap: 1em;
+                    }
+
+                    & .major-component {
+                        &:first-child {
+                            flex-direction: column;
+                        }
+
+                        &:last-child {
+                            flex-direction: column;
+                        }
+
+                        & figure {
+                            width: 100%;
+
+                            & figcaption {
+                                bottom: 1em;
+                            }
+                        }
+
+                        & a {
+                            margin-left: 0;
+                            width: 100%;
+
+                            & img {
+                                width: 100% !important;
+                                height: auto !important;
+                                margin-bottom: 1em;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &#user-interaction {
+                margin-bottom: 2em;
+
+                &>h2 {
+                    font-weight: 900;
+                    font-size: 2.5em;
+                }
+
+                & h3 {
+                    font-weight: 900;
+                    font-size: 2.5em;
+                }
+
+
+                & .multi-modal-feedback {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 1em;
+                    padding-top: 1em;
+
+                    @media (width < 48rem) {
+                        grid-template-columns: 1fr !important;
+                    }
+
+                    & figure {
+                        margin: auto;
+                        width: 100%;
+                        height: auto;
+
+                        & img {
+                            width: 100% !important;
+                            height: auto !important;
+                        }
+                    }
+                }
+
+                & ul {
+                    list-style: none;
+                    padding: 0;
+
+                    & li {
+                        margin-top: 2em;
+                        display: flex;
+                        flex-direction: row;
+
+                        & h6 {
+                            font-weight: 700;
+                            font-size: 1.5em;
+                            margin-bottom: 0.5em;
+                        }
+
+                        & .logo-svg {
+                            height: 5em;
+                            flex-shrink: 0;
+                            background-color: var(--t-color-secondary);
+                            color: var(--t-color-base-100);
+                            aspect-ratio: 1 / 1;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: center;
+                            padding: 1em;
+                            border-radius: var(--t-radius-field);
+                            margin: auto;
+                            margin-right: 1em;
+
+                            & svg {
+                                width: 100%;
+                                height: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &#hci-principles {
+                margin-bottom: 2em;
+
+                &>h2 {
+                    font-weight: 900;
+                    font-size: 2.5em;
+                }
+
+                & .cybernetic-feedback-loops {
+                    margin-top: 2em;
+                    padding: 1em;
+                    border-radius: var(--t-radius-field);
+                    background-color: var(--t-color-base-100);
+                    border: var(--t-border) solid var(--t-color-base-300);
+
+                    &>h3 {
+                        font-weight: 900;
+                        font-size: 2em;
+                    }
+
+                    & .cybernetic-content {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        gap: 1em;
+
+                        @media (width < 48rem) {
+                            grid-template-columns: 1fr !important;
+                        }
+
+                        & h6 {
+                            font-weight: 700;
+                            font-size: 1.2em;
+                            margin-bottom: 0.5em;
+                        }
+
+                        & .primary-modalities {
+                            list-style: none;
+                            padding: 1em;
+                            background-color: var(--t-color-base-200);
+                            border-radius: var(--t-radius-field);
+                            margin-bottom: 0;
+
+
+                            & li {
+                                margin-left: 1em;
+                                margin-bottom: 0.5em;
+                                position: relative;
+
+                                &::before {
+                                    content: '';
+                                    display: block;
+                                    position: absolute;
+                                    width: 0.2em;
+                                    height: 1em;
+                                    background-color: var(--t-color-primary);
+                                    border-radius: 1em;
+                                    left: -0.75em;
+                                    top: calc(50% - 0.5em);
+                                }
+                            }
+                        }
+                    }
+                }
+
+                & .spatial-congruence {
+                    padding: 1em;
+                    margin-top: 2em;
+
+                    & h2 {
+                        font-weight: 900;
+                        font-size: 2.5em;
+                    }
+                }
+
+                & .hci-layout {
+                    display: grid;
+                    grid-template-columns: 1.15fr 1fr;
+                    gap: 1em;
+                    align-items: start;
+                    margin-top: 2em;
+
+                    @media (width < 48rem) {
+                        grid-template-columns: 1fr;
+                    }
+                }
+
+                & .hci-layout .spatial-congruence,
+                & .hci-layout .cognitive-load-bifurcation {
+                    margin: 0;
+                }
+
+                & .cognitive-load-bifurcation {
+                    margin: 2em 0;
+                    padding: 1em;
+                    border-radius: var(--t-radius-field);
+                    background-color: var(--t-color-base-100);
+                    border: var(--t-border) solid var(--t-color-base-300);
+
+                    &>h2 {
+                        font-weight: 900;
+                        font-size: 2em;
+                    }
+
+                    & table {
+                        width: 100%;
+                        border-collapse: separate;
+                        border-spacing: 0;
+                        border: var(--t-border) solid var(--t-color-base-300);
+                        border-radius: var(--t-radius-field);
+                        overflow: hidden;
+                        background-color: var(--t-color-base-200);
+                    }
+
+                    & th,
+                    & td {
+                        padding: 1em;
+                        vertical-align: top;
+                    }
+
+                    & thead th {
+                        font-weight: 800;
+                        font-size: 1.05em;
+                        background-color: var(--t-color-base-300);
+                        border-bottom: 1px solid var(--t-color-base-300);
+                    }
+
+                    & th+th,
+                    & td+td {
+                        border-left: 1px solid var(--t-color-base-300);
+                    }
+
+                    & tbody td {
+                        border-bottom: 1px solid var(--t-color-base-300);
+                    }
+
+                    & tbody tr:last-child td {
+                        border-bottom: 0;
+                    }
+
+                    & td h6 {
+                        font-weight: 700;
+                        font-size: 1.15em;
+                        margin-bottom: 0.5em;
+                    }
+
+                    & td p {
+                        margin-bottom: 0;
+                    }
+
+                    @media (width < 48rem) {
+
+                        & table,
+                        & thead,
+                        & tbody,
+                        & tr,
+                        & th,
+                        & td {
+                            display: block;
+                            width: 100%;
+                        }
+
+                        & thead {
+                            display: none;
+                        }
+
+                        & tbody tr {
+                            border-bottom: 1px solid var(--t-color-base-300);
+                            padding: 0.5em;
+                        }
+
+                        & tbody tr:last-child {
+                            border-bottom: 0;
+                        }
+
+                        & td {
+                            border: 0;
+                            border-radius: var(--t-radius-field);
+                            background-color: var(--t-color-base-100);
+                            margin-bottom: 0.75em;
+                        }
+
+                        & td::before {
+                            display: block;
+                            font-weight: 700;
+                            font-size: 0.85em;
+                            text-transform: uppercase;
+                            letter-spacing: 0.04em;
+                            color: var(--t-color-primary);
+                            margin-bottom: 0.5em;
+                        }
+
+                        & td:nth-child(1)::before {
+                            content: 'Extrinsic Load';
+                        }
+
+                        & td:nth-child(2)::before {
+                            content: 'Intrinsic Focus';
+                        }
+                    }
+                }
+            }
+
+            &#ui-ux-weaknesses {
+                margin-bottom: 2em;
+
+                &>h2 {
+                    font-weight: 900;
+                    font-size: 2.5em;
+                }
+
+                &>p {
+                    text-align: justify;
+                    margin-bottom: 2em;
+                }
+
+                & table {
+                    width: 100%;
+                    border-collapse: separate;
+                    border-spacing: 0;
+                    border: var(--t-border) solid var(--t-color-base-300);
+                    border-radius: var(--t-radius-field);
+                    overflow: hidden;
+                    background-color: var(--t-color-base-100);
+                }
+
+                & th,
+                & td {
+                    padding: 1em;
+                    vertical-align: top;
+                }
+
+                & td {
+                    position: relative;
+                    padding-right: 4.25em;
+                }
+
+                & thead th {
+                    font-weight: 800;
+                    font-size: 1.05em;
+                    background-color: var(--t-color-base-300);
+                    border-bottom: 1px solid var(--t-color-base-300);
+                }
+
+                & th+th,
+                & td+td {
+                    border-left: 1px solid var(--t-color-base-300);
+                }
+
+                & tbody td {
+                    border-bottom: 1px solid var(--t-color-base-300);
+                }
+
+                & tbody tr:last-child td {
+                    border-bottom: 0;
+                }
+
+                & .badge {
+                    font-size: 0.75em;
+                    font-weight: 400;
+                    border-radius: var(--t-radius-selector);
+                    padding: 0.35em 0.75em;
+                    margin-left: 0.5em;
+                    vertical-align: middle;
+                    border: var(--t-border) solid transparent;
+                }
+
+                & .badge-success {
+                    background-color: var(--t-color-success);
+                    color: color-mix(in oklab, var(--t-color-success-content) 70%, var(--t-color-success));
+                    border-color: color-mix(in oklab, var(--t-color-success) 65%, var(--t-color-dark));
+                }
+
+                & .badge-danger {
+                    background-color: var(--t-color-error);
+                    color: color-mix(in oklab, var(--t-color-error-content) 70%, var(--t-color-error));
+                    border-color: color-mix(in oklab, var(--t-color-error) 65%, var(--t-color-dark));
+                }
+
+                & .sw-item-head {
+                    display: block;
+                    margin-bottom: 0.75em;
+                }
+
+                & .sw-icon {
+                    width: 2.75em;
+                    height: 2.75em;
+                    color: var(--t-color-base-300);
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-shrink: 0;
+                    position: absolute;
+                    top: 0.75em;
+                    right: 0.75em;
+                }
+
+                & .sw-icon svg {
+                    width: 1.5em;
+                    height: 1.5em;
+                }
+
+                & .label {
+                    display: inline-block;
+                    font-family: var(--bs-font-monospace);
+                    font-size: 0.9em;
+                    font-weight: 700;
+                    color: var(--t-color-secondary);
+                    letter-spacing: 0.03em;
+                }
+
+                & td h6 {
+                    font-weight: 700;
+                    font-size: 1.2em;
+                    margin-bottom: 0.5em;
+                }
+
+                & td p {
+                    margin-bottom: 0;
+                    text-align: justify;
+                }
+
+                @media (width < 48rem) {
+
+                    & table,
+                    & thead,
+                    & tbody,
+                    & tr,
+                    & th,
+                    & td {
+                        display: block;
+                        width: 100%;
+                    }
+
+                    & thead {
+                        display: none;
+                    }
+
+                    & tbody tr {
+                        border-bottom: 1px solid var(--t-color-base-300);
+                        padding: 0.5em;
+                        background-color: var(--t-color-base-200);
+                    }
+
+                    & tbody tr:last-child {
+                        border-bottom: 0;
+                    }
+
+                    & td {
+                        border: 0;
+                        border-radius: var(--t-radius-field);
+                        background-color: var(--t-color-base-100);
+                        margin-bottom: 0.75em;
+                    }
+
+                    & td::before {
+                        display: block;
+                        font-weight: 700;
+                        font-size: 0.85em;
+                        text-transform: uppercase;
+                        letter-spacing: 0.04em;
+                        margin-bottom: 0.5em;
+                    }
+
+                    & td:nth-child(1)::before {
+                        content: 'System Strengths';
+                        color: color-mix(in oklab, var(--t-color-success) 70%, var(--t-color-dark));
+                    }
+
+                    & td:nth-child(2)::before {
+                        content: 'System Weaknesses';
+                        color: color-mix(in oklab, var(--t-color-error) 70%, var(--t-color-dark));
+                    }
+                }
+            }
+        }
+
+
+        & .list-style-area {
+            margin: 2em 0;
+            width: 100%;
+            background-color: var(--t-color-base-100);
+            border: var(--t-border) solid var(--t-color-base-300);
+            padding: 1em;
+            border-radius: var(--t-radius-field);
+
+            & ol {
+                list-style: none;
+                margin-left: 0;
+                padding-left: 0;
+                margin-top: 2em;
+                display: grid;
+                gap: 1em;
+
+                &.two-columns {
+                    grid-template-columns: 1fr 1fr;
+                }
+
+                &.three-columns {
+                    grid-template-columns: 1fr 1fr 1fr;
+                }
+
+                &.four-columns {
+                    grid-template-columns: 1fr 1fr 1fr 1fr;
+                }
+
+                @media (width < 48rem) {
+                    &.md-one-columns {
+                        grid-template-columns: 1fr !important;
+                    }
+
+                    &.md-two-columns {
+                        grid-template-columns: 1fr 1fr !important;
+                    }
+                }
+
+                & li {
+                    position: relative;
+
+                    &::before {
+                        font-weight: 700;
+                        font-size: 5em;
+                        font-family: var(--bs-font-monospace);
+                        color: var(--t-color-base-200);
+                        position: absolute;
+                        top: -0.5em;
+                    }
+
+                    &:nth-child(1)::before {
+                        content: '01';
+                    }
+
+                    &:nth-child(2)::before {
+                        content: '02';
+                    }
+
+                    &:nth-child(3)::before {
+                        content: '03';
+                    }
+
+                    &:nth-child(4)::before {
+                        content: '04';
+                    }
+
+                    @media (width > 48rem) {
+                        &::before {
+                            left: 0;
+                        }
+                    }
+
+                    @media (width < 48rem) {
+                        &::before {
+                            right: 0;
+                        }
+                    }
+
+                    & h6 {
+                        font-weight: 700;
+                        font-size: 1.5em;
+                        position: relative;
+
+                        &::after {
+                            content: '';
+                            display: block;
+                            width: 100%;
+                            height: 1px;
+                            background-color: var(--t-color-base-300);
+                            margin-top: 0.5em;
+                        }
+                    }
+                }
+            }
+        }
+
+        .footnote {
+            width: 100%;
+            background-color: rgba(var(--t-color-primary-rgb), 0.1);
+            padding: 2em;
+            border-radius: var(--t-radius-field);
+
+            &::before {
+                content: 'Note:';
+                font-weight: 700;
+                font-size: 1.2em;
+                color: var(--t-color-primary);
+                display: block;
+                margin-bottom: 0.5em;
+            }
+
+            &.summary::before {
+                content: 'Summary:';
+            }
+        }
+
+        .back-to-top {
+            position: fixed;
+            right: 1.25rem;
+            bottom: 1.25rem;
+            width: 3.5rem;
+            height: 3.5rem;
+            border: 0;
+            border-radius: var(--t-radius-selector);
+            background-color: transparent;
+            padding: 0;
+            display: grid;
+            place-items: center;
+            z-index: 1001;
+            opacity: 0;
+            transform: translateY(0.5rem) scale(0.96);
+            pointer-events: none;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+            cursor: pointer;
+        }
+
+        .back-to-top.is-visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            pointer-events: auto;
+        }
+
+        .back-to-top .btn-bg {
+            fill: var(--t-color-base-100);
+            stroke: var(--t-color-base-300);
+            stroke-width: 1.5;
+        }
+
+        .back-to-top .btn-progress-track {
+            fill: none;
+            stroke: var(--t-color-base-300);
+            stroke-width: 3;
+            opacity: 0.35;
+        }
+
+        .back-to-top .btn-progress {
+            fill: none;
+            stroke: var(--t-color-primary);
+            stroke-width: 3;
+            stroke-linecap: round;
+            transform: rotate(-90deg);
+            transform-origin: 28px 28px;
+            transition: stroke-dashoffset 0.1s linear;
+        }
+
+        .back-to-top .btn-icon {
+            fill: none;
+            stroke: var(--t-color-primary);
+            stroke-width: 1.8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .back-to-top:hover .btn-bg {
+            fill: var(--t-color-base-200);
+        }
+
+        /* YouTube Ban Fallback Styling */
+        .video-fallback-message {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(var(--t-color-primary-rgb), 0.05) 0%, rgba(59.939% 0.191 335.171, 0.03) 100%);
+            border-radius: var(--t-radius-field);
+            padding: 2em;
+            z-index: 10;
+            backdrop-filter: blur(4px);
+        }
+
+        .fallback-content {
+            text-align: center;
+            max-width: 90%;
+        }
+
+        .fallback-icon {
+            width: 3.5em;
+            height: 3.5em;
+            color: var(--t-color-accent);
+            margin: 0 auto 1em;
+            stroke: var(--t-color-accent);
+        }
+
+        .fallback-content h4 {
+            font-weight: 700;
+            font-size: 1.5em;
+            color: var(--t-color-dark);
+            margin-bottom: 0.5em;
+        }
+
+        .fallback-content p {
+            color: var(--t-color-dark);
+            font-size: 0.95em;
+            margin-bottom: 1.5em;
+            text-indent: 0;
+        }
+
+        .fallback-actions {
+            display: flex;
+            gap: 1em;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 1.5em;
+        }
+
+        .btn-fallback {
+            padding: 0.75em 1.5em;
+            border: none;
+            border-radius: var(--t-radius-field);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            font-size: 0.9em;
+            white-space: nowrap;
+        }
+
+        .btn-retry {
+            background: linear-gradient(135deg, var(--t-color-primary) 0%, var(--t-color-accent) 100%);
+            color: var(--t-color-primary-content);
+            box-shadow: 0 4px 12px rgba(var(--t-color-primary-rgb), 0.3);
+        }
+
+        .btn-retry:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(var(--t-color-primary-rgb), 0.4);
+        }
+
+        .btn-local {
+            background-color: var(--t-color-secondary);
+            color: var(--t-color-secondary-content);
+            box-shadow: 0 4px 12px rgba(42.551% 0.161 282.339, 0.3);
+        }
+
+        .btn-local:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(42.551% 0.161 282.339, 0.4);
+        }
+
+        .fallback-hint {
+            color: var(--t-color-dark);
+            font-size: 0.85em;
+            margin: 0;
+        }
+
+        .game-video-wrp {
+            position: relative;
+        }
+    </style>
+    <!-- Custom Styles ------------------------------------------------------------------------------------------ -->
+
+    <title id="title">GameName - GameUX</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-light navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="../../index.html">
+                    <img src="../../../public/gameux.png" alt="Logo" class="navbar-logo" />
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent">
+                    <span class="navbar-toggler-icon" style="width: 1em"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">Game List</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <nav class="breadcrumb-nav" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="../gameList.html">Game List</a>
+            </li>
+            <li class="breadcrumb-item active game-name">Game name</li>
+        </ol>
+    </nav>
+    <main>
+        <article class="wide">
+            <section class="header-section">
+                <img class="game-poster-content game-poster-background-style" />
+                <h1 class="game-name game-name-header" title="Game Name">
+                    Game name
+                </h1>
+                <div class="game-header">
+                    <span class="game-header-cont">
+                        <div class="game-info-bar">
+                            <span class="game-date-info">
+                                <span class="date-released" title="Date Released">Date Released</span>
+                                <span class="days-ago" title="Days Age">11 months ago</span>
+                            </span>
+                            <span class="game-badge">Full Release</span>
+                            <span class="publisher" title="Publisher">Publisher</span>
+                        </div>
+                    </span>
+                    <div class="game-header-rating">
+                        <table class="game-user-rating-cont">
+                            <tr>
+                                <td rowspan="2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <path fill-rule="evenodd"
+                                            d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </td>
+                                <td class="game-user-rating">0</td>
+                            </tr>
+                            <tr>
+                                <td class="game-user-ratings">0 user ratings</td>
+                            </tr>
+                        </table>
+                        <table class="game-critic-rating-cont">
+                            <tr>
+                                <td rowspan="2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <path fill-rule="evenodd"
+                                            d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </td>
+                                <td class="game-critic-rating">0</td>
+                            </tr>
+                            <tr>
+                                <td class="game-critic-ratings">0 critic ratings</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="video-game-container">
+                    <a class="game-poster" id="game-poster">
+                        <img class="game-poster-img" id="game-poster-img" alt="Game Poster" target="images"
+                            title="Osu! Game Poster" />
+                    </a>
+                    <div class="game-video-wrp">
+                        <video class="game-video" id="game-video" controls>
+                            <source type="video/mp4" id="game-video-source" />
+                            Your browser does not support the video tag.
+                        </video>
+                        <iframe class="game-video" id="game-video-yt" frameborder="0" allowfullscreen hidden></iframe>
+                        <div class="video-fallback-message" id="video-fallback" hidden>
+                            <div class="fallback-content">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" class="fallback-icon">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                                </svg>
+                                <h4>YouTube is Blocked on Your Network</h4>
+                                <p>It appears YouTube is not accessible in your current network environment.</p>
+                                <div class="fallback-actions">
+                                    <button id="retry-youtube-btn" class="btn-fallback btn-retry" type="button">Retry
+                                        YouTube</button>
+                                    <button id="use-local-video-btn" class="btn-fallback btn-local" type="button">Use
+                                        Local Video</button>
+                                </div>
+                                <p class="fallback-hint">💡 Try connecting through a different network or VPN to access
+                                    YouTube content.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="game-rating">
+                        <table class="game-user-rating-cont">
+                            <tr>
+                                <td rowspan="2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <path fill-rule="evenodd"
+                                            d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </td>
+                                <td class="game-user-rating">0</td>
+                            </tr>
+                            <tr>
+                                <td class="game-user-ratings">0 user ratings</td>
+                            </tr>
+                        </table>
+                        <table class="game-critic-rating-cont">
+                            <tr>
+                                <td rowspan="2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <path fill-rule="evenodd"
+                                            d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </td>
+                                <td class="game-critic-rating">0</td>
+                            </tr>
+                            <tr>
+                                <td class="game-critic-ratings">0 critic ratings</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <ul class="game-list-data">
+                    <li class="game-list-data-item">
+                        Genres:
+                        <ul id="genres"></ul>
+                    </li>
+                    <li class="game-list-data-item">
+                        Platforms:
+                        <ul id="platforms"></ul>
+                    </li>
+                    <li class="game-list-data-item">
+                        Editions:
+                        <ul id="editions"></ul>
+                    </li>
+                </ul>
+                <p class="game-description" id="game-description">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
+                    aliquam consequatur iusto corrupti magni similique, non delectus
+                    illum esse ullam ad iure exercitationem doloribus ipsum at molestias
+                    et enim accusamus.
+                </p>
+            </section>
+        </article>
+        <div class="game-info-nav-container">
+            <div class="game-info-nav-wrap">
+                <button class="game-info-nav-arrow left" id="game-info-nav-left" type="button"
+                    aria-label="Scroll sections left" hidden>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
+                        width="20" height="20">
+                        <path fill-rule="evenodd"
+                            d="M15.78 19.28a.75.75 0 0 1-1.06 0L8.22 12.78a.75.75 0 0 1 0-1.06l6.5-6.5a.75.75 0 1 1 1.06 1.06L9.81 12l5.97 5.72a.75.75 0 0 1 0 1.56Z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </button>
+                <nav class="game-info-nav" id="game-info-nav" role="tablist">
+                    <label role="tab"><input type="radio" name="game-section" value="short-description"
+                            checked="checked" />
+                        Overview</label>
+                    <label role="tab"><input type="radio" name="game-section" value="ui-components" /> UI
+                        Components</label>
+                    <label role="tab"><input type="radio" name="game-section" value="user-interaction" />
+                        Interaction</label>
+                    <label role="tab"><input type="radio" name="game-section" value="hci-principles" />
+                        HCI Principles</label>
+                    <label role="tab"><input type="radio" name="game-section" value="ui-ux-weaknesses" />
+                        Analysis</label>
+                </nav>
+                <button class="game-info-nav-arrow right" id="game-info-nav-right" type="button"
+                    aria-label="Scroll sections right" hidden>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
+                        width="20" height="20">
+                        <path fill-rule="evenodd"
+                            d="M8.22 4.72a.75.75 0 0 1 1.06 0l6.5 6.5a.75.75 0 0 1 0 1.06l-6.5 6.5a.75.75 0 0 1-1.06-1.06L14.19 12 8.22 6.28a.75.75 0 0 1 0-1.56Z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- 
+        
+        Sections ==================================================
+        
+        -->
+        <article>
+            <div class="game-sections-stage">
+                <section class="game-sections" id="short-description">
+
+                    <h2>Overview</h2>
+                    <ul class="list-style">
+                        <h2>Muse Dash Architecture:</h2>
+                        <li>PeroPeroGames</li>
+                        <li>Unity Engine</li>
+                    </ul>
+                    <p>
+                        Muse Dash (2018) fundamentally reimagines the Vertical Scrolling Rhythm Game (VSRG) by rotating
+                        the playfield 90 degrees and disguising the note tracks as a 2D side-scrolling platformer.
+                    </p>
+                    <p>
+                        Instead of geometric bars falling downward, players strike animated enemies running horizontally
+                        from the right. This brilliant mechanical translation masks the harsh, spreadsheet-like reading
+                        mechanics typical of pure rhythm games beneath a hyper-stylized action veneer, vastly increasing
+                        casual accessibility.
+                    </p>
+                    <ul class="metrics-list">
+                        <li>
+                            <h6>Cognitive Load</h6>
+                            <div class="value">Moderate</div>
+                            <div class="desc">Two-lane binary input processing disguised as aerial vs ground combat.
+                            </div>
+                        </li>
+                        <li>
+                            <h6>Response Time</h6>
+                            <div class="value">&pm; 33ms</div>
+                            <div class="desc">Rhythm sync critical for 'Perfect' judgments.</div>
+                        </li>
+                        <li>
+                            <h6>Sensory Load</h6>
+                            <div class="value">Extreme</div>
+                            <div class="desc">Navigating extreme visual pollution from boss animations and background
+                                parallax.</div>
+                        </li>
+                    </ul>
+
+                </section>
+                <section class="game-sections" id="ui-components">
+
+                    <h2>UI Components</h2>
+                    <div class="major-components">
+                        <div class="major-component">
+                            <figure>
+                                <a href="../../../public/gamesContent/museDash/museDashNotes.png"
+                                    title="Enemy Note Objects" target="images">
+                                    <img src="../../../public/gamesContent/museDash/museDashNotes.png"
+                                        alt="Note Enemies">
+                                </a>
+                                <figcaption style="color: var(--t-color-dark)">FIG 1.1: Sprites as Rhythmic Data</figcaption>
+                            </figure>
+                            <div>
+                                <span class="count">[ ELEMENT_01 ]</span>
+                                <span class="header-text">Animated Hit Targets</span>
+                                <p>
+                                    Targets possess organic wind-ups and animations. An enemy might swing a bat right
+                                    before intersection, meaning the visual center of the sprite shifts continuously,
+                                    complicating the precise frame of rhythmic collision.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="major-component">
+                            <figure>
+                                <a href="../../../public/gamesContent/museDash/feverBar.png" title="Fever UI"
+                                    target="images">
+                                    <img src="../../../public/gamesContent/museDash/feverBar.png" alt="Fever Bar">
+                                </a>
+                                <figcaption style="color: var(--t-color-dark)">FIG 1.2: Fever Mode Tension Gauge</figcaption>
+                            </figure>
+                            <div>
+                                <span class="count">[ ELEMENT_02 ]</span>
+                                <span class="header-text">Peripheral Fever Bar</span>
+                                <p>
+                                    A massive horizontal bar at the bottom of the screen, besides the health bar, fills up to indicate 'Fever' mode.
+                                    Its bright flashing colors draw the eye up, creating a deliberate split in visual
+                                    attention during peak difficulty spikes.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="major-component">
+                            <figure>
+                                <a href="../../../public/gamesContent/museDash/healthBar.png" title="HP Meter"
+                                    target="images">
+                                    <img src="../../../public/gamesContent/museDash/healthBar.png" alt="HP Meter UI">
+                                </a>
+                                <figcaption style="color: var(--t-color-dark)">FIG 1.4: Peripheral Vitality Feedback</figcaption>
+                            </figure>
+                            <div>
+                                <span class="count">[ ELEMENT_04 ]</span>
+                                <span class="header-text">Diegetic Health Monitoring</span>
+                                <p>
+                                    Located in the bottom, the HP bar communicates system failure state. As the bar
+                                    reaches critical levels, the UI often exhibits 'glitch' effects or aggressive
+                                    desaturation, forcing the user's peripheral vision to recognize danger without a
+                                    direct optical fix on the numeric value.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="major-component">
+                            <figure>
+                                <a href="../../../public/gamesContent/museDash/judgementRing.png"
+                                    title="Judgement Anchor" target="images">
+                                    <img src="../../../public/gamesContent/museDash/judgementRing.png"
+                                        alt="Judgement Anchor UI">
+                                </a>
+                                <figcaption>FIG 1.3: The Judgement Collision Anchor</figcaption>
+                            </figure>
+                            <div>
+                                <span class="count">[ ELEMENT_03 ]</span>
+                                <span class="header-text">The Static Judgement Ring</span>
+                                <p>
+                                    Situated on the left-hand side of the screen, these two circles act as the 'finish
+                                    line.' From an HCI perspective, this provides the user with an absolute reference
+                                    point, reducing the cognitive search load required to calculate the exact moment of
+                                    input.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <h2>Lateral Vision Tracking</h2>
+                    <div class="ui-split-panels">
+                        <div class="fittslaw">
+                            <div>
+                                <p>
+                                    Mammalian optical architecture is evolutionarily adapted for enhanced horizontal
+                                    scanning (scanning horizons) over vertical tracking. This provides Muse Dash an
+                                    innate ergonomic advantage over traditional VSRGs.
+                                </p>
+                                <div class="mathmodel">
+                                    <h6>[ LATERAL VELOCITY VECTOR ]</h6>
+                                    <span>V<sub>lateral</sub> = d(Enemy<sub>x</sub>) / dt</span>
+                                </div>
+                                <p>
+                                    However, because the "notes" vary drastically in size (small ghost vs giant riding
+                                    boar), the visual collision boundary (<em>W</em>) is constantly morphing, requiring
+                                    the player to rely more heavily on audio cadence than visual boundaries.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="list-style-area">
+                            <h3 class="text-center">Combat Action Mapping</h3>
+                            <div class="text-center">How a 2-Key layout simulates an action game</div>
+                            <ol class="three-columns md-one-columns">
+                                <li>
+                                    <h6>Ground Track (Blue)</h6>
+                                    <p>Mapped to Left actions. Represents basic melee strikes and dodges.</p>
+                                </li>
+                                <li>
+                                    <h6>Aerial Track (Pink)</h6>
+                                    <p>Mapped to Right actions. Represents jumping, aerial intercepts, and boss parries.
+                                    </p>
+                                </li>
+                                <li>
+                                    <h6>Mash Sequences</h6>
+                                    <p>Rapidly alternating binary inputs (Top+Bottom) to defeat boss-stage health pools.
+                                    </p>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+
+                </section>
+                <section class="game-sections" id="user-interaction">
+
+                    <h2>User Interaction</h2>
+                    <p>
+                        Unlike pure spreadsheet VSRGs, Muse Dash interaction leverages pre-existing platformer paradigms
+                        to teach rhythm. Players aren't just hitting notes; they are engaging in mock-combat.
+                    </p>
+                    <div class="list-style-area">
+                        <h3 class="text-center">The Rhythmic Brawler Loop</h3>
+                        <ol class="four-columns md-two-columns">
+                            <li>
+                                <h6>Listen</h6>
+                                <p>Anticipate BPM, backbeats, and syncopations.</p>
+                            </li>
+                            <li>
+                                <h6>Filter</h6>
+                                <p>Differentiate between ground attacks, air attacks, and held sustain notes.</p>
+                            </li>
+                            <li>
+                                <h6>React</h6>
+                                <p>Strike using peripheral hardware or split touch-zones.</p>
+                            </li>
+                            <li>
+                                <h6>Validate</h6>
+                                <p>Watch the enemy explode in confetti, providing immense systemic visual and auditory
+                                    satisfaction.</p>
+                            </li>
+                        </ol>
+                    </div>
+
+                    <div class="list-style-area">
+                        <h3 class="text-center">Input Timing Demands</h3>
+                        <div class="text-center">How players stabilize performance over long songs</div>
+                        <ol class="three-columns md-one-columns">
+                            <li>
+                                <h6>Binary Lane Commitment</h6>
+                                <p>Because interactions map to upper and lower lanes, users build muscle memory around
+                                    two repeated motor paths, improving consistency under speed increases.</p>
+                            </li>
+                            <li>
+                                <h6>Sustain + Tap Coordination</h6>
+                                <p>Hold notes and rapid taps often overlap, forcing players to split attention between
+                                    continuous pressure control and discrete beat-accurate strikes.</p>
+                            </li>
+                            <li>
+                                <h6>Peripheral Threat Scanning</h6>
+                                <p>While focusing on the judgement area, players still monitor incoming hazards in the
+                                    periphery, which is critical during dense boss patterns.</p>
+                            </li>
+                        </ol>
+                    </div>
+
+                    <h3>Multi-Modal Feedback Matrix</h3>
+                    <div class="multi-modal-feedback">
+                        <div>
+                            <p>
+                                The game heavily layers action-game feedback over traditional rhythm mechanics, creating
+                                an extremely satisfying cybernetic validation loop.
+                            </p>
+                            <p>
+                                This loop matters for retention: immediate audiovisual confirmation helps players quickly
+                                correct timing drift and recover confidence after misses.
+                            </p>
+                        </div>
+                        <ul>
+                            <li>
+                                <div class="logo-svg">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M16.5 12c0-1.255.81-2.288 1.964-2.744a6.07 6.07 0 0 1 0 5.488C17.31 14.288 16.5 13.255 16.5 12Z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M11 5.25v13.5l-4.25-4.25h-3.5v-5h3.5L11 5.25Z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h6>Percussive Kinetics</h6>
+                                    <p>
+                                        When you hit an enemy perfectly upon the judgement circle, the audio engine
+                                        doesn't just play a click; it plays a "slap" or "kick" sample. This physical
+                                        combat audio reinforces the user's perception of impact.
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="logo-svg">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h6>Negative Feedback Wincing</h6>
+                                    <p>
+                                        If the user misses a note and takes damage, the player-character visibly winces,
+                                        breaks their running animation, and emits a cry. This generates immediate user
+                                        empathy and communicates failure far better than a simple numeric combo break.
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="logo-svg">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M12 6v6l3.75 2.25M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h6>Combo-State Urgency</h6>
+                                    <p>
+                                        As combo grows, visual emphasis around score and chain continuity increases user
+                                        commitment to precise timing, encouraging steadier cadence and fewer risky late taps.
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="list-style-area">
+                        <h3 class="text-center">Performance Breakdown by Interaction Phase</h3>
+                        <div class="text-center">A practical model of where errors usually happen during dense charts</div>
+                        <ol class="three-columns md-one-columns">
+                            <li>
+                                <h6>Perception Phase</h6>
+                                <p>Players first identify lane and note type while filtering decorative motion; misses here are typically caused by visual masking rather than finger speed.</p>
+                            </li>
+                            <li>
+                                <h6>Decision Phase</h6>
+                                <p>Users commit to tap, hold, or dodge behavior in a short timing window. Accuracy depends on mapping confidence between sprite shape and expected action.</p>
+                            </li>
+                            <li>
+                                <h6>Execution Phase</h6>
+                                <p>Motor output must align with beat timing. Late or early hits usually reflect temporal drift, especially after recovery from a previous mistake.</p>
+                            </li>
+                        </ol>
+                    </div>
+                    
+                </section>
+                <section class="game-sections" id="hci-principles">
+
+                    <h2>HCI Principles</h2>
+                    <div class="hci-layout">
+                        <div class="cognitive-load-bifurcation">
+                            <h2>The Danger of Parallax</h2>
+                            <p>
+                                The blending of background parallax scrolling with foreground hazard tracking presents
+                                severe occlusion risks.
+                            </p>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Foreground Action (High Priority)</th>
+                                        <th>Background Parallax (Low Priority)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <h6>Enemy Sprites</h6>
+                                            <p>Must be tracked to millisecond precision for the hit judgement circle.</p>
+                                        </td>
+                                        <td>
+                                            <h6>Boss Attack Animations</h6>
+                                            <p>Massive 2D bosses animate wildly in the background. If their colors match the
+                                                hit-track enemies, they camouflage incoming attacks.</p>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="spatial-congruence">
+                            <h2>Bi-level Segregation</h2>
+                            <p>
+                                To prevent the visual chaos of the animated UI from destroying rhythmic accuracy, the game
+                                segregates the screen strictly across the horizontal Y-axis median (Air vs Ground). Even
+                                amidst extreme visual noise, the user's peripheral vision can biologically categorize an
+                                object as "Top Half" or "Bottom Half" instantly.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="list-style-area">
+                        <h3 class="text-center">Diegetic Input Signifiers</h3>
+                        <div class="text-center">
+                            By replacing abstract rhythmic blocks with animated sprites, Muse Dash has to rely on shape
+                            language to convey input intention.
+                        </div>
+                        <ol class="two-columns md-one-columns">
+                            <li>
+                                <h6>The "Hold" Mechanism</h6>
+                                <p>Instead of a long glowing bar, sustained inputs are represented by immensely long
+                                    enemies (like a centipede or a ghost) extending off-screen. The continuous physical
+                                    form signifies that the button must be held until the tail is reached.</p>
+                            </li>
+                            <li>
+                                <h6>The "Dodge" Mechanism</h6>
+                                <p>Saws and gears appear on the tracks. In standard games, hitting an object is the
+                                    goal. Here, the sharp metallic textures communicate severe danger (Law of
+                                    Affordance), successfully cueing the user to actively <em>not</em> hit the button.
+                                </p>
+                            </li>
+                        </ol>
+                    </div>
+
+                    <div class="list-style-area">
+                        <h3 class="text-center">Temporal Feedback and Error Recovery</h3>
+                        <div class="text-center">
+                            The game sustains player performance by combining immediate timing feedback with low-friction
+                            recovery loops that keep users in rhythm after mistakes.
+                        </div>
+                        <ol class="three-columns md-one-columns">
+                            <li>
+                                <h6>Instant Judgment Visibility</h6>
+                                <p>Each hit is validated immediately through timing labels, score change, and combo state,
+                                    reducing uncertainty about whether the input was early, late, or correct.</p>
+                            </li>
+                            <li>
+                                <h6>Rhythm Re-Entry Design</h6>
+                                <p>After a miss, chart flow quickly returns to readable alternating patterns, allowing
+                                    users to re-synchronize with the beat instead of staying trapped in cascading failure.</p>
+                            </li>
+                            <li>
+                                <h6>Two-Lane Input Economy</h6>
+                                <p>Restricting core actions to upper and lower lanes lowers decision overhead, so working
+                                    memory is spent on timing precision rather than high key-count mapping.</p>
+                            </li>
+                        </ol>
+                    </div>
+
+                    <div class="cognitive-load-bifurcation">
+                        <h2>Attention Management During High Effects</h2>
+                        <p>
+                            Muse Dash layers colorful effects, character animation, and scrolling backgrounds, yet still
+                            preserves playability by anchoring action around a stable collision zone and predictable lane logic.
+                        </p>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Primary Performance Signals</th>
+                                    <th>Potential Distractors</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <h6>Judgment Zone + Beat Alignment</h6>
+                                        <p>Players prioritize the fixed hit region and audio pulse to maintain timing
+                                            accuracy across dense note sequences.</p>
+                                    </td>
+                                    <td>
+                                        <h6>Background Motion + VFX Bursts</h6>
+                                        <p>High-contrast effects can capture attention transiently, but consistent lane
+                                            semantics help users return focus to actionable targets.</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </section>
+                <section class="game-sections" id="ui-ux-weaknesses">
+
+                    <h2>Strengths and Weaknesses Analysis</h2>
+                    <table style="margin-bottom: 2em;">
+                        <thead>
+                            <tr>
+                                <th>System Strengths <span class="badge badge-success">Positive_Vectors</span></th>
+                                <th>System Weaknesses <span class="badge badge-danger">Negative_Vectors</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="sw-item-head">
+                                        <span class="label">01_AESTHETIC</span>
+                                    </div>
+                                    <h6>Cohesive Thematic Synergy</h6>
+                                    <p>Tying rhythm mechanics to a physical character kicking enemies severely raises
+                                        intrinsic player motivation.</p>
+                                </td>
+                                <td>
+                                    <div class="sw-item-head">
+                                        <span class="label">01_CAMOUFLAGE</span>
+                                    </div>
+                                    <h6>Visual Clutter Overlap</h6>
+                                    <p>Bright neon background objects frequently share the exact hex-colors of incoming
+                                        notes, creating involuntary optical camouflage.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="sw-item-head">
+                                        <span class="label">02_LATERAL</span>
+                                    </div>
+                                    <h6>Ergonomic Lateral Tracking</h6>
+                                    <p>Utilizing the human eye's natural superiority in horizontal horizon-scanning
+                                        makes multi-track reading comfortable for long sessions.</p>
+                                </td>
+                                <td>
+                                    <div class="sw-item-head">
+                                        <span class="label">02_HITBOXES</span>
+                                    </div>
+                                    <h6>Ambiguous Collision Boxes</h6>
+                                    <p>Because notes are characters with varying squash-and-stretch animations,
+                                        pinpointing the actual 'center' of the hitbox requires rote memorization.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="sw-item-head">
+                                        <span class="label">03_SIMPLICITY</span>
+                                    </div>
+                                    <h6>Inputs De-Cluttering</h6>
+                                    <p>Compressing piano-style rhythm inputs into strict binary (Left/Right, Top/Bottom)
+                                        zones completely removes input confusion.</p>
+                                </td>
+                                <td>
+                                    <div class="sw-item-head">
+                                        <span class="label">03_FEEDBACK</span>
+                                    </div>
+                                    <h6>Delayed Hit Error State</h6>
+                                    <p>The UI lacks a dedicated competitive hit-error graph on screen, preventing
+                                        high-level players from micro-calibrating taps in real time.</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="footnote summary">
+                        <p>Muse Dash is a masterclass in 'Mechanical Disguise.' By wrapping complex rhythm game timing
+                            requirements in a colorful, accessible brawler UX, it tricks the user into enjoying
+                            punishing geometric accuracy tests.</p>
+                    </div>
+
+                </section>
+            </div>
+        </article>
+    </main>
+    <footer>
+        <h6>GameUX Atlas</h6>
+        <ul class="socials"></ul>
+        <div class="footer-info">
+            <span>&copy; Group 5</span>
+            <span>CIP 1101</span>
+            <span>2026</span>
+            <span>GameUX Atlas</span>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top" title="Back to top">
+        <svg viewBox="0 0 56 56" width="56" height="56" aria-hidden="true" focusable="false">
+            <circle class="btn-bg" cx="28" cy="28" r="27"></circle>
+            <circle class="btn-progress-track" cx="28" cy="28" r="22"></circle>
+            <circle class="btn-progress" id="back-to-top-progress" cx="28" cy="28" r="22"></circle>
+            <path class="btn-icon" d="M28 36V20"></path>
+            <path class="btn-icon" d="M21.5 26.5L28 20l6.5 6.5"></path>
+        </svg>
+    </button>
+</body>
+
+<script>
+    // VARIABLES
+    const GAMENAME = "Muse Dash";
+    const DATERELEASED = "06/15/2018"; // MM/DD/YYYY
+    const PUBLISHER = 'PeroPeroGames';
+    const BADGE = "Full Release";
+    // Pre-Alpha
+    // Alpha
+    // Beta
+    // Early Access
+    // Full Release
+    const POSTERURL = "../../../public/posters/museDash_poster.jpg";
+    const POSTERALTTEXT = "Muse Dash Game Poster";
+    const VIDEOURL = "../../../public/videos/osu_trailer.mp4";
+    const VIDEOURLYT = "https://www.youtube.com/embed/K_3LiLv8ya4?si=aJiFqJk7ixOzVC_e";
+    const YTVID = true;
+
+    const GAMEUSERSTARS = "7.2";
+    const GAMEUSERRATINGS = "70";
+
+    const HASCRITICS = true; // Set to false if there are no critic ratings
+    const GAMECRITICSTARS = "7.4";
+    const GAMECRITICRATINGS = "33";
+
+    const GENRES = ["Rhythm", "Action", "Music"];
+    const PLATFORMS = ["PC", "MacOS", "Nintendo Switch", "iOS", "Android"];
+    const EDITIONS = ["Muse Dash", "Muse Plus", "Just as Planned"];
+
+    const DESCRIPTION = "A vibrant rhythm action game blurring the lines between traditional music games and horizontal runner platformers.";
+
+    // Document Variables
+    const sectionRadios = Array.from(
+        document.querySelectorAll('input[name="game-section"]'),
+    );
+    const gameSections = Array.from(
+        document.querySelectorAll(".game-sections"),
+    );
+    const gameInfoNav = document.getElementById("game-info-nav");
+    const gameInfoNavLeft = document.getElementById("game-info-nav-left");
+    const gameInfoNavRight = document.getElementById("game-info-nav-right");
+    const backToTopButton = document.getElementById("back-to-top");
+    const backToTopProgress = document.getElementById("back-to-top-progress");
+
+    // -- Implementation --
+    document.getElementById("title").textContent = GAMENAME + " - GameUX"; // Set page title
+    for (let el of document.getElementsByClassName("game-name")) {
+        el.textContent = GAMENAME;
+    } // Set game name
+    for (let el of document.getElementsByClassName("date-released")) {
+        el.textContent = DATERELEASED;
+    } // Set date released
+    for (let el of document.getElementsByClassName("publisher")) {
+        el.textContent = PUBLISHER;
+    } // Set publisher
+    for (let el of document.getElementsByClassName("game-badge")) {
+        el.textContent = BADGE;
+    } // Set badge
+    for (let el of document.getElementsByClassName("game-user-rating")) {
+        el.textContent = GAMEUSERSTARS;
+    } // Set user rating
+    for (let el of document.getElementsByClassName("game-user-ratings")) {
+        el.textContent = GAMEUSERRATINGS + " user ratings";
+    } // Set user ratings
+    for (let el of document.getElementsByClassName("game-critic-rating")) {
+        el.textContent = GAMECRITICSTARS;
+    } // Set critic rating
+    for (let el of document.getElementsByClassName("game-critic-ratings")) {
+        el.textContent = GAMECRITICRATINGS + " critic ratings";
+    } // Set critic ratings
+    for (let el of document.getElementsByClassName("game-poster-content")) {
+        el.src = POSTERURL;
+    } // Set poster content
+    document.getElementById("game-poster-img").src = POSTERURL; // Set poster image
+    document.getElementById("game-poster-img").title =
+        GAMENAME + " Game Poster"; // Set poster image title
+    document.getElementById("game-poster").href = POSTERURL; // Set poster link
+    document.getElementById("game-description").textContent = DESCRIPTION; // Set game description
+    document.getElementById("game-poster-img").alt = POSTERALTTEXT; // Set poster image alt text
+    // Video / YouTube toggle: show iframe when YTVID is true, otherwise show <video> with source
+    const videoEl = document.getElementById("game-video");
+    const videoSourceEl = document.getElementById("game-video-source");
+    const ytEl = document.getElementById("game-video-yt");
+    if (YTVID) {
+        if (ytEl) {
+            ytEl.src = VIDEOURLYT;
+            ytEl.hidden = false;
+        }
+        if (videoEl) {
+            videoEl.hidden = true;
+            try {
+                videoEl.pause();
+            } catch (e) { }
+        }
+    } else {
+        if (videoSourceEl) {
+            videoSourceEl.src = VIDEOURL;
+        }
+        if (videoEl) {
+            videoEl.hidden = false;
+            try {
+                videoEl.load();
+            } catch (e) { }
+        }
+        if (ytEl) {
+            ytEl.hidden = true;
+            ytEl.src = "";
+        }
+    }
+
+    for (let genre of GENRES) {
+        // Set genres
+        let li = document.createElement("li");
+        li.textContent = genre;
+        document.getElementById("genres").appendChild(li);
+    }
+
+    for (let platform of PLATFORMS) {
+        // Set platforms
+        let li = document.createElement("li");
+        li.textContent = platform;
+        document.getElementById("platforms").appendChild(li);
+    }
+
+    for (let edition of EDITIONS) {
+        // Set editions
+        let li = document.createElement("li");
+        li.textContent = edition;
+        document.getElementById("editions").appendChild(li);
+    }
+
+    // Hide critic ratings
+    if (!HASCRITICS) {
+        for (let el of document.getElementsByClassName(
+            "game-critic-rating-cont",
+        )) {
+            el.classList.add("hidden");
+        }
+    }
+
+    // Calculate days ago
+    let timeDiff = new Date().getTime() - new Date(DATERELEASED).getTime();
+    let daysAgo = Math.floor(timeDiff / (1000 * 3600 * 24));
+    if (daysAgo > 365) {
+        let yearsAgo = Math.floor(daysAgo / 365);
+        for (let el of document.getElementsByClassName("days-ago")) {
+            el.textContent = "(" + yearsAgo + " years ago)";
+        }
+    } else {
+        for (let el of document.getElementsByClassName("days-ago")) {
+            el.textContent = "(" + daysAgo + " days ago)";
+        }
+    }
+
+    // Sections navigation
+    function showGameSection(sectionId) {
+        for (let section of gameSections) {
+            let isActive = section.id === sectionId;
+            section.classList.toggle("is-active", isActive);
+            section.setAttribute("aria-hidden", String(!isActive));
+        }
+    }
+
+    function getSectionIdFromHash() {
+        const rawHash = window.location.hash || "";
+        const hash = rawHash.startsWith("#") ? rawHash.slice(1) : rawHash;
+        if (!hash) {
+            return null;
+        }
+        return gameSections.some((section) => section.id === hash) ? hash : null;
+    }
+
+    function syncSectionFromHash() {
+        const hashSectionId = getSectionIdFromHash();
+        if (!hashSectionId) {
+            return false;
+        }
+
+        const matchingRadio = sectionRadios.find((radio) => radio.value === hashSectionId);
+        if (matchingRadio) {
+            matchingRadio.checked = true;
+        }
+        showGameSection(hashSectionId);
+        return true;
+    }
+
+    const defaultSection = document.querySelector(
+        'input[name="game-section"]:checked',
+    );
+    if (!syncSectionFromHash()) {
+        showGameSection(
+            defaultSection ? defaultSection.value : "short-description",
+        );
+    }
+
+    for (let radio of sectionRadios) {
+        radio.addEventListener("change", () => {
+            if (!radio.checked) {
+                return;
+            }
+            showGameSection(radio.value);
+            if (history.replaceState) {
+                history.replaceState(null, "", `#${radio.value}`);
+            } else {
+                window.location.hash = radio.value;
+            }
+        });
+    }
+
+    window.addEventListener("hashchange", () => {
+        syncSectionFromHash();
+    });
+
+    // Game info nav
+    function updateGameInfoNavArrows() {
+        if (!gameInfoNav || !gameInfoNavLeft || !gameInfoNavRight) {
+            return;
+        }
+
+        const maxScrollLeft = gameInfoNav.scrollWidth - gameInfoNav.clientWidth;
+        const canScroll = maxScrollLeft > 1;
+        const canScrollLeft = canScroll && gameInfoNav.scrollLeft > 1;
+        const canScrollRight =
+            canScroll && gameInfoNav.scrollLeft < maxScrollLeft - 1;
+
+        gameInfoNavLeft.hidden = !canScrollLeft;
+        gameInfoNavRight.hidden = !canScrollRight;
+    }
+
+    function scrollGameInfoNavBy(distance) {
+        if (!gameInfoNav) {
+            return;
+        }
+        gameInfoNav.scrollBy({ left: distance, behavior: "smooth" });
+    }
+
+    if (gameInfoNav && gameInfoNavLeft && gameInfoNavRight) {
+        gameInfoNav.addEventListener("scroll", updateGameInfoNavArrows);
+        gameInfoNavLeft.addEventListener("click", () => {
+            scrollGameInfoNavBy(
+                -Math.max(200, Math.floor(gameInfoNav.clientWidth * 0.5)),
+            );
+        });
+        gameInfoNavRight.addEventListener("click", () => {
+            scrollGameInfoNavBy(
+                Math.max(200, Math.floor(gameInfoNav.clientWidth * 0.5)),
+            );
+        });
+        window.addEventListener("resize", updateGameInfoNavArrows);
+        updateGameInfoNavArrows();
+    }
+
+    // Back-to-top button with circular scroll progress
+    const progressRadius = 22;
+    const progressCircumference = 2 * Math.PI * progressRadius;
+
+    if (backToTopProgress) {
+        backToTopProgress.style.strokeDasharray = String(progressCircumference);
+        backToTopProgress.style.strokeDashoffset = String(progressCircumference);
+    }
+
+    function updateBackToTop() {
+        if (!backToTopButton || !backToTopProgress) {
+            return;
+        }
+
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        const scrollableHeight =
+            document.documentElement.scrollHeight - window.innerHeight;
+        const progress = scrollableHeight > 0 ? Math.min(scrollTop / scrollableHeight, 1) : 0;
+        const dashOffset = progressCircumference * (1 - progress);
+
+        backToTopProgress.style.strokeDashoffset = String(dashOffset);
+        backToTopButton.classList.toggle("is-visible", scrollTop > 160);
+    }
+
+    if (backToTopButton) {
+        backToTopButton.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    }
+
+    window.addEventListener("scroll", updateBackToTop, { passive: true });
+    window.addEventListener("resize", updateBackToTop);
+    updateBackToTop();
+</script>
+
+</html>

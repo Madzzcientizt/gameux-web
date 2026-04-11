@@ -1,0 +1,2443 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend:wght@100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Manrope:wght@200..800&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+        rel="stylesheet" />
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../styles/styles.css" type="text/css" />
+    <link rel="stylesheet" href="../../styles/sizeChecker.css" type="text/css" />
+    <link rel="stylesheet" href="../../styles/game.css" type="text/css" />
+
+    <!-- Custom Styles ------------------------------------------------------------------------------------------ -->
+    <style>
+        nav.game-info-nav label {
+            width: calc(100% / 5) !important;
+        }
+
+        .game-sections {
+            &#short-description {
+
+                &>h2 {
+                    font-weight: 900;
+                    font-size: 2.5em;
+                }
+
+                &>p {
+                    text-align: justify;
+                    margin-bottom: 1em;
+                }
+
+                &>.list-style {
+                    list-style: none;
+                    float: right;
+                    background-color: var(--t-color-base-100);
+                    padding: 2em;
+                    margin-left: 2em;
+                    margin-bottom: 2em;
+                    border-radius: var(--t-radius-field);
+                    border: var(--t-border) solid var(--t-color-base-300);
+
+                    &>h6 {
+                        font-weight: 900;
+                    }
+
+                    &>li {
+                        margin-left: 1em;
+                        margin-bottom: 1em;
+                        position: relative;
+
+                        &::before {
+                            content: '';
+                            display: block;
+                            position: absolute;
+                            width: 0.2em;
+                            height: 1em;
+                            background-color: var(--t-color-primary);
+                            border-radius: 1em;
+                            left: -0.75em;
+                            top: calc(50% - 0.5em);
+                        }
+                    }
+                }
+            }
+
+            &#ui-components {
+                margin-bottom: 2em;
+
+                &>h2 {
+                    font-weight: 900;
+                    font-size: 2.5em;
+                }
+
+                & .major-components {
+                    display: grid;
+                    grid-template-rows: 1fr;
+                    grid-template-columns: repeat(2, minmax(0, 1fr));
+                    gap: 1em;
+                    margin: 2em 0;
+                }
+
+
+                & .major-component {
+                    display: flex;
+                    gap: 2rem;
+                    padding: 2rem;
+                    border-radius: 12px;
+                    background-color: var(--t-color-base-100);
+                    border: 1px solid var(--t-color-base-300);
+                    transition: transform 0.3s ease;
+                    flex-direction: column;
+
+                    & figure {
+                        width: 100%;
+
+                        position: relative;
+                        margin-bottom: 0;
+                        width: 100%;
+                        height: auto;
+
+                        & figcaption {
+                            font-size: 0.9em;
+                            color: var(--t-color-light);
+                            margin-top: 0.5em;
+                            position: absolute;
+                            bottom: 0.5em;
+                            right: 0.5em;
+                        }
+                    }
+
+                    & a {
+                        flex-shrink: 0;
+                        margin-left: auto;
+
+                        & img {
+                            display: block;
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                            border-radius: 0.25em;
+                        }
+                    }
+
+                    & .count {
+                        font-weight: 700;
+                        font-size: 1.2em;
+                        font-family: var(--bs-font-monospace);
+                        color: var(--t-color-secondary);
+                        display: block;
+                    }
+
+                    & .header-text {
+                        font-weight: 700;
+                        font-size: 2.5em;
+                        font-family: var(--bs-font-serif);
+                    }
+
+                    & ul {
+                        list-style: none;
+                        margin-left: 1em;
+                        margin-top: 2em;
+
+                        & h6 {
+                            font-weight: 900;
+                        }
+
+                        & li {
+                            margin-left: 1em;
+                            margin-bottom: 0.5em;
+                            position: relative;
+
+                            &::before {
+                                content: '';
+                                display: block;
+                                position: absolute;
+                                width: 0.2em;
+                                height: 1em;
+                                background-color: var(--t-color-primary);
+                                border-radius: 1em;
+                                left: -0.75em;
+                                top: calc(50% - 0.5em);
+                            }
+                        }
+                    }
+                }
+
+                & .fittslaw {
+                    display: grid;
+                    grid-template-columns: 50% 1fr;
+                    gap: 1em;
+
+                    & h2 {
+                        font-weight: 900;
+                        font-size: 2.5em;
+                    }
+
+                    & figure {
+                        position: relative;
+                        margin-bottom: 0;
+                        width: 100%;
+                        height: auto;
+
+                        & figcaption {
+                            font-size: 0.9em;
+                            color: var(--t-color-dark);
+                            margin-top: 0.5em;
+                            position: absolute;
+                            bottom: 0.5em;
+                            right: 0.5em;
+                        }
+                    }
+
+                    & a {
+                        flex-shrink: 0;
+                        margin-left: auto;
+
+                        & img {
+                            width: 100% !important;
+                            height: auto !important;
+                            margin-bottom: 1em;
+                        }
+                    }
+                }
+
+
+                & .ui-split-panels {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 1em;
+                    align-items: start;
+                    margin-top: 2em;
+
+                    @media (width < 48rem) {
+                        grid-template-columns: 1fr;
+                    }
+                }
+
+                & .ui-split-panels .fittslaw {
+                    display: block;
+                }
+
+                & .ui-split-panels .list-style-area {
+                    margin: 0;
+                }
+
+                & .hci-layout {
+                    display: grid;
+                    grid-template-columns: 1.15fr 1fr;
+                    gap: 1em;
+                    align-items: start;
+                    margin-top: 2em;
+
+                    @media (width < 48rem) {
+                        grid-template-columns: 1fr;
+                    }
+                }
+
+                & .hci-layout .spatial-congruence,
+                & .hci-layout .cognitive-load-bifurcation {
+                    margin: 0;
+                }
+
+                @media (width < 48rem) {
+                    & .fittslaw {
+                        grid-template-columns: 1fr;
+                    }
+                }
+
+                & .mathmodel {
+                    margin: 1em 0;
+                    padding: 1em;
+                    position: relative;
+                    padding-left: 2em;
+                    background-color: var(--t-color-base-300);
+                    border-radius: var(--t-radius-field);
+                    overflow: hidden;
+
+                    &::before {
+                        content: '';
+                        display: block;
+                        position: absolute;
+                        width: 0.5em;
+                        height: 100%;
+                        background-color: var(--t-color-primary);
+                        left: 0;
+                        top: 0;
+                    }
+
+                    & h6 {
+                        font-family: var(--bs-font-monospace);
+                        color: var(--t-color-dark);
+                        font-weight: 300;
+                    }
+
+                    & span {
+                        font-size: 2em
+                    }
+                }
+
+
+                & .ui-split-panels {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 1em;
+                    align-items: start;
+                    margin-top: 2em;
+
+                    @media (width < 48rem) {
+                        grid-template-columns: 1fr;
+                    }
+                }
+
+                & .ui-split-panels .fittslaw {
+                    display: block;
+                }
+
+                & .ui-split-panels .list-style-area {
+                    margin: 0;
+                }
+
+                & .hci-layout {
+                    display: grid;
+                    grid-template-columns: 1.15fr 1fr;
+                    gap: 1em;
+                    align-items: start;
+                    margin-top: 2em;
+
+                    @media (width < 48rem) {
+                        grid-template-columns: 1fr;
+                    }
+                }
+
+                & .hci-layout .spatial-congruence,
+                & .hci-layout .cognitive-load-bifurcation {
+                    margin: 0;
+                }
+
+                @media (width < 48rem) {
+                    & .major-components {
+                        grid-template-columns: 1fr;
+                        gap: 1em;
+                    }
+
+
+                    & .major-component {
+                        display: flex;
+                        gap: 2rem;
+                        background-color: var(--t-color-base-100);
+                        border: 1px solid var(--t-color-base-300);
+                        padding: 2rem;
+                        border-radius: 12px;
+                        transition: transform 0.3s ease;
+                        flex-direction: row;
+
+                        &:not(:first-child) {
+                            flex-direction: column;
+                        }
+
+                        & figure {
+                            width: 100%;
+
+                            width: 100%;
+
+                            & figcaption {
+                                bottom: 1em;
+                            }
+                        }
+
+                        & a {
+                            margin-left: 0;
+                            width: 100%;
+
+                            & img {
+                                width: 100% !important;
+                                height: auto !important;
+                                margin-bottom: 1em;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &#user-interaction {
+                margin-bottom: 2em;
+
+                &>h2 {
+                    font-weight: 900;
+                    font-size: 2.5em;
+                }
+
+                & h3 {
+                    font-weight: 900;
+                    font-size: 2.5em;
+                }
+
+                & .cognitive-load-bifurcation {
+                    margin: 2em 0;
+                    padding: 1em;
+                    border-radius: var(--t-radius-field);
+                    background-color: var(--t-color-base-100);
+                    border: var(--t-border) solid var(--t-color-base-300);
+
+                    &>h2 {
+                        font-weight: 900;
+                        font-size: 2em;
+                    }
+
+                    & table {
+                        width: 100%;
+                        border-collapse: separate;
+                        border-spacing: 0;
+                        border: var(--t-border) solid var(--t-color-base-300);
+                        border-radius: var(--t-radius-field);
+                        overflow: hidden;
+                        background-color: var(--t-color-base-200);
+                        margin-top: 1em;
+                    }
+
+                    & th,
+                    & td {
+                        padding: 1em;
+                        vertical-align: top;
+                    }
+
+                    & thead th {
+                        font-weight: 800;
+                        font-size: 1.05em;
+                        background-color: var(--t-color-base-300);
+                        border-bottom: 1px solid var(--t-color-base-300);
+                    }
+
+                    & th+th,
+                    & td+td {
+                        border-left: 1px solid var(--t-color-base-300);
+                    }
+
+                    & tbody td {
+                        border-bottom: 1px solid var(--t-color-base-300);
+                    }
+
+                    & tbody tr:last-child td {
+                        border-bottom: 0;
+                    }
+
+                    & td h6 {
+                        font-weight: 700;
+                        font-size: 1.15em;
+                        margin-bottom: 0.5em;
+                    }
+
+                    & td p {
+                        margin-bottom: 0;
+                    }
+
+                    @media (width < 48rem) {
+
+                        & table,
+                        & thead,
+                        & tbody,
+                        & tr,
+                        & th,
+                        & td {
+                            display: block;
+                            width: 100%;
+                        }
+
+                        & thead {
+                            display: none;
+                        }
+
+                        & tbody tr {
+                            border-bottom: 1px solid var(--t-color-base-300);
+                            padding: 0.5em;
+                        }
+
+                        & tbody tr:last-child {
+                            border-bottom: 0;
+                        }
+
+                        & td {
+                            border: 0;
+                            border-radius: var(--t-radius-field);
+                            background-color: var(--t-color-base-100);
+                            margin-bottom: 0.75em;
+                        }
+
+                        & td::before {
+                            display: block;
+                            font-weight: 700;
+                            font-size: 0.85em;
+                            text-transform: uppercase;
+                            letter-spacing: 0.04em;
+                            color: var(--t-color-primary);
+                            margin-bottom: 0.5em;
+                        }
+
+                        & td:nth-child(1)::before {
+                            content: 'Accuracy Result';
+                        }
+
+                        & td:nth-child(2)::before {
+                            content: 'What It Means';
+                        }
+
+                        & td:nth-child(3)::before {
+                            content: 'Player Feedback';
+                        }
+                    }
+                }
+
+
+                & .multi-modal-feedback {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 1em;
+                    padding-top: 1em;
+
+
+                    & .ui-split-panels {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        gap: 1em;
+                        align-items: start;
+                        margin-top: 2em;
+
+                        @media (width < 48rem) {
+                            grid-template-columns: 1fr;
+                        }
+                    }
+
+                    & .ui-split-panels .fittslaw {
+                        display: block;
+                    }
+
+                    & .ui-split-panels .list-style-area {
+                        margin: 0;
+                    }
+
+                    & .hci-layout {
+                        display: grid;
+                        grid-template-columns: 1.15fr 1fr;
+                        gap: 1em;
+                        align-items: start;
+                        margin-top: 2em;
+
+                        @media (width < 48rem) {
+                            grid-template-columns: 1fr;
+                        }
+                    }
+
+                    & .hci-layout .spatial-congruence,
+                    & .hci-layout .cognitive-load-bifurcation {
+                        margin: 0;
+                    }
+
+                    @media (width < 48rem) {
+                        grid-template-columns: 1fr !important;
+                    }
+
+                    & figure {
+                        margin: auto;
+                        width: 100%;
+                        height: auto;
+
+                        & img {
+                            width: 100% !important;
+                            height: auto !important;
+                        }
+                    }
+                }
+
+                & .feedback-channels {
+                    & ul {
+                        display: grid;
+                        grid-template-columns: repeat(3, minmax(0, 1fr));
+                        gap: 1em;
+                        margin-top: 1em;
+                    }
+
+                    & ul li {
+                        margin-top: 0;
+                        align-items: flex-start;
+                        background-color: var(--t-color-base-200);
+                        border: var(--t-border) solid var(--t-color-base-300);
+                        border-radius: var(--t-radius-field);
+                        padding: 1em;
+                    }
+
+                    & ul li .logo-svg {
+                        width: 3.5em;
+                        height: 3.5em;
+                        margin: 0 1em 0 0;
+                        flex-shrink: 0;
+                    }
+
+                    & ul li h6 {
+                        font-size: 1.2em;
+                    }
+
+                    & ul li p {
+                        margin-bottom: 0;
+                    }
+
+                    @media (width < 64rem) {
+                        & ul {
+                            grid-template-columns: 1fr 1fr;
+                        }
+                    }
+
+                    @media (width < 48rem) {
+                        & ul {
+                            grid-template-columns: 1fr;
+                        }
+                    }
+                }
+
+                & ul {
+                    list-style: none;
+                    padding: 0;
+
+                    & li {
+                        margin-top: 2em;
+                        display: flex;
+                        flex-direction: row;
+
+                        & h6 {
+                            font-weight: 700;
+                            font-size: 1.5em;
+                            margin-bottom: 0.5em;
+                        }
+
+                        & .logo-svg {
+                            height: 5em;
+                            flex-shrink: 0;
+                            background-color: var(--t-color-secondary);
+                            color: var(--t-color-base-100);
+                            aspect-ratio: 1 / 1;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: center;
+                            padding: 1em;
+                            border-radius: var(--t-radius-field);
+                            margin: auto;
+                            margin-right: 1em;
+
+                            & svg {
+                                width: 100%;
+                                height: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &#hci-principles {
+                margin-bottom: 2em;
+
+                &>h2 {
+                    font-weight: 900;
+                    font-size: 2.5em;
+                }
+
+                & .cybernetic-feedback-loops {
+                    margin-top: 2em;
+                    padding: 1em;
+                    border-radius: var(--t-radius-field);
+                    background-color: var(--t-color-base-100);
+                    border: var(--t-border) solid var(--t-color-base-300);
+
+                    &>h3 {
+                        font-weight: 900;
+                        font-size: 2em;
+                    }
+
+                    & .cybernetic-content {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        gap: 1em;
+
+
+                        & .ui-split-panels {
+                            display: grid;
+                            grid-template-columns: 1fr 1fr;
+                            gap: 1em;
+                            align-items: start;
+                            margin-top: 2em;
+
+                            @media (width < 48rem) {
+                                grid-template-columns: 1fr;
+                            }
+                        }
+
+                        & .ui-split-panels .fittslaw {
+                            display: block;
+                        }
+
+                        & .ui-split-panels .list-style-area {
+                            margin: 0;
+                        }
+
+                        & .hci-layout {
+                            display: grid;
+                            grid-template-columns: 1.15fr 1fr;
+                            gap: 1em;
+                            align-items: start;
+                            margin-top: 2em;
+
+                            @media (width < 48rem) {
+                                grid-template-columns: 1fr;
+                            }
+                        }
+
+                        & .hci-layout .spatial-congruence,
+                        & .hci-layout .cognitive-load-bifurcation {
+                            margin: 0;
+                        }
+
+                        @media (width < 48rem) {
+                            grid-template-columns: 1fr !important;
+                        }
+
+                        & h6 {
+                            font-weight: 700;
+                            font-size: 1.2em;
+                            margin-bottom: 0.5em;
+                        }
+
+                        & .primary-modalities {
+                            list-style: none;
+                            padding: 1em;
+                            background-color: var(--t-color-base-200);
+                            border-radius: var(--t-radius-field);
+                            margin-bottom: 0;
+
+
+                            & li {
+                                margin-left: 1em;
+                                margin-bottom: 0.5em;
+                                position: relative;
+
+                                &::before {
+                                    content: '';
+                                    display: block;
+                                    position: absolute;
+                                    width: 0.2em;
+                                    height: 1em;
+                                    background-color: var(--t-color-primary);
+                                    border-radius: 1em;
+                                    left: -0.75em;
+                                    top: calc(50% - 0.5em);
+                                }
+                            }
+                        }
+                    }
+                }
+
+                & .spatial-congruence {
+                    padding: 1em;
+                    margin-top: 2em;
+
+                    & h2 {
+                        font-weight: 900;
+                        font-size: 2.5em;
+                    }
+                }
+
+                & .cognitive-load-bifurcation {
+                    margin: 2em 0;
+                    padding: 1em;
+                    border-radius: var(--t-radius-field);
+                    background-color: var(--t-color-base-100);
+                    border: var(--t-border) solid var(--t-color-base-300);
+
+                    &>h2 {
+                        font-weight: 900;
+                        font-size: 2em;
+                    }
+
+                    & table {
+                        width: 100%;
+                        border-collapse: separate;
+                        border-spacing: 0;
+                        border: var(--t-border) solid var(--t-color-base-300);
+                        border-radius: var(--t-radius-field);
+                        overflow: hidden;
+                        background-color: var(--t-color-base-200);
+                    }
+
+                    & th,
+                    & td {
+                        padding: 1em;
+                        vertical-align: top;
+                    }
+
+                    & thead th {
+                        font-weight: 800;
+                        font-size: 1.05em;
+                        background-color: var(--t-color-base-300);
+                        border-bottom: 1px solid var(--t-color-base-300);
+                    }
+
+                    & th+th,
+                    & td+td {
+                        border-left: 1px solid var(--t-color-base-300);
+                    }
+
+                    & tbody td {
+                        border-bottom: 1px solid var(--t-color-base-300);
+                    }
+
+                    & tbody tr:last-child td {
+                        border-bottom: 0;
+                    }
+
+                    & td h6 {
+                        font-weight: 700;
+                        font-size: 1.15em;
+                        margin-bottom: 0.5em;
+                    }
+
+                    & td p {
+                        margin-bottom: 0;
+                    }
+
+
+                    & .ui-split-panels {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        gap: 1em;
+                        align-items: start;
+                        margin-top: 2em;
+
+                        @media (width < 48rem) {
+                            grid-template-columns: 1fr;
+                        }
+                    }
+
+                    & .ui-split-panels .fittslaw {
+                        display: block;
+                    }
+
+                    & .ui-split-panels .list-style-area {
+                        margin: 0;
+                    }
+
+                    & .hci-layout {
+                        display: grid;
+                        grid-template-columns: 1.15fr 1fr;
+                        gap: 1em;
+                        align-items: start;
+                        margin-top: 2em;
+
+                        @media (width < 48rem) {
+                            grid-template-columns: 1fr;
+                        }
+                    }
+
+                    & .hci-layout .spatial-congruence,
+                    & .hci-layout .cognitive-load-bifurcation {
+                        margin: 0;
+                    }
+
+                    @media (width < 48rem) {
+
+                        & table,
+                        & thead,
+                        & tbody,
+                        & tr,
+                        & th,
+                        & td {
+                            display: block;
+                            width: 100%;
+                        }
+
+                        & thead {
+                            display: none;
+                        }
+
+                        & tbody tr {
+                            border-bottom: 1px solid var(--t-color-base-300);
+                            padding: 0.5em;
+                        }
+
+                        & tbody tr:last-child {
+                            border-bottom: 0;
+                        }
+
+                        & td {
+                            border: 0;
+                            border-radius: var(--t-radius-field);
+                            background-color: var(--t-color-base-100);
+                            margin-bottom: 0.75em;
+                        }
+
+                        & td::before {
+                            display: block;
+                            font-weight: 700;
+                            font-size: 0.85em;
+                            text-transform: uppercase;
+                            letter-spacing: 0.04em;
+                            color: var(--t-color-primary);
+                            margin-bottom: 0.5em;
+                        }
+
+                        & td:nth-child(1)::before {
+                            content: 'Extrinsic Load';
+                        }
+
+                        & td:nth-child(2)::before {
+                            content: 'Intrinsic Focus';
+                        }
+                    }
+                }
+            }
+
+            &#ui-ux-weaknesses {
+                margin-bottom: 2em;
+
+                &>h2 {
+                    font-weight: 900;
+                    font-size: 2.5em;
+                }
+
+                &>p {
+                    text-align: justify;
+                    margin-bottom: 2em;
+                }
+
+                & table {
+                    width: 100%;
+                    border-collapse: separate;
+                    border-spacing: 0;
+                    border: var(--t-border) solid var(--t-color-base-300);
+                    border-radius: var(--t-radius-field);
+                    overflow: hidden;
+                    background-color: var(--t-color-base-100);
+                }
+
+                & th,
+                & td {
+                    padding: 1em;
+                    vertical-align: top;
+                }
+
+                & td {
+                    position: relative;
+                    padding-right: 4.25em;
+                }
+
+                & thead th {
+                    font-weight: 800;
+                    font-size: 1.05em;
+                    background-color: var(--t-color-base-300);
+                    border-bottom: 1px solid var(--t-color-base-300);
+                }
+
+                & th+th,
+                & td+td {
+                    border-left: 1px solid var(--t-color-base-300);
+                }
+
+                & tbody td {
+                    border-bottom: 1px solid var(--t-color-base-300);
+                }
+
+                & tbody tr:last-child td {
+                    border-bottom: 0;
+                }
+
+                & .badge {
+                    font-size: 0.75em;
+                    font-weight: 400;
+                    border-radius: var(--t-radius-selector);
+                    padding: 0.35em 0.75em;
+                    margin-left: 0.5em;
+                    vertical-align: middle;
+                    border: var(--t-border) solid transparent;
+                }
+
+                & .badge-success {
+                    background-color: var(--t-color-success);
+                    color: color-mix(in oklab, var(--t-color-success-content) 70%, var(--t-color-success));
+                    border-color: color-mix(in oklab, var(--t-color-success) 65%, var(--t-color-dark));
+                }
+
+                & .badge-danger {
+                    background-color: var(--t-color-error);
+                    color: color-mix(in oklab, var(--t-color-error-content) 70%, var(--t-color-error));
+                    border-color: color-mix(in oklab, var(--t-color-error) 65%, var(--t-color-dark));
+                }
+
+                & .sw-item-head {
+                    display: block;
+                    margin-bottom: 0.75em;
+                }
+
+                & .sw-icon {
+                    width: 2.75em;
+                    height: 2.75em;
+                    color: var(--t-color-base-300);
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-shrink: 0;
+                    position: absolute;
+                    top: 0.75em;
+                    right: 0.75em;
+                }
+
+                & .sw-icon svg {
+                    width: 1.5em;
+                    height: 1.5em;
+                }
+
+                & .label {
+                    display: inline-block;
+                    font-family: var(--bs-font-monospace);
+                    font-size: 0.9em;
+                    font-weight: 700;
+                    color: var(--t-color-secondary);
+                    letter-spacing: 0.03em;
+                }
+
+                & td h6 {
+                    font-weight: 700;
+                    font-size: 1.2em;
+                    margin-bottom: 0.5em;
+                }
+
+                & td p {
+                    margin-bottom: 0;
+                    text-align: justify;
+                }
+
+
+                & .ui-split-panels {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 1em;
+                    align-items: start;
+                    margin-top: 2em;
+
+                    @media (width < 48rem) {
+                        grid-template-columns: 1fr;
+                    }
+                }
+
+                & .ui-split-panels .fittslaw {
+                    display: block;
+                }
+
+                & .ui-split-panels .list-style-area {
+                    margin: 0;
+                }
+
+                & .hci-layout {
+                    display: grid;
+                    grid-template-columns: 1.15fr 1fr;
+                    gap: 1em;
+                    align-items: start;
+                    margin-top: 2em;
+
+                    @media (width < 48rem) {
+                        grid-template-columns: 1fr;
+                    }
+                }
+
+                & .hci-layout .spatial-congruence,
+                & .hci-layout .cognitive-load-bifurcation {
+                    margin: 0;
+                }
+
+                @media (width < 48rem) {
+
+                    & table,
+                    & thead,
+                    & tbody,
+                    & tr,
+                    & th,
+                    & td {
+                        display: block;
+                        width: 100%;
+                    }
+
+                    & thead {
+                        display: none;
+                    }
+
+                    & tbody tr {
+                        border-bottom: 1px solid var(--t-color-base-300);
+                        padding: 0.5em;
+                        background-color: var(--t-color-base-200);
+                    }
+
+                    & tbody tr:last-child {
+                        border-bottom: 0;
+                    }
+
+                    & td {
+                        border: 0;
+                        border-radius: var(--t-radius-field);
+                        background-color: var(--t-color-base-100);
+                        margin-bottom: 0.75em;
+                    }
+
+                    & td::before {
+                        display: block;
+                        font-weight: 700;
+                        font-size: 0.85em;
+                        text-transform: uppercase;
+                        letter-spacing: 0.04em;
+                        margin-bottom: 0.5em;
+                    }
+
+                    & td:nth-child(1)::before {
+                        content: 'System Strengths';
+                        color: color-mix(in oklab, var(--t-color-success) 70%, var(--t-color-dark));
+                    }
+
+                    & td:nth-child(2)::before {
+                        content: 'System Weaknesses';
+                        color: color-mix(in oklab, var(--t-color-error) 70%, var(--t-color-dark));
+                    }
+                }
+            }
+        }
+
+
+        & .list-style-area {
+            margin: 2em 0;
+            width: 100%;
+            background-color: var(--t-color-base-100);
+            border: var(--t-border) solid var(--t-color-base-300);
+            padding: 1em;
+            border-radius: var(--t-radius-field);
+
+            & ol {
+                list-style: none;
+                margin-left: 0;
+                padding-left: 0;
+                margin-top: 2em;
+                display: grid;
+                gap: 1em;
+
+                &.two-columns {
+                    grid-template-columns: 1fr 1fr;
+                }
+
+                &.three-columns {
+                    grid-template-columns: 1fr 1fr 1fr;
+                }
+
+                &.four-columns {
+                    grid-template-columns: 1fr 1fr 1fr 1fr;
+                }
+
+
+                & .ui-split-panels {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 1em;
+                    align-items: start;
+                    margin-top: 2em;
+
+                    @media (width < 48rem) {
+                        grid-template-columns: 1fr;
+                    }
+                }
+
+                & .ui-split-panels .fittslaw {
+                    display: block;
+                }
+
+                & .ui-split-panels .list-style-area {
+                    margin: 0;
+                }
+
+                & .hci-layout {
+                    display: grid;
+                    grid-template-columns: 1.15fr 1fr;
+                    gap: 1em;
+                    align-items: start;
+                    margin-top: 2em;
+
+                    @media (width < 48rem) {
+                        grid-template-columns: 1fr;
+                    }
+                }
+
+                & .hci-layout .spatial-congruence,
+                & .hci-layout .cognitive-load-bifurcation {
+                    margin: 0;
+                }
+
+                @media (width < 48rem) {
+                    &.md-one-columns {
+                        grid-template-columns: 1fr !important;
+                    }
+
+                    &.md-two-columns {
+                        grid-template-columns: 1fr 1fr !important;
+                    }
+                }
+
+                & li {
+                    position: relative;
+
+                    &::before {
+                        font-weight: 700;
+                        font-size: 5em;
+                        font-family: var(--bs-font-monospace);
+                        color: var(--t-color-base-200);
+                        position: absolute;
+                        top: -0.5em;
+                    }
+
+                    &:nth-child(1)::before {
+                        content: '01';
+                    }
+
+                    &:nth-child(2)::before {
+                        content: '02';
+                    }
+
+                    &:nth-child(3)::before {
+                        content: '03';
+                    }
+
+                    &:nth-child(4)::before {
+                        content: '04';
+                    }
+
+                    @media (width > 48rem) {
+                        &::before {
+                            left: 0;
+                        }
+                    }
+
+
+                    & .ui-split-panels {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        gap: 1em;
+                        align-items: start;
+                        margin-top: 2em;
+
+                        @media (width < 48rem) {
+                            grid-template-columns: 1fr;
+                        }
+                    }
+
+                    & .ui-split-panels .fittslaw {
+                        display: block;
+                    }
+
+                    & .ui-split-panels .list-style-area {
+                        margin: 0;
+                    }
+
+                    & .hci-layout {
+                        display: grid;
+                        grid-template-columns: 1.15fr 1fr;
+                        gap: 1em;
+                        align-items: start;
+                        margin-top: 2em;
+
+                        @media (width < 48rem) {
+                            grid-template-columns: 1fr;
+                        }
+                    }
+
+                    & .hci-layout .spatial-congruence,
+                    & .hci-layout .cognitive-load-bifurcation {
+                        margin: 0;
+                    }
+
+                    @media (width < 48rem) {
+                        &::before {
+                            right: 0;
+                        }
+                    }
+
+                    & h6 {
+                        font-weight: 700;
+                        font-size: 1.5em;
+                        position: relative;
+
+                        &::after {
+                            content: '';
+                            display: block;
+                            width: 100%;
+                            height: 1px;
+                            background-color: var(--t-color-base-300);
+                            margin-top: 0.5em;
+                        }
+                    }
+                }
+            }
+        }
+
+        .footnote {
+            width: 100%;
+            background-color: rgba(var(--t-color-primary-rgb), 0.1);
+            padding: 2em;
+            border-radius: var(--t-radius-field);
+
+            &::before {
+                content: 'Note:';
+                font-weight: 700;
+                font-size: 1.2em;
+                color: var(--t-color-primary);
+                display: block;
+                margin-bottom: 0.5em;
+            }
+
+            &.summary::before {
+                content: 'Summary:';
+            }
+        }
+
+        .back-to-top {
+            position: fixed;
+            right: 1.25rem;
+            bottom: 1.25rem;
+            width: 3.5rem;
+            height: 3.5rem;
+            border: 0;
+            border-radius: var(--t-radius-selector);
+            background-color: transparent;
+            padding: 0;
+            display: grid;
+            place-items: center;
+            z-index: 1001;
+            opacity: 0;
+            transform: translateY(0.5rem) scale(0.96);
+            pointer-events: none;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+            cursor: pointer;
+        }
+
+        .back-to-top.is-visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            pointer-events: auto;
+        }
+
+        .back-to-top .btn-bg {
+            fill: var(--t-color-base-100);
+            stroke: var(--t-color-base-300);
+            stroke-width: 1.5;
+        }
+
+        .back-to-top .btn-progress-track {
+            fill: none;
+            stroke: var(--t-color-base-300);
+            stroke-width: 3;
+            opacity: 0.35;
+        }
+
+        .back-to-top .btn-progress {
+            fill: none;
+            stroke: var(--t-color-primary);
+            stroke-width: 3;
+            stroke-linecap: round;
+            transform: rotate(-90deg);
+            transform-origin: 28px 28px;
+            transition: stroke-dashoffset 0.1s linear;
+        }
+
+        .back-to-top .btn-icon {
+            fill: none;
+            stroke: var(--t-color-primary);
+            stroke-width: 1.8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .back-to-top:hover .btn-bg {
+            fill: var(--t-color-base-200);
+        }
+
+        /* YouTube Ban Fallback Styling */
+        .video-fallback-message {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(var(--t-color-primary-rgb), 0.05) 0%, rgba(59.939% 0.191 335.171, 0.03) 100%);
+            border-radius: var(--t-radius-field);
+            padding: 2em;
+            z-index: 10;
+            backdrop-filter: blur(4px);
+        }
+
+        .fallback-content {
+            text-align: center;
+            max-width: 90%;
+        }
+
+        .fallback-icon {
+            width: 3.5em;
+            height: 3.5em;
+            color: var(--t-color-accent);
+            margin: 0 auto 1em;
+            stroke: var(--t-color-accent);
+        }
+
+        .fallback-content h4 {
+            font-weight: 700;
+            font-size: 1.5em;
+            color: var(--t-color-dark);
+            margin-bottom: 0.5em;
+        }
+
+        .fallback-content p {
+            color: var(--t-color-dark);
+            font-size: 0.95em;
+            margin-bottom: 1.5em;
+            text-indent: 0;
+        }
+
+        .fallback-actions {
+            display: flex;
+            gap: 1em;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 1.5em;
+        }
+
+        .btn-fallback {
+            padding: 0.75em 1.5em;
+            border: none;
+            border-radius: var(--t-radius-field);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            font-size: 0.9em;
+            white-space: nowrap;
+        }
+
+        .btn-retry {
+            background: linear-gradient(135deg, var(--t-color-primary) 0%, var(--t-color-accent) 100%);
+            color: var(--t-color-primary-content);
+            box-shadow: 0 4px 12px rgba(var(--t-color-primary-rgb), 0.3);
+        }
+
+        .btn-retry:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(var(--t-color-primary-rgb), 0.4);
+        }
+
+        .btn-local {
+            background-color: var(--t-color-secondary);
+            color: var(--t-color-secondary-content);
+            box-shadow: 0 4px 12px rgba(42.551% 0.161 282.339, 0.3);
+        }
+
+        .btn-local:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(42.551% 0.161 282.339, 0.4);
+        }
+
+        .fallback-hint {
+            color: var(--t-color-dark);
+            font-size: 0.85em;
+            margin: 0;
+        }
+
+        .game-video-wrp {
+            position: relative;
+        }
+    </style>
+    <!-- Custom Styles ------------------------------------------------------------------------------------------ -->
+
+    <title id="title">GameName - GameUX</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-light navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="../../index.html">
+                    <img src="../../../public/gameux.png" alt="Logo" class="navbar-logo" />
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent">
+                    <span class="navbar-toggler-icon" style="width: 1em"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">Game List</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <nav class="breadcrumb-nav" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="../gameList.html">Game List</a>
+            </li>
+            <li class="breadcrumb-item active game-name">Game name</li>
+        </ol>
+    </nav>
+    <main>
+        <article class="wide">
+            <section class="header-section">
+                <img class="game-poster-content game-poster-background-style" />
+                <h1 class="game-name game-name-header" title="Game Name">
+                    Game name
+                </h1>
+                <div class="game-header">
+                    <span class="game-header-cont">
+                        <div class="game-info-bar">
+                            <span class="game-date-info">
+                                <span class="date-released" title="Date Released">Date Released</span>
+                                <span class="days-ago" title="Days Age">11 months ago</span>
+                            </span>
+                            <span class="game-badge">Full Release</span>
+                            <span class="publisher" title="Publisher">Publisher</span>
+                        </div>
+                    </span>
+                    <div class="game-header-rating">
+                        <table class="game-user-rating-cont">
+                            <tr>
+                                <td rowspan="2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <path fill-rule="evenodd"
+                                            d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </td>
+                                <td class="game-user-rating">0</td>
+                            </tr>
+                            <tr>
+                                <td class="game-user-ratings">0 user ratings</td>
+                            </tr>
+                        </table>
+                        <table class="game-critic-rating-cont">
+                            <tr>
+                                <td rowspan="2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <path fill-rule="evenodd"
+                                            d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </td>
+                                <td class="game-critic-rating">0</td>
+                            </tr>
+                            <tr>
+                                <td class="game-critic-ratings">0 critic ratings</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="video-game-container">
+                    <a class="game-poster" id="game-poster">
+                        <img class="game-poster-img" id="game-poster-img" alt="Game Poster" target="images"
+                            title="Osu! Game Poster" />
+                    </a>
+                    <div class="game-video-wrp">
+                        <video class="game-video" id="game-video" controls>
+                            <source type="video/mp4" id="game-video-source" />
+                            Your browser does not support the video tag.
+                        </video>
+                        <iframe class="game-video" id="game-video-yt" frameborder="0" allowfullscreen hidden></iframe>
+                        <div class="video-fallback-message" id="video-fallback" hidden>
+                            <div class="fallback-content">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" class="fallback-icon">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                                </svg>
+                                <h4>YouTube is Blocked on Your Network</h4>
+                                <p>It appears YouTube is not accessible in your current network environment.</p>
+                                <div class="fallback-actions">
+                                    <button id="retry-youtube-btn" class="btn-fallback btn-retry" type="button">Retry
+                                        YouTube</button>
+                                    <button id="use-local-video-btn" class="btn-fallback btn-local" type="button">Use
+                                        Local Video</button>
+                                </div>
+                                <p class="fallback-hint">💡 Try connecting through a different network or VPN to access
+                                    YouTube content.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="game-rating">
+                        <table class="game-user-rating-cont">
+                            <tr>
+                                <td rowspan="2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <path fill-rule="evenodd"
+                                            d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </td>
+                                <td class="game-user-rating">0</td>
+                            </tr>
+                            <tr>
+                                <td class="game-user-ratings">0 user ratings</td>
+                            </tr>
+                        </table>
+                        <table class="game-critic-rating-cont">
+                            <tr>
+                                <td rowspan="2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <path fill-rule="evenodd"
+                                            d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </td>
+                                <td class="game-critic-rating">0</td>
+                            </tr>
+                            <tr>
+                                <td class="game-critic-ratings">0 critic ratings</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <ul class="game-list-data">
+                    <li class="game-list-data-item">
+                        Genres:
+                        <ul id="genres"></ul>
+                    </li>
+                    <li class="game-list-data-item">
+                        Platforms:
+                        <ul id="platforms"></ul>
+                    </li>
+                    <li class="game-list-data-item">
+                        Editions:
+                        <ul id="editions"></ul>
+                    </li>
+                </ul>
+                <p class="game-description" id="game-description">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
+                    aliquam consequatur iusto corrupti magni similique, non delectus
+                    illum esse ullam ad iure exercitationem doloribus ipsum at molestias
+                    et enim accusamus.
+                </p>
+            </section>
+        </article>
+        <div class="game-info-nav-container">
+            <div class="game-info-nav-wrap">
+                <button class="game-info-nav-arrow left" id="game-info-nav-left" type="button"
+                    aria-label="Scroll sections left" hidden>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
+                        width="20" height="20">
+                        <path fill-rule="evenodd"
+                            d="M15.78 19.28a.75.75 0 0 1-1.06 0L8.22 12.78a.75.75 0 0 1 0-1.06l6.5-6.5a.75.75 0 1 1 1.06 1.06L9.81 12l5.97 5.72a.75.75 0 0 1 0 1.56Z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </button>
+                <nav class="game-info-nav" id="game-info-nav" role="tablist">
+                    <label role="tab"><input type="radio" name="game-section" value="short-description"
+                            checked="checked" />
+                        Overview</label>
+                    <label role="tab"><input type="radio" name="game-section" value="ui-components" /> UI
+                        Components</label>
+                    <label role="tab"><input type="radio" name="game-section" value="user-interaction" />
+                        Interaction</label>
+                    <label role="tab"><input type="radio" name="game-section" value="hci-principles" />
+                        HCI Principles</label>
+                    <label role="tab"><input type="radio" name="game-section" value="ui-ux-weaknesses" />
+                        Analysis</label>
+                </nav>
+                <button class="game-info-nav-arrow right" id="game-info-nav-right" type="button"
+                    aria-label="Scroll sections right" hidden>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
+                        width="20" height="20">
+                        <path fill-rule="evenodd"
+                            d="M8.22 4.72a.75.75 0 0 1 1.06 0l6.5 6.5a.75.75 0 0 1 0 1.06l-6.5 6.5a.75.75 0 0 1-1.06-1.06L14.19 12 8.22 6.28a.75.75 0 0 1 0-1.56Z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- 
+        
+        Sections ==================================================
+        
+        -->
+        <article>
+            <div class="game-sections-stage">
+                <section class="game-sections" id="short-description">
+
+                    <h2>Overview</h2>
+                    <ul class="list-style">
+                        <h2>DJMAX Engine Variants:</h2>
+                        <li>PlayStation 4 Core</li>
+                        <li>Steam / Windows Port</li>
+                    </ul>
+                    <p>
+                        DJMAX RESPECT V (2020) is the pinnacle of the long-running premium DJMAX franchise. It offers a
+                        luxury VSRG experience known for its high-fidelity audio engineering and professional broadcast
+                        aesthetic presentation.
+                    </p>
+                    <p>
+                        Unlike modern simplified rhythm games, DJMAX forces rigorous multi-lane tracking (4, 5, 6, and
+                        8-button layouts) alongside a mechanic called "Key-Sounding." From an HCI perspective,
+                        Key-Sounding is the ultimate implementation of instantaneous negative feedback validation.
+                    </p>
+                    <ul class="metrics-list">
+                        <li>
+                            <h6>Cognitive Load</h6>
+                            <div class="value">High</div>
+                            <div class="desc">Constant mental mapping shift between 4B and 8B play styles.</div>
+                        </li>
+                        <li>
+                            <h6>Response Time</h6>
+                            <div class="value">&pm; 20ms</div>
+                            <div class="desc">Premium 100% timing execution needed.</div>
+                        </li>
+                    </ul>
+
+                </section>
+                <section class="game-sections" id="ui-components">
+
+                    <h2>UI Components</h2>
+                    <div class="major-components">
+                        <div class="major-component">
+                            <figure>
+                                <a href="../../../public/gamesContent/djmaxRespectV/gearFrame.jpg" title="The Gear UI"
+                                    target="images">
+                                    <img src="../../../public/gamesContent/djmaxRespectV/gearFrame.jpg"
+                                        alt="Gear UI Shell">
+                                </a>
+                                <figcaption>FIG 1.1: The main note highway and judgment area
+                                </figcaption>
+                            </figure>
+                            <div>
+                                <span class="count">[ ELEMENT_01 ]</span>
+                                <span class="header-text">Main Gear Playfield</span>
+                                <p>The Gear is the central note lane in DJMAX RESPECT V, where notes scroll toward the
+                                    judgment line during play.</p>
+                            </div>
+                        </div>
+                        <div class="major-component">
+                            <figure>
+                                <a href="../../../public/gamesContent/djmaxRespectV/expandedLane.png"
+                                    title="Side Track Mechanics" target="images">
+                                    <img src="../../../public/gamesContent/djmaxRespectV/expandedLane.png"
+                                        alt="Side Track Notes">
+                                </a>
+                                <figcaption>FIG 1.2: Outer-lane note placement in wider charts
+                                </figcaption>
+                            </figure>
+                            <div>
+                                <span class="count">[ ELEMENT_02 ]</span>
+                                <span class="header-text">Expanded Lane Coverage</span>
+                                <p>DJMAX RESPECT V supports multiple key modes, including 4, 5, 6, and 8 button
+                                    layouts, which increase the number of active lanes the player must track.</p>
+                            </div>
+                        </div>
+                        <div class="major-component">
+                            <figure>
+                                <a href="../../../public/gamesContent/djmaxRespectV/analogNotes.jpg" title="Notes UI"
+                                    target="images">
+                                    <img src="../../../public/gamesContent/djmaxRespectV/analogNotes.jpg"
+                                        alt="DJMAX RESPECT V notes">
+                                </a>
+                                <figcaption style="color: var(--t-color-dark)">FIG 1.3: DJMAX RESPECT V note display
+                                </figcaption>
+                            </figure>
+                            <div>
+                                <span class="count">[ ELEMENT_03 ]</span>
+                                <span class="header-text">Note Timing Display</span>
+                                <p>DJMAX RESPECT V presents notes in scrolling lanes that move toward the judgment line
+                                    as the song plays.</p>
+                            </div>
+                        </div>
+                        <div class="major-component">
+                            <figure>
+                                <a href="../../../public/gamesContent/djmaxRespectV/judgements.png" title="Judgement UI"
+                                    target="images">
+                                    <img src="../../../public/gamesContent/djmaxRespectV/judgements.png"
+                                        alt="DJMAX RESPECT V judgement display">
+                                </a>
+                                <figcaption>FIG 1.4: Accuracy judgment feedback
+                                </figcaption>
+                            </figure>
+                            <div>
+                                <span class="count">[ ELEMENT_04 ]</span>
+                                <span class="header-text">Accuracy Judgements</span>
+                                <p>DJMAX RESPECT V grades note inputs by timing accuracy, giving the player immediate
+                                    feedback on how closely each hit matches the beat.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+                <section class="game-sections" id="user-interaction">
+
+                    <h2>User Interaction</h2>
+                    <p>
+                        DJMAX RESPECT V centers on lane reading, key mapping, and immediate timing feedback.
+                        Notes scroll toward the judgment line, and the player responds using one of the game's
+                        supported button layouts.
+                    </p>
+                    <div class="ui-split-panels">
+                        <div class="fittslaw">
+                            <div class="list-style-area">
+                                <h3 class="text-center">Core Gameplay Loop</h3>
+                                <ol class="four-columns md-two-columns">
+                                    <li>
+                                        <h6>Read</h6>
+                                        <p>Track the note lanes, spacing, and upcoming patterns as they scroll down the
+                                            Gear.</p>
+                                    </li>
+                                    <li>
+                                        <h6>Map</h6>
+                                        <p>Translate the chart into the current button mode, including 4, 5, 6, or 8-key
+                                            layouts.</p>
+                                    </li>
+                                    <li>
+                                        <h6>Hit</h6>
+                                        <p>Press the matching keys at the judgment line to maintain score and combo
+                                            progress.</p>
+                                    </li>
+                                    <li>
+                                        <h6>Adjust</h6>
+                                        <p>Use the game's judgment feedback to correct timing on the next sequence of
+                                            notes.</p>
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                        <div class="list-style-area">
+                            <h3 class="text-center">Button Mode Coverage</h3>
+                            <ol class="four-columns md-two-columns">
+                                <li>
+                                    <h6>4-Button</h6>
+                                    <p>The compact mode that emphasizes basic lane reading and consistent timing.</p>
+                                </li>
+                                <li>
+                                    <h6>5-Button</h6>
+                                    <p>Adds a center lane and increases the need for quick hand assignment during play.
+                                    </p>
+                                </li>
+                                <li>
+                                    <h6>6-Button</h6>
+                                    <p>Expands the lane spread and raises the amount of simultaneous visual tracking.
+                                    </p>
+                                </li>
+                                <li>
+                                    <h6>8-Button</h6>
+                                    <p>The widest standard layout, requiring the player to read and react across the
+                                        full Gear.</p>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="hci-layout">
+                        <div class="spatial-congruence">
+                            <h2>Lane Reading and Key Mapping</h2>
+                            <p>
+                                The game's interaction model depends on maintaining a fixed relationship between note
+                                position and finger placement. As charts become denser, the player has to process lane
+                                position, note spacing, and timing windows at the same time.
+                            </p>
+                            <p>
+                                That makes the Gear frame, lane separation, and chart speed the main readability tools
+                                for the player rather than a freeform cursor or analog aim system.
+                            </p>
+                        </div>
+                        <div class="cognitive-load-bifurcation">
+                            <h2>Timing Accuracy and Feedback</h2>
+                            <p>
+                                Every input is evaluated against the beat, and the game responds with immediate visual
+                                and audio confirmation. Score, combo, and judgment feedback all update as notes are hit
+                                or missed.
+                            </p>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Accuracy Result</th>
+                                        <th>What It Means</th>
+                                        <th>Player Feedback</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <h6>On-Time Hit</h6>
+                                            <p>Input lands within the intended timing window for the chart.</p>
+                                        </td>
+                                        <td>
+                                            <h6>Score Gain</h6>
+                                            <p>The note counts toward score and combo progression.</p>
+                                        </td>
+                                        <td>
+                                            <h6>Visual Confirmation</h6>
+                                            <p>The game shows a judgment result and updates the running combo.</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <h6>Late or Early Hit</h6>
+                                            <p>Input is close to the beat, but not within the most accurate window.</p>
+                                        </td>
+                                        <td>
+                                            <h6>Reduced Precision</h6>
+                                            <p>The note still registers, but the result reflects less accurate timing.
+                                            </p>
+                                        </td>
+                                        <td>
+                                            <h6>Immediate Correction Cue</h6>
+                                            <p>The player can adjust rhythm and hand placement on the next notes.</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <h6>Miss</h6>
+                                            <p>The note is not hit within the required timing window.</p>
+                                        </td>
+                                        <td>
+                                            <h6>Combo Break</h6>
+                                            <p>The combo is interrupted and the missed note does not contribute to the
+                                                score.</p>
+                                        </td>
+                                        <td>
+                                            <h6>Strong Negative Feedback</h6>
+                                            <p>The absence of the note sound makes the miss easy to detect in real time.
+                                            </p>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="list-style-area feedback-channels">
+                        <h3 class="text-center">Feedback Channels</h3>
+                        <ul>
+                            <li>
+                                <div class="logo-svg"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M14.25 7.5 9.75 12l4.5 4.5m-4.5-9 4.5 4.5-4.5 4.5" />
+                                    </svg></div>
+                                <div>
+                                    <h6>Visual Feedback</h6>
+                                    <p>Notes, judgment text, combo count, and score changes tell the player how cleanly
+                                        each hit landed.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="logo-svg"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M3 12c0-4.97 4.03-9 9-9s9 4.03 9 9-4.03 9-9 9-9-4.03-9-9Z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 12h7.5" />
+                                    </svg></div>
+                                <div>
+                                    <h6>Audio Feedback</h6>
+                                    <p>Successful hits trigger the note sound in key-sounding charts, while misses
+                                        remove that sound from the music layer.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="logo-svg"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v18m9-9H3" />
+                                    </svg></div>
+                                <div>
+                                    <h6>Performance Feedback</h6>
+                                    <p>The result of each note contributes to the player's ongoing score and combo
+                                        streak, which is central to chart completion.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                </section>
+                <section class="game-sections" id="hci-principles">
+
+                    <h2>HCI Principles</h2>
+                    <p>
+                        In DJMAX RESPECT V, interaction quality is tied to how clearly the game maps visual lanes,
+                        hand inputs, and audio confirmation into one continuous loop. The principles below explain why
+                        the interface can feel both highly readable and mentally demanding during dense charts.
+                    </p>
+                    <div class="hci-layout">
+                        <div class="spatial-congruence">
+                            <h2>Key-Sounding Transparency</h2>
+                            <p style="text-align: justify;">
+                                DJMAX input triggers an instrument stem (a unique track of the song). This creates a
+                                100% transparent interaction model: the user is the performer, not just the reactor.
+                            </p>
+                            <p>
+                                Because each key press directly contributes to the chart's musical output, misses are
+                                not only visual failures but audible gaps in performance. This strengthens the
+                                perception of agency and makes timing errors immediately meaningful to the player.
+                            </p>
+                        </div>
+                        <div class="cognitive-load-bifurcation">
+                            <h2>Mapping Saccade Conflict</h2>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Cognitive Advantage</th>
+                                        <th>Mapping Friction</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <h6>Gear Shielding</h6>
+                                            <p>The thick UI Gear frame prevents background motion-tracking from leaching
+                                                into note processing.</p>
+                                        </td>
+                                        <td>
+                                            <h6>5B/8B Ambiguity</h6>
+                                            <p>The center lane in 5-Button mode forces the user to decide which hand
+                                                'owns' the note, causing micro-stalling.</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <h6>Consistent Lane Geometry</h6>
+                                            <p>Fixed lane positions let players build strong muscle-memory mappings as
+                                                chart speed and complexity increase.</p>
+                                        </td>
+                                        <td>
+                                            <h6>Peripheral Lane Pressure</h6>
+                                            <p>Outer lanes in wider button modes demand more eye travel, increasing the
+                                                chance of late recognition on fast patterns.</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <h6>Judgment Visibility</h6>
+                                            <p>Clear timing judgments and combo updates provide immediate performance
+                                                diagnostics after each note.</p>
+                                        </td>
+                                        <td>
+                                            <h6>Split-Attention Cost</h6>
+                                            <p>Players must monitor lane flow, judgment text, and combo status at once,
+                                                which raises cognitive load under dense sections.</p>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </section>
+                <section class="game-sections" id="ui-ux-weaknesses">
+
+                    <h2>Strengths and Weaknesses Analysis</h2>
+                    <table style="margin-bottom: 2em;">
+                        <thead>
+                            <tr>
+                                <th>System Strengths <span class="badge badge-success">Positive_Vectors</span></th>
+                                <th>System Weaknesses <span class="badge badge-danger">Negative_Vectors</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="sw-item-head">
+                                        <span class="label">01_AUDIO</span>
+                                    </div>
+                                    <h6>Complete Acoustic Immersion</h6>
+                                    <p>Key-sounding makes the player feel like they are directly performing the music,
+                                        raising intrinsic motivation far beyond synthetic claps.</p>
+                                </td>
+                                <td>
+                                    <div class="sw-item-head">
+                                        <span class="label">01_BGA_CLUTTER</span>
+                                    </div>
+                                    <h6>Background Distraction</h6>
+                                    <p>High-contrast, flashing Background Animations effectively break UI contrast ratio
+                                        laws, forcing most players to dim the BGA opacity to 0%.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="sw-item-head">
+                                        <span class="label">02_UI_FRAME</span>
+                                    </div>
+                                    <h6>The Gear Margin Protection</h6>
+                                    <p>Using the physical "Gear" border prevents the background video from bleeding
+                                        directly into the note reading lane, a massive step up from Project DIVA.</p>
+                                </td>
+                                <td>
+                                    <div class="sw-item-head">
+                                        <span class="label">02_MAPPING</span>
+                                    </div>
+                                    <h6>Ambiguous Center Lane</h6>
+                                    <p>The 5B and 8B modes force constant mental re-assignment of which thumb owns the
+                                        center track, causing intense cognitive load stalling.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="sw-item-head">
+                                        <span class="label">03_FEEDBACK</span>
+                                    </div>
+                                    <h6>Definitive Miss Feedback</h6>
+                                    <p>The immediate silence of a missed instrument is the most elegant, non-intrusive
+                                        negative feedback mechanism in all of rhythm gaming.</p>
+                                </td>
+                                <td>
+                                    <div class="sw-item-head">
+                                        <span class="label">03_SIDETRACKS</span>
+                                    </div>
+                                    <h6>Peripheral Sidetrack Strain</h6>
+                                    <p>Deploying notes physically outside the Gear boundaries requires sudden Saccadic
+                                        eye flicks, breaking foveal concentration completely.</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="footnote summary">
+                        <p>DJMAX Respect V proves that restricting the visual UI matrix (enforcing strict columns) while
+                            expanding the auditory UX (Key-Sounding) builds a far more profound sensory loop than games
+                            relying entirely on visual spectacle.</p>
+                    </div>
+
+                </section>
+            </div>
+        </article>
+    </main>
+    <footer>
+        <h6>GameUX Atlas</h6>
+        <ul class="socials"></ul>
+        <div class="footer-info">
+            <span>&copy; Group 5</span>
+            <span>CIP 1101</span>
+            <span>2026</span>
+            <span>GameUX Atlas</span>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top" title="Back to top">
+        <svg viewBox="0 0 56 56" width="56" height="56" aria-hidden="true" focusable="false">
+            <circle class="btn-bg" cx="28" cy="28" r="27"></circle>
+            <circle class="btn-progress-track" cx="28" cy="28" r="22"></circle>
+            <circle class="btn-progress" id="back-to-top-progress" cx="28" cy="28" r="22"></circle>
+            <path class="btn-icon" d="M28 36V20"></path>
+            <path class="btn-icon" d="M21.5 26.5L28 20l6.5 6.5"></path>
+        </svg>
+    </button>
+</body>
+
+<script>
+    // VARIABLES
+    const GAMENAME = "DJMAX RESPECT V";
+    const DATERELEASED = "03/12/2020"; // MM/DD/YYYY
+    const PUBLISHER = 'NEOWIZ';
+    const BADGE = "Full Release";
+    // Pre-Alpha
+    // Alpha
+    // Beta
+    // Early Access
+    // Full Release
+    const POSTERURL = "../../../public/posters/djmaxRespectV_poster.jpg";
+    const POSTERALTTEXT = "DJMAX RESPECT V Game Poster";
+    const VIDEOURL = "../../../public/videos/osu_trailer.mp4";
+    const VIDEOURLYT = "https://www.youtube.com/embed/icxKWxuirMc?si=LejZ1rJI4FU7kijE";
+    const YTVID = true;
+
+    const GAMEUSERSTARS = "8.9";
+    const GAMEUSERRATINGS = "29k";
+
+    const HASCRITICS = true; // Set to false if there are no critic ratings
+    const GAMECRITICSTARS = "8.1";
+    const GAMECRITICRATINGS = "19";
+
+    const GENRES = ["VSRG", "Rhythm Arcade", "Music"];
+    const PLATFORMS = ["PlayStation 4", "PC", "Xbox One"];
+    const EDITIONS = ["DJMAX Respect V Base", "V Extension DLCs"];
+
+    const DESCRIPTION = "The definitive version of the prolific rhythm game franchise delivering a high-fidelity visual and musical experience.";
+
+    // Document Variables
+    const sectionRadios = Array.from(
+        document.querySelectorAll('input[name="game-section"]'),
+    );
+    const gameSections = Array.from(
+        document.querySelectorAll(".game-sections"),
+    );
+    const gameInfoNav = document.getElementById("game-info-nav");
+    const gameInfoNavLeft = document.getElementById("game-info-nav-left");
+    const gameInfoNavRight = document.getElementById("game-info-nav-right");
+    const backToTopButton = document.getElementById("back-to-top");
+    const backToTopProgress = document.getElementById("back-to-top-progress");
+
+    // -- Implementation --
+    document.getElementById("title").textContent = GAMENAME + " - GameUX"; // Set page title
+    for (let el of document.getElementsByClassName("game-name")) {
+        el.textContent = GAMENAME;
+    } // Set game name
+    for (let el of document.getElementsByClassName("date-released")) {
+        el.textContent = DATERELEASED;
+    } // Set date released
+    for (let el of document.getElementsByClassName("publisher")) {
+        el.textContent = PUBLISHER;
+    } // Set publisher
+    for (let el of document.getElementsByClassName("game-badge")) {
+        el.textContent = BADGE;
+    } // Set badge
+    for (let el of document.getElementsByClassName("game-user-rating")) {
+        el.textContent = GAMEUSERSTARS;
+    } // Set user rating
+    for (let el of document.getElementsByClassName("game-user-ratings")) {
+        el.textContent = GAMEUSERRATINGS + " user ratings";
+    } // Set user ratings
+    for (let el of document.getElementsByClassName("game-critic-rating")) {
+        el.textContent = GAMECRITICSTARS;
+    } // Set critic rating
+    for (let el of document.getElementsByClassName("game-critic-ratings")) {
+        el.textContent = GAMECRITICRATINGS + " critic ratings";
+    } // Set critic ratings
+    for (let el of document.getElementsByClassName("game-poster-content")) {
+        el.src = POSTERURL;
+    } // Set poster content
+    document.getElementById("game-poster-img").src = POSTERURL; // Set poster image
+    document.getElementById("game-poster-img").title =
+        GAMENAME + " Game Poster"; // Set poster image title
+    document.getElementById("game-poster").href = POSTERURL; // Set poster link
+    document.getElementById("game-description").textContent = DESCRIPTION; // Set game description
+    document.getElementById("game-poster-img").alt = POSTERALTTEXT; // Set poster image alt text
+    // Video / YouTube toggle: show iframe when YTVID is true, otherwise show <video> with source
+    const videoEl = document.getElementById("game-video");
+    const videoSourceEl = document.getElementById("game-video-source");
+    const ytEl = document.getElementById("game-video-yt");
+    if (YTVID) {
+        if (ytEl) {
+            ytEl.src = VIDEOURLYT;
+            ytEl.hidden = false;
+        }
+        if (videoEl) {
+            videoEl.hidden = true;
+            try {
+                videoEl.pause();
+            } catch (e) { }
+        }
+    } else {
+        if (videoSourceEl) {
+            videoSourceEl.src = VIDEOURL;
+        }
+        if (videoEl) {
+            videoEl.hidden = false;
+            try {
+                videoEl.load();
+            } catch (e) { }
+        }
+        if (ytEl) {
+            ytEl.hidden = true;
+            ytEl.src = "";
+        }
+    }
+
+    for (let genre of GENRES) {
+        // Set genres
+        let li = document.createElement("li");
+        li.textContent = genre;
+        document.getElementById("genres").appendChild(li);
+    }
+
+    for (let platform of PLATFORMS) {
+        // Set platforms
+        let li = document.createElement("li");
+        li.textContent = platform;
+        document.getElementById("platforms").appendChild(li);
+    }
+
+    for (let edition of EDITIONS) {
+        // Set editions
+        let li = document.createElement("li");
+        li.textContent = edition;
+        document.getElementById("editions").appendChild(li);
+    }
+
+    // Hide critic ratings
+    if (!HASCRITICS) {
+        for (let el of document.getElementsByClassName(
+            "game-critic-rating-cont",
+        )) {
+            el.classList.add("hidden");
+        }
+    }
+
+    // Calculate days ago
+    let timeDiff = new Date().getTime() - new Date(DATERELEASED).getTime();
+    let daysAgo = Math.floor(timeDiff / (1000 * 3600 * 24));
+    if (daysAgo > 365) {
+        let yearsAgo = Math.floor(daysAgo / 365);
+        for (let el of document.getElementsByClassName("days-ago")) {
+            el.textContent = "(" + yearsAgo + " years ago)";
+        }
+    } else {
+        for (let el of document.getElementsByClassName("days-ago")) {
+            el.textContent = "(" + daysAgo + " days ago)";
+        }
+    }
+
+    // Sections navigation
+    function showGameSection(sectionId) {
+        for (let section of gameSections) {
+            let isActive = section.id === sectionId;
+            section.classList.toggle("is-active", isActive);
+            section.setAttribute("aria-hidden", String(!isActive));
+        }
+    }
+
+    function getSectionIdFromHash() {
+        const rawHash = window.location.hash || "";
+        const hash = rawHash.startsWith("#") ? rawHash.slice(1) : rawHash;
+        if (!hash) {
+            return null;
+        }
+        return gameSections.some((section) => section.id === hash) ? hash : null;
+    }
+
+    function syncSectionFromHash() {
+        const hashSectionId = getSectionIdFromHash();
+        if (!hashSectionId) {
+            return false;
+        }
+
+        const matchingRadio = sectionRadios.find((radio) => radio.value === hashSectionId);
+        if (matchingRadio) {
+            matchingRadio.checked = true;
+        }
+        showGameSection(hashSectionId);
+        return true;
+    }
+
+    const defaultSection = document.querySelector(
+        'input[name="game-section"]:checked',
+    );
+    if (!syncSectionFromHash()) {
+        showGameSection(
+            defaultSection ? defaultSection.value : "short-description",
+        );
+    }
+
+    for (let radio of sectionRadios) {
+        radio.addEventListener("change", () => {
+            if (!radio.checked) {
+                return;
+            }
+            showGameSection(radio.value);
+            if (history.replaceState) {
+                history.replaceState(null, "", `#${radio.value}`);
+            } else {
+                window.location.hash = radio.value;
+            }
+        });
+    }
+
+    window.addEventListener("hashchange", () => {
+        syncSectionFromHash();
+    });
+
+    // Game info nav
+    function updateGameInfoNavArrows() {
+        if (!gameInfoNav || !gameInfoNavLeft || !gameInfoNavRight) {
+            return;
+        }
+
+        const maxScrollLeft = gameInfoNav.scrollWidth - gameInfoNav.clientWidth;
+        const canScroll = maxScrollLeft > 1;
+        const canScrollLeft = canScroll && gameInfoNav.scrollLeft > 1;
+        const canScrollRight =
+            canScroll && gameInfoNav.scrollLeft < maxScrollLeft - 1;
+
+        gameInfoNavLeft.hidden = !canScrollLeft;
+        gameInfoNavRight.hidden = !canScrollRight;
+    }
+
+    function scrollGameInfoNavBy(distance) {
+        if (!gameInfoNav) {
+            return;
+        }
+        gameInfoNav.scrollBy({ left: distance, behavior: "smooth" });
+    }
+
+    if (gameInfoNav && gameInfoNavLeft && gameInfoNavRight) {
+        gameInfoNav.addEventListener("scroll", updateGameInfoNavArrows);
+        gameInfoNavLeft.addEventListener("click", () => {
+            scrollGameInfoNavBy(
+                -Math.max(200, Math.floor(gameInfoNav.clientWidth * 0.5)),
+            );
+        });
+        gameInfoNavRight.addEventListener("click", () => {
+            scrollGameInfoNavBy(
+                Math.max(200, Math.floor(gameInfoNav.clientWidth * 0.5)),
+            );
+        });
+        window.addEventListener("resize", updateGameInfoNavArrows);
+        updateGameInfoNavArrows();
+    }
+
+    // Back-to-top button with circular scroll progress
+    const progressRadius = 22;
+    const progressCircumference = 2 * Math.PI * progressRadius;
+
+    if (backToTopProgress) {
+        backToTopProgress.style.strokeDasharray = String(progressCircumference);
+        backToTopProgress.style.strokeDashoffset = String(progressCircumference);
+    }
+
+    function updateBackToTop() {
+        if (!backToTopButton || !backToTopProgress) {
+            return;
+        }
+
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        const scrollableHeight =
+            document.documentElement.scrollHeight - window.innerHeight;
+        const progress = scrollableHeight > 0 ? Math.min(scrollTop / scrollableHeight, 1) : 0;
+        const dashOffset = progressCircumference * (1 - progress);
+
+        backToTopProgress.style.strokeDashoffset = String(dashOffset);
+        backToTopButton.classList.toggle("is-visible", scrollTop > 160);
+    }
+
+    if (backToTopButton) {
+        backToTopButton.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    }
+
+    window.addEventListener("scroll", updateBackToTop, { passive: true });
+    window.addEventListener("resize", updateBackToTop);
+    updateBackToTop();
+</script>
+
+</html>

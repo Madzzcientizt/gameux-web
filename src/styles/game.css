@@ -92,10 +92,6 @@ footer {
             content: '•';
             margin-right: 1em;
         }
-        & span:first-child::before {
-            content: '';
-            margin-right: 0;
-        }
     }
 }
 
