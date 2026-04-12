@@ -1604,7 +1604,7 @@
     // Beta
     // Early Access
     // Full Release
-    const POSTERURL = "../../../public/posters/uncharted_poster.jpg";
+    const POSTERURL = "../../../public/posters/uncharted.jpg";
     const POSTERALTTEXT = "Uncharted 4 Game Poster";
     const VIDEOURL = "../../../public/videos/uncharted_trailer.mp4";
     const VIDEOURLYT = "https://www.youtube.com/embed/hh5HV4iic1Y";
@@ -1667,13 +1667,13 @@
         el.src = POSTERURL;
         el.onerror = function() {
             this.onerror = null;
-            this.src = "../../../public/posters/uncharted_poster.jpg";
+            this.src = "../../../public/posters/uncharted.jpg";
         }
     } // Set poster content
     document.getElementById("game-poster-img").src = POSTERURL; // Set poster image
     document.getElementById("game-poster-img").onerror = function() {
         this.onerror = null;
-        this.src = "../../../public/posters/uncharted_poster.jpg";
+        this.src = "../../../public/posters/uncharted.jpg";
     };
     document.getElementById("game-poster-img").title =
         GAMENAME + " Game Poster"; // Set poster image title

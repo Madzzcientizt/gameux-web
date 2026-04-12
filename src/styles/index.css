@@ -1,4 +1,4 @@
-
+﻿
 .hero-section,
 .approach-section,
 .featured-section {
@@ -83,31 +83,31 @@
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.26);
 }
 
-.poster-1  { background-image: url('../../public/posters/eldenRing_poster.jpg'); }
-.poster-2  { background-image: url('../../public/posters/residentEvil4_poster.jpg'); }
-.poster-3  { background-image: url('../../public/posters/cyberPunk_poster.jpg'); }
-.poster-4  { background-image: url('../../public/posters/ghostOfTsushima_poster.jpg'); }
-.poster-5  { background-image: url('../../public/posters/geometryDash_poster.jpg'); }
-.poster-6  { background-image: url('../../public/posters/assassinsCreedBlackFlag_poster.jpg'); }
-.poster-7  { background-image: url('../../public/posters/dyingLight_poster.jpg'); }
-.poster-8  { background-image: url('../../public/posters/liesOfPi_poster.jpg'); }
-.poster-9  { background-image: url('../../public/posters/warframe_poster.jpg'); }
-.poster-10 { background-image: url('../../public/posters/persona5Royal_poster.jpg'); }
-.poster-11 { background-image: url('../../public/posters/undertale_poster.jpg'); }
-.poster-12 { background-image: url('../../public/posters/needForSpeed_poster.jpg'); }
+.poster-1  { background-image: url('../../public/posters/eldenRing.jpg'); }
+.poster-2  { background-image: url('../../public/posters/residentEvil4.jpg'); }
+.poster-3  { background-image: url('../../public/posters/cyberPunk.jpg'); }
+.poster-4  { background-image: url('../../public/posters/ghostOfTsushima.jpg'); }
+.poster-5  { background-image: url('../../public/posters/geometryDash.jpg'); }
+.poster-6  { background-image: url('../../public/posters/assassinsCreedBlackFlag.jpg'); }
+.poster-7  { background-image: url('../../public/posters/dyingLight.jpg'); }
+.poster-8  { background-image: url('../../public/posters/liesOfPi.jpg'); }
+.poster-9  { background-image: url('../../public/posters/warframe.jpg'); }
+.poster-10 { background-image: url('../../public/posters/persona5Royal.jpg'); }
+.poster-11 { background-image: url('../../public/posters/undertale.jpg'); }
+.poster-12 { background-image: url('../../public/posters/needForSpeed.jpg'); }
 
-.poster-13 { background-image: url('../../public/posters/discoElysium_poster.jpg'); }
-.poster-14 { background-image: url('../../public/posters/monsterHunterWorld_poster.jpg'); }
-.poster-15 { background-image: url('../../public/posters/halfLife_poster.jpg'); }
-.poster-16 { background-image: url('../../public/posters/nierAutomata_poster.jpg'); }
-.poster-17 { background-image: url('../../public/posters/sekiro_poster.jpg'); }
-.poster-18 { background-image: url('../../public/posters/signalis_poster.jpg'); }
-.poster-19 { background-image: url('../../public/posters/subnautica_poster.jpg'); }
-.poster-20 { background-image: url('../../public/posters/stardewvalley_poster.jpg'); }
-.poster-21 { background-image: url('../../public/posters/teamFortress_poster.jpg'); }
-.poster-22 { background-image: url('../../public/posters/uncharted_poster.jpg'); }
-.poster-23 { background-image: url('../../public/posters/bloodborne_poster.jpg'); }
-.poster-24 { background-image: url('../../public/posters/arknightsEndfield_poster.png'); }
+.poster-13 { background-image: url('../../public/posters/discoElysium.jpg'); }
+.poster-14 { background-image: url('../../public/posters/monsterHunterWorld.jpg'); }
+.poster-15 { background-image: url('../../public/posters/halfLife.jpg'); }
+.poster-16 { background-image: url('../../public/posters/nierAutomata.jpg'); }
+.poster-17 { background-image: url('../../public/posters/sekiro.jpg'); }
+.poster-18 { background-image: url('../../public/posters/signalis.jpg'); }
+.poster-19 { background-image: url('../../public/posters/subnautica.jpg'); }
+.poster-20 { background-image: url('../../public/posters/stardewvalley.jpg'); }
+.poster-21 { background-image: url('../../public/posters/teamFortress.jpg'); }
+.poster-22 { background-image: url('../../public/posters/uncharted.jpg'); }
+.poster-23 { background-image: url('../../public/posters/bloodborne.jpg'); }
+.poster-24 { background-image: url('../../public/posters/arknightsEndfield.png'); }
 
 @keyframes heroPosterScrollLeft {
     from {

@@ -1801,10 +1801,10 @@
     } // Set critic ratings
     for (let el of document.getElementsByClassName("game-poster-content")) {
         el.src = POSTERURL;
-        el.onerror = function(){this.onerror=null;this.src="../../../public/posters/cyberPunk_poster.jpg";}
+        el.onerror = function(){this.onerror=null;this.src="../../../public/posters/cyberPunk.jpg";}
     } // Set poster content
     document.getElementById("game-poster-img").src = POSTERURL; // Set poster image
-    document.getElementById("game-poster-img").onerror = function(){this.onerror=null;this.src="../../../public/posters/cyberPunk_poster.jpg";}; 
+    document.getElementById("game-poster-img").onerror = function(){this.onerror=null;this.src="../../../public/posters/cyberPunk.jpg";}; 
     document.getElementById("game-poster-img").title =
         GAMENAME + " Game Poster"; // Set poster image title
     document.getElementById("game-poster").href = POSTERURL; // Set poster link
