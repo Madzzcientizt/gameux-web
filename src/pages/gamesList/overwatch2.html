@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -899,38 +899,8 @@
         border: none;
       }
 
-      .back-to-top {
-        position: fixed;
-        right: 1.25rem;
-        bottom: 1.25rem;
-        width: 3.5rem;
-        height: 3.5rem;
-        z-index: 1001;
-        cursor: pointer;
-        opacity: 0;
-        pointer-events: none;
-        transition:
-          opacity 0.2s ease,
-          transform 0.2s ease;
-        transform: translateY(0.5rem);
-      }
 
-      .back-to-top.is-visible {
-        opacity: 1;
-        pointer-events: auto;
-        transform: translateY(0);
-      }
 
-      .back-to-top svg {
-        width: 100%;
-        height: 100%;
-      }
-
-      .back-to-top .btn-progress {
-        transform: rotate(-90deg);
-        transform-origin: center;
-        transition: stroke-dashoffset 0.1s linear;
-      }
 
       .hidden {
         display: none !important;
@@ -1352,9 +1322,9 @@
               multiplayer HCI. The game employs a role-based hero selection
               system (Tank, Damage, Support) that visually organizes 40+ heroes
               into cognitively manageable categories. The in-match HUD balances
-              an extraordinary amount of real-time information €” health pools,
+              an extraordinary amount of real-time information — health pools,
               ability cooldowns, ultimate charge, kill feed, objective status,
-              and teammate outlines €” into a clean, non-intrusive overlay
+              and teammate outlines — into a clean, non-intrusive overlay
               optimized for split-second decision-making under competitive
               pressure. The game's UI philosophy prioritizes clarity and speed,
               making it an exceptional case study in information-dense
@@ -1377,9 +1347,9 @@
               </li>
               <li>
                 <h6>Decision Frequency</h6>
-                <div class="value">~2€“5 per second</div>
+                <div class="value">~2–5 per second</div>
                 <div class="desc">
-                  Rate of micro-decisions during active team fights €” ability usage, target prioritization, positioning adjustments
+                  Rate of micro-decisions during active team fights — ability usage, target prioritization, positioning adjustments
                 </div>
               </li>
             </ul>
@@ -1413,7 +1383,7 @@
                     bottom-center cluster, while the kill feed occupies the top
                     right. Teammate health bars appear above their in-world
                     models, and the objective status is anchored at the top center
-                    €” all following a clear visual hierarchy optimized for
+                    — all following a clear visual hierarchy optimized for
                     peripheral scanning.
                   </p>
                   <ul>
@@ -1444,7 +1414,7 @@
                   <span class="header-text">Hero Selection Interface</span>
                   <p>
                     The hero selection screen categorizes 40+ heroes into three
-                    roles €” Tank, Damage, and Support €” using color-coded tabs
+                    roles — Tank, Damage, and Support — using color-coded tabs
                     and grid layouts. Each hero portrait provides at-a-glance
                     identity recognition, with additional ability tooltips on
                     hover. The role-lock system constrains selection (1 Tank,
@@ -1474,7 +1444,7 @@
                     The Tab scoreboard provides a real-time statistical overview
                     of all 10 players: eliminations, assists, deaths, damage,
                     healing, and ultimate status. This information-dense panel
-                    supports strategic mid-match decisions €” tracking enemy
+                    supports strategic mid-match decisions — tracking enemy
                     ultimates and identifying underperforming roles for hero
                     swaps.
                   </p>
@@ -1499,8 +1469,8 @@
                 </div>
                 <p>
                   The hero roster itself is a Fitt's Law design variable: each
-                  hero's effective target width (W) €” determined by their hitbox
-                  size, movement speed, and mobility abilities €” fundamentally
+                  hero's effective target width (W) — determined by their hitbox
+                  size, movement speed, and mobility abilities — fundamentally
                   alters the movement time (MT) required to land shots. Fast,
                   small heroes like Tracer drastically reduce W while
                   simultaneously increasing D through rapid repositioning,
@@ -1539,8 +1509,8 @@
                 <li>
                   <h6>Resource State</h6>
                   <p>
-                    Secondary focus. The bottom-center HUD cluster €” health,
-                    ammo, cooldowns, and ultimate charge €” provides survival
+                    Secondary focus. The bottom-center HUD cluster — health,
+                    ammo, cooldowns, and ultimate charge — provides survival
                     information within a single downward glance, minimizing
                     eye travel from the combat center.
                   </p>
@@ -1557,10 +1527,10 @@
               </ol>
             </div>
             <div class="footnote">
-              All component analysis is based on Overwatch 2 (2022€“present).
+              All component analysis is based on Overwatch 2 (2022–present).
               The game's HUD design demonstrates how competitive multiplayer
               interfaces must compress maximum information into minimal visual
-              footprint €” a direct tension between information density and
+              footprint — a direct tension between information density and
               perceptual clarity.
             </div>
           </section>
@@ -1600,7 +1570,7 @@
                 <li>
                   <h6>Adapt</h6>
                   <p>
-                    Mid-match hero switching is a core mechanic €” players
+                    Mid-match hero switching is a core mechanic — players
                     reassess team needs and counter-pick in response to enemy
                     strategy shifts, creating a dynamic meta-game within
                     each match.
@@ -1729,7 +1699,7 @@
                   <h6>Input/Tactile Fidelity</h6>
                   <p>
                     Controller haptics and DualSense adaptive trigger support
-                    provide weapon-specific tactile feedback €” rapid-fire heroes
+                    provide weapon-specific tactile feedback — rapid-fire heroes
                     like Soldier: 76 deliver steady vibration pulses, while
                     single-shot heroes like Widowmaker use a heavy trigger pull
                     followed by a sharp recoil pulse. On PC, precise mouse
@@ -1750,8 +1720,8 @@
                 <div>
                   <p style="text-align: justify">
                     Overwatch 2 employs a closed-loop competitive feedback
-                    architecture where every player action €” shooting, healing,
-                    using abilities €” generates immediate multi-channel feedback.
+                    architecture where every player action — shooting, healing,
+                    using abilities — generates immediate multi-channel feedback.
                     The system's feedback loop operates across visual HUD
                     elements, 3D spatial audio, and haptic output simultaneously,
                     enabling players to assess game state without consciously
@@ -1781,7 +1751,7 @@
                 spatial mapping between mouse/stick input and in-game crosshair
                 positioning. The game's maps are designed with clear sight lines,
                 choke points, and flanking routes that create predictable spatial
-                grammars €” players learn to anticipate enemy positions based on
+                grammars — players learn to anticipate enemy positions based on
                 map geometry. Teammate outlines visible through walls provide a
                 persistent spatial awareness layer that eliminates the need for
                 a minimap, instead embedding positional information directly
@@ -1852,7 +1822,7 @@
             </div>
             <div class="footnote">
               <q>
-                Overwatch 2's HUD is not simply an information display €” it is
+                Overwatch 2's HUD is not simply an information display — it is
                 a competitive instrument. Its design proves that high-density
                 information delivery can coexist with perceptual clarity when
                 visual hierarchy, spatial consistency, and multi-modal redundancy
@@ -1918,8 +1888,8 @@
                     <p>
                       The HUD achieves exceptional clarity despite extreme
                       information density. Critical combat data is spatially
-                      clustered by urgency €” immediate threats at screen center,
-                      resource state at bottom, strategic context at periphery €”
+                      clustered by urgency — immediate threats at screen center,
+                      resource state at bottom, strategic context at periphery —
                       enabling sub-100ms information retrieval during combat.
                     </p>
                   </td>
@@ -1975,8 +1945,8 @@
                     </div>
                     <h6>Differentiated Audio System</h6>
                     <p>
-                      The dual voice line system €” where enemy ultimates sound
-                      threatening and allied ultimates sound encouraging €” is a
+                      The dual voice line system — where enemy ultimates sound
+                      threatening and allied ultimates sound encouraging — is a
                       landmark in competitive game audio HCI. This allows
                       instant threat assessment through audio alone, offloading
                       critical information from the visual channel during
@@ -2037,7 +2007,7 @@
                     <h6>Seamless Cross-Platform UX</h6>
                     <p>
                       Overwatch 2's UI scales effectively across PC, console,
-                      and Switch with platform-specific input optimizations €”
+                      and Switch with platform-specific input optimizations —
                       aim assist tuning for controllers, adaptive UI scaling for
                       different screen sizes, and cross-progression that unifies
                       the player experience regardless of platform.
@@ -2079,7 +2049,7 @@
             <div class="footnote summary">
               <p>
                 The Overwatch 2 interface represents a benchmark in competitive
-                multiplayer HCI €” a system designed to deliver
+                multiplayer HCI — a system designed to deliver
                 <u>maximum information density with minimum cognitive cost</u>.
                 While its strengths lie in exceptional visual hierarchy, audio
                 differentiation, and cross-platform adaptability, its weaknesses

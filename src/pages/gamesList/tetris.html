@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -579,25 +579,6 @@
         border: none;
       }
 
-      .back-to-top {
-        position: fixed;
-        right: 1.25rem;
-        bottom: 1.25rem;
-        width: 3.5rem;
-        height: 3.5rem;
-        z-index: 1001;
-        cursor: pointer;
-        opacity: 0;
-        pointer-events: none;
-        transition: opacity 0.2s ease, transform 0.2s ease;
-        transform: translateY(0.5rem);
-      }
-
-      .back-to-top.is-visible {
-        opacity: 1;
-        pointer-events: auto;
-        transform: translateY(0);
-      }
 
       .hidden {
         display: none !important;
@@ -922,7 +903,7 @@
               <li>Blitz</li>
             </ul>
             <p>
-              Tetris is a puzzle-action game created by Soviet software engineer Alexey Pajitnov on June 6, 1984, originally on an Elektronika 60 computer at the Soviet Academy of Sciences. Players rotate and position falling tetrominoes €” the seven geometric pieces composed of four squares (I, O, T, S, Z, J, L) €” within a 10Ã—20 cell play field to complete solid horizontal lines, which are then cleared to earn points. The board rises in visible fill as the game progresses, and the game ends when pieces reach the top of the field.
+              Tetris is a puzzle-action game created by Soviet software engineer Alexey Pajitnov on June 6, 1984, originally on an Elektronika 60 computer at the Soviet Academy of Sciences. Players rotate and position falling tetrominoes — the seven geometric pieces composed of four squares (I, O, T, S, Z, J, L) — within a 10×20 cell play field to complete solid horizontal lines, which are then cleared to earn points. The board rises in visible fill as the game progresses, and the game ends when pieces reach the top of the field.
             </p>
             <p>
               Tetris is the best-selling paid video game franchise of all time, with over 520 million copies sold across all versions. Its interface philosophy is one of the most studied in HCI and game design: a system of radical minimalism where two rules (fill rows, they vanish) generate infinite emergent complexity, escalating difficulty, and sustained replayability without a win state.
@@ -932,21 +913,21 @@
                 <h6>Cognitive Load</h6>
                 <div class="value">High (Speed-Scaled)</div>
                 <div class="desc">
-                  Spatial rotation, placement planning, lookahead evaluation, and stack management €” all scaling in difficulty with gravity speed
+                  Spatial rotation, placement planning, lookahead evaluation, and stack management — all scaling in difficulty with gravity speed
                 </div>
               </li>
               <li>
                 <h6>Input Window</h6>
                 <div class="value">~16ms</div>
                 <div class="desc">
-                  At Level 1, pieces move leisurely; at Level 20 (NES), each piece locks in a single frame (~16ms) €” the sharpest difficulty cliff in gaming
+                  At Level 1, pieces move leisurely; at Level 20 (NES), each piece locks in a single frame (~16ms) — the sharpest difficulty cliff in gaming
                 </div>
               </li>
               <li>
                 <h6>Decision Depth</h6>
                 <div class="value">~3-5 decisions/piece</div>
                 <div class="desc">
-                  Rotation state, horizontal position, hold/swap, timing of lock, and stack strategy €” compounding across every piece in the queue
+                  Rotation state, horizontal position, hold/swap, timing of lock, and stack strategy — compounding across every piece in the queue
                 </div>
               </li>
             </ul>
@@ -967,20 +948,20 @@
                   <span class="count">[ ELEMENT_01 ]</span>
                   <span class="header-text">The Play Field</span>
                   <p>
-                    The Tetris play field is a 10-column Ã— 20-row grid €” the game's entire visual
+                    The Tetris play field is a 10-column × 20-row grid — the game's entire visual
                     interface. Every piece of gameplay information lives within or immediately adjacent
                     to this grid: the active tetromino, the placed stack, and the rising fill level.
-                    The grid's fixed dimensions create a permanent, learnable spatial grammar €” after
+                    The grid's fixed dimensions create a permanent, learnable spatial grammar — after
                     enough play, the 10-wide field becomes internalised as a spatial working model
                     that players reason within entirely from memory, without conscious measurement.
                   </p>
                   <ul>
                     <h6>Play Field Elements</h6>
-                    <li>10 Ã— 20 Cell Grid (standard dimensions)</li>
+                    <li>10 × 20 Cell Grid (standard dimensions)</li>
                     <li>Active Tetromino (falling, player-controlled)</li>
                     <li>Ghost Piece (projected landing position, modern versions)</li>
                     <li>Placed Stack (locked pieces forming the current board state)</li>
-                    <li>Danger Zone (visible top rows €” overflow = game over)</li>
+                    <li>Danger Zone (visible top rows — overflow = game over)</li>
                   </ul>
                 </div>
               </div>
@@ -995,10 +976,10 @@
                   <span class="count">[ ELEMENT_02 ]</span>
                   <span class="header-text">Piece Queue &amp; Hold</span>
                   <p>
-                    Modern Tetris displays a Next Queue showing the upcoming 1€“6 tetrominoes and a
+                    Modern Tetris displays a Next Queue showing the upcoming 1–6 tetrominoes and a
                     Hold Box where players can reserve one piece for later. Each of the seven
                     tetrominoes is assigned a distinct color (I = cyan, O = yellow, T = purple,
-                    S = green, Z = red, J = blue, L = orange) €” creating a color-coded recognition
+                    S = green, Z = red, J = blue, L = orange) — creating a color-coded recognition
                     system that allows instant piece identification without reading text or shapes
                     in detail. The Hold Box adds a strategic memory resource, and the Next Queue
                     extends lookahead planning up to 6 pieces deep.
@@ -1020,7 +1001,7 @@
                     (points accumulated, rewarding multi-line clears and back-to-back bonuses),
                     Level (determines gravity speed and scoring multiplier), and Lines (total
                     rows cleared, the primary progression metric). This sparse three-number
-                    display represents one of the most efficient HUDs in gaming history €” all
+                    display represents one of the most efficient HUDs in gaming history — all
                     three values are legible at peripheral glance without diverting attention
                     from the active play field.
                   </p>
@@ -1033,7 +1014,7 @@
                 <p>
                   Fitt's Law in Tetris governs the horizontal movement of the active tetromino
                   from its spawn position (center-top of the field) to its intended landing
-                  column. The target width (W) is the width of the intended slot €” a wide, flat
+                  column. The target width (W) is the width of the intended slot — a wide, flat
                   I-piece placement has high W and low MT, while threading a narrow J-piece into
                   a single-cell gap at high gravity has critically low W and high D, demanding
                   precise, rapid input.
@@ -1043,7 +1024,7 @@
                   <span>MT = a + b * log<sub>2</sub>(2D/W)</span>
                 </div>
                 <p>
-                  At high levels, gravity dramatically reduces available MT €” effectively
+                  At high levels, gravity dramatically reduces available MT — effectively
                   imposing a time ceiling that makes precise placements (low W, high D)
                   increasingly unachievable through deliberate movement. Expert players
                   solve this through pre-computation: deciding placement before the piece
@@ -1068,7 +1049,7 @@
                   <h6>Active Piece</h6>
                   <p>
                     Primary focus. The falling tetromino and its ghost piece shadow command
-                    immediate attention €” they are the only moving elements in an otherwise
+                    immediate attention — they are the only moving elements in an otherwise
                     static field. Their color distinguishes them from the stack below.
                   </p>
                 </li>
@@ -1076,7 +1057,7 @@
                   <h6>Stack State</h6>
                   <p>
                     Secondary focus. The accumulated locked pieces show how full the board is,
-                    where gaps exist, and which structures are vulnerable to overflow €”
+                    where gaps exist, and which structures are vulnerable to overflow —
                     assessed through pattern recognition rather than deliberate counting.
                   </p>
                 </li>
@@ -1092,8 +1073,8 @@
             </div>
             <div class="footnote">
               All component analysis is based on standard modern Tetris guideline specifications
-              (The Tetris Company, 2001€“present). The guideline standardised piece colors,
-              rotation systems (SRS), kick tables, and the 7-bag randomiser €” producing the
+              (The Tetris Company, 2001–present). The guideline standardised piece colors,
+              rotation systems (SRS), kick tables, and the 7-bag randomiser — producing the
               consistent interface grammar shared across all official modern Tetris games.
             </div>
           </section>
@@ -1102,7 +1083,7 @@
           <section class="game-sections" id="user-interaction" aria-hidden="true">
             <h2>User Interaction</h2>
             <p>
-              An investigation into the real-time spatial feedback systems of Tetris €” analyzing
+              An investigation into the real-time spatial feedback systems of Tetris — analyzing
               how one of gaming's simplest input models (move, rotate, drop) generates the richest
               and most enduring skill-expression space in puzzle game history.
             </p>
@@ -1115,7 +1096,7 @@
                   <p>
                     A tetromino appears at the top-center of the field. The player simultaneously
                     reads the piece, assesses the stack, checks the Next Queue, and decides
-                    placement €” all within the first fraction of a second before gravity begins.
+                    placement — all within the first fraction of a second before gravity begins.
                   </p>
                 </li>
                 <li>
@@ -1138,7 +1119,7 @@
                   <h6>Repeat</h6>
                   <p>
                     The next piece spawns immediately. The cycle repeats with no downtime between
-                    pieces €” creating the defining flow-state loop of Tetris at speed. The
+                    pieces — creating the defining flow-state loop of Tetris at speed. The
                     game never pauses; the only breaks are player-initiated.
                   </p>
                 </li>
@@ -1180,7 +1161,7 @@
                     that players feel before they consciously register. Hard drops produce a thud
                     proportional to stack height. Line clear sounds escalate by count (single, double,
                     triple, Tetris). In modern versions like Tetris Effect, music, sound effects,
-                    and environment respond dynamically to player actions €” the entire soundscape
+                    and environment respond dynamically to player actions — the entire soundscape
                     becomes a real-time performance feedback system.
                   </p>
                 </div>
@@ -1196,7 +1177,7 @@
                   <h6>Visual Feedback</h6>
                   <p>
                     The ghost piece (introduced in modern guideline Tetris) is a shadow tetromino
-                    showing the exact landing position €” a real-time Fitt's Law affordance that
+                    showing the exact landing position — a real-time Fitt's Law affordance that
                     eliminates guesswork for precise placements. Completed rows flash white
                     before disappearing. At critical board heights, the stack tiles may pulse
                     red as a danger warning. The score counter's digit flip on each clear provides
@@ -1221,7 +1202,7 @@
                     the defining handheld gaming experience. On modern controllers, hard drop
                     rumble provides physical confirmation. Touchscreen Tetris uses swipe gestures
                     (swipe right/left = move, swipe up = rotate, swipe down = soft drop, tap = hard
-                    drop) €” adapting the 4-button model to a gesturally equivalent touch grammar.
+                    drop) — adapting the 4-button model to a gesturally equivalent touch grammar.
                   </p>
                 </div>
               </li>
@@ -1239,8 +1220,8 @@
                     Tetris operates on the tightest closed-loop feedback cycle in gaming: every
                     player action (rotation, movement, drop) produces an instantaneous state
                     change (new piece position) with zero latency between input and response.
-                    Line clears trigger the secondary feedback loop €” audio burst, visual flash,
-                    score increment €” all within a single animation frame. The game's genius is
+                    Line clears trigger the secondary feedback loop — audio burst, visual flash,
+                    score increment — all within a single animation frame. The game's genius is
                     that this loop never pauses: the primary loop (piece manoeuvring) runs
                     continuously while secondary feedback (line clears) happens in parallel,
                     ensuring players are never idle between actions.
@@ -1267,8 +1248,8 @@
               <p style="text-align: justify">
                 Tetris achieves perfect spatial congruence between input and game state. Moving
                 a piece left moves it left on screen; rotating clockwise produces an immediate
-                clockwise visual rotation. The 10Ã—20 grid's fixed geometry creates a fully
-                learnable coordinate space €” experienced players develop a near-spatial memory
+                clockwise visual rotation. The 10×20 grid's fixed geometry creates a fully
+                learnable coordinate space — experienced players develop a near-spatial memory
                 of the grid, mentally mapping piece positions without deliberate counting.
                 The ghost piece extends this spatial congruence by projecting the piece's final
                 resting position in real time, providing a predictive spatial anchor that
@@ -1281,9 +1262,9 @@
                 Tetris is the canonical example of a game that minimises extrinsic cognitive
                 load (the interface is maximally simple: two rules, seven pieces, one grid)
                 while allowing intrinsic cognitive load to scale to virtually any skill level.
-                The rules require zero reading €” they are learned entirely through immediate
-                visual feedback within the first minute of play. Yet the strategic depth €”
-                T-spin setups, perfect clear construction, garbage management in multiplayer €”
+                The rules require zero reading — they are learned entirely through immediate
+                visual feedback within the first minute of play. Yet the strategic depth —
+                T-spin setups, perfect clear construction, garbage management in multiplayer —
                 can occupy a lifetime of skill development.
               </p>
               <table>
@@ -1308,8 +1289,8 @@
                       <h6>Spatial Reasoning Under Speed</h6>
                       <p>
                         Mentally rotating and translating pieces into optimal positions under
-                        escalating time pressure €” while maintaining lookahead across 1€“6 future
-                        pieces and tracking stack geometry €” is one of the most demanding
+                        escalating time pressure — while maintaining lookahead across 1–6 future
+                        pieces and tracking stack geometry — is one of the most demanding
                         real-time spatial cognition tasks in any game.
                       </p>
                     </td>
@@ -1321,16 +1302,16 @@
                         Assigning each of the seven tetrominoes a unique, high-contrast color
                         allows instant piece recognition via color alone, eliminating the
                         extrinsic cost of shape parsing at high speed. This is particularly
-                        critical at Levels 15€“20 where gravity leaves no time for deliberate
+                        critical at Levels 15–20 where gravity leaves no time for deliberate
                         shape reading.
                       </p>
                     </td>
                     <td>
                       <h6>Stack Pattern Recognition</h6>
                       <p>
-                        Advanced Tetris demands constant assessment of the 10Ã—20 board for
+                        Advanced Tetris demands constant assessment of the 10×20 board for
                         gap locations, overhangs, height imbalances, and T-spin setup
-                        structures €” a pattern recognition task that operates simultaneously
+                        structures — a pattern recognition task that operates simultaneously
                         with active piece manoeuvring, taxing visuospatial working memory.
                       </p>
                     </td>
@@ -1358,7 +1339,7 @@
             <p>
               A comprehensive breakdown of Tetris's archetypal puzzle interface paradigm.
               Evaluating how a 40-year-old design based on two rules and seven shapes remains
-              the standard against which all puzzle game interfaces are measured €” and where
+              the standard against which all puzzle game interfaces are measured — and where
               even this benchmark has its limits.
             </p>
 
@@ -1391,7 +1372,7 @@
                     <p>
                       Tetris's interface is the most efficient in gaming: two HUD elements
                       (score, level), one active object (falling piece), and one state
-                      display (the grid). Every element is functionally necessary €” there is
+                      display (the grid). Every element is functionally necessary — there is
                       nothing decorative in the classic interface. This extreme minimalism
                       eliminates all extrinsic cognitive load from the player's
                       attention budget, freeing it entirely for the intrinsic spatial challenge.
@@ -1409,7 +1390,7 @@
                     <h6>Color-Only Piece Differentiation</h6>
                     <p>
                       The modern Tetris guideline's piece identification system relies entirely
-                      on color €” there is no shape-only or pattern-only fallback for players with
+                      on color — there is no shape-only or pattern-only fallback for players with
                       color vision deficiencies. For the ~8% of male players with red-green
                       colorblindness, distinguishing S (green) from Z (red) and J (blue) from
                       I (cyan) under speed can be genuinely impaired. Modern versions like
@@ -1434,7 +1415,7 @@
                       challenge design. The same interface that onboards a child in minutes becomes
                       one of gaming's most demanding skill tests at Level 29+ (NES). No other
                       puzzle game has sustained competitive play for 40 years on the same rule
-                      set €” a testament to the depth hidden beneath the minimal surface.
+                      set — a testament to the depth hidden beneath the minimal surface.
                     </p>
                   </td>
                   <td>
@@ -1446,9 +1427,9 @@
                       </span>
                       <span class="label">02_NO_WINSTATE</span>
                     </div>
-                    <h6>No Win State €” Pure Attrition Design</h6>
+                    <h6>No Win State — Pure Attrition Design</h6>
                     <p>
-                      Tetris has no win condition. Every game ends in failure €” the board overflows
+                      Tetris has no win condition. Every game ends in failure — the board overflows
                       and the player loses. While this creates a compelling survival loop for
                       motivated players, it can make the game feel punishing and unrewarding for
                       casual users who never experience the positive reinforcement of a victory
@@ -1488,8 +1469,8 @@
                     </div>
                     <h6>Score System Opacity</h6>
                     <p>
-                      Tetris's scoring formula €” where multi-line clears, back-to-back bonuses,
-                      T-spins, and combo chains multiply each other €” is mathematically opaque
+                      Tetris's scoring formula — where multi-line clears, back-to-back bonuses,
+                      T-spins, and combo chains multiply each other — is mathematically opaque
                       to most players. While the base reward (clear lines, get points) is
                       immediately legible, the precise scoring logic requires external reference.
                       This opacity disconnects advanced play incentives from interface legibility,
@@ -1502,12 +1483,12 @@
             <div class="footnote summary">
               <p>
                 Tetris represents the definitive proof of concept in minimalist game interface
-                design €” a system where <u>total UI clarity and total gameplay depth coexist
-                through the deliberate absence of complexity</u>. Its strengths €” radical
-                interface clarity, infinite difficulty scaling, and flow-state architecture €”
-                have made it the world's best-selling game franchise. Its weaknesses €”
+                design — a system where <u>total UI clarity and total gameplay depth coexist
+                through the deliberate absence of complexity</u>. Its strengths — radical
+                interface clarity, infinite difficulty scaling, and flow-state architecture —
+                have made it the world's best-selling game franchise. Its weaknesses —
                 color-only accessibility, no win state for casual players, and opaque advanced
-                scoring €” reveal that even the most elegantly minimal interface has room for
+                scoring — reveal that even the most elegantly minimal interface has room for
                 considered iteration. After 40 years, Tetris remains the standard all puzzle
                 game HCI is measured against.
               </p>
@@ -1611,7 +1592,7 @@
       const EDITIONS = ["Classic Edition", "Tetris Effect: Connected", "Puyo Puyo Tetris 2"];
 
       const DESCRIPTION =
-        "Tetris is the archetypal puzzle-action game designed by Soviet software engineer Alexey Pajitnov on June 6, 1984. Players rotate and position falling tetrominoes €” the seven geometric shapes composed of four squares €” within a 10Ã—20 grid to complete horizontal lines, which are then cleared. The board rises as pieces accumulate, and the game ends when the stack overflows. With over 520 million copies sold, Tetris is the world's best-selling paid game franchise and the definitive model of minimalist HCI design.";
+        "Tetris is the archetypal puzzle-action game designed by Soviet software engineer Alexey Pajitnov on June 6, 1984. Players rotate and position falling tetrominoes — the seven geometric shapes composed of four squares — within a 10×20 grid to complete horizontal lines, which are then cleared. The board rises as pieces accumulate, and the game ends when the stack overflows. With over 520 million copies sold, Tetris is the world's best-selling paid game franchise and the definitive model of minimalist HCI design.";
 
       // -- Document Variables --
       const sectionRadios = Array.from(

@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 
 <head>
@@ -847,66 +847,11 @@
             }
         }
 
-        .back-to-top {
-            position: fixed;
-            right: 1.25rem;
-            bottom: 1.25rem;
-            width: 3.5rem;
-            height: 3.5rem;
-            border: 0;
-            border-radius: var(--t-radius-selector);
-            background-color: transparent;
-            padding: 0;
-            display: grid;
-            place-items: center;
-            z-index: 1001;
-            opacity: 0;
-            transform: translateY(0.5rem) scale(0.96);
-            pointer-events: none;
-            transition: opacity 0.2s ease, transform 0.2s ease;
-            cursor: pointer;
-        }
 
-        .back-to-top.is-visible {
-            opacity: 1;
-            transform: translateY(0) scale(1);
-            pointer-events: auto;
-        }
 
-        .back-to-top .btn-bg {
-            fill: var(--t-color-base-100);
-            stroke: var(--t-color-base-300);
-            stroke-width: 1.5;
-        }
 
-        .back-to-top .btn-progress-track {
-            fill: none;
-            stroke: var(--t-color-base-300);
-            stroke-width: 3;
-            opacity: 0.35;
-        }
 
-        .back-to-top .btn-progress {
-            fill: none;
-            stroke: var(--t-color-primary);
-            stroke-width: 3;
-            stroke-linecap: round;
-            transform: rotate(-90deg);
-            transform-origin: 28px 28px;
-            transition: stroke-dashoffset 0.1s linear;
-        }
 
-        .back-to-top .btn-icon {
-            fill: none;
-            stroke: var(--t-color-primary);
-            stroke-width: 1.8;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-        }
-
-        .back-to-top:hover .btn-bg {
-            fill: var(--t-color-base-200);
-        }
 
         /* YouTube Ban Fallback Styling */
         .video-fallback-message {
@@ -1374,10 +1319,10 @@
                         <li>Deluxe Edition</li>
                     </ul>
                     <p>
-                        Need for Speed Heat is a 2019 open-world racing game developed by Ghost Games and published by Electronic Arts. Set in the fictional Palm City €” inspired by Miami €” it introduces a dual day/night progression system: daytime Speedhunters Showdown events earn Bank (currency), while nighttime illegal street races build REP (reputation) that unlocks higher car performance tiers.
+                        Need for Speed Heat is a 2019 open-world racing game developed by Ghost Games and published by Electronic Arts. Set in the fictional Palm City — inspired by Miami — it introduces a dual day/night progression system: daytime Speedhunters Showdown events earn Bank (currency), while nighttime illegal street races build REP (reputation) that unlocks higher car performance tiers.
                     </p>
                     <p>
-                        Heat's dual economy mechanic creates a unique HCI challenge €” the same city transforms between two distinct game modes with different objectives, risk levels, and UI emphasis. The police Heat system (1-5 stars) dynamically escalates nighttime tension, requiring the HUD to communicate pursuit state, car condition, and escape opportunities simultaneously under high-speed pressure.
+                        Heat's dual economy mechanic creates a unique HCI challenge — the same city transforms between two distinct game modes with different objectives, risk levels, and UI emphasis. The police Heat system (1-5 stars) dynamically escalates nighttime tension, requiring the HUD to communicate pursuit state, car condition, and escape opportunities simultaneously under high-speed pressure.
                     </p>
                     <ul class="metrics-list">
                         <li>
@@ -1411,7 +1356,7 @@
                                 <span class="count">[ ELEMENT_01 ]</span>
                                 <span class="header-text">Heat Level Indicator</span>
                                 <p>
-                                    The Heat meter (1-5 stars) tracks police pursuit intensity, displayed prominently during nighttime races. As Heat escalates, the HUD shifts toward warmer color temperatures €” orange to red €” with the police scanner waveform growing more erratic. Reaching maximum Heat before banking REP risks losing the night's earnings.
+                                    The Heat meter (1-5 stars) tracks police pursuit intensity, displayed prominently during nighttime races. As Heat escalates, the HUD shifts toward warmer color temperatures — orange to red — with the police scanner waveform growing more erratic. Reaching maximum Heat before banking REP risks losing the night's earnings.
                                 </p>
                                 <ul>
                                     <h6>Pursuit UI Traits</h6>
@@ -1432,7 +1377,7 @@
                                 <span class="count">[ ELEMENT_02 ]</span>
                                 <span class="header-text">Speedometer & Nitrous HUD</span>
                                 <p>
-                                    A centrally positioned speedometer with an analog-style dial and digital readout occupies the lower screen. The Nitrous bar segments indicate available boost charges, with a satisfying fill animation that rewards drafting and near-miss maneuvers €” positive reinforcement through visual feedback.
+                                    A centrally positioned speedometer with an analog-style dial and digital readout occupies the lower screen. The Nitrous bar segments indicate available boost charges, with a satisfying fill animation that rewards drafting and near-miss maneuvers — positive reinforcement through visual feedback.
                                 </p>
                             </div>
                         </div>
@@ -1447,7 +1392,7 @@
                                 <span class="count">[ ELEMENT_03 ]</span>
                                 <span class="header-text">Car Customization Interface</span>
                                 <p>
-                                    The garage customization UI allows visual and performance modification through a layered menu €” Body, Paint, Decals, Performance Parts. A rotating 3D car preview updates in real time with applied changes, and color selectors use a Pantone-style palette organized by hue family.
+                                    The garage customization UI allows visual and performance modification through a layered menu — Body, Paint, Decals, Performance Parts. A rotating 3D car preview updates in real time with applied changes, and color selectors use a Pantone-style palette organized by hue family.
                                 </p>
                             </div>
                         </div>
@@ -1456,7 +1401,7 @@
                     <div class="fittslaw">
                         <div>
                             <p>
-                                In NFS Heat, Fitts's Law governs nitrous deployment timing and police cooldown zone navigation. The cooldown zone circle on the minimap is a target the player must navigate their car to while evading pursuit €” smaller zones at higher Heat levels represent reduced W under increasing pressure.
+                                In NFS Heat, Fitts's Law governs nitrous deployment timing and police cooldown zone navigation. The cooldown zone circle on the minimap is a target the player must navigate their car to while evading pursuit — smaller zones at higher Heat levels represent reduced W under increasing pressure.
                             </p>
                             <div class="mathmodel">
                                 <h6>[ MATHEMATICAL MODEL ]</h6>
@@ -1481,15 +1426,15 @@
                         <ol class="three-columns md-one-columns">
                             <li>
                                 <h6>Heat Star Meter</h6>
-                                <p>Primary nighttime HUD element. The escalating heat star system and police scanner waveform are the highest-urgency indicators €” directly tied to the risk of losing all earned REP if busted at maximum Heat.</p>
+                                <p>Primary nighttime HUD element. The escalating heat star system and police scanner waveform are the highest-urgency indicators — directly tied to the risk of losing all earned REP if busted at maximum Heat.</p>
                             </li>
                             <li>
                                 <h6>Race Position & Gap Timer</h6>
-                                <p>Secondary race focus. Current race position and time gap to the next competitor are displayed prominently during events €” providing competitive context within a fast-moving field where positions change in seconds.</p>
+                                <p>Secondary race focus. Current race position and time gap to the next competitor are displayed prominently during events — providing competitive context within a fast-moving field where positions change in seconds.</p>
                             </li>
                             <li>
                                 <h6>Minimap & Route Indicator</h6>
-                                <p>Tertiary navigation. The bottom-corner minimap displays race route, incoming turns, and police positions €” a dense information layer that skilled players read peripherally without breaking forward driving focus.</p>
+                                <p>Tertiary navigation. The bottom-corner minimap displays race route, incoming turns, and police positions — a dense information layer that skilled players read peripherally without breaking forward driving focus.</p>
                             </li>
                         </ol>
                     </div>
@@ -1500,7 +1445,7 @@
                 <section class="game-sections" id="user-interaction">
                     <h2>User Interaction</h2>
                     <p>
-                        An analysis of Need for Speed Heat's dual-mode racing HCI €” examining how Ghost Games engineered a single UI framework that dynamically communicates two distinct risk profiles: the competitive precision of day racing and the high-stakes tension of night-time police evasion.
+                        An analysis of Need for Speed Heat's dual-mode racing HCI — examining how Ghost Games engineered a single UI framework that dynamically communicates two distinct risk profiles: the competitive precision of day racing and the high-stakes tension of night-time police evasion.
                     </p>
                     <div class="list-style-area">
                         <h3 class="text-center">Core Gameplay Loop</h3>
@@ -1528,7 +1473,7 @@
                     <div class="multi-modal-feedback">
                         <div>
                             <p>
-                                NFS Heat's feedback design shifts tonality between calm daytime precision feedback and high-tension nighttime sensory escalation €” the game's HCI physically aligns with its dual-mode risk narrative through dynamic color and audio changes.
+                                NFS Heat's feedback design shifts tonality between calm daytime precision feedback and high-tension nighttime sensory escalation — the game's HCI physically aligns with its dual-mode risk narrative through dynamic color and audio changes.
                             </p>
                         </div>
                         <div>
@@ -1549,7 +1494,7 @@
                             </div>
                             <div>
                                 <h6>Audio Feedback</h6>
-                                <p>Engine audio dynamically mixes nitrous whine and turbo spool based on boost state. Police radio chatter intensifies with Heat level, and the soundtrack transitions from upbeat to pulsing electronic as pursuit escalates €” an audio danger thermometer.</p>
+                                <p>Engine audio dynamically mixes nitrous whine and turbo spool based on boost state. Police radio chatter intensifies with Heat level, and the soundtrack transitions from upbeat to pulsing electronic as pursuit escalates — an audio danger thermometer.</p>
                             </div>
                         </li>
                         <li>
@@ -1572,7 +1517,7 @@
                             </div>
                             <div>
                                 <h6>Haptic Feedback</h6>
-                                <p>Controller rumble differentiates road surface textures €” smooth asphalt versus off-road gravel versus concrete barriers €” and escalates sharply during police PIT maneuvers and collision impacts.</p>
+                                <p>Controller rumble differentiates road surface textures — smooth asphalt versus off-road gravel versus concrete barriers — and escalates sharply during police PIT maneuvers and collision impacts.</p>
                             </div>
                         </li>
                     </ul>
@@ -1600,13 +1545,13 @@
                     <div class="spatial-congruence">
                         <h2>Spatial Congruence in Open-World Racing</h2>
                         <p style="text-align: justify;">
-                            NFS Heat achieves spatial congruence through its minimap route overlay €” the car icon's position on the minimap corresponds directly to its position in the world, providing constant spatial grounding at speeds where forward focus prevents map-reading. The cooldown zone circle provides a spatial target the player navigates toward under pursuit, maintaining spatial congruence even in the game's most chaotic moments.
+                            NFS Heat achieves spatial congruence through its minimap route overlay — the car icon's position on the minimap corresponds directly to its position in the world, providing constant spatial grounding at speeds where forward focus prevents map-reading. The cooldown zone circle provides a spatial target the player navigates toward under pursuit, maintaining spatial congruence even in the game's most chaotic moments.
                         </p>
                     </div>
                     <div class="cognitive-load-bifurcation">
                         <h2>Cognitive Load Bifurcation</h2>
                         <p style="text-align: justify; margin-bottom: 2em;">
-                            Heat manages cognitive load through its day/night split €” daytime racing demands racing-line spatial precision (Intrinsic Load) with straightforward HUD support (low Extrinsic Load). Nighttime adds the Heat management meta-layer, increasing both loads simultaneously €” a deliberate difficulty escalation communicated through UI transformation.
+                            Heat manages cognitive load through its day/night split — daytime racing demands racing-line spatial precision (Intrinsic Load) with straightforward HUD support (low Extrinsic Load). Nighttime adds the Heat management meta-layer, increasing both loads simultaneously — a deliberate difficulty escalation communicated through UI transformation.
                         </p>
                         <table>
                             <thead>
@@ -1618,12 +1563,12 @@
                             <tbody>
 
                                 <tr>
-                                    <td><h6>Dual-Mode Tension Design</h6><p>The day/night risk split is a clean cognitive load design €” daytime establishes competence, nighttime tests it under pressure. The HUD transformation between modes communicates the shift without explicit mode announcement.</p></td>
-                                    <td><h6>Police Difficulty Scaling</h6><p>Heat 5 police pursuit can become overwhelming through rubber-band pursuit logic and roadblock density €” the HCI of evasion breaks down when police response exceeds navigable density.</p></td>
+                                    <td><h6>Dual-Mode Tension Design</h6><p>The day/night risk split is a clean cognitive load design — daytime establishes competence, nighttime tests it under pressure. The HUD transformation between modes communicates the shift without explicit mode announcement.</p></td>
+                                    <td><h6>Police Difficulty Scaling</h6><p>Heat 5 police pursuit can become overwhelming through rubber-band pursuit logic and roadblock density — the HCI of evasion breaks down when police response exceeds navigable density.</p></td>
                                 </tr>
                                 <tr>
-                                    <td><h6>Heat Color System</h6><p>The progressive color temperature shift of the Heat meter €” from cool blue at Heat 1 to red at Heat 5 €” is an intuitive natural mapping that requires no instruction, leveraging pre-existing danger color associations.</p></td>
-                                    <td><h6>Customization Menu Depth</h6><p>The garage customization UI, while visually attractive, requires navigating multiple sub-menus to find specific performance parts €” a friction point in the progression loop that slows the upgrade-race-upgrade cycle.</p></td>
+                                    <td><h6>Heat Color System</h6><p>The progressive color temperature shift of the Heat meter — from cool blue at Heat 1 to red at Heat 5 — is an intuitive natural mapping that requires no instruction, leveraging pre-existing danger color associations.</p></td>
+                                    <td><h6>Customization Menu Depth</h6><p>The garage customization UI, while visually attractive, requires navigating multiple sub-menus to find specific performance parts — a friction point in the progression loop that slows the upgrade-race-upgrade cycle.</p></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -1637,7 +1582,7 @@
                 <section class="game-sections" id="ui-ux-weaknesses">
                     <h2>Strengths and Weaknesses Analysis</h2>
                     <p>
-                        A comprehensive evaluation of Need for Speed Heat's interface paradigm €” examining the tension between its elegant dual day/night economy design and the escalating HCI demands of high-speed police pursuit at maximum Heat levels.
+                        A comprehensive evaluation of Need for Speed Heat's interface paradigm — examining the tension between its elegant dual day/night economy design and the escalating HCI demands of high-speed police pursuit at maximum Heat levels.
                     </p>
                     <table style="margin-bottom: 2em;">
                         <thead>
@@ -1655,7 +1600,7 @@
                                         <span class="label">01_DAYNIGHT</span>
                                     </div>
                                     <h6>Day/Night Economy Design</h6>
-                                    <p>The dual Bank/REP progression system creates a genuinely innovative risk-reward loop €” daylight safety versus nighttime earning €” that gives the open-world structure a compelling daily rhythm.</p>
+                                    <p>The dual Bank/REP progression system creates a genuinely innovative risk-reward loop — daylight safety versus nighttime earning — that gives the open-world structure a compelling daily rhythm.</p>
                                 </td>
                                 <td>
                                     <div class="sw-item-head">
@@ -1663,7 +1608,7 @@
                                         <span class="label">01_PURSUIT</span>
                                     </div>
                                     <h6>Heat 5 Pursuit Overload</h6>
-                                    <p>Maximum Heat police pursuit can overwhelm navigation ability €” roadblocks, helicopters, and pursuit vehicles create a density of obstacles that makes strategic evasion nearly impossible, reducing the HCI to reactive chaos.</p>
+                                    <p>Maximum Heat police pursuit can overwhelm navigation ability — roadblocks, helicopters, and pursuit vehicles create a density of obstacles that makes strategic evasion nearly impossible, reducing the HCI to reactive chaos.</p>
                                 </td>
                             </tr>
                             <tr>
@@ -1673,7 +1618,7 @@
                                         <span class="label">02_HEAT</span>
                                     </div>
                                     <h6>Heat Color System</h6>
-                                    <p>The Heat meter's color temperature escalation is a masterclass in natural mapping €” players instinctively understand the urgency without reading the number, leveraging universal danger color associations.</p>
+                                    <p>The Heat meter's color temperature escalation is a masterclass in natural mapping — players instinctively understand the urgency without reading the number, leveraging universal danger color associations.</p>
                                 </td>
                                 <td>
                                     <div class="sw-item-head">
@@ -1691,7 +1636,7 @@
                                         <span class="label">03_NITROUS</span>
                                     </div>
                                     <h6>Nitrous Reward Loop</h6>
-                                    <p>Near-miss and draft nitrous generation creates a risk-reward feedback loop that rewards aggressive, skilled driving €” a positive HCI reinforcement system that incentivizes the game's most exciting play patterns.</p>
+                                    <p>Near-miss and draft nitrous generation creates a risk-reward feedback loop that rewards aggressive, skilled driving — a positive HCI reinforcement system that incentivizes the game's most exciting play patterns.</p>
                                 </td>
                                 <td>
                                     <div class="sw-item-head">
@@ -1699,14 +1644,14 @@
                                         <span class="label">03_TRACK</span>
                                     </div>
                                     <h6>Track Design Consistency</h6>
-                                    <p>Some Palm City race routes have poorly telegraphed sharp turns that appear without warning at high speeds €” a spatial HCI failure where the environment does not communicate its demands in time for skilled response.</p>
+                                    <p>Some Palm City race routes have poorly telegraphed sharp turns that appear without warning at high speeds — a spatial HCI failure where the environment does not communicate its demands in time for skilled response.</p>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                     <div class="footnote summary">
                         <p>
-                            Need for Speed Heat's greatest HCI achievement is its day/night economy €” a design that uses the open world as a risk register rather than a static backdrop. The Heat color system and audio escalation create danger communication that transcends UI elements. Its failures are in the extremes: Heat 5 pursuit can overwhelm the navigation system, and menu friction slows a progression loop that should feel frictionless.
+                            Need for Speed Heat's greatest HCI achievement is its day/night economy — a design that uses the open world as a risk register rather than a static backdrop. The Heat color system and audio escalation create danger communication that transcends UI elements. Its failures are in the extremes: Heat 5 pursuit can overwhelm the navigation system, and menu friction slows a progression loop that should feel frictionless.
                         </p>
                     </div>
                 </section>
@@ -1813,7 +1758,7 @@
     const EDITIONS = ["Standard Edition", "Deluxe Edition"];
 
     const DESCRIPTION =
-        "Need for Speed Heat is an open-world street racing game by Ghost Games set in the fictional Palm City. Players race legally by day in Speedhunters Showdown events to earn Bank, then take to illicit night-time street races to build Heat €” a police pursuit escalation system €” earning REP to unlock better cars and performance parts.";
+        "Need for Speed Heat is an open-world street racing game by Ghost Games set in the fictional Palm City. Players race legally by day in Speedhunters Showdown events to earn Bank, then take to illicit night-time street races to build Heat — a police pursuit escalation system — earning REP to unlock better cars and performance parts.";
 
     // Document Variables
     const sectionRadios = Array.from(

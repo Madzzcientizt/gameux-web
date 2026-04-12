@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 
 <head>
@@ -847,66 +847,11 @@
             }
         }
 
-        .back-to-top {
-            position: fixed;
-            right: 1.25rem;
-            bottom: 1.25rem;
-            width: 3.5rem;
-            height: 3.5rem;
-            border: 0;
-            border-radius: var(--t-radius-selector);
-            background-color: transparent;
-            padding: 0;
-            display: grid;
-            place-items: center;
-            z-index: 1001;
-            opacity: 0;
-            transform: translateY(0.5rem) scale(0.96);
-            pointer-events: none;
-            transition: opacity 0.2s ease, transform 0.2s ease;
-            cursor: pointer;
-        }
 
-        .back-to-top.is-visible {
-            opacity: 1;
-            transform: translateY(0) scale(1);
-            pointer-events: auto;
-        }
 
-        .back-to-top .btn-bg {
-            fill: var(--t-color-base-100);
-            stroke: var(--t-color-base-300);
-            stroke-width: 1.5;
-        }
 
-        .back-to-top .btn-progress-track {
-            fill: none;
-            stroke: var(--t-color-base-300);
-            stroke-width: 3;
-            opacity: 0.35;
-        }
 
-        .back-to-top .btn-progress {
-            fill: none;
-            stroke: var(--t-color-primary);
-            stroke-width: 3;
-            stroke-linecap: round;
-            transform: rotate(-90deg);
-            transform-origin: 28px 28px;
-            transition: stroke-dashoffset 0.1s linear;
-        }
 
-        .back-to-top .btn-icon {
-            fill: none;
-            stroke: var(--t-color-primary);
-            stroke-width: 1.8;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-        }
-
-        .back-to-top:hover .btn-bg {
-            fill: var(--t-color-base-200);
-        }
 
         /* YouTube Ban Fallback Styling */
         .video-fallback-message {
@@ -1368,7 +1313,7 @@
                         Tomb Raider (2013) is an action-adventure game developed by Crystal Dynamics and published by Square Enix. It serves as a complete origin story reboot of the iconic Lara Croft franchise, following a young Lara as she fights to survive after her expedition ship is wrecked on the mysterious island of Yamatai. Released on March 5, 2013 for PC, PlayStation 3, and Xbox 360, with a Definitive Edition released in 2014 for PS4 and Xbox One.
                     </p>
                     <p>
-                        The game blends third-person combat, traversal platforming, and environmental puzzle-solving within a semi-open world structure. Its survival horror tone, context-sensitive controls, and progressive skill unlocking make it a compelling case study in HCI €” particularly in how the interface communicates Lara's growing agency without interrupting the game's cinematic flow.
+                        The game blends third-person combat, traversal platforming, and environmental puzzle-solving within a semi-open world structure. Its survival horror tone, context-sensitive controls, and progressive skill unlocking make it a compelling case study in HCI — particularly in how the interface communicates Lara's growing agency without interrupting the game's cinematic flow.
                     </p>
                 </section>
                 <section class="game-sections" id="ui-components">
@@ -1385,7 +1330,7 @@
                                 <span class="count">[ ELEMENT_01 ]</span>
                                 <span class="header-text">Survivor HUD</span>
                                 <p>
-                                    Tomb Raider employs a dynamic HUD that fades in only when needed €” health is communicated through Lara's visual and audio state rather than a persistent bar. When health is critically low, a red vignette creeps in at screen edges and Lara's movement and breathing audio shift, making the UI diegetic rather than overlay-dependent.
+                                    Tomb Raider employs a dynamic HUD that fades in only when needed — health is communicated through Lara's visual and audio state rather than a persistent bar. When health is critically low, a red vignette creeps in at screen edges and Lara's movement and breathing audio shift, making the UI diegetic rather than overlay-dependent.
                                 </p>
                                 <ul>
                                     <h6>Design Principles</h6>
@@ -1406,7 +1351,7 @@
                                 <span class="count">[ ELEMENT_02 ]</span>
                                 <span class="header-text">Skill & Upgrade Tree</span>
                                 <p>
-                                    A layered skill tree separates Lara's growth into Survivor, Hunter, and Brawler categories. Each node visually communicates the type of capability unlocked. The upgrade system for weapons uses salvage collected from the environment, tying mechanical progression to physical exploration €” reinforcing the game's survival narrative through its interface.
+                                    A layered skill tree separates Lara's growth into Survivor, Hunter, and Brawler categories. Each node visually communicates the type of capability unlocked. The upgrade system for weapons uses salvage collected from the environment, tying mechanical progression to physical exploration — reinforcing the game's survival narrative through its interface.
                                 </p>
                             </div>
                         </div>
@@ -1421,7 +1366,7 @@
                                 <span class="count">[ ELEMENT_03 ]</span>
                                 <span class="header-text">Survival Instinct</span>
                                 <p>
-                                    Survival Instinct is an optional highlighting mechanic that briefly illuminates interactable objects and objectives in gold when activated. It acts as a low-friction accessibility layer €” available on demand without cluttering normal play, allowing experienced players to ignore it and new players to rely on it without penalizing either.
+                                    Survival Instinct is an optional highlighting mechanic that briefly illuminates interactable objects and objectives in gold when activated. It acts as a low-friction accessibility layer — available on demand without cluttering normal play, allowing experienced players to ignore it and new players to rely on it without penalizing either.
                                 </p>
                             </div>
                         </div>
@@ -1437,7 +1382,7 @@
                                 <span>MT = a + b * log<sub>2</sub>(2D/W)</span>
                             </div>
                             <p>
-                                As Lara's weapons are upgraded, effective W increases €” upgraded weapons have tighter spreads and better aim assist, lowering MT. The progression system is thus an HCI progression system: the game literally reduces the cognitive and motor cost of accurate targeting as the player invests in upgrades.
+                                As Lara's weapons are upgraded, effective W increases — upgraded weapons have tighter spreads and better aim assist, lowering MT. The progression system is thus an HCI progression system: the game literally reduces the cognitive and motor cost of accurate targeting as the player invests in upgrades.
                             </p>
                         </div>
                         <div>
@@ -1459,7 +1404,7 @@
                             </li>
                             <li>
                                 <h6>Ammo & Weapon State</h6>
-                                <p>Secondary focus. A minimal counter bottom-right tracks ammunition, appearing only when a weapon is drawn. The visual reinforces resource scarcity €” a core design tension in the survival narrative.</p>
+                                <p>Secondary focus. A minimal counter bottom-right tracks ammunition, appearing only when a weapon is drawn. The visual reinforces resource scarcity — a core design tension in the survival narrative.</p>
                             </li>
                             <li>
                                 <h6>Environmental Interaction Prompts</h6>
@@ -1474,7 +1419,7 @@
                 <section class="game-sections" id="user-interaction">
                     <h2>User Interaction</h2>
                     <p>
-                        An investigation into Tomb Raider's survival-driven interface design €” examining how Crystal Dynamics uses progressive ability unlocking and diegetic feedback to mirror Lara's character growth through HCI mechanics.
+                        An investigation into Tomb Raider's survival-driven interface design — examining how Crystal Dynamics uses progressive ability unlocking and diegetic feedback to mirror Lara's character growth through HCI mechanics.
                     </p>
                     <div class="list-style-area">
                         <h3 class="text-center">Core Gameplay Loop</h3>
@@ -1494,7 +1439,7 @@
                             </li>
                             <li>
                                 <h6>Adapt</h6>
-                                <p>New traversal tools €” rope arrows, pry axe, fire arrows €” physically open previously inaccessible areas, making the world itself respond to Lara's growing capability.</p>
+                                <p>New traversal tools — rope arrows, pry axe, fire arrows — physically open previously inaccessible areas, making the world itself respond to Lara's growing capability.</p>
                             </li>
                         </ol>
                     </div>
@@ -1502,7 +1447,7 @@
                     <div class="multi-modal-feedback">
                         <div>
                             <p>
-                                Tomb Raider's feedback architecture is built around Lara as the primary feedback device. The game deliberately shifts readouts from the screen to the character model €” a powerful HCI strategy that grounds all feedback in narrative and emotional context.
+                                Tomb Raider's feedback architecture is built around Lara as the primary feedback device. The game deliberately shifts readouts from the screen to the character model — a powerful HCI strategy that grounds all feedback in narrative and emotional context.
                             </p>
                         </div>
                         <div>
@@ -1523,7 +1468,7 @@
                             </div>
                             <div>
                                 <h6>Audio Feedback</h6>
-                                <p>Lara vocalizes pain, exertion, and fear in real time €” grunt frequencies and breathing patterns serve as an intuitive health proxy. Enemy dialogue cues flank positions and approaching threats, providing spatial audio that supplements visual awareness without a minimap.</p>
+                                <p>Lara vocalizes pain, exertion, and fear in real time — grunt frequencies and breathing patterns serve as an intuitive health proxy. Enemy dialogue cues flank positions and approaching threats, providing spatial audio that supplements visual awareness without a minimap.</p>
                             </div>
                         </li>
                         <li>
@@ -1558,7 +1503,7 @@
                         <div class="cybernetic-content">
                             <div>
                                 <p style="text-align: justify;">
-                                    Tomb Raider's interface is built on a character-as-HUD philosophy. The feedback loop routes through Lara's physical and vocal performance rather than screen overlays €” a deliberate HCI choice that maintains cinematic immersion while ensuring players are never information-starved. The loop closes within the narrative frame, making mechanical feedback feel emotionally resonant.
+                                    Tomb Raider's interface is built on a character-as-HUD philosophy. The feedback loop routes through Lara's physical and vocal performance rather than screen overlays — a deliberate HCI choice that maintains cinematic immersion while ensuring players are never information-starved. The loop closes within the narrative frame, making mechanical feedback feel emotionally resonant.
                                 </p>
                             </div>
                             <div>
@@ -1574,7 +1519,7 @@
                     <div class="spatial-congruence">
                         <h2>Spatial Congruence & Progressive Disclosure</h2>
                         <p style="text-align: justify;">
-                            Tomb Raider uses progressive disclosure as its primary HCI strategy €” new UI elements, tools, and interactions are introduced only as Lara acquires new capabilities. The rope arrow doesn't appear in the toolkit until found; the fire arrow mechanic isn't surfaced until needed. This keeps cognitive load manageable throughout and ensures each new interaction element arrives with full contextual grounding rather than front-loading complexity at the start of the game.
+                            Tomb Raider uses progressive disclosure as its primary HCI strategy — new UI elements, tools, and interactions are introduced only as Lara acquires new capabilities. The rope arrow doesn't appear in the toolkit until found; the fire arrow mechanic isn't surfaced until needed. This keeps cognitive load manageable throughout and ensures each new interaction element arrives with full contextual grounding rather than front-loading complexity at the start of the game.
                         </p>
                     </div>
                     <div class="cognitive-load-bifurcation">
@@ -1592,7 +1537,7 @@
                             <tbody>
                                 <tr>
                                     <td><h6>Diegetic Health System</h6><p>No persistent health bar. Lara's body and audio replace it, eliminating the need to scan a separate UI element during combat.</p></td>
-                                    <td><h6>Survival Decision-Making</h6><p>The player's full attention is directed toward threat assessment, cover selection, and resource conservation €” the actual challenge of the game.</p></td>
+                                    <td><h6>Survival Decision-Making</h6><p>The player's full attention is directed toward threat assessment, cover selection, and resource conservation — the actual challenge of the game.</p></td>
                                 </tr>
                                 <tr>
                                     <td><h6>On-Demand Survival Instinct</h6><p>Objective highlighting is player-triggered, removing ambient clutter while providing an immediate escape valve when spatial orientation is lost.</p></td>
@@ -1603,14 +1548,14 @@
                     </div>
                     <div class="footnote">
                         <q>
-                            In Tomb Raider, the interface doesn't tell you Lara is dying €” she does. That choice to route feedback through the character rather than the screen is one of the most elegant HCI decisions in the survival-adventure genre.
+                            In Tomb Raider, the interface doesn't tell you Lara is dying — she does. That choice to route feedback through the character rather than the screen is one of the most elegant HCI decisions in the survival-adventure genre.
                         </q>
                     </div>
                 </section>
                 <section class="game-sections" id="ui-ux-weaknesses">
                     <h2>Strengths and Weaknesses Analysis</h2>
                     <p>
-                        A comprehensive evaluation of Tomb Raider's interface paradigm €” examining where Crystal Dynamics's survival-first HCI philosophy succeeds and where it creates friction for players navigating Lara's origin story.
+                        A comprehensive evaluation of Tomb Raider's interface paradigm — examining where Crystal Dynamics's survival-first HCI philosophy succeeds and where it creates friction for players navigating Lara's origin story.
                     </p>
                     <table style="margin-bottom: 2em;">
                         <thead>
@@ -1645,7 +1590,7 @@
                                         <span class="label">02_PROGRESSION</span>
                                     </div>
                                     <h6>Tangible Skill Progression</h6>
-                                    <p>The skill tree and weapon upgrade system create a genuinely felt sense of Lara growing more capable. Each upgrade has a tangible HCI effect €” tighter spreads, faster reload, new traversal options €” making progression feel meaningful rather than cosmetic.</p>
+                                    <p>The skill tree and weapon upgrade system create a genuinely felt sense of Lara growing more capable. Each upgrade has a tangible HCI effect — tighter spreads, faster reload, new traversal options — making progression feel meaningful rather than cosmetic.</p>
                                 </td>
                                 <td>
                                     <div class="sw-item-head">
@@ -1663,7 +1608,7 @@
                                         <span class="label">03_ACCESSIBILITY</span>
                                     </div>
                                     <h6>Survival Instinct Accessibility Layer</h6>
-                                    <p>The optional Survival Instinct mechanic is a textbook example of graceful accessibility design €” it lowers the floor for players who need guidance without raising the ceiling for those who don't, adapting to diverse player competencies without penalizing either group.</p>
+                                    <p>The optional Survival Instinct mechanic is a textbook example of graceful accessibility design — it lowers the floor for players who need guidance without raising the ceiling for those who don't, adapting to diverse player competencies without penalizing either group.</p>
                                 </td>
                                 <td>
                                     <div class="sw-item-head">
@@ -1678,7 +1623,7 @@
                     </table>
                     <div class="footnote summary">
                         <p>
-                            Tomb Raider's HCI is most powerful when it trusts the player to read Lara rather than the screen. Crystal Dynamics built an interface that mirrors Lara's transformation €” sparse and frightening at the start, increasingly capable and confident as the game progresses. Its weaknesses emerge when the systems stop trusting the player and fall back on QTEs and a map that fails the open-world promise of its late-game exploration.
+                            Tomb Raider's HCI is most powerful when it trusts the player to read Lara rather than the screen. Crystal Dynamics built an interface that mirrors Lara's transformation — sparse and frightening at the start, increasingly capable and confident as the game progresses. Its weaknesses emerge when the systems stop trusting the player and fall back on QTEs and a map that fails the open-world promise of its late-game exploration.
                         </p>
                     </div>
                 </section>

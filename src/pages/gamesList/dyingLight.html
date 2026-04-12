@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 
 <head>
@@ -847,66 +847,11 @@
             }
         }
 
-        .back-to-top {
-            position: fixed;
-            right: 1.25rem;
-            bottom: 1.25rem;
-            width: 3.5rem;
-            height: 3.5rem;
-            border: 0;
-            border-radius: var(--t-radius-selector);
-            background-color: transparent;
-            padding: 0;
-            display: grid;
-            place-items: center;
-            z-index: 1001;
-            opacity: 0;
-            transform: translateY(0.5rem) scale(0.96);
-            pointer-events: none;
-            transition: opacity 0.2s ease, transform 0.2s ease;
-            cursor: pointer;
-        }
 
-        .back-to-top.is-visible {
-            opacity: 1;
-            transform: translateY(0) scale(1);
-            pointer-events: auto;
-        }
 
-        .back-to-top .btn-bg {
-            fill: var(--t-color-base-100);
-            stroke: var(--t-color-base-300);
-            stroke-width: 1.5;
-        }
 
-        .back-to-top .btn-progress-track {
-            fill: none;
-            stroke: var(--t-color-base-300);
-            stroke-width: 3;
-            opacity: 0.35;
-        }
 
-        .back-to-top .btn-progress {
-            fill: none;
-            stroke: var(--t-color-primary);
-            stroke-width: 3;
-            stroke-linecap: round;
-            transform: rotate(-90deg);
-            transform-origin: 28px 28px;
-            transition: stroke-dashoffset 0.1s linear;
-        }
 
-        .back-to-top .btn-icon {
-            fill: none;
-            stroke: var(--t-color-primary);
-            stroke-width: 1.8;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-        }
-
-        .back-to-top:hover .btn-bg {
-            fill: var(--t-color-base-200);
-        }
 
         /* YouTube Ban Fallback Styling */
         .video-fallback-message {
@@ -1375,10 +1320,10 @@
                         <li>Platinum Edition (all DLCs)</li>
                     </ul>
                     <p>
-                        Dying Light is a 2015 open-world survival horror game developed by Techland and published by Warner Bros. Interactive Entertainment. Set in the fictional quarantined Middle Eastern city of Harran, players take on the role of Kyle Crane €” a Global Relief Effort operative sent to recover a sensitive file €” as they navigate a city overrun by the Harran Virus.
+                        Dying Light is a 2015 open-world survival horror game developed by Techland and published by Warner Bros. Interactive Entertainment. Set in the fictional quarantined Middle Eastern city of Harran, players take on the role of Kyle Crane — a Global Relief Effort operative sent to recover a sensitive file — as they navigate a city overrun by the Harran Virus.
                     </p>
                     <p>
-                        Dying Light's defining innovation is its seamless integration of first-person parkour movement with zombie survival gameplay. The day/night cycle fundamentally alters the game's threat model €” docile Walkers by day become volatile Volatiles at night, demanding HCI that efficiently communicates danger level, stamina state, and tool availability in high-stress, first-person scenarios.
+                        Dying Light's defining innovation is its seamless integration of first-person parkour movement with zombie survival gameplay. The day/night cycle fundamentally alters the game's threat model — docile Walkers by day become volatile Volatiles at night, demanding HCI that efficiently communicates danger level, stamina state, and tool availability in high-stress, first-person scenarios.
                     </p>
                     <ul class="metrics-list">
                         <li>
@@ -1412,7 +1357,7 @@
                                 <span class="count">[ ELEMENT_01 ]</span>
                                 <span class="header-text">Stamina & Health Bars</span>
                                 <p>
-                                    Dying Light's stamina system is central to parkour traversal €” a depleting bar governs sprint, climb, and dodge viability. Combined with the health bar, these resource gauges create constant pressure during both movement and combat, making resource management a continuous first-person HCI challenge.
+                                    Dying Light's stamina system is central to parkour traversal — a depleting bar governs sprint, climb, and dodge viability. Combined with the health bar, these resource gauges create constant pressure during both movement and combat, making resource management a continuous first-person HCI challenge.
                                 </p>
                                 <ul>
                                     <h6>Survival UI Traits</h6>
@@ -1448,7 +1393,7 @@
                                 <span class="count">[ ELEMENT_03 ]</span>
                                 <span class="header-text">Day/Night Cycle Indicator</span>
                                 <p>
-                                    A dynamic day/night sun-position indicator tracks the transition between safe and dangerous hours. This HUD element transforms from a passive status indicator into a primary urgency driver as darkness falls €” communicating impending Volatile emergence through ambient color shifts and increasing threat audio.
+                                    A dynamic day/night sun-position indicator tracks the transition between safe and dangerous hours. This HUD element transforms from a passive status indicator into a primary urgency driver as darkness falls — communicating impending Volatile emergence through ambient color shifts and increasing threat audio.
                                 </p>
                             </div>
                         </div>
@@ -1457,14 +1402,14 @@
                     <div class="fittslaw">
                         <div>
                             <p>
-                                Fitts's Law is most critical during Dying Light's parkour traversal €” ledge-grab targets have varying widths (W) based on surface area, and movement speed dictates distance (D). Mistimed jumps €” undershooting the target width €” result in death falls, making target acquisition literally life-or-death in this system.
+                                Fitts's Law is most critical during Dying Light's parkour traversal — ledge-grab targets have varying widths (W) based on surface area, and movement speed dictates distance (D). Mistimed jumps — undershooting the target width — result in death falls, making target acquisition literally life-or-death in this system.
                             </p>
                             <div class="mathmodel">
                                 <h6>[ MATHEMATICAL MODEL ]</h6>
                                 <span>MT = a + b * log<sub>2</sub>(2D/W)</span>
                             </div>
                             <p>
-                                The grappling hook introduced in The Following DLC extends player reach dramatically, reducing effective D to distant platforms. As a large-W tool, it lowers the index of difficulty and serves as a mobility crutch that the game uses to gate parkour skill ceiling €” players who master natural parkour find the hook unnecessary.
+                                The grappling hook introduced in The Following DLC extends player reach dramatically, reducing effective D to distant platforms. As a large-W tool, it lowers the index of difficulty and serves as a mobility crutch that the game uses to gate parkour skill ceiling — players who master natural parkour find the hook unnecessary.
                             </p>
                         </div>
                         <div>
@@ -1482,7 +1427,7 @@
                         <ol class="three-columns md-one-columns">
                             <li>
                                 <h6>Volatile Detection Indicator</h6>
-                                <p>Primary nighttime threat cue. A pulsing red screen-edge vignette and distinct audio screech signal a Volatile's detection of the player €” commanding instant priority above all other UI elements when night falls.</p>
+                                <p>Primary nighttime threat cue. A pulsing red screen-edge vignette and distinct audio screech signal a Volatile's detection of the player — commanding instant priority above all other UI elements when night falls.</p>
                             </li>
                             <li>
                                 <h6>Stamina Bar</h6>
@@ -1490,7 +1435,7 @@
                             </li>
                             <li>
                                 <h6>Quest & Safe Zone Markers</h6>
-                                <p>Tertiary world navigation. Quest markers and safe house icons on the minimap guide long-range navigation, while environmental cues €” graffiti, illuminated windows, generator sounds €” provide diegetic wayfinding.</p>
+                                <p>Tertiary world navigation. Quest markers and safe house icons on the minimap guide long-range navigation, while environmental cues — graffiti, illuminated windows, generator sounds — provide diegetic wayfinding.</p>
                             </li>
                         </ol>
                     </div>
@@ -1501,7 +1446,7 @@
                 <section class="game-sections" id="user-interaction">
                     <h2>User Interaction</h2>
                     <p>
-                        An analysis of Dying Light's first-person survival HCI €” examining how Techland engineered a movement-first interface that communicates urgency, resource state, and environmental threat in real time across a day/night threat cycle.
+                        An analysis of Dying Light's first-person survival HCI — examining how Techland engineered a movement-first interface that communicates urgency, resource state, and environmental threat in real time across a day/night threat cycle.
                     </p>
                     <div class="list-style-area">
                         <h3 class="text-center">Core Gameplay Loop</h3>
@@ -1509,15 +1454,15 @@
                         <ol class="four-columns md-two-columns">
                             <li>
                                 <h6>Scan</h6>
-                                <p>Player reads the environment for zombie density, loot containers, and parkour routes €” weighing risk versus reward across the infected cityscape before committing to movement.</p>
+                                <p>Player reads the environment for zombie density, loot containers, and parkour routes — weighing risk versus reward across the infected cityscape before committing to movement.</p>
                             </li>
                             <li>
                                 <h6>Move</h6>
-                                <p>Fluid first-person parkour €” vaulting, wall-running, climbing €” is the primary traversal mode. Stamina depletion gates movement intensity, making every route a micro-resource management decision.</p>
+                                <p>Fluid first-person parkour — vaulting, wall-running, climbing — is the primary traversal mode. Stamina depletion gates movement intensity, making every route a micro-resource management decision.</p>
                             </li>
                             <li>
                                 <h6>Survive</h6>
-                                <p>Combat is discouraged in favor of evasion. When unavoidable, improvised weapon strikes, kicks, and environmental hazards €” electrified fences, explosive barrels €” resolve encounters with stamina awareness.</p>
+                                <p>Combat is discouraged in favor of evasion. When unavoidable, improvised weapon strikes, kicks, and environmental hazards — electrified fences, explosive barrels — resolve encounters with stamina awareness.</p>
                             </li>
                             <li>
                                 <h6>Craft & Progress</h6>
@@ -1529,7 +1474,7 @@
                     <div class="multi-modal-feedback">
                         <div>
                             <p>
-                                Dying Light's feedback system is calibrated to escalate tension with the day/night cycle €” feedback cues intensify dramatically as daylight fades, physiologically elevating player stress in alignment with in-game threat escalation.
+                                Dying Light's feedback system is calibrated to escalate tension with the day/night cycle — feedback cues intensify dramatically as daylight fades, physiologically elevating player stress in alignment with in-game threat escalation.
                             </p>
                         </div>
                         <div>
@@ -1550,7 +1495,7 @@
                             </div>
                             <div>
                                 <h6>Audio Feedback</h6>
-                                <p>The heartbeat audio cue accelerates as health depletes. Volatile pursuit triggers a horror-film music sting. Successful parkour landings produce grounded impact sounds that reward fluid movement €” a positive reinforcement layer within the survival tension.</p>
+                                <p>The heartbeat audio cue accelerates as health depletes. Volatile pursuit triggers a horror-film music sting. Successful parkour landings produce grounded impact sounds that reward fluid movement — a positive reinforcement layer within the survival tension.</p>
                             </div>
                         </li>
                         <li>
@@ -1562,7 +1507,7 @@
                             </div>
                             <div>
                                 <h6>Visual Feedback</h6>
-                                <p>Damage hit-markers flash red at screen edges. Nighttime vision narrows with a vignette effect. Weapon breakage triggers screen-shake and an audio crack before the weapon shatters €” giving clear pre-failure warning to allow inventory switching.</p>
+                                <p>Damage hit-markers flash red at screen edges. Nighttime vision narrows with a vignette effect. Weapon breakage triggers screen-shake and an audio crack before the weapon shatters — giving clear pre-failure warning to allow inventory switching.</p>
                             </div>
                         </li>
                         <li>
@@ -1585,7 +1530,7 @@
                         <div class="cybernetic-content">
                             <div>
                                 <p style="text-align: justify;">
-                                    Dying Light employs an escalating multi-modal feedback architecture that is tightly coupled to the day/night threat cycle. Feedback intensity €” audio urgency, visual vignetting, haptic intensity €” scales with proximity to night, creating a physiological stress response that mirrors the game's narrative danger escalation.
+                                    Dying Light employs an escalating multi-modal feedback architecture that is tightly coupled to the day/night threat cycle. Feedback intensity — audio urgency, visual vignetting, haptic intensity — scales with proximity to night, creating a physiological stress response that mirrors the game's narrative danger escalation.
                                 </p>
                             </div>
                             <div>
@@ -1601,13 +1546,13 @@
                     <div class="spatial-congruence">
                         <h2>Spatial Congruence in Vertical Traversal</h2>
                         <p style="text-align: justify;">
-                            Dying Light achieves spatial congruence through its first-person perspective €” the player's viewpoint is Kyle's viewpoint, eliminating camera abstraction. Parkour targets are directly perceived as physical surfaces rather than UI-indicated destinations. The stamina bar's position at screen-bottom maps naturally to the player's downward gaze when assessing fall distances.
+                            Dying Light achieves spatial congruence through its first-person perspective — the player's viewpoint is Kyle's viewpoint, eliminating camera abstraction. Parkour targets are directly perceived as physical surfaces rather than UI-indicated destinations. The stamina bar's position at screen-bottom maps naturally to the player's downward gaze when assessing fall distances.
                         </p>
                     </div>
                     <div class="cognitive-load-bifurcation">
                         <h2>Cognitive Load Bifurcation</h2>
                         <p style="text-align: justify; margin-bottom: 2em;">
-                            Dying Light manages cognitive load through temporal separation €” the day cycle is low-threat exploration and crafting (Intrinsic Load: scavenging, route planning), while night is high-threat survival (Intrinsic Load: Volatile evasion). Extrinsic Load (the interface) remains consistent, letting the world's threat level drive cognitive intensity.
+                            Dying Light manages cognitive load through temporal separation — the day cycle is low-threat exploration and crafting (Intrinsic Load: scavenging, route planning), while night is high-threat survival (Intrinsic Load: Volatile evasion). Extrinsic Load (the interface) remains consistent, letting the world's threat level drive cognitive intensity.
                         </p>
                         <table>
                             <thead>
@@ -1619,11 +1564,11 @@
                             <tbody>
 
                                 <tr>
-                                    <td><h6>First-Person Parkour Immersion</h6><p>The first-person perspective eliminates camera abstraction €” surfaces, ledges, and drops are perceived directly, creating the most spatially congruent parkour HCI in the genre.</p></td>
-                                    <td><h6>Stamina System Frustration</h6><p>Stamina depletion mid-parkour route can feel punishing when the player's route plan outpaces the stamina budget €” creating a design tension between aspiration and interface limitation.</p></td>
+                                    <td><h6>First-Person Parkour Immersion</h6><p>The first-person perspective eliminates camera abstraction — surfaces, ledges, and drops are perceived directly, creating the most spatially congruent parkour HCI in the genre.</p></td>
+                                    <td><h6>Stamina System Frustration</h6><p>Stamina depletion mid-parkour route can feel punishing when the player's route plan outpaces the stamina budget — creating a design tension between aspiration and interface limitation.</p></td>
                                 </tr>
                                 <tr>
-                                    <td><h6>Day/Night Threat Escalation</h6><p>The day/night cycle is one of gaming's most effective environmental HCI systems €” threat level is communicated through world state rather than UI, creating dread without explicit warning labels.</p></td>
+                                    <td><h6>Day/Night Threat Escalation</h6><p>The day/night cycle is one of gaming's most effective environmental HCI systems — threat level is communicated through world state rather than UI, creating dread without explicit warning labels.</p></td>
                                     <td><h6>Night Avoidance Behavior</h6><p>The Volatile threat at night is so severe that many players avoid nighttime gameplay entirely, bypassing one of the game's most distinctive HCI layers through rational risk minimization.</p></td>
                                 </tr>
                             </tbody>
@@ -1631,14 +1576,14 @@
                     </div>
                     <div class="footnote">
                         <q>
-                            Dying Light demonstrates that the most powerful HCI trigger is not a UI element but an environmental state. When the sky turns red, no health bar is needed €” the world itself is the warning system.
+                            Dying Light demonstrates that the most powerful HCI trigger is not a UI element but an environmental state. When the sky turns red, no health bar is needed — the world itself is the warning system.
                         </q>
                     </div>
                 </section>
                 <section class="game-sections" id="ui-ux-weaknesses">
                     <h2>Strengths and Weaknesses Analysis</h2>
                     <p>
-                        A comprehensive evaluation of Dying Light's interface paradigm €” examining the tension between its acclaimed first-person parkour movement design and the survival HCI demands of a game that changes its threat model completely every in-game day.
+                        A comprehensive evaluation of Dying Light's interface paradigm — examining the tension between its acclaimed first-person parkour movement design and the survival HCI demands of a game that changes its threat model completely every in-game day.
                     </p>
                     <table style="margin-bottom: 2em;">
                         <thead>
@@ -1656,7 +1601,7 @@
                                         <span class="label">01_PARKOUR</span>
                                     </div>
                                     <h6>Parkour Fluidity</h6>
-                                    <p>The first-person parkour system is the most physically convincing movement HCI in the open-world genre €” vaults, grabs, and climbs feel spatially real because the player perspective eliminates camera abstraction.</p>
+                                    <p>The first-person parkour system is the most physically convincing movement HCI in the open-world genre — vaults, grabs, and climbs feel spatially real because the player perspective eliminates camera abstraction.</p>
                                 </td>
                                 <td>
                                     <div class="sw-item-head">
@@ -1664,7 +1609,7 @@
                                         <span class="label">01_NIGHT</span>
                                     </div>
                                     <h6>Night Avoidance</h6>
-                                    <p>The Volatile threat is so severe that rational players avoid night gameplay €” undermining one of the game's most distinctive systems through effective but overtuned threat design.</p>
+                                    <p>The Volatile threat is so severe that rational players avoid night gameplay — undermining one of the game's most distinctive systems through effective but overtuned threat design.</p>
                                 </td>
                             </tr>
                             <tr>
@@ -1674,7 +1619,7 @@
                                         <span class="label">02_TENSION</span>
                                     </div>
                                     <h6>Day/Night Tension Design</h6>
-                                    <p>The environmental transition from day to night is a masterclass in HCI-driven tension €” no UI alarm is needed when the sky's color and zombie audio behavior communicate the shift effectively.</p>
+                                    <p>The environmental transition from day to night is a masterclass in HCI-driven tension — no UI alarm is needed when the sky's color and zombie audio behavior communicate the shift effectively.</p>
                                 </td>
                                 <td>
                                     <div class="sw-item-head">
@@ -1700,14 +1645,14 @@
                                         <span class="label">03_WEAPON</span>
                                     </div>
                                     <h6>Weapon Durability Frustration</h6>
-                                    <p>Rapid weapon degradation €” especially on higher-rarity weapons €” creates a HCI loop where players hoard their best weapons rather than using them, contradicting the game's survival fantasy.</p>
+                                    <p>Rapid weapon degradation — especially on higher-rarity weapons — creates a HCI loop where players hoard their best weapons rather than using them, contradicting the game's survival fantasy.</p>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                     <div class="footnote summary">
                         <p>
-                            Dying Light's greatest HCI achievement is making movement feel like survival €” every rooftop gap, every stamina decision, every night sky shift is an interface moment that communicates danger through the body rather than the HUD. Its weaknesses emerge from systems that work against this embodied design: stamina limits that feel arbitrary, durability that punishes use, and a night that is so well-designed it becomes rationally avoidable.
+                            Dying Light's greatest HCI achievement is making movement feel like survival — every rooftop gap, every stamina decision, every night sky shift is an interface moment that communicates danger through the body rather than the HUD. Its weaknesses emerge from systems that work against this embodied design: stamina limits that feel arbitrary, durability that punishes use, and a night that is so well-designed it becomes rationally avoidable.
                         </p>
                     </div>
                 </section>

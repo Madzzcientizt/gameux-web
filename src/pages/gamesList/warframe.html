@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 
 <head>
@@ -847,66 +847,11 @@
             }
         }
 
-        .back-to-top {
-            position: fixed;
-            right: 1.25rem;
-            bottom: 1.25rem;
-            width: 3.5rem;
-            height: 3.5rem;
-            border: 0;
-            border-radius: var(--t-radius-selector);
-            background-color: transparent;
-            padding: 0;
-            display: grid;
-            place-items: center;
-            z-index: 1001;
-            opacity: 0;
-            transform: translateY(0.5rem) scale(0.96);
-            pointer-events: none;
-            transition: opacity 0.2s ease, transform 0.2s ease;
-            cursor: pointer;
-        }
 
-        .back-to-top.is-visible {
-            opacity: 1;
-            transform: translateY(0) scale(1);
-            pointer-events: auto;
-        }
 
-        .back-to-top .btn-bg {
-            fill: var(--t-color-base-100);
-            stroke: var(--t-color-base-300);
-            stroke-width: 1.5;
-        }
 
-        .back-to-top .btn-progress-track {
-            fill: none;
-            stroke: var(--t-color-base-300);
-            stroke-width: 3;
-            opacity: 0.35;
-        }
 
-        .back-to-top .btn-progress {
-            fill: none;
-            stroke: var(--t-color-primary);
-            stroke-width: 3;
-            stroke-linecap: round;
-            transform: rotate(-90deg);
-            transform-origin: 28px 28px;
-            transition: stroke-dashoffset 0.1s linear;
-        }
 
-        .back-to-top .btn-icon {
-            fill: none;
-            stroke: var(--t-color-primary);
-            stroke-width: 1.8;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-        }
-
-        .back-to-top:hover .btn-bg {
-            fill: var(--t-color-base-200);
-        }
 
         /* YouTube Ban Fallback Styling */
         .video-fallback-message {
@@ -1375,10 +1320,10 @@
                         <li>Supporter Packs</li>
                     </ul>
                     <p>
-                        Warframe is a free-to-play action game developed and published by Digital Extremes, first launched in 2013 for PC. Players take on the role of Tenno €” ancient warriors who emerge from cryo-stasis to pilot powerful biomechanical exosuits called Warframes across a sci-fi solar system in perpetual conflict between the Grineer, Corpus, Infested, and Sentient factions.
+                        Warframe is a free-to-play action game developed and published by Digital Extremes, first launched in 2013 for PC. Players take on the role of Tenno — ancient warriors who emerge from cryo-stasis to pilot powerful biomechanical exosuits called Warframes across a sci-fi solar system in perpetual conflict between the Grineer, Corpus, Infested, and Sentient factions.
                     </p>
                     <p>
-                        Warframe's infamous 'Second Dream' quest is credited with transforming its initially opaque design into a narrative-driven experience. Despite significant interface complexity €” over 50 Warframes, 500+ weapons, deep modding trees, and clan-based progression €” its fluid movement system and community-driven content pipeline make it a compelling case study in balancing accessibility with extraordinary depth.
+                        Warframe's infamous 'Second Dream' quest is credited with transforming its initially opaque design into a narrative-driven experience. Despite significant interface complexity — over 50 Warframes, 500+ weapons, deep modding trees, and clan-based progression — its fluid movement system and community-driven content pipeline make it a compelling case study in balancing accessibility with extraordinary depth.
                     </p>
                     <ul class="metrics-list">
                         <li>
@@ -1412,7 +1357,7 @@
                                 <span class="count">[ ELEMENT_01 ]</span>
                                 <span class="header-text">Ability Wheel & Energy System</span>
                                 <p>
-                                    Four Warframe abilities are mapped to a radial system, each consuming Energy to activate. The ability HUD displays cooldowns, energy pool, and ability strength modifiers €” a compact but information-dense panel that rewards memorization of each Warframe's unique power set across over 50 distinct frames.
+                                    Four Warframe abilities are mapped to a radial system, each consuming Energy to activate. The ability HUD displays cooldowns, energy pool, and ability strength modifiers — a compact but information-dense panel that rewards memorization of each Warframe's unique power set across over 50 distinct frames.
                                 </p>
                                 <ul>
                                     <h6>Ability UI Design</h6>
@@ -1433,7 +1378,7 @@
                                 <span class="count">[ ELEMENT_02 ]</span>
                                 <span class="header-text">Modding System Interface</span>
                                 <p>
-                                    The Mod configuration screen overlays a card-based system onto Warframes and weapons, where players slot power-enhancing mods into a finite capacity grid. Polarity slots reduce capacity costs, and Forma items restructure polarity €” making mod optimization a complex meta-game with its own deep UI vocabulary.
+                                    The Mod configuration screen overlays a card-based system onto Warframes and weapons, where players slot power-enhancing mods into a finite capacity grid. Polarity slots reduce capacity costs, and Forma items restructure polarity — making mod optimization a complex meta-game with its own deep UI vocabulary.
                                 </p>
                             </div>
                         </div>
@@ -1457,14 +1402,14 @@
                     <div class="fittslaw">
                         <div>
                             <p>
-                                In Warframe, Fitts's Law applies to both combat aiming and the mod-card interface. During combat, Warframe's extreme movement speed €” bullet jumping, air-dashing €” changes D continuously, requiring predictive aim rather than direct target tracking. The system rewards spatial anticipation over precise cursor placement.
+                                In Warframe, Fitts's Law applies to both combat aiming and the mod-card interface. During combat, Warframe's extreme movement speed — bullet jumping, air-dashing — changes D continuously, requiring predictive aim rather than direct target tracking. The system rewards spatial anticipation over precise cursor placement.
                             </p>
                             <div class="mathmodel">
                                 <h6>[ MATHEMATICAL MODEL ]</h6>
                                 <span>MT = a + b * log<sub>2</sub>(2D/W)</span>
                             </div>
                             <p>
-                                The radial ability wheel equalizes D for all four abilities from the hold-center position, optimizing acquisition time. However, the Mod configuration UI has historically been cited by players as violating Fitts's Law €” small card targets with large gaps create inefficient selection paths in a system players interact with for hours.
+                                The radial ability wheel equalizes D for all four abilities from the hold-center position, optimizing acquisition time. However, the Mod configuration UI has historically been cited by players as violating Fitts's Law — small card targets with large gaps create inefficient selection paths in a system players interact with for hours.
                             </p>
                         </div>
                         <div>
@@ -1490,7 +1435,7 @@
                             </li>
                             <li>
                                 <h6>World Loot & Resource Indicators</h6>
-                                <p>Tertiary pickup focus. Item acquisition notifications and resource counters appear at screen edges, communicating loot gain without interrupting gameplay flow €” though they can be overwhelmed during high-density co-op sessions.</p>
+                                <p>Tertiary pickup focus. Item acquisition notifications and resource counters appear at screen edges, communicating loot gain without interrupting gameplay flow — though they can be overwhelmed during high-density co-op sessions.</p>
                             </li>
                         </ol>
                     </div>
@@ -1501,7 +1446,7 @@
                 <section class="game-sections" id="user-interaction">
                     <h2>User Interaction</h2>
                     <p>
-                        An investigation into Warframe's layered HCI design €” examining how Digital Extremes balances a notoriously complex meta-game with moment-to-moment fluid action gameplay that demands near-instant interface responsiveness at extreme movement speeds.
+                        An investigation into Warframe's layered HCI design — examining how Digital Extremes balances a notoriously complex meta-game with moment-to-moment fluid action gameplay that demands near-instant interface responsiveness at extreme movement speeds.
                     </p>
                     <div class="list-style-area">
                         <h3 class="text-center">Core Gameplay Loop</h3>
@@ -1509,7 +1454,7 @@
                         <ol class="four-columns md-two-columns">
                             <li>
                                 <h6>Select & Loadout</h6>
-                                <p>Players configure Warframe, weapons, and companions from the Arsenal €” a multi-layer UI requiring mod optimization, build testing, and synergy planning before a mission even begins.</p>
+                                <p>Players configure Warframe, weapons, and companions from the Arsenal — a multi-layer UI requiring mod optimization, build testing, and synergy planning before a mission even begins.</p>
                             </li>
                             <li>
                                 <h6>Navigate</h6>
@@ -1517,7 +1462,7 @@
                             </li>
                             <li>
                                 <h6>Eliminate</h6>
-                                <p>Enemies are dispatched through weapon fire, Warframe abilities, and melee combos. Ability synergy €” grouping enemies before AoE detonation €” rewards build-level HCI planning executed at combat speed.</p>
+                                <p>Enemies are dispatched through weapon fire, Warframe abilities, and melee combos. Ability synergy — grouping enemies before AoE detonation — rewards build-level HCI planning executed at combat speed.</p>
                             </li>
                             <li>
                                 <h6>Extract & Upgrade</h6>
@@ -1529,7 +1474,7 @@
                     <div class="multi-modal-feedback">
                         <div>
                             <p>
-                                Warframe's feedback design supports a hyper-kinetic combat pace €” every sensory channel is calibrated to reward skill expression at speeds that would overwhelm conventional game feedback systems.
+                                Warframe's feedback design supports a hyper-kinetic combat pace — every sensory channel is calibrated to reward skill expression at speeds that would overwhelm conventional game feedback systems.
                             </p>
                         </div>
                         <div>
@@ -1550,7 +1495,7 @@
                             </div>
                             <div>
                                 <h6>Audio Feedback</h6>
-                                <p>Each Warframe ability has a unique sound signature €” Saryn's spore burst differs sonically from Volt's electric discharge. Melee hits produce satisfying heavy impacts that escalate with combo counter, providing audio confirmation of the combo multiplier.</p>
+                                <p>Each Warframe ability has a unique sound signature — Saryn's spore burst differs sonically from Volt's electric discharge. Melee hits produce satisfying heavy impacts that escalate with combo counter, providing audio confirmation of the combo multiplier.</p>
                             </div>
                         </li>
                         <li>
@@ -1601,13 +1546,13 @@
                     <div class="spatial-congruence">
                         <h2>Spatial Congruence in Procedural Environments</h2>
                         <p style="text-align: justify;">
-                            Warframe's greatest spatial congruence challenge is its procedurally generated tile-set missions €” environments change layout between visits, preventing the development of spatial memory. The minimap and waypoint system compensate for this, but at the cost of increased HUD dependency compared to games with fixed, learnable environments.
+                            Warframe's greatest spatial congruence challenge is its procedurally generated tile-set missions — environments change layout between visits, preventing the development of spatial memory. The minimap and waypoint system compensate for this, but at the cost of increased HUD dependency compared to games with fixed, learnable environments.
                         </p>
                     </div>
                     <div class="cognitive-load-bifurcation">
                         <h2>Cognitive Load Bifurcation</h2>
                         <p style="text-align: justify; margin-bottom: 2em;">
-                            Warframe operates on two distinct cognitive planes: the deep meta-game (modding, build optimization, mastery ranking) and the kinetic gameplay (movement, combat, mission execution). The design wisely keeps these planes temporally separated €” the Orbiter is for planning, the mission is for execution €” but the gap between them remains one of the game's most significant onboarding failures.
+                            Warframe operates on two distinct cognitive planes: the deep meta-game (modding, build optimization, mastery ranking) and the kinetic gameplay (movement, combat, mission execution). The design wisely keeps these planes temporally separated — the Orbiter is for planning, the mission is for execution — but the gap between them remains one of the game's most significant onboarding failures.
                         </p>
                         <table>
                             <thead>
@@ -1619,12 +1564,12 @@
                             <tbody>
 
                                 <tr>
-                                    <td><h6>Movement System Fluidity</h6><p>Bullet-jump traversal is one of gaming's most physically satisfying movement systems €” the HCI of motion is so refined that simply moving through a mission is a source of engagement.</p></td>
-                                    <td><h6>Onboarding Opacity</h6><p>Warframe's new player experience remains notoriously poor. Critical systems €” modding, the market, mastery ranking €” are either unexplained or explained inadequately, creating a discovery burden that drives player attrition.</p></td>
+                                    <td><h6>Movement System Fluidity</h6><p>Bullet-jump traversal is one of gaming's most physically satisfying movement systems — the HCI of motion is so refined that simply moving through a mission is a source of engagement.</p></td>
+                                    <td><h6>Onboarding Opacity</h6><p>Warframe's new player experience remains notoriously poor. Critical systems — modding, the market, mastery ranking — are either unexplained or explained inadequately, creating a discovery burden that drives player attrition.</p></td>
                                 </tr>
                                 <tr>
                                     <td><h6>Warframe Diversity</h6><p>Over 50 Warframes, each with unique abilities, creates extraordinary build diversity. The modding system means two players using the same frame can have entirely different capability profiles.</p></td>
-                                    <td><h6>Visual Noise in Co-op</h6><p>Four players deploying screen-filling ability effects simultaneously creates visual saturation that makes combat parsing nearly impossible €” a known issue that scales directly with squad coordination.</p></td>
+                                    <td><h6>Visual Noise in Co-op</h6><p>Four players deploying screen-filling ability effects simultaneously creates visual saturation that makes combat parsing nearly impossible — a known issue that scales directly with squad coordination.</p></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -1638,7 +1583,7 @@
                 <section class="game-sections" id="ui-ux-weaknesses">
                     <h2>Strengths and Weaknesses Analysis</h2>
                     <p>
-                        A comprehensive evaluation of Warframe's interface paradigm €” examining the tension between a decade of accumulated content depth and the onboarding clarity demanded by a free-to-play game that relies on new player conversion.
+                        A comprehensive evaluation of Warframe's interface paradigm — examining the tension between a decade of accumulated content depth and the onboarding clarity demanded by a free-to-play game that relies on new player conversion.
                     </p>
                     <table style="margin-bottom: 2em;">
                         <thead>
@@ -1656,7 +1601,7 @@
                                         <span class="label">01_MOVEMENT</span>
                                     </div>
                                     <h6>Movement HCI Excellence</h6>
-                                    <p>The bullet-jump movement system is one of the most fluid and physically satisfying in gaming. Its HCI €” stamina-free, momentum-based, expressive €” sets the standard for agile action games.</p>
+                                    <p>The bullet-jump movement system is one of the most fluid and physically satisfying in gaming. Its HCI — stamina-free, momentum-based, expressive — sets the standard for agile action games.</p>
                                 </td>
                                 <td>
                                     <div class="sw-item-head">
@@ -1664,7 +1609,7 @@
                                         <span class="label">01_ONBOARDING</span>
                                     </div>
                                     <h6>Onboarding Failure</h6>
-                                    <p>The new player experience remains the game's defining weakness. Without external wikis or community guidance, most new players cannot progress past the midgame €” a critical HCI failure for a free-to-play title.</p>
+                                    <p>The new player experience remains the game's defining weakness. Without external wikis or community guidance, most new players cannot progress past the midgame — a critical HCI failure for a free-to-play title.</p>
                                 </td>
                             </tr>
                             <tr>
@@ -1700,14 +1645,14 @@
                                         <span class="label">03_ECONOMY</span>
                                     </div>
                                     <h6>Economy Opacity</h6>
-                                    <p>The in-game economy €” platinum, ducats, standing, credits €” involves multiple non-obvious currencies that interact in non-obvious ways. New players routinely make economically suboptimal decisions due to system opacity.</p>
+                                    <p>The in-game economy — platinum, ducats, standing, credits — involves multiple non-obvious currencies that interact in non-obvious ways. New players routinely make economically suboptimal decisions due to system opacity.</p>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                     <div class="footnote summary">
                         <p>
-                            Warframe's HCI is a paradox: the movement and combat systems are among the most fluid and expressive in games, while the meta-game interface €” onboarding, economy, modding €” is among the most opaque. The game thrives despite its interface barriers because its kinetic reward is powerful enough to motivate the discovery effort. Whether that should be considered good HCI or simply survivable HCI is a meaningful design question.
+                            Warframe's HCI is a paradox: the movement and combat systems are among the most fluid and expressive in games, while the meta-game interface — onboarding, economy, modding — is among the most opaque. The game thrives despite its interface barriers because its kinetic reward is powerful enough to motivate the discovery effort. Whether that should be considered good HCI or simply survivable HCI is a meaningful design question.
                         </p>
                     </div>
                 </section>
@@ -1814,7 +1759,7 @@
     const EDITIONS = ["Free-to-Play Base", "Prime Access Packs", "Supporter Packs"];
 
     const DESCRIPTION =
-        "Warframe is a free-to-play action game by Digital Extremes where players control Tenno €” ancient warriors piloting biomechanical Warframe suits €” across a sci-fi solar system. Featuring hyper-kinetic movement, deep modding systems, over 50 unique Warframes, and a decade of live-service content, it is one of the most complex ongoing games in the industry.";
+        "Warframe is a free-to-play action game by Digital Extremes where players control Tenno — ancient warriors piloting biomechanical Warframe suits — across a sci-fi solar system. Featuring hyper-kinetic movement, deep modding systems, over 50 unique Warframes, and a decade of live-service content, it is one of the most complex ongoing games in the industry.";
 
     // Document Variables
     const sectionRadios = Array.from(
