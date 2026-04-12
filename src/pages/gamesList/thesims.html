@@ -1,0 +1,2183 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend:wght@100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Manrope:wght@200..800&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" href="../../styles/styles.css" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="../../styles/sizeChecker.css"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="../../styles/game.css" type="text/css" />
+    <style>
+      nav.game-info-nav {
+        display: flex;
+        overflow-x: auto;
+        white-space: nowrap;
+        scrollbar-width: none;
+      }
+
+      nav.game-info-nav::-webkit-scrollbar {
+        display: none;
+      }
+
+      nav.game-info-nav label {
+        width: calc(100% / 5) !important;
+      }
+
+      .game-sections {
+        display: none;
+        width: 100%;
+
+        &.is-active {
+          display: block;
+        }
+
+        &#short-description {
+          & > h2 {
+            font-weight: 900;
+            font-size: 2.5em;
+          }
+
+          & > p {
+            text-align: justify;
+            margin-bottom: 1em;
+          }
+
+          & > .list-style {
+            list-style: none;
+            float: right;
+            background-color: var(--t-color-base-100);
+            padding: 2em;
+            margin-left: 2em;
+            margin-bottom: 2em;
+            border-radius: var(--t-radius-field);
+            border: var(--t-border) solid var(--t-color-base-300);
+
+            & > li {
+              margin-left: 1em;
+              margin-bottom: 1em;
+              position: relative;
+
+              &::before {
+                content: "";
+                display: block;
+                position: absolute;
+                width: 0.2em;
+                height: 1em;
+                background-color: var(--t-color-primary);
+                border-radius: 1em;
+                left: -0.75em;
+                top: calc(50% - 0.5em);
+              }
+            }
+          }
+        }
+
+        &#ui-components {
+          margin-bottom: 2em;
+
+          & > h2 {
+            font-weight: 900;
+            font-size: 2.5em;
+          }
+
+          & .major-components {
+            display: grid;
+            grid-template-rows: 1fr;
+            grid-template-columns: 50% 1fr;
+            gap: 1em;
+            margin: 2em 0;
+          }
+
+          & .major-component {
+            background-color: var(--t-color-base-100);
+            border-radius: var(--t-radius-field);
+            padding: 1em;
+            height: auto;
+            position: relative;
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+            gap: 1em;
+            min-height: 15em;
+            border: var(--t-border) solid var(--t-color-base-300);
+
+            &:first-child {
+              grid-column: 1 / -1;
+              width: 100%;
+              flex-direction: row;
+            }
+
+            &:not(:first-child) {
+              flex-direction: column;
+            }
+
+            & figure {
+              position: relative;
+              margin-bottom: 0;
+              width: 100%;
+              height: auto;
+
+              & figcaption {
+                font-size: 0.9em;
+                color: var(--t-color-light);
+                margin-top: 0.5em;
+                position: absolute;
+                bottom: 0.5em;
+                right: 0.5em;
+              }
+            }
+
+            & a {
+              flex-shrink: 0;
+              margin-left: auto;
+
+              & img {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 0.25em;
+              }
+            }
+
+            & .count {
+              font-weight: 700;
+              font-size: 1.2em;
+              font-family: var(--bs-font-monospace);
+              color: var(--t-color-secondary);
+              display: block;
+            }
+
+            & .header-text {
+              font-weight: 700;
+              font-size: 2.5em;
+              font-family: var(--bs-font-serif);
+            }
+
+            & ul {
+              list-style: none;
+              margin-left: 1em;
+              margin-top: 2em;
+
+              & h6 {
+                font-weight: 900;
+              }
+
+              & li {
+                margin-left: 1em;
+                margin-bottom: 0.5em;
+                position: relative;
+
+                &::before {
+                  content: "";
+                  display: block;
+                  position: absolute;
+                  width: 0.2em;
+                  height: 1em;
+                  background-color: var(--t-color-primary);
+                  border-radius: 1em;
+                  left: -0.75em;
+                  top: calc(50% - 0.5em);
+                }
+              }
+            }
+          }
+
+          & .fittslaw {
+            display: grid;
+            grid-template-columns: 50% 1fr;
+            gap: 1em;
+
+            & h2 {
+              font-weight: 900;
+              font-size: 2.5em;
+            }
+
+            & figure {
+              position: relative;
+              margin-bottom: 0;
+              width: 100%;
+              height: auto;
+
+              & figcaption {
+                font-size: 0.9em;
+                color: var(--t-color-dark);
+                margin-top: 0.5em;
+                position: absolute;
+                bottom: 0.5em;
+                right: 0.5em;
+              }
+            }
+
+            & a {
+              flex-shrink: 0;
+              margin-left: auto;
+
+              & img {
+                width: 100% !important;
+                height: auto !important;
+                margin-bottom: 1em;
+              }
+            }
+          }
+
+          @media (width < 48rem) {
+            & .fittslaw {
+              grid-template-columns: 1fr;
+            }
+          }
+
+          & .mathmodel {
+            margin: 1em 0;
+            padding: 1em;
+            position: relative;
+            padding-left: 2em;
+            background-color: var(--t-color-base-300);
+            border-radius: var(--t-radius-field);
+            overflow: hidden;
+
+            &::before {
+              content: "";
+              display: block;
+              position: absolute;
+              width: 0.5em;
+              height: 100%;
+              background-color: var(--t-color-primary);
+              left: 0;
+              top: 0;
+            }
+
+            & h6 {
+              font-family: var(--bs-font-monospace);
+              color: var(--t-color-dark);
+              font-weight: 300;
+            }
+
+            & span {
+              font-size: 2em;
+            }
+          }
+
+          @media (width < 48rem) {
+            & .major-components {
+              grid-template-columns: 1fr;
+              gap: 1em;
+            }
+
+            & .major-component {
+              &:first-child {
+                flex-direction: column;
+              }
+
+              & figure {
+                width: 100%;
+
+                & figcaption {
+                  bottom: 1em;
+                }
+              }
+
+              & a {
+                margin-left: 0;
+                width: 100%;
+
+                & img {
+                  width: 100% !important;
+                  height: auto !important;
+                  margin-bottom: 1em;
+                }
+              }
+            }
+          }
+        }
+
+        &#user-interaction {
+          margin-bottom: 2em;
+
+          & > h2 {
+            font-weight: 900;
+            font-size: 2.5em;
+          }
+
+          & h3 {
+            font-weight: 900;
+            font-size: 2.5em;
+          }
+
+          & .multi-modal-feedback {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1em;
+            padding-top: 1em;
+
+            @media (width < 48rem) {
+              grid-template-columns: 1fr !important;
+            }
+
+            & figure {
+              margin: auto;
+              width: 100%;
+              height: auto;
+
+              & img {
+                width: 100% !important;
+                height: auto !important;
+              }
+            }
+          }
+
+          & ul {
+            list-style: none;
+            padding: 0;
+
+            & li {
+              margin-top: 2em;
+              display: flex;
+              flex-direction: row;
+
+              & h6 {
+                font-weight: 700;
+                font-size: 1.5em;
+                margin-bottom: 0.5em;
+              }
+
+              & .logo-svg {
+                height: 5em;
+                flex-shrink: 0;
+                background-color: var(--t-color-secondary);
+                color: var(--t-color-base-100);
+                aspect-ratio: 1 / 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 1em;
+                border-radius: var(--t-radius-field);
+                margin: auto;
+                margin-right: 1em;
+
+                & svg {
+                  width: 100%;
+                  height: 100%;
+                }
+              }
+            }
+          }
+        }
+
+        &#hci-principles {
+          margin-bottom: 2em;
+
+          & > h2 {
+            font-weight: 900;
+            font-size: 2.5em;
+          }
+
+          & .cybernetic-feedback-loops {
+            margin-top: 2em;
+            padding: 1em;
+            border-radius: var(--t-radius-field);
+            background-color: var(--t-color-base-100);
+            border: var(--t-border) solid var(--t-color-base-300);
+
+            & > h3 {
+              font-weight: 900;
+              font-size: 2em;
+            }
+
+            & .cybernetic-content {
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 1em;
+
+              @media (width < 48rem) {
+                grid-template-columns: 1fr !important;
+              }
+
+              & h6 {
+                font-weight: 700;
+                font-size: 1.2em;
+                margin-bottom: 0.5em;
+              }
+
+              & .primary-modalities {
+                list-style: none;
+                padding: 1em;
+                background-color: var(--t-color-base-200);
+                border-radius: var(--t-radius-field);
+                margin-bottom: 0;
+
+                & li {
+                  margin-left: 1em;
+                  margin-bottom: 0.5em;
+                  position: relative;
+
+                  &::before {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    width: 0.2em;
+                    height: 1em;
+                    background-color: var(--t-color-primary);
+                    border-radius: 1em;
+                    left: -0.75em;
+                    top: calc(50% - 0.5em);
+                  }
+                }
+              }
+            }
+          }
+
+          & .spatial-congruence {
+            padding: 1em;
+            margin-top: 2em;
+
+            & h2 {
+              font-weight: 900;
+              font-size: 2.5em;
+            }
+          }
+
+          & .cognitive-load-bifurcation {
+            margin: 2em 0;
+            padding: 1em;
+            border-radius: var(--t-radius-field);
+            background-color: var(--t-color-base-100);
+            border: var(--t-border) solid var(--t-color-base-300);
+
+            & > h2 {
+              font-weight: 900;
+              font-size: 2em;
+            }
+
+            & table {
+              width: 100%;
+              border-collapse: separate;
+              border-spacing: 0;
+              border: var(--t-border) solid var(--t-color-base-300);
+              border-radius: var(--t-radius-field);
+              overflow: hidden;
+              background-color: var(--t-color-base-200);
+            }
+
+            & th,
+            & td {
+              padding: 1em;
+              vertical-align: top;
+            }
+
+            & thead th {
+              font-weight: 800;
+              font-size: 1.05em;
+              background-color: var(--t-color-base-300);
+              border-bottom: 1px solid var(--t-color-base-300);
+            }
+
+            & th + th,
+            & td + td {
+              border-left: 1px solid var(--t-color-base-300);
+            }
+
+            & tbody td {
+              border-bottom: 1px solid var(--t-color-base-300);
+            }
+
+            & tbody tr:last-child td {
+              border-bottom: 0;
+            }
+
+            & td h6 {
+              font-weight: 700;
+              font-size: 1.15em;
+              margin-bottom: 0.5em;
+            }
+
+            & td p {
+              margin-bottom: 0;
+            }
+
+            @media (width < 48rem) {
+              & table,
+              & thead,
+              & tbody,
+              & tr,
+              & th,
+              & td {
+                display: block;
+                width: 100%;
+              }
+
+              & thead {
+                display: none;
+              }
+
+              & tbody tr {
+                border-bottom: 1px solid var(--t-color-base-300);
+                padding: 0.5em;
+              }
+
+              & tbody tr:last-child {
+                border-bottom: 0;
+              }
+
+              & td {
+                border: 0;
+                border-radius: var(--t-radius-field);
+                background-color: var(--t-color-base-100);
+                margin-bottom: 0.75em;
+              }
+
+              & td::before {
+                display: block;
+                font-weight: 700;
+                font-size: 0.85em;
+                text-transform: uppercase;
+                letter-spacing: 0.04em;
+                color: var(--t-color-primary);
+                margin-bottom: 0.5em;
+              }
+
+              & td:nth-child(1)::before {
+                content: "Extrinsic Load";
+              }
+
+              & td:nth-child(2)::before {
+                content: "Intrinsic Focus";
+              }
+            }
+          }
+        }
+
+        &#ui-ux-weaknesses {
+          margin-bottom: 2em;
+
+          & > h2 {
+            font-weight: 900;
+            font-size: 2.5em;
+          }
+
+          & > p {
+            text-align: justify;
+            margin-bottom: 2em;
+          }
+
+          & table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            border: var(--t-border) solid var(--t-color-base-300);
+            border-radius: var(--t-radius-field);
+            overflow: hidden;
+            background-color: var(--t-color-base-100);
+          }
+
+          & th,
+          & td {
+            padding: 1em;
+            vertical-align: top;
+          }
+
+          & td {
+            position: relative;
+            padding-right: 4.25em;
+          }
+
+          & thead th {
+            font-weight: 800;
+            font-size: 1.05em;
+            background-color: var(--t-color-base-300);
+            border-bottom: 1px solid var(--t-color-base-300);
+          }
+
+          & th + th,
+          & td + td {
+            border-left: 1px solid var(--t-color-base-300);
+          }
+
+          & tbody td {
+            border-bottom: 1px solid var(--t-color-base-300);
+          }
+
+          & tbody tr:last-child td {
+            border-bottom: 0;
+          }
+
+          & .badge {
+            font-size: 0.75em;
+            font-weight: 400;
+            border-radius: var(--t-radius-selector);
+            padding: 0.35em 0.75em;
+            margin-left: 0.5em;
+            vertical-align: middle;
+            border: var(--t-border) solid transparent;
+          }
+
+          & .badge-success {
+            background-color: var(--t-color-success);
+            color: color-mix(
+              in oklab,
+              var(--t-color-success-content) 70%,
+              var(--t-color-success)
+            );
+            border-color: color-mix(
+              in oklab,
+              var(--t-color-success) 65%,
+              var(--t-color-dark)
+            );
+          }
+
+          & .badge-danger {
+            background-color: var(--t-color-error);
+            color: color-mix(
+              in oklab,
+              var(--t-color-error-content) 70%,
+              var(--t-color-error)
+            );
+            border-color: color-mix(
+              in oklab,
+              var(--t-color-error) 65%,
+              var(--t-color-dark)
+            );
+          }
+
+          & .sw-item-head {
+            display: block;
+            margin-bottom: 0.75em;
+          }
+
+          & .sw-icon {
+            width: 2.75em;
+            height: 2.75em;
+            color: var(--t-color-base-300);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            position: absolute;
+            top: 0.75em;
+            right: 0.75em;
+          }
+
+          & .sw-icon svg {
+            width: 1.5em;
+            height: 1.5em;
+          }
+
+          & .label {
+            display: inline-block;
+            font-family: var(--bs-font-monospace);
+            font-size: 0.9em;
+            font-weight: 700;
+            color: var(--t-color-secondary);
+            letter-spacing: 0.03em;
+          }
+
+          & td h6 {
+            font-weight: 700;
+            font-size: 1.2em;
+            margin-bottom: 0.5em;
+          }
+
+          & td p {
+            margin-bottom: 0;
+            text-align: justify;
+          }
+
+          @media (width < 48rem) {
+            & table,
+            & thead,
+            & tbody,
+            & tr,
+            & th,
+            & td {
+              display: block;
+              width: 100%;
+            }
+
+            & thead {
+              display: none;
+            }
+
+            & tbody tr {
+              border-bottom: 1px solid var(--t-color-base-300);
+              padding: 0.5em;
+              background-color: var(--t-color-base-200);
+            }
+
+            & tbody tr:last-child {
+              border-bottom: 0;
+            }
+
+            & td {
+              border: 0;
+              border-radius: var(--t-radius-field);
+              background-color: var(--t-color-base-100);
+              margin-bottom: 0.75em;
+            }
+
+            & td::before {
+              display: block;
+              font-weight: 700;
+              font-size: 0.85em;
+              text-transform: uppercase;
+              letter-spacing: 0.04em;
+              margin-bottom: 0.5em;
+            }
+
+            & td:nth-child(1)::before {
+              content: "System Strengths";
+              color: color-mix(
+                in oklab,
+                var(--t-color-success) 70%,
+                var(--t-color-dark)
+              );
+            }
+
+            & td:nth-child(2)::before {
+              content: "System Weaknesses";
+              color: color-mix(
+                in oklab,
+                var(--t-color-error) 70%,
+                var(--t-color-dark)
+              );
+            }
+          }
+        }
+      }
+
+      .list-style-area {
+        margin: 2em 0;
+        width: 100%;
+        background-color: var(--t-color-base-100);
+        border: var(--t-border) solid var(--t-color-base-300);
+        padding: 1em;
+        border-radius: var(--t-radius-field);
+
+        & ol {
+          list-style: none;
+          margin-left: 0;
+          padding-left: 0;
+          margin-top: 2em;
+          display: grid;
+          gap: 1em;
+
+          &.two-columns {
+            grid-template-columns: 1fr 1fr;
+          }
+
+          &.three-columns {
+            grid-template-columns: 1fr 1fr 1fr;
+          }
+
+          &.four-columns {
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+          }
+
+          @media (width < 48rem) {
+            &.md-one-columns {
+              grid-template-columns: 1fr !important;
+            }
+
+            &.md-two-columns {
+              grid-template-columns: 1fr 1fr !important;
+            }
+          }
+
+          & li {
+            position: relative;
+
+            &::before {
+              font-weight: 700;
+              font-size: 5em;
+              font-family: var(--bs-font-monospace);
+              color: var(--t-color-base-200);
+              position: absolute;
+              top: -0.5em;
+            }
+
+            &:nth-child(1)::before {
+              content: "01";
+            }
+
+            &:nth-child(2)::before {
+              content: "02";
+            }
+
+            &:nth-child(3)::before {
+              content: "03";
+            }
+
+            &:nth-child(4)::before {
+              content: "04";
+            }
+
+            @media (width > 48rem) {
+              &::before {
+                left: 0;
+              }
+            }
+
+            @media (width < 48rem) {
+              &::before {
+                right: 0;
+              }
+            }
+
+            & h6 {
+              font-weight: 700;
+              font-size: 1.5em;
+              position: relative;
+
+              &::after {
+                content: "";
+                display: block;
+                width: 100%;
+                height: 1px;
+                background-color: var(--t-color-base-300);
+                margin-top: 0.5em;
+              }
+            }
+          }
+        }
+      }
+
+      .footnote {
+        width: 100%;
+        background-color: rgba(var(--t-color-primary-rgb), 0.1);
+        padding: 2em;
+        border-radius: var(--t-radius-field);
+
+        &::before {
+          content: "Note:";
+          font-weight: 700;
+          font-size: 1.2em;
+          color: var(--t-color-primary);
+          display: block;
+          margin-bottom: 0.5em;
+        }
+
+        &.summary::before {
+          content: "Summary:";
+        }
+      }
+
+      .game-video-wrp {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        overflow: hidden;
+        background-color: var(--t-color-base-300);
+      }
+
+      .game-video-wrp iframe,
+      .game-video-wrp video {
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+
+      .back-to-top {
+        position: fixed;
+        right: 1.25rem;
+        bottom: 1.25rem;
+        width: 3.5rem;
+        height: 3.5rem;
+        z-index: 1001;
+        cursor: pointer;
+        opacity: 0;
+        pointer-events: none;
+        transition:
+          opacity 0.2s ease,
+          transform 0.2s ease;
+        transform: translateY(0.5rem);
+      }
+
+      .back-to-top.is-visible {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+      }
+
+      .back-to-top svg {
+        width: 100%;
+        height: 100%;
+      }
+
+      .back-to-top .btn-progress {
+        transform: rotate(-90deg);
+        transform-origin: center;
+        transition: stroke-dashoffset 0.1s linear;
+      }
+
+      .hidden {
+        display: none !important;
+      }
+    </style>
+
+    <title id="title">The Sims - GameUX</title>
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar navbar-light navbar-expand-lg">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="../../../index.html">
+            <img
+              src="../../../public/gameux.png"
+              alt="Logo"
+              class="navbar-logo"
+            />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon" style="width: 1em"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="../../../index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="../gameList.html">Game List</a>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="../about.html">About</a></li>
+              <li class="nav-item"><a class="nav-link" href="../contact.html">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <nav class="breadcrumb-nav" aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="../gameList.html">Game List</a>
+        </li>
+        <li class="breadcrumb-item active game-name" aria-current="page">The Sims</li>
+      </ol>
+    </nav>
+
+    <main>
+      <article class="wide">
+        <section class="header-section">
+          <img class="game-poster-content game-poster-background-style" />
+          <h1 class="game-name game-name-header">The Sims</h1>
+          <div class="game-header">
+            <span class="game-header-cont">
+              <div class="game-info-bar">
+                <span class="game-date-info">
+                  <span class="date-released">February 4, 2000</span>
+                  <span class="days-ago"></span>
+                </span>
+                <span class="game-badge">Full Release</span>
+                <span class="publisher">Electronic Arts</span>
+              </div>
+            </span>
+            <div class="game-header-rating">
+              <table class="game-critic-rating-cont">
+                <tr>
+                  <td rowspan="2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </td>
+                  <td class="game-critic-rating">0</td>
+                </tr>
+                <tr>
+                  <td class="game-critic-ratings">0 critic ratings</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <div class="video-game-container">
+            <a class="game-poster" id="game-poster">
+              <img
+                class="game-poster-img"
+                id="game-poster-img"
+                alt="The Sims Poster"
+              />
+            </a>
+            <div class="game-video-wrp">
+              <video class="game-video" id="game-video" controls>
+                <source type="video/mp4" id="game-video-source" />
+                Your browser does not support the video tag.
+              </video>
+              <iframe
+                class="game-video"
+                id="game-video-yt"
+                frameborder="0"
+                allowfullscreen
+                hidden
+              ></iframe>
+            </div>
+
+            <div class="game-rating">
+              <table class="game-user-rating-cont">
+                <tr>
+                  <td rowspan="2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </td>
+                  <td class="game-user-rating">0</td>
+                </tr>
+                <tr>
+                  <td class="game-user-ratings">0 user ratings</td>
+                </tr>
+              </table>
+              <table class="game-critic-rating-cont">
+                <tr>
+                  <td rowspan="2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </td>
+                  <td class="game-critic-rating">0</td>
+                </tr>
+                <tr>
+                  <td class="game-critic-ratings">0 critic ratings</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+
+          <ul class="game-list-data">
+            <li class="game-list-data-item">
+              Genres:
+              <ul id="genres"></ul>
+            </li>
+            <li class="game-list-data-item">
+              Platforms:
+              <ul id="platforms"></ul>
+            </li>
+            <li class="game-list-data-item">
+              Editions:
+              <ul id="editions"></ul>
+            </li>
+          </ul>
+          <p class="game-description" id="game-description"></p>
+        </section>
+      </article>
+
+      <div class="game-info-nav-container">
+        <div class="game-info-nav-wrap">
+          <button class="game-info-nav-arrow left" id="game-info-nav-left" type="button" aria-label="Scroll sections left" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="20" height="20">
+              <path fill-rule="evenodd" d="M15.78 19.28a.75.75 0 0 1-1.06 0L8.22 12.78a.75.75 0 0 1 0-1.06l6.5-6.5a.75.75 0 1 1 1.06 1.06L9.81 12l5.97 5.72a.75.75 0 0 1 0 1.56Z" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+          <nav class="game-info-nav" id="game-info-nav" role="tablist">
+            <label role="tab"
+              ><input
+                type="radio"
+                name="game-section"
+                value="short-description"
+                checked="checked"
+              />
+              Overview</label
+            >
+            <label role="tab"
+              ><input type="radio" name="game-section" value="ui-components" />
+              UI Components</label
+            >
+            <label role="tab"
+              ><input
+                type="radio"
+                name="game-section"
+                value="user-interaction"
+              />
+              Interaction</label
+            >
+            <label role="tab"
+              ><input type="radio" name="game-section" value="hci-principles" />
+              HCI Principles</label
+            >
+            <label role="tab"
+              ><input
+                type="radio"
+                name="game-section"
+                value="ui-ux-weaknesses"
+              />
+              Analysis</label
+            >
+          </nav>
+          <button
+            class="game-info-nav-arrow right"
+            id="game-info-nav-right"
+            type="button"
+            aria-label="Scroll sections right"
+            hidden=""
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+              width="20"
+              height="20"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M8.22 4.72a.75.75 0 0 1 1.06 0l6.5 6.5a.75.75 0 0 1 0 1.06l-6.5 6.5a.75.75 0 0 1-1.06-1.06L14.19 12 8.22 6.28a.75.75 0 0 1 0-1.56Z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <article>
+        <div class="game-sections-stage">
+
+          <!-- ==================== OVERVIEW ==================== -->
+          <section
+            class="game-sections is-active"
+            id="short-description"
+            aria-hidden="false"
+          >
+            <h2>Overview</h2>
+            <ul class="list-style">
+              <h2>The Sims Game Modes:</h2>
+              <li>Live Mode (Life Simulation)</li>
+              <li>Buy Mode (Furnishing)</li>
+              <li>Build Mode (Architecture)</li>
+            </ul>
+            <p>
+              The Sims is a life simulation game developed by Maxis and published by Electronic Arts. Released on February 4, 2000, for PC, the game was designed by Will Wright and became the best-selling PC game of all time, selling over 16 million copies worldwide and spawning one of gaming's most successful franchises.
+            </p>
+            <p>
+              The Sims' UI/UX is defined by its three-mode interface architecture — Live Mode, Buy Mode, and Build Mode — each providing a distinct toolset through a shared bottom-panel control bar. The game pioneered accessible simulation interfaces through its icon-driven need bars, pie-menu interaction system, and isometric "dollhouse" camera, making complex life simulation mechanics intuitive for a mainstream audience including a significant non-traditional gaming demographic.
+            </p>
+            <ul class="metrics-list">
+              <li>
+                <h6>Cognitive Load</h6>
+                <div class="value">Moderate</div>
+                <div class="desc">
+                  Simultaneous management of multiple Sims' needs, careers, relationships, and household finances across real-time simulation
+                </div>
+              </li>
+              <li>
+                <h6>Response Time</h6>
+                <div class="value">Non-Critical</div>
+                <div class="desc">
+                  Pausable real-time simulation with three speed settings; no time-critical inputs required for core gameplay
+                </div>
+              </li>
+              <li>
+                <h6>Session Length</h6>
+                <div class="value">30 min – 6+ hours</div>
+                <div class="desc">
+                  Open-ended sandbox design with no win/lose conditions enables highly variable play sessions driven by player-set goals
+                </div>
+              </li>
+            </ul>
+          </section>
+
+          <!-- ==================== UI COMPONENTS ==================== -->
+          <section class="game-sections" id="ui-components" aria-hidden="true">
+            <h2>UI Components</h2>
+            <div class="major-components">
+              <div class="major-component">
+                <figure>
+                  <a
+                    href="https://upload.wikimedia.org/wikipedia/en/4/42/The_Sims_Coverart.png"
+                    title="The Sims Live Mode Interface"
+                    target="images"
+                  >
+                    <img
+                      src="https://upload.wikimedia.org/wikipedia/en/4/42/The_Sims_Coverart.png"
+                      alt="The Sims Live Mode Interface"
+                    />
+                  </a>
+                  <figcaption>FIG 1.1: Live Mode Control Panel</figcaption>
+                </figure>
+                <div>
+                  <span class="count">[ ELEMENT_01 ]</span>
+                  <span class="header-text">The Control Panel</span>
+                  <p>
+                    The Sims' primary interface is the bottom-screen control
+                    panel — a persistent UI bar that houses Sim portraits,
+                    need meters, relationship panels, job information, and
+                    mode-switching buttons. This single panel serves as the
+                    command center for all gameplay, with the selected Sim's
+                    portrait and eight need bars (Hunger, Comfort, Hygiene,
+                    Bladder, Energy, Fun, Social, Room) providing an
+                    at-a-glance life-status dashboard.
+                  </p>
+                  <ul>
+                    <h6>Panel Elements</h6>
+                    <li>Sim Portrait & Selection Thumbnails</li>
+                    <li>Eight Need Bars (color-coded green to red)</li>
+                    <li>Speed Controls (Pause, Play, Fast, Ultra-Fast)</li>
+                    <li>Mode Tabs (Live / Buy / Build)</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="major-component">
+                <figure>
+                  <a
+                    href="https://upload.wikimedia.org/wikipedia/en/4/42/The_Sims_Coverart.png"
+                    title="The Sims Buy & Build Mode"
+                    target="images"
+                  >
+                    <img
+                      src="https://upload.wikimedia.org/wikipedia/en/4/42/The_Sims_Coverart.png"
+                      alt="The Sims Buy Build Mode"
+                    />
+                  </a>
+                  <figcaption>FIG 1.2: Buy Mode Catalog Interface</figcaption>
+                </figure>
+                <div>
+                  <span class="count">[ ELEMENT_02 ]</span>
+                  <span class="header-text">Buy & Build Mode Catalogs</span>
+                  <p>
+                    Buy Mode replaces the control panel with a categorized
+                    object catalog — items organized by room type (Living,
+                    Kitchen, Bedroom, etc.) and function, with prices,
+                    descriptions, and need-fulfillment ratings displayed
+                    on hover. Build Mode provides architectural tools for
+                    walls, floors, roofing, stairs, and terrain, using a
+                    grid-based placement system with snap alignment.
+                  </p>
+                </div>
+              </div>
+              <div class="major-component">
+                <figure>
+                  <a
+                    href="https://upload.wikimedia.org/wikipedia/en/4/42/The_Sims_Coverart.png"
+                    title="The Sims Pie Menu Interaction"
+                    target="images"
+                  >
+                    <img
+                      src="https://upload.wikimedia.org/wikipedia/en/4/42/The_Sims_Coverart.png"
+                      alt="The Sims Pie Menu Interaction System"
+                    />
+                  </a>
+                  <figcaption>FIG 1.3: Pie Menu & Interaction System</figcaption>
+                </figure>
+                <div>
+                  <span class="count">[ ELEMENT_03 ]</span>
+                  <span class="header-text">Pie Menu Interaction</span>
+                  <p>
+                    Clicking on any object or Sim produces a radial pie menu
+                    displaying all available interactions — contextual actions
+                    that change based on the object, the Sim's mood, their
+                    skill levels, and their relationships. This elegant input
+                    method compresses dozens of possible actions into a
+                    single click-and-select gesture, reducing complex
+                    simulation commands to intuitive point-and-click inputs.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <h2>Fitt's Law in Object Interaction</h2>
+            <div class="fittslaw">
+              <div>
+                <p>
+                  Fitt's Law applies to The Sims through its isometric
+                  point-and-click interaction model. Players must select
+                  objects and Sims — whose effective target width (W) is
+                  determined by their sprite size and the current zoom
+                  level — across the screen distance (D) from the cursor's
+                  current position. The isometric perspective compresses
+                  depth, making distant objects appear smaller and harder
+                  to click accurately.
+                </p>
+                <div class="mathmodel">
+                  <h6>[ MATHEMATICAL MODEL ]</h6>
+                  <span>MT = a + b * log<sub>2</sub>(2D/W)</span>
+                </div>
+                <p>
+                  The pie menu is itself a Fitt's Law optimization: by
+                  radiating options outward from the click point, all
+                  menu items maintain equal distance (D) from the cursor
+                  origin, and their angular width (W) remains consistent.
+                  This is measurably faster than linear dropdown menus
+                  where items at the bottom of long lists have
+                  significantly higher D values.
+                </p>
+              </div>
+              <div>
+                <figure>
+                  <a
+                    href="https://upload.wikimedia.org/wikipedia/en/4/42/The_Sims_Coverart.png"
+                    title="The Sims Isometric Gameplay"
+                    target="images"
+                  >
+                    <img
+                      src="https://upload.wikimedia.org/wikipedia/en/4/42/The_Sims_Coverart.png"
+                      alt="The Sims Isometric Interaction"
+                    />
+                  </a>
+                  <figcaption>FIG 1.4: Isometric Object Selection</figcaption>
+                </figure>
+              </div>
+            </div>
+            <div class="list-style-area">
+              <h3 class="text-center">Visual Hierarchy Breakdown</h3>
+              <div class="text-center">Layering of Information</div>
+              <ol class="three-columns md-one-columns">
+                <li>
+                  <h6>Sim Behavior</h6>
+                  <p>
+                    Primary focus. The isometric viewport centers on active
+                    Sim behavior — animations, thought bubbles (showing
+                    desires and reactions), and speech bubbles (Simlish
+                    dialogue with iconic pictograms) communicate Sim state
+                    through the game world itself.
+                  </p>
+                </li>
+                <li>
+                  <h6>Need Status</h6>
+                  <p>
+                    Secondary focus. The eight need bars in the control
+                    panel use a green-to-red color gradient that enables
+                    instant assessment — green bars can be ignored, yellow
+                    demands attention, and red requires immediate action.
+                    This color coding leverages pre-attentive visual
+                    processing for rapid triage.
+                  </p>
+                </li>
+                <li>
+                  <h6>Household Context</h6>
+                  <p>
+                    Tertiary focus. Budget display, time-of-day clock,
+                    career panel, and relationship scores provide
+                    long-term strategic context. These elements are
+                    accessible through panel tabs but don't demand
+                    constant monitoring during moment-to-moment gameplay.
+                  </p>
+                </li>
+              </ol>
+            </div>
+            <div class="footnote">
+              All component analysis is based on The Sims (2000).
+              The game's UI design demonstrates how complex life
+              simulation systems can be made accessible to mainstream
+              audiences through intuitive visual metaphors, color-coded
+              status systems, and the elegant pie menu interaction
+              paradigm that became an industry standard.
+            </div>
+          </section>
+
+          <!-- ==================== INTERACTION ==================== -->
+          <section
+            class="game-sections"
+            id="user-interaction"
+            aria-hidden="true"
+          >
+            <h2>User Interaction</h2>
+            <p>
+              An examination of The Sims' indirect control model and
+              multi-layered simulation feedback systems, analyzing how
+              the game communicates complex AI behavior and need states
+              through visual metaphors, sound design, and the iconic
+              Simlish language.
+            </p>
+            <div class="list-style-area">
+              <h3 class="text-center">Core Gameplay Loop</h3>
+              <div class="text-center"></div>
+              <ol class="four-columns md-two-columns">
+                <li>
+                  <h6>Observe</h6>
+                  <p>
+                    Players monitor their Sims' autonomous behavior,
+                    reading thought bubbles, need bars, and social
+                    interactions to assess current priorities. The
+                    simulation runs continuously, requiring the player
+                    to interpret AI-driven actions.
+                  </p>
+                </li>
+                <li>
+                  <h6>Direct</h6>
+                  <p>
+                    Through click-based commands and pie menus, players
+                    queue actions for Sims — eat, sleep, socialize, study,
+                    go to work. Sims have limited free will and may
+                    resist or modify queued actions based on their mood
+                    and personality traits.
+                  </p>
+                </li>
+                <li>
+                  <h6>Build</h6>
+                  <p>
+                    Players switch to Buy/Build modes to design homes,
+                    purchase objects that satisfy needs, and create
+                    environments that optimize Sim happiness. Object
+                    placement directly affects Sim behavior and pathfinding.
+                  </p>
+                </li>
+                <li>
+                  <h6>Progress</h6>
+                  <p>
+                    Career advancement, skill development, relationship
+                    milestones, and household wealth accumulation provide
+                    long-term progression goals in an otherwise open-ended
+                    sandbox, giving structure without imposing win/lose
+                    conditions.
+                  </p>
+                </li>
+              </ol>
+            </div>
+            <h3>Multi-Modal Feedback Matrix</h3>
+            <div class="multi-modal-feedback">
+              <div>
+                <p>
+                  The Sims communicates complex simulation state through a
+                  richly layered feedback system that combines visual status
+                  indicators, the iconic Simlish language, and environmental
+                  audio cues. Every Sim action generates synchronized
+                  feedback across visual (animations, thought bubbles),
+                  auditory (Simlish speech, object sounds), and systemic
+                  (need bar changes, relationship score shifts) channels.
+                </p>
+              </div>
+              <div>
+                <figure>
+                  <a
+                    href="https://upload.wikimedia.org/wikipedia/en/4/42/The_Sims_Coverart.png"
+                    title="The Sims Feedback Systems"
+                    target="images"
+                  >
+                    <img
+                      src="https://upload.wikimedia.org/wikipedia/en/4/42/The_Sims_Coverart.png"
+                      alt="The Sims Feedback Systems"
+                    />
+                  </a>
+                  <figcaption>FIG 1.5: Sim Behavior & Feedback</figcaption>
+                </figure>
+              </div>
+            </div>
+            <ul>
+              <li>
+                <div class="logo-svg">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25l4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h6>Audio Feedback</h6>
+                  <p>
+                    Simlish — the game's fictional language — is a landmark
+                    in game audio design. By using nonsense syllables with
+                    realistic emotional inflection, it communicates mood,
+                    intent, and social context without requiring
+                    localization. Object interaction sounds (sizzling food,
+                    running water, TV noise) provide ambient confirmation
+                    of queued actions. The jazz-influenced Buy Mode music
+                    and building construction sounds create distinct audio
+                    identities for each game mode.
+                  </p>
+                </div>
+              </li>
+              <li>
+                <div class="logo-svg">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h6>Visual Feedback</h6>
+                  <p>
+                    Thought bubbles with iconic pictograms (a toilet icon
+                    for bladder, a bed for energy, a heart for romance)
+                    communicate Sim desires without text. Speech bubbles
+                    during social interactions display topic icons showing
+                    what Sims are discussing. The green plumbob diamond
+                    above the selected Sim provides instant identification
+                    and mood feedback — shifting from green (happy) to
+                    red (distressed).
+                  </p>
+                </div>
+              </li>
+              <li>
+                <div class="logo-svg">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M7.864 4.243A7.5 7.5 0 0 1 19.5 10.5c0 2.92-.556 5.709-1.568 8.268M5.742 6.364A7.465 7.465 0 0 0 4.5 10.5a7.464 7.464 0 0 1-1.15 3.993m1.989 3.559A11.209 11.209 0 0 0 8.25 10.5a3.75 3.75 0 1 1 7.5 0c0 .527-.021 1.049-.064 1.565M12 10.5a14.94 14.94 0 0 1-3.6 9.75m6.633-4.596a18.666 18.666 0 0 1-2.485 5.33"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h6>Input/Interaction Fidelity</h6>
+                  <p>
+                    The point-and-click interface with pie menu radials
+                    creates a "toy-like" interaction model that matches
+                    the game's "virtual dollhouse" design philosophy.
+                    Drag-and-drop object placement in Buy/Build mode
+                    provides direct manipulation with grid snapping
+                    for precision. The action queue — visible as icons
+                    above the selected Sim — shows pending commands,
+                    allowing players to plan and reorder future actions.
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </section>
+
+          <!-- ==================== HCI PRINCIPLES ==================== -->
+          <section class="game-sections" id="hci-principles" aria-hidden="true">
+            <h2>HCI Principles</h2>
+            <div class="cybernetic-feedback-loops">
+              <h3>Cybernetic Feedback Loops</h3>
+              <div class="cybernetic-content">
+                <div>
+                  <p style="text-align: justify">
+                    The Sims employs a multi-timescale feedback architecture
+                    built on Maslow's hierarchy of needs. The immediate loop
+                    tracks eight need bars that decay in real-time, demanding
+                    constant player triage. The medium-term loop involves
+                    career advancement, skill building, and relationship
+                    development. The long-term loop encompasses household
+                    wealth, family growth, and neighborhood social networks.
+                    Each timescale generates distinct feedback signals that
+                    compete for the player's attention.
+                  </p>
+                </div>
+                <div>
+                  <ul class="primary-modalities">
+                    <h6>Primary Modalities</h6>
+                    <li>
+                      <strong>Visual</strong>: Need bar color gradient (green/yellow/red), thought bubble pictograms, plumbob mood indicator, action queue icons, Sim animations
+                    </li>
+                    <li>
+                      <strong>Auditory</strong>: Simlish emotional speech, object interaction sounds, mode-specific background music, notification chimes for events
+                    </li>
+                    <li>
+                      <strong>Structural</strong>: Three-mode interface (Live/Buy/Build), pie menu interaction, speed controls, career track progression, relationship scoring
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="spatial-congruence">
+              <h2>Spatial Congruence</h2>
+              <p style="text-align: justify">
+                The Sims achieves spatial congruence through its isometric
+                "dollhouse" perspective — a top-down angled view that mirrors
+                the physical act of looking into a dollhouse or architectural
+                model. Wall-cutting tools allow players to remove upper
+                floors and walls, reinforcing the metaphor of peering into
+                a miniature world. Object placement uses a grid system that
+                maps directly to the visual floor tiles, creating a 1:1
+                correspondence between the interaction grid and the visible
+                environment. The pie menu appears at the exact screen
+                position of the clicked object, maintaining spatial
+                association between the action source and the interaction
+                options.
+              </p>
+            </div>
+            <div class="cognitive-load-bifurcation">
+              <h2>Cognitive Load Bifurcation</h2>
+              <p style="text-align: justify; margin-bottom: 2em">
+                The Sims manages cognitive load through its modal interface
+                separation. Live Mode isolates simulation management from
+                construction decisions. Buy/Build Modes pause the simulation,
+                eliminating time pressure during design tasks. This modal
+                bifurcation allows players to focus on one cognitive
+                domain at a time rather than juggling all systems
+                simultaneously.
+              </p>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Extrinsic Organization</th>
+                    <th>Intrinsic Focus</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <h6>Color-Coded Need Bars</h6>
+                      <p>
+                        The green-to-red gradient across eight need bars
+                        enables instant prioritization through pre-attentive
+                        color processing. Players scan the bar cluster in
+                        milliseconds to identify which needs are critical,
+                        eliminating the need to read numerical values.
+                      </p>
+                    </td>
+                    <td>
+                      <h6>Multi-Sim Triage</h6>
+                      <p>
+                        Managing multiple Sims with competing needs, social
+                        obligations, and career schedules creates complex
+                        prioritization challenges. Players must mentally
+                        model each Sim's schedule and anticipate need
+                        decay rates to prevent cascading failures.
+                      </p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <h6>Modal Separation</h6>
+                      <p>
+                        The Live/Buy/Build mode system cleanly separates
+                        simulation management from construction tasks.
+                        Buy and Build modes pause time, allowing focused,
+                        unpressured design decisions without the cognitive
+                        overhead of running needs.
+                      </p>
+                    </td>
+                    <td>
+                      <h6>Architectural Optimization</h6>
+                      <p>
+                        Designing efficient homes requires understanding
+                        how room layout affects Sim pathfinding, how object
+                        placement satisfies the Room need score, and how
+                        budget constraints interact with need-fulfillment
+                        priorities — a spatial reasoning challenge.
+                      </p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="footnote">
+              <q>
+                The Sims' interface is not a control system — it is a
+                window into a miniature world. Its design proves that
+                complex life simulation can be made universally accessible
+                through intuitive visual metaphors, modal separation,
+                and the radical insight that a fictional language can
+                communicate more than real words ever could.
+              </q>
+            </div>
+          </section>
+
+          <!-- ==================== ANALYSIS ==================== -->
+          <section
+            class="game-sections"
+            id="ui-ux-weaknesses"
+            aria-hidden="true"
+          >
+            <h2>Strengths and Weaknesses Analysis</h2>
+            <p>
+              A comprehensive evaluation of The Sims' life simulation
+              interface paradigm. Examining how the game democratized
+              complex simulation through accessible UI design, while
+              identifying the limitations of its indirect control model
+              and information architecture for managing multi-Sim
+              households.
+            </p>
+
+            <table style="margin-bottom: 2em">
+              <thead>
+                <tr>
+                  <th>
+                    System Strengths
+                    <span class="badge badge-success">Positive_Vectors</span>
+                  </th>
+                  <th>
+                    System Weaknesses
+                    <span class="badge badge-danger">Negative_Vectors</span>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="sw-item-head">
+                      <span class="sw-icon" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"></path>
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7Z"></path>
+                        </svg>
+                      </span>
+                      <span class="label">01_ACCESSIBILITY</span>
+                    </div>
+                    <h6>Universal Interface Accessibility</h6>
+                    <p>
+                      The Sims' point-and-click pie menu interface made
+                      complex simulation accessible to an audience that
+                      had never played video games — nearly 60% of players
+                      were female, unprecedented for 2000. The visual
+                      metaphor of a "virtual dollhouse" provided an
+                      instantly understood interaction paradigm that
+                      required no gaming literacy.
+                    </p>
+                  </td>
+                  <td>
+                    <div class="sw-item-head">
+                      <span class="sw-icon" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75M6.75 10.5h10.5A2.25 2.25 0 0 1 19.5 12.75v6A2.25 2.25 0 0 1 17.25 21H6.75A2.25 2.25 0 0 1 4.5 18.75v-6A2.25 2.25 0 0 1 6.75 10.5Z"></path>
+                        </svg>
+                      </span>
+                      <span class="label">01_NEED_MANAGEMENT</span>
+                    </div>
+                    <h6>Tedious Need Micromanagement</h6>
+                    <p>
+                      The eight constantly decaying need bars create
+                      relentless micromanagement pressure. Sims' limited
+                      AI means they often fail to autonomously address
+                      critical needs, forcing the player into repetitive
+                      eat-sleep-toilet cycles that can dominate gameplay
+                      and crowd out higher-level goals like career
+                      advancement or relationship building.
+                    </p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="sw-item-head">
+                      <span class="sw-icon" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25l4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z"></path>
+                        </svg>
+                      </span>
+                      <span class="label">02_SIMLISH</span>
+                    </div>
+                    <h6>Simlish Communication Design</h6>
+                    <p>
+                      The Simlish language is a masterclass in non-verbal
+                      game communication. By combining emotional vocal
+                      inflection with pictographic thought bubbles, the
+                      game conveys complex social and emotional states
+                      without text, eliminating localization barriers and
+                      creating one of gaming's most iconic and universally
+                      recognized audio identities.
+                    </p>
+                  </td>
+                  <td>
+                    <div class="sw-item-head">
+                      <span class="sw-icon" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v4.5m0 3.75h.008v.008H12v-.008ZM10.29 3.86l-7.5 13A1.5 1.5 0 0 0 4.09 19h15.82a1.5 1.5 0 0 0 1.3-2.14l-7.5-13a1.5 1.5 0 0 0-2.6 0Z"></path>
+                        </svg>
+                      </span>
+                      <span class="label">02_PATHFINDING</span>
+                    </div>
+                    <h6>AI Pathfinding Failures</h6>
+                    <p>
+                      Sims frequently get stuck on furniture, block each
+                      other in narrow hallways, and fail to navigate
+                      around obstacles — often refusing to complete queued
+                      actions due to pathfinding failures. The UI provides
+                      no clear feedback explaining why an action was
+                      cancelled, leaving players to diagnose spatial layout
+                      problems through trial and error.
+                    </p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="sw-item-head">
+                      <span class="sw-icon" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09Z"></path>
+                        </svg>
+                      </span>
+                      <span class="label">03_MODDING_UX</span>
+                    </div>
+                    <h6>Extensible Content Architecture</h6>
+                    <p>
+                      The Sims was designed from the ground up for user
+                      modification. Custom content tools were released
+                      before the game itself, and the straightforward
+                      file structure enables easy addition of skins,
+                      objects, and wallpapers. This opened the game to a
+                      massive creative community and extended its lifespan
+                      far beyond typical simulation games.
+                    </p>
+                  </td>
+                  <td>
+                    <div class="sw-item-head">
+                      <span class="sw-icon" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M3.98 8.223A10.477 10.477 0 0 0 1.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.451 10.451 0 0 1 12 4.5c4.756 0 8.773 3.162 10.065 7.498a10.522 10.522 0 0 1-4.293 5.774M6.228 6.228 3 3m3.228 3.228 3.65 3.65m7.894 7.894L21 21m-3.228-3.228-3.65-3.65m0 0a3 3 0 1 0-4.243-4.243m4.242 4.242L9.88 9.88"></path>
+                        </svg>
+                      </span>
+                      <span class="label">03_CAMERA_LIMITS</span>
+                    </div>
+                    <h6>Limited Camera Control</h6>
+                    <p>
+                      The fixed isometric perspective with only four
+                      rotation angles restricts the player's ability to
+                      view and interact with complex multi-story homes.
+                      Objects behind walls or on upper floors can be
+                      difficult to select, and the wall-cutting tool
+                      is a workaround rather than a solution for
+                      the fundamental limitation of the dimetric
+                      projection system.
+                    </p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="footnote summary">
+              <p>
+                The Sims represents a watershed moment in simulation
+                interface design — a system built on the radical premise
+                that
+                <u>complex life simulation should be as intuitive as
+                playing with a dollhouse</u>. While its strengths lie in
+                universal accessibility, the iconic Simlish communication
+                system, and a modding-friendly content architecture, its
+                weaknesses reveal the friction between realistic life
+                simulation and enjoyable gameplay management. The system's
+                greatest achievement is proving that game interfaces can
+                transcend the gaming audience entirely — reaching millions
+                of players who had never touched a video game before.
+              </p>
+            </div>
+          </section>
+        </div>
+      </article>
+    </main>
+
+    <footer>
+        <h6>GameUX Atlas</h6>
+        <ul class="socials">
+            <li>
+                <a href="https://www.facebook.com/profile.php?id=61575774944293" class="social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987H7.898v-2.89h2.54V9.845c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/>
+                    </svg>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/gameux_atlas/" class="social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                </a>
+            </li>
+            <li>
+                <a href="https://x.com/GameUX_Atlas?s=20" class="social-link" aria-label="Twitter / X" target="_blank" rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.261 5.635 5.903-5.635zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+        <div class="footer-info">
+            <span>&copy; Group 5</span>
+            <span>CIP 1101</span>
+            <span>2026</span>
+            <span>GameUX Atlas</span>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top" title="Back to top">
+        <svg viewBox="0 0 56 56" width="56" height="56" aria-hidden="true" focusable="false">
+            <circle class="btn-bg" cx="28" cy="28" r="27"></circle>
+            <circle class="btn-progress-track" cx="28" cy="28" r="22"></circle>
+            <circle class="btn-progress" id="back-to-top-progress" cx="28" cy="28" r="22"></circle>
+            <path class="btn-icon" d="M28 36V20"></path>
+            <path class="btn-icon" d="M21.5 26.5L28 20l6.5 6.5"></path>
+        </svg>
+    </button>
+
+    <script>
+      // VARIABLES
+      const GAMENAME = "The Sims";
+      const DATERELEASED = "02/04/2000";
+      const PUBLISHER = "Electronic Arts";
+      const BADGE = "Full Release";
+      const POSTERURL = "https://upload.wikimedia.org/wikipedia/en/4/42/The_Sims_Coverart.png";
+      const POSTERALTTEXT = "The Sims Poster";
+      const VIDEOURL = "";
+      const VIDEOURLYT =
+        "https://www.youtube.com/embed/kDNBBvF4xzU";
+      const YTVID = true;
+
+      const GAMEUSERSTARS = "9.2";
+      const GAMEUSERRATINGS = "16,000,000+";
+
+      const HASCRITICS = true;
+      const GAMECRITICSTARS = "9.2";
+      const GAMECRITICRATINGS = "85";
+
+      const GENRES = ["Life Simulation", "Strategy", "Sandbox"];
+      const PLATFORMS = ["PC", "Mac"];
+      const EDITIONS = ["Standard Edition", "Deluxe Edition", "Complete Collection"];
+
+      const DESCRIPTION = "The Sims is a life simulation game developed by Maxis and published by Electronic Arts. Players create and control virtual people called Sims, managing their daily lives, building homes, developing careers, and fostering relationships in an open-ended sandbox. Designed by Will Wright, it became the best-selling PC game of all time and spawned one of gamings most successful franchises.";
+        "The Sims is a life simulation game developed by Maxis and published by Electronic Arts. Players create and control virtual people called Sims, managing their daily lives, building homes, developing careers, and fostering relationships in an open-ended sandbox. Designed by Will Wright, it became the best-selling PC game of all time and spawned one of gaming\u2019s most successful franchises.";
+
+      // -- Document Variables --
+      const sectionRadios = Array.from(
+        document.querySelectorAll('input[name="game-section"]'),
+      );
+      const gameSections = Array.from(
+        document.querySelectorAll(".game-sections"),
+      );
+      const gameInfoNav = document.getElementById("game-info-nav");
+      const gameInfoNavLeft = document.getElementById("game-info-nav-left");
+      const gameInfoNavRight = document.getElementById("game-info-nav-right");
+      const backToTopButton = document.getElementById("back-to-top");
+      const backToTopProgress = document.getElementById("back-to-top-progress");
+
+      // -- Implementation --
+      document.getElementById("title").textContent = GAMENAME + " - GameUX";
+      for (let el of document.getElementsByClassName("game-name")) {
+        el.textContent = GAMENAME;
+      }
+      for (let el of document.getElementsByClassName("date-released")) {
+        el.textContent = DATERELEASED;
+      }
+      for (let el of document.getElementsByClassName("publisher")) {
+        el.textContent = PUBLISHER;
+      }
+      for (let el of document.getElementsByClassName("game-badge")) {
+        el.textContent = BADGE;
+      }
+      for (let el of document.getElementsByClassName("game-user-rating")) {
+        el.textContent = GAMEUSERSTARS;
+      }
+      for (let el of document.getElementsByClassName("game-user-ratings")) {
+        el.textContent = GAMEUSERRATINGS + " user ratings";
+      }
+      for (let el of document.getElementsByClassName("game-critic-rating")) {
+        el.textContent = GAMECRITICSTARS;
+      }
+      for (let el of document.getElementsByClassName("game-critic-ratings")) {
+        el.textContent = GAMECRITICRATINGS + " critic ratings";
+      }
+      for (let el of document.getElementsByClassName("game-poster-content")) {
+        el.src = POSTERURL;
+      }
+      document.getElementById("game-poster-img").src = POSTERURL;
+      document.getElementById("game-poster-img").title =
+        GAMENAME + " Game Poster";
+      document.getElementById("game-poster").href = POSTERURL;
+      document.getElementById("game-description").textContent = DESCRIPTION;
+      document.getElementById("game-poster-img").alt = POSTERALTTEXT;
+
+      // Video / YouTube Toggle Logic
+      const videoEl = document.getElementById("game-video");
+      const videoSourceEl = document.getElementById("game-video-source");
+      const ytEl = document.getElementById("game-video-yt");
+      if (YTVID) {
+        if (ytEl) {
+          ytEl.src = VIDEOURLYT;
+          ytEl.hidden = false;
+        }
+        if (videoEl) {
+          videoEl.hidden = true;
+          try {
+            videoEl.pause();
+          } catch (e) {}
+        }
+      } else {
+        if (videoSourceEl) {
+          videoSourceEl.src = VIDEOURL;
+        }
+        if (videoEl) {
+          videoEl.hidden = false;
+          try {
+            videoEl.load();
+          } catch (e) {}
+        }
+        if (ytEl) {
+          ytEl.hidden = true;
+          ytEl.src = "";
+        }
+      }
+
+      // Lists
+      for (let genre of GENRES) {
+        let li = document.createElement("li");
+        li.textContent = genre;
+        document.getElementById("genres").appendChild(li);
+      }
+
+      for (let platform of PLATFORMS) {
+        let li = document.createElement("li");
+        li.textContent = platform;
+        document.getElementById("platforms").appendChild(li);
+      }
+
+      for (let edition of EDITIONS) {
+        let li = document.createElement("li");
+        li.textContent = edition;
+        document.getElementById("editions").appendChild(li);
+      }
+
+      // Critic Visibility
+      if (!HASCRITICS) {
+        for (let el of document.getElementsByClassName(
+          "game-critic-rating-cont",
+        )) {
+          el.classList.add("hidden");
+        }
+      }
+
+      // Days/Years Calculation
+      let timeDiff = new Date().getTime() - new Date(DATERELEASED).getTime();
+      let daysAgo = Math.floor(timeDiff / (1000 * 3600 * 24));
+      if (daysAgo > 365) {
+        let yearsAgo = Math.floor(daysAgo / 365);
+        for (let el of document.getElementsByClassName("days-ago")) {
+          el.textContent = "(" + yearsAgo + "" + (yearsAgo === 1 ? " year ago)" : " years ago)");
+        }
+      } else {
+        for (let el of document.getElementsByClassName("days-ago")) {
+          el.textContent = "(" + daysAgo + "" + (daysAgo === 1 ? " day ago)" : " days ago)");
+        }
+      }
+
+      // Section Navigation
+      function getSectionIdFromHash() {
+        const rawHash = window.location.hash || "";
+        const hash = rawHash.startsWith("#") ? rawHash.slice(1) : rawHash;
+        if (!hash) { return null; }
+        return gameSections.some((section) => section.id === hash) ? hash : null;
+      }
+
+      function syncSectionFromHash() {
+        const hashSectionId = getSectionIdFromHash();
+        if (!hashSectionId) { return false; }
+        const matchingRadio = sectionRadios.find((radio) => radio.value === hashSectionId);
+        if (matchingRadio) { matchingRadio.checked = true; }
+        showGameSection(hashSectionId);
+        return true;
+      }
+
+      function showGameSection(sectionId) {
+        for (let section of gameSections) {
+          let isActive = section.id === sectionId;
+          section.classList.toggle("is-active", isActive);
+          section.setAttribute("aria-hidden", String(!isActive));
+        }
+      }
+
+      const defaultSection = document.querySelector(
+        'input[name="game-section"]:checked',
+      );
+      showGameSection(
+        defaultSection ? defaultSection.value : "short-description",
+      );
+
+      for (let radio of sectionRadios) {
+        radio.addEventListener("change", () => {
+          if (!radio.checked) {
+            return;
+          }
+          showGameSection(radio.value);
+        });
+      }
+
+      // Scroll Navigation Arrows
+      function updateGameInfoNavArrows() {
+        if (!gameInfoNav || !gameInfoNavLeft || !gameInfoNavRight) {
+          return;
+        }
+
+        const maxScrollLeft = gameInfoNav.scrollWidth - gameInfoNav.clientWidth;
+        const canScroll = maxScrollLeft > 1;
+        const canScrollLeft = canScroll && gameInfoNav.scrollLeft > 1;
+        const canScrollRight =
+          canScroll && gameInfoNav.scrollLeft < maxScrollLeft - 1;
+
+        gameInfoNavLeft.hidden = !canScrollLeft;
+        gameInfoNavRight.hidden = !canScrollRight;
+      }
+
+      function scrollGameInfoNavBy(distance) {
+        if (!gameInfoNav) {
+          return;
+        }
+        gameInfoNav.scrollBy({ left: distance, behavior: "smooth" });
+      }
+
+      if (gameInfoNav && gameInfoNavLeft && gameInfoNavRight) {
+        gameInfoNav.addEventListener("scroll", updateGameInfoNavArrows);
+        gameInfoNavLeft.addEventListener("click", () => {
+          scrollGameInfoNavBy(
+            -Math.max(200, Math.floor(gameInfoNav.clientWidth * 0.5)),
+          );
+        });
+        gameInfoNavRight.addEventListener("click", () => {
+          scrollGameInfoNavBy(
+            Math.max(200, Math.floor(gameInfoNav.clientWidth * 0.5)),
+          );
+        });
+        window.addEventListener("resize", updateGameInfoNavArrows);
+        updateGameInfoNavArrows();
+      }
+      // Back-to-top button with circular scroll progress
+      const progressRadius = 22;
+      const progressCircumference = 2 * Math.PI * progressRadius;
+
+      if (backToTopProgress) {
+        backToTopProgress.style.strokeDasharray = String(progressCircumference);
+        backToTopProgress.style.strokeDashoffset = String(progressCircumference);
+      }
+
+      function updateBackToTop() {
+        if (!backToTopButton || !backToTopProgress) { return; }
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = scrollableHeight > 0 ? Math.min(scrollTop / scrollableHeight, 1) : 0;
+        const dashOffset = progressCircumference * (1 - progress);
+        backToTopProgress.style.strokeDashoffset = String(dashOffset);
+        backToTopButton.classList.toggle("is-visible", scrollTop > 160);
+      }
+
+      if (backToTopButton) {
+        backToTopButton.addEventListener("click", () => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+      }
+
+      window.addEventListener("scroll", updateBackToTop, { passive: true });
+      window.addEventListener("resize", updateBackToTop);
+      updateBackToTop();
+    </script>
+  </body>
+</html>
