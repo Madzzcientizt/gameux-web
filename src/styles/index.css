@@ -523,7 +523,6 @@
 
 .carousel-page-label {
     font-family: var(--bs-font-monospace);
-    font-size: 0.72rem;
     font-weight: 600;
     letter-spacing: 0.06em;
     color: var(--t-color-base-content);
@@ -532,9 +531,9 @@
 }
 
 .featured-read-more {
-    font-size: 0.875rem;
     color: var(--t-color-primary);
     font-weight: 600;
+    font-size: 1.5em;
     letter-spacing: 0.04em;
     text-decoration: none;
     transition: opacity 0.2s;
@@ -544,6 +543,29 @@
 
 .featured-read-more:hover {
     opacity: 0.65;
+}
+
+.featured-carousel {
+    position: relative;
+    margin-top: 0.5rem;
+}
+
+.featured-carousel .carousel-inner {
+    overflow: hidden;
+}
+
+.featured-carousel .carousel-item {
+    padding: 0.25rem 0.1rem 0.4rem;
+}
+
+.featured-carousel-grid {
+    align-items: stretch;
+}
+
+.featured-carousel-pagination-wrap {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
 }
 
 /* grid — default 4 columns */
@@ -569,13 +591,10 @@
 }
 
 .game-card:hover {
-    transform: translateY(-6px) scale(1.02);
-    box-shadow: 0 20px 48px rgba(0,0,0,0.22);
     color: inherit;
     text-decoration: none;
 }
 
-/* portrait cover fills the full card */
 .game-card-img {
     position: absolute;
     inset: 0;
@@ -584,7 +603,6 @@
     overflow: hidden;
 }
 
-/* CSS placeholder when image is missing */
 .game-card-img::before {
     content: '';
     position: absolute;
@@ -621,10 +639,6 @@
     transition: transform 0.4s ease;
 }
 
-.game-card:hover .game-card-img-cover {
-    transform: scale(1.06);
-}
-
 /* overlay: title + genre stacked at the bottom — like 7 Days to Die card */
 .game-card-body {
     position: absolute;
@@ -634,7 +648,7 @@
     flex-direction: column;
     justify-content: flex-end;
     padding: 0;
-    background-color: color-mix(in oklab, var(--t-color-base-content) 70%, transparent);
+    background: linear-gradient(180deg, transparent 70%, color-mix(in oklab, var(--t-color-neutral) 90%, transparent) 100%);
 }
 
 .game-card-top {

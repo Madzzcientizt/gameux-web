@@ -328,7 +328,6 @@
             <!-- the game carousel -->
             <section class="featured-section" id="featured">
                 <div class="featured-card">
-
                     <!-- header: title on the left, page counter and link on the right -->
                     <div class="featured-header">
                         <div>
@@ -337,209 +336,262 @@
                             <div class="featured-subtitle">Games analyzed by the group — CIP 1101</div>
                         </div>
                         <div class="featured-header-right">
-                            <span class="carousel-page-label" id="carouselPageLabel">Page 1 of 4</span>
+                            <span class="carousel-page-label" id="carouselPageLabel">Page 1 of 3</span>
                             <a href="./src/pages/gameList.html" class="featured-read-more">View All Games</a>
                         </div>
                     </div>
 
-                    <!-- JS hides cards not on current page — Top 10 by score -->
-                    <div class="carousel-track" id="carouselTrack">
+                    <div id="featuredCarousel" class="carousel slide featured-carousel" data-bs-interval="false"
+                        data-bs-touch="true" data-bs-wrap="true">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div
+                                    class="row row-cols-1 row-cols-md-2 row-cols-xl-4 g-3 g-xl-4 featured-carousel-grid">
+                                    <div class="col">
+                                        <a class="game-card" href="./src/pages/gamesList/osu.html">
+                                            <div class="game-card-img">
+                                                <img src="./public/posters/osu_poster.jpg"
+                                                    alt="osu!" class="game-card-img-cover"
+                                                    onerror="this.style.display='none'">
+                                            </div>
+                                            <div class="game-card-body">
+                                                <div class="game-card-top">
+                                                    <div class="game-card-title">osu!</div>
+                                                </div>
+                                                <div class="game-card-bottom">
+                                                    <div class="game-card-genre">RHYTHM</div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col">
+                                        <a class="game-card" href="./src/pages/gamesList/residentEvil4.html">
+                                            <div class="game-card-img">
+                                                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/2050650/library_600x900.jpg"
+                                                    alt="Resident Evil 4 Remake" class="game-card-img-cover"
+                                                    onerror="this.style.display='none'">
+                                            </div>
+                                            <div class="game-card-body">
+                                                <div class="game-card-top">
+                                                    <div class="game-card-title">Resident Evil 4</div>
+                                                </div>
+                                                <div class="game-card-bottom">
+                                                    <div class="game-card-genre">SURVIVAL HORROR</div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col">
+                                        <a class="game-card" href="./src/pages/gamesList/geometryDash.html">
+                                            <div class="game-card-img">
+                                                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/322170/library_600x900.jpg"
+                                                    alt="Geometry Dash" class="game-card-img-cover"
+                                                    onerror="this.style.display='none'">
+                                            </div>
+                                            <div class="game-card-body">
+                                                <div class="game-card-top">
+                                                    <div class="game-card-title">Geometry Dash</div>
+                                                </div>
+                                                <div class="game-card-bottom">
+                                                    <div class="game-card-genre">RHYTHM PLATFORMER</div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col">
+                                        <a class="game-card" href="./src/pages/gamesList/ghostOfTsushima.html">
+                                            <div class="game-card-img">
+                                                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/2215430/library_600x900.jpg"
+                                                    alt="Ghost of Tsushima" class="game-card-img-cover"
+                                                    onerror="this.style.display='none'">
+                                            </div>
+                                            <div class="game-card-body">
+                                                <div class="game-card-top">
+                                                    <div class="game-card-title">Ghost of Tsushima</div>
+                                                </div>
+                                                <div class="game-card-bottom">
+                                                    <div class="game-card-genre">ACTION-ADVENTURE</div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
 
-                        <!-- #1 Elden Ring 9.4 -->
-                        <a class="game-card" href="./src/pages/gamesList/eldenRing.html">
-                            <div class="game-card-img">
-                                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1245620/library_600x900.jpg"
-                                    alt="Elden Ring" class="game-card-img-cover" onerror="this.style.display='none'">
-                            </div>
-                            <div class="game-card-body">
-                                <div class="game-card-top">
-                                    <div class="game-card-title">Elden Ring</div>
+                            <div class="carousel-item">
+                                <div
+                                    class="row row-cols-1 row-cols-md-2 row-cols-xl-4 g-3 g-xl-4 featured-carousel-grid">
+                                    <div class="col">
+                                        <a class="game-card" href="./src/pages/gamesList/warframe.html">
+                                            <div class="game-card-img">
+                                                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/230410/library_600x900.jpg"
+                                                    alt="Warframe" class="game-card-img-cover"
+                                                    onerror="this.style.display='none'">
+                                            </div>
+                                            <div class="game-card-body">
+                                                <div class="game-card-top">
+                                                    <div class="game-card-title">Warframe</div>
+                                                </div>
+                                                <div class="game-card-bottom">
+                                                    <div class="game-card-genre">LOOTER SHOOTER</div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col">
+                                        <a class="game-card" href="./src/pages/gamesList/assassinsCreedBlackFlag.html">
+                                            <div class="game-card-img">
+                                                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/242050/library_600x900.jpg"
+                                                    alt="Assassin's Creed IV: Black Flag" class="game-card-img-cover"
+                                                    onerror="this.style.display='none'">
+                                            </div>
+                                            <div class="game-card-body">
+                                                <div class="game-card-top">
+                                                    <div class="game-card-title">AC: Black Flag</div>
+                                                </div>
+                                                <div class="game-card-bottom">
+                                                    <div class="game-card-genre">ACTION-ADVENTURE</div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col">
+                                        <a class="game-card" href="./src/pages/gamesList/dyingLight.html">
+                                            <div class="game-card-img">
+                                                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/239140/library_600x900.jpg"
+                                                    alt="Dying Light" class="game-card-img-cover"
+                                                    onerror="this.style.display='none'">
+                                            </div>
+                                            <div class="game-card-body">
+                                                <div class="game-card-top">
+                                                    <div class="game-card-title">Dying Light</div>
+                                                </div>
+                                                <div class="game-card-bottom">
+                                                    <div class="game-card-genre">SURVIVAL HORROR</div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col">
+                                        <a class="game-card" href="./src/pages/gamesList/liesOfPi.html">
+                                            <div class="game-card-img">
+                                                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1627720/library_600x900.jpg"
+                                                    alt="Lies of P" class="game-card-img-cover"
+                                                    onerror="this.style.display='none'">
+                                            </div>
+                                            <div class="game-card-body">
+                                                <div class="game-card-top">
+                                                    <div class="game-card-title">Lies of P</div>
+                                                </div>
+                                                <div class="game-card-bottom">
+                                                    <div class="game-card-genre">SOULSLIKE RPG</div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
                                 </div>
-                                <div class="game-card-bottom">
-                                    <div class="game-card-genre">ACTION RPG</div>
-                                </div>
                             </div>
-                        </a>
 
-                        <!-- #2 Resident Evil 4 9.3 -->
-                        <a class="game-card" href="./src/pages/gamesList/residentEvil4.html">
-                            <div class="game-card-img">
-                                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/2050650/library_600x900.jpg"
-                                    alt="Resident Evil 4 Remake" class="game-card-img-cover"
-                                    onerror="this.style.display='none'">
-                            </div>
-                            <div class="game-card-body">
-                                <div class="game-card-top">
-                                    <div class="game-card-title">Resident Evil 4</div>
+                            <div class="carousel-item">
+                                <div
+                                    class="row row-cols-1 row-cols-md-2 row-cols-xl-4 g-3 g-xl-4 featured-carousel-grid">
+                                    <div class="col">
+                                        <a class="game-card" href="./src/pages/gamesList/cyberPunk.html">
+                                            <div class="game-card-img">
+                                                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1091500/library_600x900.jpg"
+                                                    alt="Cyberpunk 2077" class="game-card-img-cover"
+                                                    onerror="this.style.display='none'">
+                                            </div>
+                                            <div class="game-card-body">
+                                                <div class="game-card-top">
+                                                    <div class="game-card-title">Cyberpunk 2077</div>
+                                                </div>
+                                                <div class="game-card-bottom">
+                                                    <div class="game-card-genre">OPEN WORLD RPG</div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col">
+                                        <a class="game-card" href="./src/pages/gamesList/needForSpeed.html">
+                                            <div class="game-card-img">
+                                                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1222680/library_600x900.jpg"
+                                                    alt="Need for Speed Heat" class="game-card-img-cover"
+                                                    onerror="this.style.display='none'">
+                                            </div>
+                                            <div class="game-card-body">
+                                                <div class="game-card-top">
+                                                    <div class="game-card-title">Need for Speed Heat</div>
+                                                </div>
+                                                <div class="game-card-bottom">
+                                                    <div class="game-card-genre">RACING</div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col">
+                                        <a class="game-card" href="./src/pages/gamesList/sekiro.html">
+                                            <div class="game-card-img">
+                                                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/814380/library_600x900.jpg"
+                                                    alt="Sekiro: Shadows Die Twice" class="game-card-img-cover"
+                                                    onerror="this.style.display='none'">
+                                            </div>
+                                            <div class="game-card-body">
+                                                <div class="game-card-top">
+                                                    <div class="game-card-title">Sekiro</div>
+                                                </div>
+                                                <div class="game-card-bottom">
+                                                    <div class="game-card-genre">ACTION RPG</div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col">
+                                        <a class="game-card" href="./src/pages/gamesList/stardewValley.html">
+                                            <div class="game-card-img">
+                                                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/413150/library_600x900.jpg"
+                                                    alt="Stardew Valley" class="game-card-img-cover"
+                                                    onerror="this.style.display='none'">
+                                            </div>
+                                            <div class="game-card-body">
+                                                <div class="game-card-top">
+                                                    <div class="game-card-title">Stardew Valley</div>
+                                                </div>
+                                                <div class="game-card-bottom">
+                                                    <div class="game-card-genre">FARMING SIM</div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
                                 </div>
-                                <div class="game-card-bottom">
-                                    <div class="game-card-genre">SURVIVAL HORROR</div>
-                                </div>
                             </div>
-                        </a>
+                        </div>
 
-                        <!-- #3 Geometry Dash 9.1 -->
-                        <a class="game-card" href="./src/pages/gamesList/geometryDash.html">
-                            <div class="game-card-img">
-                                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/322170/library_600x900.jpg"
-                                    alt="Geometry Dash" class="game-card-img-cover" onerror="this.style.display='none'">
-                            </div>
-                            <div class="game-card-body">
-                                <div class="game-card-top">
-                                    <div class="game-card-title">Geometry Dash</div>
-                                </div>
-                                <div class="game-card-bottom">
-                                    <div class="game-card-genre">RHYTHM PLATFORMER</div>
-                                </div>
-                            </div>
-                        </a>
-
-                        <!-- #4 Ghost of Tsushima 9.1 -->
-                        <a class="game-card" href="./src/pages/gamesList/ghostOfTsushima.html">
-                            <div class="game-card-img">
-                                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/2215430/library_600x900.jpg"
-                                    alt="Ghost of Tsushima" class="game-card-img-cover"
-                                    onerror="this.style.display='none'">
-                            </div>
-                            <div class="game-card-body">
-                                <div class="game-card-top">
-                                    <div class="game-card-title">Ghost of Tsushima</div>
-                                </div>
-                                <div class="game-card-bottom">
-                                    <div class="game-card-genre">ACTION-ADVENTURE</div>
-                                </div>
-                            </div>
-                        </a>
-
-                        <!-- #5 Warframe 8.8 -->
-                        <a class="game-card" href="./src/pages/gamesList/warframe.html">
-                            <div class="game-card-img">
-                                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/230410/library_600x900.jpg"
-                                    alt="Warframe" class="game-card-img-cover" onerror="this.style.display='none'">
-                            </div>
-                            <div class="game-card-body">
-                                <div class="game-card-top">
-                                    <div class="game-card-title">Warframe</div>
-                                </div>
-                                <div class="game-card-bottom">
-                                    <div class="game-card-genre">LOOTER SHOOTER</div>
-                                </div>
-                            </div>
-                        </a>
-
-                        <!-- #6 AC: Black Flag 8.6 -->
-                        <a class="game-card" href="./src/pages/gamesList/assassinsCreedBlackFlag.html">
-                            <div class="game-card-img">
-                                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/242050/library_600x900.jpg"
-                                    alt="Assassin's Creed IV: Black Flag" class="game-card-img-cover"
-                                    onerror="this.style.display='none'">
-                            </div>
-                            <div class="game-card-body">
-                                <div class="game-card-top">
-                                    <div class="game-card-title">AC: Black Flag</div>
-                                </div>
-                                <div class="game-card-bottom">
-                                    <div class="game-card-genre">ACTION-ADVENTURE</div>
-                                </div>
-                            </div>
-                        </a>
-
-                        <!-- #7 Dying Light 8.5 -->
-                        <a class="game-card" href="./src/pages/gamesList/dyingLight.html">
-                            <div class="game-card-img">
-                                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/239140/library_600x900.jpg"
-                                    alt="Dying Light" class="game-card-img-cover" onerror="this.style.display='none'">
-                            </div>
-                            <div class="game-card-body">
-                                <div class="game-card-top">
-                                    <div class="game-card-title">Dying Light</div>
-                                </div>
-                                <div class="game-card-bottom">
-                                    <div class="game-card-genre">SURVIVAL HORROR</div>
-                                </div>
-                            </div>
-                        </a>
-
-                        <!-- #8 Lies of P 8.4 -->
-                        <a class="game-card" href="./src/pages/gamesList/liesOfPi.html">
-                            <div class="game-card-img">
-                                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1627720/library_600x900.jpg"
-                                    alt="Lies of P" class="game-card-img-cover" onerror="this.style.display='none'">
-                            </div>
-                            <div class="game-card-body">
-                                <div class="game-card-top">
-                                    <div class="game-card-title">Lies of P</div>
-                                </div>
-                                <div class="game-card-bottom">
-                                    <div class="game-card-genre">SOULSLIKE RPG</div>
-                                </div>
-                            </div>
-                        </a>
-
-                        <!-- #9 Cyberpunk 2077 8.2 -->
-                        <a class="game-card" href="./src/pages/gamesList/cyberPunk.html">
-                            <div class="game-card-img">
-                                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1091500/library_600x900.jpg"
-                                    alt="Cyberpunk 2077" class="game-card-img-cover"
-                                    onerror="this.style.display='none'">
-                            </div>
-                            <div class="game-card-body">
-                                <div class="game-card-top">
-                                    <div class="game-card-title">Cyberpunk 2077</div>
-                                </div>
-                                <div class="game-card-bottom">
-                                    <div class="game-card-genre">OPEN WORLD RPG</div>
-                                </div>
-                            </div>
-                        </a>
-
-                        <!-- #10 Need for Speed Heat 7.8 -->
-                        <a class="game-card" href="./src/pages/gamesList/needForSpeed.html">
-                            <div class="game-card-img">
-                                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1222680/library_600x900.jpg"
-                                    alt="Need for Speed Heat" class="game-card-img-cover"
-                                    onerror="this.style.display='none'">
-                            </div>
-                            <div class="game-card-body">
-                                <div class="game-card-top">
-                                    <div class="game-card-title">Need for Speed Heat</div>
-                                </div>
-                                <div class="game-card-bottom">
-                                    <div class="game-card-genre">RACING</div>
-                                </div>
-                            </div>
-                        </a>
-
+                        <div class="featured-carousel-pagination-wrap">
+                            <nav aria-label="Featured games pages">
+                                <ul class="pagination featured-pagination" id="featuredPagination">
+                                    <li class="page-item active">
+                                        <button class="page-link" type="button" data-bs-target="#featuredCarousel"
+                                            data-bs-slide-to="0" aria-label="Go to page 1"
+                                            aria-current="page">1</button>
+                                    </li>
+                                    <li class="page-item">
+                                        <button class="page-link" type="button" data-bs-target="#featuredCarousel"
+                                            data-bs-slide-to="1" aria-label="Go to page 2">2</button>
+                                    </li>
+                                    <li class="page-item">
+                                        <button class="page-link" type="button" data-bs-target="#featuredCarousel"
+                                            data-bs-slide-to="2" aria-label="Go to page 3">3</button>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
                     </div>
-
-                    <!-- prev dot dot dot next -->
-                    <div class="carousel-controls">
-                        <button class="carousel-btn" id="prevBtn" aria-label="Previous">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="14"
-                                height="14">
-                                <path fill-rule="evenodd"
-                                    d="M15.78 19.28a.75.75 0 0 1-1.06 0L8.22 12.78a.75.75 0 0 1 0-1.06l6.5-6.5a.75.75 0 1 1 1.06 1.06L9.81 12l5.97 5.72a.75.75 0 0 1 0 1.56Z"
-                                    clip-rule="evenodd" />
-                            </svg>
-                        </button>
-                        <div class="carousel-dots" id="carouselDots"></div>
-                        <button class="carousel-btn" id="nextBtn" aria-label="Next">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="14"
-                                height="14">
-                                <path fill-rule="evenodd"
-                                    d="M8.22 4.72a.75.75 0 0 1 1.06 0l6.5 6.5a.75.75 0 0 1 0 1.06l-6.5 6.5a.75.75 0 0 1-1.06-1.06L14.19 12 8.22 6.28a.75.75 0 0 1 0-1.56Z"
-                                    clip-rule="evenodd" />
-                            </svg>
-                        </button>
-                    </div>
-
                 </div>
             </section>
-
         </article>
     </main>
 
-    <!-- footer — exact same structure as the game pages (h6 + socials + footer-info) -->
     <footer>
         <h6>GameUX Atlas</h6>
         <ul class="socials">
@@ -608,70 +660,49 @@
     window.addEventListener('load', resetScrollToTop);
     window.addEventListener('pageshow', resetScrollToTop);
 
-    // carousel: shows N cards at a time depending on screen width
-    const track = document.getElementById('carouselTrack');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
-    const dotsWrap = document.getElementById('carouselDots');
+    // featured carousel pagination synced to the Bootstrap carousel state
+    const featuredCarouselEl = document.getElementById('featuredCarousel');
+    const featuredPagination = document.getElementById('featuredPagination');
     const pageLabel = document.getElementById('carouselPageLabel');
-    const allCards = Array.from(track.querySelectorAll('.game-card'));
 
-    let current = 0;
-    let pages = 0;
+    function updateFeaturedPager(activeIndex) {
+        if (!featuredPagination) return;
 
-    // how many cards fit on screen at this width
-    function getVisible() {
-        const w = window.innerWidth;
-        if (w >= 62 * 16) return 4; // xl and up
-        if (w >= 48 * 16) return 3; // lg
-        if (w >= 36 * 16) return 2; // md
-        return 1; // sm
-    }
+        const items = Array.from(featuredPagination.querySelectorAll('.page-item'));
+        items.forEach((item, index) => {
+            const link = item.querySelector('.page-link');
+            const isActive = index === activeIndex;
 
-    // rebuild the dot buttons whenever pages change
-    function buildDots(n) {
-        dotsWrap.innerHTML = '';
-        for (let i = 0; i < n; i++) {
-            const d = document.createElement('button');
-            d.className = 'c-dot' + (i === 0 ? ' active' : '');
-            d.setAttribute('aria-label', `Go to page ${i + 1}`);
-            d.addEventListener('click', () => goTo(i));
-            dotsWrap.appendChild(d);
+            item.classList.toggle('active', isActive);
+            if (link) {
+                if (isActive) {
+                    link.setAttribute('aria-current', 'page');
+                } else {
+                    link.removeAttribute('aria-current');
+                }
+            }
+        });
+
+        if (pageLabel) {
+            pageLabel.textContent = `Page ${activeIndex + 1} of ${items.length}`;
         }
     }
 
-    // show/hide the right cards for a given page
-    function goTo(page) {
-        const visible = getVisible();
-        const start = page * visible;
-        current = page;
-
-        allCards.forEach((card, idx) => {
-            card.style.display = (idx >= start && idx < start + visible) ? '' : 'none';
+    if (featuredCarouselEl && window.bootstrap) {
+        const featuredCarousel = bootstrap.Carousel.getOrCreateInstance(featuredCarouselEl, {
+            interval: false,
+            ride: false,
+            touch: true,
+            wrap: true
         });
 
-        dotsWrap.querySelectorAll('.c-dot').forEach((d, i) => {
-            d.classList.toggle('active', i === page);
+        featuredCarouselEl.addEventListener('slid.bs.carousel', (event) => {
+            updateFeaturedPager(event.to);
         });
 
-        if (pageLabel) pageLabel.textContent = `Page ${page + 1} of ${pages}`;
-
-        prevBtn.disabled = page === 0;
-        nextBtn.disabled = page === pages - 1;
+        updateFeaturedPager(featuredCarouselEl.querySelector('.carousel-item.active') ?
+            Array.from(featuredCarouselEl.querySelectorAll('.carousel-item')).findIndex((item) => item.classList.contains('active')) : 0);
     }
-
-    // recalculate on load and whenever the window resizes
-    function initCarousel() {
-        const visible = getVisible();
-        pages = Math.ceil(allCards.length / visible);
-        buildDots(pages);
-        goTo(Math.min(current, pages - 1));
-    }
-
-    prevBtn.addEventListener('click', () => goTo((current - 1 + pages) % pages));
-    nextBtn.addEventListener('click', () => goTo((current + 1) % pages));
-    window.addEventListener('resize', initCarousel);
-    initCarousel();
 
     // back-to-top button: appears after 160px of scroll, ring fills as you scroll down
     const progressRadius = 22;
