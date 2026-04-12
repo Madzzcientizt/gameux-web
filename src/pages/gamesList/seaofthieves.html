@@ -1,0 +1,1999 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend:wght@100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Manrope:wght@200..800&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" href="../../styles/styles.css" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="../../styles/sizeChecker.css"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="../../styles/game.css" type="text/css" />
+    <style>
+      nav.game-info-nav {
+        display: flex;
+        overflow-x: auto;
+        white-space: nowrap;
+        scrollbar-width: none;
+      }
+
+      nav.game-info-nav::-webkit-scrollbar {
+        display: none;
+      }
+
+      nav.game-info-nav label {
+        width: calc(100% / 5) !important;
+      }
+
+      .game-sections {
+        display: none;
+        width: 100%;
+
+        &.is-active {
+          display: block;
+        }
+
+        &#short-description {
+          & > h2 {
+            font-weight: 900;
+            font-size: 2.5em;
+          }
+
+          & > p {
+            text-align: justify;
+            margin-bottom: 1em;
+          }
+
+          & > .list-style {
+            list-style: none;
+            float: right;
+            background-color: var(--t-color-base-100);
+            padding: 2em;
+            margin-left: 2em;
+            margin-bottom: 2em;
+            border-radius: var(--t-radius-field);
+            border: var(--t-border) solid var(--t-color-base-300);
+
+            & > li {
+              margin-left: 1em;
+              margin-bottom: 1em;
+              position: relative;
+
+              &::before {
+                content: "";
+                display: block;
+                position: absolute;
+                width: 0.2em;
+                height: 1em;
+                background-color: var(--t-color-primary);
+                border-radius: 1em;
+                left: -0.75em;
+                top: calc(50% - 0.5em);
+              }
+            }
+          }
+        }
+
+        &#ui-components {
+          margin-bottom: 2em;
+
+          & > h2 {
+            font-weight: 900;
+            font-size: 2.5em;
+          }
+
+          & .major-components {
+            display: grid;
+            grid-template-rows: 1fr;
+            grid-template-columns: 50% 1fr;
+            gap: 1em;
+            margin: 2em 0;
+          }
+
+          & .major-component {
+            background-color: var(--t-color-base-100);
+            border-radius: var(--t-radius-field);
+            padding: 1em;
+            height: auto;
+            position: relative;
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+            gap: 1em;
+            min-height: 15em;
+            border: var(--t-border) solid var(--t-color-base-300);
+
+            &:first-child {
+              grid-column: 1 / -1;
+              width: 100%;
+              flex-direction: row;
+            }
+
+            &:not(:first-child) {
+              flex-direction: column;
+            }
+
+            & figure {
+              position: relative;
+              margin-bottom: 0;
+              width: 100%;
+              height: auto;
+
+              & figcaption {
+                font-size: 0.9em;
+                color: var(--t-color-light);
+                margin-top: 0.5em;
+                position: absolute;
+                bottom: 0.5em;
+                right: 0.5em;
+              }
+            }
+
+            & a {
+              flex-shrink: 0;
+              margin-left: auto;
+
+              & img {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 0.25em;
+              }
+            }
+
+            & .count {
+              font-weight: 700;
+              font-size: 1.2em;
+              font-family: var(--bs-font-monospace);
+              color: var(--t-color-secondary);
+              display: block;
+            }
+
+            & .header-text {
+              font-weight: 700;
+              font-size: 2.5em;
+              font-family: var(--bs-font-serif);
+            }
+
+            & ul {
+              list-style: none;
+              margin-left: 1em;
+              margin-top: 2em;
+
+              & h6 {
+                font-weight: 900;
+              }
+
+              & li {
+                margin-left: 1em;
+                margin-bottom: 0.5em;
+                position: relative;
+
+                &::before {
+                  content: "";
+                  display: block;
+                  position: absolute;
+                  width: 0.2em;
+                  height: 1em;
+                  background-color: var(--t-color-primary);
+                  border-radius: 1em;
+                  left: -0.75em;
+                  top: calc(50% - 0.5em);
+                }
+              }
+            }
+          }
+
+          & .fittslaw {
+            display: grid;
+            grid-template-columns: 50% 1fr;
+            gap: 1em;
+
+            & h2 {
+              font-weight: 900;
+              font-size: 2.5em;
+            }
+
+            & figure {
+              position: relative;
+              margin-bottom: 0;
+              width: 100%;
+              height: auto;
+
+              & figcaption {
+                font-size: 0.9em;
+                color: var(--t-color-dark);
+                margin-top: 0.5em;
+                position: absolute;
+                bottom: 0.5em;
+                right: 0.5em;
+              }
+            }
+
+            & a {
+              flex-shrink: 0;
+              margin-left: auto;
+
+              & img {
+                width: 100% !important;
+                height: auto !important;
+                margin-bottom: 1em;
+              }
+            }
+          }
+
+          @media (width < 48rem) {
+            & .fittslaw {
+              grid-template-columns: 1fr;
+            }
+          }
+
+          & .mathmodel {
+            margin: 1em 0;
+            padding: 1em;
+            position: relative;
+            padding-left: 2em;
+            background-color: var(--t-color-base-300);
+            border-radius: var(--t-radius-field);
+            overflow: hidden;
+
+            &::before {
+              content: "";
+              display: block;
+              position: absolute;
+              width: 0.5em;
+              height: 100%;
+              background-color: var(--t-color-primary);
+              left: 0;
+              top: 0;
+            }
+
+            & h6 {
+              font-family: var(--bs-font-monospace);
+              color: var(--t-color-dark);
+              font-weight: 300;
+            }
+
+            & span {
+              font-size: 2em;
+            }
+          }
+
+          @media (width < 48rem) {
+            & .major-components {
+              grid-template-columns: 1fr;
+              gap: 1em;
+            }
+
+            & .major-component {
+              &:first-child {
+                flex-direction: column;
+              }
+
+              & figure {
+                width: 100%;
+
+                & figcaption {
+                  bottom: 1em;
+                }
+              }
+
+              & a {
+                margin-left: 0;
+                width: 100%;
+
+                & img {
+                  width: 100% !important;
+                  height: auto !important;
+                  margin-bottom: 1em;
+                }
+              }
+            }
+          }
+        }
+
+        &#user-interaction {
+          margin-bottom: 2em;
+
+          & > h2 {
+            font-weight: 900;
+            font-size: 2.5em;
+          }
+
+          & h3 {
+            font-weight: 900;
+            font-size: 2.5em;
+          }
+
+          & .multi-modal-feedback {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1em;
+            padding-top: 1em;
+
+            @media (width < 48rem) {
+              grid-template-columns: 1fr !important;
+            }
+
+            & figure {
+              margin: auto;
+              width: 100%;
+              height: auto;
+
+              & img {
+                width: 100% !important;
+                height: auto !important;
+              }
+            }
+          }
+
+          & ul {
+            list-style: none;
+            padding: 0;
+
+            & li {
+              margin-top: 2em;
+              display: flex;
+              flex-direction: row;
+
+              & h6 {
+                font-weight: 700;
+                font-size: 1.5em;
+                margin-bottom: 0.5em;
+              }
+
+              & .logo-svg {
+                height: 5em;
+                flex-shrink: 0;
+                background-color: var(--t-color-secondary);
+                color: var(--t-color-base-100);
+                aspect-ratio: 1 / 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 1em;
+                border-radius: var(--t-radius-field);
+                margin: auto;
+                margin-right: 1em;
+
+                & svg {
+                  width: 100%;
+                  height: 100%;
+                }
+              }
+            }
+          }
+        }
+
+        &#hci-principles {
+          margin-bottom: 2em;
+
+          & > h2 {
+            font-weight: 900;
+            font-size: 2.5em;
+          }
+
+          & .cybernetic-feedback-loops {
+            margin-top: 2em;
+            padding: 1em;
+            border-radius: var(--t-radius-field);
+            background-color: var(--t-color-base-100);
+            border: var(--t-border) solid var(--t-color-base-300);
+
+            & > h3 {
+              font-weight: 900;
+              font-size: 2em;
+            }
+
+            & .cybernetic-content {
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 1em;
+
+              @media (width < 48rem) {
+                grid-template-columns: 1fr !important;
+              }
+
+              & h6 {
+                font-weight: 700;
+                font-size: 1.2em;
+                margin-bottom: 0.5em;
+              }
+
+              & .primary-modalities {
+                list-style: none;
+                padding: 1em;
+                background-color: var(--t-color-base-200);
+                border-radius: var(--t-radius-field);
+                margin-bottom: 0;
+
+                & li {
+                  margin-left: 1em;
+                  margin-bottom: 0.5em;
+                  position: relative;
+
+                  &::before {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    width: 0.2em;
+                    height: 1em;
+                    background-color: var(--t-color-primary);
+                    border-radius: 1em;
+                    left: -0.75em;
+                    top: calc(50% - 0.5em);
+                  }
+                }
+              }
+            }
+          }
+
+          & .spatial-congruence {
+            padding: 1em;
+            margin-top: 2em;
+
+            & h2 {
+              font-weight: 900;
+              font-size: 2.5em;
+            }
+          }
+
+          & .cognitive-load-bifurcation {
+            margin: 2em 0;
+            padding: 1em;
+            border-radius: var(--t-radius-field);
+            background-color: var(--t-color-base-100);
+            border: var(--t-border) solid var(--t-color-base-300);
+
+            & > h2 {
+              font-weight: 900;
+              font-size: 2em;
+            }
+
+            & table {
+              width: 100%;
+              border-collapse: separate;
+              border-spacing: 0;
+              border: var(--t-border) solid var(--t-color-base-300);
+              border-radius: var(--t-radius-field);
+              overflow: hidden;
+              background-color: var(--t-color-base-200);
+            }
+
+            & th,
+            & td {
+              padding: 1em;
+              vertical-align: top;
+            }
+
+            & thead th {
+              font-weight: 800;
+              font-size: 1.05em;
+              background-color: var(--t-color-base-300);
+              border-bottom: 1px solid var(--t-color-base-300);
+            }
+
+            & th + th,
+            & td + td {
+              border-left: 1px solid var(--t-color-base-300);
+            }
+
+            & tbody td {
+              border-bottom: 1px solid var(--t-color-base-300);
+            }
+
+            & tbody tr:last-child td {
+              border-bottom: 0;
+            }
+
+            & td h6 {
+              font-weight: 700;
+              font-size: 1.15em;
+              margin-bottom: 0.5em;
+            }
+
+            & td p {
+              margin-bottom: 0;
+            }
+
+            @media (width < 48rem) {
+              & table,
+              & thead,
+              & tbody,
+              & tr,
+              & th,
+              & td {
+                display: block;
+                width: 100%;
+              }
+
+              & thead {
+                display: none;
+              }
+
+              & tbody tr {
+                border-bottom: 1px solid var(--t-color-base-300);
+                padding: 0.5em;
+              }
+
+              & tbody tr:last-child {
+                border-bottom: 0;
+              }
+
+              & td {
+                border: 0;
+                border-radius: var(--t-radius-field);
+                background-color: var(--t-color-base-100);
+                margin-bottom: 0.75em;
+              }
+
+              & td::before {
+                display: block;
+                font-weight: 700;
+                font-size: 0.85em;
+                text-transform: uppercase;
+                letter-spacing: 0.04em;
+                color: var(--t-color-primary);
+                margin-bottom: 0.5em;
+              }
+
+              & td:nth-child(1)::before {
+                content: "Extrinsic Load";
+              }
+
+              & td:nth-child(2)::before {
+                content: "Intrinsic Focus";
+              }
+            }
+          }
+        }
+
+        &#ui-ux-weaknesses {
+          margin-bottom: 2em;
+
+          & > h2 {
+            font-weight: 900;
+            font-size: 2.5em;
+          }
+
+          & > p {
+            text-align: justify;
+            margin-bottom: 2em;
+          }
+
+          & table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            border: var(--t-border) solid var(--t-color-base-300);
+            border-radius: var(--t-radius-field);
+            overflow: hidden;
+            background-color: var(--t-color-base-100);
+          }
+
+          & th,
+          & td {
+            padding: 1em;
+            vertical-align: top;
+          }
+
+          & td {
+            position: relative;
+            padding-right: 4.25em;
+          }
+
+          & thead th {
+            font-weight: 800;
+            font-size: 1.05em;
+            background-color: var(--t-color-base-300);
+            border-bottom: 1px solid var(--t-color-base-300);
+          }
+
+          & th + th,
+          & td + td {
+            border-left: 1px solid var(--t-color-base-300);
+          }
+
+          & tbody td {
+            border-bottom: 1px solid var(--t-color-base-300);
+          }
+
+          & tbody tr:last-child td {
+            border-bottom: 0;
+          }
+
+          & .badge {
+            font-size: 0.75em;
+            font-weight: 400;
+            border-radius: var(--t-radius-selector);
+            padding: 0.35em 0.75em;
+            margin-left: 0.5em;
+            vertical-align: middle;
+            border: var(--t-border) solid transparent;
+          }
+
+          & .badge-success {
+            background-color: var(--t-color-success);
+            color: color-mix(
+              in oklab,
+              var(--t-color-success-content) 70%,
+              var(--t-color-success)
+            );
+            border-color: color-mix(
+              in oklab,
+              var(--t-color-success) 65%,
+              var(--t-color-dark)
+            );
+          }
+
+          & .badge-danger {
+            background-color: var(--t-color-error);
+            color: color-mix(
+              in oklab,
+              var(--t-color-error-content) 70%,
+              var(--t-color-error)
+            );
+            border-color: color-mix(
+              in oklab,
+              var(--t-color-error) 65%,
+              var(--t-color-dark)
+            );
+          }
+
+          & .sw-item-head {
+            display: block;
+            margin-bottom: 0.75em;
+          }
+
+          & .sw-icon {
+            width: 2.75em;
+            height: 2.75em;
+            color: var(--t-color-base-300);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            position: absolute;
+            top: 0.75em;
+            right: 0.75em;
+          }
+
+          & .sw-icon svg {
+            width: 1.5em;
+            height: 1.5em;
+          }
+
+          & .label {
+            display: inline-block;
+            font-family: var(--bs-font-monospace);
+            font-size: 0.9em;
+            font-weight: 700;
+            color: var(--t-color-secondary);
+            letter-spacing: 0.03em;
+          }
+
+          & td h6 {
+            font-weight: 700;
+            font-size: 1.2em;
+            margin-bottom: 0.5em;
+          }
+
+          & td p {
+            margin-bottom: 0;
+            text-align: justify;
+          }
+
+          @media (width < 48rem) {
+            & table,
+            & thead,
+            & tbody,
+            & tr,
+            & th,
+            & td {
+              display: block;
+              width: 100%;
+            }
+
+            & thead {
+              display: none;
+            }
+
+            & tbody tr {
+              border-bottom: 1px solid var(--t-color-base-300);
+              padding: 0.5em;
+              background-color: var(--t-color-base-200);
+            }
+
+            & tbody tr:last-child {
+              border-bottom: 0;
+            }
+
+            & td {
+              border: 0;
+              border-radius: var(--t-radius-field);
+              background-color: var(--t-color-base-100);
+              margin-bottom: 0.75em;
+            }
+
+            & td::before {
+              display: block;
+              font-weight: 700;
+              font-size: 0.85em;
+              text-transform: uppercase;
+              letter-spacing: 0.04em;
+              margin-bottom: 0.5em;
+            }
+
+            & td:nth-child(1)::before {
+              content: "System Strengths";
+              color: color-mix(
+                in oklab,
+                var(--t-color-success) 70%,
+                var(--t-color-dark)
+              );
+            }
+
+            & td:nth-child(2)::before {
+              content: "System Weaknesses";
+              color: color-mix(
+                in oklab,
+                var(--t-color-error) 70%,
+                var(--t-color-dark)
+              );
+            }
+          }
+        }
+      }
+
+      .list-style-area {
+        margin: 2em 0;
+        width: 100%;
+        background-color: var(--t-color-base-100);
+        border: var(--t-border) solid var(--t-color-base-300);
+        padding: 1em;
+        border-radius: var(--t-radius-field);
+
+        & ol {
+          list-style: none;
+          margin-left: 0;
+          padding-left: 0;
+          margin-top: 2em;
+          display: grid;
+          gap: 1em;
+
+          &.two-columns {
+            grid-template-columns: 1fr 1fr;
+          }
+
+          &.three-columns {
+            grid-template-columns: 1fr 1fr 1fr;
+          }
+
+          &.four-columns {
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+          }
+
+          @media (width < 48rem) {
+            &.md-one-columns {
+              grid-template-columns: 1fr !important;
+            }
+
+            &.md-two-columns {
+              grid-template-columns: 1fr 1fr !important;
+            }
+          }
+
+          & li {
+            position: relative;
+
+            &::before {
+              font-weight: 700;
+              font-size: 5em;
+              font-family: var(--bs-font-monospace);
+              color: var(--t-color-base-200);
+              position: absolute;
+              top: -0.5em;
+            }
+
+            &:nth-child(1)::before {
+              content: "01";
+            }
+
+            &:nth-child(2)::before {
+              content: "02";
+            }
+
+            &:nth-child(3)::before {
+              content: "03";
+            }
+
+            &:nth-child(4)::before {
+              content: "04";
+            }
+
+            @media (width > 48rem) {
+              &::before {
+                left: 0;
+              }
+            }
+
+            @media (width < 48rem) {
+              &::before {
+                right: 0;
+              }
+            }
+
+            & h6 {
+              font-weight: 700;
+              font-size: 1.5em;
+              position: relative;
+
+              &::after {
+                content: "";
+                display: block;
+                width: 100%;
+                height: 1px;
+                background-color: var(--t-color-base-300);
+                margin-top: 0.5em;
+              }
+            }
+          }
+        }
+      }
+
+      .footnote {
+        width: 100%;
+        background-color: rgba(var(--t-color-primary-rgb), 0.1);
+        padding: 2em;
+        border-radius: var(--t-radius-field);
+
+        &::before {
+          content: "Note:";
+          font-weight: 700;
+          font-size: 1.2em;
+          color: var(--t-color-primary);
+          display: block;
+          margin-bottom: 0.5em;
+        }
+
+        &.summary::before {
+          content: "Summary:";
+        }
+      }
+
+      .game-video-wrp {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        overflow: hidden;
+        background-color: var(--t-color-base-300);
+      }
+
+      .game-video-wrp iframe,
+      .game-video-wrp video {
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+
+      .back-to-top {
+        position: fixed;
+        right: 1.25rem;
+        bottom: 1.25rem;
+        width: 3.5rem;
+        height: 3.5rem;
+        z-index: 1001;
+        cursor: pointer;
+        opacity: 0;
+        pointer-events: none;
+        transition:
+          opacity 0.2s ease,
+          transform 0.2s ease;
+        transform: translateY(0.5rem);
+      }
+
+      .back-to-top.is-visible {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+      }
+
+      .back-to-top svg {
+        width: 100%;
+        height: 100%;
+      }
+
+      .back-to-top .btn-progress {
+        transform: rotate(-90deg);
+        transform-origin: center;
+        transition: stroke-dashoffset 0.1s linear;
+      }
+
+      .hidden {
+        display: none !important;
+      }
+    </style>
+
+    <title id="title">Sea of Thieves - GameUX</title>
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar navbar-light navbar-expand-lg">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="../../index.html">
+            <img
+              src="../../../public/gameux.png"
+              alt="Logo"
+              class="navbar-logo"
+            />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon" style="width: 1em"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="../../index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="../gameList.html">Game List</a>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <nav class="breadcrumb-nav" aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="../gameList.html">Game List</a>
+        </li>
+        <li class="breadcrumb-item active game-name">Sea of Thieves</li>
+      </ol>
+    </nav>
+
+    <main>
+      <article class="wide">
+        <section class="header-section">
+          <img class="game-poster-content game-poster-background-style" />
+          <h1 class="game-name game-name-header">Sea of Thieves</h1>
+          <div class="game-header">
+            <span class="game-header-cont">
+              <div class="game-info-bar">
+                <span class="game-date-info">
+                  <span class="date-released">03/20/2018</span>
+                  <span class="days-ago"></span>
+                </span>
+                <span class="game-badge">Full Release</span>
+                <span class="publisher">Xbox Game Studios</span>
+              </div>
+            </span>
+            <div class="game-header-rating">
+              <table class="game-critic-rating-cont">
+                <tr>
+                  <td rowspan="2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </td>
+                  <td class="game-critic-rating">0</td>
+                </tr>
+                <tr>
+                  <td class="game-critic-ratings">0 critic ratings</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <div class="video-game-container">
+            <a class="game-poster" id="game-poster">
+              <img
+                class="game-poster-img"
+                id="game-poster-img"
+                alt="Sea of Thieves Poster"
+              />
+            </a>
+            <div class="game-video-wrp">
+              <video class="game-video" id="game-video" controls>
+                <source type="video/mp4" id="game-video-source" />
+                Your browser does not support the video tag.
+              </video>
+              <iframe
+                class="game-video"
+                id="game-video-yt"
+                frameborder="0"
+                allowfullscreen
+                hidden
+              ></iframe>
+            </div>
+
+            <div class="game-rating">
+              <table class="game-user-rating-cont">
+                <tr>
+                  <td rowspan="2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </td>
+                  <td class="game-user-rating">0</td>
+                </tr>
+                <tr>
+                  <td class="game-user-ratings">0 user ratings</td>
+                </tr>
+              </table>
+              <table class="game-critic-rating-cont">
+                <tr>
+                  <td rowspan="2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </td>
+                  <td class="game-critic-rating">0</td>
+                </tr>
+                <tr>
+                  <td class="game-critic-ratings">0 critic ratings</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+
+          <ul class="game-list-data">
+            <li class="game-list-data-item">
+              Genres:
+              <ul id="genres"></ul>
+            </li>
+            <li class="game-list-data-item">
+              Platforms:
+              <ul id="platforms"></ul>
+            </li>
+            <li class="game-list-data-item">
+              Editions:
+              <ul id="editions"></ul>
+            </li>
+          </ul>
+          <p class="game-description" id="game-description"></p>
+        </section>
+      </article>
+
+      <div class="game-info-nav-container">
+        <div class="game-info-nav-wrap">
+          <nav class="game-info-nav" id="game-info-nav" role="tablist">
+            <label role="tab"
+              ><input
+                type="radio"
+                name="game-section"
+                value="short-description"
+                checked="checked"
+              />
+              Overview</label
+            >
+            <label role="tab"
+              ><input type="radio" name="game-section" value="ui-components" />
+              UI Components</label
+            >
+            <label role="tab"
+              ><input
+                type="radio"
+                name="game-section"
+                value="user-interaction"
+              />
+              Interaction</label
+            >
+            <label role="tab"
+              ><input type="radio" name="game-section" value="hci-principles" />
+              HCI Principles</label
+            >
+            <label role="tab"
+              ><input
+                type="radio"
+                name="game-section"
+                value="ui-ux-weaknesses"
+              />
+              Analysis</label
+            >
+          </nav>
+          <button
+            class="game-info-nav-arrow right"
+            id="game-info-nav-right"
+            type="button"
+            aria-label="Scroll sections right"
+            hidden=""
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+              width="20"
+              height="20"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M8.22 4.72a.75.75 0 0 1 1.06 0l6.5 6.5a.75.75 0 0 1 0 1.06l-6.5 6.5a.75.75 0 0 1-1.06-1.06L14.19 12 8.22 6.28a.75.75 0 0 1 0-1.56Z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <article>
+        <div class="game-sections-stage">
+          <!-- ==================== OVERVIEW ==================== -->
+          <section
+            class="game-sections is-active"
+            id="short-description"
+            aria-hidden="false"
+          >
+            <h2>Overview</h2>
+            <ul class="list-style">
+              <h2>Sea of Thieves Game Modes:</h2>
+                            <li>Adventure Mode</li>
+              <li>Safer Seas</li>
+              <li>Tall Tales</li>
+              <li>World Events</li>
+            </ul>
+            <p>
+              Sea of Thieves is an open-world multiplayer pirate adventure developed by Rare and published by Xbox Game Studios. Released on March 20, 2018, for PC and Xbox One, with subsequent releases on Xbox Series X|S and PlayStation 5, the game places players in crews of 1\u20134 to sail ships, hunt treasure, battle skeleton fleets, and engage in PvP naval combat.
+            </p>
+            <p>
+              Sea of Thieves features radical UI minimalism. There is no minimap, no quest markers, no compass HUD, and no traditional health bar overlay. Instead, the game relies on diegetic tools \u2014 a physical compass, hand-held maps, a spyglass, and ship-mounted instruments. Players must physically interact with these tools to obtain information, forcing cooperative communication between crew members.
+            </p>
+            <ul class="metrics-list">
+              <li>
+                <h6>Cognitive Load</h6>
+                <div class="value">Moderate</div>
+                <div class="desc">
+                  Distributed crew coordination, environmental navigation, and threat awareness across a shared open world
+                </div>
+              </li>
+              <li>
+                <h6>Response Time</h6>
+                <div class="value">\u00b1 50ms to \u00b1 200ms</div>
+                <div class="desc">
+                  Ship handling with deliberate momentum, emphasizing planning over twitch reflexes
+                </div>
+              </li>
+              <li>
+                <h6>Coordination Overhead</h6>
+                <div class="value">High (Crew-Based)</div>
+                <div class="desc">
+                  Ship management requires real-time role distribution: helm, sails, cannons, repairs, and navigation
+                </div>
+              </li>
+            </ul>
+          </section>
+
+          <!-- ==================== UI COMPONENTS ==================== -->
+          <section class="game-sections" id="ui-components" aria-hidden="true">
+            <h2>UI Components</h2>
+            <div class="major-components">
+              <div class="major-component">
+                <figure>
+                  <a href="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/257237698/02d043d2daee14217e0d0693d07e403612ebee59/movie_full.jpg" title="Sea of Thieves Diegetic Navigation" target="images">
+                    <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/257237698/02d043d2daee14217e0d0693d07e403612ebee59/movie_full.jpg" alt="Sea of Thieves Diegetic Navigation Suite" />
+                  </a>
+                  <figcaption>FIG 1.1: Diegetic Navigation Suite</figcaption>
+                </figure>
+                <div>
+                  <span class="count">[ ELEMENT_01 ]</span>
+                  <span class="header-text">The Diegetic Navigation Suite</span>
+                  <p>
+                    Sea of Thieves has no minimap, no waypoint markers, and no on-screen compass overlay.
+                    Navigation is handled entirely through diegetic tools: a hand-held Compass that
+                    players raise with a button press to read cardinal directions, a Spyglass for
+                    scouting distant islands and ships, and a physical Map Table mounted in the
+                    ship's lower deck displaying the crew's position relative to the world.
+                    Players must physically walk to these tools and interact with them — embedding
+                    navigation into embodied play rather than passive HUD reading.
+                  </p>
+                  <ul>
+                    <h6>Navigation Tools</h6>
+                    <li>Hand-held Compass (cardinal bearing, raise to read)</li>
+                    <li>Spyglass (optical zoom for long-range identification)</li>
+                    <li>Ship Map Table (lower deck, shows world position)</li>
+                    <li>Treasure Maps &amp; Riddle Scrolls (held in hand, read physically)</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="major-component">
+                <figure>
+                  <a href="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/257115498/ae819ee6b2c29072337e2a4d6787c56965525c9f/movie_full.jpg" title="Sea of Thieves Ship Management" target="images">
+                    <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/257115498/ae819ee6b2c29072337e2a4d6787c56965525c9f/movie_full.jpg" alt="Sea of Thieves Ship Management" />
+                  </a>
+                  <figcaption>FIG 1.2: Ship Management Interface</figcaption>
+                </figure>
+                <div>
+                  <span class="count">[ ELEMENT_02 ]</span>
+                  <span class="header-text">Ship Management Interface</span>
+                  <p>
+                    The ship itself is the primary interface. Every functional system — Helm (steering),
+                    Capstan (anchor), Sails (speed &amp; direction), Cannons (combat), and Buckets
+                    (bailing water) — requires a player to physically walk to and interact with that
+                    station. There is no crew management overlay; role distribution is entirely
+                    implicit, communicated through player proximity and voice chat. Hull damage
+                    is visualised as physical holes visible from inside the ship, with water
+                    level rising as the feedback mechanism.
+                  </p>
+                </div>
+              </div>
+              <div class="major-component">
+                <figure>
+                  <a href="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1172620/library_hero.jpg" title="Sea of Thieves Outpost Trading Interface" target="images">
+                    <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1172620/library_hero.jpg" alt="Sea of Thieves Outpost Trading" />
+                  </a>
+                  <figcaption>FIG 1.3: Outpost Trading &amp; Quest Interface</figcaption>
+                </figure>
+                <div>
+                  <span class="count">[ ELEMENT_03 ]</span>
+                  <span class="header-text">Outpost Trading &amp; Quest Interface</span>
+                  <p>
+                    Outposts are the game's structured UI hubs. Each Trading Company NPC opens a
+                    menu-driven interface for accepting Voyages (procedurally generated quests),
+                    selling loot, and tracking Emissary Grade progression. This is deliberately
+                    one of the few areas where a traditional UI overlay appears, acting as a
+                    clear contextual mode-shift: the player is at rest in a safe zone, engaging
+                    in commerce rather than exploration or combat.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <h2>Fitt's Law in First-Person Interaction</h2>
+            <div class="fittslaw">
+              <div>
+                <p>
+                  Sea of Thieves applies Fitt's Law across a first-person 3D world where every
+                  interaction requires physical cursor or stick movement to reach a target object
+                  (W) in 3D space. Aiming and firing a cannon demands tracking a moving enemy
+                  ship — a small, fast-moving target (low W, high D) — while managing the
+                  cannon's own arc. Digging treasure requires aligning with a small ground
+                  marker. Each diegetic tool interaction carries its own MT cost, and sea combat
+                  escalates this dramatically as both ships move.
+                </p>
+                <div class="mathmodel">
+                  <h6>[ MATHEMATICAL MODEL ]</h6>
+                  <span>MT = a + b * log<sub>2</sub>(2D/W)</span>
+                </div>
+                <p>
+                  The ship's Helm is the highest-W interactive target on the vessel — a large
+                  fixed wheel easily acquired even in chaos (low MT). By contrast, the
+                  Map Table below deck is spatially distant and requires descending stairs
+                  first, dramatically increasing the effective D for mid-combat navigation checks.
+                  This physical distance between navigation and combat UI is the game's defining
+                  interaction design tension.
+                </p>
+              </div>
+              <div>
+                <figure>
+                  <a href="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/257115527/d04d6d3522ae43ae196634e1f5ed9bed96fd34fe/movie_full.jpg" title="Sea of Thieves First-Person Combat" target="images">
+                    <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/257115527/d04d6d3522ae43ae196634e1f5ed9bed96fd34fe/movie_full.jpg" alt="Sea of Thieves First-Person Combat Targeting" />
+                  </a>
+                  <figcaption>FIG 1.4: First-Person Combat &amp; Target Acquisition</figcaption>
+                </figure>
+              </div>
+            </div>
+            <div class="list-style-area">
+              <h3 class="text-center">Visual Hierarchy Breakdown</h3>
+              <div class="text-center">Layering of Information</div>
+              <ol class="three-columns md-one-columns">
+                <li>
+                  <h6>Immediate World</h6>
+                  <p>
+                    Primary focus. The unobstructed first-person view of ocean, islands, weather,
+                    and other ships is the HUD. Environmental cues — a skull cloud for a skeleton
+                    fort, a ship on the horizon, a darkening sky for storms — carry all
+                    macro-level game state without text overlays.
+                  </p>
+                </li>
+                <li>
+                  <h6>Tool State</h6>
+                  <p>
+                    Secondary focus. Equipped item UI (compass bearing, held map markings,
+                    weapon ammo) appears only when the player raises that tool — eliminating
+                    persistent HUD clutter. State is embedded in the tool's physical
+                    appearance rather than abstract icons.
+                  </p>
+                </li>
+                <li>
+                  <h6>Ship &amp; Crew State</h6>
+                  <p>
+                    Tertiary focus. Hull breach visible as physical holes and rising water.
+                    Sails show wind direction visually. No player health bars. Damage state
+                    is read from the world, not from a UI overlay — demanding crew
+                    communication rather than passive display reading.
+                  </p>
+                </li>
+              </ol>
+            </div>
+            <div class="footnote">
+              All component analysis is based on Sea of Thieves (2018–present, Rare / Xbox Game Studios).
+              The game's radical commitment to diegetic design — embedding all information into
+              physical in-world objects — represents the most thorough application of the
+              diegetic HUD philosophy in mainstream multiplayer gaming.
+            </div>
+          </section>
+
+          <!-- ==================== INTERACTION ==================== -->
+          <section class="game-sections" id="user-interaction" aria-hidden="true">
+            <h2>User Interaction</h2>
+            <p>
+              An investigation into the cooperative, diegetic feedback systems of Sea of Thieves —
+              analyzing how Rare eliminated the traditional HUD and distributed interface cognition
+              across crew members, the ship, and the open-world environment.
+            </p>
+            <div class="list-style-area">
+              <h3 class="text-center">Core Gameplay Loop</h3>
+              <div class="text-center"></div>
+              <ol class="four-columns md-two-columns">
+                <li>
+                  <h6>Embark</h6>
+                  <p>
+                    Crew selects a Voyage at an Outpost NPC, loading procedural quest objectives
+                    (treasure maps, bounty targets, cargo deliveries) onto the Ship's Quest
+                    Table. Role negotiation is implicit — no role-lock UI forces assignment.
+                  </p>
+                </li>
+                <li>
+                  <h6>Navigate</h6>
+                  <p>
+                    The crew sails to the objective using the physical compass and map table.
+                    One player steers at the helm, others manage sails for speed, scan the
+                    horizon with spyglasses, and watch for rival ships or world events.
+                  </p>
+                </li>
+                <li>
+                  <h6>Engage</h6>
+                  <p>
+                    On arrival, players interact with the world physically: digging treasure
+                    with shovels, defeating skeletons, solving riddle clues, engaging in
+                    naval combat. No waypoints or markers guide progress — environmental
+                    and social communication carries all intent.
+                  </p>
+                </li>
+                <li>
+                  <h6>Trade</h6>
+                  <p>
+                    Loot is physically carried back to the ship and transported to an Outpost
+                    for sale. The final act requires safe transport across a shared world where
+                    rival crews can intercept — creating the loop's highest-stakes phase.
+                  </p>
+                </li>
+              </ol>
+            </div>
+            <h3>Multi-Modal Feedback Matrix</h3>
+            <div class="multi-modal-feedback">
+              <div>
+                <p>
+                  Sea of Thieves uses the world itself as its primary feedback channel. There
+                  are no damage numbers, no kill notifications, and no objective trackers.
+                  Every state change — hull damage, incoming weather, proximity of enemies —
+                  is communicated through environmental sound, visual world changes, and
+                  the physical behaviour of the ship. This forces players to stay
+                  perceptually immersed in the game world rather than reading overlay data.
+                </p>
+              </div>
+              <div>
+                <figure>
+                  <a href="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/257115526/a025ab19af9d7b45a9a75efc6c56a7389cac10d6/movie_full.jpg" title="Sea of Thieves Naval Combat Feedback" target="images">
+                    <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/257115526/a025ab19af9d7b45a9a75efc6c56a7389cac10d6/movie_full.jpg" alt="Sea of Thieves Naval Combat Feedback" />
+                  </a>
+                  <figcaption>FIG 1.5: World-State Feedback Systems</figcaption>
+                </figure>
+              </div>
+            </div>
+            <ul>
+              <li>
+                <div class="logo-svg">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25l4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h6>Audio Feedback</h6>
+                  <p>
+                    Sea of Thieves uses a spatially rich 3D audio system where every environmental
+                    cue carries gameplay meaning. Hull creaking intensity scales with structural
+                    damage. Water rushing through a hull breach is audible before it's visible.
+                    Cannon fire echoes from the direction of threat. Mermaid songs signal a
+                    nearby contested voyage. The Tall Tales story quests use directional musical
+                    cues to guide players without map markers — music replaces waypoints as a
+                    navigation tool.
+                  </p>
+                </div>
+              </li>
+              <li>
+                <div class="logo-svg">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h6>Visual Feedback</h6>
+                  <p>
+                    World events are announced visually through environmental spectacle: a giant
+                    skull-shaped cloud signals an active Skeleton Fort; a ship-shaped cloud marks
+                    a Ghost Fleet event; a plume of smoke identifies a sunken shipwreck. Physical
+                    holes in the hull let water in visibly. The ship's sails rotate to show
+                    wind direction without a wind-rose HUD. At night, the sky itself serves as a
+                    navigation tool, with constellations used in Tall Tale puzzles.
+                  </p>
+                </div>
+              </li>
+              <li>
+                <div class="logo-svg">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M7.864 4.243A7.5 7.5 0 0 1 19.5 10.5c0 2.92-.556 5.709-1.568 8.268M5.742 6.364A7.465 7.465 0 0 0 4.5 10.5a7.464 7.464 0 0 1-1.15 3.993m1.989 3.559A11.209 11.209 0 0 0 8.25 10.5a3.75 3.75 0 1 1 7.5 0c0 .527-.021 1.049-.064 1.565M12 10.5a14.94 14.94 0 0 1-3.6 9.75m6.633-4.596a18.666 18.666 0 0 1-2.485 5.33"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h6>Physical &amp; Social Feedback</h6>
+                  <p>
+                    Sea of Thieves uniquely treats player-to-player communication as a core
+                    feedback channel. Crew members call out threats, coordinate sail angles, and
+                    relay map positions through proximity voice chat — the crew's collective
+                    awareness substitutes for a minimap. On controller, weapon recoil and
+                    cannon fire carry distinct rumble signatures. The DualSense adaptive triggers
+                    on PS5 give weapons resistance that communicates charge state without
+                    a visual progress bar.
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </section>
+
+          <!-- ==================== HCI PRINCIPLES ==================== -->
+          <section class="game-sections" id="hci-principles" aria-hidden="true">
+            <h2>HCI Principles</h2>
+            <div class="cybernetic-feedback-loops">
+              <h3>Cybernetic Feedback Loops</h3>
+              <div class="cybernetic-content">
+                <div>
+                  <p style="text-align: justify">
+                    Sea of Thieves operates on a distributed feedback architecture where no single
+                    player receives all game state information. The loop is collective: the lookout
+                    sees the threat, the navigator reads the map, the helmsman steers, and the
+                    cannoneer fires. Each crew member's perception feeds into a shared mental
+                    model of the world, making the crew itself the HCI system. This is a
+                    deliberate design inversion — the interface is social and environmental
+                    rather than digital and individual.
+                  </p>
+                </div>
+                <div>
+                  <ul class="primary-modalities">
+                    <h6>Primary Modalities</h6>
+                    <li>
+                      <strong>Visual</strong>: Environmental event markers (skull cloud, ghost fleet cloud), physical hull holes, rising water, sail wind-state, horizon scanning
+                    </li>
+                    <li>
+                      <strong>Auditory</strong>: Spatial hull-damage audio, directional cannon fire, mermaid songs for events, Tall Tale musical navigation cues, crew voice proximity
+                    </li>
+                    <li>
+                      <strong>Social</strong>: Player-to-player voice communication as distributed HUD; role assignment, threat callouts, and map relay through speech
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="spatial-congruence">
+              <h2>Spatial Congruence</h2>
+              <p style="text-align: justify">
+                Sea of Thieves achieves near-perfect spatial congruence by eliminating the
+                abstraction layer of an overlay HUD entirely. The player's first-person view
+                is both the game world and the interface — there is no gap between
+                representation and reality. When navigating by compass, the compass needle
+                exists in the same spatial frame as the ship and horizon. When reading a
+                treasure map, the drawn landmarks correspond 1:1 to visible island features.
+                This design maximises ecological validity: players develop genuine spatial
+                mental models rather than learning an abstract symbol system.
+              </p>
+            </div>
+            <div class="cognitive-load-bifurcation">
+              <h2>Cognitive Load &amp; Distributed Cognition</h2>
+              <p style="text-align: justify; margin-bottom: 2em">
+                Sea of Thieves deliberately offloads cognitive load from the individual interface
+                onto the crew collective. Rather than one player managing all information through
+                a comprehensive HUD, the game forces information distribution: no single crew
+                member can simultaneously steer, navigate, watch for threats, and manage sails.
+                This distributed cognition model creates emergent cooperative dependency —
+                the game's social contract is also its interface architecture.
+              </p>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Extrinsic Organization</th>
+                    <th>Intrinsic Focus</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <h6>Diegetic Tool Clarity</h6>
+                      <p>
+                        Physical tools (compass, map, spyglass) have self-evident interaction
+                        models — raise to use, lower to stow. Their function is immediately
+                        understandable without tutorials, leveraging real-world object affordance
+                        to minimise extrinsic UI learning costs.
+                      </p>
+                    </td>
+                    <td>
+                      <h6>Cooperative Coordination</h6>
+                      <p>
+                        Optimising crew role distribution, sail angle relative to wind, cannon
+                        lead for a moving target, and escape routing from a pursuing ship are
+                        the core intrinsic demands — requiring both game knowledge and live
+                        social negotiation simultaneously.
+                      </p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <h6>Environmental Readability</h6>
+                      <p>
+                        World event signals (skull clouds, coloured ship flags, distress flares)
+                        encode complex game state into immediately readable environmental cues,
+                        reducing the extrinsic cost of world state assessment without requiring
+                        an information overlay.
+                      </p>
+                    </td>
+                    <td>
+                      <h6>Navigation Under Pressure</h6>
+                      <p>
+                        Reading a hand-drawn treasure map against real island geography, solving
+                        riddle clues in the world, and cross-referencing compass bearings while
+                        under cannon fire represents the highest intrinsic load scenario —
+                        demanding spatial reasoning, game knowledge, and crew coordination.
+                      </p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="footnote">
+              <q>
+                Sea of Thieves does not give you an interface to read the world — it makes
+                the world itself the interface. Every piece of information exists somewhere
+                in the environment; the crew's job is to distribute the task of finding it.
+              </q>
+            </div>
+          </section>
+
+          <!-- ==================== ANALYSIS ==================== -->
+          <section
+            class="game-sections"
+            id="ui-ux-weaknesses"
+            aria-hidden="true"
+          >
+            <h2>Strengths and Weaknesses Analysis</h2>
+            <p>
+              A comprehensive breakdown of Sea of Thieves' radical diegetic interface paradigm.
+              Evaluating the tension between immersive world-embedded design and the accessibility
+              demands of a mainstream multiplayer open-world game.
+            </p>
+
+            <table style="margin-bottom: 2em">
+              <thead>
+                <tr>
+                  <th>
+                    System Strengths
+                    <span class="badge badge-success">Positive_Vectors</span>
+                  </th>
+                  <th>
+                    System Weaknesses
+                    <span class="badge badge-danger">Negative_Vectors</span>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="sw-item-head">
+                      <span class="sw-icon" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"></path>
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7Z"></path>
+                        </svg>
+                      </span>
+                      <span class="label">01_DIEGETIC</span>
+                    </div>
+                    <h6>Landmark Diegetic Design</h6>
+                    <p>
+                      Sea of Thieves is the most thorough implementation of diegetic interface
+                      design in mainstream multiplayer gaming. By replacing every HUD element with
+                      a world-embedded physical tool, it creates genuine first-person immersion —
+                      players are not observers reading data, but inhabitants navigating a world.
+                      The compass, map table, and spyglass feel like real maritime instruments
+                      because they function like them.
+                    </p>
+                  </td>
+                  <td>
+                    <div class="sw-item-head">
+                      <span class="sw-icon" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75M6.75 10.5h10.5A2.25 2.25 0 0 1 19.5 12.75v6A2.25 2.25 0 0 1 17.25 21H6.75A2.25 2.25 0 0 1 4.5 18.75v-6A2.25 2.25 0 0 1 6.75 10.5Z"></path>
+                        </svg>
+                      </span>
+                      <span class="label">01_ONBOARDING</span>
+                    </div>
+                    <h6>Brutal New Player Onboarding</h6>
+                    <p>
+                      The same diegetic philosophy that creates immersion for experienced players
+                      creates disorientation for new ones. With no waypoints, no tutorial overlays,
+                      and no quest markers, first-time players who are unfamiliar with compass
+                      navigation or maritime charts can spend hours lost or confused. The game
+                      assumes environmental literacy that must be learned through failure rather
+                      than guided discovery.
+                    </p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="sw-item-head">
+                      <span class="sw-icon" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25l4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z"></path>
+                        </svg>
+                      </span>
+                      <span class="label">02_COOPERATIVE</span>
+                    </div>
+                    <h6>Emergent Cooperative Design</h6>
+                    <p>
+                      By distributing information and ship control tasks across physical crew
+                      roles, Sea of Thieves makes cooperation structurally necessary rather than
+                      optional. No crew management menu is needed because the ship's layout
+                      creates natural role separation. This emergent cooperative design has
+                      produced some of the most memorable shared-experience storytelling in
+                      multiplayer gaming.
+                    </p>
+                  </td>
+                  <td>
+                    <div class="sw-item-head">
+                      <span class="sw-icon" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v4.5m0 3.75h.008v.008H12v-.008ZM10.29 3.86l-7.5 13A1.5 1.5 0 0 0 4.09 19h15.82a1.5 1.5 0 0 0 1.3-2.14l-7.5-13a1.5 1.5 0 0 0-2.6 0Z"></path>
+                        </svg>
+                      </span>
+                      <span class="label">02_SOLO</span>
+                    </div>
+                    <h6>Solo Play Friction</h6>
+                    <p>
+                      The distributed cognition model that enables beautiful crew cooperation
+                      becomes a serious burden for solo players. Managing helm, sails, cannon,
+                      map, and hull repairs simultaneously is genuinely difficult on a large
+                      ship. The introduction of Safer Seas (solo/small crew mode) in 2023
+                      acknowledged this limitation, but the game's interface architecture
+                      still fundamentally privileges crew play over individual navigation.
+                    </p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="sw-item-head">
+                      <span class="sw-icon" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09Z"></path>
+                        </svg>
+                      </span>
+                      <span class="label">03_WORLD_AUDIO</span>
+                    </div>
+                    <h6>Exceptional Environmental Audio Design</h6>
+                    <p>
+                      Sea of Thieves' audio design is a benchmark for world-state feedback through
+                      sound. The dynamic music system shifts with danger and discovery. Hull damage
+                      is felt before it's seen. Every biome has a distinct acoustic signature.
+                      The Tall Tales' use of directional musical cues as navigation — replacing
+                      markers entirely with sound — is a genuinely innovative HCI solution.
+                    </p>
+                  </td>
+                  <td>
+                    <div class="sw-item-head">
+                      <span class="sw-icon" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M3.98 8.223A10.477 10.477 0 0 0 1.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.451 10.451 0 0 1 12 4.5c4.756 0 8.773 3.162 10.065 7.498a10.522 10.522 0 0 1-4.293 5.774M6.228 6.228 3 3m3.228 3.228 3.65 3.65m7.894 7.894L21 21m-3.228-3.228-3.65-3.65m0 0a3 3 0 1 0-4.243-4.243m4.242 4.242L9.88 9.88"></path>
+                        </svg>
+                      </span>
+                      <span class="label">03_GRIEFER</span>
+                    </div>
+                    <h6>PvP Threat &amp; Griefer Asymmetry</h6>
+                    <p>
+                      The shared-world design means experienced crews can grief or repeatedly
+                      sink new players with no interface mechanism to prevent it. The loot-loss
+                      system (losing all cargo on ship destruction) amplifies this frustration.
+                      While Safer Seas partially addresses the problem, Adventure Mode's core
+                      design creates a persistent power asymmetry where interface mastery
+                      directly enables predatory play against novices.
+                    </p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="footnote summary">
+              <p>
+                Sea of Thieves represents the most ambitious diegetic HCI experiment in modern
+                gaming — a design where <u>the interface is the world, and the world is the
+                interface</u>. Its strengths — landmark diegetic navigation, emergent crew
+                cooperation, and exceptional environmental audio — flow directly from its
+                radical anti-HUD philosophy. Its weaknesses — brutal onboarding, solo play
+                friction, and PvP asymmetry — are equally direct consequences of that same
+                philosophy. Few games prove so clearly that the most powerful interface
+                design decisions are inseparable from the game's deepest values.
+              </p>
+            </div>
+          </section>
+        </div>
+      </article>
+    </main>
+
+    <footer></footer>
+
+    <script>
+      // VARIABLES
+      const GAMENAME = "Sea of Thieves";
+      const DATERELEASED = "03/20/2018";
+      const PUBLISHER = "Xbox Game Studios";
+      const BADGE = "Full Release";
+      const POSTERURL = "https://upload.wikimedia.org/wikipedia/en/5/51/Sea_of_thieves_cover_art.jpg";
+      const POSTERALTTEXT = "Sea of Thieves Poster";
+      const VIDEOURL = "";
+      const VIDEOURLYT =
+        "https://www.youtube.com/embed/r5JIBaasuog";
+      const YTVID = true;
+
+      const GAMEUSERSTARS = "6.8";
+      const GAMEUSERRATINGS = "5,000,000+";
+
+      const HASCRITICS = true;
+      const GAMECRITICSTARS = "6.9";
+      const GAMECRITICRATINGS = "82";
+
+      const GENRES = ["Action-Adventure", "Open World", "Multiplayer"];
+      const PLATFORMS = ["PC", "Xbox One", "Xbox Series X|S", "PS5"];
+      const EDITIONS = ["Standard Edition", "Deluxe Edition"];
+
+      const DESCRIPTION =
+        "Sea of Thieves is an open-world pirate adventure game developed by Rare and published by Xbox Game Studios. Players crew up on ships to sail, explore, fight, and trade across a shared-world ocean featuring cooperative ship management, PvP naval combat, treasure hunting, and Tall Tales story adventures.";
+
+      // -- Document Variables --
+      const sectionRadios = Array.from(
+        document.querySelectorAll('input[name="game-section"]'),
+      );
+      const gameSections = Array.from(
+        document.querySelectorAll(".game-sections"),
+      );
+      const gameInfoNav = document.getElementById("game-info-nav");
+      const gameInfoNavLeft = document.getElementById("game-info-nav-left");
+      const gameInfoNavRight = document.getElementById("game-info-nav-right");
+
+      // -- Implementation --
+      document.getElementById("title").textContent = GAMENAME + " - GameUX";
+      for (let el of document.getElementsByClassName("game-name")) {
+        el.textContent = GAMENAME;
+      }
+      for (let el of document.getElementsByClassName("date-released")) {
+        el.textContent = DATERELEASED;
+      }
+      for (let el of document.getElementsByClassName("publisher")) {
+        el.textContent = PUBLISHER;
+      }
+      for (let el of document.getElementsByClassName("game-badge")) {
+        el.textContent = BADGE;
+      }
+      for (let el of document.getElementsByClassName("game-user-rating")) {
+        el.textContent = GAMEUSERSTARS;
+      }
+      for (let el of document.getElementsByClassName("game-user-ratings")) {
+        el.textContent = GAMEUSERRATINGS + " user ratings";
+      }
+      for (let el of document.getElementsByClassName("game-critic-rating")) {
+        el.textContent = GAMECRITICSTARS;
+      }
+      for (let el of document.getElementsByClassName("game-critic-ratings")) {
+        el.textContent = GAMECRITICRATINGS + " critic ratings";
+      }
+      for (let el of document.getElementsByClassName("game-poster-content")) {
+        el.src = POSTERURL;
+      }
+      document.getElementById("game-poster-img").src = POSTERURL;
+      document.getElementById("game-poster-img").title =
+        GAMENAME + " Game Poster";
+      document.getElementById("game-poster").href = POSTERURL;
+      document.getElementById("game-description").textContent = DESCRIPTION;
+      document.getElementById("game-poster-img").alt = POSTERALTTEXT;
+
+      // Video / YouTube Toggle Logic
+      const videoEl = document.getElementById("game-video");
+      const videoSourceEl = document.getElementById("game-video-source");
+      const ytEl = document.getElementById("game-video-yt");
+      if (YTVID) {
+        if (ytEl) {
+          ytEl.src = VIDEOURLYT;
+          ytEl.hidden = false;
+        }
+        if (videoEl) {
+          videoEl.hidden = true;
+          try {
+            videoEl.pause();
+          } catch (e) {}
+        }
+      } else {
+        if (videoSourceEl) {
+          videoSourceEl.src = VIDEOURL;
+        }
+        if (videoEl) {
+          videoEl.hidden = false;
+          try {
+            videoEl.load();
+          } catch (e) {}
+        }
+        if (ytEl) {
+          ytEl.hidden = true;
+          ytEl.src = "";
+        }
+      }
+
+      // Lists
+      for (let genre of GENRES) {
+        let li = document.createElement("li");
+        li.textContent = genre;
+        document.getElementById("genres").appendChild(li);
+      }
+
+      for (let platform of PLATFORMS) {
+        let li = document.createElement("li");
+        li.textContent = platform;
+        document.getElementById("platforms").appendChild(li);
+      }
+
+      for (let edition of EDITIONS) {
+        let li = document.createElement("li");
+        li.textContent = edition;
+        document.getElementById("editions").appendChild(li);
+      }
+
+      // Critic Visibility
+      if (!HASCRITICS) {
+        for (let el of document.getElementsByClassName(
+          "game-critic-rating-cont",
+        )) {
+          el.classList.add("hidden");
+        }
+      }
+
+      // Days/Years Calculation
+      let timeDiff = new Date().getTime() - new Date(DATERELEASED).getTime();
+      let daysAgo = Math.floor(timeDiff / (1000 * 3600 * 24));
+      if (daysAgo > 365) {
+        let yearsAgo = Math.floor(daysAgo / 365);
+        for (let el of document.getElementsByClassName("days-ago")) {
+          el.textContent = "(" + yearsAgo + " years ago)";
+        }
+      } else {
+        for (let el of document.getElementsByClassName("days-ago")) {
+          el.textContent = "(" + daysAgo + " days ago)";
+        }
+      }
+
+      // Section Navigation
+      function showGameSection(sectionId) {
+        for (let section of gameSections) {
+          let isActive = section.id === sectionId;
+          section.classList.toggle("is-active", isActive);
+          section.setAttribute("aria-hidden", String(!isActive));
+        }
+      }
+
+      const defaultSection = document.querySelector(
+        'input[name="game-section"]:checked',
+      );
+      showGameSection(
+        defaultSection ? defaultSection.value : "short-description",
+      );
+
+      for (let radio of sectionRadios) {
+        radio.addEventListener("change", () => {
+          if (!radio.checked) {
+            return;
+          }
+          showGameSection(radio.value);
+        });
+      }
+
+      // Scroll Navigation Arrows
+      function updateGameInfoNavArrows() {
+        if (!gameInfoNav || !gameInfoNavLeft || !gameInfoNavRight) {
+          return;
+        }
+
+        const maxScrollLeft = gameInfoNav.scrollWidth - gameInfoNav.clientWidth;
+        const canScroll = maxScrollLeft > 1;
+        const canScrollLeft = canScroll && gameInfoNav.scrollLeft > 1;
+        const canScrollRight =
+          canScroll && gameInfoNav.scrollLeft < maxScrollLeft - 1;
+
+        gameInfoNavLeft.hidden = !canScrollLeft;
+        gameInfoNavRight.hidden = !canScrollRight;
+      }
+
+      function scrollGameInfoNavBy(distance) {
+        if (!gameInfoNav) {
+          return;
+        }
+        gameInfoNav.scrollBy({ left: distance, behavior: "smooth" });
+      }
+
+      if (gameInfoNav && gameInfoNavLeft && gameInfoNavRight) {
+        gameInfoNav.addEventListener("scroll", updateGameInfoNavArrows);
+        gameInfoNavLeft.addEventListener("click", () => {
+          scrollGameInfoNavBy(
+            -Math.max(200, Math.floor(gameInfoNav.clientWidth * 0.5)),
+          );
+        });
+        gameInfoNavRight.addEventListener("click", () => {
+          scrollGameInfoNavBy(
+            Math.max(200, Math.floor(gameInfoNav.clientWidth * 0.5)),
+          );
+        });
+        window.addEventListener("resize", updateGameInfoNavArrows);
+        updateGameInfoNavArrows();
+      }
+    </script>
+  </body>
+</html>
