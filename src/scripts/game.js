@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Shared Game Page Functionality
  * Includes: Section navigation, Game info nav arrows, and Back-to-top button
  */
@@ -18,8 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
         gameSections.forEach((section) => {
             const isActive = section.id === sectionId;
             section.classList.toggle("is-active", isActive);
-            section.setAttribute("aria-hidden", String(!isActive));
-        });
+});
     }
 
     function getSectionIdFromHash() {

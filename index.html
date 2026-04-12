@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -75,7 +75,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+                            <a class="nav-link active" href="./index.html">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="./src/pages/gameList.html">Game List</a>
@@ -95,7 +95,7 @@
     <main>
         <article class="wide">
             <section class="hero-section" id="home">
-                <div class="hero-poster-grid" aria-hidden="true">
+                <div class="hero-poster-grid">
                     <div class="hero-poster-row hero-poster-row-a">
                         <div class="hero-poster poster-1"></div>
                         <div class="hero-poster poster-2"></div>
@@ -226,7 +226,7 @@
                     </div>
 
                     <!-- subtle scroll cue at the bottom -->
-                    <div class="hero-scroll-cue" aria-hidden="true">
+                    <div class="hero-scroll-cue">
                         <span>scroll</span>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -561,20 +561,19 @@
                         </div>
 
                         <div class="featured-carousel-pagination-wrap">
-                            <nav aria-label="Featured games pages">
+                            <nav>
                                 <ul class="pagination featured-pagination" id="featuredPagination">
                                     <li class="page-item active">
                                         <button class="page-link" type="button" data-bs-target="#featuredCarousel"
-                                            data-bs-slide-to="0" aria-label="Go to page 1"
-                                            aria-current="page">1</button>
+                                            data-bs-slide-to="0">1</button>
                                     </li>
                                     <li class="page-item">
                                         <button class="page-link" type="button" data-bs-target="#featuredCarousel"
-                                            data-bs-slide-to="1" aria-label="Go to page 2">2</button>
+                                            data-bs-slide-to="1">2</button>
                                     </li>
                                     <li class="page-item">
                                         <button class="page-link" type="button" data-bs-target="#featuredCarousel"
-                                            data-bs-slide-to="2" aria-label="Go to page 3">3</button>
+                                            data-bs-slide-to="2">3</button>
                                     </li>
                                 </ul>
                             </nav>
@@ -589,8 +588,7 @@
         <h6>GameUX Atlas</h6>
         <ul class="socials">
             <li>
-                <a href="https://www.facebook.com/profile.php?id=61575774944293" class="social-link"
-                    aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.facebook.com/profile.php?id=61575774944293" class="social-link" target="_blank" rel="noopener noreferrer">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
                         <path
                             d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987H7.898v-2.89h2.54V9.845c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" />
@@ -598,7 +596,7 @@
                 </a>
             </li>
             <li>
-                <a href="https://www.instagram.com/gameux_atlas/" class="social-link" aria-label="Instagram"
+                <a href="https://www.instagram.com/gameux_atlas/" class="social-link"
                     target="_blank" rel="noopener noreferrer">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
                         <path
@@ -607,7 +605,7 @@
                 </a>
             </li>
             <li>
-                <a href="https://x.com/GameUX_Atlas?s=20" class="social-link" aria-label="Twitter / X" target="_blank"
+                <a href="https://x.com/GameUX_Atlas?s=20" class="social-link" target="_blank"
                     rel="noopener noreferrer">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
                         <path
@@ -625,8 +623,8 @@
     </footer>
 
     <!-- back-to-top ring button — same SVG as the game pages -->
-    <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top" title="Back to top">
-        <svg viewBox="0 0 56 56" width="56" height="56" aria-hidden="true" focusable="false">
+    <button class="back-to-top" id="backToTop" type="button" title="Back to top">
+        <svg viewBox="0 0 56 56" width="56" height="56" focusable="false">
             <circle class="btn-bg" cx="28" cy="28" r="27" />
             <circle class="btn-progress-track" cx="28" cy="28" r="22" />
             <circle class="btn-progress" cx="28" cy="28" r="22" id="backToTopProgress" />
@@ -669,10 +667,8 @@
             item.classList.toggle('active', isActive);
             if (link) {
                 if (isActive) {
-                    link.setAttribute('aria-current', 'page');
-                } else {
-                    link.removeAttribute('aria-current');
-                }
+} else {
+}
             }
         });
 
