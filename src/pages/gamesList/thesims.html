@@ -935,6 +935,145 @@
       .hidden {
         display: none !important;
       }
+    
+        /* GAME PAGE NAVIGATION START */
+        .game-page-navigation {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1em;
+            margin: 2.5em auto 3em;
+            width: min(100%, 64rem);
+            padding: 0 1rem;
+        }
+
+        .game-page-navigation .page-nav-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.35em;
+            min-width: 10rem;
+            width: 100%;
+            position: relative;
+
+            & a {
+                width: 100%;
+            }
+        }
+
+        .game-page-navigation .page-nav-item.next {
+            align-items: flex-end;
+
+            & a {
+                text-align: right;
+            }
+        }
+
+        .game-page-navigation .btn {
+            min-width: 10rem;
+            border-radius: var(--t-radius-field);
+            font-weight: 600;
+            padding: 0.6em 1.1em;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+            isolation: isolate;
+            background-color: transparent !important;
+            transition: color 0.28s ease;
+        }
+
+        .game-page-navigation .btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            transform: scaleX(0);
+            transform-origin: left center;
+            transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+            z-index: -1;
+        }
+
+        .game-page-navigation .btn-prev {
+            --btn-fill: var(--t-color-secondary);
+            --btn-text-hover: var(--t-color-secondary-content);
+            color: var(--t-color-secondary) !important;
+            border-color: var(--t-color-secondary) !important;
+        }
+
+        .game-page-navigation .btn-prev::before {
+            background-color: var(--btn-fill);
+            transform-origin: left center;
+        }
+
+        .game-page-navigation .btn-next {
+            --btn-fill: var(--t-color-primary);
+            --btn-text-hover: var(--t-color-primary-content);
+            color: var(--t-color-primary) !important;
+            border-color: var(--t-color-primary) !important;
+        }
+
+        .game-page-navigation .btn-next::before {
+            background-color: var(--btn-fill);
+            transform-origin: right center;
+        }
+
+        .game-page-navigation .btn:hover,
+        .game-page-navigation .btn:focus-visible {
+            color: var(--btn-text-hover) !important;
+        }
+
+        .game-page-navigation .btn:hover::before,
+        .game-page-navigation .btn:focus-visible::before {
+            transform: scaleX(1);
+        }
+
+        .game-page-navigation .subtext {
+            display: block;
+            font-size: 0.78em;
+            color: inherit;
+            line-height: 1.2;
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .game-page-navigation .btn-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45em;
+            line-height: 1.15;
+        }
+
+        .game-page-navigation .page-nav-item.next .btn-label {
+            justify-content: flex-end;
+            width: 100%;
+        }
+
+        .game-page-navigation .nav-arrow {
+            width: 1em;
+            height: 1em;
+            flex-shrink: 0;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        @media (width < 48rem) {
+            .game-page-navigation {
+                grid-template-columns: 1fr;
+            }
+
+            .game-page-navigation .page-nav-item,
+            .game-page-navigation .page-nav-item.next {
+                align-items: stretch;
+            }
+
+            .game-page-navigation .btn,
+            .game-page-navigation .btn-prev,
+            .game-page-navigation .btn-next {
+                width: 100%;
+                margin: 0;
+            }
+        }
+        /* GAME PAGE NAVIGATION END */
     </style>
 
     <title id="title">The Sims - GameUX</title>
@@ -990,7 +1129,8 @@
     <main>
       <article class="wide">
         <section class="header-section">
-          <img class="game-poster-content game-poster-background-style" />
+          
+                <span class="archive-number">[ 100_thesims_sultan ]</span>
           <h1 class="game-name game-name-header">The Sims</h1>
           <div class="game-header">
             <span class="game-header-cont">
@@ -1200,7 +1340,7 @@
               The Sims is a life simulation game developed by Maxis and published by Electronic Arts. Released on February 4, 2000, for PC, the game was designed by Will Wright and became the best-selling PC game of all time, selling over 16 million copies worldwide and spawning one of gaming's most successful franchises.
             </p>
             <p>
-              The Sims' UI/UX is defined by its three-mode interface architecture — Live Mode, Buy Mode, and Build Mode — each providing a distinct toolset through a shared bottom-panel control bar. The game pioneered accessible simulation interfaces through its icon-driven need bars, pie-menu interaction system, and isometric "dollhouse" camera, making complex life simulation mechanics intuitive for a mainstream audience including a significant non-traditional gaming demographic.
+              The Sims' UI/UX is defined by its three-mode interface architecture â€” Live Mode, Buy Mode, and Build Mode â€” each providing a distinct toolset through a shared bottom-panel control bar. The game pioneered accessible simulation interfaces through its icon-driven need bars, pie-menu interaction system, and isometric "dollhouse" camera, making complex life simulation mechanics intuitive for a mainstream audience including a significant non-traditional gaming demographic.
             </p>
             <ul class="metrics-list">
               <li>
@@ -1219,7 +1359,7 @@
               </li>
               <li>
                 <h6>Session Length</h6>
-                <div class="value">30 min – 6+ hours</div>
+                <div class="value">30 min â€“ 6+ hours</div>
                 <div class="desc">
                   Open-ended sandbox design with no win/lose conditions enables highly variable play sessions driven by player-set goals
                 </div>
@@ -1250,7 +1390,7 @@
                   <span class="header-text">The Control Panel</span>
                   <p>
                     The Sims' primary interface is the bottom-screen control
-                    panel — a persistent UI bar that houses Sim portraits,
+                    panel â€” a persistent UI bar that houses Sim portraits,
                     need meters, relationship panels, job information, and
                     mode-switching buttons. This single panel serves as the
                     command center for all gameplay, with the selected Sim's
@@ -1286,7 +1426,7 @@
                   <span class="header-text">Buy & Build Mode Catalogs</span>
                   <p>
                     Buy Mode replaces the control panel with a categorized
-                    object catalog — items organized by room type (Living,
+                    object catalog â€” items organized by room type (Living,
                     Kitchen, Bedroom, etc.) and function, with prices,
                     descriptions, and need-fulfillment ratings displayed
                     on hover. Build Mode provides architectural tools for
@@ -1314,7 +1454,7 @@
                   <span class="header-text">Pie Menu Interaction</span>
                   <p>
                     Clicking on any object or Sim produces a radial pie menu
-                    displaying all available interactions — contextual actions
+                    displaying all available interactions â€” contextual actions
                     that change based on the object, the Sim's mood, their
                     skill levels, and their relationships. This elegant input
                     method compresses dozens of possible actions into a
@@ -1330,9 +1470,9 @@
                 <p>
                   Fitt's Law applies to The Sims through its isometric
                   point-and-click interaction model. Players must select
-                  objects and Sims — whose effective target width (W) is
+                  objects and Sims â€” whose effective target width (W) is
                   determined by their sprite size and the current zoom
-                  level — across the screen distance (D) from the cursor's
+                  level â€” across the screen distance (D) from the cursor's
                   current position. The isometric perspective compresses
                   depth, making distant objects appear smaller and harder
                   to click accurately.
@@ -1375,7 +1515,7 @@
                   <h6>Sim Behavior</h6>
                   <p>
                     Primary focus. The isometric viewport centers on active
-                    Sim behavior — animations, thought bubbles (showing
+                    Sim behavior â€” animations, thought bubbles (showing
                     desires and reactions), and speech bubbles (Simlish
                     dialogue with iconic pictograms) communicate Sim state
                     through the game world itself.
@@ -1386,7 +1526,7 @@
                   <p>
                     Secondary focus. The eight need bars in the control
                     panel use a green-to-red color gradient that enables
-                    instant assessment — green bars can be ignored, yellow
+                    instant assessment â€” green bars can be ignored, yellow
                     demands attention, and red requires immediate action.
                     This color coding leverages pre-attentive visual
                     processing for rapid triage.
@@ -1446,7 +1586,7 @@
                   <h6>Direct</h6>
                   <p>
                     Through click-based commands and pie menus, players
-                    queue actions for Sims — eat, sleep, socialize, study,
+                    queue actions for Sims â€” eat, sleep, socialize, study,
                     go to work. Sims have limited free will and may
                     resist or modify queued actions based on their mood
                     and personality traits.
@@ -1512,7 +1652,7 @@
                 <div>
                   <h6>Audio Feedback</h6>
                   <p>
-                    Simlish — the game's fictional language — is a landmark
+                    Simlish â€” the game's fictional language â€” is a landmark
                     in game audio design. By using nonsense syllables with
                     realistic emotional inflection, it communicates mood,
                     intent, and social context without requiring
@@ -1540,7 +1680,7 @@
                     during social interactions display topic icons showing
                     what Sims are discussing. The green plumbob diamond
                     above the selected Sim provides instant identification
-                    and mood feedback — shifting from green (happy) to
+                    and mood feedback â€” shifting from green (happy) to
                     red (distressed).
                   </p>
                 </div>
@@ -1559,8 +1699,8 @@
                     the game's "virtual dollhouse" design philosophy.
                     Drag-and-drop object placement in Buy/Build mode
                     provides direct manipulation with grid snapping
-                    for precision. The action queue — visible as icons
-                    above the selected Sim — shows pending commands,
+                    for precision. The action queue â€” visible as icons
+                    above the selected Sim â€” shows pending commands,
                     allowing players to plan and reorder future actions.
                   </p>
                 </div>
@@ -1607,7 +1747,7 @@
               <h2>Spatial Congruence</h2>
               <p style="text-align: justify">
                 The Sims achieves spatial congruence through its isometric
-                "dollhouse" perspective — a top-down angled view that mirrors
+                "dollhouse" perspective â€” a top-down angled view that mirrors
                 the physical act of looking into a dollhouse or architectural
                 model. Wall-cutting tools allow players to remove upper
                 floors and walls, reinforcing the metaphor of peering into
@@ -1679,7 +1819,7 @@
                         how room layout affects Sim pathfinding, how object
                         placement satisfies the Room need score, and how
                         budget constraints interact with need-fulfillment
-                        priorities — a spatial reasoning challenge.
+                        priorities â€” a spatial reasoning challenge.
                       </p>
                     </td>
                   </tr>
@@ -1688,7 +1828,7 @@
             </div>
             <div class="footnote">
               <q>
-                The Sims' interface is not a control system — it is a
+                The Sims' interface is not a control system â€” it is a
                 window into a miniature world. Its design proves that
                 complex life simulation can be made universally accessible
                 through intuitive visual metaphors, modal separation,
@@ -1743,7 +1883,7 @@
                     <p>
                       The Sims' point-and-click pie menu interface made
                       complex simulation accessible to an audience that
-                      had never played video games — nearly 60% of players
+                      had never played video games â€” nearly 60% of players
                       were female, unprecedented for 2000. The visual
                       metaphor of a "virtual dollhouse" provided an
                       instantly understood interaction paradigm that
@@ -1805,7 +1945,7 @@
                     <p>
                       Sims frequently get stuck on furniture, block each
                       other in narrow hallways, and fail to navigate
-                      around obstacles — often refusing to complete queued
+                      around obstacles â€” often refusing to complete queued
                       actions due to pathfinding failures. The UI provides
                       no clear feedback explaining why an action was
                       cancelled, leaving players to diagnose spatial layout
@@ -1861,7 +2001,7 @@
             <div class="footnote summary">
               <p>
                 The Sims represents a watershed moment in simulation
-                interface design — a system built on the radical premise
+                interface design â€” a system built on the radical premise
                 that
                 <u>complex life simulation should be as intuitive as
                 playing with a dollhouse</u>. While its strengths lie in
@@ -1870,13 +2010,40 @@
                 weaknesses reveal the friction between realistic life
                 simulation and enjoyable gameplay management. The system's
                 greatest achievement is proving that game interfaces can
-                transcend the gaming audience entirely — reaching millions
+                transcend the gaming audience entirely â€” reaching millions
                 of players who had never touched a video game before.
               </p>
             </div>
           </section>
         </div>
       </article>
+    
+        <!-- GAME PAGE NAVIGATION START -->
+        <div class="game-page-navigation" aria-label="Game page navigation">
+            <div class="page-nav-item prev">
+                <a class="btn btn-outline-secondary btn-prev" href="tetris.html">
+                    <span class="btn-label">
+                        <svg class="nav-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path d="M15 18l-6-6 6-6"></path>
+                        </svg>
+                        <span>Previous Game</span>
+                    </span>
+                    <span class="subtext">Tetris</span>
+                </a>
+            </div>
+            <div class="page-nav-item next">
+                <a class="btn btn-primary btn-next" href="halfLife.html">
+                    <span class="btn-label">
+                        <span>Next Game</span>
+                        <svg class="nav-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path d="M9 6l6 6-6 6"></path>
+                        </svg>
+                    </span>
+                    <span class="subtext">Half-Life</span>
+                </a>
+            </div>
+        </div>
+        <!-- GAME PAGE NAVIGATION END -->
     </main>
 
     <footer>

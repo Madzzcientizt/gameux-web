@@ -999,6 +999,145 @@
         .game-video-wrp {
             position: relative;
         }
+    
+        /* GAME PAGE NAVIGATION START */
+        .game-page-navigation {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1em;
+            margin: 2.5em auto 3em;
+            width: min(100%, 64rem);
+            padding: 0 1rem;
+        }
+
+        .game-page-navigation .page-nav-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.35em;
+            min-width: 10rem;
+            width: 100%;
+            position: relative;
+
+            & a {
+                width: 100%;
+            }
+        }
+
+        .game-page-navigation .page-nav-item.next {
+            align-items: flex-end;
+
+            & a {
+                text-align: right;
+            }
+        }
+
+        .game-page-navigation .btn {
+            min-width: 10rem;
+            border-radius: var(--t-radius-field);
+            font-weight: 600;
+            padding: 0.6em 1.1em;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+            isolation: isolate;
+            background-color: transparent !important;
+            transition: color 0.28s ease;
+        }
+
+        .game-page-navigation .btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            transform: scaleX(0);
+            transform-origin: left center;
+            transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+            z-index: -1;
+        }
+
+        .game-page-navigation .btn-prev {
+            --btn-fill: var(--t-color-secondary);
+            --btn-text-hover: var(--t-color-secondary-content);
+            color: var(--t-color-secondary) !important;
+            border-color: var(--t-color-secondary) !important;
+        }
+
+        .game-page-navigation .btn-prev::before {
+            background-color: var(--btn-fill);
+            transform-origin: left center;
+        }
+
+        .game-page-navigation .btn-next {
+            --btn-fill: var(--t-color-primary);
+            --btn-text-hover: var(--t-color-primary-content);
+            color: var(--t-color-primary) !important;
+            border-color: var(--t-color-primary) !important;
+        }
+
+        .game-page-navigation .btn-next::before {
+            background-color: var(--btn-fill);
+            transform-origin: right center;
+        }
+
+        .game-page-navigation .btn:hover,
+        .game-page-navigation .btn:focus-visible {
+            color: var(--btn-text-hover) !important;
+        }
+
+        .game-page-navigation .btn:hover::before,
+        .game-page-navigation .btn:focus-visible::before {
+            transform: scaleX(1);
+        }
+
+        .game-page-navigation .subtext {
+            display: block;
+            font-size: 0.78em;
+            color: inherit;
+            line-height: 1.2;
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .game-page-navigation .btn-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45em;
+            line-height: 1.15;
+        }
+
+        .game-page-navigation .page-nav-item.next .btn-label {
+            justify-content: flex-end;
+            width: 100%;
+        }
+
+        .game-page-navigation .nav-arrow {
+            width: 1em;
+            height: 1em;
+            flex-shrink: 0;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        @media (width < 48rem) {
+            .game-page-navigation {
+                grid-template-columns: 1fr;
+            }
+
+            .game-page-navigation .page-nav-item,
+            .game-page-navigation .page-nav-item.next {
+                align-items: stretch;
+            }
+
+            .game-page-navigation .btn,
+            .game-page-navigation .btn-prev,
+            .game-page-navigation .btn-next {
+                width: 100%;
+                margin: 0;
+            }
+        }
+        /* GAME PAGE NAVIGATION END */
     </style>
     <!-- Custom Styles ------------------------------------------------------------------------------------------ -->
 
@@ -1046,7 +1185,8 @@
     <main>
         <article class="wide">
             <section class="header-section">
-                <img class="game-poster-content game-poster-background-style" />
+                
+                <span class="archive-number">[ 059_hotelduskroom215_mateo ]</span>
                 <h1 class="game-name game-name-header" title="Game Name">
                     Game name
                 </h1>
@@ -1121,7 +1261,7 @@
                                     <button id="use-local-video-btn" class="btn-fallback btn-local" type="button">Use
                                         Local Video</button>
                                 </div>
-                                <p class="fallback-hint">💡 Try connecting through a different network or VPN to access
+                                <p class="fallback-hint">ðŸ’¡ Try connecting through a different network or VPN to access
                                     YouTube content.</p>
                             </div>
                         </div>
@@ -1227,7 +1367,7 @@
                 <section class="game-sections" id="short-description">
                     <h2>Overview</h2>
                     <p>
-                        The narrative unfolds over the course of a single night in 1979 at the titular Hotel Dusk, a fading establishment rumored to house a room that can grant wishes. As Kyle Hyde, players navigate the hotel's halls to fulfill his job as a "fetcher" for Red Crown, but the mission quickly becomes personal as he discovers that every guest—and the hotel itself—is connected to his past. Through a series of deep, interrogation-style conversations, players must carefully choose their words to pry secrets from the eccentric cast, uncovering a web of crime, betrayal, and lost dreams that leads back to Kyle’s disgraced departure from the police force.
+                        The narrative unfolds over the course of a single night in 1979 at the titular Hotel Dusk, a fading establishment rumored to house a room that can grant wishes. As Kyle Hyde, players navigate the hotel's halls to fulfill his job as a "fetcher" for Red Crown, but the mission quickly becomes personal as he discovers that every guestâ€”and the hotel itselfâ€”is connected to his past. Through a series of deep, interrogation-style conversations, players must carefully choose their words to pry secrets from the eccentric cast, uncovering a web of crime, betrayal, and lost dreams that leads back to Kyleâ€™s disgraced departure from the police force.
                     </p>
                     <p>
                         Gameplay is deeply tactile, utilizing the DS hardware to ground the player in Kyle's world through various touch-screen puzzles and environmental interactions. From physically turning the console to "flip" a painting to using the stylus to pick locks or piece together torn letters, the mechanics emphasize the grounded, gritty nature of the noir genre. The experience is defined by its moody, jazz-fusion soundtrack and a slow-burn script that values character development over flashy action, ultimately delivering a poignant story about human regret and the possibility of a second chance.
@@ -1329,7 +1469,7 @@
                     <div class="fittslaw">
                         <div>
                             <p>
-                                While Fitt’s Law traditionally applies to target acquisition, Hotel Dusk adapts pointing mechanics for narrative-driven interaction. The "Interruption" system requires players to tap a specific triangular icon during precise dialogue windows. In this context, pointing accuracy is a logistical function of the time pressure and the player's cognitive processing of the dialogue. By calculating the player's success rate against the speed of disappearing dialogue prompts, we can model the difficulty of extracting information from uncooperative characters.
+                                While Fittâ€™s Law traditionally applies to target acquisition, Hotel Dusk adapts pointing mechanics for narrative-driven interaction. The "Interruption" system requires players to tap a specific triangular icon during precise dialogue windows. In this context, pointing accuracy is a logistical function of the time pressure and the player's cognitive processing of the dialogue. By calculating the player's success rate against the speed of disappearing dialogue prompts, we can model the difficulty of extracting information from uncooperative characters.
                             </p>
                             <div class="mathmodel">
                                 <h6>[ POINTING ACCURACY MODEL ]</h6>
@@ -1359,7 +1499,7 @@
                             <li>
                                 <h6>Environmental Investigation</h6>
                                 <p>
-                                    The mid-level hierarchy focuses on spatial scaffolding. When Kyle Hyde enters "Investigate" mode, the screen presents a 3D view paired with a 2D map. Taggable "hotspots" are often subtle until hovered over, but the map icons remain highly saturated to guide the player’s "line" of inquiry. This ensures players always have a clear directional path through the hotel's corridors without breaking the gritty, noir atmosphere.
+                                    The mid-level hierarchy focuses on spatial scaffolding. When Kyle Hyde enters "Investigate" mode, the screen presents a 3D view paired with a 2D map. Taggable "hotspots" are often subtle until hovered over, but the map icons remain highly saturated to guide the playerâ€™s "line" of inquiry. This ensures players always have a clear directional path through the hotel's corridors without breaking the gritty, noir atmosphere.
                             </p>
                             </li>
                             <li>
@@ -1374,7 +1514,7 @@
                 <section class="game-sections" id="user-interaction">
                     <h2>User Interaction</h2>
                     <p>
-                        An examination of the investigative and diagnostic paradigms in Hotel Dusk: Room 215 UI design, focusing on how the game communicates mystery-solving systems and player status through layered feedback mechanisms. The game employs a multi-modal feedback matrix that integrates visual, auditory, and haptic cues to create a tactile noir experience. Players must interpret these cues in real-time—often holding the Nintendo DS vertically like a book—to navigate the hotel's secrets and handle high-stakes interrogations.
+                        An examination of the investigative and diagnostic paradigms in Hotel Dusk: Room 215 UI design, focusing on how the game communicates mystery-solving systems and player status through layered feedback mechanisms. The game employs a multi-modal feedback matrix that integrates visual, auditory, and haptic cues to create a tactile noir experience. Players must interpret these cues in real-timeâ€”often holding the Nintendo DS vertically like a bookâ€”to navigate the hotel's secrets and handle high-stakes interrogations.
                     </p>
 
                     <div class="list-style-area">
@@ -1384,7 +1524,7 @@
                             <li>
                                 <h6>Roam</h6>
                                 <p>
-                                    Navigate Hotel Dusk’s corridors using the touch-screen map, searching for environmental clues and interactive hotspots within the 3D space.
+                                    Navigate Hotel Duskâ€™s corridors using the touch-screen map, searching for environmental clues and interactive hotspots within the 3D space.
                                 </p>
                             </li>
                             <li>
@@ -1402,7 +1542,7 @@
                             <li>
                                 <h6>Solve</h6>
                                 <p>
-                                    Synthesize clues at the end of each chapter through a summary quiz, finalizing Kyle Hyde’s thoughts to progress into the next hour of the night.
+                                    Synthesize clues at the end of each chapter through a summary quiz, finalizing Kyle Hydeâ€™s thoughts to progress into the next hour of the night.
                                 </p>
                             </li>
                         </ol>
@@ -1462,7 +1602,7 @@
                             <div>
                                 <h6>Haptic Feedback</h6>
                                 <p>
-                                    The Nintendo DS's vibration is utilized to signify environmental collisions or heavy doors closing. More importantly, the hardware interaction—such as closing the DS lid to "stamp" a piece of paper—serves as a physical extension of the UI's puzzle-solving logic.
+                                    The Nintendo DS's vibration is utilized to signify environmental collisions or heavy doors closing. More importantly, the hardware interactionâ€”such as closing the DS lid to "stamp" a piece of paperâ€”serves as a physical extension of the UI's puzzle-solving logic.
                                 </p>
                             </div>
                         </li>
@@ -1519,7 +1659,7 @@
                                     <td>
                                         <h6>Narrative Deduction</h6>
                                         <p>
-                                            Players focus entirely on analyzing character dialogue for lies, identifying contradictions, and piecing together the hotel’s history.
+                                            Players focus entirely on analyzing character dialogue for lies, identifying contradictions, and piecing together the hotelâ€™s history.
                                         </p>
                                     </td>
                                 </tr>
@@ -1567,7 +1707,7 @@
                                     </div>
                                     <h6>Tactile Diegetic Integration</h6>
                                     <p>
-                                        By forcing the player to hold the DS vertically, the hardware itself becomes a diegetic prop—a detective’s notebook. The interface leverages this by allowing players to physically "close" the console to solve puzzles or use the stylus for sketching, creating a seamless bond between player action and Kyle Hyde's investigation.
+                                        By forcing the player to hold the DS vertically, the hardware itself becomes a diegetic propâ€”a detectiveâ€™s notebook. The interface leverages this by allowing players to physically "close" the console to solve puzzles or use the stylus for sketching, creating a seamless bond between player action and Kyle Hyde's investigation.
                                     </p>
                                 </td>
                                 <td>
@@ -1655,6 +1795,33 @@
                 </section>
             </div>
         </article>
+    
+        <!-- GAME PAGE NAVIGATION START -->
+        <div class="game-page-navigation" aria-label="Game page navigation">
+            <div class="page-nav-item prev">
+                <a class="btn btn-outline-secondary btn-prev" href="crueltySquad.html">
+                    <span class="btn-label">
+                        <svg class="nav-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path d="M15 18l-6-6 6-6"></path>
+                        </svg>
+                        <span>Previous Game</span>
+                    </span>
+                    <span class="subtext">Cruelty Squad</span>
+                </a>
+            </div>
+            <div class="page-nav-item next">
+                <a class="btn btn-primary btn-next" href="silverCase.html">
+                    <span class="btn-label">
+                        <span>Next Game</span>
+                        <svg class="nav-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path d="M9 6l6 6-6 6"></path>
+                        </svg>
+                    </span>
+                    <span class="subtext">Silver Case</span>
+                </a>
+            </div>
+        </div>
+        <!-- GAME PAGE NAVIGATION END -->
     </main>
             <footer>
         <h6>GameUX Atlas</h6>

@@ -864,6 +864,145 @@
         .game-video-wrp {
             position: relative;
         }
+    
+        /* GAME PAGE NAVIGATION START */
+        .game-page-navigation {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1em;
+            margin: 2.5em auto 3em;
+            width: min(100%, 64rem);
+            padding: 0 1rem;
+        }
+
+        .game-page-navigation .page-nav-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.35em;
+            min-width: 10rem;
+            width: 100%;
+            position: relative;
+
+            & a {
+                width: 100%;
+            }
+        }
+
+        .game-page-navigation .page-nav-item.next {
+            align-items: flex-end;
+
+            & a {
+                text-align: right;
+            }
+        }
+
+        .game-page-navigation .btn {
+            min-width: 10rem;
+            border-radius: var(--t-radius-field);
+            font-weight: 600;
+            padding: 0.6em 1.1em;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+            isolation: isolate;
+            background-color: transparent !important;
+            transition: color 0.28s ease;
+        }
+
+        .game-page-navigation .btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            transform: scaleX(0);
+            transform-origin: left center;
+            transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+            z-index: -1;
+        }
+
+        .game-page-navigation .btn-prev {
+            --btn-fill: var(--t-color-secondary);
+            --btn-text-hover: var(--t-color-secondary-content);
+            color: var(--t-color-secondary) !important;
+            border-color: var(--t-color-secondary) !important;
+        }
+
+        .game-page-navigation .btn-prev::before {
+            background-color: var(--btn-fill);
+            transform-origin: left center;
+        }
+
+        .game-page-navigation .btn-next {
+            --btn-fill: var(--t-color-primary);
+            --btn-text-hover: var(--t-color-primary-content);
+            color: var(--t-color-primary) !important;
+            border-color: var(--t-color-primary) !important;
+        }
+
+        .game-page-navigation .btn-next::before {
+            background-color: var(--btn-fill);
+            transform-origin: right center;
+        }
+
+        .game-page-navigation .btn:hover,
+        .game-page-navigation .btn:focus-visible {
+            color: var(--btn-text-hover) !important;
+        }
+
+        .game-page-navigation .btn:hover::before,
+        .game-page-navigation .btn:focus-visible::before {
+            transform: scaleX(1);
+        }
+
+        .game-page-navigation .subtext {
+            display: block;
+            font-size: 0.78em;
+            color: inherit;
+            line-height: 1.2;
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .game-page-navigation .btn-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45em;
+            line-height: 1.15;
+        }
+
+        .game-page-navigation .page-nav-item.next .btn-label {
+            justify-content: flex-end;
+            width: 100%;
+        }
+
+        .game-page-navigation .nav-arrow {
+            width: 1em;
+            height: 1em;
+            flex-shrink: 0;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        @media (width < 48rem) {
+            .game-page-navigation {
+                grid-template-columns: 1fr;
+            }
+
+            .game-page-navigation .page-nav-item,
+            .game-page-navigation .page-nav-item.next {
+                align-items: stretch;
+            }
+
+            .game-page-navigation .btn,
+            .game-page-navigation .btn-prev,
+            .game-page-navigation .btn-next {
+                width: 100%;
+                margin: 0;
+            }
+        }
+        /* GAME PAGE NAVIGATION END */
     </style>
     <!-- Custom Styles ------------------------------------------------------------------------------------------ -->
 
@@ -911,7 +1050,8 @@
     <main>
         <article class="wide">
             <section class="header-section">
-                <img class="game-poster-content game-poster-background-style" />
+                
+                <span class="archive-number">[ 024_assassinscreed_dinawanao ]</span>
                 <h1 class="game-name game-name-header" title="Game Name">
                     Game name
                 </h1>
@@ -984,7 +1124,7 @@
                                     <button id="use-local-video-btn" class="btn-fallback btn-local" type="button">Use
                                         Local Video</button>
                                 </div>
-                                <p class="fallback-hint">💡 Try connecting through a different network or VPN to access YouTube content.</p>
+                                <p class="fallback-hint">ðŸ’¡ Try connecting through a different network or VPN to access YouTube content.</p>
                             </div>
                         </div>
                     </div>
@@ -1092,12 +1232,12 @@
                         <li>Buccaneer Edition</li>
                     </ul>
                     <p>
-                        Assassin's Creed IV: Black Flag is a 2013 action-adventure game developed by Ubisoft Montreal. Set across the Caribbean from 1715 to 1722 during the Golden Age of Piracy, players take on the role of Edward Kenway — a charismatic Welsh privateer who becomes
+                        Assassin's Creed IV: Black Flag is a 2013 action-adventure game developed by Ubisoft Montreal. Set across the Caribbean from 1715 to 1722 during the Golden Age of Piracy, players take on the role of Edward Kenway â€” a charismatic Welsh privateer who becomes
                         entangled with both the Assassin Brotherhood and the Templar Order while pursuing personal fortune.
                     </p>
                     <p>
                         Black Flag distinguished itself through its vast naval gameplay aboard the Jackdaw, its island-hopping open world, and its blend of piracy, exploration, and parkour. The game's HCI must accommodate a uniquely dual interaction model: land-based free-running
-                        and combat, and sea-based naval command — each with distinct UI vocabularies operating within the same experience.
+                        and combat, and sea-based naval command â€” each with distinct UI vocabularies operating within the same experience.
                     </p>
                     <ul class="metrics-list">
                         <li>
@@ -1107,7 +1247,7 @@
                         </li>
                         <li>
                             <h6>Response Time</h6>
-                            <div class="value">±100ms to ±300ms</div>
+                            <div class="value">Â±100ms to Â±300ms</div>
                             <div class="desc">Time between user action and system feedback</div>
                         </li>
                         <li>
@@ -1132,8 +1272,8 @@
                                 <span class="count">[ ELEMENT_01 ]</span>
                                 <span class="header-text">Eagle Vision & Detection Meter</span>
                                 <p>
-                                    Eagle Vision highlights enemies, allies, and interactables in color-coded overlays — gold for targets, red for enemies, blue for allies. The stealth detection meter, a segmented arc above enemy heads, communicates awareness states from undetected to full
-                                    alert — enabling tactical stealth planning through visual data.
+                                    Eagle Vision highlights enemies, allies, and interactables in color-coded overlays â€” gold for targets, red for enemies, blue for allies. The stealth detection meter, a segmented arc above enemy heads, communicates awareness states from undetected to full
+                                    alert â€” enabling tactical stealth planning through visual data.
                                 </p>
                                 <ul>
                                     <h6>Stealth UI Traits</h6>
@@ -1182,7 +1322,7 @@
                     <div class="fittslaw">
                         <div>
                             <p>
-                                In Black Flag, Fitts's Law governs both land combat counter-kill windows (temporal targets) and naval cannon fire (spatial targets at range). The social stealth crowd-blending system reduces Edward's effective 'target size' for guards — inverting the
+                                In Black Flag, Fitts's Law governs both land combat counter-kill windows (temporal targets) and naval cannon fire (spatial targets at range). The social stealth crowd-blending system reduces Edward's effective 'target size' for guards â€” inverting the
                                 formula by making the player smaller rather than the target larger.
                             </p>
                             <div class="mathmodel">
@@ -1190,7 +1330,7 @@
                                 <span>MT = a + b * log<sub>2</sub>(2D/W)</span>
                             </div>
                             <p>
-                                The ship boarding mechanic reduces D as the Jackdaw closes on an enemy vessel. Player timing of the rope-swing jump constitutes a W that narrows with ship speed. Larger ships offer a wider spatial target but require greater D to reach safely — a direct
+                                The ship boarding mechanic reduces D as the Jackdaw closes on an enemy vessel. Player timing of the rope-swing jump constitutes a W that narrows with ship speed. Larger ships offer a wider spatial target but require greater D to reach safely â€” a direct
                                 Fitts's Law risk-reward tradeoff.
                             </p>
                         </div>
@@ -1214,11 +1354,11 @@
                             </li>
                             <li>
                                 <h6>Mini-map & Objective Markers</h6>
-                                <p>Secondary navigation focus. The bottom-left radar displays enemy locations, patrol routes, and mission waypoints — balancing information density with spatial clarity across both land and sea environments.</p>
+                                <p>Secondary navigation focus. The bottom-left radar displays enemy locations, patrol routes, and mission waypoints â€” balancing information density with spatial clarity across both land and sea environments.</p>
                             </li>
                             <li>
                                 <h6>Social Stealth Indicators</h6>
-                                <p>Tertiary focus. Subtle animation state changes — Edward blending into crowds, entering haystacks — communicate stealth status through world-embedded visual cues rather than intrusive HUD overlays.</p>
+                                <p>Tertiary focus. Subtle animation state changes â€” Edward blending into crowds, entering haystacks â€” communicate stealth status through world-embedded visual cues rather than intrusive HUD overlays.</p>
                             </li>
                         </ol>
                     </div>
@@ -1229,7 +1369,7 @@
                 <section class="game-sections" id="user-interaction">
                     <h2>User Interaction</h2>
                     <p>
-                        A study of Assassin's Creed IV: Black Flag's dual-domain interaction design — examining how Ubisoft engineered HCI for both swashbuckling land combat and open-ocean naval warfare within a single cohesive interface system.
+                        A study of Assassin's Creed IV: Black Flag's dual-domain interaction design â€” examining how Ubisoft engineered HCI for both swashbuckling land combat and open-ocean naval warfare within a single cohesive interface system.
                     </p>
                     <div class="list-style-area">
                         <h3 class="text-center">Core Gameplay Loop</h3>
@@ -1237,7 +1377,7 @@
                         <ol class="four-columns md-two-columns">
                             <li>
                                 <h6>Scout</h6>
-                                <p>Edward uses Eagle Vision and the mini-map to profile enemy patrol patterns, locate targets, and identify environmental tools — haystacks, crowds, rooftop access — before committing to an approach.</p>
+                                <p>Edward uses Eagle Vision and the mini-map to profile enemy patrol patterns, locate targets, and identify environmental tools â€” haystacks, crowds, rooftop access â€” before committing to an approach.</p>
                             </li>
                             <li>
                                 <h6>Infiltrate</h6>
@@ -1249,7 +1389,7 @@
                             </li>
                             <li>
                                 <h6>Sail & Plunder</h6>
-                                <p>Between missions, Edward commands the Jackdaw — hunting ships, harpooning sea creatures, and collecting sea shanties that the crew sings as unlockable ambient music.</p>
+                                <p>Between missions, Edward commands the Jackdaw â€” hunting ships, harpooning sea creatures, and collecting sea shanties that the crew sings as unlockable ambient music.</p>
                             </li>
                         </ol>
                     </div>
@@ -1257,7 +1397,7 @@
                     <div class="multi-modal-feedback">
                         <div>
                             <p>
-                                Black Flag employs a rich sensory feedback loop that distinguishes land and naval interaction modes — each mode carrying its own audio-visual vocabulary to signal player success and world-state changes.
+                                Black Flag employs a rich sensory feedback loop that distinguishes land and naval interaction modes â€” each mode carrying its own audio-visual vocabulary to signal player success and world-state changes.
                             </p>
                         </div>
                         <div>
@@ -1279,7 +1419,7 @@
                             </div>
                             <div>
                                 <h6>Audio Feedback</h6>
-                                <p>Naval cannon fire produces deep booming impacts with directional audio cues for enemy broadsides. Sea shanties sung by the crew dynamically shift between full-voice and acapella based on the action state — a unique diegetic
+                                <p>Naval cannon fire produces deep booming impacts with directional audio cues for enemy broadsides. Sea shanties sung by the crew dynamically shift between full-voice and acapella based on the action state â€” a unique diegetic
                                     feedback layer.</p>
                             </div>
                         </li>
@@ -1318,7 +1458,7 @@
                         <div class="cybernetic-content">
                             <div>
                                 <p style="text-align: justify;">
-                                    Black Flag employs a dual-vocabulary feedback architecture that must shift coherently between land stealth-combat and naval engagement modes. Each mode's feedback channels — detection meter arcs on land, wind compass and hull damage at sea — are distinct
+                                    Black Flag employs a dual-vocabulary feedback architecture that must shift coherently between land stealth-combat and naval engagement modes. Each mode's feedback channels â€” detection meter arcs on land, wind compass and hull damage at sea â€” are distinct
                                     but share a consistent visual language, preventing player confusion during mode transitions.
                                 </p>
                             </div>
@@ -1336,13 +1476,13 @@
                         <h2>Spatial Congruence Across Dual Domains</h2>
                         <p style="text-align: justify;">
                             Black Flag's core HCI challenge is maintaining spatial congruence across two radically different interaction domains. The detection arc above guard heads provides absolute spatial correspondence on land. At sea, the wind compass arrow translates environmental
-                            forces into navigational intent. Both systems map world information to UI output without requiring menu access — preserving flow in both modes.
+                            forces into navigational intent. Both systems map world information to UI output without requiring menu access â€” preserving flow in both modes.
                         </p>
                     </div>
                     <div class="cognitive-load-bifurcation">
                         <h2>Cognitive Load Bifurcation</h2>
                         <p style="text-align: justify; margin-bottom: 2em;">
-                            Black Flag manages cognitive load by separating the land and naval UI vocabularies. Each mode demands different mental models, and Ubisoft wisely avoids blending them — reducing Extrinsic Load by making each mode's interface self-contained and mode-consistent.
+                            Black Flag manages cognitive load by separating the land and naval UI vocabularies. Each mode demands different mental models, and Ubisoft wisely avoids blending them â€” reducing Extrinsic Load by making each mode's interface self-contained and mode-consistent.
                         </p>
                         <table>
                             <thead>
@@ -1360,17 +1500,17 @@
                                     </td>
                                     <td>
                                         <h6>Narrative Dissonance</h6>
-                                        <p>The Abstergo Entertainment meta-layer introduces a third UI context that clashes with the pirate fiction — breaking immersion in ways that the land/naval split does not.</p>
+                                        <p>The Abstergo Entertainment meta-layer introduces a third UI context that clashes with the pirate fiction â€” breaking immersion in ways that the land/naval split does not.</p>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
                                         <h6>Detection Arc System</h6>
-                                        <p>The segmented arc above guards provides precise, real-time feedback on stealth status at a glance — a clean solution to the classic 'am I hidden?' question in stealth games.</p>
+                                        <p>The segmented arc above guards provides precise, real-time feedback on stealth status at a glance â€” a clean solution to the classic 'am I hidden?' question in stealth games.</p>
                                     </td>
                                     <td>
                                         <h6>Parkour Input Ambiguity</h6>
-                                        <p>Context-sensitive parkour controls occasionally misinterpret player intent — climbing when meant to run, or jumping in the wrong direction — creating frustrating input-output mismatches.</p>
+                                        <p>Context-sensitive parkour controls occasionally misinterpret player intent â€” climbing when meant to run, or jumping in the wrong direction â€” creating frustrating input-output mismatches.</p>
                                     </td>
                                 </tr>
                             </tbody>
@@ -1378,14 +1518,14 @@
                     </div>
                     <div class="footnote">
                         <q>
-                            Black Flag proves that a game can maintain two completely different interface grammars — one for the tavern brawl, one for the broadside — and have players switch fluently between them. The sea changes everything except the player's confidence.
+                            Black Flag proves that a game can maintain two completely different interface grammars â€” one for the tavern brawl, one for the broadside â€” and have players switch fluently between them. The sea changes everything except the player's confidence.
                         </q>
                     </div>
                 </section>
                 <section class="game-sections" id="ui-ux-weaknesses">
                     <h2>Strengths and Weaknesses Analysis</h2>
                     <p>
-                        A comprehensive breakdown of Assassin's Creed IV: Black Flag's interface paradigm — evaluating the challenge of designing cohesive HCI across two distinct gameplay domains: land-based stealth combat and open-ocean naval warfare.
+                        A comprehensive breakdown of Assassin's Creed IV: Black Flag's interface paradigm â€” evaluating the challenge of designing cohesive HCI across two distinct gameplay domains: land-based stealth combat and open-ocean naval warfare.
                     </p>
                     <table style="margin-bottom: 2em;">
                         <thead>
@@ -1403,7 +1543,7 @@
                                         <span class="label">01_DUALITY</span>
                                     </div>
                                     <h6>Seamless Mode Duality</h6>
-                                    <p>The transition between land and naval gameplay is mechanically and visually coherent. Players adopt the naval HUD grammar naturally without tutorials — a testament to consistent UI language design.</p>
+                                    <p>The transition between land and naval gameplay is mechanically and visually coherent. Players adopt the naval HUD grammar naturally without tutorials â€” a testament to consistent UI language design.</p>
                                 </td>
                                 <td>
                                     <div class="sw-item-head">
@@ -1411,7 +1551,7 @@
                                         <span class="label">01_SATURATION</span>
                                     </div>
                                     <h6>Open-World Saturation</h6>
-                                    <p>The Caribbean map is dense with icons — collectibles, shanties, underwater chests, forts — creating persistent map clutter that can overwhelm players trying to prioritize meaningful progression.</p>
+                                    <p>The Caribbean map is dense with icons â€” collectibles, shanties, underwater chests, forts â€” creating persistent map clutter that can overwhelm players trying to prioritize meaningful progression.</p>
                                 </td>
                             </tr>
                             <tr>
@@ -1439,7 +1579,7 @@
                                         <span class="label">03_NAVAL</span>
                                     </div>
                                     <h6>Naval Immersion</h6>
-                                    <p>The Jackdaw's naval gameplay — managing sails, timing broadsides, harpooning whales — represents some of the most HCI-rich content in the AC franchise, with distinct skill curves.</p>
+                                    <p>The Jackdaw's naval gameplay â€” managing sails, timing broadsides, harpooning whales â€” represents some of the most HCI-rich content in the AC franchise, with distinct skill curves.</p>
                                 </td>
                                 <td>
                                     <div class="sw-item-head">
@@ -1447,20 +1587,47 @@
                                         <span class="label">03_TRAVERSAL</span>
                                     </div>
                                     <h6>Parkour Reliability</h6>
-                                    <p>Context-sensitive climbing and traversal occasionally produce unintended actions in urban environments — a persistent HCI failure in the franchise that Black Flag did not resolve.</p>
+                                    <p>Context-sensitive climbing and traversal occasionally produce unintended actions in urban environments â€” a persistent HCI failure in the franchise that Black Flag did not resolve.</p>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                     <div class="footnote summary">
                         <p>
-                            Assassin's Creed IV: Black Flag is a study in the power and peril of multi-domain HCI. When the dual land/naval system works — and it usually does — it creates a seamless pirate fantasy with one of the most satisfying interface grammars in the series.
+                            Assassin's Creed IV: Black Flag is a study in the power and peril of multi-domain HCI. When the dual land/naval system works â€” and it usually does â€” it creates a seamless pirate fantasy with one of the most satisfying interface grammars in the series.
                             When it fails, the context-sensitive parkour and map saturation remind players that coherent HCI across multiple domains remains one of game design's hardest problems.
                         </p>
                     </div>
                 </section>
             </div>
         </article>
+    
+        <!-- GAME PAGE NAVIGATION START -->
+        <div class="game-page-navigation" aria-label="Game page navigation">
+            <div class="page-nav-item prev">
+                <a class="btn btn-outline-secondary btn-prev" href="ghostOfTsushima.html">
+                    <span class="btn-label">
+                        <svg class="nav-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path d="M15 18l-6-6 6-6"></path>
+                        </svg>
+                        <span>Previous Game</span>
+                    </span>
+                    <span class="subtext">Ghost of Tsushima</span>
+                </a>
+            </div>
+            <div class="page-nav-item next">
+                <a class="btn btn-primary btn-next" href="dyingLight.html">
+                    <span class="btn-label">
+                        <span>Next Game</span>
+                        <svg class="nav-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path d="M9 6l6 6-6 6"></path>
+                        </svg>
+                    </span>
+                    <span class="subtext">Dying Light</span>
+                </a>
+            </div>
+        </div>
+        <!-- GAME PAGE NAVIGATION END -->
     </main>
             <footer>
         <h6>GameUX Atlas</h6>
@@ -1535,7 +1702,7 @@
     const EDITIONS = ["Standard", "Special Edition", "Buccaneer Edition"];
 
     const DESCRIPTION =
-        "Assassin's Creed IV: Black Flag is an open-world action-adventure game by Ubisoft Montreal. Set in the Golden Age of Piracy (1715–1722), players control Edward Kenway — a Welsh pirate-Assassin — across a vast Caribbean world of naval combat, island exploration, underwater diving, and swashbuckling free-running.";
+        "Assassin's Creed IV: Black Flag is an open-world action-adventure game by Ubisoft Montreal. Set in the Golden Age of Piracy (1715â€“1722), players control Edward Kenway â€” a Welsh pirate-Assassin â€” across a vast Caribbean world of naval combat, island exploration, underwater diving, and swashbuckling free-running.";
 
     // Document Variables
     const sectionRadios = Array.from(

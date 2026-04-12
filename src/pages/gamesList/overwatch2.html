@@ -935,6 +935,145 @@
       .hidden {
         display: none !important;
       }
+    
+        /* GAME PAGE NAVIGATION START */
+        .game-page-navigation {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1em;
+            margin: 2.5em auto 3em;
+            width: min(100%, 64rem);
+            padding: 0 1rem;
+        }
+
+        .game-page-navigation .page-nav-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.35em;
+            min-width: 10rem;
+            width: 100%;
+            position: relative;
+
+            & a {
+                width: 100%;
+            }
+        }
+
+        .game-page-navigation .page-nav-item.next {
+            align-items: flex-end;
+
+            & a {
+                text-align: right;
+            }
+        }
+
+        .game-page-navigation .btn {
+            min-width: 10rem;
+            border-radius: var(--t-radius-field);
+            font-weight: 600;
+            padding: 0.6em 1.1em;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+            isolation: isolate;
+            background-color: transparent !important;
+            transition: color 0.28s ease;
+        }
+
+        .game-page-navigation .btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            transform: scaleX(0);
+            transform-origin: left center;
+            transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+            z-index: -1;
+        }
+
+        .game-page-navigation .btn-prev {
+            --btn-fill: var(--t-color-secondary);
+            --btn-text-hover: var(--t-color-secondary-content);
+            color: var(--t-color-secondary) !important;
+            border-color: var(--t-color-secondary) !important;
+        }
+
+        .game-page-navigation .btn-prev::before {
+            background-color: var(--btn-fill);
+            transform-origin: left center;
+        }
+
+        .game-page-navigation .btn-next {
+            --btn-fill: var(--t-color-primary);
+            --btn-text-hover: var(--t-color-primary-content);
+            color: var(--t-color-primary) !important;
+            border-color: var(--t-color-primary) !important;
+        }
+
+        .game-page-navigation .btn-next::before {
+            background-color: var(--btn-fill);
+            transform-origin: right center;
+        }
+
+        .game-page-navigation .btn:hover,
+        .game-page-navigation .btn:focus-visible {
+            color: var(--btn-text-hover) !important;
+        }
+
+        .game-page-navigation .btn:hover::before,
+        .game-page-navigation .btn:focus-visible::before {
+            transform: scaleX(1);
+        }
+
+        .game-page-navigation .subtext {
+            display: block;
+            font-size: 0.78em;
+            color: inherit;
+            line-height: 1.2;
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .game-page-navigation .btn-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45em;
+            line-height: 1.15;
+        }
+
+        .game-page-navigation .page-nav-item.next .btn-label {
+            justify-content: flex-end;
+            width: 100%;
+        }
+
+        .game-page-navigation .nav-arrow {
+            width: 1em;
+            height: 1em;
+            flex-shrink: 0;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        @media (width < 48rem) {
+            .game-page-navigation {
+                grid-template-columns: 1fr;
+            }
+
+            .game-page-navigation .page-nav-item,
+            .game-page-navigation .page-nav-item.next {
+                align-items: stretch;
+            }
+
+            .game-page-navigation .btn,
+            .game-page-navigation .btn-prev,
+            .game-page-navigation .btn-next {
+                width: 100%;
+                margin: 0;
+            }
+        }
+        /* GAME PAGE NAVIGATION END */
     </style>
 
     <title id="title">Overwatch 2 - GameUX</title>
@@ -990,7 +1129,8 @@
     <main>
       <article class="wide">
         <section class="header-section">
-          <img class="game-poster-content game-poster-background-style" />
+          
+                <span class="archive-number">[ 072_overwatch2_sultan ]</span>
           <h1 class="game-name game-name-header">Overwatch 2</h1>
           <div class="game-header">
             <span class="game-header-cont">
@@ -1212,9 +1352,9 @@
               multiplayer HCI. The game employs a role-based hero selection
               system (Tank, Damage, Support) that visually organizes 40+ heroes
               into cognitively manageable categories. The in-match HUD balances
-              an extraordinary amount of real-time information — health pools,
+              an extraordinary amount of real-time information â€” health pools,
               ability cooldowns, ultimate charge, kill feed, objective status,
-              and teammate outlines — into a clean, non-intrusive overlay
+              and teammate outlines â€” into a clean, non-intrusive overlay
               optimized for split-second decision-making under competitive
               pressure. The game's UI philosophy prioritizes clarity and speed,
               making it an exceptional case study in information-dense
@@ -1230,16 +1370,16 @@
               </li>
               <li>
                 <h6>Response Time</h6>
-                <div class="value">± 16ms to ± 50ms</div>
+                <div class="value">Â± 16ms to Â± 50ms</div>
                 <div class="desc">
                   Client-side input latency in a tick-rate optimized, real-time competitive multiplayer environment
                 </div>
               </li>
               <li>
                 <h6>Decision Frequency</h6>
-                <div class="value">~2–5 per second</div>
+                <div class="value">~2â€“5 per second</div>
                 <div class="desc">
-                  Rate of micro-decisions during active team fights — ability usage, target prioritization, positioning adjustments
+                  Rate of micro-decisions during active team fights â€” ability usage, target prioritization, positioning adjustments
                 </div>
               </li>
             </ul>
@@ -1273,7 +1413,7 @@
                     bottom-center cluster, while the kill feed occupies the top
                     right. Teammate health bars appear above their in-world
                     models, and the objective status is anchored at the top center
-                    — all following a clear visual hierarchy optimized for
+                    â€” all following a clear visual hierarchy optimized for
                     peripheral scanning.
                   </p>
                   <ul>
@@ -1304,7 +1444,7 @@
                   <span class="header-text">Hero Selection Interface</span>
                   <p>
                     The hero selection screen categorizes 40+ heroes into three
-                    roles — Tank, Damage, and Support — using color-coded tabs
+                    roles â€” Tank, Damage, and Support â€” using color-coded tabs
                     and grid layouts. Each hero portrait provides at-a-glance
                     identity recognition, with additional ability tooltips on
                     hover. The role-lock system constrains selection (1 Tank,
@@ -1334,7 +1474,7 @@
                     The Tab scoreboard provides a real-time statistical overview
                     of all 10 players: eliminations, assists, deaths, damage,
                     healing, and ultimate status. This information-dense panel
-                    supports strategic mid-match decisions — tracking enemy
+                    supports strategic mid-match decisions â€” tracking enemy
                     ultimates and identifying underperforming roles for hero
                     swaps.
                   </p>
@@ -1359,8 +1499,8 @@
                 </div>
                 <p>
                   The hero roster itself is a Fitt's Law design variable: each
-                  hero's effective target width (W) — determined by their hitbox
-                  size, movement speed, and mobility abilities — fundamentally
+                  hero's effective target width (W) â€” determined by their hitbox
+                  size, movement speed, and mobility abilities â€” fundamentally
                   alters the movement time (MT) required to land shots. Fast,
                   small heroes like Tracer drastically reduce W while
                   simultaneously increasing D through rapid repositioning,
@@ -1399,8 +1539,8 @@
                 <li>
                   <h6>Resource State</h6>
                   <p>
-                    Secondary focus. The bottom-center HUD cluster — health,
-                    ammo, cooldowns, and ultimate charge — provides survival
+                    Secondary focus. The bottom-center HUD cluster â€” health,
+                    ammo, cooldowns, and ultimate charge â€” provides survival
                     information within a single downward glance, minimizing
                     eye travel from the combat center.
                   </p>
@@ -1417,10 +1557,10 @@
               </ol>
             </div>
             <div class="footnote">
-              All component analysis is based on Overwatch 2 (2022–present).
+              All component analysis is based on Overwatch 2 (2022â€“present).
               The game's HUD design demonstrates how competitive multiplayer
               interfaces must compress maximum information into minimal visual
-              footprint — a direct tension between information density and
+              footprint â€” a direct tension between information density and
               perceptual clarity.
             </div>
           </section>
@@ -1460,7 +1600,7 @@
                 <li>
                   <h6>Adapt</h6>
                   <p>
-                    Mid-match hero switching is a core mechanic — players
+                    Mid-match hero switching is a core mechanic â€” players
                     reassess team needs and counter-pick in response to enemy
                     strategy shifts, creating a dynamic meta-game within
                     each match.
@@ -1589,7 +1729,7 @@
                   <h6>Input/Tactile Fidelity</h6>
                   <p>
                     Controller haptics and DualSense adaptive trigger support
-                    provide weapon-specific tactile feedback — rapid-fire heroes
+                    provide weapon-specific tactile feedback â€” rapid-fire heroes
                     like Soldier: 76 deliver steady vibration pulses, while
                     single-shot heroes like Widowmaker use a heavy trigger pull
                     followed by a sharp recoil pulse. On PC, precise mouse
@@ -1610,8 +1750,8 @@
                 <div>
                   <p style="text-align: justify">
                     Overwatch 2 employs a closed-loop competitive feedback
-                    architecture where every player action — shooting, healing,
-                    using abilities — generates immediate multi-channel feedback.
+                    architecture where every player action â€” shooting, healing,
+                    using abilities â€” generates immediate multi-channel feedback.
                     The system's feedback loop operates across visual HUD
                     elements, 3D spatial audio, and haptic output simultaneously,
                     enabling players to assess game state without consciously
@@ -1641,7 +1781,7 @@
                 spatial mapping between mouse/stick input and in-game crosshair
                 positioning. The game's maps are designed with clear sight lines,
                 choke points, and flanking routes that create predictable spatial
-                grammars — players learn to anticipate enemy positions based on
+                grammars â€” players learn to anticipate enemy positions based on
                 map geometry. Teammate outlines visible through walls provide a
                 persistent spatial awareness layer that eliminates the need for
                 a minimap, instead embedding positional information directly
@@ -1712,7 +1852,7 @@
             </div>
             <div class="footnote">
               <q>
-                Overwatch 2's HUD is not simply an information display — it is
+                Overwatch 2's HUD is not simply an information display â€” it is
                 a competitive instrument. Its design proves that high-density
                 information delivery can coexist with perceptual clarity when
                 visual hierarchy, spatial consistency, and multi-modal redundancy
@@ -1778,8 +1918,8 @@
                     <p>
                       The HUD achieves exceptional clarity despite extreme
                       information density. Critical combat data is spatially
-                      clustered by urgency — immediate threats at screen center,
-                      resource state at bottom, strategic context at periphery —
+                      clustered by urgency â€” immediate threats at screen center,
+                      resource state at bottom, strategic context at periphery â€”
                       enabling sub-100ms information retrieval during combat.
                     </p>
                   </td>
@@ -1835,8 +1975,8 @@
                     </div>
                     <h6>Differentiated Audio System</h6>
                     <p>
-                      The dual voice line system — where enemy ultimates sound
-                      threatening and allied ultimates sound encouraging — is a
+                      The dual voice line system â€” where enemy ultimates sound
+                      threatening and allied ultimates sound encouraging â€” is a
                       landmark in competitive game audio HCI. This allows
                       instant threat assessment through audio alone, offloading
                       critical information from the visual channel during
@@ -1897,7 +2037,7 @@
                     <h6>Seamless Cross-Platform UX</h6>
                     <p>
                       Overwatch 2's UI scales effectively across PC, console,
-                      and Switch with platform-specific input optimizations —
+                      and Switch with platform-specific input optimizations â€”
                       aim assist tuning for controllers, adaptive UI scaling for
                       different screen sizes, and cross-progression that unifies
                       the player experience regardless of platform.
@@ -1939,7 +2079,7 @@
             <div class="footnote summary">
               <p>
                 The Overwatch 2 interface represents a benchmark in competitive
-                multiplayer HCI — a system designed to deliver
+                multiplayer HCI â€” a system designed to deliver
                 <u>maximum information density with minimum cognitive cost</u>.
                 While its strengths lie in exceptional visual hierarchy, audio
                 differentiation, and cross-platform adaptability, its weaknesses
@@ -1952,6 +2092,33 @@
           </section>
         </div>
       </article>
+    
+        <!-- GAME PAGE NAVIGATION START -->
+        <div class="game-page-navigation" aria-label="Game page navigation">
+            <div class="page-nav-item prev">
+                <a class="btn btn-outline-secondary btn-prev" href="deadSpace.html">
+                    <span class="btn-label">
+                        <svg class="nav-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path d="M15 18l-6-6 6-6"></path>
+                        </svg>
+                        <span>Previous Game</span>
+                    </span>
+                    <span class="subtext">Dead Space</span>
+                </a>
+            </div>
+            <div class="page-nav-item next">
+                <a class="btn btn-primary btn-next" href="valorant.html">
+                    <span class="btn-label">
+                        <span>Next Game</span>
+                        <svg class="nav-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path d="M9 6l6 6-6 6"></path>
+                        </svg>
+                    </span>
+                    <span class="subtext">Valorant</span>
+                </a>
+            </div>
+        </div>
+        <!-- GAME PAGE NAVIGATION END -->
     </main>
 
     <footer>

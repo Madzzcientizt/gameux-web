@@ -999,6 +999,145 @@
         .game-video-wrp {
             position: relative;
         }
+    
+        /* GAME PAGE NAVIGATION START */
+        .game-page-navigation {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1em;
+            margin: 2.5em auto 3em;
+            width: min(100%, 64rem);
+            padding: 0 1rem;
+        }
+
+        .game-page-navigation .page-nav-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.35em;
+            min-width: 10rem;
+            width: 100%;
+            position: relative;
+
+            & a {
+                width: 100%;
+            }
+        }
+
+        .game-page-navigation .page-nav-item.next {
+            align-items: flex-end;
+
+            & a {
+                text-align: right;
+            }
+        }
+
+        .game-page-navigation .btn {
+            min-width: 10rem;
+            border-radius: var(--t-radius-field);
+            font-weight: 600;
+            padding: 0.6em 1.1em;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+            isolation: isolate;
+            background-color: transparent !important;
+            transition: color 0.28s ease;
+        }
+
+        .game-page-navigation .btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            transform: scaleX(0);
+            transform-origin: left center;
+            transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+            z-index: -1;
+        }
+
+        .game-page-navigation .btn-prev {
+            --btn-fill: var(--t-color-secondary);
+            --btn-text-hover: var(--t-color-secondary-content);
+            color: var(--t-color-secondary) !important;
+            border-color: var(--t-color-secondary) !important;
+        }
+
+        .game-page-navigation .btn-prev::before {
+            background-color: var(--btn-fill);
+            transform-origin: left center;
+        }
+
+        .game-page-navigation .btn-next {
+            --btn-fill: var(--t-color-primary);
+            --btn-text-hover: var(--t-color-primary-content);
+            color: var(--t-color-primary) !important;
+            border-color: var(--t-color-primary) !important;
+        }
+
+        .game-page-navigation .btn-next::before {
+            background-color: var(--btn-fill);
+            transform-origin: right center;
+        }
+
+        .game-page-navigation .btn:hover,
+        .game-page-navigation .btn:focus-visible {
+            color: var(--btn-text-hover) !important;
+        }
+
+        .game-page-navigation .btn:hover::before,
+        .game-page-navigation .btn:focus-visible::before {
+            transform: scaleX(1);
+        }
+
+        .game-page-navigation .subtext {
+            display: block;
+            font-size: 0.78em;
+            color: inherit;
+            line-height: 1.2;
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .game-page-navigation .btn-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45em;
+            line-height: 1.15;
+        }
+
+        .game-page-navigation .page-nav-item.next .btn-label {
+            justify-content: flex-end;
+            width: 100%;
+        }
+
+        .game-page-navigation .nav-arrow {
+            width: 1em;
+            height: 1em;
+            flex-shrink: 0;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        @media (width < 48rem) {
+            .game-page-navigation {
+                grid-template-columns: 1fr;
+            }
+
+            .game-page-navigation .page-nav-item,
+            .game-page-navigation .page-nav-item.next {
+                align-items: stretch;
+            }
+
+            .game-page-navigation .btn,
+            .game-page-navigation .btn-prev,
+            .game-page-navigation .btn-next {
+                width: 100%;
+                margin: 0;
+            }
+        }
+        /* GAME PAGE NAVIGATION END */
     </style>
     <!-- Custom Styles ------------------------------------------------------------------------------------------ -->
 
@@ -1046,7 +1185,8 @@
     <main>
         <article class="wide">
             <section class="header-section">
-                <img class="game-poster-content game-poster-background-style" />
+                
+                <span class="archive-number">[ 028_liesofp_dinawanao ]</span>
                 <h1 class="game-name game-name-header" title="Game Name">
                     Game name
                 </h1>
@@ -1121,7 +1261,7 @@
                                     <button id="use-local-video-btn" class="btn-fallback btn-local" type="button">Use
                                         Local Video</button>
                                 </div>
-                                <p class="fallback-hint">💡 Try connecting through a different network or VPN to access
+                                <p class="fallback-hint">ðŸ’¡ Try connecting through a different network or VPN to access
                                     YouTube content.</p>
                             </div>
                         </div>
@@ -1235,10 +1375,10 @@
                         <li>Collector's Edition</li>
                     </ul>
                     <p>
-                        Lies of P is a 2023 action RPG developed by Round8 Studio and published by Neowiz Games. Set in a dark, diesel-punk reimagining of the Pinocchio fairy tale, players control P — a human-like puppet navigating the crumbling fictional city of Krat, ravaged by the Petrification Disease and a catastrophic puppet uprising.
+                        Lies of P is a 2023 action RPG developed by Round8 Studio and published by Neowiz Games. Set in a dark, diesel-punk reimagining of the Pinocchio fairy tale, players control P â€” a human-like puppet navigating the crumbling fictional city of Krat, ravaged by the Petrification Disease and a catastrophic puppet uprising.
                     </p>
                     <p>
-                        Lies of P closely follows the Soulslike formula but distinguishes itself through its weapon assembly system — combining blades and handles from different weapons — the Legion Arm prosthetic tool, and a narrative choice system where lying or telling the truth shapes the ending. Its HCI borrows from Elden Ring and Bloodborne while introducing novel defensive mechanics centered on the Perfect Guard.
+                        Lies of P closely follows the Soulslike formula but distinguishes itself through its weapon assembly system â€” combining blades and handles from different weapons â€” the Legion Arm prosthetic tool, and a narrative choice system where lying or telling the truth shapes the ending. Its HCI borrows from Elden Ring and Bloodborne while introducing novel defensive mechanics centered on the Perfect Guard.
                     </p>
                     <ul class="metrics-list">
                         <li>
@@ -1248,7 +1388,7 @@
                         </li>
                         <li>
                             <h6>Response Time</h6>
-                            <div class="value">±80ms to ±280ms</div>
+                            <div class="value">Â±80ms to Â±280ms</div>
                             <div class="desc">Time between user action and system feedback</div>
                         </li>
                         <li>
@@ -1272,7 +1412,7 @@
                                 <span class="count">[ ELEMENT_01 ]</span>
                                 <span class="header-text">Perfect Guard System</span>
                                 <p>
-                                    Lies of P's defensive core is the Perfect Guard — a precise parry mechanic activated by blocking at the exact moment of enemy contact. A subtle audio cue and flash indicate the guard window. Successful Perfect Guards restore weapon durability, integrating defense into weapon management as a dual-purpose mechanic.
+                                    Lies of P's defensive core is the Perfect Guard â€” a precise parry mechanic activated by blocking at the exact moment of enemy contact. A subtle audio cue and flash indicate the guard window. Successful Perfect Guards restore weapon durability, integrating defense into weapon management as a dual-purpose mechanic.
                                 </p>
                                 <ul>
                                     <h6>Guard System Design</h6>
@@ -1293,7 +1433,7 @@
                                 <span class="count">[ ELEMENT_02 ]</span>
                                 <span class="header-text">Weapon Assembly Interface</span>
                                 <p>
-                                    Players combine weapon blades and handles sourced from different weapons — a Krat Police Baton blade on an Electric Coil Stick handle. The crafting table UI presents stat previews and elemental affinities for each combination, enabling deep build-crafting through a physical weapon combination metaphor.
+                                    Players combine weapon blades and handles sourced from different weapons â€” a Krat Police Baton blade on an Electric Coil Stick handle. The crafting table UI presents stat previews and elemental affinities for each combination, enabling deep build-crafting through a physical weapon combination metaphor.
                                 </p>
                             </div>
                         </div>
@@ -1308,7 +1448,7 @@
                                 <span class="count">[ ELEMENT_03 ]</span>
                                 <span class="header-text">Legion Arm & P-Organ Tree</span>
                                 <p>
-                                    The Legion Arm replaces the Ash of War system with a selectable prosthetic limb tool — Fulminis lightning, Puppet String grapple. The P-Organ upgrade tree is a branching node graph connecting skill nodes to passive bonuses, visualizing character progression as a biological mechanical system.
+                                    The Legion Arm replaces the Ash of War system with a selectable prosthetic limb tool â€” Fulminis lightning, Puppet String grapple. The P-Organ upgrade tree is a branching node graph connecting skill nodes to passive bonuses, visualizing character progression as a biological mechanical system.
                                 </p>
                             </div>
                         </div>
@@ -1317,14 +1457,14 @@
                     <div class="fittslaw">
                         <div>
                             <p>
-                                In Lies of P, Perfect Guard timing is a narrow temporal W applied to every enemy attack. Unlike Elden Ring's roll-focused defense, the emphasis on parrying creates a system where players must continuously assess attack telegraphs and fire precise input inside a sub-300ms window — every attack is a Fitts's Law test.
+                                In Lies of P, Perfect Guard timing is a narrow temporal W applied to every enemy attack. Unlike Elden Ring's roll-focused defense, the emphasis on parrying creates a system where players must continuously assess attack telegraphs and fire precise input inside a sub-300ms window â€” every attack is a Fitts's Law test.
                             </p>
                             <div class="mathmodel">
                                 <h6>[ MATHEMATICAL MODEL ]</h6>
                                 <span>MT = a + b * log<sub>2</sub>(2D/W)</span>
                             </div>
                             <p>
-                                Boss Phase 2 transitions in Lies of P dramatically reduce the Perfect Guard W — attack animation speeds increase, forcing players to recalibrate their parry timing. Same D (reaction to attack initiation), reduced W (tighter input window): a direct temporal Fitts's Law difficulty escalation.
+                                Boss Phase 2 transitions in Lies of P dramatically reduce the Perfect Guard W â€” attack animation speeds increase, forcing players to recalibrate their parry timing. Same D (reaction to attack initiation), reduced W (tighter input window): a direct temporal Fitts's Law difficulty escalation.
                             </p>
                         </div>
                         <div>
@@ -1342,7 +1482,7 @@
                         <ol class="three-columns md-one-columns">
                             <li>
                                 <h6>Boss Health & Phase Bars</h6>
-                                <p>Primary focus during boss encounters. Dual-phase health bars at screen bottom communicate progress and danger escalation — the phase-shift animation is both a narrative beat and a visual difficulty warning.</p>
+                                <p>Primary focus during boss encounters. Dual-phase health bars at screen bottom communicate progress and danger escalation â€” the phase-shift animation is both a narrative beat and a visual difficulty warning.</p>
                             </li>
                             <li>
                                 <h6>Guard Regain HP Chip</h6>
@@ -1350,7 +1490,7 @@
                             </li>
                             <li>
                                 <h6>Pulse Cell Counter</h6>
-                                <p>Tertiary survival tracking. The Pulse Cell healing item counter in the lower HUD communicates remaining recovery attempts — a critical scarcity signal in boss arenas where each cell is a rationed resource.</p>
+                                <p>Tertiary survival tracking. The Pulse Cell healing item counter in the lower HUD communicates remaining recovery attempts â€” a critical scarcity signal in boss arenas where each cell is a rationed resource.</p>
                             </li>
                         </ol>
                     </div>
@@ -1361,7 +1501,7 @@
                 <section class="game-sections" id="user-interaction">
                     <h2>User Interaction</h2>
                     <p>
-                        An examination of Lies of P's soulslike HCI refinements — studying how Round8 Studio iterated on established Soulsborne conventions with novel guard mechanics and modular weapon design to create a distinctly calibrated action RPG interaction model.
+                        An examination of Lies of P's soulslike HCI refinements â€” studying how Round8 Studio iterated on established Soulsborne conventions with novel guard mechanics and modular weapon design to create a distinctly calibrated action RPG interaction model.
                     </p>
                     <div class="list-style-area">
                         <h3 class="text-center">Core Gameplay Loop</h3>
@@ -1369,19 +1509,19 @@
                         <ol class="four-columns md-two-columns">
                             <li>
                                 <h6>Observe</h6>
-                                <p>P reads enemy attack telegraphs — wind-up animations, footstep patterns, and audio cues — to anticipate incoming strikes and prepare Perfect Guard timing before the attack window opens.</p>
+                                <p>P reads enemy attack telegraphs â€” wind-up animations, footstep patterns, and audio cues â€” to anticipate incoming strikes and prepare Perfect Guard timing before the attack window opens.</p>
                             </li>
                             <li>
                                 <h6>Guard & Riposte</h6>
-                                <p>The Perfect Guard replaces rolling as the primary defensive tool. A successful guard opens a Fable Art riposte window — a high-damage follow-up that depletes enemy posture and rewards the precision risk.</p>
+                                <p>The Perfect Guard replaces rolling as the primary defensive tool. A successful guard opens a Fable Art riposte window â€” a high-damage follow-up that depletes enemy posture and rewards the precision risk.</p>
                             </li>
                             <li>
                                 <h6>Attack & Break Posture</h6>
-                                <p>Sustained guard breaks and weapon strikes deplete enemy Stagger Gauges — triggering a Fatal Attack cinematic execution prompt when fully depleted, rewarding the patient posture-breaking strategy.</p>
+                                <p>Sustained guard breaks and weapon strikes deplete enemy Stagger Gauges â€” triggering a Fatal Attack cinematic execution prompt when fully depleted, rewarding the patient posture-breaking strategy.</p>
                             </li>
                             <li>
                                 <h6>Upgrade & Lie</h6>
-                                <p>Between areas, P visits Hotel Krat to level up, reassemble weapons at the workbench, and make narrative dialogue choices — deciding whether to lie or tell the truth, shaping P's humanity score and ending.</p>
+                                <p>Between areas, P visits Hotel Krat to level up, reassemble weapons at the workbench, and make narrative dialogue choices â€” deciding whether to lie or tell the truth, shaping P's humanity score and ending.</p>
                             </li>
                         </ol>
                     </div>
@@ -1389,7 +1529,7 @@
                     <div class="multi-modal-feedback">
                         <div>
                             <p>
-                                Lies of P's feedback design prioritizes precision and punishment — every sensory cue is calibrated to reward mastery of the Perfect Guard while making failures viscerally and immediately unambiguous.
+                                Lies of P's feedback design prioritizes precision and punishment â€” every sensory cue is calibrated to reward mastery of the Perfect Guard while making failures viscerally and immediately unambiguous.
                             </p>
                         </div>
                         <div>
@@ -1410,7 +1550,7 @@
                             </div>
                             <div>
                                 <h6>Audio Feedback</h6>
-                                <p>A metallic clang distinguishes Perfect Guards from standard blocks. Fury Attacks — unblockable enemy strikes — are preceded by a red glow and deep audio boom, providing multi-sensory pre-warning of an unblockable input requirement.</p>
+                                <p>A metallic clang distinguishes Perfect Guards from standard blocks. Fury Attacks â€” unblockable enemy strikes â€” are preceded by a red glow and deep audio boom, providing multi-sensory pre-warning of an unblockable input requirement.</p>
                             </div>
                         </li>
                         <li>
@@ -1433,7 +1573,7 @@
                             </div>
                             <div>
                                 <h6>Haptic Feedback</h6>
-                                <p>Pulse-based rumble escalates with enemy attack impact. Perfect Guard triggers a sharp short burst distinct from a regular block — providing tactile confirmation of the precise timing within the narrow guard window.</p>
+                                <p>Pulse-based rumble escalates with enemy attack impact. Perfect Guard triggers a sharp short burst distinct from a regular block â€” providing tactile confirmation of the precise timing within the narrow guard window.</p>
                             </div>
                         </li>
                     </ul>
@@ -1445,7 +1585,7 @@
                         <div class="cybernetic-content">
                             <div>
                                 <p style="text-align: justify;">
-                                    Lies of P builds its feedback architecture entirely around the Perfect Guard — a system where the audio cue, visual flash, and haptic burst must be parsed faster than conscious thought. The design demands that players internalize the feedback loop to the point of unconscious execution, making mastery feel genuinely physical.
+                                    Lies of P builds its feedback architecture entirely around the Perfect Guard â€” a system where the audio cue, visual flash, and haptic burst must be parsed faster than conscious thought. The design demands that players internalize the feedback loop to the point of unconscious execution, making mastery feel genuinely physical.
                                 </p>
                             </div>
                             <div>
@@ -1461,13 +1601,13 @@
                     <div class="spatial-congruence">
                         <h2>Spatial Congruence in Guard-Centric Combat</h2>
                         <p style="text-align: justify;">
-                            Lies of P achieves spatial congruence by making the guard mechanic directionally neutral — unlike many parry systems that require facing, P's Perfect Guard works in any direction. This eliminates the spatial translation cost of repositioning before guarding, allowing players to focus entirely on the temporal dimension of the interaction.
+                            Lies of P achieves spatial congruence by making the guard mechanic directionally neutral â€” unlike many parry systems that require facing, P's Perfect Guard works in any direction. This eliminates the spatial translation cost of repositioning before guarding, allowing players to focus entirely on the temporal dimension of the interaction.
                         </p>
                     </div>
                     <div class="cognitive-load-bifurcation">
                         <h2>Cognitive Load Bifurcation</h2>
                         <p style="text-align: justify; margin-bottom: 2em;">
-                            Lies of P manages cognitive load through a clear primary skill gate: the Perfect Guard. Rather than distributing player attention across multiple mechanics simultaneously, the system funnels all defensive attention into a single learnable pattern — reducing Extrinsic Load by making the interface's primary demand singular and consistent.
+                            Lies of P manages cognitive load through a clear primary skill gate: the Perfect Guard. Rather than distributing player attention across multiple mechanics simultaneously, the system funnels all defensive attention into a single learnable pattern â€” reducing Extrinsic Load by making the interface's primary demand singular and consistent.
                         </p>
                         <table>
                             <thead>
@@ -1479,26 +1619,26 @@
                             <tbody>
 
                                 <tr>
-                                    <td><h6>Perfect Guard as Primary Skill Gate</h6><p>The Perfect Guard creates a clear, learnable mastery curve. Players who invest in the mechanic feel genuine skill progression — the system rewards attention to enemy animation rather than reflex alone.</p></td>
+                                    <td><h6>Perfect Guard as Primary Skill Gate</h6><p>The Perfect Guard creates a clear, learnable mastery curve. Players who invest in the mechanic feel genuine skill progression â€” the system rewards attention to enemy animation rather than reflex alone.</p></td>
                                     <td><h6>Weapon Assembly Complexity</h6><p>The combination of blade and handle stats, elemental affinities, and Fable Arts creates a combinatorial space that can overwhelm players who want to engage with the system but lack a framework for evaluation.</p></td>
                                 </tr>
                                 <tr>
-                                    <td><h6>Fury Attack Multi-Sensory Warning</h6><p>Unblockable attacks are flagged by both visual (red glow) and audio (deep boom) — a well-designed multi-modal warning that gives players time to respond with appropriate input (dodge instead of guard).</p></td>
-                                    <td><h6>Boss Difficulty Spikes</h6><p>Phase 2 transitions often dramatically accelerate attack speeds without proportionate communication — the timing window reduction is discovered through failure rather than signaled, creating abrupt difficulty walls.</p></td>
+                                    <td><h6>Fury Attack Multi-Sensory Warning</h6><p>Unblockable attacks are flagged by both visual (red glow) and audio (deep boom) â€” a well-designed multi-modal warning that gives players time to respond with appropriate input (dodge instead of guard).</p></td>
+                                    <td><h6>Boss Difficulty Spikes</h6><p>Phase 2 transitions often dramatically accelerate attack speeds without proportionate communication â€” the timing window reduction is discovered through failure rather than signaled, creating abrupt difficulty walls.</p></td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                     <div class="footnote">
                         <q>
-                            Lies of P proves that a soulslike's HCI can be built around a single defensive mechanic without losing depth. The Perfect Guard is not a simplification — it is a focusing of the genre's core tension into one decisive interaction.
+                            Lies of P proves that a soulslike's HCI can be built around a single defensive mechanic without losing depth. The Perfect Guard is not a simplification â€” it is a focusing of the genre's core tension into one decisive interaction.
                         </q>
                     </div>
                 </section>
                 <section class="game-sections" id="ui-ux-weaknesses">
                     <h2>Strengths and Weaknesses Analysis</h2>
                     <p>
-                        A comprehensive evaluation of Lies of P's interface paradigm — examining the tension between its celebrated Perfect Guard defensive innovation and the inherited opacity of the soulslike genre it both homages and refines.
+                        A comprehensive evaluation of Lies of P's interface paradigm â€” examining the tension between its celebrated Perfect Guard defensive innovation and the inherited opacity of the soulslike genre it both homages and refines.
                     </p>
                     <table style="margin-bottom: 2em;">
                         <thead>
@@ -1516,7 +1656,7 @@
                                         <span class="label">01_GUARD</span>
                                     </div>
                                     <h6>Perfect Guard Innovation</h6>
-                                    <p>The Perfect Guard is a genuine evolution of soulslike combat design — shifting the defensive paradigm from evasion to precision timing, creating a distinct combat identity for Lies of P within a crowded genre.</p>
+                                    <p>The Perfect Guard is a genuine evolution of soulslike combat design â€” shifting the defensive paradigm from evasion to precision timing, creating a distinct combat identity for Lies of P within a crowded genre.</p>
                                 </td>
                                 <td>
                                     <div class="sw-item-head">
@@ -1524,7 +1664,7 @@
                                         <span class="label">01_TELEGRAPH</span>
                                     </div>
                                     <h6>Enemy Telegraph Inconsistency</h6>
-                                    <p>Some enemy attack animations are insufficiently telegraphed for the Perfect Guard timing they require — particularly imported Soulslike-style 'delayed swing' attacks that punish the learned timing pattern.</p>
+                                    <p>Some enemy attack animations are insufficiently telegraphed for the Perfect Guard timing they require â€” particularly imported Soulslike-style 'delayed swing' attacks that punish the learned timing pattern.</p>
                                 </td>
                             </tr>
                             <tr>
@@ -1534,7 +1674,7 @@
                                         <span class="label">02_WEAPON</span>
                                     </div>
                                     <h6>Weapon Assembly Creativity</h6>
-                                    <p>The blade/handle combination system creates a rich space for player expression — players develop personal weapon philosophies that make their builds feel uniquely authored.</p>
+                                    <p>The blade/handle combination system creates a rich space for player expression â€” players develop personal weapon philosophies that make their builds feel uniquely authored.</p>
                                 </td>
                                 <td>
                                     <div class="sw-item-head">
@@ -1542,7 +1682,7 @@
                                         <span class="label">02_SPIKE</span>
                                     </div>
                                     <h6>Boss Difficulty Spikes</h6>
-                                    <p>Phase 2 transitions occasionally introduce abrupt difficulty escalations that feel like design rather than discovery — punishing players for mastering Phase 1 without adequate preparation for Phase 2 patterns.</p>
+                                    <p>Phase 2 transitions occasionally introduce abrupt difficulty escalations that feel like design rather than discovery â€” punishing players for mastering Phase 1 without adequate preparation for Phase 2 patterns.</p>
                                 </td>
                             </tr>
                             <tr>
@@ -1552,7 +1692,7 @@
                                         <span class="label">03_HUMANITY</span>
                                     </div>
                                     <h6>Narrative Choice Integration</h6>
-                                    <p>The lie/truth choice system integrates narrative into gameplay in a meaningful way — P's humanity affects available endings and NPC interactions, making dialogue choice a form of HCI.</p>
+                                    <p>The lie/truth choice system integrates narrative into gameplay in a meaningful way â€” P's humanity affects available endings and NPC interactions, making dialogue choice a form of HCI.</p>
                                 </td>
                                 <td>
                                     <div class="sw-item-head">
@@ -1567,12 +1707,39 @@
                     </table>
                     <div class="footnote summary">
                         <p>
-                            Lies of P demonstrates that soulslike HCI can evolve without abandoning its core design values. The Perfect Guard is a refinement — not a simplification — of the genre's parry tradition, creating a more accessible skill ceiling than most FromSoftware titles while preserving the depth that makes mastery feel earned. Its weaknesses are largely inherited from its genre predecessors rather than introduced by its own design decisions.
+                            Lies of P demonstrates that soulslike HCI can evolve without abandoning its core design values. The Perfect Guard is a refinement â€” not a simplification â€” of the genre's parry tradition, creating a more accessible skill ceiling than most FromSoftware titles while preserving the depth that makes mastery feel earned. Its weaknesses are largely inherited from its genre predecessors rather than introduced by its own design decisions.
                         </p>
                     </div>
                 </section>
             </div>
         </article>
+    
+        <!-- GAME PAGE NAVIGATION START -->
+        <div class="game-page-navigation" aria-label="Game page navigation">
+            <div class="page-nav-item prev">
+                <a class="btn btn-outline-secondary btn-prev" href="warframe.html">
+                    <span class="btn-label">
+                        <svg class="nav-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path d="M15 18l-6-6 6-6"></path>
+                        </svg>
+                        <span>Previous Game</span>
+                    </span>
+                    <span class="subtext">Warframe</span>
+                </a>
+            </div>
+            <div class="page-nav-item next">
+                <a class="btn btn-primary btn-next" href="needForSpeed.html">
+                    <span class="btn-label">
+                        <span>Next Game</span>
+                        <svg class="nav-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path d="M9 6l6 6-6 6"></path>
+                        </svg>
+                    </span>
+                    <span class="subtext">Need for Speed</span>
+                </a>
+            </div>
+        </div>
+        <!-- GAME PAGE NAVIGATION END -->
     </main>
             <footer>
         <h6>GameUX Atlas</h6>
@@ -1647,7 +1814,7 @@
     const EDITIONS = ["Standard", "Deluxe Edition", "Collector's Edition"];
 
     const DESCRIPTION =
-        "Lies of P is a soulslike action RPG by Round8 Studio set in a dark reimagining of Pinocchio in the Belle Époque city of Krat. Players control P — a puppet awakened in a puppet-overrun world — wielding a modular weapon-assembly system and a unique Perfect Guard blocking mechanic that rewards precision defense over evasion.";
+        "Lies of P is a soulslike action RPG by Round8 Studio set in a dark reimagining of Pinocchio in the Belle Ã‰poque city of Krat. Players control P â€” a puppet awakened in a puppet-overrun world â€” wielding a modular weapon-assembly system and a unique Perfect Guard blocking mechanic that rewards precision defense over evasion.";
 
     // Document Variables
     const sectionRadios = Array.from(

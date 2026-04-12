@@ -864,6 +864,145 @@
         .game-video-wrp {
             position: relative;
         }
+    
+        /* GAME PAGE NAVIGATION START */
+        .game-page-navigation {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1em;
+            margin: 2.5em auto 3em;
+            width: min(100%, 64rem);
+            padding: 0 1rem;
+        }
+
+        .game-page-navigation .page-nav-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.35em;
+            min-width: 10rem;
+            width: 100%;
+            position: relative;
+
+            & a {
+                width: 100%;
+            }
+        }
+
+        .game-page-navigation .page-nav-item.next {
+            align-items: flex-end;
+
+            & a {
+                text-align: right;
+            }
+        }
+
+        .game-page-navigation .btn {
+            min-width: 10rem;
+            border-radius: var(--t-radius-field);
+            font-weight: 600;
+            padding: 0.6em 1.1em;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+            isolation: isolate;
+            background-color: transparent !important;
+            transition: color 0.28s ease;
+        }
+
+        .game-page-navigation .btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            transform: scaleX(0);
+            transform-origin: left center;
+            transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+            z-index: -1;
+        }
+
+        .game-page-navigation .btn-prev {
+            --btn-fill: var(--t-color-secondary);
+            --btn-text-hover: var(--t-color-secondary-content);
+            color: var(--t-color-secondary) !important;
+            border-color: var(--t-color-secondary) !important;
+        }
+
+        .game-page-navigation .btn-prev::before {
+            background-color: var(--btn-fill);
+            transform-origin: left center;
+        }
+
+        .game-page-navigation .btn-next {
+            --btn-fill: var(--t-color-primary);
+            --btn-text-hover: var(--t-color-primary-content);
+            color: var(--t-color-primary) !important;
+            border-color: var(--t-color-primary) !important;
+        }
+
+        .game-page-navigation .btn-next::before {
+            background-color: var(--btn-fill);
+            transform-origin: right center;
+        }
+
+        .game-page-navigation .btn:hover,
+        .game-page-navigation .btn:focus-visible {
+            color: var(--btn-text-hover) !important;
+        }
+
+        .game-page-navigation .btn:hover::before,
+        .game-page-navigation .btn:focus-visible::before {
+            transform: scaleX(1);
+        }
+
+        .game-page-navigation .subtext {
+            display: block;
+            font-size: 0.78em;
+            color: inherit;
+            line-height: 1.2;
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .game-page-navigation .btn-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45em;
+            line-height: 1.15;
+        }
+
+        .game-page-navigation .page-nav-item.next .btn-label {
+            justify-content: flex-end;
+            width: 100%;
+        }
+
+        .game-page-navigation .nav-arrow {
+            width: 1em;
+            height: 1em;
+            flex-shrink: 0;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        @media (width < 48rem) {
+            .game-page-navigation {
+                grid-template-columns: 1fr;
+            }
+
+            .game-page-navigation .page-nav-item,
+            .game-page-navigation .page-nav-item.next {
+                align-items: stretch;
+            }
+
+            .game-page-navigation .btn,
+            .game-page-navigation .btn-prev,
+            .game-page-navigation .btn-next {
+                width: 100%;
+                margin: 0;
+            }
+        }
+        /* GAME PAGE NAVIGATION END */
     </style>
     <!-- Custom Styles ------------------------------------------------------------------------------------------ -->
 
@@ -911,7 +1050,8 @@
     <main>
         <article class="wide">
             <section class="header-section">
-                <img class="game-poster-content game-poster-background-style" />
+                
+                <span class="archive-number">[ 096_uncharted_dinawanao ]</span>
                 <h1 class="game-name game-name-header" title="Game Name">
                     Game name
                 </h1>
@@ -984,7 +1124,7 @@
                                     <button id="use-local-video-btn" class="btn-fallback btn-local" type="button">Use
                                         Local Video</button>
                                 </div>
-                                <p class="fallback-hint">💡 Try connecting through a different network or VPN to access YouTube content.</p>
+                                <p class="fallback-hint">ðŸ’¡ Try connecting through a different network or VPN to access YouTube content.</p>
                             </div>
                         </div>
                     </div>
@@ -1082,11 +1222,11 @@
                         <li>Libertalia Collector's Edition</li>
                     </ul>
                     <p>
-                        Uncharted 4: A Thief's End is an action-adventure game developed by Naughty Dog and published by Sony Interactive Entertainment. Released on May 10, 2016 for PlayStation 4, it concludes the story of Nathan Drake — a treasure hunter pulled out of retirement
+                        Uncharted 4: A Thief's End is an action-adventure game developed by Naughty Dog and published by Sony Interactive Entertainment. Released on May 10, 2016 for PlayStation 4, it concludes the story of Nathan Drake â€” a treasure hunter pulled out of retirement
                         by his long-lost brother Sam for one final adventure in search of the legendary pirate colony of Libertalia. A Legacy of Thieves Collection brought the game to PC in October 2022.
                     </p>
                     <p>
-                        Uncharted 4 represents Naughty Dog's most ambitious HCI achievement in the series — blending fluid third-person climbing, cover-based combat, vehicle traversal, and stealth into a cinematic package that makes the transition between gameplay and storytelling
+                        Uncharted 4 represents Naughty Dog's most ambitious HCI achievement in the series â€” blending fluid third-person climbing, cover-based combat, vehicle traversal, and stealth into a cinematic package that makes the transition between gameplay and storytelling
                         nearly invisible. Its interface design philosophy prioritizes the player feeling like they are inside a summer blockbuster rather than reading a screen.
                     </p>
                 </section>
@@ -1104,7 +1244,7 @@
                                 <span class="count">[ ELEMENT_01 ]</span>
                                 <span class="header-text">Cinematic HUD</span>
                                 <p>
-                                    Uncharted 4 uses an extremely minimal HUD — health is communicated through a subtle white screen-edge flash and regenerates automatically via cover, eliminating persistent health bars. Ammo counters appear only when a weapon is drawn and fade when not
+                                    Uncharted 4 uses an extremely minimal HUD â€” health is communicated through a subtle white screen-edge flash and regenerates automatically via cover, eliminating persistent health bars. Ammo counters appear only when a weapon is drawn and fade when not
                                     actively needed. The design philosophy is to keep the player's eyes on the world, not the interface.
                                 </p>
                                 <ul>
@@ -1126,7 +1266,7 @@
                                 <span class="count">[ ELEMENT_02 ]</span>
                                 <span class="header-text">Grapple Hook Traversal</span>
                                 <p>
-                                    The grapple hook is Uncharted 4's primary new traversal tool — anchoring to ledges and tree branches to enable sweeping momentum-based movement. Its HCI design is elegant: anchor points are subtle but visually distinct, and the hook fires on a single
+                                    The grapple hook is Uncharted 4's primary new traversal tool â€” anchoring to ledges and tree branches to enable sweeping momentum-based movement. Its HCI design is elegant: anchor points are subtle but visually distinct, and the hook fires on a single
                                     button press with no aiming UI required. The system communicates its possibilities through environmental design rather than HUD prompts.
                                 </p>
                             </div>
@@ -1142,7 +1282,7 @@
                                 <span class="count">[ ELEMENT_03 ]</span>
                                 <span class="header-text">Fluid Cover System</span>
                                 <p>
-                                    The cover system uses a single contextual button to snap Drake to surfaces, peek, lean out, and vault — reducing cognitive overhead to a single interaction verb. The system intelligently reads the environment to determine whether Nathan climbs over or
+                                    The cover system uses a single contextual button to snap Drake to surfaces, peek, lean out, and vault â€” reducing cognitive overhead to a single interaction verb. The system intelligently reads the environment to determine whether Nathan climbs over or
                                     slides under an obstacle, making multi-part traversal sequences feel continuous and uninterrupted.
                                 </p>
                             </div>
@@ -1152,7 +1292,7 @@
                     <div class="fittslaw">
                         <div>
                             <p>
-                                Fitt's Law maps directly to Uncharted 4's aiming design. The soft aim-assist snaps the reticle toward enemy torsos, reducing effective distance (D) to the target. The aim window (W) is generous by design — Naughty Dog prioritizes narrative momentum over
+                                Fitt's Law maps directly to Uncharted 4's aiming design. The soft aim-assist snaps the reticle toward enemy torsos, reducing effective distance (D) to the target. The aim window (W) is generous by design â€” Naughty Dog prioritizes narrative momentum over
                                 mechanical friction, ensuring players spend less time fighting the controls and more time experiencing the story.
                             </p>
                             <div class="mathmodel">
@@ -1160,7 +1300,7 @@
                                 <span>MT = a + b * log<sub>2</sub>(2D/W)</span>
                             </div>
                             <p>
-                                Uncharted 4 deliberately maximizes W (effective target width via aim assist) and minimizes D (snap-to-target distance) to lower MT — keeping combat fast and readable rather than demanding. The design prioritizes cinematic flow over technical skill expression,
+                                Uncharted 4 deliberately maximizes W (effective target width via aim assist) and minimizes D (snap-to-target distance) to lower MT â€” keeping combat fast and readable rather than demanding. The design prioritizes cinematic flow over technical skill expression,
                                 an intentional HCI trade-off that makes the game broadly accessible while maintaining moment-to-moment tension.
                             </p>
                         </div>
@@ -1179,7 +1319,7 @@
                         <ol class="three-columns md-one-columns">
                             <li>
                                 <h6>World & Character</h6>
-                                <p>Primary focus at all times. Naughty Dog's environmental design communicates traversal paths, cover positions, and narrative beats without overlays — white paint on ledges, yellow rope on climbable elements, and enemy positioning
+                                <p>Primary focus at all times. Naughty Dog's environmental design communicates traversal paths, cover positions, and narrative beats without overlays â€” white paint on ledges, yellow rope on climbable elements, and enemy positioning
                                     are the HUD.</p>
                             </li>
                             <li>
@@ -1199,7 +1339,7 @@
                 <section class="game-sections" id="user-interaction">
                     <h2>User Interaction</h2>
                     <p>
-                        An investigation into Uncharted 4's cinematic-first interface design — examining how Naughty Dog dissolves the boundary between gameplay and storytelling through seamless HCI transitions and world-embedded feedback systems.
+                        An investigation into Uncharted 4's cinematic-first interface design â€” examining how Naughty Dog dissolves the boundary between gameplay and storytelling through seamless HCI transitions and world-embedded feedback systems.
                     </p>
                     <div class="list-style-area">
                         <h3 class="text-center">Core Gameplay Loop</h3>
@@ -1207,7 +1347,7 @@
                         <ol class="four-columns md-two-columns">
                             <li>
                                 <h6>Traverse</h6>
-                                <p>Players navigate richly detailed environments through climbing, grappling, and sliding — with the game seamlessly blending scripted cinematic moments into gameplay traversal without loading screens or HUD interruptions.</p>
+                                <p>Players navigate richly detailed environments through climbing, grappling, and sliding â€” with the game seamlessly blending scripted cinematic moments into gameplay traversal without loading screens or HUD interruptions.</p>
                             </li>
                             <li>
                                 <h6>Explore</h6>
@@ -1221,7 +1361,7 @@
                             </li>
                             <li>
                                 <h6>Experience</h6>
-                                <p>Conversations, cutscenes, and interactive story moments blend into gameplay without hard transitions — the player retains control of Nathan's movement even during dialogue, keeping immersion unbroken throughout the narrative.</p>
+                                <p>Conversations, cutscenes, and interactive story moments blend into gameplay without hard transitions â€” the player retains control of Nathan's movement even during dialogue, keeping immersion unbroken throughout the narrative.</p>
                             </li>
                         </ol>
                     </div>
@@ -1229,7 +1369,7 @@
                     <div class="multi-modal-feedback">
                         <div>
                             <p>
-                                Uncharted 4's feedback architecture is designed to be felt rather than read. The DualShock 4's rumble, Nathan's vocal performance, and environmental audio work in concert to communicate game state — keeping the player informed without surfacing data on
+                                Uncharted 4's feedback architecture is designed to be felt rather than read. The DualShock 4's rumble, Nathan's vocal performance, and environmental audio work in concert to communicate game state â€” keeping the player informed without surfacing data on
                                 screen.
                             </p>
                         </div>
@@ -1251,7 +1391,7 @@
                             </div>
                             <div>
                                 <h6>Audio Feedback</h6>
-                                <p>Nathan and Sam's real-time banter during traversal sequences communicates environmental awareness — they call out handholds, warn of enemy positions, and react to near-misses. This dialogue-as-HUD approach eliminates the
+                                <p>Nathan and Sam's real-time banter during traversal sequences communicates environmental awareness â€” they call out handholds, warn of enemy positions, and react to near-misses. This dialogue-as-HUD approach eliminates the
                                     need for waypoint markers in many traversal sections, using voice performance as a directional audio cue system.</p>
                             </div>
                         </li>
@@ -1265,7 +1405,7 @@
                             <div>
                                 <h6>Visual Feedback</h6>
                                 <p>White painted ledges and yellow rope subtly mark climbable surfaces without breaking visual realism. Hit sparks and enemy stumble animations confirm combat success. The letterbox cinematic bars that slide in during story
-                                    moments act as a visual signal that the game is transitioning modes — an elegant UX convention the player learns without being taught.</p>
+                                    moments act as a visual signal that the game is transitioning modes â€” an elegant UX convention the player learns without being taught.</p>
                             </div>
                         </li>
                         <li>
@@ -1276,7 +1416,7 @@
                             </div>
                             <div>
                                 <h6>Haptic Feedback</h6>
-                                <p>The DualShock 4 rumble differentiates weapon types — pistol shots produce brief pulses while explosions deliver sustained vibration. Rope swings generate escalating rumble at the swing's apex, and Drake's footing on unstable
+                                <p>The DualShock 4 rumble differentiates weapon types â€” pistol shots produce brief pulses while explosions deliver sustained vibration. Rope swings generate escalating rumble at the swing's apex, and Drake's footing on unstable
                                     surfaces produces subtle irregular feedback that alerts the player to traversal risk before a fall occurs.</p>
                             </div>
                         </li>
@@ -1289,7 +1429,7 @@
                         <div class="cybernetic-content">
                             <div>
                                 <p style="text-align: justify;">
-                                    Uncharted 4's feedback loop is engineered around the concept of seamless mode blending — the game continuously slides between traversal, combat, stealth, and cinematic narrative without hard mode switches. Each state transition is managed through audio,
+                                    Uncharted 4's feedback loop is engineered around the concept of seamless mode blending â€” the game continuously slides between traversal, combat, stealth, and cinematic narrative without hard mode switches. Each state transition is managed through audio,
                                     animation, and subtle HUD changes rather than explicit UI signals, making the game's internal state machine invisible to the player.
                                 </p>
                             </div>
@@ -1306,14 +1446,14 @@
                     <div class="spatial-congruence">
                         <h2>Spatial Congruence & Environmental Storytelling</h2>
                         <p style="text-align: justify;">
-                            Uncharted 4 achieves spatial congruence by embedding navigation, combat, and narrative information directly into the environment. Traversal paths are marked with subtle real-world logic — wet rock reflects light, handholds are worn smooth, structural
+                            Uncharted 4 achieves spatial congruence by embedding navigation, combat, and narrative information directly into the environment. Traversal paths are marked with subtle real-world logic â€” wet rock reflects light, handholds are worn smooth, structural
                             anchors are visually distinct from decorative elements. The player's mental model maps directly to how the world works physically, eliminating the need for waypoint markers across the vast majority of the game's traversal sections.
                         </p>
                     </div>
                     <div class="cognitive-load-bifurcation">
                         <h2>Cognitive Load Bifurcation</h2>
                         <p style="text-align: justify; margin-bottom: 2em;">
-                            Naughty Dog's core HCI philosophy here is maximum Intrinsic engagement — keeping the player absorbed in the narrative and adventure — by aggressively minimizing Extrinsic interface overhead.
+                            Naughty Dog's core HCI philosophy here is maximum Intrinsic engagement â€” keeping the player absorbed in the narrative and adventure â€” by aggressively minimizing Extrinsic interface overhead.
                         </p>
                         <table>
                             <thead>
@@ -1336,11 +1476,11 @@
                                 <tr>
                                     <td>
                                         <h6>Contextual Button Prompts</h6>
-                                        <p>Prompts appear only when in range, removing persistent UI noise during exploration and cinematics — the player is never reading a cluttered screen during story moments.</p>
+                                        <p>Prompts appear only when in range, removing persistent UI noise during exploration and cinematics â€” the player is never reading a cluttered screen during story moments.</p>
                                     </td>
                                     <td>
                                         <h6>Traversal Problem-Solving</h6>
-                                        <p>Environmental navigation demands spatial reasoning and momentum management — the complexity is in the world's design, not the interface's complexity.</p>
+                                        <p>Environmental navigation demands spatial reasoning and momentum management â€” the complexity is in the world's design, not the interface's complexity.</p>
                                     </td>
                                 </tr>
                             </tbody>
@@ -1348,14 +1488,14 @@
                     </div>
                     <div class="footnote">
                         <q>
-                            Uncharted 4's HCI achievement is making the player forget there is an interface at all. When Nathan and Sam banter through a perilous climb, the player isn't reading a screen — they're inside the story.
+                            Uncharted 4's HCI achievement is making the player forget there is an interface at all. When Nathan and Sam banter through a perilous climb, the player isn't reading a screen â€” they're inside the story.
                         </q>
                     </div>
                 </section>
                 <section class="game-sections" id="ui-ux-weaknesses">
                     <h2>Strengths and Weaknesses Analysis</h2>
                     <p>
-                        A comprehensive evaluation of Uncharted 4's interface paradigm — examining where Naughty Dog's cinematic-first HCI philosophy excels and where it creates friction for players who want deeper mechanical engagement.
+                        A comprehensive evaluation of Uncharted 4's interface paradigm â€” examining where Naughty Dog's cinematic-first HCI philosophy excels and where it creates friction for players who want deeper mechanical engagement.
                     </p>
                     <table style="margin-bottom: 2em;">
                         <thead>
@@ -1382,7 +1522,7 @@
                                     </div>
                                     <h6>Shallow Mechanical Depth</h6>
                                     <p>The prioritization of cinematic accessibility over mechanical challenge means combat lacks the depth of contemporaries. Players who seek systemic engagement find combat resolves quickly and offers limited build or tactical
-                                        expression — a deliberate trade-off that not all players embrace.</p>
+                                        expression â€” a deliberate trade-off that not all players embrace.</p>
                                 </td>
                             </tr>
                             <tr>
@@ -1392,7 +1532,7 @@
                                         <span class="label">02_TRAVERSAL</span>
                                     </div>
                                     <h6>Traversal Feel & Momentum</h6>
-                                    <p>The grapple hook and rope swing introduce genuine momentum-based traversal that rewards spatial awareness and timing. The physicality of Drake's movement communicates weight and consequence — each swing and slide feels
+                                    <p>The grapple hook and rope swing introduce genuine momentum-based traversal that rewards spatial awareness and timing. The physicality of Drake's movement communicates weight and consequence â€” each swing and slide feels
                                         authored rather than mechanical.</p>
                                 </td>
                                 <td>
@@ -1401,7 +1541,7 @@
                                         <span class="label">02_LINEARITY</span>
                                     </div>
                                     <h6>Path Ambiguity in Open Areas</h6>
-                                    <p>The game's broader open environments in chapters like Scotland and Madagascar can create spatial confusion — the subtle environmental traversal cues that work perfectly in linear sections become harder to parse when
+                                    <p>The game's broader open environments in chapters like Scotland and Madagascar can create spatial confusion â€” the subtle environmental traversal cues that work perfectly in linear sections become harder to parse when
                                         the solution space expands, occasionally producing player disorientation without adequate HCI support.</p>
                                 </td>
                             </tr>
@@ -1412,7 +1552,7 @@
                                         <span class="label">03_ACCESSIBILITY</span>
                                     </div>
                                     <h6>Broad Player Accessibility</h6>
-                                    <p>The generous aim assist, auto-regenerating health, and clear contextual prompts make Uncharted 4 one of the most accessible action-adventure games of its generation — welcoming non-traditional gamers into the experience
+                                    <p>The generous aim assist, auto-regenerating health, and clear contextual prompts make Uncharted 4 one of the most accessible action-adventure games of its generation â€” welcoming non-traditional gamers into the experience
                                         without sacrificing the sense of adventure for skilled players.</p>
                                 </td>
                                 <td>
@@ -1422,20 +1562,47 @@
                                     </div>
                                     <h6>Constrained Player Agency</h6>
                                     <p>The cinematic-first design necessarily constrains player freedom. Scripted traversal sequences, forced walk-and-talk sections, and unskippable environmental set-pieces prioritize authorial vision over player agency
-                                        — a valid creative choice that nonetheless limits the HCI expressiveness available to players who want to engage on their own terms.</p>
+                                        â€” a valid creative choice that nonetheless limits the HCI expressiveness available to players who want to engage on their own terms.</p>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                     <div class="footnote summary">
                         <p>
-                            Uncharted 4's HCI is a masterclass in cinematic integration — the interface retreats so successfully that millions of players completed the game without consciously engaging with a single HUD element. Its trade-off is deliberate: mechanical depth is sacrificed
+                            Uncharted 4's HCI is a masterclass in cinematic integration â€” the interface retreats so successfully that millions of players completed the game without consciously engaging with a single HUD element. Its trade-off is deliberate: mechanical depth is sacrificed
                             for emotional depth, and the player's agency is shaped by narrative necessity. Whether that trade-off is a strength or weakness depends entirely on what you believe games are for.
                         </p>
                     </div>
                 </section>
             </div>
         </article>
+    
+        <!-- GAME PAGE NAVIGATION START -->
+        <div class="game-page-navigation" aria-label="Game page navigation">
+            <div class="page-nav-item prev">
+                <a class="btn btn-outline-secondary btn-prev" href="finalFantasy7Rebirth.html">
+                    <span class="btn-label">
+                        <svg class="nav-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path d="M15 18l-6-6 6-6"></path>
+                        </svg>
+                        <span>Previous Game</span>
+                    </span>
+                    <span class="subtext">Final Fantasy 7 Remake/Rebirth</span>
+                </a>
+            </div>
+            <div class="page-nav-item next">
+                <a class="btn btn-primary btn-next" href="laraCroftTombRaider.html">
+                    <span class="btn-label">
+                        <span>Next Game</span>
+                        <svg class="nav-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path d="M9 6l6 6-6 6"></path>
+                        </svg>
+                    </span>
+                    <span class="subtext">Lara Croft Tomb Raider</span>
+                </a>
+            </div>
+        </div>
+        <!-- GAME PAGE NAVIGATION END -->
     </main>
             <footer>
         <h6>GameUX Atlas</h6>
@@ -1510,7 +1677,7 @@
     const EDITIONS = ["Standard Edition", "Special Edition", "Libertalia Collector's Edition"];
 
     const DESCRIPTION =
-        "Uncharted 4: A Thief's End is the critically acclaimed conclusion to Nathan Drake's story, developed by Naughty Dog. Pulled back into adventure by his long-lost brother Sam, Nathan embarks on a globe-trotting hunt for the legendary pirate treasure of Libertalia — delivering a masterclass in cinematic action-adventure game design that blurs the line between gameplay and film.";
+        "Uncharted 4: A Thief's End is the critically acclaimed conclusion to Nathan Drake's story, developed by Naughty Dog. Pulled back into adventure by his long-lost brother Sam, Nathan embarks on a globe-trotting hunt for the legendary pirate treasure of Libertalia â€” delivering a masterclass in cinematic action-adventure game design that blurs the line between gameplay and film.";
 
     // Document Variables
     const sectionRadios = Array.from(

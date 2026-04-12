@@ -864,6 +864,145 @@
         .game-video-wrp {
             position: relative;
         }
+    
+        /* GAME PAGE NAVIGATION START */
+        .game-page-navigation {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1em;
+            margin: 2.5em auto 3em;
+            width: min(100%, 64rem);
+            padding: 0 1rem;
+        }
+
+        .game-page-navigation .page-nav-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.35em;
+            min-width: 10rem;
+            width: 100%;
+            position: relative;
+
+            & a {
+                width: 100%;
+            }
+        }
+
+        .game-page-navigation .page-nav-item.next {
+            align-items: flex-end;
+
+            & a {
+                text-align: right;
+            }
+        }
+
+        .game-page-navigation .btn {
+            min-width: 10rem;
+            border-radius: var(--t-radius-field);
+            font-weight: 600;
+            padding: 0.6em 1.1em;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+            isolation: isolate;
+            background-color: transparent !important;
+            transition: color 0.28s ease;
+        }
+
+        .game-page-navigation .btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            transform: scaleX(0);
+            transform-origin: left center;
+            transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+            z-index: -1;
+        }
+
+        .game-page-navigation .btn-prev {
+            --btn-fill: var(--t-color-secondary);
+            --btn-text-hover: var(--t-color-secondary-content);
+            color: var(--t-color-secondary) !important;
+            border-color: var(--t-color-secondary) !important;
+        }
+
+        .game-page-navigation .btn-prev::before {
+            background-color: var(--btn-fill);
+            transform-origin: left center;
+        }
+
+        .game-page-navigation .btn-next {
+            --btn-fill: var(--t-color-primary);
+            --btn-text-hover: var(--t-color-primary-content);
+            color: var(--t-color-primary) !important;
+            border-color: var(--t-color-primary) !important;
+        }
+
+        .game-page-navigation .btn-next::before {
+            background-color: var(--btn-fill);
+            transform-origin: right center;
+        }
+
+        .game-page-navigation .btn:hover,
+        .game-page-navigation .btn:focus-visible {
+            color: var(--btn-text-hover) !important;
+        }
+
+        .game-page-navigation .btn:hover::before,
+        .game-page-navigation .btn:focus-visible::before {
+            transform: scaleX(1);
+        }
+
+        .game-page-navigation .subtext {
+            display: block;
+            font-size: 0.78em;
+            color: inherit;
+            line-height: 1.2;
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .game-page-navigation .btn-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45em;
+            line-height: 1.15;
+        }
+
+        .game-page-navigation .page-nav-item.next .btn-label {
+            justify-content: flex-end;
+            width: 100%;
+        }
+
+        .game-page-navigation .nav-arrow {
+            width: 1em;
+            height: 1em;
+            flex-shrink: 0;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        @media (width < 48rem) {
+            .game-page-navigation {
+                grid-template-columns: 1fr;
+            }
+
+            .game-page-navigation .page-nav-item,
+            .game-page-navigation .page-nav-item.next {
+                align-items: stretch;
+            }
+
+            .game-page-navigation .btn,
+            .game-page-navigation .btn-prev,
+            .game-page-navigation .btn-next {
+                width: 100%;
+                margin: 0;
+            }
+        }
+        /* GAME PAGE NAVIGATION END */
     </style>
     <!-- Custom Styles ------------------------------------------------------------------------------------------ -->
 
@@ -911,7 +1050,8 @@
     <main>
         <article class="wide">
             <section class="header-section">
-                <img class="game-poster-content game-poster-background-style" />
+                
+                <span class="archive-number">[ 094_persona3reload_reales ]</span>
                 <h1 class="game-name game-name-header" title="Game Name">
                     Game name
                 </h1>
@@ -984,7 +1124,7 @@
                                     <button id="use-local-video-btn" class="btn-fallback btn-local" type="button">Use
                                         Local Video</button>
                                 </div>
-                                <p class="fallback-hint">💡 Try connecting through a different network or VPN to access YouTube content.</p>
+                                <p class="fallback-hint">ðŸ’¡ Try connecting through a different network or VPN to access YouTube content.</p>
                             </div>
                         </div>
                     </div>
@@ -1092,7 +1232,7 @@
                     <p>
                         Persona 3 Reload is a modern remake of Atlus's 2006 masterpiece, blending dungeon exploration with social simulation in an emotionally mature JRPG framework. Players navigate two parallel systems: managing daily social relationships with school peers
                         (which strengthen combat abilities) and exploring Tartarus, a dimensional tower that represents the protagonist's psyche. The game's central HCI challenge is orchestrating temporal management across multiple time-sensitive parallel
-                        systems while maintaining engagement across 80+ hour play sessions. Unlike traditional JRPGs focused on pure combat optimization, P3R rewards players for attending to relationships, attending class, and pursuing hobbies—making
+                        systems while maintaining engagement across 80+ hour play sessions. Unlike traditional JRPGs focused on pure combat optimization, P3R rewards players for attending to relationships, attending class, and pursuing hobbiesâ€”making
                         social failure mechanically meaningful.
                     </p>
                     <p>
@@ -1155,7 +1295,7 @@
                                 <span class="header-text">Persona Management</span>
                                 <p>
                                     The Persona roster managing three core sub-systems: Collection (dex-style acquisition), Fusion (recombination with skill inheritance), and Evolution (social link-driven advancement). The fusion menu presents a two-character selection interface requiring
-                                    players to predict outcome hierarchies and skill inheritance chains—a declarative system where player intent (e.g., "I want Physical skills on this Persona") requires navigating multiple fusion trees.
+                                    players to predict outcome hierarchies and skill inheritance chainsâ€”a declarative system where player intent (e.g., "I want Physical skills on this Persona") requires navigating multiple fusion trees.
                                 </p>
                             </div>
                         </div>
@@ -1342,7 +1482,7 @@
                     <div class="cognitive-load-bifurcation">
                         <h2>Cognitive Load Bifurcation: Social vs. Combat</h2>
                         <p style="text-align: justify; margin-bottom: 2em;">
-                            P3R bifurcates cognitive labor into two distinct domains: social decision-making (slow, deliberate, high semantic content) and combat execution (fast, tactical, lower semantic overhead). The interface separates these systems fully—social scenes feature
+                            P3R bifurcates cognitive labor into two distinct domains: social decision-making (slow, deliberate, high semantic content) and combat execution (fast, tactical, lower semantic overhead). The interface separates these systems fullyâ€”social scenes feature
                             minimal HUD, full dialogue presentation, and character focus. Combat shifts to tactical HUD, ability lists, and party status overlays. This context separation prevents cognitive interference between narrative intimacy and tactical
                             optimization.
                         </p>
@@ -1443,7 +1583,7 @@
                                     </div>
                                     <h6>Temporal Pressure Fatigue</h6>
                                     <p>
-                                        A single playthrough spans a full in-game year (~365 days). The finite calendar creates decision paralysis—missing limited social events is mechanically irreversible, generating anxiety in risk-averse players about "optimal" time allocation.
+                                        A single playthrough spans a full in-game year (~365 days). The finite calendar creates decision paralysisâ€”missing limited social events is mechanically irreversible, generating anxiety in risk-averse players about "optimal" time allocation.
                                     </p>
                                 </td>
                             </tr>
@@ -1473,13 +1613,40 @@
                     <div class="footnote summary">
                         <p>
                             Persona 3 Reload represents a deliberate entanglement of narrative and mechanical systems. While its strengths lie in the <u>emotional weight</u> of socially consequential choices and the satisfying loop of relationship ->
-                            combat optimization, its weaknesses stem from system opacity and temporal constraint anxiety. The interface succeeds not by reducing cognitive load (like osu!) but by making that load feel psychologically rewarding—turning
+                            combat optimization, its weaknesses stem from system opacity and temporal constraint anxiety. The interface succeeds not by reducing cognitive load (like osu!) but by making that load feel psychologically rewardingâ€”turning
                             what could be overwhelming into an intrinsic motivation for 80-hour engagement.
                         </p>
                     </div>
                 </section>
             </div>
         </article>
+    
+        <!-- GAME PAGE NAVIGATION START -->
+        <div class="game-page-navigation" aria-label="Game page navigation">
+            <div class="page-nav-item prev">
+                <a class="btn btn-outline-secondary btn-prev" href="partyAnimals.html">
+                    <span class="btn-label">
+                        <svg class="nav-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path d="M15 18l-6-6 6-6"></path>
+                        </svg>
+                        <span>Previous Game</span>
+                    </span>
+                    <span class="subtext">Party Animals</span>
+                </a>
+            </div>
+            <div class="page-nav-item next">
+                <a class="btn btn-primary btn-next" href="finalFantasy7Rebirth.html">
+                    <span class="btn-label">
+                        <span>Next Game</span>
+                        <svg class="nav-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path d="M9 6l6 6-6 6"></path>
+                        </svg>
+                    </span>
+                    <span class="subtext">Final Fantasy 7 Remake/Rebirth</span>
+                </a>
+            </div>
+        </div>
+        <!-- GAME PAGE NAVIGATION END -->
     </main>
             <footer>
         <h6>GameUX Atlas</h6>

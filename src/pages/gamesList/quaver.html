@@ -1463,6 +1463,145 @@
         .game-video-wrp {
             position: relative;
         }
+    
+        /* GAME PAGE NAVIGATION START */
+        .game-page-navigation {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1em;
+            margin: 2.5em auto 3em;
+            width: min(100%, 64rem);
+            padding: 0 1rem;
+        }
+
+        .game-page-navigation .page-nav-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.35em;
+            min-width: 10rem;
+            width: 100%;
+            position: relative;
+
+            & a {
+                width: 100%;
+            }
+        }
+
+        .game-page-navigation .page-nav-item.next {
+            align-items: flex-end;
+
+            & a {
+                text-align: right;
+            }
+        }
+
+        .game-page-navigation .btn {
+            min-width: 10rem;
+            border-radius: var(--t-radius-field);
+            font-weight: 600;
+            padding: 0.6em 1.1em;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+            isolation: isolate;
+            background-color: transparent !important;
+            transition: color 0.28s ease;
+        }
+
+        .game-page-navigation .btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            transform: scaleX(0);
+            transform-origin: left center;
+            transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+            z-index: -1;
+        }
+
+        .game-page-navigation .btn-prev {
+            --btn-fill: var(--t-color-secondary);
+            --btn-text-hover: var(--t-color-secondary-content);
+            color: var(--t-color-secondary) !important;
+            border-color: var(--t-color-secondary) !important;
+        }
+
+        .game-page-navigation .btn-prev::before {
+            background-color: var(--btn-fill);
+            transform-origin: left center;
+        }
+
+        .game-page-navigation .btn-next {
+            --btn-fill: var(--t-color-primary);
+            --btn-text-hover: var(--t-color-primary-content);
+            color: var(--t-color-primary) !important;
+            border-color: var(--t-color-primary) !important;
+        }
+
+        .game-page-navigation .btn-next::before {
+            background-color: var(--btn-fill);
+            transform-origin: right center;
+        }
+
+        .game-page-navigation .btn:hover,
+        .game-page-navigation .btn:focus-visible {
+            color: var(--btn-text-hover) !important;
+        }
+
+        .game-page-navigation .btn:hover::before,
+        .game-page-navigation .btn:focus-visible::before {
+            transform: scaleX(1);
+        }
+
+        .game-page-navigation .subtext {
+            display: block;
+            font-size: 0.78em;
+            color: inherit;
+            line-height: 1.2;
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .game-page-navigation .btn-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45em;
+            line-height: 1.15;
+        }
+
+        .game-page-navigation .page-nav-item.next .btn-label {
+            justify-content: flex-end;
+            width: 100%;
+        }
+
+        .game-page-navigation .nav-arrow {
+            width: 1em;
+            height: 1em;
+            flex-shrink: 0;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        @media (width < 48rem) {
+            .game-page-navigation {
+                grid-template-columns: 1fr;
+            }
+
+            .game-page-navigation .page-nav-item,
+            .game-page-navigation .page-nav-item.next {
+                align-items: stretch;
+            }
+
+            .game-page-navigation .btn,
+            .game-page-navigation .btn-prev,
+            .game-page-navigation .btn-next {
+                width: 100%;
+                margin: 0;
+            }
+        }
+        /* GAME PAGE NAVIGATION END */
     </style>
     <!-- Custom Styles ------------------------------------------------------------------------------------------ -->
 
@@ -1510,7 +1649,8 @@
     <main>
         <article class="wide">
             <section class="header-section">
-                <img class="game-poster-content game-poster-background-style" />
+                
+                <span class="archive-number">[ 007_quaver_valencerina ]</span>
                 <h1 class="game-name game-name-header" title="Game Name">
                     Game name
                 </h1>
@@ -1794,7 +1934,7 @@
                 <section class="game-sections" id="user-interaction">
 
                     <h2>User Interaction</h2>
-                    <p>Interaction is purely competitive—translating extreme visual density into neuro-motor twitch
+                    <p>Interaction is purely competitiveâ€”translating extreme visual density into neuro-motor twitch
                         responses via a zero-latency data pipeline. Every keystroke is a data point. Every microsecond
                         of delay is failure.</p>
 
@@ -1805,8 +1945,8 @@
                                 <ol class="four-columns md-two-columns" style="grid-template-columns: repeat(2, 1fr);">
                                     <li>
                                         <h6>Read Stream</h6>
-                                        <p>Process dense vertical note chunks arriving at high scroll speeds (1.0x–2.5x
-                                            rate). The brain must parse 4–7 simultaneous input lanes while maintaining
+                                        <p>Process dense vertical note chunks arriving at high scroll speeds (1.0xâ€“2.5x
+                                            rate). The brain must parse 4â€“7 simultaneous input lanes while maintaining
                                             temporal awareness of incoming chains.</p>
                                     </li>
                                     <li>
@@ -1818,8 +1958,8 @@
                                     <li>
                                         <h6>Actuate</h6>
                                         <p>Depress physical mechanical switches with millisecond temporal precision. The
-                                            input latency budget is fixed: ±16ms window. Outside this, judgment degrades
-                                            from "Perfect" → "Great" → "Good" → Miss.</p>
+                                            input latency budget is fixed: Â±16ms window. Outside this, judgment degrades
+                                            from "Perfect" â†’ "Great" â†’ "Good" â†’ Miss.</p>
                                     </li>
                                     <li>
                                         <h6>Calibrate</h6>
@@ -1837,7 +1977,7 @@
                                 from a single truth: in rhythm games, latency IS the core mechanic. The engine
                                 prioritizes input polling at 1000Hz (every 1ms), rendering bypass bloated OS input
                                 threadpools entirely. This creates a direct neural-to-hardware pipeline where timing
-                                compensation is purely biological—the player's brain, not the computer's.</p>
+                                compensation is purely biologicalâ€”the player's brain, not the computer's.</p>
                             <div class="multi-modal-feedback">
                                 <ul>
                                     <li>
@@ -1892,7 +2032,7 @@
                             <article class="mode-card offset-calibration">
                                 <h4>Offset Calibration</h4>
                                 <p>Quaver's UI provides a dedicated offset wizard allowing players to dial in equipment
-                                    latency to the millisecond. This eliminates hardware as a variable—if you can't hit
+                                    latency to the millisecond. This eliminates hardware as a variableâ€”if you can't hit
                                     the timing window, it's a biological/skill limitation, not a technical one.</p>
                             </article>
                         </div>
@@ -1908,18 +2048,18 @@
                         <p>
                             The human neuro-motor system operates within hard timing windows. At high note densities,
                             every
-                            keystroke must land within ±16 milliseconds of the intended beat, or the rhythm breaks. This
+                            keystroke must land within Â±16 milliseconds of the intended beat, or the rhythm breaks. This
                             creates a cascading error state: miss one note, lose temporal synchronization, miss the next
-                            note. The cognitive load is not choosing what to do—it's executing with millimeter-perfect
+                            note. The cognitive load is not choosing what to doâ€”it's executing with millimeter-perfect
                             mechanical timing.
                         </p>
                         <div class="mathmodel">
                             <h6>[ TEMPO-ACCURACY COUPLING ]</h6>
-                            <span>Ἐ = |τ<sub>actual</sub> - τ<sub>target</sub>| ≤ 16ms</span>
+                            <span>á¼˜ = |Ï„<sub>actual</sub> - Ï„<sub>target</sub>| â‰¤ 16ms</span>
                         </div>
                         <p>
                             Visual cognition cannot be bypassed. The performer must read AND execute in real-time,
-                            essentially running two parallel processes—visual parsing and motor execution—to maintain
+                            essentially running two parallel processesâ€”visual parsing and motor executionâ€”to maintain
                             sync
                             across 200+ simultaneous decisions per minute.
                         </p>
@@ -1958,7 +2098,7 @@
                                 <h6>Motor Execution Load</h6>
                                 <p>
                                     The physical keystroke timing precision required. Professionals decouple conscious
-                                    attention from finger motion—turning macro-level awareness into micro-level muscle
+                                    attention from finger motionâ€”turning macro-level awareness into micro-level muscle
                                     memory.
                                 </p>
                             </article>
@@ -1973,7 +2113,7 @@
                                     Real-time adjustment of swing when the player's timing deviates. This requires
                                     active
                                     monitoring of the hit error bar while maintaining focus on incoming
-                                    patterns—dual-task
+                                    patternsâ€”dual-task
                                     processing at maximum capacity.
                                 </p>
                             </article>
@@ -1996,7 +2136,7 @@
                     </div>
 
                     <div class="footnote" style="margin: 2em 0;">
-                        Success in Quaver is not about 'musicality' or 'feel'—it is the successful management of
+                        Success in Quaver is not about 'musicality' or 'feel'â€”it is the successful management of
                         cognitive bandwidth under extreme temporal pressure. The display is the visual input stream,
                         the keyboard is the motor output interface, and the player's auditory-motor cortex is the
                         processor.
@@ -2081,6 +2221,33 @@
                 </section>
             </div>
         </article>
+    
+        <!-- GAME PAGE NAVIGATION START -->
+        <div class="game-page-navigation" aria-label="Game page navigation">
+            <div class="page-nav-item prev">
+                <a class="btn btn-outline-secondary btn-prev" href="deadlock.html">
+                    <span class="btn-label">
+                        <svg class="nav-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path d="M15 18l-6-6 6-6"></path>
+                        </svg>
+                        <span>Previous Game</span>
+                    </span>
+                    <span class="subtext">Deadlock</span>
+                </a>
+            </div>
+            <div class="page-nav-item next">
+                <a class="btn btn-primary btn-next" href="aDanceOfFireAndIce.html">
+                    <span class="btn-label">
+                        <span>Next Game</span>
+                        <svg class="nav-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path d="M9 6l6 6-6 6"></path>
+                        </svg>
+                    </span>
+                    <span class="subtext">A Dance of Fire And Ice</span>
+                </a>
+            </div>
+        </div>
+        <!-- GAME PAGE NAVIGATION END -->
     </main>
             <footer>
         <h6>GameUX Atlas</h6>

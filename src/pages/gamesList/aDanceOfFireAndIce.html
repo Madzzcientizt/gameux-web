@@ -2000,6 +2000,145 @@
         .game-video-wrp {
             position: relative;
         }
+    
+        /* GAME PAGE NAVIGATION START */
+        .game-page-navigation {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1em;
+            margin: 2.5em auto 3em;
+            width: min(100%, 64rem);
+            padding: 0 1rem;
+        }
+
+        .game-page-navigation .page-nav-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.35em;
+            min-width: 10rem;
+            width: 100%;
+            position: relative;
+
+            & a {
+                width: 100%;
+            }
+        }
+
+        .game-page-navigation .page-nav-item.next {
+            align-items: flex-end;
+
+            & a {
+                text-align: right;
+            }
+        }
+
+        .game-page-navigation .btn {
+            min-width: 10rem;
+            border-radius: var(--t-radius-field);
+            font-weight: 600;
+            padding: 0.6em 1.1em;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+            isolation: isolate;
+            background-color: transparent !important;
+            transition: color 0.28s ease;
+        }
+
+        .game-page-navigation .btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            transform: scaleX(0);
+            transform-origin: left center;
+            transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+            z-index: -1;
+        }
+
+        .game-page-navigation .btn-prev {
+            --btn-fill: var(--t-color-secondary);
+            --btn-text-hover: var(--t-color-secondary-content);
+            color: var(--t-color-secondary) !important;
+            border-color: var(--t-color-secondary) !important;
+        }
+
+        .game-page-navigation .btn-prev::before {
+            background-color: var(--btn-fill);
+            transform-origin: left center;
+        }
+
+        .game-page-navigation .btn-next {
+            --btn-fill: var(--t-color-primary);
+            --btn-text-hover: var(--t-color-primary-content);
+            color: var(--t-color-primary) !important;
+            border-color: var(--t-color-primary) !important;
+        }
+
+        .game-page-navigation .btn-next::before {
+            background-color: var(--btn-fill);
+            transform-origin: right center;
+        }
+
+        .game-page-navigation .btn:hover,
+        .game-page-navigation .btn:focus-visible {
+            color: var(--btn-text-hover) !important;
+        }
+
+        .game-page-navigation .btn:hover::before,
+        .game-page-navigation .btn:focus-visible::before {
+            transform: scaleX(1);
+        }
+
+        .game-page-navigation .subtext {
+            display: block;
+            font-size: 0.78em;
+            color: inherit;
+            line-height: 1.2;
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .game-page-navigation .btn-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45em;
+            line-height: 1.15;
+        }
+
+        .game-page-navigation .page-nav-item.next .btn-label {
+            justify-content: flex-end;
+            width: 100%;
+        }
+
+        .game-page-navigation .nav-arrow {
+            width: 1em;
+            height: 1em;
+            flex-shrink: 0;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        @media (width < 48rem) {
+            .game-page-navigation {
+                grid-template-columns: 1fr;
+            }
+
+            .game-page-navigation .page-nav-item,
+            .game-page-navigation .page-nav-item.next {
+                align-items: stretch;
+            }
+
+            .game-page-navigation .btn,
+            .game-page-navigation .btn-prev,
+            .game-page-navigation .btn-next {
+                width: 100%;
+                margin: 0;
+            }
+        }
+        /* GAME PAGE NAVIGATION END */
     </style>
     <!-- Custom Styles ------------------------------------------------------------------------------------------ -->
 
@@ -2047,7 +2186,8 @@
     <main>
         <article class="wide">
             <section class="header-section">
-                <img class="game-poster-content game-poster-background-style" />
+                
+                <span class="archive-number">[ 008_adanceoffireandice_valencerina ]</span>
                 <h1 class="game-name game-name-header" title="Game Name">
                     Game name
                 </h1>
@@ -2262,7 +2402,7 @@
                             <h3>GEOMETRIC RHYTHMIC PATHS</h3>
                             <p>
                                 Unlike traditional scrolling rhythm games, ADOFAI translates time into spatial geometry.
-                                The path is the score. Every angle (90°, 180°, 60°) represents a specific subdivision of
+                                The path is the score. Every angle (90Â°, 180Â°, 60Â°) represents a specific subdivision of
                                 the beat. The player does not react to a moving bar, but to the intersection of an
                                 orbiting body with a stationary grid.
                             </p>
@@ -2351,22 +2491,22 @@
                         <tbody>
                             <tr>
                                 <td class="judge-perfect">Perfect</td>
-                                <td>0° - 30°</td>
+                                <td>0Â° - 30Â°</td>
                                 <td>+ (100% / Total Tiles + 0.01%)</td>
                             </tr>
                             <tr>
                                 <td class="judge-window">(E/L)Perfect</td>
-                                <td>30° - 45°</td>
+                                <td>30Â° - 45Â°</td>
                                 <td>+ (100% / Total Tiles)</td>
                             </tr>
                             <tr>
                                 <td class="judge-earlylate">Early/Late</td>
-                                <td>45° - 60°</td>
+                                <td>45Â° - 60Â°</td>
                                 <td>+ (100% / Total Tiles - 0.01%)</td>
                             </tr>
                             <tr>
                                 <td class="judge-earlylate">Early/Late</td>
-                                <td>&gt; 60°</td>
+                                <td>&gt; 60Â°</td>
                                 <td><strong>Early:</strong> Does not hit<br /><strong>Late:</strong> Does not hit (Loss)
                                 </td>
                             </tr>
@@ -2398,7 +2538,7 @@
                         <article class="angular-copy">
                             <h3>Angular Temporality</h3>
                             <p>
-                                In ADOFAI, rhythm is not represented by horizontal time, but by spatial angles. A 90°
+                                In ADOFAI, rhythm is not represented by horizontal time, but by spatial angles. A 90Â°
                                 turn translates to a 1/4 beat. The player's single keypress satisfies a geometric
                                 requirement, allowing the system to map complex polyrhythms (3:4, 5:8) through
                                 path-branching rather than multi-button orchestration.
@@ -2406,7 +2546,7 @@
                             <div class="angular-metrics">
                                 <div class="angular-metric">
                                     <span class="angular-metric-label">Beat Fraction</span>
-                                    <span class="angular-metric-value">180° = 1/2</span>
+                                    <span class="angular-metric-value">180Â° = 1/2</span>
                                 </div>
                                 <div class="angular-metric">
                                     <span class="angular-metric-label">Angular Velocity</span>
@@ -2577,7 +2717,7 @@
                 <section class="game-sections" id="ui-ux-weaknesses">
                     <h2>Strengths and Weaknesses</h2>
                     <p>
-                        A rigorous examination of A Dance of Fire and Ice’s core mechanics, focusing on the dichotomy
+                        A rigorous examination of A Dance of Fire and Iceâ€™s core mechanics, focusing on the dichotomy
                         between mathematical rhythmic precision and the cognitive load of high-velocity visual feedback.
                     </p>
 
@@ -2775,13 +2915,40 @@
                             of play. The investigation confirms that "A Dance of Fire and Ice" (ADOFAI) represents a
                             pinnacle in reductive interface design. By distilling complex polyrhythmic input into a
                             singular, binary interaction model, the system achieves a state of "Cognitive
-                            Transparency"—where the player no longer views the interface as a barrier, but as a direct
+                            Transparency"â€”where the player no longer views the interface as a barrier, but as a direct
                             extension of auditory perception.
                         </p>
                     </div>
                 </section>
             </div>
         </article>
+    
+        <!-- GAME PAGE NAVIGATION START -->
+        <div class="game-page-navigation" aria-label="Game page navigation">
+            <div class="page-nav-item prev">
+                <a class="btn btn-outline-secondary btn-prev" href="quaver.html">
+                    <span class="btn-label">
+                        <svg class="nav-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path d="M15 18l-6-6 6-6"></path>
+                        </svg>
+                        <span>Previous Game</span>
+                    </span>
+                    <span class="subtext">Quaver</span>
+                </a>
+            </div>
+            <div class="page-nav-item next">
+                <a class="btn btn-primary btn-next" href="museDash.html">
+                    <span class="btn-label">
+                        <span>Next Game</span>
+                        <svg class="nav-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path d="M9 6l6 6-6 6"></path>
+                        </svg>
+                    </span>
+                    <span class="subtext">Muse Dash</span>
+                </a>
+            </div>
+        </div>
+        <!-- GAME PAGE NAVIGATION END -->
     </main>
     <footer>
         <h6>GameUX Atlas</h6>

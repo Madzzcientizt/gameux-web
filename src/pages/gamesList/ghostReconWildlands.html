@@ -999,6 +999,145 @@
         .game-video-wrp {
             position: relative;
         }
+    
+        /* GAME PAGE NAVIGATION START */
+        .game-page-navigation {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1em;
+            margin: 2.5em auto 3em;
+            width: min(100%, 64rem);
+            padding: 0 1rem;
+        }
+
+        .game-page-navigation .page-nav-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.35em;
+            min-width: 10rem;
+            width: 100%;
+            position: relative;
+
+            & a {
+                width: 100%;
+            }
+        }
+
+        .game-page-navigation .page-nav-item.next {
+            align-items: flex-end;
+
+            & a {
+                text-align: right;
+            }
+        }
+
+        .game-page-navigation .btn {
+            min-width: 10rem;
+            border-radius: var(--t-radius-field);
+            font-weight: 600;
+            padding: 0.6em 1.1em;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+            isolation: isolate;
+            background-color: transparent !important;
+            transition: color 0.28s ease;
+        }
+
+        .game-page-navigation .btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            transform: scaleX(0);
+            transform-origin: left center;
+            transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+            z-index: -1;
+        }
+
+        .game-page-navigation .btn-prev {
+            --btn-fill: var(--t-color-secondary);
+            --btn-text-hover: var(--t-color-secondary-content);
+            color: var(--t-color-secondary) !important;
+            border-color: var(--t-color-secondary) !important;
+        }
+
+        .game-page-navigation .btn-prev::before {
+            background-color: var(--btn-fill);
+            transform-origin: left center;
+        }
+
+        .game-page-navigation .btn-next {
+            --btn-fill: var(--t-color-primary);
+            --btn-text-hover: var(--t-color-primary-content);
+            color: var(--t-color-primary) !important;
+            border-color: var(--t-color-primary) !important;
+        }
+
+        .game-page-navigation .btn-next::before {
+            background-color: var(--btn-fill);
+            transform-origin: right center;
+        }
+
+        .game-page-navigation .btn:hover,
+        .game-page-navigation .btn:focus-visible {
+            color: var(--btn-text-hover) !important;
+        }
+
+        .game-page-navigation .btn:hover::before,
+        .game-page-navigation .btn:focus-visible::before {
+            transform: scaleX(1);
+        }
+
+        .game-page-navigation .subtext {
+            display: block;
+            font-size: 0.78em;
+            color: inherit;
+            line-height: 1.2;
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .game-page-navigation .btn-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45em;
+            line-height: 1.15;
+        }
+
+        .game-page-navigation .page-nav-item.next .btn-label {
+            justify-content: flex-end;
+            width: 100%;
+        }
+
+        .game-page-navigation .nav-arrow {
+            width: 1em;
+            height: 1em;
+            flex-shrink: 0;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        @media (width < 48rem) {
+            .game-page-navigation {
+                grid-template-columns: 1fr;
+            }
+
+            .game-page-navigation .page-nav-item,
+            .game-page-navigation .page-nav-item.next {
+                align-items: stretch;
+            }
+
+            .game-page-navigation .btn,
+            .game-page-navigation .btn-prev,
+            .game-page-navigation .btn-next {
+                width: 100%;
+                margin: 0;
+            }
+        }
+        /* GAME PAGE NAVIGATION END */
     </style>
     <!-- Custom Styles ------------------------------------------------------------------------------------------ -->
 
@@ -1046,7 +1185,8 @@
     <main>
         <article class="wide">
             <section class="header-section">
-                <img class="game-poster-content game-poster-background-style" />
+                
+                <span class="archive-number">[ 030_ghostrecon_dinawanao ]</span>
                 <h1 class="game-name game-name-header" title="Game Name">
                     Game name
                 </h1>
@@ -1121,7 +1261,7 @@
                                     <button id="use-local-video-btn" class="btn-fallback btn-local" type="button">Use
                                         Local Video</button>
                                 </div>
-                                <p class="fallback-hint">💡 Try connecting through a different network or VPN to access
+                                <p class="fallback-hint">ðŸ’¡ Try connecting through a different network or VPN to access
                                     YouTube content.</p>
                             </div>
                         </div>
@@ -1235,10 +1375,10 @@
                         <li>Deluxe Edition</li>
                     </ul>
                     <p>
-                        Ghost Recon Wildlands is a 2017 open-world tactical shooter developed by Ubisoft Paris and published by Ubisoft. Set in a fictionalized Bolivia overtaken by the Santa Blanca cartel — the world's largest drug operation — players command an elite four-man Ghost team sent by the U.S. government to destabilize and dismantle the cartel from within.
+                        Ghost Recon Wildlands is a 2017 open-world tactical shooter developed by Ubisoft Paris and published by Ubisoft. Set in a fictionalized Bolivia overtaken by the Santa Blanca cartel â€” the world's largest drug operation â€” players command an elite four-man Ghost team sent by the U.S. government to destabilize and dismantle the cartel from within.
                     </p>
                     <p>
-                        Wildlands distinguishes itself through the scale of its open world and its flexible mission approach — every objective can be completed through direct assault, stealth infiltration, or a hybrid of both. The HCI must support squad command, tactical intel gathering, and real-time vehicle/on-foot mode switching, creating a complex but accessible interaction ecosystem for coordinated team play.
+                        Wildlands distinguishes itself through the scale of its open world and its flexible mission approach â€” every objective can be completed through direct assault, stealth infiltration, or a hybrid of both. The HCI must support squad command, tactical intel gathering, and real-time vehicle/on-foot mode switching, creating a complex but accessible interaction ecosystem for coordinated team play.
                     </p>
                     <ul class="metrics-list">
                         <li>
@@ -1248,7 +1388,7 @@
                         </li>
                         <li>
                             <h6>Response Time</h6>
-                            <div class="value">±80ms to ±300ms</div>
+                            <div class="value">Â±80ms to Â±300ms</div>
                             <div class="desc">Time between user action and system feedback</div>
                         </li>
                         <li>
@@ -1272,7 +1412,7 @@
                                 <span class="count">[ ELEMENT_01 ]</span>
                                 <span class="header-text">Tactical Intel Map</span>
                                 <p>
-                                    The tactical map is Wildlands' planning hub — a bird's-eye view of Bolivia's provinces annotated with cartel skill nodes, enemy bases, and collectible intel. Players gather on-the-ground information to unlock map markers, rewarding reconnaissance with objective clarity before engagement.
+                                    The tactical map is Wildlands' planning hub â€” a bird's-eye view of Bolivia's provinces annotated with cartel skill nodes, enemy bases, and collectible intel. Players gather on-the-ground information to unlock map markers, rewarding reconnaissance with objective clarity before engagement.
                                 </p>
                                 <ul>
                                     <h6>Map System Design</h6>
@@ -1293,7 +1433,7 @@
                                 <span class="count">[ ELEMENT_02 ]</span>
                                 <span class="header-text">Squad Command Wheel</span>
                                 <p>
-                                    A radial command wheel allows players to direct AI Ghost teammates — hold position, attack, flank, or sync shot. The sync shot system enables simultaneous multi-target elimination through a shared crosshair network, coordinating squad-level tactics through a compact radial interface that minimizes command latency.
+                                    A radial command wheel allows players to direct AI Ghost teammates â€” hold position, attack, flank, or sync shot. The sync shot system enables simultaneous multi-target elimination through a shared crosshair network, coordinating squad-level tactics through a compact radial interface that minimizes command latency.
                                 </p>
                             </div>
                         </div>
@@ -1317,14 +1457,14 @@
                     <div class="fittslaw">
                         <div>
                             <p>
-                                Fitts's Law governs Wildlands' precision long-range sniping — the Ghost franchise's core tactical identity. Distant targets at extreme range have very small W, demanding the hold-breath mechanic that artificially reduces aim-sway (D equivalent) to bring the effective target size into an acquirable zone.
+                                Fitts's Law governs Wildlands' precision long-range sniping â€” the Ghost franchise's core tactical identity. Distant targets at extreme range have very small W, demanding the hold-breath mechanic that artificially reduces aim-sway (D equivalent) to bring the effective target size into an acquirable zone.
                             </p>
                             <div class="mathmodel">
                                 <h6>[ MATHEMATICAL MODEL ]</h6>
                                 <span>MT = a + b * log<sub>2</sub>(2D/W)</span>
                             </div>
                             <p>
-                                The Sync Shot system abstracts Fitts's Law for AI squad members — the player places crosshairs on one target (primary D and W interaction), while the AI auto-acquires secondary targets at equivalent or greater distance. This team-based Fitts's Law application reduces total acquisition effort through shared targeting computation.
+                                The Sync Shot system abstracts Fitts's Law for AI squad members â€” the player places crosshairs on one target (primary D and W interaction), while the AI auto-acquires secondary targets at equivalent or greater distance. This team-based Fitts's Law application reduces total acquisition effort through shared targeting computation.
                             </p>
                         </div>
                         <div>
@@ -1346,7 +1486,7 @@
                             </li>
                             <li>
                                 <h6>Squad & Threat Radar</h6>
-                                <p>Secondary situational awareness. The HUD radar displays tagged enemy positions, squad locations, and incoming alert states — functioning as a real-time battlefield picture for squad coordination.</p>
+                                <p>Secondary situational awareness. The HUD radar displays tagged enemy positions, squad locations, and incoming alert states â€” functioning as a real-time battlefield picture for squad coordination.</p>
                             </li>
                             <li>
                                 <h6>Province Objective Overview</h6>
@@ -1361,7 +1501,7 @@
                 <section class="game-sections" id="user-interaction">
                     <h2>User Interaction</h2>
                     <p>
-                        An examination of Ghost Recon Wildlands' squad-centric tactical HCI — studying how Ubisoft designed a command interface that enables four-player coordinated tactics in one of gaming's largest open-world environments.
+                        An examination of Ghost Recon Wildlands' squad-centric tactical HCI â€” studying how Ubisoft designed a command interface that enables four-player coordinated tactics in one of gaming's largest open-world environments.
                     </p>
                     <div class="list-style-area">
                         <h3 class="text-center">Core Gameplay Loop</h3>
@@ -1369,11 +1509,11 @@
                         <ol class="four-columns md-two-columns">
                             <li>
                                 <h6>Recon</h6>
-                                <p>The Ghost team deploys a drone to survey objectives — tagging enemies, identifying vehicles, and locating intel before committing to an approach. Information gathering is the primary mission phase.</p>
+                                <p>The Ghost team deploys a drone to survey objectives â€” tagging enemies, identifying vehicles, and locating intel before committing to an approach. Information gathering is the primary mission phase.</p>
                             </li>
                             <li>
                                 <h6>Plan</h6>
-                                <p>Using the tagged enemy picture, players assign Sync Shot targets, designate flanking routes, and select the optimal entry point — transforming tactical intelligence into an executable plan.</p>
+                                <p>Using the tagged enemy picture, players assign Sync Shot targets, designate flanking routes, and select the optimal entry point â€” transforming tactical intelligence into an executable plan.</p>
                             </li>
                             <li>
                                 <h6>Execute</h6>
@@ -1381,7 +1521,7 @@
                             </li>
                             <li>
                                 <h6>Extract & Progress</h6>
-                                <p>Mission completion yields Skill Points spent on the Ghost's progression tree — unlocking faster drone deployment, improved suppressor durability, or extended sync shot range.</p>
+                                <p>Mission completion yields Skill Points spent on the Ghost's progression tree â€” unlocking faster drone deployment, improved suppressor durability, or extended sync shot range.</p>
                             </li>
                         </ol>
                     </div>
@@ -1389,7 +1529,7 @@
                     <div class="multi-modal-feedback">
                         <div>
                             <p>
-                                Ghost Recon Wildlands' feedback system prioritizes tactical clarity over spectacle — every sensory channel is designed to communicate mission-critical information: enemy awareness states, squad health, and operation status in real time.
+                                Ghost Recon Wildlands' feedback system prioritizes tactical clarity over spectacle â€” every sensory channel is designed to communicate mission-critical information: enemy awareness states, squad health, and operation status in real time.
                             </p>
                         </div>
                         <div>
@@ -1410,7 +1550,7 @@
                             </div>
                             <div>
                                 <h6>Audio Feedback</h6>
-                                <p>Enemy alert states transition through distinct audio cues — unalerted ambient dialogue, investigation murmuring, and full-alert alarms create a real-time audio awareness system. Suppressed shots produce directional cracks that guards react to convincingly.</p>
+                                <p>Enemy alert states transition through distinct audio cues â€” unalerted ambient dialogue, investigation murmuring, and full-alert alarms create a real-time audio awareness system. Suppressed shots produce directional cracks that guards react to convincingly.</p>
                             </div>
                         </li>
                         <li>
@@ -1422,7 +1562,7 @@
                             </div>
                             <div>
                                 <h6>Visual Feedback</h6>
-                                <p>Enemy detection icons — question mark transitioning to exclamation — over tagged enemies communicate awareness escalation visually. Sync Shot confirmation overlays display a multi-target crosshair network before the simultaneous elimination fires.</p>
+                                <p>Enemy detection icons â€” question mark transitioning to exclamation â€” over tagged enemies communicate awareness escalation visually. Sync Shot confirmation overlays display a multi-target crosshair network before the simultaneous elimination fires.</p>
                             </div>
                         </li>
                         <li>
@@ -1433,7 +1573,7 @@
                             </div>
                             <div>
                                 <h6>Haptic Feedback</h6>
-                                <p>Sniper shot rumble conveys weapon caliber — light for SMGs, heavy for .50 cal rifles. Vehicle impacts and helicopter bullet strikes produce sustained vibration communicating ongoing damage without requiring health bar attention.</p>
+                                <p>Sniper shot rumble conveys weapon caliber â€” light for SMGs, heavy for .50 cal rifles. Vehicle impacts and helicopter bullet strikes produce sustained vibration communicating ongoing damage without requiring health bar attention.</p>
                             </div>
                         </li>
                     </ul>
@@ -1451,7 +1591,7 @@
                             <div>
                                 <ul class="primary-modalities">
                                     <h6>Primary Modalities</h6>
-                                    <li><strong>Visual</strong>: Enemy detection icons (? → !), sync shot target network, drone altitude bar</li>
+                                    <li><strong>Visual</strong>: Enemy detection icons (? â†’ !), sync shot target network, drone altitude bar</li>
                                     <li><strong>Auditory</strong>: Alert state audio transitions, directional suppressed shot cracks, base alarm escalation</li>
                                     <li><strong>Haptic</strong>: Weapon caliber rumble differentiation, vehicle impact sustained vibration</li>
                                 </ul>
@@ -1461,7 +1601,7 @@
                     <div class="spatial-congruence">
                         <h2>Spatial Congruence in Large-Scale Tactical Operations</h2>
                         <p style="text-align: justify;">
-                            Wildlands achieves spatial congruence at two scales simultaneously: the tactical HUD scale, where tagged enemy icons correspond to their physical position in the environment, and the strategic map scale, where province layouts correspond to the explorable world. The drone view creates a third spatial frame — top-down — that players must mentally integrate with their ground-level perspective.
+                            Wildlands achieves spatial congruence at two scales simultaneously: the tactical HUD scale, where tagged enemy icons correspond to their physical position in the environment, and the strategic map scale, where province layouts correspond to the explorable world. The drone view creates a third spatial frame â€” top-down â€” that players must mentally integrate with their ground-level perspective.
                         </p>
                     </div>
                     <div class="cognitive-load-bifurcation">
@@ -1479,12 +1619,12 @@
                             <tbody>
 
                                 <tr>
-                                    <td><h6>Intel-Gated Map Reveal</h6><p>The reconnaissance requirement — gathering intel before map markers unlock — creates a natural HCI loop that rewards on-the-ground investigation over GPS-style navigation. Players engage with the world to build their tactical picture.</p></td>
-                                    <td><h6>Province Map Saturation</h6><p>Bolivia's map is densely populated with objectives, collectibles, and side activities. The sheer icon density can overwhelm mission prioritization — players may not know where to begin without external guidance.</p></td>
+                                    <td><h6>Intel-Gated Map Reveal</h6><p>The reconnaissance requirement â€” gathering intel before map markers unlock â€” creates a natural HCI loop that rewards on-the-ground investigation over GPS-style navigation. Players engage with the world to build their tactical picture.</p></td>
+                                    <td><h6>Province Map Saturation</h6><p>Bolivia's map is densely populated with objectives, collectibles, and side activities. The sheer icon density can overwhelm mission prioritization â€” players may not know where to begin without external guidance.</p></td>
                                 </tr>
                                 <tr>
-                                    <td><h6>Sync Shot System</h6><p>The sync shot coordination mechanic is one of the most satisfying co-op HCI designs in the tactical genre — coordinating multi-target simultaneous elimination through a shared visual overlay rewards squad communication.</p></td>
-                                    <td><h6>AI Squad Reliability</h6><p>The AI Ghosts — while functional — occasionally misinterpret commands or take unintended actions that compromise stealth. HCI confidence in the command wheel is undermined by AI execution unpredictability.</p></td>
+                                    <td><h6>Sync Shot System</h6><p>The sync shot coordination mechanic is one of the most satisfying co-op HCI designs in the tactical genre â€” coordinating multi-target simultaneous elimination through a shared visual overlay rewards squad communication.</p></td>
+                                    <td><h6>AI Squad Reliability</h6><p>The AI Ghosts â€” while functional â€” occasionally misinterpret commands or take unintended actions that compromise stealth. HCI confidence in the command wheel is undermined by AI execution unpredictability.</p></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -1498,7 +1638,7 @@
                 <section class="game-sections" id="ui-ux-weaknesses">
                     <h2>Strengths and Weaknesses Analysis</h2>
                     <p>
-                        A comprehensive evaluation of Ghost Recon Wildlands' interface paradigm — examining the tension between its celebrated squad-coordination design and the cognitive demands of operating in one of gaming's most expansive open-world environments.
+                        A comprehensive evaluation of Ghost Recon Wildlands' interface paradigm â€” examining the tension between its celebrated squad-coordination design and the cognitive demands of operating in one of gaming's most expansive open-world environments.
                     </p>
                     <table style="margin-bottom: 2em;">
                         <thead>
@@ -1516,7 +1656,7 @@
                                         <span class="label">01_RECON</span>
                                     </div>
                                     <h6>Drone Reconnaissance Design</h6>
-                                    <p>The pre-engagement drone reconnaissance loop is one of the most satisfying HCI systems in the tactical shooter genre — it makes information gathering feel like active player skill rather than menu loading.</p>
+                                    <p>The pre-engagement drone reconnaissance loop is one of the most satisfying HCI systems in the tactical shooter genre â€” it makes information gathering feel like active player skill rather than menu loading.</p>
                                 </td>
                                 <td>
                                     <div class="sw-item-head">
@@ -1534,7 +1674,7 @@
                                         <span class="label">02_SYNC</span>
                                     </div>
                                     <h6>Sync Shot Coordination</h6>
-                                    <p>The sync shot is a design achievement — translating squad coordination intent into a shared visual overlay that communicates the plan to all players simultaneously before execution.</p>
+                                    <p>The sync shot is a design achievement â€” translating squad coordination intent into a shared visual overlay that communicates the plan to all players simultaneously before execution.</p>
                                 </td>
                                 <td>
                                     <div class="sw-item-head">
@@ -1542,7 +1682,7 @@
                                         <span class="label">02_AI</span>
                                     </div>
                                     <h6>AI Squad Inconsistency</h6>
-                                    <p>AI Ghost teammates occasionally break stealth through unpredictable path choices or targeting errors — a HCI trust failure that undermines the squad-command investment players make in the command wheel.</p>
+                                    <p>AI Ghost teammates occasionally break stealth through unpredictable path choices or targeting errors â€” a HCI trust failure that undermines the squad-command investment players make in the command wheel.</p>
                                 </td>
                             </tr>
                             <tr>
@@ -1552,7 +1692,7 @@
                                         <span class="label">03_PROVINCE</span>
                                     </div>
                                     <h6>Province Progression Clarity</h6>
-                                    <p>The cartel province hierarchy — underbosses unlocking bosses — provides a clear macro-progression framework that gives the open-world structure a legible campaign architecture.</p>
+                                    <p>The cartel province hierarchy â€” underbosses unlocking bosses â€” provides a clear macro-progression framework that gives the open-world structure a legible campaign architecture.</p>
                                 </td>
                                 <td>
                                     <div class="sw-item-head">
@@ -1560,19 +1700,46 @@
                                         <span class="label">03_REPETITION</span>
                                     </div>
                                     <h6>Mission Structure Repetition</h6>
-                                    <p>Wildlands' mission template — drone tag, sync shot sentries, breach and clear, extract — becomes formulaic across dozens of operations. The HCI loop, while well-designed, does not evolve to match the campaign's length.</p>
+                                    <p>Wildlands' mission template â€” drone tag, sync shot sentries, breach and clear, extract â€” becomes formulaic across dozens of operations. The HCI loop, while well-designed, does not evolve to match the campaign's length.</p>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                     <div class="footnote summary">
                         <p>
-                            Ghost Recon Wildlands demonstrates that squad-based tactical HCI can work in an open-world context — the sync shot, drone recon, and intel-gated map system form a coherent planning-execution loop that rewards coordinated play. Its weaknesses are largely structural: the open world is too large and too uniformly populated for its HCI systems to maintain freshness across a full campaign. The design delivers on its promise in individual operations while struggling to sustain it across hundreds.
+                            Ghost Recon Wildlands demonstrates that squad-based tactical HCI can work in an open-world context â€” the sync shot, drone recon, and intel-gated map system form a coherent planning-execution loop that rewards coordinated play. Its weaknesses are largely structural: the open world is too large and too uniformly populated for its HCI systems to maintain freshness across a full campaign. The design delivers on its promise in individual operations while struggling to sustain it across hundreds.
                         </p>
                     </div>
                 </section>
             </div>
         </article>
+    
+        <!-- GAME PAGE NAVIGATION START -->
+        <div class="game-page-navigation" aria-label="Game page navigation">
+            <div class="page-nav-item prev">
+                <a class="btn btn-outline-secondary btn-prev" href="needForSpeed.html">
+                    <span class="btn-label">
+                        <svg class="nav-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path d="M15 18l-6-6 6-6"></path>
+                        </svg>
+                        <span>Previous Game</span>
+                    </span>
+                    <span class="subtext">Need for Speed</span>
+                </a>
+            </div>
+            <div class="page-nav-item next">
+                <a class="btn btn-primary btn-next" href="terraria.html">
+                    <span class="btn-label">
+                        <span>Next Game</span>
+                        <svg class="nav-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path d="M9 6l6 6-6 6"></path>
+                        </svg>
+                    </span>
+                    <span class="subtext">Terraria</span>
+                </a>
+            </div>
+        </div>
+        <!-- GAME PAGE NAVIGATION END -->
     </main>
             <footer>
         <h6>GameUX Atlas</h6>

@@ -264,6 +264,17 @@ footer .socials:empty {
     }
 }
 
+.archive-number {
+    font-family: var(--bs-font-monospace);
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: var(--t-color-primary);
+    margin-bottom: 0.5em;
+    z-index: 2;
+    position: relative;
+}
+
 .game-name-header {
     font-weight: 900;
     font-size: clamp(2.75rem, 10vw, 4rem);
@@ -278,7 +289,7 @@ footer .socials:empty {
     border-radius: calc(var(--t-radius-box) * 10);
     width: fit-content;
     text-wrap: nowrap;
-    line-height: 0;
+    /* line-height: 0; */
     display: flex;
     align-items: center;
     justify-content: center;

@@ -994,6 +994,145 @@
         .game-video-wrp {
             position: relative;
         }
+    
+        /* GAME PAGE NAVIGATION START */
+        .game-page-navigation {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1em;
+            margin: 2.5em auto 3em;
+            width: min(100%, 64rem);
+            padding: 0 1rem;
+        }
+
+        .game-page-navigation .page-nav-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.35em;
+            min-width: 10rem;
+            width: 100%;
+            position: relative;
+
+            & a {
+                width: 100%;
+            }
+        }
+
+        .game-page-navigation .page-nav-item.next {
+            align-items: flex-end;
+
+            & a {
+                text-align: right;
+            }
+        }
+
+        .game-page-navigation .btn {
+            min-width: 10rem;
+            border-radius: var(--t-radius-field);
+            font-weight: 600;
+            padding: 0.6em 1.1em;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+            isolation: isolate;
+            background-color: transparent !important;
+            transition: color 0.28s ease;
+        }
+
+        .game-page-navigation .btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            transform: scaleX(0);
+            transform-origin: left center;
+            transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+            z-index: -1;
+        }
+
+        .game-page-navigation .btn-prev {
+            --btn-fill: var(--t-color-secondary);
+            --btn-text-hover: var(--t-color-secondary-content);
+            color: var(--t-color-secondary) !important;
+            border-color: var(--t-color-secondary) !important;
+        }
+
+        .game-page-navigation .btn-prev::before {
+            background-color: var(--btn-fill);
+            transform-origin: left center;
+        }
+
+        .game-page-navigation .btn-next {
+            --btn-fill: var(--t-color-primary);
+            --btn-text-hover: var(--t-color-primary-content);
+            color: var(--t-color-primary) !important;
+            border-color: var(--t-color-primary) !important;
+        }
+
+        .game-page-navigation .btn-next::before {
+            background-color: var(--btn-fill);
+            transform-origin: right center;
+        }
+
+        .game-page-navigation .btn:hover,
+        .game-page-navigation .btn:focus-visible {
+            color: var(--btn-text-hover) !important;
+        }
+
+        .game-page-navigation .btn:hover::before,
+        .game-page-navigation .btn:focus-visible::before {
+            transform: scaleX(1);
+        }
+
+        .game-page-navigation .subtext {
+            display: block;
+            font-size: 0.78em;
+            color: inherit;
+            line-height: 1.2;
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .game-page-navigation .btn-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45em;
+            line-height: 1.15;
+        }
+
+        .game-page-navigation .page-nav-item.next .btn-label {
+            justify-content: flex-end;
+            width: 100%;
+        }
+
+        .game-page-navigation .nav-arrow {
+            width: 1em;
+            height: 1em;
+            flex-shrink: 0;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        @media (width < 48rem) {
+            .game-page-navigation {
+                grid-template-columns: 1fr;
+            }
+
+            .game-page-navigation .page-nav-item,
+            .game-page-navigation .page-nav-item.next {
+                align-items: stretch;
+            }
+
+            .game-page-navigation .btn,
+            .game-page-navigation .btn-prev,
+            .game-page-navigation .btn-next {
+                width: 100%;
+                margin: 0;
+            }
+        }
+        /* GAME PAGE NAVIGATION END */
     </style>
     <!-- Custom Styles ------------------------------------------------------------------------------------------ -->
 
@@ -1041,7 +1180,8 @@
     <main>
         <article class="wide">
             <section class="header-section">
-                <img class="game-poster-content game-poster-background-style" />
+                
+                <span class="archive-number">[ 026_residentevil_dinawanao ]</span>
                 <h1 class="game-name game-name-header" title="Game Name">
                     Game name
                 </h1>
@@ -1116,7 +1256,7 @@
                                     <button id="use-local-video-btn" class="btn-fallback btn-local" type="button">Use
                                         Local Video</button>
                                 </div>
-                                <p class="fallback-hint">💡 Try connecting through a different network or VPN to access
+                                <p class="fallback-hint">ðŸ’¡ Try connecting through a different network or VPN to access
                                     YouTube content.</p>
                             </div>
                         </div>
@@ -1230,10 +1370,10 @@
                         <li>Collector's Edition</li>
                     </ul>
                     <p>
-                        Resident Evil 4 Remake is a 2023 survival horror game developed and published by Capcom. A reimagining of the landmark 2005 original, it follows government agent Leon S. Kennedy traveling to rural Spain to rescue Ashley Graham — the U.S. President's daughter — from the Los Illuminados cult led by Osmund Saddler.
+                        Resident Evil 4 Remake is a 2023 survival horror game developed and published by Capcom. A reimagining of the landmark 2005 original, it follows government agent Leon S. Kennedy traveling to rural Spain to rescue Ashley Graham â€” the U.S. President's daughter â€” from the Los Illuminados cult led by Osmund Saddler.
                     </p>
                     <p>
-                        The remake modernizes RE4's camera, controls, and UI while preserving the iconic Attache Case inventory puzzle. Leon's tight third-person camera, reactive Ganado AI, and the parry/knife system create a survival horror experience that demands precise HCI — balancing resource scarcity, spatial awareness, and split-second combat decisions within an unforgiving economy.
+                        The remake modernizes RE4's camera, controls, and UI while preserving the iconic Attache Case inventory puzzle. Leon's tight third-person camera, reactive Ganado AI, and the parry/knife system create a survival horror experience that demands precise HCI â€” balancing resource scarcity, spatial awareness, and split-second combat decisions within an unforgiving economy.
                     </p>
                     <ul class="metrics-list">
                         <li>
@@ -1243,7 +1383,7 @@
                         </li>
                         <li>
                             <h6>Response Time</h6>
-                            <div class="value">±80ms to ±250ms</div>
+                            <div class="value">Â±80ms to Â±250ms</div>
                             <div class="desc">Time between user action and system feedback</div>
                         </li>
                         <li>
@@ -1267,7 +1407,7 @@
                                 <span class="count">[ ELEMENT_01 ]</span>
                                 <span class="header-text">Attache Case Inventory</span>
                                 <p>
-                                    The Attache Case is a grid-based inventory system where items occupy physical space — guns, grenades, and healing items arranged like Tetris pieces within a fixed grid. Upgrades expand the case or add dividers, making inventory management a spatial puzzle embedded in survival resource planning.
+                                    The Attache Case is a grid-based inventory system where items occupy physical space â€” guns, grenades, and healing items arranged like Tetris pieces within a fixed grid. Upgrades expand the case or add dividers, making inventory management a spatial puzzle embedded in survival resource planning.
                                 </p>
                                 <ul>
                                     <h6>Inventory Design Principles</h6>
@@ -1303,7 +1443,7 @@
                                 <span class="count">[ ELEMENT_03 ]</span>
                                 <span class="header-text">Laser Sight Aiming System</span>
                                 <p>
-                                    Leon's pistol laser sight replaces a traditional crosshair, projecting a visible red dot onto enemies and surfaces. This diegetic aiming tool integrates shooting feedback into the world rather than the HUD — building tension as the dot trembles under incoming attacks or movement.
+                                    Leon's pistol laser sight replaces a traditional crosshair, projecting a visible red dot onto enemies and surfaces. This diegetic aiming tool integrates shooting feedback into the world rather than the HUD â€” building tension as the dot trembles under incoming attacks or movement.
                                 </p>
                             </div>
                         </div>
@@ -1312,14 +1452,14 @@
                     <div class="fittslaw">
                         <div>
                             <p>
-                                In RE4 Remake, Fitts's Law governs the laser-sight aiming system. The dot's effective W scales with target distance — nearer enemies have larger effective target zones — while enemy movement and Leon's aim-sway dynamically alter the movement component, creating a variable-difficulty targeting system that rewards patient positioning.
+                                In RE4 Remake, Fitts's Law governs the laser-sight aiming system. The dot's effective W scales with target distance â€” nearer enemies have larger effective target zones â€” while enemy movement and Leon's aim-sway dynamically alter the movement component, creating a variable-difficulty targeting system that rewards patient positioning.
                             </p>
                             <div class="mathmodel">
                                 <h6>[ MATHEMATICAL MODEL ]</h6>
                                 <span>MT = a + b * log<sub>2</sub>(2D/W)</span>
                             </div>
                             <p>
-                                Parrying with the knife is a temporal Fitts's Law challenge: the parry window (W) is approximately 300ms — narrow enough to require dedicated practice but wide enough to be learnable. Mastering the timing is the primary skill gateway that distinguishes casual from skilled play.
+                                Parrying with the knife is a temporal Fitts's Law challenge: the parry window (W) is approximately 300ms â€” narrow enough to require dedicated practice but wide enough to be learnable. Mastering the timing is the primary skill gateway that distinguishes casual from skilled play.
                             </p>
                         </div>
                         <div>
@@ -1337,15 +1477,15 @@
                         <ol class="three-columns md-one-columns">
                             <li>
                                 <h6>Laser Sight Dot</h6>
-                                <p>Primary combat focus. The red laser dot commands visual attention, directing player aim and communicating Leon's vulnerability through dot-wobble under pressure or enemy proximity — a diegetic accuracy indicator.</p>
+                                <p>Primary combat focus. The red laser dot commands visual attention, directing player aim and communicating Leon's vulnerability through dot-wobble under pressure or enemy proximity â€” a diegetic accuracy indicator.</p>
                             </li>
                             <li>
                                 <h6>Enemy Stagger Indicators</h6>
-                                <p>Secondary combat cue. Enemy stumble animations signal brief vulnerability windows for follow-up attacks or contextual melee prompts — communicating opportunity through animation rather than HUD icons.</p>
+                                <p>Secondary combat cue. Enemy stumble animations signal brief vulnerability windows for follow-up attacks or contextual melee prompts â€” communicating opportunity through animation rather than HUD icons.</p>
                             </li>
                             <li>
                                 <h6>Health & Ammo HUD</h6>
-                                <p>Tertiary survival data. The minimalist bottom-screen health bar and ammo count occupy small screen real estate — deliberately de-emphasized to maintain horror atmosphere while preserving critical resource awareness.</p>
+                                <p>Tertiary survival data. The minimalist bottom-screen health bar and ammo count occupy small screen real estate â€” deliberately de-emphasized to maintain horror atmosphere while preserving critical resource awareness.</p>
                             </li>
                         </ol>
                     </div>
@@ -1356,7 +1496,7 @@
                 <section class="game-sections" id="user-interaction">
                     <h2>User Interaction</h2>
                     <p>
-                        An investigation into Resident Evil 4 Remake's survival horror HCI — examining how Capcom blends resource scarcity, spatial inventory management, and tension-driven feedback design into a genre-defining experience of precision under pressure.
+                        An investigation into Resident Evil 4 Remake's survival horror HCI â€” examining how Capcom blends resource scarcity, spatial inventory management, and tension-driven feedback design into a genre-defining experience of precision under pressure.
                     </p>
                     <div class="list-style-area">
                         <h3 class="text-center">Core Gameplay Loop</h3>
@@ -1364,7 +1504,7 @@
                         <ol class="four-columns md-two-columns">
                             <li>
                                 <h6>Assess</h6>
-                                <p>Leon evaluates the encounter — enemy count, room geometry, available resources — to determine whether to engage aggressively, conserve ammo, or retreat and regroup around the spatial constraints of the environment.</p>
+                                <p>Leon evaluates the encounter â€” enemy count, room geometry, available resources â€” to determine whether to engage aggressively, conserve ammo, or retreat and regroup around the spatial constraints of the environment.</p>
                             </li>
                             <li>
                                 <h6>Aim</h6>
@@ -1376,7 +1516,7 @@
                             </li>
                             <li>
                                 <h6>Manage</h6>
-                                <p>Post-combat, the Attache Case is opened — a spatial puzzle of arranging loot, ammo, and healing items into the grid efficiently, with surplus sold to the Merchant for Pesetas.</p>
+                                <p>Post-combat, the Attache Case is opened â€” a spatial puzzle of arranging loot, ammo, and healing items into the grid efficiently, with surplus sold to the Merchant for Pesetas.</p>
                             </li>
                         </ol>
                     </div>
@@ -1384,7 +1524,7 @@
                     <div class="multi-modal-feedback">
                         <div>
                             <p>
-                                Resident Evil 4 Remake's feedback design is precision-engineered for tension — each sensory channel reinforces scarcity, danger, and the cost of failure in survival horror's demanding interaction contract.
+                                Resident Evil 4 Remake's feedback design is precision-engineered for tension â€” each sensory channel reinforces scarcity, danger, and the cost of failure in survival horror's demanding interaction contract.
                             </p>
                         </div>
                         <div>
@@ -1405,7 +1545,7 @@
                             </div>
                             <div>
                                 <h6>Audio Feedback</h6>
-                                <p>Ammo shells clatter on stone floors. Enemy chainsaw rev signals an imminent one-hit-kill threat. Tense ambient organ music rises as enemy density increases — functioning as a proximity danger indicator independent of the HUD.</p>
+                                <p>Ammo shells clatter on stone floors. Enemy chainsaw rev signals an imminent one-hit-kill threat. Tense ambient organ music rises as enemy density increases â€” functioning as a proximity danger indicator independent of the HUD.</p>
                             </div>
                         </li>
                         <li>
@@ -1428,7 +1568,7 @@
                             </div>
                             <div>
                                 <h6>Haptic Feedback</h6>
-                                <p>PS5 DualSense conveys weapon kick distinctly — a pistol's light recoil versus a shotgun's heavy slam. Chainsaw near-misses send a full-controller vibration burst that triggers the player's startle reflex.</p>
+                                <p>PS5 DualSense conveys weapon kick distinctly â€” a pistol's light recoil versus a shotgun's heavy slam. Chainsaw near-misses send a full-controller vibration burst that triggers the player's startle reflex.</p>
                             </div>
                         </li>
                     </ul>
@@ -1440,7 +1580,7 @@
                         <div class="cybernetic-content">
                             <div>
                                 <p style="text-align: justify;">
-                                    RE4 Remake's feedback architecture is built around the principle of earned confirmation — every piece of feedback signals a meaningful event. The parry spark, the stagger animation, the Plaga mutation — each carries narrative weight because the system refuses to cheapen them with constant repetition.
+                                    RE4 Remake's feedback architecture is built around the principle of earned confirmation â€” every piece of feedback signals a meaningful event. The parry spark, the stagger animation, the Plaga mutation â€” each carries narrative weight because the system refuses to cheapen them with constant repetition.
                                 </p>
                             </div>
                             <div>
@@ -1456,13 +1596,13 @@
                     <div class="spatial-congruence">
                         <h2>Spatial Congruence in Third-Person Horror</h2>
                         <p style="text-align: justify;">
-                            RE4 Remake achieves spatial congruence through its over-the-shoulder camera and laser sight — Leon's aiming is felt as a physical act of line-of-sight rather than an abstract cursor placement. The Attache Case inventory translates resource management into a physical spatial puzzle, making scarcity tangible through grid constraint rather than abstract numbers.
+                            RE4 Remake achieves spatial congruence through its over-the-shoulder camera and laser sight â€” Leon's aiming is felt as a physical act of line-of-sight rather than an abstract cursor placement. The Attache Case inventory translates resource management into a physical spatial puzzle, making scarcity tangible through grid constraint rather than abstract numbers.
                         </p>
                     </div>
                     <div class="cognitive-load-bifurcation">
                         <h2>Cognitive Load Bifurcation</h2>
                         <p style="text-align: justify; margin-bottom: 2em;">
-                            RE4 Remake carefully separates its Extrinsic and Intrinsic cognitive loads. The Attache Case interface is intentionally spatial and puzzle-like — requiring attention during inventory management — while combat strips back to the laser sight and one button per action, minimizing Extrinsic Load at the moment of highest Intrinsic demand.
+                            RE4 Remake carefully separates its Extrinsic and Intrinsic cognitive loads. The Attache Case interface is intentionally spatial and puzzle-like â€” requiring attention during inventory management â€” while combat strips back to the laser sight and one button per action, minimizing Extrinsic Load at the moment of highest Intrinsic demand.
                         </p>
                         <table>
                             <thead>
@@ -1475,25 +1615,25 @@
 
                                 <tr>
                                     <td><h6>Attache Case Spatial Puzzle</h6><p>Inventory management as a spatial game creates genuine engagement with the resource layer. Players develop optimization strategies that feel like player skill rather than menu navigation.</p></td>
-                                    <td><h6>Inventory Pause Vulnerability</h6><p>Opening the Attache Case pauses the game — breaking tension at critical moments. While necessary for the spatial puzzle to function, it disconnects the inventory interaction from the combat flow.</p></td>
+                                    <td><h6>Inventory Pause Vulnerability</h6><p>Opening the Attache Case pauses the game â€” breaking tension at critical moments. While necessary for the spatial puzzle to function, it disconnects the inventory interaction from the combat flow.</p></td>
                                 </tr>
                                 <tr>
-                                    <td><h6>Laser Sight Precision</h6><p>The diegetic laser sight translates aiming skill into physical dot-placement — a spatially congruent solution that makes marksmanship feel embodied rather than abstract.</p></td>
-                                    <td><h6>Ammo Scarcity Frustration</h6><p>Resource scarcity — while intentional — can create decision paralysis. Players conserve ammo to the point of avoiding combat, undermining the game's intended action-horror balance.</p></td>
+                                    <td><h6>Laser Sight Precision</h6><p>The diegetic laser sight translates aiming skill into physical dot-placement â€” a spatially congruent solution that makes marksmanship feel embodied rather than abstract.</p></td>
+                                    <td><h6>Ammo Scarcity Frustration</h6><p>Resource scarcity â€” while intentional â€” can create decision paralysis. Players conserve ammo to the point of avoiding combat, undermining the game's intended action-horror balance.</p></td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                     <div class="footnote">
                         <q>
-                            RE4 Remake understands that survival horror HCI is about making the player feel the weight of each bullet. The laser sight, the Attache Case, the parry timing — every system forces the player to reckon with scarcity as a physical, spatial reality.
+                            RE4 Remake understands that survival horror HCI is about making the player feel the weight of each bullet. The laser sight, the Attache Case, the parry timing â€” every system forces the player to reckon with scarcity as a physical, spatial reality.
                         </q>
                     </div>
                 </section>
                 <section class="game-sections" id="ui-ux-weaknesses">
                     <h2>Strengths and Weaknesses Analysis</h2>
                     <p>
-                        A comprehensive breakdown of Resident Evil 4 Remake's interface paradigm — evaluating the friction between its celebrated spatial inventory design, precision combat systems, and the psychological demands of sustained survival horror engagement.
+                        A comprehensive breakdown of Resident Evil 4 Remake's interface paradigm â€” evaluating the friction between its celebrated spatial inventory design, precision combat systems, and the psychological demands of sustained survival horror engagement.
                     </p>
                     <table style="margin-bottom: 2em;">
                         <thead>
@@ -1511,7 +1651,7 @@
                                         <span class="label">01_INVENTORY</span>
                                     </div>
                                     <h6>Attache Case Design</h6>
-                                    <p>The spatial grid inventory is one of gaming's most celebrated UI systems — it transforms resource management into a tangible puzzle that players engage with as a skill layer rather than a menu chore.</p>
+                                    <p>The spatial grid inventory is one of gaming's most celebrated UI systems â€” it transforms resource management into a tangible puzzle that players engage with as a skill layer rather than a menu chore.</p>
                                 </td>
                                 <td>
                                     <div class="sw-item-head">
@@ -1537,7 +1677,7 @@
                                         <span class="label">02_SCARCITY</span>
                                     </div>
                                     <h6>Resource Anxiety</h6>
-                                    <p>Intentional ammo scarcity is horror design, but RE4 Remake's early-game economy can tip into frustration — particularly on higher difficulties where players conserve to the point of non-engagement.</p>
+                                    <p>Intentional ammo scarcity is horror design, but RE4 Remake's early-game economy can tip into frustration â€” particularly on higher difficulties where players conserve to the point of non-engagement.</p>
                                 </td>
                             </tr>
                             <tr>
@@ -1547,7 +1687,7 @@
                                         <span class="label">03_PARRY</span>
                                     </div>
                                     <h6>Parry System Depth</h6>
-                                    <p>The knife parry adds a meaningful HCI skill layer absent from the original. Its 300ms window is learnable and rewards investment — creating a distinct skill identity for RE4 Remake's combat.</p>
+                                    <p>The knife parry adds a meaningful HCI skill layer absent from the original. Its 300ms window is learnable and rewards investment â€” creating a distinct skill identity for RE4 Remake's combat.</p>
                                 </td>
                                 <td>
                                     <div class="sw-item-head">
@@ -1555,19 +1695,46 @@
                                         <span class="label">03_OVERLOAD</span>
                                     </div>
                                     <h6>Late-Game Power Creep</h6>
-                                    <p>As weapons are fully upgraded and resources accumulate, the survival horror tension that drives the HCI engagement diminishes — the late game can feel less precise than the early game.</p>
+                                    <p>As weapons are fully upgraded and resources accumulate, the survival horror tension that drives the HCI engagement diminishes â€” the late game can feel less precise than the early game.</p>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                     <div class="footnote summary">
                         <p>
-                            Resident Evil 4 Remake's HCI is a meditation on constraint. The Attache Case, the laser sight, the parry window — each system forces precision through physical limitation. This is its genius and its risk: a design that makes scarcity feel meaningful can tip into frustration when scarcity feels arbitrary. The remake navigates this tension better than almost any survival horror game before it.
+                            Resident Evil 4 Remake's HCI is a meditation on constraint. The Attache Case, the laser sight, the parry window â€” each system forces precision through physical limitation. This is its genius and its risk: a design that makes scarcity feel meaningful can tip into frustration when scarcity feels arbitrary. The remake navigates this tension better than almost any survival horror game before it.
                         </p>
                     </div>
                 </section>
             </div>
         </article>
+    
+        <!-- GAME PAGE NAVIGATION START -->
+        <div class="game-page-navigation" aria-label="Game page navigation">
+            <div class="page-nav-item prev">
+                <a class="btn btn-outline-secondary btn-prev" href="dyingLight.html">
+                    <span class="btn-label">
+                        <svg class="nav-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path d="M15 18l-6-6 6-6"></path>
+                        </svg>
+                        <span>Previous Game</span>
+                    </span>
+                    <span class="subtext">Dying Light</span>
+                </a>
+            </div>
+            <div class="page-nav-item next">
+                <a class="btn btn-primary btn-next" href="warframe.html">
+                    <span class="btn-label">
+                        <span>Next Game</span>
+                        <svg class="nav-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path d="M9 6l6 6-6 6"></path>
+                        </svg>
+                    </span>
+                    <span class="subtext">Warframe</span>
+                </a>
+            </div>
+        </div>
+        <!-- GAME PAGE NAVIGATION END -->
     </main>
             <footer>
         <h6>GameUX Atlas</h6>
@@ -1642,7 +1809,7 @@
     const EDITIONS = ["Standard", "Deluxe Edition", "Collector's Edition"];
 
     const DESCRIPTION =
-        "Resident Evil 4 Remake is a survival horror action game by Capcom reimagining the 2005 classic. Players control Leon S. Kennedy rescuing the U.S. President's daughter from a Spanish cult, navigating resource management, tense combat encounters, and the iconic Attache Case inventory — one of gaming's most celebrated spatial UI systems.";
+        "Resident Evil 4 Remake is a survival horror action game by Capcom reimagining the 2005 classic. Players control Leon S. Kennedy rescuing the U.S. President's daughter from a Spanish cult, navigating resource management, tense combat encounters, and the iconic Attache Case inventory â€” one of gaming's most celebrated spatial UI systems.";
 
     // Document Variables
     const sectionRadios = Array.from(

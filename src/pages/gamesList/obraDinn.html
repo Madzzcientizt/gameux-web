@@ -999,6 +999,145 @@
         .game-video-wrp {
             position: relative;
         }
+    
+        /* GAME PAGE NAVIGATION START */
+        .game-page-navigation {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1em;
+            margin: 2.5em auto 3em;
+            width: min(100%, 64rem);
+            padding: 0 1rem;
+        }
+
+        .game-page-navigation .page-nav-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.35em;
+            min-width: 10rem;
+            width: 100%;
+            position: relative;
+
+            & a {
+                width: 100%;
+            }
+        }
+
+        .game-page-navigation .page-nav-item.next {
+            align-items: flex-end;
+
+            & a {
+                text-align: right;
+            }
+        }
+
+        .game-page-navigation .btn {
+            min-width: 10rem;
+            border-radius: var(--t-radius-field);
+            font-weight: 600;
+            padding: 0.6em 1.1em;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+            isolation: isolate;
+            background-color: transparent !important;
+            transition: color 0.28s ease;
+        }
+
+        .game-page-navigation .btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            transform: scaleX(0);
+            transform-origin: left center;
+            transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+            z-index: -1;
+        }
+
+        .game-page-navigation .btn-prev {
+            --btn-fill: var(--t-color-secondary);
+            --btn-text-hover: var(--t-color-secondary-content);
+            color: var(--t-color-secondary) !important;
+            border-color: var(--t-color-secondary) !important;
+        }
+
+        .game-page-navigation .btn-prev::before {
+            background-color: var(--btn-fill);
+            transform-origin: left center;
+        }
+
+        .game-page-navigation .btn-next {
+            --btn-fill: var(--t-color-primary);
+            --btn-text-hover: var(--t-color-primary-content);
+            color: var(--t-color-primary) !important;
+            border-color: var(--t-color-primary) !important;
+        }
+
+        .game-page-navigation .btn-next::before {
+            background-color: var(--btn-fill);
+            transform-origin: right center;
+        }
+
+        .game-page-navigation .btn:hover,
+        .game-page-navigation .btn:focus-visible {
+            color: var(--btn-text-hover) !important;
+        }
+
+        .game-page-navigation .btn:hover::before,
+        .game-page-navigation .btn:focus-visible::before {
+            transform: scaleX(1);
+        }
+
+        .game-page-navigation .subtext {
+            display: block;
+            font-size: 0.78em;
+            color: inherit;
+            line-height: 1.2;
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .game-page-navigation .btn-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45em;
+            line-height: 1.15;
+        }
+
+        .game-page-navigation .page-nav-item.next .btn-label {
+            justify-content: flex-end;
+            width: 100%;
+        }
+
+        .game-page-navigation .nav-arrow {
+            width: 1em;
+            height: 1em;
+            flex-shrink: 0;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        @media (width < 48rem) {
+            .game-page-navigation {
+                grid-template-columns: 1fr;
+            }
+
+            .game-page-navigation .page-nav-item,
+            .game-page-navigation .page-nav-item.next {
+                align-items: stretch;
+            }
+
+            .game-page-navigation .btn,
+            .game-page-navigation .btn-prev,
+            .game-page-navigation .btn-next {
+                width: 100%;
+                margin: 0;
+            }
+        }
+        /* GAME PAGE NAVIGATION END */
     </style>
     <!-- Custom Styles ------------------------------------------------------------------------------------------ -->
 
@@ -1046,7 +1185,8 @@
     <main>
         <article class="wide">
             <section class="header-section">
-                <img class="game-poster-content game-poster-background-style" />
+                
+                <span class="archive-number">[ 057_returnoftheobradinn_mateo ]</span>
                 <h1 class="game-name game-name-header" title="Game Name">
                     Game name
                 </h1>
@@ -1121,7 +1261,7 @@
                                     <button id="use-local-video-btn" class="btn-fallback btn-local" type="button">Use
                                         Local Video</button>
                                 </div>
-                                <p class="fallback-hint">💡 Try connecting through a different network or VPN to access
+                                <p class="fallback-hint">ðŸ’¡ Try connecting through a different network or VPN to access
                                     YouTube content.</p>
                             </div>
                         </div>
@@ -1227,9 +1367,9 @@
                 <section class="game-sections" id="short-description">
                     <h2>Overview</h2>
                     <p>
-                        The narrative begins when the Obra Dinn drifts into port five years after disappearing at sea, now completely devoid of living crew members. As an insurance inspector for the East India Company, the player uses the "Memento Mortem"—a magical timepiece that allows them to hear the final seconds before a person's death and explore the frozen moment of their demise. By navigating these gruesome dioramas, players must cross-reference visual cues, dialogue, and the ship’s manifest to solve a massive, interconnected mystery involving mutiny, sea monsters, and human greed.</p>
+                        The narrative begins when the Obra Dinn drifts into port five years after disappearing at sea, now completely devoid of living crew members. As an insurance inspector for the East India Company, the player uses the "Memento Mortem"â€”a magical timepiece that allows them to hear the final seconds before a person's death and explore the frozen moment of their demise. By navigating these gruesome dioramas, players must cross-reference visual cues, dialogue, and the shipâ€™s manifest to solve a massive, interconnected mystery involving mutiny, sea monsters, and human greed.</p>
                     <p>
-                        The gameplay is a pure exercise in observation and logic, offering no hand-holding as players fill out the ship's logbook with names and grisly fates. Success depends on noticing subtle details: a character’s uniform, their accent, their relationships to other crew members, or even their position on the ship during a crisis. This meticulous process transforms the player into a digital forensic investigator, slowly turning a chaotic mess of corpses into a coherent, tragic history of a doomed voyage. By the journey's end, the game stands as a masterclass in atmospheric storytelling, where every grainy pixel serves as a vital clue to the ship's dark legacy.
+                        The gameplay is a pure exercise in observation and logic, offering no hand-holding as players fill out the ship's logbook with names and grisly fates. Success depends on noticing subtle details: a characterâ€™s uniform, their accent, their relationships to other crew members, or even their position on the ship during a crisis. This meticulous process transforms the player into a digital forensic investigator, slowly turning a chaotic mess of corpses into a coherent, tragic history of a doomed voyage. By the journey's end, the game stands as a masterclass in atmospheric storytelling, where every grainy pixel serves as a vital clue to the ship's dark legacy.
                     </p>
                     <ul class="metrics-list">
                         <li>
@@ -1318,7 +1458,7 @@
                                     <span>Certainty = 1/1 + e^{-clues x (ObservationTime - Ambiguity)</span>
                                 </div>
                                 <p>
-                                    In Obra Dinn, pointing accuracy depends on the player's ability to manipulate the first-person camera toward specific environmental tells—a wedding ring, a uniform rank, or a shared bunk number. Identifying these minute vertex points within a dithered 3D space increases the cognitive load, simulating the mental exhaustion of an insurance inspector piecing together a mass tragedy.
+                                    In Obra Dinn, pointing accuracy depends on the player's ability to manipulate the first-person camera toward specific environmental tellsâ€”a wedding ring, a uniform rank, or a shared bunk number. Identifying these minute vertex points within a dithered 3D space increases the cognitive load, simulating the mental exhaustion of an insurance inspector piecing together a mass tragedy.
                                 </p>
                             </div>
                             <div>
@@ -1350,7 +1490,7 @@
                                 <li>
                                     <h6>Spatial Existentialism</h6>
                                     <p>
-                                        Narrative data is relegated to audio transcripts and spatial proximity. In Obra Dinn, the "True HUD" is the environment itself—where a character stands, who they are looking at, and their distance from the blast radius. This forces the player to constantly "re-walk" the scene, heightening the sense of presence and the grim reality that every pixel on the ship is a clue to a specific person's demise.
+                                        Narrative data is relegated to audio transcripts and spatial proximity. In Obra Dinn, the "True HUD" is the environment itselfâ€”where a character stands, who they are looking at, and their distance from the blast radius. This forces the player to constantly "re-walk" the scene, heightening the sense of presence and the grim reality that every pixel on the ship is a clue to a specific person's demise.
                                     </p>
                                 </li>
                             </ol>
@@ -1387,7 +1527,7 @@
                             <li>
                                 <h6>Lock Discovery</h6>
                                 <p>
-                                    Once three fates are correctly attributed, the ink in the Logbook "settles" into a permanent state. This confirms the logic and updates the ship’s manifest as the fog of mystery lifts.
+                                    Once three fates are correctly attributed, the ink in the Logbook "settles" into a permanent state. This confirms the logic and updates the shipâ€™s manifest as the fog of mystery lifts.
                                 </p>
                             </li>
                         </ol>
@@ -1432,7 +1572,7 @@
                             <div>
                                 <h6>Visual Feedback</h6>
                                 <p>
-                                    The 1-bit "Macintosh" aesthetic provides high-contrast clarity. The primary feedback for a correct deduction is the Logbook’s ink transformation—sketchy portraits become sharp as identities are locked, visually representing the player's increasing certainty.
+                                    The 1-bit "Macintosh" aesthetic provides high-contrast clarity. The primary feedback for a correct deduction is the Logbookâ€™s ink transformationâ€”sketchy portraits become sharp as identities are locked, visually representing the player's increasing certainty.
                                 </p>
                             </div>
                         </li>
@@ -1500,7 +1640,7 @@
                                     <td>
                                         <h6>Deductive Elimination</h6>
                                         <p>
-                                            Players focus entirely on the logical puzzles of identity, constantly questioning if a character’s presence in a specific memory is incidental or a definitive clue to their rank.
+                                            Players focus entirely on the logical puzzles of identity, constantly questioning if a characterâ€™s presence in a specific memory is incidental or a definitive clue to their rank.
                                         </p>
                                     </td>
                                 </tr>
@@ -1608,7 +1748,7 @@
                                     </div>
                                     <h6>Diegetic Documentation</h6>
                                     <p>
-                                        By making the Logbook the primary UI, the game removes the need for immersion-breaking HUD elements. The "Locked Fate" notification becomes a powerful narrative and mechanical reward, reinforcing the player’s mastery over the ship’s complex history.
+                                        By making the Logbook the primary UI, the game removes the need for immersion-breaking HUD elements. The "Locked Fate" notification becomes a powerful narrative and mechanical reward, reinforcing the playerâ€™s mastery over the shipâ€™s complex history.
                                     </p>
                                 </td>
                                 <td>
@@ -1636,6 +1776,33 @@
                 </section>
             </div>
         </article>
+    
+        <!-- GAME PAGE NAVIGATION START -->
+        <div class="game-page-navigation" aria-label="Game page navigation">
+            <div class="page-nav-item prev">
+                <a class="btn btn-outline-secondary btn-prev" href="hotlineMiami.html">
+                    <span class="btn-label">
+                        <svg class="nav-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path d="M15 18l-6-6 6-6"></path>
+                        </svg>
+                        <span>Previous Game</span>
+                    </span>
+                    <span class="subtext">Hotline Miami</span>
+                </a>
+            </div>
+            <div class="page-nav-item next">
+                <a class="btn btn-primary btn-next" href="crueltySquad.html">
+                    <span class="btn-label">
+                        <span>Next Game</span>
+                        <svg class="nav-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path d="M9 6l6 6-6 6"></path>
+                        </svg>
+                    </span>
+                    <span class="subtext">Cruelty Squad</span>
+                </a>
+            </div>
+        </div>
+        <!-- GAME PAGE NAVIGATION END -->
     </main>
             <footer>
         <h6>GameUX Atlas</h6>

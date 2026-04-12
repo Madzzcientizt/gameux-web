@@ -965,6 +965,145 @@
       .hidden {
         display: none !important;
       }
+    
+        /* GAME PAGE NAVIGATION START */
+        .game-page-navigation {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1em;
+            margin: 2.5em auto 3em;
+            width: min(100%, 64rem);
+            padding: 0 1rem;
+        }
+
+        .game-page-navigation .page-nav-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.35em;
+            min-width: 10rem;
+            width: 100%;
+            position: relative;
+
+            & a {
+                width: 100%;
+            }
+        }
+
+        .game-page-navigation .page-nav-item.next {
+            align-items: flex-end;
+
+            & a {
+                text-align: right;
+            }
+        }
+
+        .game-page-navigation .btn {
+            min-width: 10rem;
+            border-radius: var(--t-radius-field);
+            font-weight: 600;
+            padding: 0.6em 1.1em;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+            isolation: isolate;
+            background-color: transparent !important;
+            transition: color 0.28s ease;
+        }
+
+        .game-page-navigation .btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            transform: scaleX(0);
+            transform-origin: left center;
+            transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+            z-index: -1;
+        }
+
+        .game-page-navigation .btn-prev {
+            --btn-fill: var(--t-color-secondary);
+            --btn-text-hover: var(--t-color-secondary-content);
+            color: var(--t-color-secondary) !important;
+            border-color: var(--t-color-secondary) !important;
+        }
+
+        .game-page-navigation .btn-prev::before {
+            background-color: var(--btn-fill);
+            transform-origin: left center;
+        }
+
+        .game-page-navigation .btn-next {
+            --btn-fill: var(--t-color-primary);
+            --btn-text-hover: var(--t-color-primary-content);
+            color: var(--t-color-primary) !important;
+            border-color: var(--t-color-primary) !important;
+        }
+
+        .game-page-navigation .btn-next::before {
+            background-color: var(--btn-fill);
+            transform-origin: right center;
+        }
+
+        .game-page-navigation .btn:hover,
+        .game-page-navigation .btn:focus-visible {
+            color: var(--btn-text-hover) !important;
+        }
+
+        .game-page-navigation .btn:hover::before,
+        .game-page-navigation .btn:focus-visible::before {
+            transform: scaleX(1);
+        }
+
+        .game-page-navigation .subtext {
+            display: block;
+            font-size: 0.78em;
+            color: inherit;
+            line-height: 1.2;
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .game-page-navigation .btn-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45em;
+            line-height: 1.15;
+        }
+
+        .game-page-navigation .page-nav-item.next .btn-label {
+            justify-content: flex-end;
+            width: 100%;
+        }
+
+        .game-page-navigation .nav-arrow {
+            width: 1em;
+            height: 1em;
+            flex-shrink: 0;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        @media (width < 48rem) {
+            .game-page-navigation {
+                grid-template-columns: 1fr;
+            }
+
+            .game-page-navigation .page-nav-item,
+            .game-page-navigation .page-nav-item.next {
+                align-items: stretch;
+            }
+
+            .game-page-navigation .btn,
+            .game-page-navigation .btn-prev,
+            .game-page-navigation .btn-next {
+                width: 100%;
+                margin: 0;
+            }
+        }
+        /* GAME PAGE NAVIGATION END */
     </style>
 
     <title id="title">Friday Night Funkin' - GameUX</title>
@@ -1013,7 +1152,8 @@
     <main>
       <article class="wide">
         <section class="header-section">
-          <img class="game-poster-content game-poster-background-style" />
+          
+                <span class="archive-number">[ 064_fridaynightfunkin_palanas ]</span>
           <h1 class="game-name game-name-header">Friday Night Funkin'</h1>
           <div class="game-header">
             <span class="game-header-cont">
@@ -1241,7 +1381,7 @@
               </li>
               <li>
                 <h6>Response Time (Hit Windows)</h6>
-                <div class="value">± 45ms (Sick) to ± 135ms (Bad)</div>
+                <div class="value">Â± 45ms (Sick) to Â± 135ms (Bad)</div>
                 <div class="desc">
                   The strict temporal threshold allowed for a player to strike a
                   key in sync with the audio track.
@@ -1286,7 +1426,7 @@
                     note aligns perfectly with the receptor, the character on
                     screen reacts with a specific animation and vocal snippet,
                     creating a seamless loop between the player's tactile input
-                    and the character’s performance.
+                    and the characterâ€™s performance.
                   </p>
                 </div>
               </div>
@@ -1420,7 +1560,7 @@
               </ol>
             </div>
             <div class="footnote">
-              High-level rhythm gameplay relies heavily on "chunking"—the
+              High-level rhythm gameplay relies heavily on "chunking"â€”the
               cognitive ability to group multiple individual notes into a single
               recognized pattern (e.g., a "staircase" or a "trill"), reducing
               the overall mental bandwidth required to process dense
@@ -1488,8 +1628,8 @@
                   with player actions, creating a strong sense of
                   cause-and-effect between pressing a key and seeing the
                   performance respond. <br>Finally, ultra-low input buffering and
-                  consistent frame pacing simulate a tactile snappiness, the game “feels” responsive in the
-                  player’s fingers, reducing perceived latency and deepening
+                  consistent frame pacing simulate a tactile snappiness, the game â€œfeelsâ€ responsive in the
+                  playerâ€™s fingers, reducing perceived latency and deepening
                   immersion.
                 </p>
               </div>
@@ -1874,6 +2014,33 @@
           </section>
         </div>
       </article>
+    
+        <!-- GAME PAGE NAVIGATION START -->
+        <div class="game-page-navigation" aria-label="Game page navigation">
+            <div class="page-nav-item prev">
+                <a class="btn btn-outline-secondary btn-prev" href="littleNightmares.html">
+                    <span class="btn-label">
+                        <svg class="nav-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path d="M15 18l-6-6 6-6"></path>
+                        </svg>
+                        <span>Previous Game</span>
+                    </span>
+                    <span class="subtext">Little Nightmares</span>
+                </a>
+            </div>
+            <div class="page-nav-item next">
+                <a class="btn btn-primary btn-next" href="genshinImpact.html">
+                    <span class="btn-label">
+                        <span>Next Game</span>
+                        <svg class="nav-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path d="M9 6l6 6-6 6"></path>
+                        </svg>
+                    </span>
+                    <span class="subtext">Genshin Impact</span>
+                </a>
+            </div>
+        </div>
+        <!-- GAME PAGE NAVIGATION END -->
     </main>
 
             <footer>

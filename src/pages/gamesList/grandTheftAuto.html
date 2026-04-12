@@ -999,6 +999,145 @@
         .game-video-wrp {
             position: relative;
         }
+    
+        /* GAME PAGE NAVIGATION START */
+        .game-page-navigation {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1em;
+            margin: 2.5em auto 3em;
+            width: min(100%, 64rem);
+            padding: 0 1rem;
+        }
+
+        .game-page-navigation .page-nav-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.35em;
+            min-width: 10rem;
+            width: 100%;
+            position: relative;
+
+            & a {
+                width: 100%;
+            }
+        }
+
+        .game-page-navigation .page-nav-item.next {
+            align-items: flex-end;
+
+            & a {
+                text-align: right;
+            }
+        }
+
+        .game-page-navigation .btn {
+            min-width: 10rem;
+            border-radius: var(--t-radius-field);
+            font-weight: 600;
+            padding: 0.6em 1.1em;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+            isolation: isolate;
+            background-color: transparent !important;
+            transition: color 0.28s ease;
+        }
+
+        .game-page-navigation .btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            transform: scaleX(0);
+            transform-origin: left center;
+            transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+            z-index: -1;
+        }
+
+        .game-page-navigation .btn-prev {
+            --btn-fill: var(--t-color-secondary);
+            --btn-text-hover: var(--t-color-secondary-content);
+            color: var(--t-color-secondary) !important;
+            border-color: var(--t-color-secondary) !important;
+        }
+
+        .game-page-navigation .btn-prev::before {
+            background-color: var(--btn-fill);
+            transform-origin: left center;
+        }
+
+        .game-page-navigation .btn-next {
+            --btn-fill: var(--t-color-primary);
+            --btn-text-hover: var(--t-color-primary-content);
+            color: var(--t-color-primary) !important;
+            border-color: var(--t-color-primary) !important;
+        }
+
+        .game-page-navigation .btn-next::before {
+            background-color: var(--btn-fill);
+            transform-origin: right center;
+        }
+
+        .game-page-navigation .btn:hover,
+        .game-page-navigation .btn:focus-visible {
+            color: var(--btn-text-hover) !important;
+        }
+
+        .game-page-navigation .btn:hover::before,
+        .game-page-navigation .btn:focus-visible::before {
+            transform: scaleX(1);
+        }
+
+        .game-page-navigation .subtext {
+            display: block;
+            font-size: 0.78em;
+            color: inherit;
+            line-height: 1.2;
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .game-page-navigation .btn-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45em;
+            line-height: 1.15;
+        }
+
+        .game-page-navigation .page-nav-item.next .btn-label {
+            justify-content: flex-end;
+            width: 100%;
+        }
+
+        .game-page-navigation .nav-arrow {
+            width: 1em;
+            height: 1em;
+            flex-shrink: 0;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        @media (width < 48rem) {
+            .game-page-navigation {
+                grid-template-columns: 1fr;
+            }
+
+            .game-page-navigation .page-nav-item,
+            .game-page-navigation .page-nav-item.next {
+                align-items: stretch;
+            }
+
+            .game-page-navigation .btn,
+            .game-page-navigation .btn-prev,
+            .game-page-navigation .btn-next {
+                width: 100%;
+                margin: 0;
+            }
+        }
+        /* GAME PAGE NAVIGATION END */
     </style>
     <!-- Custom Styles ------------------------------------------------------------------------------------------ -->
 
@@ -1046,7 +1185,8 @@
     <main>
         <article class="wide">
             <section class="header-section">
-                <img class="game-poster-content game-poster-background-style" />
+                
+                <span class="archive-number">[ 048_gta_valenzuela ]</span>
                 <h1 class="game-name game-name-header" title="Game Name">
                     Game name
                 </h1>
@@ -1121,7 +1261,7 @@
                                     <button id="use-local-video-btn" class="btn-fallback btn-local" type="button">Use
                                         Local Video</button>
                                 </div>
-                                <p class="fallback-hint">💡 Try connecting through a different network or VPN to access
+                                <p class="fallback-hint">ðŸ’¡ Try connecting through a different network or VPN to access
                                     YouTube content.</p>
                             </div>
                         </div>
@@ -1290,7 +1430,7 @@
                                 <span class="count">[ ELEMENT_02 ]</span>
                                 <span class="header-text">Vector-Based Radar & GPS</span>
                                 <p>
-                                    The circular mini-map in the bottom-left scales dynamically with vehicle speed to improve look-ahead time. It utilizes color-coded blips—yellow for objectives and red for enemies—while providing the primary navigational guide through San Andreas.
+                                    The circular mini-map in the bottom-left scales dynamically with vehicle speed to improve look-ahead time. It utilizes color-coded blipsâ€”yellow for objectives and red for enemiesâ€”while providing the primary navigational guide through San Andreas.
                                 </p>
                             </div>
                         </div>
@@ -1466,7 +1606,7 @@
                             <div>
                                 <h6>Haptic Feedback</h6>
                                 <p>
-                                    Mechanical feedback is tied to Surface Physics. The controller rumble differentiates between driving on asphalt versus dirt. During combat, the "trigger resistance" (on modern hardware) and vibration provide a physical sense of the weapon’s caliber and the impact of being struck by a vehicle.
+                                    Mechanical feedback is tied to Surface Physics. The controller rumble differentiates between driving on asphalt versus dirt. During combat, the "trigger resistance" (on modern hardware) and vibration provide a physical sense of the weaponâ€™s caliber and the impact of being struck by a vehicle.
                                 </p>
                             </div>
                         </li>
@@ -1495,7 +1635,7 @@
                     <div class="spatial-congruence">
                         <h2>Progressive Disclosure</h2>
                         <p style="text-align: justify;">
-                            The interface manages complexity by hiding the majority of the map and menu systems until they are needed. The "Weapon Wheel" is a primary example—it discloses the full arsenal only when the user holds a specific button, keeping the screen 95% clear during standard navigation.
+                            The interface manages complexity by hiding the majority of the map and menu systems until they are needed. The "Weapon Wheel" is a primary exampleâ€”it discloses the full arsenal only when the user holds a specific button, keeping the screen 95% clear during standard navigation.
                         </p>
                     </div>
                     <div class="cognitive-load-bifurcation">
@@ -1544,7 +1684,7 @@
                     </div>
                     <div class="footnote">
                         <q>
-                            GTA’s application of HCI principles emphasizes spatial awareness and multi-tasking, enabling players to operate effectively within a complex 3D open world. These interaction models align with concepts like Fitts’s Law (for aiming and targeting) and navigational wayfinding, ensuring players can move, act, and react without becoming disoriented or overwhelmed.
+                            GTAâ€™s application of HCI principles emphasizes spatial awareness and multi-tasking, enabling players to operate effectively within a complex 3D open world. These interaction models align with concepts like Fittsâ€™s Law (for aiming and targeting) and navigational wayfinding, ensuring players can move, act, and react without becoming disoriented or overwhelmed.
                         </q>
                     </div>
                 </section>
@@ -1580,7 +1720,7 @@
                                         Seamlessness
                                     </h6>
                                     <p>
-                                        The transition between different gameplay states—such as walking, driving, or other forms of movement—is handled smoothly with minimal interface disruption. Control schemes remain relatively consistent, allowing players to adapt quickly across different activities.
+                                        The transition between different gameplay statesâ€”such as walking, driving, or other forms of movementâ€”is handled smoothly with minimal interface disruption. Control schemes remain relatively consistent, allowing players to adapt quickly across different activities.
                                     </p>
                                 </td>
                                 <td>
@@ -1596,7 +1736,7 @@
                                     </div>
                                     <h6>Visual Overload</h6>
                                     <p>
-                                        During intense moments (e.g., chases or missions), multiple layers of information—such as map indicators, environmental activity, audio cues, and objectives—can overlap, potentially overwhelming the player and causing missed information.
+                                        During intense moments (e.g., chases or missions), multiple layers of informationâ€”such as map indicators, environmental activity, audio cues, and objectivesâ€”can overlap, potentially overwhelming the player and causing missed information.
                                     </p>
                                 </td>
                             </tr>
@@ -1644,6 +1784,33 @@
                 </section>
             </div>
         </article>
+    
+        <!-- GAME PAGE NAVIGATION START -->
+        <div class="game-page-navigation" aria-label="Game page navigation">
+            <div class="page-nav-item prev">
+                <a class="btn btn-outline-secondary btn-prev" href="itTakesTwo.html">
+                    <span class="btn-label">
+                        <svg class="nav-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path d="M15 18l-6-6 6-6"></path>
+                        </svg>
+                        <span>Previous Game</span>
+                    </span>
+                    <span class="subtext">It takes two</span>
+                </a>
+            </div>
+            <div class="page-nav-item next">
+                <a class="btn btn-primary btn-next" href="prototype.html">
+                    <span class="btn-label">
+                        <span>Next Game</span>
+                        <svg class="nav-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path d="M9 6l6 6-6 6"></path>
+                        </svg>
+                    </span>
+                    <span class="subtext">Prototype</span>
+                </a>
+            </div>
+        </div>
+        <!-- GAME PAGE NAVIGATION END -->
     </main>
             <footer>
         <h6>GameUX Atlas</h6>
@@ -1718,7 +1885,7 @@
     const EDITIONS = ["Grand Theft Auto: San Andreas","Definitive Edition","Netflix Edition"];
 
     const DESCRIPTION =
-        "Grand Theft Auto: San Andreas is a 2004 open-world action-adventure game by Rockstar Games set in 1992. Players control Carl CJ Johnson, who returns to a fictional, California-inspired state to take back his street gang, the Grove Street Families, from corruption, drugs, and rival gangs. The massive game spans three cities—Los Santos, San Fierro, and Las Venturas—plus rural, desert, and mountain areas."
+        "Grand Theft Auto: San Andreas is a 2004 open-world action-adventure game by Rockstar Games set in 1992. Players control Carl CJ Johnson, who returns to a fictional, California-inspired state to take back his street gang, the Grove Street Families, from corruption, drugs, and rival gangs. The massive game spans three citiesâ€”Los Santos, San Fierro, and Las Venturasâ€”plus rural, desert, and mountain areas."
     // Document Variables
     const sectionRadios = Array.from(
         document.querySelectorAll('input[name="game-section"]'),

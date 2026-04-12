@@ -999,6 +999,145 @@
         .game-video-wrp {
             position: relative;
         }
+    
+        /* GAME PAGE NAVIGATION START */
+        .game-page-navigation {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1em;
+            margin: 2.5em auto 3em;
+            width: min(100%, 64rem);
+            padding: 0 1rem;
+        }
+
+        .game-page-navigation .page-nav-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.35em;
+            min-width: 10rem;
+            width: 100%;
+            position: relative;
+
+            & a {
+                width: 100%;
+            }
+        }
+
+        .game-page-navigation .page-nav-item.next {
+            align-items: flex-end;
+
+            & a {
+                text-align: right;
+            }
+        }
+
+        .game-page-navigation .btn {
+            min-width: 10rem;
+            border-radius: var(--t-radius-field);
+            font-weight: 600;
+            padding: 0.6em 1.1em;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+            isolation: isolate;
+            background-color: transparent !important;
+            transition: color 0.28s ease;
+        }
+
+        .game-page-navigation .btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            transform: scaleX(0);
+            transform-origin: left center;
+            transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+            z-index: -1;
+        }
+
+        .game-page-navigation .btn-prev {
+            --btn-fill: var(--t-color-secondary);
+            --btn-text-hover: var(--t-color-secondary-content);
+            color: var(--t-color-secondary) !important;
+            border-color: var(--t-color-secondary) !important;
+        }
+
+        .game-page-navigation .btn-prev::before {
+            background-color: var(--btn-fill);
+            transform-origin: left center;
+        }
+
+        .game-page-navigation .btn-next {
+            --btn-fill: var(--t-color-primary);
+            --btn-text-hover: var(--t-color-primary-content);
+            color: var(--t-color-primary) !important;
+            border-color: var(--t-color-primary) !important;
+        }
+
+        .game-page-navigation .btn-next::before {
+            background-color: var(--btn-fill);
+            transform-origin: right center;
+        }
+
+        .game-page-navigation .btn:hover,
+        .game-page-navigation .btn:focus-visible {
+            color: var(--btn-text-hover) !important;
+        }
+
+        .game-page-navigation .btn:hover::before,
+        .game-page-navigation .btn:focus-visible::before {
+            transform: scaleX(1);
+        }
+
+        .game-page-navigation .subtext {
+            display: block;
+            font-size: 0.78em;
+            color: inherit;
+            line-height: 1.2;
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .game-page-navigation .btn-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45em;
+            line-height: 1.15;
+        }
+
+        .game-page-navigation .page-nav-item.next .btn-label {
+            justify-content: flex-end;
+            width: 100%;
+        }
+
+        .game-page-navigation .nav-arrow {
+            width: 1em;
+            height: 1em;
+            flex-shrink: 0;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        @media (width < 48rem) {
+            .game-page-navigation {
+                grid-template-columns: 1fr;
+            }
+
+            .game-page-navigation .page-nav-item,
+            .game-page-navigation .page-nav-item.next {
+                align-items: stretch;
+            }
+
+            .game-page-navigation .btn,
+            .game-page-navigation .btn-prev,
+            .game-page-navigation .btn-next {
+                width: 100%;
+                margin: 0;
+            }
+        }
+        /* GAME PAGE NAVIGATION END */
     </style>
     <!-- Custom Styles ------------------------------------------------------------------------------------------ -->
 
@@ -1046,7 +1185,8 @@
     <main>
         <article class="wide">
             <section class="header-section">
-                <img class="game-poster-content game-poster-background-style" />
+                
+                <span class="archive-number">[ 023_ghostoftsushima_dinawanao ]</span>
                 <h1 class="game-name game-name-header" title="Game Name">
                     Game name
                 </h1>
@@ -1121,7 +1261,7 @@
                                     <button id="use-local-video-btn" class="btn-fallback btn-local" type="button">Use
                                         Local Video</button>
                                 </div>
-                                <p class="fallback-hint">💡 Try connecting through a different network or VPN to access
+                                <p class="fallback-hint">ðŸ’¡ Try connecting through a different network or VPN to access
                                     YouTube content.</p>
                             </div>
                         </div>
@@ -1235,7 +1375,7 @@
                         <li>Director's Cut (Iki Island DLC)</li>
                     </ul>
                     <p>
-                        Ghost of Tsushima is a 2020 open-world action-adventure game developed by Sucker Punch Productions and published by Sony Interactive Entertainment. Set on the island of Tsushima during the 1274 Mongol invasion, players guide Jin Sakai — a samurai torn between the honorable way of the warrior and the stealthy methods of the Ghost — across breathtaking feudal Japanese landscapes.
+                        Ghost of Tsushima is a 2020 open-world action-adventure game developed by Sucker Punch Productions and published by Sony Interactive Entertainment. Set on the island of Tsushima during the 1274 Mongol invasion, players guide Jin Sakai â€” a samurai torn between the honorable way of the warrior and the stealthy methods of the Ghost â€” across breathtaking feudal Japanese landscapes.
                     </p>
                     <p>
                         Celebrated for its Kurosawa Mode black-and-white cinematic filter and its wind-based navigation system that replaces traditional waypoint arrows, Ghost of Tsushima is a landmark in immersive HCI-forward game design. The game minimizes intrusive UI elements in favor of environmental storytelling and natural wayfinding cues.
@@ -1248,7 +1388,7 @@
                         </li>
                         <li>
                             <h6>Response Time</h6>
-                            <div class="value">±80ms to ±250ms</div>
+                            <div class="value">Â±80ms to Â±250ms</div>
                             <div class="desc">Time between user action and system feedback</div>
                         </li>
                         <li>
@@ -1272,7 +1412,7 @@
                                 <span class="count">[ ELEMENT_01 ]</span>
                                 <span class="header-text">Wind Guiding System</span>
                                 <p>
-                                    Ghost of Tsushima replaces the traditional compass and waypoint arrow with a dynamic wind system. Players swipe the DualShock touchpad to summon a gust of wind pointing toward their objective — deeply integrating navigation into the physical world rather than overlaying it on the HUD.
+                                    Ghost of Tsushima replaces the traditional compass and waypoint arrow with a dynamic wind system. Players swipe the DualShock touchpad to summon a gust of wind pointing toward their objective â€” deeply integrating navigation into the physical world rather than overlaying it on the HUD.
                                 </p>
                                 <ul>
                                     <h6>Navigation Design</h6>
@@ -1293,7 +1433,7 @@
                                 <span class="count">[ ELEMENT_02 ]</span>
                                 <span class="header-text">Combat Stance System</span>
                                 <p>
-                                    A radial stance selector allows Jin to switch between four combat stances — Stone, Water, Wind, and Moon — each effective against a specific enemy archetype. The system rewards enemy-type recognition and encourages adaptive mid-combat strategy without pausing gameplay.
+                                    A radial stance selector allows Jin to switch between four combat stances â€” Stone, Water, Wind, and Moon â€” each effective against a specific enemy archetype. The system rewards enemy-type recognition and encourages adaptive mid-combat strategy without pausing gameplay.
                                 </p>
                             </div>
                         </div>
@@ -1308,7 +1448,7 @@
                                 <span class="count">[ ELEMENT_03 ]</span>
                                 <span class="header-text">Haiku & Charm Menus</span>
                                 <p>
-                                    Collectible haiku and shrine menus use calligraphy-inspired typography and ink-wash aesthetics consistent with the game's feudal Japanese visual identity — creating a cohesive interaction vocabulary that extends the world's art direction into the UI layer.
+                                    Collectible haiku and shrine menus use calligraphy-inspired typography and ink-wash aesthetics consistent with the game's feudal Japanese visual identity â€” creating a cohesive interaction vocabulary that extends the world's art direction into the UI layer.
                                 </p>
                             </div>
                         </div>
@@ -1317,7 +1457,7 @@
                     <div class="fittslaw">
                         <div>
                             <p>
-                                In Ghost of Tsushima, Fitts's Law governs sword strike targeting and parry timing. Jin's attacks auto-home to locked-on enemies, reducing D, while the parry window (W) shrinks against faster samurai enemies — scaling difficulty through temporal target size rather than spatial distance.
+                                In Ghost of Tsushima, Fitts's Law governs sword strike targeting and parry timing. Jin's attacks auto-home to locked-on enemies, reducing D, while the parry window (W) shrinks against faster samurai enemies â€” scaling difficulty through temporal target size rather than spatial distance.
                             </p>
                             <div class="mathmodel">
                                 <h6>[ MATHEMATICAL MODEL ]</h6>
@@ -1350,7 +1490,7 @@
                             </li>
                             <li>
                                 <h6>Environmental World Cues</h6>
-                                <p>Tertiary focus. Golden birds, foxes, and shrine smoke columns guide players to points of interest through environmental storytelling rather than map pins — the world speaks instead of the UI.</p>
+                                <p>Tertiary focus. Golden birds, foxes, and shrine smoke columns guide players to points of interest through environmental storytelling rather than map pins â€” the world speaks instead of the UI.</p>
                             </li>
                         </ol>
                     </div>
@@ -1361,7 +1501,7 @@
                 <section class="game-sections" id="user-interaction">
                     <h2>User Interaction</h2>
                     <p>
-                        An examination of Ghost of Tsushima's groundbreaking approach to HCI — where the world itself becomes the interface, and conventional UI elements are subordinated entirely to environmental immersion.
+                        An examination of Ghost of Tsushima's groundbreaking approach to HCI â€” where the world itself becomes the interface, and conventional UI elements are subordinated entirely to environmental immersion.
                     </p>
                     <div class="list-style-area">
                         <h3 class="text-center">Core Gameplay Loop</h3>
@@ -1369,19 +1509,19 @@
                         <ol class="four-columns md-two-columns">
                             <li>
                                 <h6>Observe</h6>
-                                <p>Jin reads the battlefield — enemy count, weapon types, patrol patterns — to determine whether to engage as a samurai or adopt the Ghost's stealth methods. The decision is informed by the environment, not a UI prompt.</p>
+                                <p>Jin reads the battlefield â€” enemy count, weapon types, patrol patterns â€” to determine whether to engage as a samurai or adopt the Ghost's stealth methods. The decision is informed by the environment, not a UI prompt.</p>
                             </li>
                             <li>
                                 <h6>Navigate</h6>
-                                <p>A touchpad swipe summons the guiding wind. Particles, birds, and foxes draw the player through the landscape — replacing map-dependency with world-embedded wayfinding that never breaks immersion.</p>
+                                <p>A touchpad swipe summons the guiding wind. Particles, birds, and foxes draw the player through the landscape â€” replacing map-dependency with world-embedded wayfinding that never breaks immersion.</p>
                             </li>
                             <li>
                                 <h6>Engage</h6>
-                                <p>Combat initiates with a single-strike standoff challenge. Players choose stances, parry attacks, and deploy ghost tools — kunai, smoke bombs, wind chimes — through a system that rewards pattern recognition.</p>
+                                <p>Combat initiates with a single-strike standoff challenge. Players choose stances, parry attacks, and deploy ghost tools â€” kunai, smoke bombs, wind chimes â€” through a system that rewards pattern recognition.</p>
                             </li>
                             <li>
                                 <h6>Reflect</h6>
-                                <p>Post-combat, Jin may compose haiku at scenic vantage points or unlock charms at fox shrines — embedding progression rewards into contemplative world interaction rather than menu-diving.</p>
+                                <p>Post-combat, Jin may compose haiku at scenic vantage points or unlock charms at fox shrines â€” embedding progression rewards into contemplative world interaction rather than menu-diving.</p>
                             </li>
                         </ol>
                     </div>
@@ -1389,7 +1529,7 @@
                     <div class="multi-modal-feedback">
                         <div>
                             <p>
-                                Ghost of Tsushima's feedback design is characterized by restraint and elegance — sensory cues are rich but never overwhelming, reinforcing the samurai ethos of disciplined, purposeful action in every interaction.
+                                Ghost of Tsushima's feedback design is characterized by restraint and elegance â€” sensory cues are rich but never overwhelming, reinforcing the samurai ethos of disciplined, purposeful action in every interaction.
                             </p>
                         </div>
                         <div>
@@ -1410,7 +1550,7 @@
                             </div>
                             <div>
                                 <h6>Audio Feedback</h6>
-                                <p>A signature sword-draw chime signals duels. Parry sounds deliver a crisp metallic ring, and ambient nature sounds — cicadas, wind, distant waves — shift dynamically with region and weather, creating a living audio landscape that doubles as situational feedback.</p>
+                                <p>A signature sword-draw chime signals duels. Parry sounds deliver a crisp metallic ring, and ambient nature sounds â€” cicadas, wind, distant waves â€” shift dynamically with region and weather, creating a living audio landscape that doubles as situational feedback.</p>
                             </div>
                         </li>
                         <li>
@@ -1433,7 +1573,7 @@
                             </div>
                             <div>
                                 <h6>Haptic Feedback</h6>
-                                <p>PS5 DualSense provides subtle rain and wind sensation on the controller surface. Sword impacts carry weighted rumble that distinguishes glancing blows from full strikes — enhancing combat physicality through tactile differentiation.</p>
+                                <p>PS5 DualSense provides subtle rain and wind sensation on the controller surface. Sword impacts carry weighted rumble that distinguishes glancing blows from full strikes â€” enhancing combat physicality through tactile differentiation.</p>
                             </div>
                         </li>
                     </ul>
@@ -1445,7 +1585,7 @@
                         <div class="cybernetic-content">
                             <div>
                                 <p style="text-align: justify;">
-                                    Ghost of Tsushima employs a restrained multi-modal feedback architecture calibrated to the samurai aesthetic. Every sensory cue is earned through meaningful action — parry sparks, Ghost Stance activation, nature ambient shifts — reinforcing the principle that feedback is most powerful when rare and contextually appropriate.
+                                    Ghost of Tsushima employs a restrained multi-modal feedback architecture calibrated to the samurai aesthetic. Every sensory cue is earned through meaningful action â€” parry sparks, Ghost Stance activation, nature ambient shifts â€” reinforcing the principle that feedback is most powerful when rare and contextually appropriate.
                                 </p>
                             </div>
                             <div>
@@ -1461,13 +1601,13 @@
                     <div class="spatial-congruence">
                         <h2>Spatial Congruence & World-as-Interface</h2>
                         <p style="text-align: justify;">
-                            Ghost of Tsushima achieves the purest spatial congruence in the open-world genre. Navigation, threat awareness, and progression are all communicated through the physical world rather than HUD overlays. The guiding wind is not a waypoint — it is an environmental force that the player physically experiences, creating a 1:1 relationship between world space and navigation intent.
+                            Ghost of Tsushima achieves the purest spatial congruence in the open-world genre. Navigation, threat awareness, and progression are all communicated through the physical world rather than HUD overlays. The guiding wind is not a waypoint â€” it is an environmental force that the player physically experiences, creating a 1:1 relationship between world space and navigation intent.
                         </p>
                     </div>
                     <div class="cognitive-load-bifurcation">
                         <h2>Cognitive Load Bifurcation</h2>
                         <p style="text-align: justify; margin-bottom: 2em;">
-                            Ghost of Tsushima reduces Extrinsic Load (the cognitive effort of using the interface) to near-zero by replacing HUD elements with world-embedded equivalents — freeing the player's full attention for the Intrinsic Load of combat mastery and exploration.
+                            Ghost of Tsushima reduces Extrinsic Load (the cognitive effort of using the interface) to near-zero by replacing HUD elements with world-embedded equivalents â€” freeing the player's full attention for the Intrinsic Load of combat mastery and exploration.
                         </p>
                         <table>
                             <thead>
@@ -1479,12 +1619,12 @@
                             <tbody>
 
                                 <tr>
-                                    <td><h6>Wind Navigation System</h6><p>Replaces compass and waypoint icons with an environmental force — zero HUD intrusion, maximum spatial immersion. Players never need to look away from the world.</p></td>
+                                    <td><h6>Wind Navigation System</h6><p>Replaces compass and waypoint icons with an environmental force â€” zero HUD intrusion, maximum spatial immersion. Players never need to look away from the world.</p></td>
                                     <td><h6>Stance System Memorization</h6><p>Four stances mapped to four enemy archetypes requires pattern recognition investment. New players may struggle to identify correct stances mid-combat without practice.</p></td>
                                 </tr>
                                 <tr>
-                                    <td><h6>World-Embedded Wayfinding</h6><p>Golden birds, foxes, and smoke columns guide exploration organically — each discovery feels earned rather than directed, reducing the GPS-game sensation.</p></td>
-                                    <td><h6>Limited Information on Screen</h6><p>While immersive, the minimal HUD can leave players uncertain of cooldown states, ghost tool quantities, and charm effects — information that requires menu access to verify.</p></td>
+                                    <td><h6>World-Embedded Wayfinding</h6><p>Golden birds, foxes, and smoke columns guide exploration organically â€” each discovery feels earned rather than directed, reducing the GPS-game sensation.</p></td>
+                                    <td><h6>Limited Information on Screen</h6><p>While immersive, the minimal HUD can leave players uncertain of cooldown states, ghost tool quantities, and charm effects â€” information that requires menu access to verify.</p></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -1498,7 +1638,7 @@
                 <section class="game-sections" id="ui-ux-weaknesses">
                     <h2>Strengths and Weaknesses Analysis</h2>
                     <p>
-                        A comprehensive evaluation of Ghost of Tsushima's interface paradigm — examining the tension between its celebrated world-embedded navigation design and the practical accessibility demands of a complex open-world action game.
+                        A comprehensive evaluation of Ghost of Tsushima's interface paradigm â€” examining the tension between its celebrated world-embedded navigation design and the practical accessibility demands of a complex open-world action game.
                     </p>
                     <table style="margin-bottom: 2em;">
                         <thead>
@@ -1524,7 +1664,7 @@
                                         <span class="label">01_DISCOVERY</span>
                                     </div>
                                     <h6>Mechanical Discoverability</h6>
-                                    <p>The game's stances, ghost tools, and charm systems are underexplained. Players may not discover synergies without external research — a discoverability failure in an otherwise elegant design.</p>
+                                    <p>The game's stances, ghost tools, and charm systems are underexplained. Players may not discover synergies without external research â€” a discoverability failure in an otherwise elegant design.</p>
                                 </td>
                             </tr>
                             <tr>
@@ -1552,7 +1692,7 @@
                                         <span class="label">03_ATMOSPHERE</span>
                                     </div>
                                     <h6>Atmospheric Feedback</h6>
-                                    <p>Nature-driven feedback — foxes leading to shrines, birds guiding to collectibles — creates a sense of the world being alive and responsive to player presence.</p>
+                                    <p>Nature-driven feedback â€” foxes leading to shrines, birds guiding to collectibles â€” creates a sense of the world being alive and responsive to player presence.</p>
                                 </td>
                                 <td>
                                     <div class="sw-item-head">
@@ -1567,12 +1707,39 @@
                     </table>
                     <div class="footnote summary">
                         <p>
-                            Ghost of Tsushima stands as the most successful attempt in modern gaming to make the world itself the interface. Its HCI philosophy — that every piece of information should be deliverable through the environment — is both its greatest achievement and its most significant limitation. The design trusts the player's perception completely, creating transcendence for attentive players and opacity for those who need explicit guidance.
+                            Ghost of Tsushima stands as the most successful attempt in modern gaming to make the world itself the interface. Its HCI philosophy â€” that every piece of information should be deliverable through the environment â€” is both its greatest achievement and its most significant limitation. The design trusts the player's perception completely, creating transcendence for attentive players and opacity for those who need explicit guidance.
                         </p>
                     </div>
                 </section>
             </div>
         </article>
+    
+        <!-- GAME PAGE NAVIGATION START -->
+        <div class="game-page-navigation" aria-label="Game page navigation">
+            <div class="page-nav-item prev">
+                <a class="btn btn-outline-secondary btn-prev" href="cyberPunk.html">
+                    <span class="btn-label">
+                        <svg class="nav-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path d="M15 18l-6-6 6-6"></path>
+                        </svg>
+                        <span>Previous Game</span>
+                    </span>
+                    <span class="subtext">Cyberpunk</span>
+                </a>
+            </div>
+            <div class="page-nav-item next">
+                <a class="btn btn-primary btn-next" href="assassinsCreedBlackFlag.html">
+                    <span class="btn-label">
+                        <span>Next Game</span>
+                        <svg class="nav-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path d="M9 6l6 6-6 6"></path>
+                        </svg>
+                    </span>
+                    <span class="subtext">Assassins Creed</span>
+                </a>
+            </div>
+        </div>
+        <!-- GAME PAGE NAVIGATION END -->
     </main>
             <footer>
         <h6>GameUX Atlas</h6>
@@ -1647,7 +1814,7 @@
     const EDITIONS = ["Standard", "Digital Deluxe", "Director's Cut"];
 
     const DESCRIPTION =
-        "Ghost of Tsushima is an open-world action-adventure game by Sucker Punch Productions, set during the 1274 Mongol invasion of Japan. Players guide Jin Sakai — a samurai who must embrace the methods of the Ghost — across a breathtaking feudal Japanese landscape renowned for its world-embedded navigation and minimal HUD design.";
+        "Ghost of Tsushima is an open-world action-adventure game by Sucker Punch Productions, set during the 1274 Mongol invasion of Japan. Players guide Jin Sakai â€” a samurai who must embrace the methods of the Ghost â€” across a breathtaking feudal Japanese landscape renowned for its world-embedded navigation and minimal HUD design.";
 
     // Document Variables
     const sectionRadios = Array.from(

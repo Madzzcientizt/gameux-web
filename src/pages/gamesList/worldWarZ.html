@@ -999,6 +999,145 @@
         .game-video-wrp {
             position: relative;
         }
+    
+        /* GAME PAGE NAVIGATION START */
+        .game-page-navigation {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1em;
+            margin: 2.5em auto 3em;
+            width: min(100%, 64rem);
+            padding: 0 1rem;
+        }
+
+        .game-page-navigation .page-nav-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.35em;
+            min-width: 10rem;
+            width: 100%;
+            position: relative;
+
+            & a {
+                width: 100%;
+            }
+        }
+
+        .game-page-navigation .page-nav-item.next {
+            align-items: flex-end;
+
+            & a {
+                text-align: right;
+            }
+        }
+
+        .game-page-navigation .btn {
+            min-width: 10rem;
+            border-radius: var(--t-radius-field);
+            font-weight: 600;
+            padding: 0.6em 1.1em;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+            isolation: isolate;
+            background-color: transparent !important;
+            transition: color 0.28s ease;
+        }
+
+        .game-page-navigation .btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            transform: scaleX(0);
+            transform-origin: left center;
+            transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+            z-index: -1;
+        }
+
+        .game-page-navigation .btn-prev {
+            --btn-fill: var(--t-color-secondary);
+            --btn-text-hover: var(--t-color-secondary-content);
+            color: var(--t-color-secondary) !important;
+            border-color: var(--t-color-secondary) !important;
+        }
+
+        .game-page-navigation .btn-prev::before {
+            background-color: var(--btn-fill);
+            transform-origin: left center;
+        }
+
+        .game-page-navigation .btn-next {
+            --btn-fill: var(--t-color-primary);
+            --btn-text-hover: var(--t-color-primary-content);
+            color: var(--t-color-primary) !important;
+            border-color: var(--t-color-primary) !important;
+        }
+
+        .game-page-navigation .btn-next::before {
+            background-color: var(--btn-fill);
+            transform-origin: right center;
+        }
+
+        .game-page-navigation .btn:hover,
+        .game-page-navigation .btn:focus-visible {
+            color: var(--btn-text-hover) !important;
+        }
+
+        .game-page-navigation .btn:hover::before,
+        .game-page-navigation .btn:focus-visible::before {
+            transform: scaleX(1);
+        }
+
+        .game-page-navigation .subtext {
+            display: block;
+            font-size: 0.78em;
+            color: inherit;
+            line-height: 1.2;
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .game-page-navigation .btn-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45em;
+            line-height: 1.15;
+        }
+
+        .game-page-navigation .page-nav-item.next .btn-label {
+            justify-content: flex-end;
+            width: 100%;
+        }
+
+        .game-page-navigation .nav-arrow {
+            width: 1em;
+            height: 1em;
+            flex-shrink: 0;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        @media (width < 48rem) {
+            .game-page-navigation {
+                grid-template-columns: 1fr;
+            }
+
+            .game-page-navigation .page-nav-item,
+            .game-page-navigation .page-nav-item.next {
+                align-items: stretch;
+            }
+
+            .game-page-navigation .btn,
+            .game-page-navigation .btn-prev,
+            .game-page-navigation .btn-next {
+                width: 100%;
+                margin: 0;
+            }
+        }
+        /* GAME PAGE NAVIGATION END */
     </style>
     <!-- Custom Styles ------------------------------------------------------------------------------------------ -->
 
@@ -1046,7 +1185,8 @@
     <main>
         <article class="wide">
             <section class="header-section">
-                <img class="game-poster-content game-poster-background-style" />
+                
+                <span class="archive-number">[ 044_worldwarz_valenzuela ]</span>
                 <h1 class="game-name game-name-header" title="Game Name">
                    (World War Z)
                 </h1>
@@ -1121,7 +1261,7 @@
                                     <button id="use-local-video-btn" class="btn-fallback btn-local" type="button">Use
                                         Local Video</button>
                                 </div>
-                                <p class="fallback-hint">💡 Try connecting through a different network or VPN to access
+                                <p class="fallback-hint">ðŸ’¡ Try connecting through a different network or VPN to access
                                     YouTube content.</p>
                             </div>
                         </div>
@@ -1256,7 +1396,7 @@
                         <li>
                             <h6>Visual Reaction Time</h6>
                             <div class="value">~150ms to ~600ms</div>
-                            <div class="desc">The reaction window is tight. Players must identify "Lurkers" hiding around corners or recognize the audio-visual cue of a "Screamer" before it attracts a secondary wave. During swarm events, the player’s ability to process and react to the shifting "zombie pyramid" is critical for survival.</div>
+                            <div class="desc">The reaction window is tight. Players must identify "Lurkers" hiding around corners or recognize the audio-visual cue of a "Screamer" before it attracts a secondary wave. During swarm events, the playerâ€™s ability to process and react to the shifting "zombie pyramid" is critical for survival.</div>
                         </li>
                     </ul>
                 </section>
@@ -1504,7 +1644,7 @@
                             <div>
                                 <ul class="primary-modalities">
                                     <h6>Primary Modalities</h6>
-                                    <li><strong>Visual</strong>: Non-diegetic HUD elements provide real-time updates on ammo and health, while the world space displays the "Swarm Status"—the literal height and density of the zombie pile—giving functional confirmation of defensive success.</li>
+                                    <li><strong>Visual</strong>: Non-diegetic HUD elements provide real-time updates on ammo and health, while the world space displays the "Swarm Status"â€”the literal height and density of the zombie pileâ€”giving functional confirmation of defensive success.</li>
                                     <li><strong>Auditory</strong>: Directional audio cues, such as the high-pitched ringing of a "Screamer" or the heavy charging sound of a "Bull," provide critical environmental data that forces immediate player repositioning.</li>
                                     <li><strong>Structural</strong>: Resource scarcity (medkits and defense kits) acts as a physical constraint, forcing a rhythmic cycle of aggressive expansion to find supplies and frantic contraction to hold a defensive line.</li>
                                 </ul>
@@ -1562,7 +1702,7 @@
                     </div>
                     <div class="footnote">
                         <q>
-                            World War Z’s application of HCI Principles focuses on spatial awareness and the management of high-density visual data. All analysis is based on interaction models anchored to Fitts's Law (rapid target acquisition) and Hick's Law (reducing choice during high-speed combat), ensuring players can make split-second decisions even when facing hundreds of moving entities.
+                            World War Zâ€™s application of HCI Principles focuses on spatial awareness and the management of high-density visual data. All analysis is based on interaction models anchored to Fitts's Law (rapid target acquisition) and Hick's Law (reducing choice during high-speed combat), ensuring players can make split-second decisions even when facing hundreds of moving entities.
                         </q>
                     </div>
                 </section>
@@ -1598,7 +1738,7 @@
                                         Swarm Rendering
                                     </h6>
                                     <p>
-                                        The engine’s ability to render hundreds of individual agents without UI lag provides a seamless sense of scale. Players can "read" the movement of the horde as a single fluid entity, making mass-scale crowd control a rewarding skill.
+                                        The engineâ€™s ability to render hundreds of individual agents without UI lag provides a seamless sense of scale. Players can "read" the movement of the horde as a single fluid entity, making mass-scale crowd control a rewarding skill.
                                     </p>
                                 </td>
                                 <td>
@@ -1662,6 +1802,33 @@
                 </section>
             </div>
         </article>
+    
+        <!-- GAME PAGE NAVIGATION START -->
+        <div class="game-page-navigation" aria-label="Game page navigation">
+            <div class="page-nav-item prev">
+                <a class="btn btn-outline-secondary btn-prev" href="warThunder.html">
+                    <span class="btn-label">
+                        <svg class="nav-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path d="M15 18l-6-6 6-6"></path>
+                        </svg>
+                        <span>Previous Game</span>
+                    </span>
+                    <span class="subtext">War Thunder</span>
+                </a>
+            </div>
+            <div class="page-nav-item next">
+                <a class="btn btn-primary btn-next" href="left4Dead.html">
+                    <span class="btn-label">
+                        <span>Next Game</span>
+                        <svg class="nav-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path d="M9 6l6 6-6 6"></path>
+                        </svg>
+                    </span>
+                    <span class="subtext">Left 4 Dead</span>
+                </a>
+            </div>
+        </div>
+        <!-- GAME PAGE NAVIGATION END -->
     </main>
             <footer>
         <h6>GameUX Atlas</h6>

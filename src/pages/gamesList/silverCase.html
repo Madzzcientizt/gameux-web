@@ -999,6 +999,145 @@
         .game-video-wrp {
             position: relative;
         }
+    
+        /* GAME PAGE NAVIGATION START */
+        .game-page-navigation {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1em;
+            margin: 2.5em auto 3em;
+            width: min(100%, 64rem);
+            padding: 0 1rem;
+        }
+
+        .game-page-navigation .page-nav-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.35em;
+            min-width: 10rem;
+            width: 100%;
+            position: relative;
+
+            & a {
+                width: 100%;
+            }
+        }
+
+        .game-page-navigation .page-nav-item.next {
+            align-items: flex-end;
+
+            & a {
+                text-align: right;
+            }
+        }
+
+        .game-page-navigation .btn {
+            min-width: 10rem;
+            border-radius: var(--t-radius-field);
+            font-weight: 600;
+            padding: 0.6em 1.1em;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+            isolation: isolate;
+            background-color: transparent !important;
+            transition: color 0.28s ease;
+        }
+
+        .game-page-navigation .btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            transform: scaleX(0);
+            transform-origin: left center;
+            transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+            z-index: -1;
+        }
+
+        .game-page-navigation .btn-prev {
+            --btn-fill: var(--t-color-secondary);
+            --btn-text-hover: var(--t-color-secondary-content);
+            color: var(--t-color-secondary) !important;
+            border-color: var(--t-color-secondary) !important;
+        }
+
+        .game-page-navigation .btn-prev::before {
+            background-color: var(--btn-fill);
+            transform-origin: left center;
+        }
+
+        .game-page-navigation .btn-next {
+            --btn-fill: var(--t-color-primary);
+            --btn-text-hover: var(--t-color-primary-content);
+            color: var(--t-color-primary) !important;
+            border-color: var(--t-color-primary) !important;
+        }
+
+        .game-page-navigation .btn-next::before {
+            background-color: var(--btn-fill);
+            transform-origin: right center;
+        }
+
+        .game-page-navigation .btn:hover,
+        .game-page-navigation .btn:focus-visible {
+            color: var(--btn-text-hover) !important;
+        }
+
+        .game-page-navigation .btn:hover::before,
+        .game-page-navigation .btn:focus-visible::before {
+            transform: scaleX(1);
+        }
+
+        .game-page-navigation .subtext {
+            display: block;
+            font-size: 0.78em;
+            color: inherit;
+            line-height: 1.2;
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .game-page-navigation .btn-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45em;
+            line-height: 1.15;
+        }
+
+        .game-page-navigation .page-nav-item.next .btn-label {
+            justify-content: flex-end;
+            width: 100%;
+        }
+
+        .game-page-navigation .nav-arrow {
+            width: 1em;
+            height: 1em;
+            flex-shrink: 0;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        @media (width < 48rem) {
+            .game-page-navigation {
+                grid-template-columns: 1fr;
+            }
+
+            .game-page-navigation .page-nav-item,
+            .game-page-navigation .page-nav-item.next {
+                align-items: stretch;
+            }
+
+            .game-page-navigation .btn,
+            .game-page-navigation .btn-prev,
+            .game-page-navigation .btn-next {
+                width: 100%;
+                margin: 0;
+            }
+        }
+        /* GAME PAGE NAVIGATION END */
     </style>
     <!-- Custom Styles ------------------------------------------------------------------------------------------ -->
 
@@ -1046,7 +1185,8 @@
     <main>
         <article class="wide">
             <section class="header-section">
-                <img class="game-poster-content game-poster-background-style" />
+                
+                <span class="archive-number">[ 060_silvercase_mateo ]</span>
                 <h1 class="game-name game-name-header" title="Game Name">
                     Game name
                 </h1>
@@ -1121,7 +1261,7 @@
                                     <button id="use-local-video-btn" class="btn-fallback btn-local" type="button">Use
                                         Local Video</button>
                                 </div>
-                                <p class="fallback-hint">💡 Try connecting through a different network or VPN to access
+                                <p class="fallback-hint">ðŸ’¡ Try connecting through a different network or VPN to access
                                     YouTube content.</p>
                             </div>
                         </div>
@@ -1342,7 +1482,7 @@
                                 <span class="count">[ ELEMENT_05 ]</span>
                                 <span class="header-text">Information & Dialogue Bar</span>
                                 <p>
-                                    The bottom-aligned interface element responsible for text delivery and environmental status. This area features the game’s signature kinetic typography, where text scrolls at varying speeds to match the rhythm of the soundtrack. It also displays technical headers like the "Contact Point" when interacting with objects or people.
+                                    The bottom-aligned interface element responsible for text delivery and environmental status. This area features the gameâ€™s signature kinetic typography, where text scrolls at varying speeds to match the rhythm of the soundtrack. It also displays technical headers like the "Contact Point" when interacting with objects or people.
                                 </p>
                             </div>
                         </div>
@@ -1351,11 +1491,11 @@
                     <div class="fittslaw">
                         <div>
                             <p>
-                                While traditional visual novels use static full-screen overlays, The Silver Case employs the “Film Window” engine to fragment the player's spatial awareness. Interaction is not based on pixel-perfect pointing, but on navigating a shifting architectural layout. The "M.I.S.C." system requires players to map narrative progression to a tactile, compass-like interface.
+                                While traditional visual novels use static full-screen overlays, The Silver Case employs the â€œFilm Windowâ€ engine to fragment the player's spatial awareness. Interaction is not based on pixel-perfect pointing, but on navigating a shifting architectural layout. The "M.I.S.C." system requires players to map narrative progression to a tactile, compass-like interface.
                             </p>
                             <div class="mathmodel">
                                 <h6>[ MATHEMATICAL MODEL ]</h6>
-                                <span>Cognitive Load = (W<sub>c</sub> × T<sub>8</sub> ) / log<sub>2</sub>(F + 1)</span>
+                                <span>Cognitive Load = (W<sub>c</sub> Ã— T<sub>8</sub> ) / log<sub>2</sub>(F + 1)</span>
                             </div>
                             <p>
                                 Where W<sub>c</sub> is Window Complexity (number of active panels), T<sub>8</sub> is Typography Speed, and F is Player UI Fluency.In The Silver Case, the difficulty lies in parsing information across asynchronous windows. High typography speeds combined with multiple moving viewports increase the cognitive load, requiring the player to develop "UI Fluency" to effectively filter narrative importance from aesthetic abstraction.
@@ -1399,7 +1539,7 @@
                 <section class="game-sections" id="user-interaction">
                     <h2>User Interaction</h2>
                         <p>
-                            An examination of the investigative and diagnostic paradigms in The Silver Case’s "Film Window" framework, focusing on the M.I.S.C. interface and the convergence of parallel narratives.
+                            An examination of the investigative and diagnostic paradigms in The Silver Caseâ€™s "Film Window" framework, focusing on the M.I.S.C. interface and the convergence of parallel narratives.
                         </p>
                     <div class="list-style-area">
                         <h3 class="text-center">Core Gameplay Loop</h3>
@@ -1426,7 +1566,7 @@
                             <li>
                             <h6>Decode</h6>
                                 <p>
-                                    Solve abstract, industrial puzzles—often involving numerical codes or environmental triggers—to bypass bureaucratic lockdowns and uncover the hidden history of the legendary killer, Kamui.
+                                    Solve abstract, industrial puzzlesâ€”often involving numerical codes or environmental triggersâ€”to bypass bureaucratic lockdowns and uncover the hidden history of the legendary killer, Kamui.
                                 </p>
                             </li>
                         </ol>
@@ -1523,7 +1663,7 @@
                     <div class="spatial-congruence">
                         <h2>Spatial Congruence</h2>
                         <p style="text-align: justify;">
-                            The "Film Window" engine maintains spatial consistency by treating the screen as a modular canvas. The M.I.S.C. Wheel serves as a persistent spatial metaphor, allowing players to navigate 3D wireframes and 2D dialogue panels using a consistent circular interaction pattern. This directional mapping creates a direct link between the player's tactile input and the character’s movement through the claustrophobic 24 Wards.
+                            The "Film Window" engine maintains spatial consistency by treating the screen as a modular canvas. The M.I.S.C. Wheel serves as a persistent spatial metaphor, allowing players to navigate 3D wireframes and 2D dialogue panels using a consistent circular interaction pattern. This directional mapping creates a direct link between the player's tactile input and the characterâ€™s movement through the claustrophobic 24 Wards.
                         </p>
                     </div>
                     <div class="cognitive-load-bifurcation">
@@ -1574,7 +1714,7 @@
                 <section class="game-sections" id="ui-ux-weaknesses">
                     <h2>Strengths and Weaknesses Analysis</h2>
                     <p>
-                        A comprehensive evaluation of The Silver Case’s "Film Window" interface, examining the balance between avant-garde aesthetic immersion and the mechanical constraints of its experimental navigation systems.
+                        A comprehensive evaluation of The Silver Caseâ€™s "Film Window" interface, examining the balance between avant-garde aesthetic immersion and the mechanical constraints of its experimental navigation systems.
                     </p>
                     <table style="margin-bottom: 2em;">
                         <thead>
@@ -1670,7 +1810,7 @@
                                     </div>
                                     <h6>Distinct Visual Language</h6>
                                     <p>
-                                        The UI establishes a bold, "Internet-core" industrial identity that sets it apart from all other visual novels. The use of minimalist 3D wireframes and grainy, monochromatic filters reinforces the game’s themes of digital isolation and hauntology.
+                                        The UI establishes a bold, "Internet-core" industrial identity that sets it apart from all other visual novels. The use of minimalist 3D wireframes and grainy, monochromatic filters reinforces the gameâ€™s themes of digital isolation and hauntology.
                                     </p>
                                 </td>
                                 <td>
@@ -1700,6 +1840,33 @@
                 </section>
             </div>
         </article>
+    
+        <!-- GAME PAGE NAVIGATION START -->
+        <div class="game-page-navigation" aria-label="Game page navigation">
+            <div class="page-nav-item prev">
+                <a class="btn btn-outline-secondary btn-prev" href="hotelDusk.html">
+                    <span class="btn-label">
+                        <svg class="nav-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path d="M15 18l-6-6 6-6"></path>
+                        </svg>
+                        <span>Previous Game</span>
+                    </span>
+                    <span class="subtext">Hotel Dusk: Room 215</span>
+                </a>
+            </div>
+            <div class="page-nav-item next">
+                <a class="btn btn-primary btn-next" href="leagueOfLegends.html">
+                    <span class="btn-label">
+                        <span>Next Game</span>
+                        <svg class="nav-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path d="M9 6l6 6-6 6"></path>
+                        </svg>
+                    </span>
+                    <span class="subtext">League of Legends</span>
+                </a>
+            </div>
+        </div>
+        <!-- GAME PAGE NAVIGATION END -->
     </main>
             <footer>
         <h6>GameUX Atlas</h6>
@@ -1774,7 +1941,7 @@ const VIDEOURL = "../../../public/videos/silverCase_trailer.mp4";
     const EDITIONS = ["The Silver Case", "The Silver Case 2425", "The Silver Case HD Remaster"];
 
     const DESCRIPTION =
-        "The Silver Case is a seminal surreal visual novel and adventure game directed by Goichi Suda (Suda51) and the debut title from Grasshopper Manufacture. Set in the fictional 24 Wards of Japan, the game follows a series of bizarre murders that suggest the return of the legendary serial killer, Kamui Uehara. It is famous for introducing the Film Window engine—a unique UI that displays text, 3D environments, and cinematic panels in shifting windows across the screen—creating a high-concept, grainy aesthetic that blends hard-boiled crime noir with psychological abstraction.";
+        "The Silver Case is a seminal surreal visual novel and adventure game directed by Goichi Suda (Suda51) and the debut title from Grasshopper Manufacture. Set in the fictional 24 Wards of Japan, the game follows a series of bizarre murders that suggest the return of the legendary serial killer, Kamui Uehara. It is famous for introducing the Film Window engineâ€”a unique UI that displays text, 3D environments, and cinematic panels in shifting windows across the screenâ€”creating a high-concept, grainy aesthetic that blends hard-boiled crime noir with psychological abstraction.";
     // Document Variables
     const sectionRadios = Array.from(
         document.querySelectorAll('input[name="game-section"]'),

@@ -999,6 +999,145 @@
         .game-video-wrp {
             position: relative;
         }
+    
+        /* GAME PAGE NAVIGATION START */
+        .game-page-navigation {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1em;
+            margin: 2.5em auto 3em;
+            width: min(100%, 64rem);
+            padding: 0 1rem;
+        }
+
+        .game-page-navigation .page-nav-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.35em;
+            min-width: 10rem;
+            width: 100%;
+            position: relative;
+
+            & a {
+                width: 100%;
+            }
+        }
+
+        .game-page-navigation .page-nav-item.next {
+            align-items: flex-end;
+
+            & a {
+                text-align: right;
+            }
+        }
+
+        .game-page-navigation .btn {
+            min-width: 10rem;
+            border-radius: var(--t-radius-field);
+            font-weight: 600;
+            padding: 0.6em 1.1em;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+            isolation: isolate;
+            background-color: transparent !important;
+            transition: color 0.28s ease;
+        }
+
+        .game-page-navigation .btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            transform: scaleX(0);
+            transform-origin: left center;
+            transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+            z-index: -1;
+        }
+
+        .game-page-navigation .btn-prev {
+            --btn-fill: var(--t-color-secondary);
+            --btn-text-hover: var(--t-color-secondary-content);
+            color: var(--t-color-secondary) !important;
+            border-color: var(--t-color-secondary) !important;
+        }
+
+        .game-page-navigation .btn-prev::before {
+            background-color: var(--btn-fill);
+            transform-origin: left center;
+        }
+
+        .game-page-navigation .btn-next {
+            --btn-fill: var(--t-color-primary);
+            --btn-text-hover: var(--t-color-primary-content);
+            color: var(--t-color-primary) !important;
+            border-color: var(--t-color-primary) !important;
+        }
+
+        .game-page-navigation .btn-next::before {
+            background-color: var(--btn-fill);
+            transform-origin: right center;
+        }
+
+        .game-page-navigation .btn:hover,
+        .game-page-navigation .btn:focus-visible {
+            color: var(--btn-text-hover) !important;
+        }
+
+        .game-page-navigation .btn:hover::before,
+        .game-page-navigation .btn:focus-visible::before {
+            transform: scaleX(1);
+        }
+
+        .game-page-navigation .subtext {
+            display: block;
+            font-size: 0.78em;
+            color: inherit;
+            line-height: 1.2;
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .game-page-navigation .btn-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45em;
+            line-height: 1.15;
+        }
+
+        .game-page-navigation .page-nav-item.next .btn-label {
+            justify-content: flex-end;
+            width: 100%;
+        }
+
+        .game-page-navigation .nav-arrow {
+            width: 1em;
+            height: 1em;
+            flex-shrink: 0;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        @media (width < 48rem) {
+            .game-page-navigation {
+                grid-template-columns: 1fr;
+            }
+
+            .game-page-navigation .page-nav-item,
+            .game-page-navigation .page-nav-item.next {
+                align-items: stretch;
+            }
+
+            .game-page-navigation .btn,
+            .game-page-navigation .btn-prev,
+            .game-page-navigation .btn-next {
+                width: 100%;
+                margin: 0;
+            }
+        }
+        /* GAME PAGE NAVIGATION END */
     </style>
     <!-- Custom Styles ------------------------------------------------------------------------------------------ -->
 
@@ -1046,7 +1185,8 @@
     <main>
         <article class="wide">
             <section class="header-section">
-                <img class="game-poster-content game-poster-background-style" />
+                
+                <span class="archive-number">[ 056_hotlinemiami_mateo ]</span>
                 <h1 class="game-name game-name-header" title="Game Name">
                     Game name
                 </h1>
@@ -1121,7 +1261,7 @@
                                     <button id="use-local-video-btn" class="btn-fallback btn-local" type="button">Use
                                         Local Video</button>
                                 </div>
-                                <p class="fallback-hint">💡 Try connecting through a different network or VPN to access
+                                <p class="fallback-hint">ðŸ’¡ Try connecting through a different network or VPN to access
                                     YouTube content.</p>
                             </div>
                         </div>
@@ -1241,7 +1381,7 @@
                     <ul class="metrics-list">
                         <li>
                             <h6>Cognitive Load</h6>
-                            <div class="value">8–10 Bits</div>
+                            <div class="value">8â€“10 Bits</div>
                             <div class="desc">High-bandwidth processing required for floor-wide enemy tracking, weapon durability monitoring, and optimal pathing for score maximization.</div>
                         </li>
                         <li>
@@ -1251,7 +1391,7 @@
                         </li>
                         <li>
                             <h6>Visual Reaction Time</h6>
-                            <div class="value">180–250ms</div>
+                            <div class="value">180â€“250ms</div>
                             <div class="desc">Target acquisition speed needed to identify threats through psychedelic screen-distortion effects and high-contrast sprite flickering.</div>
                         </li>
                     </ul>
@@ -1341,7 +1481,7 @@
                                 <span class="count">[ ELEMENT_05 ]</span>
                                 <span class="header-text">Level Grade Summary</span>
                                 <p>
-                                    The post-mission results screen that provides a comprehensive breakdown of player performance. It categorizes actions into specific scoring metrics—such as Boldness, Combos, and Flexibility—to evaluate the player's playstyle. The screen uses slanted, heavy-italicized typography and a pulsating color palette to maintain the game’s high-energy momentum even during downtime.
+                                    The post-mission results screen that provides a comprehensive breakdown of player performance. It categorizes actions into specific scoring metricsâ€”such as Boldness, Combos, and Flexibilityâ€”to evaluate the player's playstyle. The screen uses slanted, heavy-italicized typography and a pulsating color palette to maintain the gameâ€™s high-energy momentum even during downtime.
                                 </p>
                             </div>
                         </div>
@@ -1350,7 +1490,7 @@
                         <div class="fittslaw">
                             <div>
                                 <p>
-                                    Fitt’s Law states that the time required to move to a target area is a function of the distance to the target and the size of the target. In Hotline Miami, success is dictated by pixel-perfect twitch aiming. The game leverages Fitt’s Law by utilizing a "Loose Aim" system where the player’s crosshair serves as a high-contrast anchor point. By keeping the target (enemies) relatively large in proportion to the screen and utilizing a "Lock-On" mechanic (on consoles/controllers), the game artificially increases the target's "Width" (W), allowing for the sub-second Movement Time (MT) required to clear rooms before the AI can react.
+                                    Fittâ€™s Law states that the time required to move to a target area is a function of the distance to the target and the size of the target. In Hotline Miami, success is dictated by pixel-perfect twitch aiming. The game leverages Fittâ€™s Law by utilizing a "Loose Aim" system where the playerâ€™s crosshair serves as a high-contrast anchor point. By keeping the target (enemies) relatively large in proportion to the screen and utilizing a "Lock-On" mechanic (on consoles/controllers), the game artificially increases the target's "Width" (W), allowing for the sub-second Movement Time (MT) required to clear rooms before the AI can react.
                                 </p>
                                 <div class="mathmodel">
                                     <h6>[ MATHEMATICAL MODEL ]</h6>
@@ -1409,7 +1549,7 @@
                             <li>
                                 <h6>Blitz</h6>
                                 <p>
-                                    The execution phase. This is where Fitt's Law meets twitch reflex—players must snap the crosshair between targets in milliseconds. The UI assists through high-contrast outlines, ensuring "Movement Time" (MT) is limited only by the player's physical dexterity.
+                                    The execution phase. This is where Fitt's Law meets twitch reflexâ€”players must snap the crosshair between targets in milliseconds. The UI assists through high-contrast outlines, ensuring "Movement Time" (MT) is limited only by the player's physical dexterity.
                                 </p>
                             </li>
                             <li>
@@ -1517,7 +1657,7 @@
                     <div class="cognitive-load-bifurcation">
                         <h2>Cognitive Load Bifurcation</h2>
                         <p style="text-align: justify; margin-bottom: 2em;">
-                            The core success of Hotline Miami’s HCI is the elimination of Extrinsic Load (fiddling with menus) to allow the player to dedicate 100% of their Intrinsic Load to target prioritization and rhythm-based combat.
+                            The core success of Hotline Miamiâ€™s HCI is the elimination of Extrinsic Load (fiddling with menus) to allow the player to dedicate 100% of their Intrinsic Load to target prioritization and rhythm-based combat.
                         </p>
                         <table>
                             <thead>
@@ -1666,7 +1806,7 @@
                                         Kinetic Juice & Reinforcement
                                     </h6>
                                     <p>
-                                        The interface excels at "Juiciness"—visual flourishes like screen-shakes, score pop-ups, and blood splatters. These don't just provide data; they serve as psychological reinforcers that reward aggressive, high-risk playstyles.
+                                        The interface excels at "Juiciness"â€”visual flourishes like screen-shakes, score pop-ups, and blood splatters. These don't just provide data; they serve as psychological reinforcers that reward aggressive, high-risk playstyles.
                                     </p>
                                 </td>
                                 <td>
@@ -1692,12 +1832,39 @@
                     </table>
                     <div class="footnote summary">
                         <p>
-                            Hotline Miami utilizes a hyper-responsive, psychedelic interface designed to act as a direct neural link between the player's reflexes and the 50 Blessings' ultra-violent campaign. The UX design masterfully applies Fitt’s Law and cognitive load bifurcation to eliminate traditional interface friction—such as loading screens and complex menus—transforming mechanical momentum into the primary driver of engagement. By grounding every kill in a "Sensory Triad" of high-BPM synth-wave, screen-shaking visuals, and sharp haptic feedback, the system creates an intoxicating, hallucinogenic loop where the interface disappears, leaving only the player’s sub-second decision-making.
+                            Hotline Miami utilizes a hyper-responsive, psychedelic interface designed to act as a direct neural link between the player's reflexes and the 50 Blessings' ultra-violent campaign. The UX design masterfully applies Fittâ€™s Law and cognitive load bifurcation to eliminate traditional interface frictionâ€”such as loading screens and complex menusâ€”transforming mechanical momentum into the primary driver of engagement. By grounding every kill in a "Sensory Triad" of high-BPM synth-wave, screen-shaking visuals, and sharp haptic feedback, the system creates an intoxicating, hallucinogenic loop where the interface disappears, leaving only the playerâ€™s sub-second decision-making.
                         </p>
                     </div>
                 </section>
             </div>
         </article>
+    
+        <!-- GAME PAGE NAVIGATION START -->
+        <div class="game-page-navigation" aria-label="Game page navigation">
+            <div class="page-nav-item prev">
+                <a class="btn btn-outline-secondary btn-prev" href="whosLila.html">
+                    <span class="btn-label">
+                        <svg class="nav-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path d="M15 18l-6-6 6-6"></path>
+                        </svg>
+                        <span>Previous Game</span>
+                    </span>
+                    <span class="subtext">Who's Lila</span>
+                </a>
+            </div>
+            <div class="page-nav-item next">
+                <a class="btn btn-primary btn-next" href="obraDinn.html">
+                    <span class="btn-label">
+                        <span>Next Game</span>
+                        <svg class="nav-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path d="M9 6l6 6-6 6"></path>
+                        </svg>
+                    </span>
+                    <span class="subtext">Return of the Obra Dinn</span>
+                </a>
+            </div>
+        </div>
+        <!-- GAME PAGE NAVIGATION END -->
     </main>
             <footer>
         <h6>GameUX Atlas</h6>

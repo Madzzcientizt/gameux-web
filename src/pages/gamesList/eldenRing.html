@@ -999,6 +999,145 @@
         .game-video-wrp {
             position: relative;
         }
+    
+        /* GAME PAGE NAVIGATION START */
+        .game-page-navigation {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1em;
+            margin: 2.5em auto 3em;
+            width: min(100%, 64rem);
+            padding: 0 1rem;
+        }
+
+        .game-page-navigation .page-nav-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.35em;
+            min-width: 10rem;
+            width: 100%;
+            position: relative;
+
+            & a {
+                width: 100%;
+            }
+        }
+
+        .game-page-navigation .page-nav-item.next {
+            align-items: flex-end;
+
+            & a {
+                text-align: right;
+            }
+        }
+
+        .game-page-navigation .btn {
+            min-width: 10rem;
+            border-radius: var(--t-radius-field);
+            font-weight: 600;
+            padding: 0.6em 1.1em;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+            isolation: isolate;
+            background-color: transparent !important;
+            transition: color 0.28s ease;
+        }
+
+        .game-page-navigation .btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            transform: scaleX(0);
+            transform-origin: left center;
+            transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+            z-index: -1;
+        }
+
+        .game-page-navigation .btn-prev {
+            --btn-fill: var(--t-color-secondary);
+            --btn-text-hover: var(--t-color-secondary-content);
+            color: var(--t-color-secondary) !important;
+            border-color: var(--t-color-secondary) !important;
+        }
+
+        .game-page-navigation .btn-prev::before {
+            background-color: var(--btn-fill);
+            transform-origin: left center;
+        }
+
+        .game-page-navigation .btn-next {
+            --btn-fill: var(--t-color-primary);
+            --btn-text-hover: var(--t-color-primary-content);
+            color: var(--t-color-primary) !important;
+            border-color: var(--t-color-primary) !important;
+        }
+
+        .game-page-navigation .btn-next::before {
+            background-color: var(--btn-fill);
+            transform-origin: right center;
+        }
+
+        .game-page-navigation .btn:hover,
+        .game-page-navigation .btn:focus-visible {
+            color: var(--btn-text-hover) !important;
+        }
+
+        .game-page-navigation .btn:hover::before,
+        .game-page-navigation .btn:focus-visible::before {
+            transform: scaleX(1);
+        }
+
+        .game-page-navigation .subtext {
+            display: block;
+            font-size: 0.78em;
+            color: inherit;
+            line-height: 1.2;
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .game-page-navigation .btn-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45em;
+            line-height: 1.15;
+        }
+
+        .game-page-navigation .page-nav-item.next .btn-label {
+            justify-content: flex-end;
+            width: 100%;
+        }
+
+        .game-page-navigation .nav-arrow {
+            width: 1em;
+            height: 1em;
+            flex-shrink: 0;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        @media (width < 48rem) {
+            .game-page-navigation {
+                grid-template-columns: 1fr;
+            }
+
+            .game-page-navigation .page-nav-item,
+            .game-page-navigation .page-nav-item.next {
+                align-items: stretch;
+            }
+
+            .game-page-navigation .btn,
+            .game-page-navigation .btn-prev,
+            .game-page-navigation .btn-next {
+                width: 100%;
+                margin: 0;
+            }
+        }
+        /* GAME PAGE NAVIGATION END */
     </style>
     <!-- Custom Styles ------------------------------------------------------------------------------------------ -->
 
@@ -1046,7 +1185,8 @@
     <main>
         <article class="wide">
             <section class="header-section">
-                <img class="game-poster-content game-poster-background-style" />
+                
+                <span class="archive-number">[ 021_eldenring_dinawanao ]</span>
                 <h1 class="game-name game-name-header" title="Game Name">
                     Game name
                 </h1>
@@ -1121,7 +1261,7 @@
                                     <button id="use-local-video-btn" class="btn-fallback btn-local" type="button">Use
                                         Local Video</button>
                                 </div>
-                                <p class="fallback-hint">💡 Try connecting through a different network or VPN to access
+                                <p class="fallback-hint">ðŸ’¡ Try connecting through a different network or VPN to access
                                     YouTube content.</p>
                             </div>
                         </div>
@@ -1238,7 +1378,7 @@
                         Elden Ring is a 2022 action role-playing game developed by FromSoftware and published by Bandai Namco Entertainment. Directed by Hidetaka Miyazaki with world-building collaboration from novelist George R.R. Martin, it released on February 25, 2022 for PC, PlayStation, and Xbox platforms. It stands as a spiritual successor to the Dark Souls series, expanding its demanding combat design into a full open-world structure.
                     </p>
                     <p>
-                        Set in the mythological Lands Between, players assume the role of the Tarnished — an exile summoned to repair the shattered Elden Ring and become Elden Lord. The game blends seamless open-world exploration with FromSoftware's signature methodical combat. Its balance of minimal UI against maximum player agency makes it a landmark case study in HCI for action games.
+                        Set in the mythological Lands Between, players assume the role of the Tarnished â€” an exile summoned to repair the shattered Elden Ring and become Elden Lord. The game blends seamless open-world exploration with FromSoftware's signature methodical combat. Its balance of minimal UI against maximum player agency makes it a landmark case study in HCI for action games.
                     </p>
                     <ul class="metrics-list">
                         <li>
@@ -1248,7 +1388,7 @@
                         </li>
                         <li>
                             <h6>Response Time</h6>
-                            <div class="value">±100ms to ±300ms</div>
+                            <div class="value">Â±100ms to Â±300ms</div>
                             <div class="desc">Time between user action and system feedback</div>
                         </li>
                         <li>
@@ -1276,7 +1416,7 @@
                                 </p>
                                 <ul>
                                     <h6>Design Principles</h6>
-                                    <li>Minimal Ink — bars only appear when needed</li>
+                                    <li>Minimal Ink â€” bars only appear when needed</li>
                                     <li>Color-Coded Resources (Red/Blue/Green)</li>
                                     <li>Context-Sensitive Visibility</li>
                                 </ul>
@@ -1293,7 +1433,7 @@
                                 <span class="count">[ ELEMENT_02 ]</span>
                                 <span class="header-text">Open-World Map & Grace Markers</span>
                                 <p>
-                                    A detailed open-world map allows custom marker placement across the Lands Between. Sites of Grace glow gold as fast-travel anchors, and a subtle compass strip supports spatial navigation — all without breaking immersion via intrusive waypoint overlays.
+                                    A detailed open-world map allows custom marker placement across the Lands Between. Sites of Grace glow gold as fast-travel anchors, and a subtle compass strip supports spatial navigation â€” all without breaking immersion via intrusive waypoint overlays.
                                 </p>
                             </div>
                         </div>
@@ -1317,14 +1457,14 @@
                     <div class="fittslaw">
                         <div>
                             <p>
-                                Fitt's Law states that the time to acquire a target is a function of its distance and width. In Elden Ring, the lock-on reticle reduces the effective distance (D) to enemies by anchoring camera to target, while the temporal parry window acts as the 'width' (W) — narrow against fast enemies and wider against slow ones.
+                                Fitt's Law states that the time to acquire a target is a function of its distance and width. In Elden Ring, the lock-on reticle reduces the effective distance (D) to enemies by anchoring camera to target, while the temporal parry window acts as the 'width' (W) â€” narrow against fast enemies and wider against slow ones.
                             </p>
                             <div class="mathmodel">
                                 <h6>[ MATHEMATICAL MODEL ]</h6>
                                 <span>MT = a + b * log<sub>2</sub>(2D/W)</span>
                             </div>
                             <p>
-                                The lock-on system minimizes D by anchoring the camera to the enemy. The challenge then shifts entirely to timing precision — parry frames act as a temporal W that shrinks dramatically under high-difficulty encounters, creating a direct Fitts's Law analogy in the time domain rather than space.
+                                The lock-on system minimizes D by anchoring the camera to the enemy. The challenge then shifts entirely to timing precision â€” parry frames act as a temporal W that shrinks dramatically under high-difficulty encounters, creating a direct Fitts's Law analogy in the time domain rather than space.
                             </p>
                         </div>
                         <div>
@@ -1342,7 +1482,7 @@
                         <ol class="three-columns md-one-columns">
                             <li>
                                 <h6>Boss Health Bar</h6>
-                                <p>Primary focus during combat. Positioned centrally at the bottom, the contrasting red bar draws the eye and conveys urgency as phase thresholds approach — demanding player attention above all other HUD elements.</p>
+                                <p>Primary focus during combat. Positioned centrally at the bottom, the contrasting red bar draws the eye and conveys urgency as phase thresholds approach â€” demanding player attention above all other HUD elements.</p>
                             </li>
                             <li>
                                 <h6>Player Resource Bars</h6>
@@ -1361,7 +1501,7 @@
                 <section class="game-sections" id="user-interaction">
                     <h2>User Interaction</h2>
                     <p>
-                        An investigation into Elden Ring's combat-first interface design — examining how FromSoftware achieves maximum player agency through radical HUD minimalism in a high-stakes action RPG.
+                        An investigation into Elden Ring's combat-first interface design â€” examining how FromSoftware achieves maximum player agency through radical HUD minimalism in a high-stakes action RPG.
                     </p>
                     <div class="list-style-area">
                         <h3 class="text-center">Core Gameplay Loop</h3>
@@ -1369,11 +1509,11 @@
                         <ol class="four-columns md-two-columns">
                             <li>
                                 <h6>Perceive</h6>
-                                <p>Player reads the battlefield through minimal on-screen UI and world-embedded cues — enemy posture, boss animations, and environmental hazards inform decision-making without explicit prompts.</p>
+                                <p>Player reads the battlefield through minimal on-screen UI and world-embedded cues â€” enemy posture, boss animations, and environmental hazards inform decision-making without explicit prompts.</p>
                             </li>
                             <li>
                                 <h6>Decide</h6>
-                                <p>The player selects a tactical response — dodge, parry, attack, or use item — informed by the stamina bar, enemy stance indicators, and personal risk tolerance in real time.</p>
+                                <p>The player selects a tactical response â€” dodge, parry, attack, or use item â€” informed by the stamina bar, enemy stance indicators, and personal risk tolerance in real time.</p>
                             </li>
                             <li>
                                 <h6>Execute</h6>
@@ -1381,7 +1521,7 @@
                             </li>
                             <li>
                                 <h6>Adapt</h6>
-                                <p>Player adjusts strategy based on boss phase shifts, stamina depletion, or death — iterating over the encounter with accumulated knowledge each attempt.</p>
+                                <p>Player adjusts strategy based on boss phase shifts, stamina depletion, or death â€” iterating over the encounter with accumulated knowledge each attempt.</p>
                             </li>
                         </ol>
                     </div>
@@ -1389,7 +1529,7 @@
                     <div class="multi-modal-feedback">
                         <div>
                             <p>
-                                Elden Ring relies on a tightly choreographed triad of sensory feedback to communicate the outcome of each player action — minimizing ambiguity in life-or-death split-second decisions.
+                                Elden Ring relies on a tightly choreographed triad of sensory feedback to communicate the outcome of each player action â€” minimizing ambiguity in life-or-death split-second decisions.
                             </p>
                         </div>
                         <div>
@@ -1433,7 +1573,7 @@
                             </div>
                             <div>
                                 <h6>Haptic Feedback</h6>
-                                <p>DualSense adaptive triggers provide resistance during heavy weapon swings, and rumble feedback escalates with boss proximity and power attacks — deepening physical immersion without HUD dependency.</p>
+                                <p>DualSense adaptive triggers provide resistance during heavy weapon swings, and rumble feedback escalates with boss proximity and power attacks â€” deepening physical immersion without HUD dependency.</p>
                             </div>
                         </li>
                     </ul>
@@ -1445,7 +1585,7 @@
                         <div class="cybernetic-content">
                             <div>
                                 <p style="text-align: justify;">
-                                    Elden Ring employs a multi-modal feedback architecture that provides immediate visual, auditory, and haptic confirmation of actions. The feedback loop closes within milliseconds, aligning with the Action-Perception cycle fundamental to high-stakes HCI. The system is deliberately sparse — every cue that exists is meaningful.
+                                    Elden Ring employs a multi-modal feedback architecture that provides immediate visual, auditory, and haptic confirmation of actions. The feedback loop closes within milliseconds, aligning with the Action-Perception cycle fundamental to high-stakes HCI. The system is deliberately sparse â€” every cue that exists is meaningful.
                                 </p>
                             </div>
                             <div>
@@ -1461,7 +1601,7 @@
                     <div class="spatial-congruence">
                         <h2>Spatial Congruence & World-Embedded UI</h2>
                         <p style="text-align: justify;">
-                            Elden Ring achieves spatial congruence by embedding information in the world itself rather than overlaying HUD elements. Items glow with soft light, Sites of Grace emit golden beams, and enemy tells are communicated through animation rather than icons. The player's mental model maps directly to the physical world — no translation layer required.
+                            Elden Ring achieves spatial congruence by embedding information in the world itself rather than overlaying HUD elements. Items glow with soft light, Sites of Grace emit golden beams, and enemy tells are communicated through animation rather than icons. The player's mental model maps directly to the physical world â€” no translation layer required.
                         </p>
                     </div>
                     <div class="cognitive-load-bifurcation">
@@ -1498,7 +1638,7 @@
                 <section class="game-sections" id="ui-ux-weaknesses">
                     <h2>Strengths and Weaknesses Analysis</h2>
                     <p>
-                        A comprehensive evaluation of Elden Ring's interface paradigm — examining the friction between radical HUD minimalism and the demands placed on new players navigating one of gaming's most complex open worlds.
+                        A comprehensive evaluation of Elden Ring's interface paradigm â€” examining the friction between radical HUD minimalism and the demands placed on new players navigating one of gaming's most complex open worlds.
                     </p>
                     <table style="margin-bottom: 2em;">
                         <thead>
@@ -1516,7 +1656,7 @@
                                         <span class="label">01_IMMERSION</span>
                                     </div>
                                     <h6>World Immersion</h6>
-                                    <p>The near-absent HUD forces players into the world — navigation, threat assessment, and resource management all occur through environmental reading, creating unparalleled immersion.</p>
+                                    <p>The near-absent HUD forces players into the world â€” navigation, threat assessment, and resource management all occur through environmental reading, creating unparalleled immersion.</p>
                                 </td>
                                 <td>
                                     <div class="sw-item-head">
@@ -1542,7 +1682,7 @@
                                         <span class="label">02_OPACITY</span>
                                     </div>
                                     <h6>UI Opacity</h6>
-                                    <p>Mechanics like weapon scaling, Bleed buildup, and poise are poorly communicated. Players frequently rely on third-party wikis to understand core systems — a failure of discoverability.</p>
+                                    <p>Mechanics like weapon scaling, Bleed buildup, and poise are poorly communicated. Players frequently rely on third-party wikis to understand core systems â€” a failure of discoverability.</p>
                                 </td>
                             </tr>
                             <tr>
@@ -1552,7 +1692,7 @@
                                         <span class="label">03_REWARD</span>
                                     </div>
                                     <h6>Feedback Satisfaction</h6>
-                                    <p>When the system does provide feedback — a critical parry flash, a boss's stagger — it carries enormous weight precisely because it is rare. Reward salience is maximized.</p>
+                                    <p>When the system does provide feedback â€” a critical parry flash, a boss's stagger â€” it carries enormous weight precisely because it is rare. Reward salience is maximized.</p>
                                 </td>
                                 <td>
                                     <div class="sw-item-head">
@@ -1567,12 +1707,39 @@
                     </table>
                     <div class="footnote summary">
                         <p>
-                            Elden Ring represents a philosophical statement in HCI design: that the most powerful interface is one that disappears. Its strengths are inseparable from its weaknesses — the same minimalism that creates transcendent flow for skilled players creates impenetrable opacity for newcomers. The system trusts the player completely, for better and worse.
+                            Elden Ring represents a philosophical statement in HCI design: that the most powerful interface is one that disappears. Its strengths are inseparable from its weaknesses â€” the same minimalism that creates transcendent flow for skilled players creates impenetrable opacity for newcomers. The system trusts the player completely, for better and worse.
                         </p>
                     </div>
                 </section>
             </div>
         </article>
+    
+        <!-- GAME PAGE NAVIGATION START -->
+        <div class="game-page-navigation" aria-label="Game page navigation">
+            <div class="page-nav-item prev">
+                <a class="btn btn-outline-secondary btn-prev" href="metaphor.html">
+                    <span class="btn-label">
+                        <svg class="nav-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path d="M15 18l-6-6 6-6"></path>
+                        </svg>
+                        <span>Previous Game</span>
+                    </span>
+                    <span class="subtext">Metaphor</span>
+                </a>
+            </div>
+            <div class="page-nav-item next">
+                <a class="btn btn-primary btn-next" href="cyberPunk.html">
+                    <span class="btn-label">
+                        <span>Next Game</span>
+                        <svg class="nav-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path d="M9 6l6 6-6 6"></path>
+                        </svg>
+                    </span>
+                    <span class="subtext">Cyberpunk</span>
+                </a>
+            </div>
+        </div>
+        <!-- GAME PAGE NAVIGATION END -->
     </main>
             <footer>
         <h6>GameUX Atlas</h6>
@@ -1647,7 +1814,7 @@
     const EDITIONS = ["Standard", "Collector's Edition", "Shadow of the Erdtree DLC"];
 
     const DESCRIPTION =
-        "Elden Ring is an action RPG developed by FromSoftware, set in the Lands Between — a vast open world co-created with George R.R. Martin. Players explore interconnected regions, battle formidable bosses, and build a custom Tarnished warrior through one of gaming's deepest build systems.";
+        "Elden Ring is an action RPG developed by FromSoftware, set in the Lands Between â€” a vast open world co-created with George R.R. Martin. Players explore interconnected regions, battle formidable bosses, and build a custom Tarnished warrior through one of gaming's deepest build systems.";
 
     // Document Variables
     const sectionRadios = Array.from(
