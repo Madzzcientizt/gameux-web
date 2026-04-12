@@ -1,0 +1,2280 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend:wght@100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Manrope:wght@200..800&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" href="../../styles/styles.css" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="../../styles/sizeChecker.css"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="../../styles/game.css" type="text/css" />
+    <style>
+      nav.game-info-nav {
+        display: flex;
+        overflow-x: auto;
+        white-space: nowrap;
+        scrollbar-width: none;
+      }
+
+      nav.game-info-nav::-webkit-scrollbar {
+        display: none;
+      }
+
+      nav.game-info-nav label {
+        width: calc(100% / 5) !important;
+      }
+
+      .game-sections {
+        display: none;
+        width: 100%;
+
+        &.is-active {
+          display: block;
+        }
+
+        &#short-description {
+          & > h2 {
+            font-weight: 900;
+            font-size: 2.5em;
+          }
+
+          & > p {
+            text-align: justify;
+            margin-bottom: 1em;
+          }
+
+          & > .list-style {
+            list-style: none;
+            float: right;
+            background-color: var(--t-color-base-100);
+            padding: 2em;
+            margin-left: 2em;
+            margin-bottom: 2em;
+            border-radius: var(--t-radius-field);
+            border: var(--t-border) solid var(--t-color-base-300);
+
+            & > li {
+              margin-left: 1em;
+              margin-bottom: 1em;
+              position: relative;
+
+              &::before {
+                content: "";
+                display: block;
+                position: absolute;
+                width: 0.2em;
+                height: 1em;
+                background-color: var(--t-color-primary);
+                border-radius: 1em;
+                left: -0.75em;
+                top: calc(50% - 0.5em);
+              }
+            }
+          }
+        }
+
+        &#ui-components {
+          margin-bottom: 2em;
+
+          & > h2 {
+            font-weight: 900;
+            font-size: 2.5em;
+          }
+
+          & .major-components {
+            display: grid;
+            grid-template-rows: 1fr;
+            grid-template-columns: 50% 1fr;
+            gap: 1em;
+            margin: 2em 0;
+          }
+
+          & .major-component {
+            background-color: var(--t-color-base-100);
+            border-radius: var(--t-radius-field);
+            padding: 1em;
+            height: auto;
+            position: relative;
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+            gap: 1em;
+            min-height: 15em;
+            border: var(--t-border) solid var(--t-color-base-300);
+
+            &:first-child {
+              grid-column: 1 / -1;
+              width: 100%;
+              flex-direction: row;
+            }
+
+            &:not(:first-child) {
+              flex-direction: column;
+            }
+
+            & figure {
+              position: relative;
+              margin-bottom: 0;
+              width: 100%;
+              height: auto;
+
+              & figcaption {
+                font-size: 0.9em;
+                color: var(--t-color-light);
+                margin-top: 0.5em;
+                position: absolute;
+                bottom: 0.5em;
+                right: 0.5em;
+              }
+            }
+
+            & a {
+              flex-shrink: 0;
+              margin-left: auto;
+
+              & img {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 0.25em;
+              }
+            }
+
+            & .count {
+              font-weight: 700;
+              font-size: 1.2em;
+              font-family: var(--bs-font-monospace);
+              color: var(--t-color-secondary);
+              display: block;
+            }
+
+            & .header-text {
+              font-weight: 700;
+              font-size: 2.5em;
+              font-family: var(--bs-font-serif);
+            }
+
+            & ul {
+              list-style: none;
+              margin-left: 1em;
+              margin-top: 2em;
+
+              & h6 {
+                font-weight: 900;
+              }
+
+              & li {
+                margin-left: 1em;
+                margin-bottom: 0.5em;
+                position: relative;
+
+                &::before {
+                  content: "";
+                  display: block;
+                  position: absolute;
+                  width: 0.2em;
+                  height: 1em;
+                  background-color: var(--t-color-primary);
+                  border-radius: 1em;
+                  left: -0.75em;
+                  top: calc(50% - 0.5em);
+                }
+              }
+            }
+          }
+
+          & .fittslaw {
+            display: grid;
+            grid-template-columns: 50% 1fr;
+            gap: 1em;
+
+            & h2 {
+              font-weight: 900;
+              font-size: 2.5em;
+            }
+
+            & figure {
+              position: relative;
+              margin-bottom: 0;
+              width: 100%;
+              height: auto;
+
+              & figcaption {
+                font-size: 0.9em;
+                color: var(--t-color-dark);
+                margin-top: 0.5em;
+                position: absolute;
+                bottom: 0.5em;
+                right: 0.5em;
+              }
+            }
+
+            & a {
+              flex-shrink: 0;
+              margin-left: auto;
+
+              & img {
+                width: 100% !important;
+                height: auto !important;
+                margin-bottom: 1em;
+              }
+            }
+          }
+
+          @media (width < 48rem) {
+            & .fittslaw {
+              grid-template-columns: 1fr;
+            }
+          }
+
+          & .mathmodel {
+            margin: 1em 0;
+            padding: 1em;
+            position: relative;
+            padding-left: 2em;
+            background-color: var(--t-color-base-300);
+            border-radius: var(--t-radius-field);
+            overflow: hidden;
+
+            &::before {
+              content: "";
+              display: block;
+              position: absolute;
+              width: 0.5em;
+              height: 100%;
+              background-color: var(--t-color-primary);
+              left: 0;
+              top: 0;
+            }
+
+            & h6 {
+              font-family: var(--bs-font-monospace);
+              color: var(--t-color-dark);
+              font-weight: 300;
+            }
+
+            & span {
+              font-size: 2em;
+            }
+          }
+
+          @media (width < 48rem) {
+            & .major-components {
+              grid-template-columns: 1fr;
+              gap: 1em;
+            }
+
+            & .major-component {
+              &:first-child {
+                flex-direction: column;
+              }
+
+              & figure {
+                width: 100%;
+
+                & figcaption {
+                  bottom: 1em;
+                }
+              }
+
+              & a {
+                margin-left: 0;
+                width: 100%;
+
+                & img {
+                  width: 100% !important;
+                  height: auto !important;
+                  margin-bottom: 1em;
+                }
+              }
+            }
+          }
+        }
+
+        &#user-interaction {
+          margin-bottom: 2em;
+
+          & > h2 {
+            font-weight: 900;
+            font-size: 2.5em;
+          }
+
+          & h3 {
+            font-weight: 900;
+            font-size: 2.5em;
+          }
+
+          & .multi-modal-feedback {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1em;
+            padding-top: 1em;
+
+            @media (width < 48rem) {
+              grid-template-columns: 1fr !important;
+            }
+
+            & figure {
+              margin: auto;
+              width: 100%;
+              height: auto;
+
+              & img {
+                width: 100% !important;
+                height: auto !important;
+              }
+            }
+          }
+
+          & ul {
+            list-style: none;
+            padding: 0;
+
+            & li {
+              margin-top: 2em;
+              display: flex;
+              flex-direction: row;
+
+              & h6 {
+                font-weight: 700;
+                font-size: 1.5em;
+                margin-bottom: 0.5em;
+              }
+
+              & .logo-svg {
+                height: 5em;
+                flex-shrink: 0;
+                background-color: var(--t-color-secondary);
+                color: var(--t-color-base-100);
+                aspect-ratio: 1 / 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 1em;
+                border-radius: var(--t-radius-field);
+                margin: auto;
+                margin-right: 1em;
+
+                & svg {
+                  width: 100%;
+                  height: 100%;
+                }
+              }
+            }
+          }
+        }
+
+        &#hci-principles {
+          margin-bottom: 2em;
+
+          & > h2 {
+            font-weight: 900;
+            font-size: 2.5em;
+          }
+
+          & .cybernetic-feedback-loops {
+            margin-top: 2em;
+            padding: 1em;
+            border-radius: var(--t-radius-field);
+            background-color: var(--t-color-base-100);
+            border: var(--t-border) solid var(--t-color-base-300);
+
+            & > h3 {
+              font-weight: 900;
+              font-size: 2em;
+            }
+
+            & .cybernetic-content {
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 1em;
+
+              @media (width < 48rem) {
+                grid-template-columns: 1fr !important;
+              }
+
+              & h6 {
+                font-weight: 700;
+                font-size: 1.2em;
+                margin-bottom: 0.5em;
+              }
+
+              & .primary-modalities {
+                list-style: none;
+                padding: 1em;
+                background-color: var(--t-color-base-200);
+                border-radius: var(--t-radius-field);
+                margin-bottom: 0;
+
+                & li {
+                  margin-left: 1em;
+                  margin-bottom: 0.5em;
+                  position: relative;
+
+                  &::before {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    width: 0.2em;
+                    height: 1em;
+                    background-color: var(--t-color-primary);
+                    border-radius: 1em;
+                    left: -0.75em;
+                    top: calc(50% - 0.5em);
+                  }
+                }
+              }
+            }
+          }
+
+          & .spatial-congruence {
+            padding: 1em;
+            margin-top: 2em;
+
+            & h2 {
+              font-weight: 900;
+              font-size: 2.5em;
+            }
+          }
+
+          & .cognitive-load-bifurcation {
+            margin: 2em 0;
+            padding: 1em;
+            border-radius: var(--t-radius-field);
+            background-color: var(--t-color-base-100);
+            border: var(--t-border) solid var(--t-color-base-300);
+
+            & > h2 {
+              font-weight: 900;
+              font-size: 2em;
+            }
+
+            & table {
+              width: 100%;
+              border-collapse: separate;
+              border-spacing: 0;
+              border: var(--t-border) solid var(--t-color-base-300);
+              border-radius: var(--t-radius-field);
+              overflow: hidden;
+              background-color: var(--t-color-base-200);
+            }
+
+            & th,
+            & td {
+              padding: 1em;
+              vertical-align: top;
+            }
+
+            & thead th {
+              font-weight: 800;
+              font-size: 1.05em;
+              background-color: var(--t-color-base-300);
+              border-bottom: 1px solid var(--t-color-base-300);
+            }
+
+            & th + th,
+            & td + td {
+              border-left: 1px solid var(--t-color-base-300);
+            }
+
+            & tbody td {
+              border-bottom: 1px solid var(--t-color-base-300);
+            }
+
+            & tbody tr:last-child td {
+              border-bottom: 0;
+            }
+
+            & td h6 {
+              font-weight: 700;
+              font-size: 1.15em;
+              margin-bottom: 0.5em;
+            }
+
+            & td p {
+              margin-bottom: 0;
+            }
+
+            @media (width < 48rem) {
+              & table,
+              & thead,
+              & tbody,
+              & tr,
+              & th,
+              & td {
+                display: block;
+                width: 100%;
+              }
+
+              & thead {
+                display: none;
+              }
+
+              & tbody tr {
+                border-bottom: 1px solid var(--t-color-base-300);
+                padding: 0.5em;
+              }
+
+              & tbody tr:last-child {
+                border-bottom: 0;
+              }
+
+              & td {
+                border: 0;
+                border-radius: var(--t-radius-field);
+                background-color: var(--t-color-base-100);
+                margin-bottom: 0.75em;
+              }
+
+              & td::before {
+                display: block;
+                font-weight: 700;
+                font-size: 0.85em;
+                text-transform: uppercase;
+                letter-spacing: 0.04em;
+                color: var(--t-color-primary);
+                margin-bottom: 0.5em;
+              }
+
+              & td:nth-child(1)::before {
+                content: "Extrinsic Load";
+              }
+
+              & td:nth-child(2)::before {
+                content: "Intrinsic Focus";
+              }
+            }
+          }
+        }
+
+        &#ui-ux-weaknesses {
+          margin-bottom: 2em;
+
+          & > h2 {
+            font-weight: 900;
+            font-size: 2.5em;
+          }
+
+          & > p {
+            text-align: justify;
+            margin-bottom: 2em;
+          }
+
+          & table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            border: var(--t-border) solid var(--t-color-base-300);
+            border-radius: var(--t-radius-field);
+            overflow: hidden;
+            background-color: var(--t-color-base-100);
+          }
+
+          & th,
+          & td {
+            padding: 1em;
+            vertical-align: top;
+          }
+
+          & td {
+            position: relative;
+            padding-right: 4.25em;
+          }
+
+          & thead th {
+            font-weight: 800;
+            font-size: 1.05em;
+            background-color: var(--t-color-base-300);
+            border-bottom: 1px solid var(--t-color-base-300);
+          }
+
+          & th + th,
+          & td + td {
+            border-left: 1px solid var(--t-color-base-300);
+          }
+
+          & tbody td {
+            border-bottom: 1px solid var(--t-color-base-300);
+          }
+
+          & tbody tr:last-child td {
+            border-bottom: 0;
+          }
+
+          & .badge {
+            font-size: 0.75em;
+            font-weight: 400;
+            border-radius: var(--t-radius-selector);
+            padding: 0.35em 0.75em;
+            margin-left: 0.5em;
+            vertical-align: middle;
+            border: var(--t-border) solid transparent;
+          }
+
+          & .badge-success {
+            background-color: var(--t-color-success);
+            color: color-mix(
+              in oklab,
+              var(--t-color-success-content) 70%,
+              var(--t-color-success)
+            );
+            border-color: color-mix(
+              in oklab,
+              var(--t-color-success) 65%,
+              var(--t-color-dark)
+            );
+          }
+
+          & .badge-danger {
+            background-color: var(--t-color-error);
+            color: color-mix(
+              in oklab,
+              var(--t-color-error-content) 70%,
+              var(--t-color-error)
+            );
+            border-color: color-mix(
+              in oklab,
+              var(--t-color-error) 65%,
+              var(--t-color-dark)
+            );
+          }
+
+          & .sw-item-head {
+            display: block;
+            margin-bottom: 0.75em;
+          }
+
+          & .sw-icon {
+            width: 2.75em;
+            height: 2.75em;
+            color: var(--t-color-base-300);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            position: absolute;
+            top: 0.75em;
+            right: 0.75em;
+          }
+
+          & .sw-icon svg {
+            width: 1.5em;
+            height: 1.5em;
+          }
+
+          & .label {
+            display: inline-block;
+            font-family: var(--bs-font-monospace);
+            font-size: 0.9em;
+            font-weight: 700;
+            color: var(--t-color-secondary);
+            letter-spacing: 0.03em;
+          }
+
+          & td h6 {
+            font-weight: 700;
+            font-size: 1.2em;
+            margin-bottom: 0.5em;
+          }
+
+          & td p {
+            margin-bottom: 0;
+            text-align: justify;
+          }
+
+          @media (width < 48rem) {
+            & table,
+            & thead,
+            & tbody,
+            & tr,
+            & th,
+            & td {
+              display: block;
+              width: 100%;
+            }
+
+            & thead {
+              display: none;
+            }
+
+            & tbody tr {
+              border-bottom: 1px solid var(--t-color-base-300);
+              padding: 0.5em;
+              background-color: var(--t-color-base-200);
+            }
+
+            & tbody tr:last-child {
+              border-bottom: 0;
+            }
+
+            & td {
+              border: 0;
+              border-radius: var(--t-radius-field);
+              background-color: var(--t-color-base-100);
+              margin-bottom: 0.75em;
+            }
+
+            & td::before {
+              display: block;
+              font-weight: 700;
+              font-size: 0.85em;
+              text-transform: uppercase;
+              letter-spacing: 0.04em;
+              margin-bottom: 0.5em;
+            }
+
+            & td:nth-child(1)::before {
+              content: "System Strengths";
+              color: color-mix(
+                in oklab,
+                var(--t-color-success) 70%,
+                var(--t-color-dark)
+              );
+            }
+
+            & td:nth-child(2)::before {
+              content: "System Weaknesses";
+              color: color-mix(
+                in oklab,
+                var(--t-color-error) 70%,
+                var(--t-color-dark)
+              );
+            }
+          }
+        }
+      }
+
+      .list-style-area {
+        margin: 2em 0;
+        width: 100%;
+        background-color: var(--t-color-base-100);
+        border: var(--t-border) solid var(--t-color-base-300);
+        padding: 1em;
+        border-radius: var(--t-radius-field);
+
+        & ol {
+          list-style: none;
+          margin-left: 0;
+          padding-left: 0;
+          margin-top: 2em;
+          display: grid;
+          gap: 1em;
+
+          &.two-columns {
+            grid-template-columns: 1fr 1fr;
+          }
+
+          &.three-columns {
+            grid-template-columns: 1fr 1fr 1fr;
+          }
+
+          &.four-columns {
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+          }
+
+          @media (width < 48rem) {
+            &.md-one-columns {
+              grid-template-columns: 1fr !important;
+            }
+
+            &.md-two-columns {
+              grid-template-columns: 1fr 1fr !important;
+            }
+          }
+
+          & li {
+            position: relative;
+
+            &::before {
+              font-weight: 700;
+              font-size: 5em;
+              font-family: var(--bs-font-monospace);
+              color: var(--t-color-base-200);
+              position: absolute;
+              top: -0.5em;
+            }
+
+            &:nth-child(1)::before {
+              content: "01";
+            }
+
+            &:nth-child(2)::before {
+              content: "02";
+            }
+
+            &:nth-child(3)::before {
+              content: "03";
+            }
+
+            &:nth-child(4)::before {
+              content: "04";
+            }
+
+            @media (width > 48rem) {
+              &::before {
+                left: 0;
+              }
+            }
+
+            @media (width < 48rem) {
+              &::before {
+                right: 0;
+              }
+            }
+
+            & h6 {
+              font-weight: 700;
+              font-size: 1.5em;
+              position: relative;
+
+              &::after {
+                content: "";
+                display: block;
+                width: 100%;
+                height: 1px;
+                background-color: var(--t-color-base-300);
+                margin-top: 0.5em;
+              }
+            }
+          }
+        }
+      }
+
+      .footnote {
+        width: 100%;
+        background-color: rgba(var(--t-color-primary-rgb), 0.1);
+        padding: 2em;
+        border-radius: var(--t-radius-field);
+
+        &::before {
+          content: "Note:";
+          font-weight: 700;
+          font-size: 1.2em;
+          color: var(--t-color-primary);
+          display: block;
+          margin-bottom: 0.5em;
+        }
+
+        &.summary::before {
+          content: "Summary:";
+        }
+      }
+
+      .game-video-wrp {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        overflow: hidden;
+        background-color: var(--t-color-base-300);
+      }
+
+      .game-video-wrp iframe,
+      .game-video-wrp video {
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+
+      .back-to-top {
+        position: fixed;
+        right: 1.25rem;
+        bottom: 1.25rem;
+        width: 3.5rem;
+        height: 3.5rem;
+        z-index: 1001;
+        cursor: pointer;
+        opacity: 0;
+        pointer-events: none;
+        transition:
+          opacity 0.2s ease,
+          transform 0.2s ease;
+        transform: translateY(0.5rem);
+      }
+
+      .back-to-top.is-visible {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+      }
+
+      .back-to-top svg {
+        width: 100%;
+        height: 100%;
+      }
+
+      .back-to-top .btn-progress {
+        transform: rotate(-90deg);
+        transform-origin: center;
+        transition: stroke-dashoffset 0.1s linear;
+      }
+
+      .hidden {
+        display: none !important;
+      }
+    </style>
+
+    <title id="title">Detroit: Become Human - GameUX</title>
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar navbar-light navbar-expand-lg">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="../../../index.html">
+            <img
+              src="../../../public/gameux.png"
+              alt="Logo"
+              class="navbar-logo"
+            />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon" style="width: 1em"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="../../../index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="../gameList.html">Game List</a>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="../about.html">About</a></li>
+              <li class="nav-item"><a class="nav-link" href="../contact.html">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <nav class="breadcrumb-nav" aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="../gameList.html">Game List</a>
+        </li>
+        <li class="breadcrumb-item active game-name" aria-current="page">Detroit: Become Human</li>
+      </ol>
+    </nav>
+
+    <main>
+      <article class="wide">
+        <section class="header-section">
+          <img class="game-poster-content game-poster-background-style" />
+          <h1 class="game-name game-name-header">Detroit: Become Human</h1>
+          <div class="game-header">
+            <span class="game-header-cont">
+              <div class="game-info-bar">
+                <span class="game-date-info">
+                  <span class="date-released">May 25, 2018</span>
+                  <span class="days-ago"></span>
+                </span>
+                <span class="game-badge">Full Release</span>
+                <span class="publisher">Sony Interactive Entertainment</span>
+              </div>
+            </span>
+            <div class="game-header-rating">
+              <table class="game-critic-rating-cont">
+                <tr>
+                  <td rowspan="2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </td>
+                  <td class="game-critic-rating">0</td>
+                </tr>
+                <tr>
+                  <td class="game-critic-ratings">0 critic ratings</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <div class="video-game-container">
+            <a class="game-poster" id="game-poster">
+              <img
+                class="game-poster-img"
+                id="game-poster-img"
+                alt="Detroit Become Human Poster"
+              />
+            </a>
+            <div class="game-video-wrp">
+              <video class="game-video" id="game-video" controls>
+                <source type="video/mp4" id="game-video-source" />
+                Your browser does not support the video tag.
+              </video>
+              <iframe
+                class="game-video"
+                id="game-video-yt"
+                frameborder="0"
+                allowfullscreen
+                hidden
+              ></iframe>
+            </div>
+
+            <div class="game-rating">
+              <table class="game-user-rating-cont">
+                <tr>
+                  <td rowspan="2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </td>
+                  <td class="game-user-rating">0</td>
+                </tr>
+                <tr>
+                  <td class="game-user-ratings">0 user ratings</td>
+                </tr>
+              </table>
+              <table class="game-critic-rating-cont">
+                <tr>
+                  <td rowspan="2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </td>
+                  <td class="game-critic-rating">0</td>
+                </tr>
+                <tr>
+                  <td class="game-critic-ratings">0 critic ratings</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+
+          <ul class="game-list-data">
+            <li class="game-list-data-item">
+              Genres:
+              <ul id="genres"></ul>
+            </li>
+            <li class="game-list-data-item">
+              Platforms:
+              <ul id="platforms"></ul>
+            </li>
+            <li class="game-list-data-item">
+              Editions:
+              <ul id="editions"></ul>
+            </li>
+          </ul>
+          <p class="game-description" id="game-description"></p>
+        </section>
+      </article>
+
+      <div class="game-info-nav-container">
+        <div class="game-info-nav-wrap">          <button class="game-info-nav-arrow left" id="game-info-nav-left" type="button" aria-label="Scroll sections left" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="20" height="20">
+              <path fill-rule="evenodd" d="M15.78 19.28a.75.75 0 0 1-1.06 0L8.22 12.78a.75.75 0 0 1 0-1.06l6.5-6.5a.75.75 0 1 1 1.06 1.06L9.81 12l5.97 5.72a.75.75 0 0 1 0 1.56Z" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+          
+          <nav class="game-info-nav" id="game-info-nav" role="tablist">
+            <label role="tab"
+              ><input
+                type="radio"
+                name="game-section"
+                value="short-description"
+                checked="checked"
+              />
+              Overview</label
+            >
+            <label role="tab"
+              ><input type="radio" name="game-section" value="ui-components" />
+              UI Components</label
+            >
+            <label role="tab"
+              ><input
+                type="radio"
+                name="game-section"
+                value="user-interaction"
+              />
+              Interaction</label
+            >
+            <label role="tab"
+              ><input type="radio" name="game-section" value="hci-principles" />
+              HCI Principles</label
+            >
+            <label role="tab"
+              ><input
+                type="radio"
+                name="game-section"
+                value="ui-ux-weaknesses"
+              />
+              Analysis</label
+            >
+          </nav>
+          <button
+            class="game-info-nav-arrow right"
+            id="game-info-nav-right"
+            type="button"
+            aria-label="Scroll sections right"
+            hidden=""
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+              width="20"
+              height="20"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M8.22 4.72a.75.75 0 0 1 1.06 0l6.5 6.5a.75.75 0 0 1 0 1.06l-6.5 6.5a.75.75 0 0 1-1.06-1.06L14.19 12 8.22 6.28a.75.75 0 0 1 0-1.56Z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <article>
+        <div class="game-sections-stage">
+          <!-- ==================== OVERVIEW ==================== -->
+          <section
+            class="game-sections is-active"
+            id="short-description"
+            aria-hidden="false"
+          >
+            <h2>Overview</h2>
+            <ul class="list-style">
+              <h2>Detroit: Become Human Game Modes:</h2>
+              <li>Story Campaign</li>
+              <li>Flowchart Replay</li>
+            </ul>
+            <p>
+              Detroit: Become Human is an interactive drama and action-adventure game developed by Quantic Dream and published by Sony Interactive Entertainment. Released on May 25, 2018, for PlayStation 4, and later on PC in 2019, the game is set in 2038 Detroit where human-like androids have become commonplace.
+            </p>
+            <p>
+              Detroit's UI/UX centers on its revolutionary branching narrative flowchart system. After each chapter, players see a detailed decision tree visualizing every path, locked outcomes, and percentage of other players who made each choice. In-game, contextual prompts, QTE inputs, and environmental scanning use a sleek android-vision aesthetic reinforcing the game's themes of artificial consciousness.
+            </p>
+            <ul class="metrics-list">
+              <li>
+                <h6>Cognitive Load</h6>
+                <div class="value">Moderate</div>
+                <div class="desc">
+                  Moral decision-making, QTE reaction demands, and investigation across three interleaved protagonist stories
+                </div>
+              </li>
+              <li>
+                <h6>Response Time</h6>
+                <div class="value">&plusmn; 200ms to &plusmn; 1500ms</div>
+                <div class="desc">
+                  QTE input windows vary from tight action sequences to deliberate moral choice timers
+                </div>
+              </li>
+              <li>
+                <h6>Decision Weight</h6>
+                <div class="value">Very High</div>
+                <div class="desc">
+                  Individual choices can result in permanent character death, relationship changes, or story-ending consequences
+                </div>
+              </li>
+            </ul>
+          </section>
+
+          <!-- ==================== UI COMPONENTS ==================== -->
+          <section class="game-sections" id="ui-components" aria-hidden="true">
+            <h2>UI Components</h2>
+            <div class="major-components">
+              <div class="major-component">
+                <figure>
+                  <a
+                    href="https://www.quanticdream.com/img/uploads/media/section_23/b6dd3b1dd85681631ccbfd38e4d632a4.jpeg"
+                    title="Detroit: Become Human Crime Scene Investigation"
+                    target="images"
+                  >
+                    <img
+                      src="https://www.quanticdream.com/img/uploads/media/section_23/b6dd3b1dd85681631ccbfd38e4d632a4.jpeg"
+                      alt="Detroit: Become Human Crime Scene Investigation HUD"
+                    />
+                  </a>
+                  <figcaption>FIG 1.1: Connor's Investigation HUD</figcaption>
+                </figure>
+                <div>
+                  <span class="count">[ ELEMENT_01 ]</span>
+                  <span class="header-text">The Diegetic Investigation HUD</span>
+                  <p>
+                    Detroit: Become Human employs a minimalist, diegetic HUD
+                    that integrates interface elements directly into the
+                    game world through the android protagonists' visual
+                    processing. Connor's crime scene analysis mode overlays
+                    holographic markers, reconstruction timelines, and
+                    evidence tags onto the 3D environment, treating the
+                    HUD as part of the character's android perception
+                    rather than an external game overlay.
+                  </p>
+                  <ul>
+                    <h6>HUD Elements</h6>
+                    <li>Contextual Button Prompts (R2, Triangle, etc.)</li>
+                    <li>Objective Markers & Mission Indicators</li>
+                    <li>Dialogue Choice Wheel</li>
+                    <li>Crime Scene Reconstruction Timeline</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="major-component">
+                <figure>
+                  <a
+                    href="https://www.quanticdream.com/img/uploads/media/section_23/db1d56bfbb2ceb90eebf32f39acb2cb9.jpeg"
+                    title="Detroit: Become Human Scanning Interface"
+                    target="images"
+                  >
+                    <img
+                      src="https://www.quanticdream.com/img/uploads/media/section_23/db1d56bfbb2ceb90eebf32f39acb2cb9.jpeg"
+                      alt="Scanning the Truth Interface"
+                    />
+                  </a>
+                  <figcaption>FIG 1.2: Android Scanning Interface</figcaption>
+                </figure>
+                <div>
+                  <span class="count">[ ELEMENT_02 ]</span>
+                  <span class="header-text">Environmental Scanning</span>
+                  <p>
+                    The R2-triggered scan mode is a core interface mechanic
+                    that highlights all interactable objects in the
+                    environment with glowing outlines and contextual button
+                    prompts. This creates a visual affordance layer where
+                    players can distinguish between passive scenery and
+                    interactive elements. The scan functions as a
+                    problem-solving tool during investigation sequences,
+                    surfacing hidden clues and reconstructing events.
+                  </p>
+                </div>
+              </div>
+              <div class="major-component">
+                <figure>
+                  <a
+                    href="https://www.quanticdream.com/img/uploads/media/section_23/10a9744ee5585a6a800905e2a2479dcf.jpeg"
+                    title="Detroit: Become Human Dialogue System"
+                    target="images"
+                  >
+                    <img
+                      src="https://www.quanticdream.com/img/uploads/media/section_23/10a9744ee5585a6a800905e2a2479dcf.jpeg"
+                      alt="Hank & Connor Dialogue Interface"
+                    />
+                  </a>
+                  <figcaption>FIG 1.3: Dialogue & Relationship System</figcaption>
+                </figure>
+                <div>
+                  <span class="count">[ ELEMENT_03 ]</span>
+                  <span class="header-text">Dialogue Choice System</span>
+                  <p>
+                    The dialogue system presents choices mapped to the
+                    controller's face buttons (Triangle, Circle, Cross,
+                    Square) in a radial layout anchored to the right side
+                    of the screen. Timed choices add urgency through a
+                    shrinking visual indicator, and some options are locked
+                    behind prior exploration or evidence gathering. A
+                    relationship tracker displays NPC disposition changes
+                    in real-time after each interaction.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <h2>Fitt's Law in Contextual Interactions</h2>
+            <div class="fittslaw">
+              <div>
+                <p>
+                  Fitt's Law applies to Detroit: Become Human through its
+                  contextual button prompts and Quick Time Events (QTEs).
+                  Interactive objects display button prompts when the player
+                  character is within a defined proximity radius (Distance D),
+                  and the prompt's visual target size (Width W) scales based
+                  on the interaction's urgency. During calm exploration, prompts
+                  are small and persistent; during action QTEs, they appear
+                  larger but with shorter time windows.
+                </p>
+                <div class="mathmodel">
+                  <h6>[ MATHEMATICAL MODEL ]</h6>
+                  <span>MT = a + b * log<sub>2</sub>(2D/W)</span>
+                </div>
+                <p>
+                  The game's QTE design deliberately manipulates Fitt's Law
+                  variables: during high-tension chase sequences, the effective
+                  target width (W) is reduced through rapid button-prompt
+                  changes and directional swipe inputs, while the cognitive
+                  distance (D) increases as players must shift attention
+                  between on-screen action and prompt locations. This creates
+                  a controlled difficulty curve tied directly to narrative
+                  tension.
+                </p>
+              </div>
+              <div>
+                <figure>
+                  <a
+                    href="https://www.quanticdream.com/img/uploads/media/section_23/b8a531b306ecc0fcd1c6dec4ec415c7a.jpeg"
+                    title="Detroit: Become Human Connor Gameplay"
+                    target="images"
+                  >
+                    <img
+                      src="https://www.quanticdream.com/img/uploads/media/section_23/b8a531b306ecc0fcd1c6dec4ec415c7a.jpeg"
+                      alt="Connor Gameplay QTE Interaction"
+                    />
+                  </a>
+                  <figcaption>FIG 1.4: QTE & Contextual Prompt System</figcaption>
+                </figure>
+              </div>
+            </div>
+            <div class="list-style-area">
+              <h3 class="text-center">Visual Hierarchy Breakdown</h3>
+              <div class="text-center">Layering of Information</div>
+              <ol class="three-columns md-one-columns">
+                <li>
+                  <h6>Narrative Focus</h6>
+                  <p>
+                    Primary focus. The cinematic camera, character expressions,
+                    and environmental storytelling dominate the player's
+                    visual attention. The near-invisible HUD ensures that
+                    narrative immersion is never broken by intrusive UI
+                    elements, keeping the player focused on the story.
+                  </p>
+                </li>
+                <li>
+                  <h6>Interaction Prompts</h6>
+                  <p>
+                    Secondary focus. Contextual button prompts appear
+                    directly on or near interactive objects in world-space,
+                    using the android's perspective as justification. These
+                    diegetic cues minimize the gap between game world and
+                    interface, reducing cognitive switching costs.
+                  </p>
+                </li>
+                <li>
+                  <h6>System Feedback</h6>
+                  <p>
+                    Tertiary focus. Relationship status notifications,
+                    chapter flowchart progress, and objective updates
+                    appear as brief overlays that fade quickly. The
+                    post-chapter flowchart provides strategic meta-context
+                    without interrupting real-time gameplay flow.
+                  </p>
+                </li>
+              </ol>
+            </div>
+            <div class="footnote">
+              All component analysis is based on Detroit: Become Human (2018).
+              The game's HUD design demonstrates how narrative-driven
+              interactive dramas can achieve maximum immersion through
+              diegetic UI — embedding interface elements within the game
+              world rather than overlaying them on top of it.
+            </div>
+          </section>
+
+          <!-- ==================== INTERACTION ==================== -->
+          <section
+            class="game-sections"
+            id="user-interaction"
+            aria-hidden="true"
+          >
+            <h2>User Interaction</h2>
+            <p>
+              An examination of the multi-modal input and feedback systems
+              within Detroit: Become Human's interactive drama framework,
+              analyzing how player agency is expressed through branching
+              choices, environmental interaction, and motion-controlled
+              Quick Time Events across three interconnected protagonist
+              narratives.
+            </p>
+            <div class="list-style-area">
+              <h3 class="text-center">Core Gameplay Loop</h3>
+              <div class="text-center"></div>
+              <ol class="four-columns md-two-columns">
+                <li>
+                  <h6>Explore</h6>
+                  <p>
+                    Players navigate 3D environments in third-person,
+                    scanning surroundings with R2 to reveal interactable
+                    objects, clues, and NPC dialogue options. Exploration
+                    depth directly unlocks additional choices in later
+                    decision points.
+                  </p>
+                </li>
+                <li>
+                  <h6>Decide</h6>
+                  <p>
+                    At critical story junctions, players are presented with
+                    timed dialogue choices and moral dilemmas mapped to
+                    controller buttons. Each choice modifies relationship
+                    meters, unlocks or locks future paths, and can
+                    permanently alter the narrative trajectory.
+                  </p>
+                </li>
+                <li>
+                  <h6>React</h6>
+                  <p>
+                    Action sequences employ QTE inputs — button presses,
+                    analog stick movements, touchpad swipes, and motion
+                    controls. Failed QTEs do not result in "game over" but
+                    instead branch the story into alternate consequences,
+                    including permanent character death.
+                  </p>
+                </li>
+                <li>
+                  <h6>Reflect</h6>
+                  <p>
+                    After each chapter, the flowchart system reveals the
+                    branching structure of all possible paths, showing
+                    which nodes the player reached and what percentage
+                    of other players chose each option. This drives
+                    replay motivation and narrative awareness.
+                  </p>
+                </li>
+              </ol>
+            </div>
+            <h3>Multi-Modal Feedback Matrix</h3>
+            <div class="multi-modal-feedback">
+              <div>
+                <p>
+                  Detroit: Become Human delivers feedback through a carefully
+                  synchronized triad of sensory channels. When a player makes
+                  a dialogue choice, successfully completes a QTE, or discovers
+                  a clue, the system responds with visual, auditory, and haptic
+                  signals simultaneously. This multi-modal approach ensures
+                  that the emotional weight of each decision is reinforced
+                  across all available sensory pathways.
+                </p>
+              </div>
+              <div>
+                <figure>
+                  <a
+                    href="https://www.quanticdream.com/img/uploads/media/section_23/e33d103326b491f8f941bb27b4e01d97.jpeg"
+                    title="Detroit: Become Human Markus Feedback Systems"
+                    target="images"
+                  >
+                    <img
+                      src="https://www.quanticdream.com/img/uploads/media/section_23/e33d103326b491f8f941bb27b4e01d97.jpeg"
+                      alt="Detroit: Become Human Markus Feedback Systems"
+                    />
+                  </a>
+                  <figcaption>FIG 1.5: Markus Narrative Feedback</figcaption>
+                </figure>
+              </div>
+            </div>
+            <ul>
+              <li>
+                <div class="logo-svg">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25l4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z"
+                    ></path>
+                  </svg>
+                </div>
+                <div>
+                  <h6>Audio Feedback</h6>
+                  <p>
+                    Detroit uses an adaptive orchestral soundtrack that shifts
+                    dynamically based on player choices and story tension. Each
+                    protagonist has a distinct musical identity — Connor's
+                    themes feature synthetic and procedural tones, Kara's use
+                    emotional piano and strings, and Markus's incorporate
+                    rising orchestral swells during revolutionary moments.
+                    Sound cues accompany relationship meter changes with
+                    subtle positive or negative audio stings.
+                  </p>
+                </div>
+              </li>
+              <li>
+                <div class="logo-svg">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z"
+                    ></path>
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                    ></path>
+                  </svg>
+                </div>
+                <div>
+                  <h6>Visual Feedback</h6>
+                  <p>
+                    The game communicates consequences through on-screen
+                    relationship notifications (e.g., "Hank: Warm ↑"),
+                    environmental color grading shifts that reflect
+                    narrative tone, and the LED ring on android characters'
+                    temples — which cycles between blue (calm), yellow
+                    (processing), and red (stress). The post-chapter
+                    flowchart provides a comprehensive visual map of
+                    decisions made and paths not taken.
+                  </p>
+                </div>
+              </li>
+              <li>
+                <div class="logo-svg">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="size-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M7.864 4.243A7.5 7.5 0 0 1 19.5 10.5c0 2.92-.556 5.709-1.568 8.268M5.742 6.364A7.465 7.465 0 0 0 4.5 10.5a7.464 7.464 0 0 1-1.15 3.993m1.989 3.559A11.209 11.209 0 0 0 8.25 10.5a3.75 3.75 0 1 1 7.5 0c0 .527-.021 1.049-.064 1.565M12 10.5a14.94 14.94 0 0 1-3.6 9.75m6.633-4.596a18.666 18.666 0 0 1-2.485 5.33"
+                    ></path>
+                  </svg>
+                </div>
+                <div>
+                  <h6>Input/Tactile Fidelity</h6>
+                  <p>
+                    The DualShock 4 is used extensively as a narrative input
+                    device. The touchpad mimics in-game actions like swiping
+                    to clean surfaces or unlock doors. Motion controls require
+                    players to physically tilt or shake the controller during
+                    QTEs, creating a direct kinesthetic link between player
+                    gesture and character action. Haptic vibrations intensify
+                    during high-tension moments, such as chase sequences or
+                    life-or-death decisions.
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </section>
+
+          <!-- ==================== HCI PRINCIPLES ==================== -->
+          <section class="game-sections" id="hci-principles" aria-hidden="true">
+            <h2>HCI Principles</h2>
+            <div class="cybernetic-feedback-loops">
+              <h3>Cybernetic Feedback Loops</h3>
+              <div class="cybernetic-content">
+                <div>
+                  <p style="text-align: justify">
+                    Detroit: Become Human employs an open-loop narrative
+                    feedback architecture where player decisions propagate
+                    forward through a branching story graph with no ability
+                    to undo or reverse choices during a playthrough. The
+                    system's feedback loop operates across three timescales:
+                    immediate (QTE success/failure), medium-term (relationship
+                    meter shifts and unlocked dialogue), and long-term
+                    (chapter-ending flowchart reveals and permanent character
+                    death consequences).
+                  </p>
+                </div>
+                <div>
+                  <ul class="primary-modalities">
+                    <h6>Primary Modalities</h6>
+                    <li>
+                      <strong>Visual</strong>: Diegetic android HUD, contextual button prompts, relationship status notifications, LED temple ring color states, flowchart decision maps
+                    </li>
+                    <li>
+                      <strong>Auditory</strong>: Adaptive protagonist-specific soundtracks, relationship change audio stings, environmental narrative audio, QTE success/failure tones
+                    </li>
+                    <li>
+                      <strong>Structural</strong>: Branching narrative flowchart, three-protagonist story interleaving, chapter-based progression, timed choice constraints
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="spatial-congruence">
+              <h2>Spatial Congruence</h2>
+              <p style="text-align: justify">
+                Detroit: Become Human achieves strong spatial congruence by
+                anchoring all UI elements within the game world through the
+                android protagonists' visual processing capabilities. Button
+                prompts appear physically attached to in-world objects rather
+                than floating in screen-space. The R2 scan mode renders
+                interactive highlights as part of the character's perception,
+                not as an external overlay. This diegetic approach eliminates
+                the cognitive dissonance between "game interface" and "game
+                world," treating the entire UI as an extension of the
+                androids' built-in heads-up display.
+              </p>
+            </div>
+            <div class="cognitive-load-bifurcation">
+              <h2>Cognitive Load Bifurcation</h2>
+              <p style="text-align: justify; margin-bottom: 2em">
+                Detroit: Become Human carefully manages cognitive load by
+                minimizing extrinsic interface complexity while maximizing
+                intrinsic narrative and moral decision-making demands. The
+                near-invisible HUD removes traditional gaming UI friction,
+                while the branching story structure imposes a heavy
+                cognitive burden through consequence-awareness, moral
+                reasoning, and multi-protagonist narrative tracking.
+              </p>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Extrinsic Organization</th>
+                    <th>Intrinsic Focus</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <h6>Diegetic Minimal HUD</h6>
+                      <p>
+                        The game eliminates traditional HUD elements by
+                        embedding all interface cues within the android
+                        characters' visual processing. Prompts only appear
+                        when contextually relevant, reducing constant
+                        visual noise to near-zero during cinematic moments.
+                      </p>
+                    </td>
+                    <td>
+                      <h6>Moral Decision Weight</h6>
+                      <p>
+                        Players must evaluate ethical dilemmas with
+                        permanent, irreversible consequences — including
+                        character death. The knowledge that choices
+                        cannot be undone creates a persistent cognitive
+                        pressure that layers on top of the narrative
+                        engagement.
+                      </p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <h6>Simplified Input Mapping</h6>
+                      <p>
+                        Interactions are mapped to intuitive controller
+                        gestures — swipes for physical actions, button
+                        presses for dialogue, motion controls for effort.
+                        This gestural congruence reduces the learning
+                        curve by making inputs physically analogous to
+                        in-game actions.
+                      </p>
+                    </td>
+                    <td>
+                      <h6>Multi-Protagonist Tracking</h6>
+                      <p>
+                        Managing three interleaved protagonist storylines
+                        (Connor, Markus, Kara) with independent
+                        relationship meters, narrative states, and
+                        survival status demands continuous strategic
+                        awareness across parallel narrative threads.
+                      </p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="footnote">
+              <q>
+                Detroit: Become Human's interface is not merely a control
+                system — it is a narrative instrument. Its diegetic design
+                proves that interactive dramas can achieve cinematic
+                immersion without sacrificing player agency, by embedding
+                every interface element within the fiction itself.
+              </q>
+            </div>
+          </section>
+
+          <!-- ==================== ANALYSIS ==================== -->
+          <section
+            class="game-sections"
+            id="ui-ux-weaknesses"
+            aria-hidden="true"
+          >
+            <h2>Strengths and Weaknesses Analysis</h2>
+            <p>
+              A comprehensive evaluation of Detroit: Become Human's
+              interactive drama interface paradigm. Examining the tension
+              between cinematic narrative immersion and player agency,
+              and how the game's diegetic UI approach serves and limits
+              the player experience across its branching story structure.
+            </p>
+
+            <table style="margin-bottom: 2em">
+              <thead>
+                <tr>
+                  <th>
+                    System Strengths
+                    <span class="badge badge-success">Positive_Vectors</span>
+                  </th>
+                  <th>
+                    System Weaknesses
+                    <span class="badge badge-danger">Negative_Vectors</span>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="sw-item-head">
+                      <span class="sw-icon" aria-hidden="true">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                          ></path>
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7Z"
+                          ></path>
+                        </svg>
+                      </span>
+                      <span class="label">01_IMMERSION</span>
+                    </div>
+                    <h6>Diegetic UI Integration</h6>
+                    <p>
+                      The game achieves exceptional narrative immersion by
+                      embedding all interface elements within the android
+                      characters' visual processing. The near-invisible HUD
+                      eliminates the separation between "playing a game" and
+                      "inhabiting the story," creating a seamless cinematic
+                      experience that supports emotional engagement.
+                    </p>
+                  </td>
+                  <td>
+                    <div class="sw-item-head">
+                      <span class="sw-icon" aria-hidden="true">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75M6.75 10.5h10.5A2.25 2.25 0 0 1 19.5 12.75v6A2.25 2.25 0 0 1 17.25 21H6.75A2.25 2.25 0 0 1 4.5 18.75v-6A2.25 2.25 0 0 1 6.75 10.5Z"
+                          ></path>
+                        </svg>
+                      </span>
+                      <span class="label">01_QTE_FRUSTRATION</span>
+                    </div>
+                    <h6>QTE Input Friction</h6>
+                    <p>
+                      The motion control and touchpad QTE inputs can feel
+                      imprecise and frustrating, especially during high-stakes
+                      action sequences. Misregistered swipes or accidental
+                      button presses can lead to unintended narrative
+                      consequences, and the lack of an undo or retry
+                      mechanism amplifies this frustration for players who
+                      value precise input.
+                    </p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="sw-item-head">
+                      <span class="sw-icon" aria-hidden="true">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25l4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z"
+                          ></path>
+                        </svg>
+                      </span>
+                      <span class="label">02_FLOWCHART</span>
+                    </div>
+                    <h6>Revolutionary Flowchart System</h6>
+                    <p>
+                      The post-chapter flowchart is a landmark UI innovation
+                      in interactive narrative design. By visualizing the
+                      complete decision tree — including locked paths and
+                      global player statistics — it transforms opaque
+                      branching narratives into transparent, explorable
+                      systems, driving replay value and meta-narrative
+                      awareness.
+                    </p>
+                  </td>
+                  <td>
+                    <div class="sw-item-head">
+                      <span class="sw-icon" aria-hidden="true">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M12 9v4.5m0 3.75h.008v.008H12v-.008ZM10.29 3.86l-7.5 13A1.5 1.5 0 0 0 4.09 19h15.82a1.5 1.5 0 0 0 1.3-2.14l-7.5-13a1.5 1.5 0 0 0-2.6 0Z"
+                          ></path>
+                        </svg>
+                      </span>
+                      <span class="label">02_TIMED_CHOICES</span>
+                    </div>
+                    <h6>Aggressive Choice Timers</h6>
+                    <p>
+                      Timed dialogue choices with irreversible consequences
+                      can create excessive pressure, particularly for players
+                      who want to thoughtfully engage with moral dilemmas.
+                      The timer does not distinguish between narrative urgency
+                      and genuine time pressure, occasionally forcing
+                      uninformed decisions that feel unfair rather than
+                      dramatically tense.
+                    </p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="sw-item-head">
+                      <span class="sw-icon" aria-hidden="true">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                          class="size-6"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09Z"
+                          ></path>
+                        </svg>
+                      </span>
+                      <span class="label">03_CONSEQUENCE_DEPTH</span>
+                    </div>
+                    <h6>Meaningful Consequence Architecture</h6>
+                    <p>
+                      Detroit's branching narrative delivers genuinely
+                      divergent outcomes — not cosmetic variations. Character
+                      death is permanent, entire storylines can be lost, and
+                      late-game events are shaped by dozens of accumulated
+                      micro-decisions. This creates one of the most
+                      consequential player-choice systems in gaming,
+                      validated by over 40 possible endings.
+                    </p>
+                  </td>
+                  <td>
+                    <div class="sw-item-head">
+                      <span class="sw-icon" aria-hidden="true">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                          class="size-6"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M3.98 8.223A10.477 10.477 0 0 0 1.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.451 10.451 0 0 1 12 4.5c4.756 0 8.773 3.162 10.065 7.498a10.522 10.522 0 0 1-4.293 5.774M6.228 6.228 3 3m3.228 3.228 3.65 3.65m7.894 7.894L21 21m-3.228-3.228-3.65-3.65m0 0a3 3 0 1 0-4.243-4.243m4.242 4.242L9.88 9.88"
+                          ></path>
+                        </svg>
+                      </span>
+                      <span class="label">03_EXPLORATION_LIMITS</span>
+                    </div>
+                    <h6>Constrained Environmental Agency</h6>
+                    <p>
+                      Despite the illusion of open exploration, player
+                      movement is tightly confined to predetermined paths
+                      and small interactive zones. The camera is often
+                      fixed or semi-fixed, and the inability to freely
+                      explore the richly detailed world of 2038 Detroit
+                      can feel restrictive, undermining the sense of
+                      agency that the narrative choices promise.
+                    </p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="footnote summary">
+              <p>
+                Detroit: Become Human's interface represents a benchmark in
+                interactive narrative HCI — a system designed to deliver
+                <u>maximum narrative immersion with minimum interface
+                friction</u>. While its strengths lie in diegetic UI
+                innovation, the revolutionary flowchart system, and
+                deeply consequential choice architecture, its weaknesses
+                reveal the inherent tension between cinematic control and
+                player agency. The system's greatest achievement is proving
+                that a game interface can become invisible, letting the
+                story — and its moral weight — become the entire experience.
+              </p>
+            </div>
+          </section>
+        </div>
+      </article>
+    </main>
+
+    <footer>
+        <h6>GameUX Atlas</h6>
+        <ul class="socials">
+            <li>
+                <a href="https://www.facebook.com/profile.php?id=61575774944293" class="social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987H7.898v-2.89h2.54V9.845c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/>
+                    </svg>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/gameux_atlas/" class="social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                </a>
+            </li>
+            <li>
+                <a href="https://x.com/GameUX_Atlas?s=20" class="social-link" aria-label="Twitter / X" target="_blank" rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.261 5.635 5.903-5.635zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+        <div class="footer-info">
+            <span>&copy; Group 5</span>
+            <span>CIP 1101</span>
+            <span>2026</span>
+            <span>GameUX Atlas</span>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top" title="Back to top">
+        <svg viewBox="0 0 56 56" width="56" height="56" aria-hidden="true" focusable="false">
+            <circle class="btn-bg" cx="28" cy="28" r="27"></circle>
+            <circle class="btn-progress-track" cx="28" cy="28" r="22"></circle>
+            <circle class="btn-progress" id="back-to-top-progress" cx="28" cy="28" r="22"></circle>
+            <path class="btn-icon" d="M28 36V20"></path>
+            <path class="btn-icon" d="M21.5 26.5L28 20l6.5 6.5"></path>
+        </svg>
+    </button>
+
+    <script>
+      // VARIABLES
+      const GAMENAME = "Detroit: Become Human";
+      const DATERELEASED = "05/25/2018";
+      const PUBLISHER = "Sony Interactive Entertainment";
+      const BADGE = "Full Release";
+      const POSTERURL = "https://upload.wikimedia.org/wikipedia/en/8/80/Detroit_Become_Human.jpg";
+      const POSTERALTTEXT = "Detroit Become Human Poster";
+      const VIDEOURL = "";
+      const VIDEOURLYT =
+        "https://www.youtube.com/embed/8a-EObAMOmo";
+      const YTVID = true;
+
+      const GAMEUSERSTARS = "8.5";
+      const GAMEUSERRATINGS = "8,000,000+";
+
+      const HASCRITICS = true;
+      const GAMECRITICSTARS = "7.8";
+      const GAMECRITICRATINGS = "92";
+
+      const GENRES = ["Interactive Drama", "Adventure", "Sci-Fi"];
+      const PLATFORMS = ["PS4", "PC"];
+      const EDITIONS = ["Standard Edition", "Digital Deluxe Edition"];
+
+      const DESCRIPTION =
+        "Detroit: Become Human is an interactive drama developed by Quantic Dream and published by Sony Interactive Entertainment. Set in a near-future Detroit where androids serve humans, players control three android protagonists \u2014 Connor, Markus, and Kara \u2014 whose choices shape a branching narrative about consciousness, freedom, and identity.";
+
+      // -- Document Variables --
+      const sectionRadios = Array.from(
+        document.querySelectorAll('input[name="game-section"]'),
+      );
+      const gameSections = Array.from(
+        document.querySelectorAll(".game-sections"),
+      );
+      const gameInfoNav = document.getElementById("game-info-nav");
+      const gameInfoNavLeft = document.getElementById("game-info-nav-left");
+      const gameInfoNavRight = document.getElementById("game-info-nav-right");
+      const backToTopButton = document.getElementById("back-to-top");
+      const backToTopProgress = document.getElementById("back-to-top-progress");
+
+
+      // -- Implementation --
+      document.getElementById("title").textContent = GAMENAME + " - GameUX";
+      for (let el of document.getElementsByClassName("game-name")) {
+        el.textContent = GAMENAME;
+      }
+      for (let el of document.getElementsByClassName("date-released")) {
+        el.textContent = DATERELEASED;
+      }
+      for (let el of document.getElementsByClassName("publisher")) {
+        el.textContent = PUBLISHER;
+      }
+      for (let el of document.getElementsByClassName("game-badge")) {
+        el.textContent = BADGE;
+      }
+      for (let el of document.getElementsByClassName("game-user-rating")) {
+        el.textContent = GAMEUSERSTARS;
+      }
+      for (let el of document.getElementsByClassName("game-user-ratings")) {
+        el.textContent = GAMEUSERRATINGS + " user ratings";
+      }
+      for (let el of document.getElementsByClassName("game-critic-rating")) {
+        el.textContent = GAMECRITICSTARS;
+      }
+      for (let el of document.getElementsByClassName("game-critic-ratings")) {
+        el.textContent = GAMECRITICRATINGS + " critic ratings";
+      }
+      for (let el of document.getElementsByClassName("game-poster-content")) {
+        el.src = POSTERURL;
+      }
+      document.getElementById("game-poster-img").src = POSTERURL;
+      document.getElementById("game-poster-img").title =
+        GAMENAME + " Game Poster";
+      document.getElementById("game-poster").href = POSTERURL;
+      document.getElementById("game-description").textContent = DESCRIPTION;
+      document.getElementById("game-poster-img").alt = POSTERALTTEXT;
+
+      // Video / YouTube Toggle Logic
+      const videoEl = document.getElementById("game-video");
+      const videoSourceEl = document.getElementById("game-video-source");
+      const ytEl = document.getElementById("game-video-yt");
+      if (YTVID) {
+        if (ytEl) {
+          ytEl.src = VIDEOURLYT;
+          ytEl.hidden = false;
+        }
+        if (videoEl) {
+          videoEl.hidden = true;
+          try {
+            videoEl.pause();
+          } catch (e) {}
+        }
+      } else {
+        if (videoSourceEl) {
+          videoSourceEl.src = VIDEOURL;
+        }
+        if (videoEl) {
+          videoEl.hidden = false;
+          try {
+            videoEl.load();
+          } catch (e) {}
+        }
+        if (ytEl) {
+          ytEl.hidden = true;
+          ytEl.src = "";
+        }
+      }
+
+      // Lists
+      for (let genre of GENRES) {
+        let li = document.createElement("li");
+        li.textContent = genre;
+        document.getElementById("genres").appendChild(li);
+      }
+
+      for (let platform of PLATFORMS) {
+        let li = document.createElement("li");
+        li.textContent = platform;
+        document.getElementById("platforms").appendChild(li);
+      }
+
+      for (let edition of EDITIONS) {
+        let li = document.createElement("li");
+        li.textContent = edition;
+        document.getElementById("editions").appendChild(li);
+      }
+
+      // Critic Visibility
+      if (!HASCRITICS) {
+        for (let el of document.getElementsByClassName(
+          "game-critic-rating-cont",
+        )) {
+          el.classList.add("hidden");
+        }
+      }
+
+      // Days/Years Calculation
+      let timeDiff = new Date().getTime() - new Date(DATERELEASED).getTime();
+      let daysAgo = Math.floor(timeDiff / (1000 * 3600 * 24));
+      if (daysAgo > 365) {
+        let yearsAgo = Math.floor(daysAgo / 365);
+        for (let el of document.getElementsByClassName("days-ago")) {
+          el.textContent = "(" + yearsAgo + " years ago)";
+        }
+      } else {
+        for (let el of document.getElementsByClassName("days-ago")) {
+          el.textContent = "(" + daysAgo + " days ago)";
+        }
+      }
+
+      // Section Navigation
+      function getSectionIdFromHash() {
+        const rawHash = window.location.hash || "";
+        const hash = rawHash.startsWith("#") ? rawHash.slice(1) : rawHash;
+        if (!hash) { return null; }
+        return gameSections.some((section) => section.id === hash) ? hash : null;
+      }
+
+      function syncSectionFromHash() {
+        const hashSectionId = getSectionIdFromHash();
+        if (!hashSectionId) { return false; }
+        const matchingRadio = sectionRadios.find((radio) => radio.value === hashSectionId);
+        if (matchingRadio) { matchingRadio.checked = true; }
+        showGameSection(hashSectionId);
+        return true;
+      }
+
+
+      function showGameSection(sectionId) {
+        for (let section of gameSections) {
+          let isActive = section.id === sectionId;
+          section.classList.toggle("is-active", isActive);
+          section.setAttribute("aria-hidden", String(!isActive));
+        }
+      }
+
+      const defaultSection = document.querySelector(
+        'input[name="game-section"]:checked',
+      );
+      showGameSection(
+        defaultSection ? defaultSection.value : "short-description",
+      );
+
+      for (let radio of sectionRadios) {
+        radio.addEventListener("change", () => {
+          if (!radio.checked) {
+            return;
+          }
+          showGameSection(radio.value);
+        });
+      }
+
+      // Scroll Navigation Arrows
+      function updateGameInfoNavArrows() {
+        if (!gameInfoNav || !gameInfoNavLeft || !gameInfoNavRight) {
+          return;
+        }
+
+        const maxScrollLeft = gameInfoNav.scrollWidth - gameInfoNav.clientWidth;
+        const canScroll = maxScrollLeft > 1;
+        const canScrollLeft = canScroll && gameInfoNav.scrollLeft > 1;
+        const canScrollRight =
+          canScroll && gameInfoNav.scrollLeft < maxScrollLeft - 1;
+
+        gameInfoNavLeft.hidden = !canScrollLeft;
+        gameInfoNavRight.hidden = !canScrollRight;
+      }
+
+      function scrollGameInfoNavBy(distance) {
+        if (!gameInfoNav) {
+          return;
+        }
+        gameInfoNav.scrollBy({ left: distance, behavior: "smooth" });
+      }
+
+      if (gameInfoNav && gameInfoNavLeft && gameInfoNavRight) {
+        gameInfoNav.addEventListener("scroll", updateGameInfoNavArrows);
+        gameInfoNavLeft.addEventListener("click", () => {
+          scrollGameInfoNavBy(
+            -Math.max(200, Math.floor(gameInfoNav.clientWidth * 0.5)),
+          );
+        });
+        gameInfoNavRight.addEventListener("click", () => {
+          scrollGameInfoNavBy(
+            Math.max(200, Math.floor(gameInfoNav.clientWidth * 0.5)),
+          );
+        });
+        window.addEventListener("resize", updateGameInfoNavArrows);
+        updateGameInfoNavArrows();
+      }
+      // Back-to-top button with circular scroll progress
+      const progressRadius = 22;
+      const progressCircumference = 2 * Math.PI * progressRadius;
+
+      if (backToTopProgress) {
+        backToTopProgress.style.strokeDasharray = String(progressCircumference);
+        backToTopProgress.style.strokeDashoffset = String(progressCircumference);
+      }
+
+      function updateBackToTop() {
+        if (!backToTopButton || !backToTopProgress) { return; }
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = scrollableHeight > 0 ? Math.min(scrollTop / scrollableHeight, 1) : 0;
+        const dashOffset = progressCircumference * (1 - progress);
+        backToTopProgress.style.strokeDashoffset = String(dashOffset);
+        backToTopButton.classList.toggle("is-visible", scrollTop > 160);
+      }
+
+      if (backToTopButton) {
+        backToTopButton.addEventListener("click", () => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+      }
+
+      window.addEventListener("scroll", updateBackToTop, { passive: true });
+      window.addEventListener("resize", updateBackToTop);
+      updateBackToTop();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,2141 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend:wght@100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Manrope:wght@200..800&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" href="../../styles/styles.css" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="../../styles/sizeChecker.css"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="../../styles/game.css" type="text/css" />
+    <style>
+      nav.game-info-nav {
+        display: flex;
+        overflow-x: auto;
+        white-space: nowrap;
+        scrollbar-width: none;
+      }
+
+      nav.game-info-nav::-webkit-scrollbar {
+        display: none;
+      }
+
+      nav.game-info-nav label {
+        width: calc(100% / 5) !important;
+      }
+
+      .game-sections {
+        display: none;
+        width: 100%;
+
+        &.is-active {
+          display: block;
+        }
+
+        &#short-description {
+          & > h2 {
+            font-weight: 900;
+            font-size: 2.5em;
+          }
+
+          & > p {
+            text-align: justify;
+            margin-bottom: 1em;
+          }
+
+          & > .list-style {
+            list-style: none;
+            float: right;
+            background-color: var(--t-color-base-100);
+            padding: 2em;
+            margin-left: 2em;
+            margin-bottom: 2em;
+            border-radius: var(--t-radius-field);
+            border: var(--t-border) solid var(--t-color-base-300);
+
+            & > li {
+              margin-left: 1em;
+              margin-bottom: 1em;
+              position: relative;
+
+              &::before {
+                content: "";
+                display: block;
+                position: absolute;
+                width: 0.2em;
+                height: 1em;
+                background-color: var(--t-color-primary);
+                border-radius: 1em;
+                left: -0.75em;
+                top: calc(50% - 0.5em);
+              }
+            }
+          }
+        }
+
+        &#ui-components {
+          margin-bottom: 2em;
+
+          & > h2 {
+            font-weight: 900;
+            font-size: 2.5em;
+          }
+
+          & .major-components {
+            display: grid;
+            grid-template-rows: 1fr;
+            grid-template-columns: 50% 1fr;
+            gap: 1em;
+            margin: 2em 0;
+          }
+
+          & .major-component {
+            background-color: var(--t-color-base-100);
+            border-radius: var(--t-radius-field);
+            padding: 1em;
+            height: auto;
+            position: relative;
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+            gap: 1em;
+            min-height: 15em;
+            border: var(--t-border) solid var(--t-color-base-300);
+
+            &:first-child {
+              grid-column: 1 / -1;
+              width: 100%;
+              flex-direction: row;
+            }
+
+            &:not(:first-child) {
+              flex-direction: column;
+            }
+
+            & figure {
+              position: relative;
+              margin-bottom: 0;
+              width: 100%;
+              height: auto;
+
+              & figcaption {
+                font-size: 0.9em;
+                color: var(--t-color-light);
+                margin-top: 0.5em;
+                position: absolute;
+                bottom: 0.5em;
+                right: 0.5em;
+              }
+            }
+
+            & a {
+              flex-shrink: 0;
+              margin-left: auto;
+
+              & img {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 0.25em;
+              }
+            }
+
+            & .count {
+              font-weight: 700;
+              font-size: 1.2em;
+              font-family: var(--bs-font-monospace);
+              color: var(--t-color-secondary);
+              display: block;
+            }
+
+            & .header-text {
+              font-weight: 700;
+              font-size: 2.5em;
+              font-family: var(--bs-font-serif);
+            }
+
+            & ul {
+              list-style: none;
+              margin-left: 1em;
+              margin-top: 2em;
+
+              & h6 {
+                font-weight: 900;
+              }
+
+              & li {
+                margin-left: 1em;
+                margin-bottom: 0.5em;
+                position: relative;
+
+                &::before {
+                  content: "";
+                  display: block;
+                  position: absolute;
+                  width: 0.2em;
+                  height: 1em;
+                  background-color: var(--t-color-primary);
+                  border-radius: 1em;
+                  left: -0.75em;
+                  top: calc(50% - 0.5em);
+                }
+              }
+            }
+          }
+
+          & .fittslaw {
+            display: grid;
+            grid-template-columns: 50% 1fr;
+            gap: 1em;
+
+            & h2 {
+              font-weight: 900;
+              font-size: 2.5em;
+            }
+
+            & figure {
+              position: relative;
+              margin-bottom: 0;
+              width: 100%;
+              height: auto;
+
+              & figcaption {
+                font-size: 0.9em;
+                color: var(--t-color-dark);
+                margin-top: 0.5em;
+                position: absolute;
+                bottom: 0.5em;
+                right: 0.5em;
+              }
+            }
+
+            & a {
+              flex-shrink: 0;
+              margin-left: auto;
+
+              & img {
+                width: 100% !important;
+                height: auto !important;
+                margin-bottom: 1em;
+              }
+            }
+          }
+
+          @media (width < 48rem) {
+            & .fittslaw {
+              grid-template-columns: 1fr;
+            }
+          }
+
+          & .mathmodel {
+            margin: 1em 0;
+            padding: 1em;
+            position: relative;
+            padding-left: 2em;
+            background-color: var(--t-color-base-300);
+            border-radius: var(--t-radius-field);
+            overflow: hidden;
+
+            &::before {
+              content: "";
+              display: block;
+              position: absolute;
+              width: 0.5em;
+              height: 100%;
+              background-color: var(--t-color-primary);
+              left: 0;
+              top: 0;
+            }
+
+            & h6 {
+              font-family: var(--bs-font-monospace);
+              color: var(--t-color-dark);
+              font-weight: 300;
+            }
+
+            & span {
+              font-size: 2em;
+            }
+          }
+
+          @media (width < 48rem) {
+            & .major-components {
+              grid-template-columns: 1fr;
+              gap: 1em;
+            }
+
+            & .major-component {
+              &:first-child {
+                flex-direction: column;
+              }
+
+              & figure {
+                width: 100%;
+
+                & figcaption {
+                  bottom: 1em;
+                }
+              }
+
+              & a {
+                margin-left: 0;
+                width: 100%;
+
+                & img {
+                  width: 100% !important;
+                  height: auto !important;
+                  margin-bottom: 1em;
+                }
+              }
+            }
+          }
+        }
+
+        &#user-interaction {
+          margin-bottom: 2em;
+
+          & > h2 {
+            font-weight: 900;
+            font-size: 2.5em;
+          }
+
+          & h3 {
+            font-weight: 900;
+            font-size: 2.5em;
+          }
+
+          & .multi-modal-feedback {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1em;
+            padding-top: 1em;
+
+            @media (width < 48rem) {
+              grid-template-columns: 1fr !important;
+            }
+
+            & figure {
+              margin: auto;
+              width: 100%;
+              height: auto;
+
+              & img {
+                width: 100% !important;
+                height: auto !important;
+              }
+            }
+          }
+
+          & ul {
+            list-style: none;
+            padding: 0;
+
+            & li {
+              margin-top: 2em;
+              display: flex;
+              flex-direction: row;
+
+              & h6 {
+                font-weight: 700;
+                font-size: 1.5em;
+                margin-bottom: 0.5em;
+              }
+
+              & .logo-svg {
+                height: 5em;
+                flex-shrink: 0;
+                background-color: var(--t-color-secondary);
+                color: var(--t-color-base-100);
+                aspect-ratio: 1 / 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 1em;
+                border-radius: var(--t-radius-field);
+                margin: auto;
+                margin-right: 1em;
+
+                & svg {
+                  width: 100%;
+                  height: 100%;
+                }
+              }
+            }
+          }
+        }
+
+        &#hci-principles {
+          margin-bottom: 2em;
+
+          & > h2 {
+            font-weight: 900;
+            font-size: 2.5em;
+          }
+
+          & .cybernetic-feedback-loops {
+            margin-top: 2em;
+            padding: 1em;
+            border-radius: var(--t-radius-field);
+            background-color: var(--t-color-base-100);
+            border: var(--t-border) solid var(--t-color-base-300);
+
+            & > h3 {
+              font-weight: 900;
+              font-size: 2em;
+            }
+
+            & .cybernetic-content {
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 1em;
+
+              @media (width < 48rem) {
+                grid-template-columns: 1fr !important;
+              }
+
+              & h6 {
+                font-weight: 700;
+                font-size: 1.2em;
+                margin-bottom: 0.5em;
+              }
+
+              & .primary-modalities {
+                list-style: none;
+                padding: 1em;
+                background-color: var(--t-color-base-200);
+                border-radius: var(--t-radius-field);
+                margin-bottom: 0;
+
+                & li {
+                  margin-left: 1em;
+                  margin-bottom: 0.5em;
+                  position: relative;
+
+                  &::before {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    width: 0.2em;
+                    height: 1em;
+                    background-color: var(--t-color-primary);
+                    border-radius: 1em;
+                    left: -0.75em;
+                    top: calc(50% - 0.5em);
+                  }
+                }
+              }
+            }
+          }
+
+          & .spatial-congruence {
+            padding: 1em;
+            margin-top: 2em;
+
+            & h2 {
+              font-weight: 900;
+              font-size: 2.5em;
+            }
+          }
+
+          & .cognitive-load-bifurcation {
+            margin: 2em 0;
+            padding: 1em;
+            border-radius: var(--t-radius-field);
+            background-color: var(--t-color-base-100);
+            border: var(--t-border) solid var(--t-color-base-300);
+
+            & > h2 {
+              font-weight: 900;
+              font-size: 2em;
+            }
+
+            & table {
+              width: 100%;
+              border-collapse: separate;
+              border-spacing: 0;
+              border: var(--t-border) solid var(--t-color-base-300);
+              border-radius: var(--t-radius-field);
+              overflow: hidden;
+              background-color: var(--t-color-base-200);
+            }
+
+            & th,
+            & td {
+              padding: 1em;
+              vertical-align: top;
+            }
+
+            & thead th {
+              font-weight: 800;
+              font-size: 1.05em;
+              background-color: var(--t-color-base-300);
+              border-bottom: 1px solid var(--t-color-base-300);
+            }
+
+            & th + th,
+            & td + td {
+              border-left: 1px solid var(--t-color-base-300);
+            }
+
+            & tbody td {
+              border-bottom: 1px solid var(--t-color-base-300);
+            }
+
+            & tbody tr:last-child td {
+              border-bottom: 0;
+            }
+
+            & td h6 {
+              font-weight: 700;
+              font-size: 1.15em;
+              margin-bottom: 0.5em;
+            }
+
+            & td p {
+              margin-bottom: 0;
+            }
+
+            @media (width < 48rem) {
+              & table,
+              & thead,
+              & tbody,
+              & tr,
+              & th,
+              & td {
+                display: block;
+                width: 100%;
+              }
+
+              & thead {
+                display: none;
+              }
+
+              & tbody tr {
+                border-bottom: 1px solid var(--t-color-base-300);
+                padding: 0.5em;
+              }
+
+              & tbody tr:last-child {
+                border-bottom: 0;
+              }
+
+              & td {
+                border: 0;
+                border-radius: var(--t-radius-field);
+                background-color: var(--t-color-base-100);
+                margin-bottom: 0.75em;
+              }
+
+              & td::before {
+                display: block;
+                font-weight: 700;
+                font-size: 0.85em;
+                text-transform: uppercase;
+                letter-spacing: 0.04em;
+                color: var(--t-color-primary);
+                margin-bottom: 0.5em;
+              }
+
+              & td:nth-child(1)::before {
+                content: "Extrinsic Load";
+              }
+
+              & td:nth-child(2)::before {
+                content: "Intrinsic Focus";
+              }
+            }
+          }
+        }
+
+        &#ui-ux-weaknesses {
+          margin-bottom: 2em;
+
+          & > h2 {
+            font-weight: 900;
+            font-size: 2.5em;
+          }
+
+          & > p {
+            text-align: justify;
+            margin-bottom: 2em;
+          }
+
+          & table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            border: var(--t-border) solid var(--t-color-base-300);
+            border-radius: var(--t-radius-field);
+            overflow: hidden;
+            background-color: var(--t-color-base-100);
+          }
+
+          & th,
+          & td {
+            padding: 1em;
+            vertical-align: top;
+          }
+
+          & td {
+            position: relative;
+            padding-right: 4.25em;
+          }
+
+          & thead th {
+            font-weight: 800;
+            font-size: 1.05em;
+            background-color: var(--t-color-base-300);
+            border-bottom: 1px solid var(--t-color-base-300);
+          }
+
+          & th + th,
+          & td + td {
+            border-left: 1px solid var(--t-color-base-300);
+          }
+
+          & tbody td {
+            border-bottom: 1px solid var(--t-color-base-300);
+          }
+
+          & tbody tr:last-child td {
+            border-bottom: 0;
+          }
+
+          & .badge {
+            font-size: 0.75em;
+            font-weight: 400;
+            border-radius: var(--t-radius-selector);
+            padding: 0.35em 0.75em;
+            margin-left: 0.5em;
+            vertical-align: middle;
+            border: var(--t-border) solid transparent;
+          }
+
+          & .badge-success {
+            background-color: var(--t-color-success);
+            color: color-mix(
+              in oklab,
+              var(--t-color-success-content) 70%,
+              var(--t-color-success)
+            );
+            border-color: color-mix(
+              in oklab,
+              var(--t-color-success) 65%,
+              var(--t-color-dark)
+            );
+          }
+
+          & .badge-danger {
+            background-color: var(--t-color-error);
+            color: color-mix(
+              in oklab,
+              var(--t-color-error-content) 70%,
+              var(--t-color-error)
+            );
+            border-color: color-mix(
+              in oklab,
+              var(--t-color-error) 65%,
+              var(--t-color-dark)
+            );
+          }
+
+          & .sw-item-head {
+            display: block;
+            margin-bottom: 0.75em;
+          }
+
+          & .sw-icon {
+            width: 2.75em;
+            height: 2.75em;
+            color: var(--t-color-base-300);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            position: absolute;
+            top: 0.75em;
+            right: 0.75em;
+          }
+
+          & .sw-icon svg {
+            width: 1.5em;
+            height: 1.5em;
+          }
+
+          & .label {
+            display: inline-block;
+            font-family: var(--bs-font-monospace);
+            font-size: 0.9em;
+            font-weight: 700;
+            color: var(--t-color-secondary);
+            letter-spacing: 0.03em;
+          }
+
+          & td h6 {
+            font-weight: 700;
+            font-size: 1.2em;
+            margin-bottom: 0.5em;
+          }
+
+          & td p {
+            margin-bottom: 0;
+            text-align: justify;
+          }
+
+          @media (width < 48rem) {
+            & table,
+            & thead,
+            & tbody,
+            & tr,
+            & th,
+            & td {
+              display: block;
+              width: 100%;
+            }
+
+            & thead {
+              display: none;
+            }
+
+            & tbody tr {
+              border-bottom: 1px solid var(--t-color-base-300);
+              padding: 0.5em;
+              background-color: var(--t-color-base-200);
+            }
+
+            & tbody tr:last-child {
+              border-bottom: 0;
+            }
+
+            & td {
+              border: 0;
+              border-radius: var(--t-radius-field);
+              background-color: var(--t-color-base-100);
+              margin-bottom: 0.75em;
+            }
+
+            & td::before {
+              display: block;
+              font-weight: 700;
+              font-size: 0.85em;
+              text-transform: uppercase;
+              letter-spacing: 0.04em;
+              margin-bottom: 0.5em;
+            }
+
+            & td:nth-child(1)::before {
+              content: "System Strengths";
+              color: color-mix(
+                in oklab,
+                var(--t-color-success) 70%,
+                var(--t-color-dark)
+              );
+            }
+
+            & td:nth-child(2)::before {
+              content: "System Weaknesses";
+              color: color-mix(
+                in oklab,
+                var(--t-color-error) 70%,
+                var(--t-color-dark)
+              );
+            }
+          }
+        }
+      }
+
+      .list-style-area {
+        margin: 2em 0;
+        width: 100%;
+        background-color: var(--t-color-base-100);
+        border: var(--t-border) solid var(--t-color-base-300);
+        padding: 1em;
+        border-radius: var(--t-radius-field);
+
+        & ol {
+          list-style: none;
+          margin-left: 0;
+          padding-left: 0;
+          margin-top: 2em;
+          display: grid;
+          gap: 1em;
+
+          &.two-columns {
+            grid-template-columns: 1fr 1fr;
+          }
+
+          &.three-columns {
+            grid-template-columns: 1fr 1fr 1fr;
+          }
+
+          &.four-columns {
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+          }
+
+          @media (width < 48rem) {
+            &.md-one-columns {
+              grid-template-columns: 1fr !important;
+            }
+
+            &.md-two-columns {
+              grid-template-columns: 1fr 1fr !important;
+            }
+          }
+
+          & li {
+            position: relative;
+
+            &::before {
+              font-weight: 700;
+              font-size: 5em;
+              font-family: var(--bs-font-monospace);
+              color: var(--t-color-base-200);
+              position: absolute;
+              top: -0.5em;
+            }
+
+            &:nth-child(1)::before {
+              content: "01";
+            }
+
+            &:nth-child(2)::before {
+              content: "02";
+            }
+
+            &:nth-child(3)::before {
+              content: "03";
+            }
+
+            &:nth-child(4)::before {
+              content: "04";
+            }
+
+            @media (width > 48rem) {
+              &::before {
+                left: 0;
+              }
+            }
+
+            @media (width < 48rem) {
+              &::before {
+                right: 0;
+              }
+            }
+
+            & h6 {
+              font-weight: 700;
+              font-size: 1.5em;
+              position: relative;
+
+              &::after {
+                content: "";
+                display: block;
+                width: 100%;
+                height: 1px;
+                background-color: var(--t-color-base-300);
+                margin-top: 0.5em;
+              }
+            }
+          }
+        }
+      }
+
+      .footnote {
+        width: 100%;
+        background-color: rgba(var(--t-color-primary-rgb), 0.1);
+        padding: 2em;
+        border-radius: var(--t-radius-field);
+
+        &::before {
+          content: "Note:";
+          font-weight: 700;
+          font-size: 1.2em;
+          color: var(--t-color-primary);
+          display: block;
+          margin-bottom: 0.5em;
+        }
+
+        &.summary::before {
+          content: "Summary:";
+        }
+      }
+
+      .game-video-wrp {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        overflow: hidden;
+        background-color: var(--t-color-base-300);
+      }
+
+      .game-video-wrp iframe,
+      .game-video-wrp video {
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+
+      .back-to-top {
+        position: fixed;
+        right: 1.25rem;
+        bottom: 1.25rem;
+        width: 3.5rem;
+        height: 3.5rem;
+        z-index: 1001;
+        cursor: pointer;
+        opacity: 0;
+        pointer-events: none;
+        transition:
+          opacity 0.2s ease,
+          transform 0.2s ease;
+        transform: translateY(0.5rem);
+      }
+
+      .back-to-top.is-visible {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+      }
+
+      .back-to-top svg {
+        width: 100%;
+        height: 100%;
+      }
+
+      .back-to-top .btn-progress {
+        transform: rotate(-90deg);
+        transform-origin: center;
+        transition: stroke-dashoffset 0.1s linear;
+      }
+
+      .hidden {
+        display: none !important;
+      }
+    </style>
+
+    <title id="title">Valorant - GameUX</title>
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar navbar-light navbar-expand-lg">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="../../../index.html">
+            <img
+              src="../../../public/gameux.png"
+              alt="Logo"
+              class="navbar-logo"
+            />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon" style="width: 1em"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="../../../index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="../gameList.html">Game List</a>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="../about.html">About</a></li>
+              <li class="nav-item"><a class="nav-link" href="../contact.html">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <nav class="breadcrumb-nav" aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="../gameList.html">Game List</a>
+        </li>
+        <li class="breadcrumb-item active game-name" aria-current="page">Valorant</li>
+      </ol>
+    </nav>
+
+    <main>
+      <article class="wide">
+        <section class="header-section">
+          <img class="game-poster-content game-poster-background-style" />
+          <h1 class="game-name game-name-header">Valorant</h1>
+          <div class="game-header">
+            <span class="game-header-cont">
+              <div class="game-info-bar">
+                <span class="game-date-info">
+                  <span class="date-released">October 4, 2022</span>
+                  <span class="days-ago"></span>
+                </span>
+                <span class="game-badge">Free-to-Play</span>
+                <span class="publisher">Blizzard Entertainment</span>
+              </div>
+            </span>
+            <div class="game-header-rating">
+              <table class="game-critic-rating-cont">
+                <tr>
+                  <td rowspan="2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </td>
+                  <td class="game-critic-rating">0</td>
+                </tr>
+                <tr>
+                  <td class="game-critic-ratings">0 critic ratings</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <div class="video-game-container">
+            <a class="game-poster" id="game-poster">
+              <img
+                class="game-poster-img"
+                id="game-poster-img"
+                alt="Valorant Poster"
+              />
+            </a>
+            <div class="game-video-wrp">
+              <video class="game-video" id="game-video" controls>
+                <source type="video/mp4" id="game-video-source" />
+                Your browser does not support the video tag.
+              </video>
+              <iframe
+                class="game-video"
+                id="game-video-yt"
+                frameborder="0"
+                allowfullscreen
+                hidden
+              ></iframe>
+            </div>
+
+            <div class="game-rating">
+              <table class="game-user-rating-cont">
+                <tr>
+                  <td rowspan="2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </td>
+                  <td class="game-user-rating">0</td>
+                </tr>
+                <tr>
+                  <td class="game-user-ratings">0 user ratings</td>
+                </tr>
+              </table>
+              <table class="game-critic-rating-cont">
+                <tr>
+                  <td rowspan="2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </td>
+                  <td class="game-critic-rating">0</td>
+                </tr>
+                <tr>
+                  <td class="game-critic-ratings">0 critic ratings</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+
+          <ul class="game-list-data">
+            <li class="game-list-data-item">
+              Genres:
+              <ul id="genres"></ul>
+            </li>
+            <li class="game-list-data-item">
+              Platforms:
+              <ul id="platforms"></ul>
+            </li>
+            <li class="game-list-data-item">
+              Editions:
+              <ul id="editions"></ul>
+            </li>
+          </ul>
+          <p class="game-description" id="game-description"></p>
+        </section>
+      </article>
+
+      <div class="game-info-nav-container">
+        <div class="game-info-nav-wrap">          <button class="game-info-nav-arrow left" id="game-info-nav-left" type="button" aria-label="Scroll sections left" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="20" height="20">
+              <path fill-rule="evenodd" d="M15.78 19.28a.75.75 0 0 1-1.06 0L8.22 12.78a.75.75 0 0 1 0-1.06l6.5-6.5a.75.75 0 1 1 1.06 1.06L9.81 12l5.97 5.72a.75.75 0 0 1 0 1.56Z" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+          
+          <nav class="game-info-nav" id="game-info-nav" role="tablist">
+            <label role="tab"
+              ><input
+                type="radio"
+                name="game-section"
+                value="short-description"
+                checked="checked"
+              />
+              Overview</label
+            >
+            <label role="tab"
+              ><input type="radio" name="game-section" value="ui-components" />
+              UI Components</label
+            >
+            <label role="tab"
+              ><input
+                type="radio"
+                name="game-section"
+                value="user-interaction"
+              />
+              Interaction</label
+            >
+            <label role="tab"
+              ><input type="radio" name="game-section" value="hci-principles" />
+              HCI Principles</label
+            >
+            <label role="tab"
+              ><input
+                type="radio"
+                name="game-section"
+                value="ui-ux-weaknesses"
+              />
+              Analysis</label
+            >
+          </nav>
+          <button
+            class="game-info-nav-arrow right"
+            id="game-info-nav-right"
+            type="button"
+            aria-label="Scroll sections right"
+            hidden=""
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+              width="20"
+              height="20"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M8.22 4.72a.75.75 0 0 1 1.06 0l6.5 6.5a.75.75 0 0 1 0 1.06l-6.5 6.5a.75.75 0 0 1-1.06-1.06L14.19 12 8.22 6.28a.75.75 0 0 1 0-1.56Z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <article>
+        <div class="game-sections-stage">
+          <!-- ==================== OVERVIEW ==================== -->
+          <section
+            class="game-sections is-active"
+            id="short-description"
+            aria-hidden="false"
+          >
+            <h2>Overview</h2>
+            <ul class="list-style">
+              <h2>Valorant Game Modes:</h2>
+                            <li>Competitive</li>
+              <li>Unrated</li>
+              <li>Spike Rush</li>
+              <li>Deathmatch</li>
+              <li>Swiftplay</li>
+            </ul>
+            <p>
+              Valorant is a free-to-play 5v5 character-based tactical shooter developed and published by Riot Games. Released on June 2, 2020, for PC, and later ported to PlayStation 5 and Xbox Series X|S in 2024, the game combines the precision gunplay and economy system of Counter-Strike with hero-based abilities. Each round begins with a buy phase where players purchase weapons and abilities, then execute or defend against a spike (bomb) plant.
+            </p>
+            <p>
+              Valorant's UI/UX design is meticulously optimized for competitive clarity. The game employs a minimal HUD philosophy with health, armor, ammo, ability cooldowns, and ultimate charge displayed in compact, high-contrast elements. The agent selection screen uses role-based categorization (Duelist, Initiator, Controller, Sentinel) with distinctive color coding. Every visual element minimizes information processing time in a game where split-second decisions determine round outcomes.
+            </p>
+            <ul class="metrics-list">
+              <li>
+                <h6>Cognitive Load</h6>
+                <div class="value">Very High</div>
+                <div class="desc">
+                  Simultaneous tracking of economy, agent abilities, spike status, minimap callouts, and precise crosshair placement
+                </div>
+              </li>
+              <li>
+                <h6>Response Time</h6>
+                <div class="value">\u00b1 10ms to \u00b1 35ms</div>
+                <div class="desc">
+                  128-tick server infrastructure designed for sub-35ms ping for 70% of global players
+                </div>
+              </li>
+              <li>
+                <h6>Time-to-Kill</h6>
+                <div class="value">~150ms to ~400ms</div>
+                <div class="desc">
+                  Extremely fast TTK emphasizing pre-aim, crosshair placement, and first-shot accuracy
+                </div>
+              </li>
+            </ul>
+          </section>
+
+          <!-- ==================== UI COMPONENTS ==================== -->
+          <section class="game-sections" id="ui-components" aria-hidden="true">
+            <h2>UI Components</h2>
+            <div class="major-components">
+              <div class="major-component">
+                <figure>
+                  <a
+                    href="https://interfaceingame.com/wp-content/uploads/valorant/valorant-hud-1920x1080.jpg"
+                    title="Valorant Competitive HUD"
+                    target="images"
+                  >
+                    <img
+                      src="https://interfaceingame.com/wp-content/uploads/valorant/valorant-hud-1920x1080.jpg"
+                      alt="Valorant HUD"
+                    />
+                  </a>
+                  <figcaption>FIG 1.1: In-Match Competitive HUD</figcaption>
+                </figure>
+                <div>
+                  <span class="count">[ ELEMENT_01 ]</span>
+                  <span class="header-text">The Competitive HUD</span>
+                  <p>
+                    Valorant's HUD is a masterclass in competitive minimalism.
+                    Health and armor are displayed bottom-left, ammo bottom-right,
+                    ability cooldowns centered below the crosshair, and the
+                    minimap top-left. The kill feed occupies the top-right corner.
+                    Every element uses high-contrast colors against the game's
+                    clean visual style to ensure instant readability during
+                    gunfights. The ultimate point counter and spike status are
+                    anchored at the top center.
+                  </p>
+                  <ul>
+                    <h6>HUD Elements</h6>
+                    <li>Health & Armor Bars</li>
+                    <li>Ability Cooldown Icons</li>
+                    <li>Ultimate Point Counter</li>
+                    <li>Economy Display & Buy Menu</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="major-component">
+                <figure>
+                  <a
+                    href="https://interfaceingame.com/wp-content/uploads/valorant/valorant-agent-select-1920x1080.jpg"
+                    title="Valorant Agent Select"
+                    target="images"
+                  >
+                    <img
+                      src="https://interfaceingame.com/wp-content/uploads/valorant/valorant-agent-select-1920x1080.jpg"
+                      alt="Agent Selection Screen"
+                    />
+                  </a>
+                  <figcaption>FIG 1.2: Agent Selection Screen</figcaption>
+                </figure>
+                <div>
+                  <span class="count">[ ELEMENT_02 ]</span>
+                  <span class="header-text">Agent Selection Interface</span>
+                  <p>
+                    The agent selection screen categorizes agents into four
+                    roles — Duelist, Initiator, Controller, Sentinel — using
+                    color-coded tabs. Each agent card displays their portrait
+                    and name, with ability previews on hover. The locked-in
+                    agent is highlighted with a full-screen character model,
+                    providing clear visual confirmation of team composition
+                    before the match begins.
+                  </p>
+                </div>
+              </div>
+              <div class="major-component">
+                <figure>
+                  <a
+                    href="https://interfaceingame.com/wp-content/uploads/valorant/valorant-minimap-1920x1080.jpg"
+                    title="Valorant Minimap"
+                    target="images"
+                  >
+                    <img
+                      src="https://interfaceingame.com/wp-content/uploads/valorant/valorant-minimap-1920x1080.jpg"
+                      alt="Minimap & Tactical Overlay"
+                    />
+                  </a>
+                  <figcaption>FIG 1.3: Minimap & Ping System</figcaption>
+                </figure>
+                <div>
+                  <span class="count">[ ELEMENT_03 ]</span>
+                  <span class="header-text">Minimap & Tactical Overlay</span>
+                  <p>
+                    The minimap is Valorant's primary strategic awareness tool.
+                    It displays teammate positions, spike location, and sound
+                    indicators (footstep pings). The ping system allows
+                    non-verbal communication through map markers, enabling rapid
+                    tactical callouts without voice chat dependency — critical
+                    for accessibility and reducing toxicity.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <h2>Fitt's Law in Target Acquisition</h2>
+            <div class="fittslaw">
+              <div>
+                <p>
+                  Fitt's Law is critical in Valorant's gunplay design. Unlike
+                  hero shooters with large character models, Valorant features
+                  relatively small head hitboxes that demand extreme precision.
+                  The game's low time-to-kill means the player who achieves
+                  accurate target acquisition fastest wins — making crosshair
+                  placement (pre-aiming at head height) a Fitt's Law
+                  optimization strategy that reduces effective distance (D)
+                  to near-zero.
+                </p>
+                <div class="mathmodel">
+                  <h6>[ MATHEMATICAL MODEL ]</h6>
+                  <span>MT = a + b * log<sub>2</sub>(2D/W)</span>
+                </div>
+                <p>
+                  Valorant's agents further modulate Fitt's Law through
+                  abilities. Smokes reduce visual information (increasing
+                  effective D), flashes temporarily eliminate the target (making
+                  W = 0), and movement abilities like Jett's dash or Raze's
+                  satchel dramatically increase effective D for the opponent.
+                  The game's entire tactical layer is built on manipulating
+                  Fitt's Law variables through agent utility.
+                </p>
+              </div>
+              <div>
+                <figure>
+                  <a
+                    href="https://interfaceingame.com/wp-content/uploads/valorant/valorant-gameplay-1920x1080.jpg"
+                    title="Valorant Target Acquisition"
+                    target="images"
+                  >
+                    <img
+                      src="https://interfaceingame.com/wp-content/uploads/valorant/valorant-gameplay-1920x1080.jpg"
+                      alt="Crosshair Placement & Targeting"
+                    />
+                  </a>
+                  <figcaption>FIG 1.4: Crosshair Placement & Targeting</figcaption>
+                </figure>
+              </div>
+            </div>
+            <div class="list-style-area">
+              <h3 class="text-center">Visual Hierarchy Breakdown</h3>
+              <div class="text-center">Layering of Information</div>
+              <ol class="three-columns md-one-columns">
+                <li>
+                  <h6>Crosshair & Target</h6>
+                  <p>
+                    Primary focus. The crosshair and enemy character models
+                    dominate the central field of view. Head-level pre-aim and
+                    first-shot accuracy are the primary visual tasks, with hit
+                    confirmation via blood splatter and hit-sound feedback.
+                  </p>
+                </li>
+                <li>
+                  <h6>Tactical Awareness</h6>
+                  <p>
+                    Secondary focus. The minimap, ability cooldowns, and round
+                    timer provide strategic context through peripheral scanning,
+                    enabling moment-to-moment tactical decisions without breaking
+                    crosshair focus.
+                  </p>
+                </li>
+                <li>
+                  <h6>Economy & Meta</h6>
+                  <p>
+                    Tertiary focus. The buy menu, round score, and team economy
+                    inform macro-level strategy — when to save, force-buy, or
+                    eco — without demanding active combat attention.
+                  </p>
+                </li>
+              </ol>
+            </div>
+            <div class="footnote">
+              All component analysis is based on Valorant (2020–present). The
+              game's HUD philosophy demonstrates that competitive shooter
+              interfaces must prioritize crosshair-centric design where every
+              non-essential element is pushed to the visual periphery to
+              preserve aim focus.
+            </div>
+          </section>
+
+          <!-- ==================== INTERACTION ==================== -->
+          <section
+            class="game-sections"
+            id="user-interaction"
+            aria-hidden="true"
+          >
+            <h2>User Interaction</h2>
+            <p>
+              An investigation into the precision-oriented feedback systems of
+              Valorant's tactical shooter model, analyzing information delivery
+              under competitive 5v5 round-based engagements where split-second
+              accuracy determines outcomes.
+            </p>
+            <div class="list-style-area">
+              <h3 class="text-center">Core Gameplay Loop</h3>
+              <div class="text-center"></div>
+              <ol class="four-columns md-two-columns">
+                <li>
+                  <h6>Buy</h6>
+                  <p>
+                    Players assess team economy, purchase weapons and abilities
+                    during the buy phase, coordinating with teammates on eco
+                    rounds, force-buys, or full-buy strategies.
+                  </p>
+                </li>
+                <li>
+                  <h6>Execute</h6>
+                  <p>
+                    Attackers use agent abilities to take map control and plant
+                    the spike, while defenders hold angles and rotate based on
+                    information gathered through utility and callouts.
+                  </p>
+                </li>
+                <li>
+                  <h6>Duel</h6>
+                  <p>
+                    Individual gunfights demand precise crosshair placement,
+                    spray control, and counter-strafing. The low TTK means most
+                    engagements are decided within 200ms of first contact.
+                  </p>
+                </li>
+                <li>
+                  <h6>Adapt</h6>
+                  <p>
+                    Between rounds, teams adjust strategy based on opponent
+                    patterns, economic state, and ultimate availability, creating
+                    a meta-game layer above mechanical skill.
+                  </p>
+                </li>
+              </ol>
+            </div>
+            <h3>Multi-Modal Feedback Matrix</h3>
+            <div class="multi-modal-feedback">
+              <div>
+                <p>
+                  Valorant's competitive mandate relies on instant, unambiguous
+                  feedback to support split-second decision-making. When a
+                  player fires their weapon, the system delivers precise
+                  audio-visual confirmation of hit registration, enabling
+                  immediate assessment of engagement success or failure.
+                </p>
+              </div>
+              <div>
+                <figure>
+                  <a
+                    href="https://interfaceingame.com/wp-content/uploads/valorant/valorant-kill-1920x1080.jpg"
+                    title="Valorant Kill Confirmation"
+                    target="images"
+                  >
+                    <img
+                      src="https://interfaceingame.com/wp-content/uploads/valorant/valorant-kill-1920x1080.jpg"
+                      alt="Valorant Hit Registration"
+                    />
+                  </a>
+                  <figcaption>FIG 1.5: Hit Registration & Kill Feed</figcaption>
+                </figure>
+              </div>
+            </div>
+            <ul>
+              <li>
+                <div class="logo-svg">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25l4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h6>Audio Feedback</h6>
+                  <p>
+                    Spatial audio is a primary competitive tool. Footstep sounds
+                    are distance-attenuated and directional, allowing players to
+                    track enemy positions through walls. Each weapon has a
+                    distinct audio signature, and abilities produce unique sound
+                    cues. Enemy ultimates have threatening global audio, while
+                    allied ultimates sound supportive — a critical friend-or-foe
+                    distinction. The iconic headshot "dink" provides instant
+                    confirmation of critical damage.
+                  </p>
+                </div>
+              </li>
+              <li>
+                <div class="logo-svg">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h6>Visual Feedback</h6>
+                  <p>
+                    Hit markers appear on the crosshair with color
+                    differentiation: white for body shots, red for headshots,
+                    and a skull icon for eliminations. Blood splatter provides
+                    spatial feedback on hit location. Damage direction indicators
+                    appear as red chevrons on screen edges, showing where
+                    incoming fire originates. The kill feed (top-right) displays
+                    weapon icons and assists for mid-round awareness.
+                  </p>
+                </div>
+              </li>
+              <li>
+                <div class="logo-svg">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M7.864 4.243A7.5 7.5 0 0 1 19.5 10.5c0 2.92-.556 5.709-1.568 8.268M5.742 6.364A7.465 7.465 0 0 0 4.5 10.5a7.464 7.464 0 0 1-1.15 3.993m1.989 3.559A11.209 11.209 0 0 0 8.25 10.5a3.75 3.75 0 1 1 7.5 0c0 .527-.021 1.049-.064 1.565M12 10.5a14.94 14.94 0 0 1-3.6 9.75m6.633-4.596a18.666 18.666 0 0 1-2.485 5.33"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h6>Input/Tactile Fidelity</h6>
+                  <p>
+                    On console, adaptive trigger resistance varies by weapon
+                    type — sniper rifles like the Operator have a heavy pull
+                    while SMGs like the Stinger are lighter. On PC, precise 1:1
+                    mouse-to-crosshair mapping with no acceleration ensures raw
+                    mechanical input fidelity. Riot's 128-tick servers and
+                    sub-35ms ping targets minimize the gap between player input
+                    and on-screen result.
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </section>
+
+          <!-- ==================== HCI PRINCIPLES ==================== -->
+          <section class="game-sections" id="hci-principles" aria-hidden="true">
+            <h2>HCI Principles</h2>
+            <div class="cybernetic-feedback-loops">
+              <h3>Cybernetic Feedback Loops</h3>
+              <div class="cybernetic-content">
+                <div>
+                  <p style="text-align: justify">
+                    Valorant employs a closed-loop competitive feedback
+                    architecture where every player action — shooting, ability
+                    usage, movement — generates immediate multi-channel feedback.
+                    The round-based structure creates discrete feedback cycles:
+                    each round is a complete decision-action-outcome loop, with
+                    the buy phase serving as a strategic reset point between
+                    high-intensity combat sequences.
+                  </p>
+                </div>
+                <div>
+                  <ul class="primary-modalities">
+                    <h6>Primary Modalities</h6>
+                    <li>
+                      <strong>Visual</strong>: Crosshair hit markers, blood splatter, kill feed, ability visual effects, minimap pings, damage direction indicators
+                    </li>
+                    <li>
+                      <strong>Auditory</strong>: Directional footsteps, weapon-specific fire sounds, ability audio cues, enemy vs. allied ultimate voice lines, headshot 'dink' sound
+                    </li>
+                    <li>
+                      <strong>Structural</strong>: Round-based economy, buy menu constraints, agent role-lock, spike plant/defuse timers, overtime mechanics
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="spatial-congruence">
+              <h2>Spatial Congruence</h2>
+              <p style="text-align: justify">
+                Valorant's first-person perspective creates a direct 1:1 spatial
+                mapping between mouse input and crosshair positioning, with no
+                aim acceleration or smoothing by default. The game's map design
+                uses clean geometric architecture with minimal visual clutter,
+                ensuring sight lines and angles are immediately readable. The
+                minimap provides a top-down spatial reference, while the ping
+                system allows players to place markers that exist in both 2D
+                (minimap) and 3D (world-space) simultaneously — bridging
+                tactical communication with spatial awareness.
+              </p>
+            </div>
+            <div class="cognitive-load-bifurcation">
+              <h2>Cognitive Load Bifurcation</h2>
+              <p style="text-align: justify; margin-bottom: 2em">
+                Valorant's central challenge is supporting extremely fast
+                decision-making (~150ms TTK) while managing complex strategic
+                information (economy, abilities, team coordination). The HUD
+                minimizes Extrinsic Load through peripheral placement and
+                high-contrast design, while the gameplay deliberately maximizes
+                Intrinsic Load through tactical depth, economy management, and
+                agent ability interactions.
+              </p>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Extrinsic Organization</th>
+                    <th>Intrinsic Focus</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <h6>Peripheral HUD Placement</h6>
+                      <p>
+                        All non-crosshair information is positioned at screen
+                        edges, allowing muscle-memory-driven peripheral scanning
+                        that never requires the player to break crosshair focus
+                        during active combat.
+                      </p>
+                    </td>
+                    <td>
+                      <h6>Economy Decision Matrix</h6>
+                      <p>
+                        Players must calculate team economy across 25 rounds,
+                        balancing weapon purchases, ability costs, and loss bonus
+                        thresholds — a persistent strategic cognitive load
+                        layered on top of mechanical aim demands.
+                      </p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <h6>Role-Based Agent Categorization</h6>
+                      <p>
+                        The Duelist/Initiator/Controller/Sentinel framework
+                        reduces agent selection complexity from 25+ individual
+                        choices to four categorical decisions, applying chunking
+                        theory to team composition strategy.
+                      </p>
+                    </td>
+                    <td>
+                      <h6>Ability Timing & Sequencing</h6>
+                      <p>
+                        Coordinating agent abilities in real-time — flashing for
+                        a teammate's peek, smoking a choke point, deploying a
+                        recon dart — demands precise temporal sequencing under
+                        competitive pressure.
+                      </p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="footnote">
+              <q>
+                Valorant's HUD is not merely an information display — it is a
+                competitive weapon. Its design proves that in tactical shooters,
+                the interface must be invisible during combat and informative
+                between rounds, serving two fundamentally different cognitive
+                modes within a single match.
+              </q>
+            </div>
+          </section>
+
+          <!-- ==================== ANALYSIS ==================== -->
+          <section
+            class="game-sections"
+            id="ui-ux-weaknesses"
+            aria-hidden="true"
+          >
+            <h2>Strengths and Weaknesses Analysis</h2>
+            <p>
+              A comprehensive breakdown of the competitive tactical shooter
+              interface paradigm. Evaluating the tension between
+              precision-optimized competitive design and accessibility for
+              players transitioning from casual shooters.
+            </p>
+
+            <table style="margin-bottom: 2em">
+              <thead>
+                <tr>
+                  <th>
+                    System Strengths
+                    <span class="badge badge-success">Positive_Vectors</span>
+                  </th>
+                  <th>
+                    System Weaknesses
+                    <span class="badge badge-danger">Negative_Vectors</span>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="sw-item-head">
+                      <span class="sw-icon" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"></path>
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7Z"></path>
+                        </svg>
+                      </span>
+                      <span class="label">01_PRECISION</span>
+                    </div>
+                    <h6>Crosshair-Centric Design</h6>
+                    <p>
+                      The entire HUD is architecturally subordinate to the
+                      crosshair. All elements are positioned to maximize the
+                      unobstructed central viewing area, ensuring the player's
+                      primary visual task — precise aiming — is never
+                      compromised by interface elements.
+                    </p>
+                  </td>
+                  <td>
+                    <div class="sw-item-head">
+                      <span class="sw-icon" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75M6.75 10.5h10.5A2.25 2.25 0 0 1 19.5 12.75v6A2.25 2.25 0 0 1 17.25 21H6.75A2.25 2.25 0 0 1 4.5 18.75v-6A2.25 2.25 0 0 1 6.75 10.5Z"></path>
+                        </svg>
+                      </span>
+                      <span class="label">01_BARRIER</span>
+                    </div>
+                    <h6>High Entry Barrier</h6>
+                    <p>
+                      The game's emphasis on precise mechanics (counter-strafing,
+                      spray patterns, one-tap headshots) creates a steep learning
+                      curve. New players face a significant skill gap, and the
+                      UI provides minimal in-game coaching for advanced
+                      mechanics like counter-strafing or spray transfer.
+                    </p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="sw-item-head">
+                      <span class="sw-icon" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25l4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z"></path>
+                        </svg>
+                      </span>
+                      <span class="label">02_AUDIO_CLARITY</span>
+                    </div>
+                    <h6>Competitive Audio Architecture</h6>
+                    <p>
+                      The spatial audio system is a primary information channel.
+                      Footstep audio, ability sounds, and weapon fire provide
+                      competitive intelligence that supplements visual
+                      information, allowing players to make informed decisions
+                      based on audio cues alone — essential for pre-firing and
+                      rotation timing.
+                    </p>
+                  </td>
+                  <td>
+                    <div class="sw-item-head">
+                      <span class="sw-icon" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v4.5m0 3.75h.008v.008H12v-.008ZM10.29 3.86l-7.5 13A1.5 1.5 0 0 0 4.09 19h15.82a1.5 1.5 0 0 0 1.3-2.14l-7.5-13a1.5 1.5 0 0 0-2.6 0Z"></path>
+                        </svg>
+                      </span>
+                      <span class="label">02_TOXICITY</span>
+                    </div>
+                    <h6>Communication System Friction</h6>
+                    <p>
+                      The voice communication system, while essential for
+                      competitive play, has been widely criticized for enabling
+                      toxic behavior, particularly toward women and minority
+                      players. The ping system partially mitigates this but
+                      cannot fully replace voice coordination at high skill
+                      levels.
+                    </p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="sw-item-head">
+                      <span class="sw-icon" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09Z"></path>
+                        </svg>
+                      </span>
+                      <span class="label">03_ANTI_CHEAT</span>
+                    </div>
+                    <h6>Competitive Integrity Infrastructure</h6>
+                    <p>
+                      Riot's Vanguard anti-cheat system, 128-tick servers, and
+                      strict matchmaking algorithms create a technically robust
+                      competitive environment. The replay system and match
+                      history provide post-game analysis tools that support
+                      player improvement and skill development.
+                    </p>
+                  </td>
+                  <td>
+                    <div class="sw-item-head">
+                      <span class="sw-icon" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M3.98 8.223A10.477 10.477 0 0 0 1.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.451 10.451 0 0 1 12 4.5c4.756 0 8.773 3.162 10.065 7.498a10.522 10.522 0 0 1-4.293 5.774M6.228 6.228 3 3m3.228 3.228 3.65 3.65m7.894 7.894L21 21m-3.228-3.228-3.65-3.65m0 0a3 3 0 1 0-4.243-4.243m4.242 4.242L9.88 9.88"></path>
+                        </svg>
+                      </span>
+                      <span class="label">03_KERNEL_ACCESS</span>
+                    </div>
+                    <h6>Anti-Cheat Privacy Concerns</h6>
+                    <p>
+                      The Vanguard anti-cheat system runs at the kernel level,
+                      raising significant privacy and security concerns. This
+                      always-on system operates even when the game is not
+                      running, creating a trust barrier that has deterred
+                      privacy-conscious players from engaging with the platform.
+                    </p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="footnote summary">
+              <p>
+                The Valorant interface represents a benchmark in competitive
+                tactical shooter HCI — a system designed to be
+                <u>invisible during combat and informative between rounds</u>.
+                While its strengths lie in crosshair-centric design, competitive
+                audio architecture, and anti-cheat infrastructure, its
+                weaknesses reveal the inherent tension between hardcore
+                competitive optimization and broader player accessibility.
+                The system's greatest achievement is proving that a tactical
+                shooter HUD can serve as a competitive advantage when every
+                pixel of screen real estate is treated as a scarce resource.
+              </p>
+            </div>
+          </section>
+        </div>
+      </article>
+    </main>
+
+    <footer>
+        <h6>GameUX Atlas</h6>
+        <ul class="socials">
+            <li>
+                <a href="https://www.facebook.com/profile.php?id=61575774944293" class="social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987H7.898v-2.89h2.54V9.845c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/>
+                    </svg>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/gameux_atlas/" class="social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                </a>
+            </li>
+            <li>
+                <a href="https://x.com/GameUX_Atlas?s=20" class="social-link" aria-label="Twitter / X" target="_blank" rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.261 5.635 5.903-5.635zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+        <div class="footer-info">
+            <span>&copy; Group 5</span>
+            <span>CIP 1101</span>
+            <span>2026</span>
+            <span>GameUX Atlas</span>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top" title="Back to top">
+        <svg viewBox="0 0 56 56" width="56" height="56" aria-hidden="true" focusable="false">
+            <circle class="btn-bg" cx="28" cy="28" r="27"></circle>
+            <circle class="btn-progress-track" cx="28" cy="28" r="22"></circle>
+            <circle class="btn-progress" id="back-to-top-progress" cx="28" cy="28" r="22"></circle>
+            <path class="btn-icon" d="M28 36V20"></path>
+            <path class="btn-icon" d="M21.5 26.5L28 20l6.5 6.5"></path>
+        </svg>
+    </button>
+
+    <script>
+      // VARIABLES
+      const GAMENAME = "Valorant";
+      const DATERELEASED = "06/02/2020";
+      const PUBLISHER = "Riot Games";
+      const BADGE = "Free-to-Play";
+      const POSTERURL = "https://upload.wikimedia.org/wikipedia/en/1/12/Valorant_cover_art.png";
+      const POSTERALTTEXT = "Valorant Poster";
+      const VIDEOURL = "";
+      const VIDEOURLYT =
+        "https://www.youtube.com/embed/e_E9W2vsRbQ";
+      const YTVID = true;
+
+      const GAMEUSERSTARS = "7.5";
+      const GAMEUSERRATINGS = "20,000,000+";
+
+      const HASCRITICS = true;
+      const GAMECRITICSTARS = "8.0";
+      const GAMECRITICRATINGS = "48";
+
+      const GENRES = ["Tactical Shooter", "FPS", "Multiplayer"];
+      const PLATFORMS = ["PC", "PS5", "Xbox Series X|S"];
+      const EDITIONS = ["Free-to-Play"];
+
+      const DESCRIPTION =
+        "Valorant is a free-to-play 5v5 character-based tactical shooter developed and published by Riot Games. Combining precise gunplay inspired by Counter-Strike with unique agent abilities, players must plant or defuse a spike across competitively designed maps. Features a roster of agents with distinct abilities across four roles: Duelists, Initiators, Controllers, and Sentinels.";
+
+      // -- Document Variables --
+      const sectionRadios = Array.from(
+        document.querySelectorAll('input[name="game-section"]'),
+      );
+      const gameSections = Array.from(
+        document.querySelectorAll(".game-sections"),
+      );
+      const gameInfoNav = document.getElementById("game-info-nav");
+      const gameInfoNavLeft = document.getElementById("game-info-nav-left");
+      const gameInfoNavRight = document.getElementById("game-info-nav-right");
+      const backToTopButton = document.getElementById("back-to-top");
+      const backToTopProgress = document.getElementById("back-to-top-progress");
+
+
+      // -- Implementation --
+      document.getElementById("title").textContent = GAMENAME + " - GameUX";
+      for (let el of document.getElementsByClassName("game-name")) {
+        el.textContent = GAMENAME;
+      }
+      for (let el of document.getElementsByClassName("date-released")) {
+        el.textContent = DATERELEASED;
+      }
+      for (let el of document.getElementsByClassName("publisher")) {
+        el.textContent = PUBLISHER;
+      }
+      for (let el of document.getElementsByClassName("game-badge")) {
+        el.textContent = BADGE;
+      }
+      for (let el of document.getElementsByClassName("game-user-rating")) {
+        el.textContent = GAMEUSERSTARS;
+      }
+      for (let el of document.getElementsByClassName("game-user-ratings")) {
+        el.textContent = GAMEUSERRATINGS + " user ratings";
+      }
+      for (let el of document.getElementsByClassName("game-critic-rating")) {
+        el.textContent = GAMECRITICSTARS;
+      }
+      for (let el of document.getElementsByClassName("game-critic-ratings")) {
+        el.textContent = GAMECRITICRATINGS + " critic ratings";
+      }
+      for (let el of document.getElementsByClassName("game-poster-content")) {
+        el.src = POSTERURL;
+      }
+      document.getElementById("game-poster-img").src = POSTERURL;
+      document.getElementById("game-poster-img").title =
+        GAMENAME + " Game Poster";
+      document.getElementById("game-poster").href = POSTERURL;
+      document.getElementById("game-description").textContent = DESCRIPTION;
+      document.getElementById("game-poster-img").alt = POSTERALTTEXT;
+
+      // Video / YouTube Toggle Logic
+      const videoEl = document.getElementById("game-video");
+      const videoSourceEl = document.getElementById("game-video-source");
+      const ytEl = document.getElementById("game-video-yt");
+      if (YTVID) {
+        if (ytEl) {
+          ytEl.src = VIDEOURLYT;
+          ytEl.hidden = false;
+        }
+        if (videoEl) {
+          videoEl.hidden = true;
+          try {
+            videoEl.pause();
+          } catch (e) {}
+        }
+      } else {
+        if (videoSourceEl) {
+          videoSourceEl.src = VIDEOURL;
+        }
+        if (videoEl) {
+          videoEl.hidden = false;
+          try {
+            videoEl.load();
+          } catch (e) {}
+        }
+        if (ytEl) {
+          ytEl.hidden = true;
+          ytEl.src = "";
+        }
+      }
+
+      // Lists
+      for (let genre of GENRES) {
+        let li = document.createElement("li");
+        li.textContent = genre;
+        document.getElementById("genres").appendChild(li);
+      }
+
+      for (let platform of PLATFORMS) {
+        let li = document.createElement("li");
+        li.textContent = platform;
+        document.getElementById("platforms").appendChild(li);
+      }
+
+      for (let edition of EDITIONS) {
+        let li = document.createElement("li");
+        li.textContent = edition;
+        document.getElementById("editions").appendChild(li);
+      }
+
+      // Critic Visibility
+      if (!HASCRITICS) {
+        for (let el of document.getElementsByClassName(
+          "game-critic-rating-cont",
+        )) {
+          el.classList.add("hidden");
+        }
+      }
+
+      // Days/Years Calculation
+      let timeDiff = new Date().getTime() - new Date(DATERELEASED).getTime();
+      let daysAgo = Math.floor(timeDiff / (1000 * 3600 * 24));
+      if (daysAgo > 365) {
+        let yearsAgo = Math.floor(daysAgo / 365);
+        for (let el of document.getElementsByClassName("days-ago")) {
+          el.textContent = "(" + yearsAgo + " years ago)";
+        }
+      } else {
+        for (let el of document.getElementsByClassName("days-ago")) {
+          el.textContent = "(" + daysAgo + " days ago)";
+        }
+      }
+
+      // Section Navigation
+      function getSectionIdFromHash() {
+        const rawHash = window.location.hash || "";
+        const hash = rawHash.startsWith("#") ? rawHash.slice(1) : rawHash;
+        if (!hash) { return null; }
+        return gameSections.some((section) => section.id === hash) ? hash : null;
+      }
+
+      function syncSectionFromHash() {
+        const hashSectionId = getSectionIdFromHash();
+        if (!hashSectionId) { return false; }
+        const matchingRadio = sectionRadios.find((radio) => radio.value === hashSectionId);
+        if (matchingRadio) { matchingRadio.checked = true; }
+        showGameSection(hashSectionId);
+        return true;
+      }
+
+
+      function showGameSection(sectionId) {
+        for (let section of gameSections) {
+          let isActive = section.id === sectionId;
+          section.classList.toggle("is-active", isActive);
+          section.setAttribute("aria-hidden", String(!isActive));
+        }
+      }
+
+      const defaultSection = document.querySelector(
+        'input[name="game-section"]:checked',
+      );
+      showGameSection(
+        defaultSection ? defaultSection.value : "short-description",
+      );
+
+      for (let radio of sectionRadios) {
+        radio.addEventListener("change", () => {
+          if (!radio.checked) {
+            return;
+          }
+          showGameSection(radio.value);
+        });
+      }
+
+      // Scroll Navigation Arrows
+      function updateGameInfoNavArrows() {
+        if (!gameInfoNav || !gameInfoNavLeft || !gameInfoNavRight) {
+          return;
+        }
+
+        const maxScrollLeft = gameInfoNav.scrollWidth - gameInfoNav.clientWidth;
+        const canScroll = maxScrollLeft > 1;
+        const canScrollLeft = canScroll && gameInfoNav.scrollLeft > 1;
+        const canScrollRight =
+          canScroll && gameInfoNav.scrollLeft < maxScrollLeft - 1;
+
+        gameInfoNavLeft.hidden = !canScrollLeft;
+        gameInfoNavRight.hidden = !canScrollRight;
+      }
+
+      function scrollGameInfoNavBy(distance) {
+        if (!gameInfoNav) {
+          return;
+        }
+        gameInfoNav.scrollBy({ left: distance, behavior: "smooth" });
+      }
+
+      if (gameInfoNav && gameInfoNavLeft && gameInfoNavRight) {
+        gameInfoNav.addEventListener("scroll", updateGameInfoNavArrows);
+        gameInfoNavLeft.addEventListener("click", () => {
+          scrollGameInfoNavBy(
+            -Math.max(200, Math.floor(gameInfoNav.clientWidth * 0.5)),
+          );
+        });
+        gameInfoNavRight.addEventListener("click", () => {
+          scrollGameInfoNavBy(
+            Math.max(200, Math.floor(gameInfoNav.clientWidth * 0.5)),
+          );
+        });
+        window.addEventListener("resize", updateGameInfoNavArrows);
+        updateGameInfoNavArrows();
+      }
+      // Back-to-top button with circular scroll progress
+      const progressRadius = 22;
+      const progressCircumference = 2 * Math.PI * progressRadius;
+
+      if (backToTopProgress) {
+        backToTopProgress.style.strokeDasharray = String(progressCircumference);
+        backToTopProgress.style.strokeDashoffset = String(progressCircumference);
+      }
+
+      function updateBackToTop() {
+        if (!backToTopButton || !backToTopProgress) { return; }
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = scrollableHeight > 0 ? Math.min(scrollTop / scrollableHeight, 1) : 0;
+        const dashOffset = progressCircumference * (1 - progress);
+        backToTopProgress.style.strokeDashoffset = String(dashOffset);
+        backToTopButton.classList.toggle("is-visible", scrollTop > 160);
+      }
+
+      if (backToTopButton) {
+        backToTopButton.addEventListener("click", () => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+      }
+
+      window.addEventListener("scroll", updateBackToTop, { passive: true });
+      window.addEventListener("resize", updateBackToTop);
+      updateBackToTop();
+    </script>
+  </body>
+</html>

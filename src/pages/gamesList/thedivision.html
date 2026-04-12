@@ -1,0 +1,2192 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend:wght@100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Manrope:wght@200..800&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" href="../../styles/styles.css" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="../../styles/sizeChecker.css"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="../../styles/game.css" type="text/css" />
+    <style>
+      nav.game-info-nav {
+        display: flex;
+        overflow-x: auto;
+        white-space: nowrap;
+        scrollbar-width: none;
+      }
+
+      nav.game-info-nav::-webkit-scrollbar {
+        display: none;
+      }
+
+      nav.game-info-nav label {
+        width: calc(100% / 5) !important;
+      }
+
+      .game-sections {
+        display: none;
+        width: 100%;
+
+        &.is-active {
+          display: block;
+        }
+
+        &#short-description {
+          & > h2 {
+            font-weight: 900;
+            font-size: 2.5em;
+          }
+
+          & > p {
+            text-align: justify;
+            margin-bottom: 1em;
+          }
+
+          & > .list-style {
+            list-style: none;
+            float: right;
+            background-color: var(--t-color-base-100);
+            padding: 2em;
+            margin-left: 2em;
+            margin-bottom: 2em;
+            border-radius: var(--t-radius-field);
+            border: var(--t-border) solid var(--t-color-base-300);
+
+            & > li {
+              margin-left: 1em;
+              margin-bottom: 1em;
+              position: relative;
+
+              &::before {
+                content: "";
+                display: block;
+                position: absolute;
+                width: 0.2em;
+                height: 1em;
+                background-color: var(--t-color-primary);
+                border-radius: 1em;
+                left: -0.75em;
+                top: calc(50% - 0.5em);
+              }
+            }
+          }
+        }
+
+        &#ui-components {
+          margin-bottom: 2em;
+
+          & > h2 {
+            font-weight: 900;
+            font-size: 2.5em;
+          }
+
+          & .major-components {
+            display: grid;
+            grid-template-rows: 1fr;
+            grid-template-columns: 50% 1fr;
+            gap: 1em;
+            margin: 2em 0;
+          }
+
+          & .major-component {
+            background-color: var(--t-color-base-100);
+            border-radius: var(--t-radius-field);
+            padding: 1em;
+            height: auto;
+            position: relative;
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+            gap: 1em;
+            min-height: 15em;
+            border: var(--t-border) solid var(--t-color-base-300);
+
+            &:first-child {
+              grid-column: 1 / -1;
+              width: 100%;
+              flex-direction: row;
+            }
+
+            &:not(:first-child) {
+              flex-direction: column;
+            }
+
+            & figure {
+              position: relative;
+              margin-bottom: 0;
+              width: 100%;
+              height: auto;
+
+              & figcaption {
+                font-size: 0.9em;
+                color: var(--t-color-light);
+                margin-top: 0.5em;
+                position: absolute;
+                bottom: 0.5em;
+                right: 0.5em;
+              }
+            }
+
+            & a {
+              flex-shrink: 0;
+              margin-left: auto;
+
+              & img {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 0.25em;
+              }
+            }
+
+            & .count {
+              font-weight: 700;
+              font-size: 1.2em;
+              font-family: var(--bs-font-monospace);
+              color: var(--t-color-secondary);
+              display: block;
+            }
+
+            & .header-text {
+              font-weight: 700;
+              font-size: 2.5em;
+              font-family: var(--bs-font-serif);
+            }
+
+            & ul {
+              list-style: none;
+              margin-left: 1em;
+              margin-top: 2em;
+
+              & h6 {
+                font-weight: 900;
+              }
+
+              & li {
+                margin-left: 1em;
+                margin-bottom: 0.5em;
+                position: relative;
+
+                &::before {
+                  content: "";
+                  display: block;
+                  position: absolute;
+                  width: 0.2em;
+                  height: 1em;
+                  background-color: var(--t-color-primary);
+                  border-radius: 1em;
+                  left: -0.75em;
+                  top: calc(50% - 0.5em);
+                }
+              }
+            }
+          }
+
+          & .fittslaw {
+            display: grid;
+            grid-template-columns: 50% 1fr;
+            gap: 1em;
+
+            & h2 {
+              font-weight: 900;
+              font-size: 2.5em;
+            }
+
+            & figure {
+              position: relative;
+              margin-bottom: 0;
+              width: 100%;
+              height: auto;
+
+              & figcaption {
+                font-size: 0.9em;
+                color: var(--t-color-dark);
+                margin-top: 0.5em;
+                position: absolute;
+                bottom: 0.5em;
+                right: 0.5em;
+              }
+            }
+
+            & a {
+              flex-shrink: 0;
+              margin-left: auto;
+
+              & img {
+                width: 100% !important;
+                height: auto !important;
+                margin-bottom: 1em;
+              }
+            }
+          }
+
+          @media (width < 48rem) {
+            & .fittslaw {
+              grid-template-columns: 1fr;
+            }
+          }
+
+          & .mathmodel {
+            margin: 1em 0;
+            padding: 1em;
+            position: relative;
+            padding-left: 2em;
+            background-color: var(--t-color-base-300);
+            border-radius: var(--t-radius-field);
+            overflow: hidden;
+
+            &::before {
+              content: "";
+              display: block;
+              position: absolute;
+              width: 0.5em;
+              height: 100%;
+              background-color: var(--t-color-primary);
+              left: 0;
+              top: 0;
+            }
+
+            & h6 {
+              font-family: var(--bs-font-monospace);
+              color: var(--t-color-dark);
+              font-weight: 300;
+            }
+
+            & span {
+              font-size: 2em;
+            }
+          }
+
+          @media (width < 48rem) {
+            & .major-components {
+              grid-template-columns: 1fr;
+              gap: 1em;
+            }
+
+            & .major-component {
+              &:first-child {
+                flex-direction: column;
+              }
+
+              & figure {
+                width: 100%;
+
+                & figcaption {
+                  bottom: 1em;
+                }
+              }
+
+              & a {
+                margin-left: 0;
+                width: 100%;
+
+                & img {
+                  width: 100% !important;
+                  height: auto !important;
+                  margin-bottom: 1em;
+                }
+              }
+            }
+          }
+        }
+
+        &#user-interaction {
+          margin-bottom: 2em;
+
+          & > h2 {
+            font-weight: 900;
+            font-size: 2.5em;
+          }
+
+          & h3 {
+            font-weight: 900;
+            font-size: 2.5em;
+          }
+
+          & .multi-modal-feedback {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1em;
+            padding-top: 1em;
+
+            @media (width < 48rem) {
+              grid-template-columns: 1fr !important;
+            }
+
+            & figure {
+              margin: auto;
+              width: 100%;
+              height: auto;
+
+              & img {
+                width: 100% !important;
+                height: auto !important;
+              }
+            }
+          }
+
+          & ul {
+            list-style: none;
+            padding: 0;
+
+            & li {
+              margin-top: 2em;
+              display: flex;
+              flex-direction: row;
+
+              & h6 {
+                font-weight: 700;
+                font-size: 1.5em;
+                margin-bottom: 0.5em;
+              }
+
+              & .logo-svg {
+                height: 5em;
+                flex-shrink: 0;
+                background-color: var(--t-color-secondary);
+                color: var(--t-color-base-100);
+                aspect-ratio: 1 / 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 1em;
+                border-radius: var(--t-radius-field);
+                margin: auto;
+                margin-right: 1em;
+
+                & svg {
+                  width: 100%;
+                  height: 100%;
+                }
+              }
+            }
+          }
+        }
+
+        &#hci-principles {
+          margin-bottom: 2em;
+
+          & > h2 {
+            font-weight: 900;
+            font-size: 2.5em;
+          }
+
+          & .cybernetic-feedback-loops {
+            margin-top: 2em;
+            padding: 1em;
+            border-radius: var(--t-radius-field);
+            background-color: var(--t-color-base-100);
+            border: var(--t-border) solid var(--t-color-base-300);
+
+            & > h3 {
+              font-weight: 900;
+              font-size: 2em;
+            }
+
+            & .cybernetic-content {
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 1em;
+
+              @media (width < 48rem) {
+                grid-template-columns: 1fr !important;
+              }
+
+              & h6 {
+                font-weight: 700;
+                font-size: 1.2em;
+                margin-bottom: 0.5em;
+              }
+
+              & .primary-modalities {
+                list-style: none;
+                padding: 1em;
+                background-color: var(--t-color-base-200);
+                border-radius: var(--t-radius-field);
+                margin-bottom: 0;
+
+                & li {
+                  margin-left: 1em;
+                  margin-bottom: 0.5em;
+                  position: relative;
+
+                  &::before {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    width: 0.2em;
+                    height: 1em;
+                    background-color: var(--t-color-primary);
+                    border-radius: 1em;
+                    left: -0.75em;
+                    top: calc(50% - 0.5em);
+                  }
+                }
+              }
+            }
+          }
+
+          & .spatial-congruence {
+            padding: 1em;
+            margin-top: 2em;
+
+            & h2 {
+              font-weight: 900;
+              font-size: 2.5em;
+            }
+          }
+
+          & .cognitive-load-bifurcation {
+            margin: 2em 0;
+            padding: 1em;
+            border-radius: var(--t-radius-field);
+            background-color: var(--t-color-base-100);
+            border: var(--t-border) solid var(--t-color-base-300);
+
+            & > h2 {
+              font-weight: 900;
+              font-size: 2em;
+            }
+
+            & table {
+              width: 100%;
+              border-collapse: separate;
+              border-spacing: 0;
+              border: var(--t-border) solid var(--t-color-base-300);
+              border-radius: var(--t-radius-field);
+              overflow: hidden;
+              background-color: var(--t-color-base-200);
+            }
+
+            & th,
+            & td {
+              padding: 1em;
+              vertical-align: top;
+            }
+
+            & thead th {
+              font-weight: 800;
+              font-size: 1.05em;
+              background-color: var(--t-color-base-300);
+              border-bottom: 1px solid var(--t-color-base-300);
+            }
+
+            & th + th,
+            & td + td {
+              border-left: 1px solid var(--t-color-base-300);
+            }
+
+            & tbody td {
+              border-bottom: 1px solid var(--t-color-base-300);
+            }
+
+            & tbody tr:last-child td {
+              border-bottom: 0;
+            }
+
+            & td h6 {
+              font-weight: 700;
+              font-size: 1.15em;
+              margin-bottom: 0.5em;
+            }
+
+            & td p {
+              margin-bottom: 0;
+            }
+
+            @media (width < 48rem) {
+              & table,
+              & thead,
+              & tbody,
+              & tr,
+              & th,
+              & td {
+                display: block;
+                width: 100%;
+              }
+
+              & thead {
+                display: none;
+              }
+
+              & tbody tr {
+                border-bottom: 1px solid var(--t-color-base-300);
+                padding: 0.5em;
+              }
+
+              & tbody tr:last-child {
+                border-bottom: 0;
+              }
+
+              & td {
+                border: 0;
+                border-radius: var(--t-radius-field);
+                background-color: var(--t-color-base-100);
+                margin-bottom: 0.75em;
+              }
+
+              & td::before {
+                display: block;
+                font-weight: 700;
+                font-size: 0.85em;
+                text-transform: uppercase;
+                letter-spacing: 0.04em;
+                color: var(--t-color-primary);
+                margin-bottom: 0.5em;
+              }
+
+              & td:nth-child(1)::before {
+                content: "Extrinsic Load";
+              }
+
+              & td:nth-child(2)::before {
+                content: "Intrinsic Focus";
+              }
+            }
+          }
+        }
+
+        &#ui-ux-weaknesses {
+          margin-bottom: 2em;
+
+          & > h2 {
+            font-weight: 900;
+            font-size: 2.5em;
+          }
+
+          & > p {
+            text-align: justify;
+            margin-bottom: 2em;
+          }
+
+          & table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            border: var(--t-border) solid var(--t-color-base-300);
+            border-radius: var(--t-radius-field);
+            overflow: hidden;
+            background-color: var(--t-color-base-100);
+          }
+
+          & th,
+          & td {
+            padding: 1em;
+            vertical-align: top;
+          }
+
+          & td {
+            position: relative;
+            padding-right: 4.25em;
+          }
+
+          & thead th {
+            font-weight: 800;
+            font-size: 1.05em;
+            background-color: var(--t-color-base-300);
+            border-bottom: 1px solid var(--t-color-base-300);
+          }
+
+          & th + th,
+          & td + td {
+            border-left: 1px solid var(--t-color-base-300);
+          }
+
+          & tbody td {
+            border-bottom: 1px solid var(--t-color-base-300);
+          }
+
+          & tbody tr:last-child td {
+            border-bottom: 0;
+          }
+
+          & .badge {
+            font-size: 0.75em;
+            font-weight: 400;
+            border-radius: var(--t-radius-selector);
+            padding: 0.35em 0.75em;
+            margin-left: 0.5em;
+            vertical-align: middle;
+            border: var(--t-border) solid transparent;
+          }
+
+          & .badge-success {
+            background-color: var(--t-color-success);
+            color: color-mix(
+              in oklab,
+              var(--t-color-success-content) 70%,
+              var(--t-color-success)
+            );
+            border-color: color-mix(
+              in oklab,
+              var(--t-color-success) 65%,
+              var(--t-color-dark)
+            );
+          }
+
+          & .badge-danger {
+            background-color: var(--t-color-error);
+            color: color-mix(
+              in oklab,
+              var(--t-color-error-content) 70%,
+              var(--t-color-error)
+            );
+            border-color: color-mix(
+              in oklab,
+              var(--t-color-error) 65%,
+              var(--t-color-dark)
+            );
+          }
+
+          & .sw-item-head {
+            display: block;
+            margin-bottom: 0.75em;
+          }
+
+          & .sw-icon {
+            width: 2.75em;
+            height: 2.75em;
+            color: var(--t-color-base-300);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            position: absolute;
+            top: 0.75em;
+            right: 0.75em;
+          }
+
+          & .sw-icon svg {
+            width: 1.5em;
+            height: 1.5em;
+          }
+
+          & .label {
+            display: inline-block;
+            font-family: var(--bs-font-monospace);
+            font-size: 0.9em;
+            font-weight: 700;
+            color: var(--t-color-secondary);
+            letter-spacing: 0.03em;
+          }
+
+          & td h6 {
+            font-weight: 700;
+            font-size: 1.2em;
+            margin-bottom: 0.5em;
+          }
+
+          & td p {
+            margin-bottom: 0;
+            text-align: justify;
+          }
+
+          @media (width < 48rem) {
+            & table,
+            & thead,
+            & tbody,
+            & tr,
+            & th,
+            & td {
+              display: block;
+              width: 100%;
+            }
+
+            & thead {
+              display: none;
+            }
+
+            & tbody tr {
+              border-bottom: 1px solid var(--t-color-base-300);
+              padding: 0.5em;
+              background-color: var(--t-color-base-200);
+            }
+
+            & tbody tr:last-child {
+              border-bottom: 0;
+            }
+
+            & td {
+              border: 0;
+              border-radius: var(--t-radius-field);
+              background-color: var(--t-color-base-100);
+              margin-bottom: 0.75em;
+            }
+
+            & td::before {
+              display: block;
+              font-weight: 700;
+              font-size: 0.85em;
+              text-transform: uppercase;
+              letter-spacing: 0.04em;
+              margin-bottom: 0.5em;
+            }
+
+            & td:nth-child(1)::before {
+              content: "System Strengths";
+              color: color-mix(
+                in oklab,
+                var(--t-color-success) 70%,
+                var(--t-color-dark)
+              );
+            }
+
+            & td:nth-child(2)::before {
+              content: "System Weaknesses";
+              color: color-mix(
+                in oklab,
+                var(--t-color-error) 70%,
+                var(--t-color-dark)
+              );
+            }
+          }
+        }
+      }
+
+      .list-style-area {
+        margin: 2em 0;
+        width: 100%;
+        background-color: var(--t-color-base-100);
+        border: var(--t-border) solid var(--t-color-base-300);
+        padding: 1em;
+        border-radius: var(--t-radius-field);
+
+        & ol {
+          list-style: none;
+          margin-left: 0;
+          padding-left: 0;
+          margin-top: 2em;
+          display: grid;
+          gap: 1em;
+
+          &.two-columns {
+            grid-template-columns: 1fr 1fr;
+          }
+
+          &.three-columns {
+            grid-template-columns: 1fr 1fr 1fr;
+          }
+
+          &.four-columns {
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+          }
+
+          @media (width < 48rem) {
+            &.md-one-columns {
+              grid-template-columns: 1fr !important;
+            }
+
+            &.md-two-columns {
+              grid-template-columns: 1fr 1fr !important;
+            }
+          }
+
+          & li {
+            position: relative;
+
+            &::before {
+              font-weight: 700;
+              font-size: 5em;
+              font-family: var(--bs-font-monospace);
+              color: var(--t-color-base-200);
+              position: absolute;
+              top: -0.5em;
+            }
+
+            &:nth-child(1)::before {
+              content: "01";
+            }
+
+            &:nth-child(2)::before {
+              content: "02";
+            }
+
+            &:nth-child(3)::before {
+              content: "03";
+            }
+
+            &:nth-child(4)::before {
+              content: "04";
+            }
+
+            @media (width > 48rem) {
+              &::before {
+                left: 0;
+              }
+            }
+
+            @media (width < 48rem) {
+              &::before {
+                right: 0;
+              }
+            }
+
+            & h6 {
+              font-weight: 700;
+              font-size: 1.5em;
+              position: relative;
+
+              &::after {
+                content: "";
+                display: block;
+                width: 100%;
+                height: 1px;
+                background-color: var(--t-color-base-300);
+                margin-top: 0.5em;
+              }
+            }
+          }
+        }
+      }
+
+      .footnote {
+        width: 100%;
+        background-color: rgba(var(--t-color-primary-rgb), 0.1);
+        padding: 2em;
+        border-radius: var(--t-radius-field);
+
+        &::before {
+          content: "Note:";
+          font-weight: 700;
+          font-size: 1.2em;
+          color: var(--t-color-primary);
+          display: block;
+          margin-bottom: 0.5em;
+        }
+
+        &.summary::before {
+          content: "Summary:";
+        }
+      }
+
+      .game-video-wrp {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        overflow: hidden;
+        background-color: var(--t-color-base-300);
+      }
+
+      .game-video-wrp iframe,
+      .game-video-wrp video {
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+
+      .back-to-top {
+        position: fixed;
+        right: 1.25rem;
+        bottom: 1.25rem;
+        width: 3.5rem;
+        height: 3.5rem;
+        z-index: 1001;
+        cursor: pointer;
+        opacity: 0;
+        pointer-events: none;
+        transition:
+          opacity 0.2s ease,
+          transform 0.2s ease;
+        transform: translateY(0.5rem);
+      }
+
+      .back-to-top.is-visible {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+      }
+
+      .back-to-top svg {
+        width: 100%;
+        height: 100%;
+      }
+
+      .back-to-top .btn-progress {
+        transform: rotate(-90deg);
+        transform-origin: center;
+        transition: stroke-dashoffset 0.1s linear;
+      }
+
+      .hidden {
+        display: none !important;
+      }
+    </style>
+
+    <title id="title">Tom Clancy's The Division - GameUX</title>
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar navbar-light navbar-expand-lg">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="../../../index.html">
+            <img
+              src="../../../public/gameux.png"
+              alt="Logo"
+              class="navbar-logo"
+            />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon" style="width: 1em"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="../../../index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="../gameList.html">Game List</a>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="../about.html">About</a></li>
+              <li class="nav-item"><a class="nav-link" href="../contact.html">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <nav class="breadcrumb-nav" aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="../gameList.html">Game List</a>
+        </li>
+        <li class="breadcrumb-item active game-name" aria-current="page">Tom Clancy's The Division</li>
+      </ol>
+    </nav>
+
+    <main>
+      <article class="wide">
+        <section class="header-section">
+          <img class="game-poster-content game-poster-background-style" />
+          <h1 class="game-name game-name-header">Tom Clancy's The Division</h1>
+          <div class="game-header">
+            <span class="game-header-cont">
+              <div class="game-info-bar">
+                <span class="game-date-info">
+                  <span class="date-released">March 8, 2016</span>
+                  <span class="days-ago"></span>
+                </span>
+                <span class="game-badge">Full Release</span>
+                <span class="publisher">Ubisoft</span>
+              </div>
+            </span>
+            <div class="game-header-rating">
+              <table class="game-critic-rating-cont">
+                <tr>
+                  <td rowspan="2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </td>
+                  <td class="game-critic-rating">0</td>
+                </tr>
+                <tr>
+                  <td class="game-critic-ratings">0 critic ratings</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <div class="video-game-container">
+            <a class="game-poster" id="game-poster">
+              <img
+                class="game-poster-img"
+                id="game-poster-img"
+                alt="The Division Poster"
+              />
+            </a>
+            <div class="game-video-wrp">
+              <video class="game-video" id="game-video" controls>
+                <source type="video/mp4" id="game-video-source" />
+                Your browser does not support the video tag.
+              </video>
+              <iframe
+                class="game-video"
+                id="game-video-yt"
+                frameborder="0"
+                allowfullscreen
+                hidden
+              ></iframe>
+            </div>
+
+            <div class="game-rating">
+              <table class="game-user-rating-cont">
+                <tr>
+                  <td rowspan="2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </td>
+                  <td class="game-user-rating">0</td>
+                </tr>
+                <tr>
+                  <td class="game-user-ratings">0 user ratings</td>
+                </tr>
+              </table>
+              <table class="game-critic-rating-cont">
+                <tr>
+                  <td rowspan="2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </td>
+                  <td class="game-critic-rating">0</td>
+                </tr>
+                <tr>
+                  <td class="game-critic-ratings">0 critic ratings</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+
+          <ul class="game-list-data">
+            <li class="game-list-data-item">
+              Genres:
+              <ul id="genres"></ul>
+            </li>
+            <li class="game-list-data-item">
+              Platforms:
+              <ul id="platforms"></ul>
+            </li>
+            <li class="game-list-data-item">
+              Editions:
+              <ul id="editions"></ul>
+            </li>
+          </ul>
+          <p class="game-description" id="game-description"></p>
+        </section>
+      </article>
+
+      <div class="game-info-nav-container">
+        <div class="game-info-nav-wrap">          <button class="game-info-nav-arrow left" id="game-info-nav-left" type="button" aria-label="Scroll sections left" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="20" height="20">
+              <path fill-rule="evenodd" d="M15.78 19.28a.75.75 0 0 1-1.06 0L8.22 12.78a.75.75 0 0 1 0-1.06l6.5-6.5a.75.75 0 1 1 1.06 1.06L9.81 12l5.97 5.72a.75.75 0 0 1 0 1.56Z" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+          
+          <nav class="game-info-nav" id="game-info-nav" role="tablist">
+            <label role="tab"
+              ><input
+                type="radio"
+                name="game-section"
+                value="short-description"
+                checked="checked"
+              />
+              Overview</label
+            >
+            <label role="tab"
+              ><input type="radio" name="game-section" value="ui-components" />
+              UI Components</label
+            >
+            <label role="tab"
+              ><input
+                type="radio"
+                name="game-section"
+                value="user-interaction"
+              />
+              Interaction</label
+            >
+            <label role="tab"
+              ><input type="radio" name="game-section" value="hci-principles" />
+              HCI Principles</label
+            >
+            <label role="tab"
+              ><input
+                type="radio"
+                name="game-section"
+                value="ui-ux-weaknesses"
+              />
+              Analysis</label
+            >
+          </nav>
+          <button
+            class="game-info-nav-arrow right"
+            id="game-info-nav-right"
+            type="button"
+            aria-label="Scroll sections right"
+            hidden=""
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+              width="20"
+              height="20"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M8.22 4.72a.75.75 0 0 1 1.06 0l6.5 6.5a.75.75 0 0 1 0 1.06l-6.5 6.5a.75.75 0 0 1-1.06-1.06L14.19 12 8.22 6.28a.75.75 0 0 1 0-1.56Z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <article>
+        <div class="game-sections-stage">
+          <!-- ==================== OVERVIEW ==================== -->
+          <section
+            class="game-sections is-active"
+            id="short-description"
+            aria-hidden="false"
+          >
+            <h2>Overview</h2>
+            <ul class="list-style">
+              <h2>Tom Clancy's The Division Game Modes:</h2>
+                            <li>Story Campaign</li>
+              <li>Dark Zone (PvPvE)</li>
+              <li>Incursions</li>
+              <li>Underground</li>
+            </ul>
+            <p>
+              Tom Clancy's The Division is an online-only open-world action RPG developed by Massive Entertainment and published by Ubisoft. Released on March 8, 2016, for PlayStation 4, Xbox One, and PC, the game is set in mid-crisis Manhattan during a smallpox pandemic. Players control Division agents tasked with restoring order.
+            </p>
+            <p>
+              The Division's UI/UX uses extensive augmented reality (AR) holographic interface elements. Mission markers, loot indicators, damage numbers, and skill cooldowns appear as holographic elements anchored in 3D space. The ISAC AI companion communicates through audio and AR overlays, creating a diegetic technology-mediated interface fitting the near-future military aesthetic.
+            </p>
+            <ul class="metrics-list">
+              <li>
+                <h6>Cognitive Load</h6>
+                <div class="value">High</div>
+                <div class="desc">
+                  Cover-based tactical combat, RPG stat management, loot evaluation, and cooperative team coordination
+                </div>
+              </li>
+              <li>
+                <h6>Response Time</h6>
+                <div class="value">\u00b1 33ms to \u00b1 100ms</div>
+                <div class="desc">
+                  Cover-to-cover movement and snap-aim mechanics in a third-person shooter with RPG calculations
+                </div>
+              </li>
+              <li>
+                <h6>Decision Frequency</h6>
+                <div class="value">~1\u20133 per encounter</div>
+                <div class="desc">
+                  Cover positioning, skill deployment, grenade usage, and target prioritization
+                </div>
+              </li>
+            </ul>
+          </section>
+
+          <!-- ==================== UI COMPONENTS ==================== -->
+          <section class="game-sections" id="ui-components" aria-hidden="true">
+            <h2>UI Components</h2>
+            <div class="major-components">
+              <div class="major-component">
+                <figure>
+                  <a
+                    href="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/365590/e36fd6a73af2b20d6286633ee3a089acf53397ff/header.jpg?t=1770141394"
+                    title="Tom Clancy's The Division Agent HUD"
+                    target="images"
+                  >
+                    <img
+                      src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/365590/e36fd6a73af2b20d6286633ee3a089acf53397ff/header.jpg?t=1770141394"
+                      alt="The Division Agent HUD"
+                    />
+                  </a>
+                  <figcaption>FIG 1.1: Agent HUD & Diegetic Interface</figcaption>
+                </figure>
+                <div>
+                  <span class="count">[ ELEMENT_01 ]</span>
+                  <span class="header-text">The Diegetic Agent HUD</span>
+                  <p>
+                    The Division's HUD is one of gaming's most celebrated
+                    diegetic interface systems. All UI elements are presented
+                    as holographic projections from the agent's SHD Tech —
+                    a smartwatch and contact lens system. The HUD is anchored
+                    to the player character on a slight angle, subtly swaying
+                    with movement, creating the illusion that the interface
+                    exists physically in the game world rather than as a
+                    screen overlay.
+                  </p>
+                  <ul>
+                    <h6>HUD Elements</h6>
+                    <li>Health & Armor Segmented Bars</li>
+                    <li>Skill Cooldown Indicators</li>
+                    <li>Ammo Counter & Weapon Info</li>
+                    <li>Proximity Radar & Threat Indicators</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="major-component">
+                <figure>
+                  <a
+                    href="https://upload.wikimedia.org/wikipedia/en/d/d5/Tom_Clancy%27s_The_Division.jpg"
+                    title="The Division Holographic Map"
+                    target="images"
+                  >
+                    <img
+                      src="https://upload.wikimedia.org/wikipedia/en/d/d5/Tom_Clancy%27s_The_Division.jpg"
+                      alt="The Division Cover Art"
+                    />
+                  </a>
+                  <figcaption>FIG 1.2: Holographic Map & Wrist UI</figcaption>
+                </figure>
+                <div>
+                  <span class="count">[ ELEMENT_02 ]</span>
+                  <span class="header-text">Holographic Map & Wrist UI</span>
+                  <p>
+                    The Division's holographic map is a standout diegetic
+                    element — a 3D projection that scales from the agent's
+                    wrist, rendering Manhattan as a miniature hologram the
+                    player navigates like a giant looking down on the city.
+                    Missions, safe houses, Dark Zone boundaries, and points
+                    of interest are all visible within this in-world
+                    projection. The wrist-mounted carousel UI for inventory
+                    and skills wraps around the character's forearm.
+                  </p>
+                </div>
+              </div>
+              <div class="major-component">
+                <figure>
+                  <a
+                    href="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/365590/e36fd6a73af2b20d6286633ee3a089acf53397ff/header.jpg?t=1770141394"
+                    title="The Division Inventory & Gear Score"
+                    target="images"
+                  >
+                    <img
+                      src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/365590/e36fd6a73af2b20d6286633ee3a089acf53397ff/header.jpg?t=1770141394"
+                      alt="The Division Gear & Inventory System"
+                    />
+                  </a>
+                  <figcaption>FIG 1.3: Inventory & Gear Score System</figcaption>
+                </figure>
+                <div>
+                  <span class="count">[ ELEMENT_03 ]</span>
+                  <span class="header-text">Inventory & Gear System</span>
+                  <p>
+                    The inventory screen presents detailed weapon stats,
+                    gear attributes, and mod slots through a comprehensive
+                    RPG-style interface. Gear Score provides an at-a-glance
+                    power metric, while color-coded rarity tiers (Worn,
+                    Standard, Specialized, Superior, High-End, Exotic) use
+                    a consistent visual language. Damage numbers float in
+                    world-space during combat, reinforcing the RPG mechanics
+                    within the tactical shooter framework.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <h2>Fitt's Law in Cover-Based Combat</h2>
+            <div class="fittslaw">
+              <div>
+                <p>
+                  Fitt's Law applies to The Division through its cover-based
+                  shooting mechanics. Players must acquire targets — enemy
+                  combatants — whose effective target width (W) is reduced
+                  by cover objects, while the distance (D) varies across
+                  urban engagement ranges. The third-person perspective
+                  provides a wider field of view than first-person shooters,
+                  effectively increasing the visual search area but also
+                  the perceptual distance to targets.
+                </p>
+                <div class="mathmodel">
+                  <h6>[ MATHEMATICAL MODEL ]</h6>
+                  <span>MT = a + b * log<sub>2</sub>(2D/W)</span>
+                </div>
+                <p>
+                  The cover system itself is a Fitt's Law optimization tool:
+                  by snapping the player to cover objects, the game reduces
+                  the effective distance (D) the crosshair must travel to
+                  acquire targets from a stable position. The aim-assist
+                  magnetism on consoles further reduces effective target
+                  width by subtly increasing the crosshair's attraction
+                  to enemy hitboxes, decreasing MT for target acquisition
+                  in dense urban firefights.
+                </p>
+              </div>
+              <div>
+                <figure>
+                  <a
+                    href="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/365590/e36fd6a73af2b20d6286633ee3a089acf53397ff/header.jpg?t=1770141394"
+                    title="The Division Cover-Based Combat"
+                    target="images"
+                  >
+                    <img
+                      src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/365590/e36fd6a73af2b20d6286633ee3a089acf53397ff/header.jpg?t=1770141394"
+                      alt="The Division Cover Combat Targeting"
+                    />
+                  </a>
+                  <figcaption>FIG 1.4: Cover-Based Target Acquisition</figcaption>
+                </figure>
+              </div>
+            </div>
+            <div class="list-style-area">
+              <h3 class="text-center">Visual Hierarchy Breakdown</h3>
+              <div class="text-center">Layering of Information</div>
+              <ol class="three-columns md-one-columns">
+                <li>
+                  <h6>Combat Priority</h6>
+                  <p>
+                    Primary focus. Enemy positions, damage numbers, and
+                    threat indicators occupy the central viewport. The
+                    third-person camera places the agent slightly off-center,
+                    keeping the dominant screen area clear for target
+                    identification while maintaining character awareness.
+                  </p>
+                </li>
+                <li>
+                  <h6>Agent Status</h6>
+                  <p>
+                    Secondary focus. Health segments, skill cooldowns, ammo
+                    count, and grenade inventory are clustered at the
+                    bottom-center of the HUD. The segmented health bar
+                    provides more granular damage feedback than a continuous
+                    bar, enabling quick risk assessment.
+                  </p>
+                </li>
+                <li>
+                  <h6>World Context</h6>
+                  <p>
+                    Tertiary focus. Floating waypoint markers, mission
+                    objectives, street name typography, and the proximity
+                    radar provide navigational and strategic context.
+                    ISAC audio notifications supplement visual cues,
+                    offloading situational awareness to the auditory
+                    channel.
+                  </p>
+                </li>
+              </ol>
+            </div>
+            <div class="footnote">
+              All component analysis is based on Tom Clancy's The Division
+              (2016). The game's diegetic HUD design demonstrates how
+              RPG-shooter interfaces can embed dense information systems
+              within the game world through holographic projections,
+              creating a cohesive near-future aesthetic where UI elements
+              feel like technology the character actually uses.
+            </div>
+          </section>
+
+          <!-- ==================== INTERACTION ==================== -->
+          <section
+            class="game-sections"
+            id="user-interaction"
+            aria-hidden="true"
+          >
+            <h2>User Interaction</h2>
+            <p>
+              An examination of the tactical cover-based combat systems
+              and social multiplayer interaction design within The Division's
+              shared-world RPG framework, analyzing how the game manages
+              the tension between cooperative PvE teamwork and the emergent
+              social dynamics of the Dark Zone's PvPvE environment.
+            </p>
+            <div class="list-style-area">
+              <h3 class="text-center">Core Gameplay Loop</h3>
+              <div class="text-center"></div>
+              <ol class="four-columns md-two-columns">
+                <li>
+                  <h6>Gear Up</h6>
+                  <p>
+                    Players manage RPG-depth loadouts — primary and
+                    secondary weapons, gear sets, skill abilities, and
+                    consumables — through the holographic wrist interface.
+                    Gear Score drives progression and access to endgame
+                    content tiers.
+                  </p>
+                </li>
+                <li>
+                  <h6>Deploy</h6>
+                  <p>
+                    Agents accept missions from the Base of Operations
+                    or encounter them in the open world. The holographic
+                    map provides mission briefings, matchmaking, and
+                    tactical route planning through Manhattan's grid.
+                  </p>
+                </li>
+                <li>
+                  <h6>Engage</h6>
+                  <p>
+                    Cover-based tactical combat requires positioning,
+                    flanking, and skill deployment. Players coordinate
+                    with up to three squadmates using roles defined by
+                    skill loadouts — healing stations, turrets, shields,
+                    and pulse scanning.
+                  </p>
+                </li>
+                <li>
+                  <h6>Extract</h6>
+                  <p>
+                    In the Dark Zone, contaminated loot must be extracted
+                    via helicopter. Firing a flare alerts all nearby
+                    players, creating a 90-second high-tension window
+                    where PvP betrayal becomes possible — the game's
+                    signature social mechanic.
+                  </p>
+                </li>
+              </ol>
+            </div>
+            <h3>Multi-Modal Feedback Matrix</h3>
+            <div class="multi-modal-feedback">
+              <div>
+                <p>
+                  The Division delivers feedback through a multi-layered
+                  sensory system that combines diegetic holographic
+                  visuals, ISAC AI audio notifications, and controller
+                  haptics. The game's RPG combat produces dense numerical
+                  feedback — floating damage numbers, critical hit
+                  indicators, and status effect icons — layered on top
+                  of the tactical shooter's positional and threat
+                  awareness systems.
+                </p>
+              </div>
+              <div>
+                <figure>
+                  <a
+                    href="https://upload.wikimedia.org/wikipedia/en/d/d5/Tom_Clancy%27s_The_Division.jpg"
+                    title="The Division Tactical Feedback"
+                    target="images"
+                  >
+                    <img
+                      src="https://upload.wikimedia.org/wikipedia/en/d/d5/Tom_Clancy%27s_The_Division.jpg"
+                      alt="The Division Tactical Feedback Systems"
+                    />
+                  </a>
+                  <figcaption>FIG 1.5: Tactical Combat Feedback</figcaption>
+                </figure>
+              </div>
+            </div>
+            <ul>
+              <li>
+                <div class="logo-svg">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25l4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h6>Audio Feedback</h6>
+                  <p>
+                    ISAC (Intelligent System Analytic Computer) serves as
+                    the player's AI companion, delivering mission updates,
+                    threat warnings, and Dark Zone status changes through
+                    calm, synthetic voice lines. Weapon audio is
+                    meticulously differentiated — each firearm class has
+                    distinct firing, reloading, and impact sounds. The
+                    ambient soundscape of post-pandemic Manhattan includes
+                    distant gunfire, wind, and environmental storytelling
+                    through found audio logs.
+                  </p>
+                </div>
+              </li>
+              <li>
+                <div class="logo-svg">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h6>Visual Feedback</h6>
+                  <p>
+                    Floating damage numbers in world-space provide RPG
+                    combat feedback — white for normal hits, orange for
+                    critical hits, and color-coded by damage type. The
+                    Pulse skill reveals enemy positions through walls
+                    as orange holographic silhouettes. ECHO holograms
+                    reconstruct past events as frozen orange holographic
+                    scenes, serving as both environmental storytelling
+                    and collectible UI elements.
+                  </p>
+                </div>
+              </li>
+              <li>
+                <div class="logo-svg">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M7.864 4.243A7.5 7.5 0 0 1 19.5 10.5c0 2.92-.556 5.709-1.568 8.268M5.742 6.364A7.465 7.465 0 0 0 4.5 10.5a7.464 7.464 0 0 1-1.15 3.993m1.989 3.559A11.209 11.209 0 0 0 8.25 10.5a3.75 3.75 0 1 1 7.5 0c0 .527-.021 1.049-.064 1.565M12 10.5a14.94 14.94 0 0 1-3.6 9.75m6.633-4.596a18.666 18.666 0 0 1-2.485 5.33"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h6>Input/Tactile Fidelity</h6>
+                  <p>
+                    The cover system uses a context-sensitive snap mechanic
+                    — pressing the cover button near geometry automatically
+                    positions the agent behind it, with smooth transitions
+                    between cover points via a directional cover-swap
+                    system. Controller haptics deliver weapon-specific
+                    recoil patterns, with heavier weapons producing
+                    stronger sustained vibration while precision rifles
+                    deliver sharp single pulses.
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </section>
+
+          <!-- ==================== HCI PRINCIPLES ==================== -->
+          <section class="game-sections" id="hci-principles" aria-hidden="true">
+            <h2>HCI Principles</h2>
+            <div class="cybernetic-feedback-loops">
+              <h3>Cybernetic Feedback Loops</h3>
+              <div class="cybernetic-content">
+                <div>
+                  <p style="text-align: justify">
+                    The Division employs a multi-layered feedback
+                    architecture spanning tactical combat, RPG progression,
+                    and social dynamics. The combat loop provides immediate
+                    feedback through damage numbers and hit confirmation.
+                    The loot loop delivers medium-term rewards through
+                    gear drops and Gear Score increases. The Dark Zone
+                    creates a long-term social feedback loop where trust,
+                    betrayal, and reputation drive emergent player behavior.
+                  </p>
+                </div>
+                <div>
+                  <ul class="primary-modalities">
+                    <h6>Primary Modalities</h6>
+                    <li>
+                      <strong>Visual</strong>: Diegetic holographic HUD, floating damage numbers, Pulse enemy highlighting, ECHO holograms, waypoint typography, gear rarity color coding
+                    </li>
+                    <li>
+                      <strong>Auditory</strong>: ISAC AI voice notifications, weapon-class audio differentiation, Dark Zone extraction alerts, proximity voice chat, ambient environmental audio
+                    </li>
+                    <li>
+                      <strong>Structural</strong>: Cover-snap system, Gear Score progression, Dark Zone extraction economy, Base of Operations upgrade tree, skill loadout builds
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="spatial-congruence">
+              <h2>Spatial Congruence</h2>
+              <p style="text-align: justify">
+                The Division achieves exceptional spatial congruence through
+                its diegetic interface philosophy. The holographic HUD is
+                projected from the agent's SHD Tech, making UI elements
+                feel like physical objects in the game world. The 3D
+                holographic map renders Manhattan from a bird's-eye
+                perspective directly in front of the player character.
+                Street names float as augmented-reality typography in
+                world-space. Cover-to-cover movement uses a visual
+                trajectory line showing the planned path before execution.
+                This consistent integration of interface and environment
+                creates a cohesive near-future technological aesthetic
+                where every UI element has a plausible in-world source.
+              </p>
+            </div>
+            <div class="cognitive-load-bifurcation">
+              <h2>Cognitive Load Bifurcation</h2>
+              <p style="text-align: justify; margin-bottom: 2em">
+                The Division manages a high-density information environment
+                by splitting cognitive demands between tactical combat
+                awareness (extrinsic) and strategic RPG decision-making
+                (intrinsic). The diegetic HUD reduces extrinsic load by
+                making UI elements feel intuitive and contextual, while
+                the RPG systems demand deep intrinsic engagement with
+                gear optimization, skill synergies, and build theory.
+              </p>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Extrinsic Organization</th>
+                    <th>Intrinsic Focus</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <h6>Diegetic HUD Integration</h6>
+                      <p>
+                        By presenting all interface elements as holographic
+                        projections from in-world technology, the HUD feels
+                        like a natural extension of the game world rather
+                        than an imposed overlay. This reduces the cognitive
+                        "switching cost" between gameplay and UI reading.
+                      </p>
+                    </td>
+                    <td>
+                      <h6>Build Optimization</h6>
+                      <p>
+                        Endgame players must mentally model complex gear
+                        set interactions, weapon talent synergies, and
+                        skill cooldown rotations to optimize their DPS,
+                        survivability, or support builds — creating deep
+                        theorycrafting demands outside of combat.
+                      </p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <h6>Color-Coded Information</h6>
+                      <p>
+                        Consistent color coding across all systems — gear
+                        rarity, enemy faction identification, Dark Zone
+                        rogue status (red), friendly agents (blue), and
+                        mission types — creates a learnable visual
+                        language that reduces interpretation time.
+                      </p>
+                    </td>
+                    <td>
+                      <h6>Dark Zone Social Calculus</h6>
+                      <p>
+                        The Dark Zone demands continuous social risk
+                        assessment: evaluating the threat level of
+                        nearby agents, deciding whether to trust or
+                        betray during extractions, and weighing the
+                        value of contaminated loot against the risk
+                        of Rogue status and death.
+                      </p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="footnote">
+              <q>
+                The Division's interface is not overlaid on the game — it
+                is built into the game's fiction. Its holographic HUD
+                proves that even information-dense RPG-shooter interfaces
+                can achieve deep immersion when every UI element has a
+                plausible diegetic source within the game world's
+                technology.
+              </q>
+            </div>
+          </section>
+
+          <!-- ==================== ANALYSIS ==================== -->
+          <section
+            class="game-sections"
+            id="ui-ux-weaknesses"
+            aria-hidden="true"
+          >
+            <h2>Strengths and Weaknesses Analysis</h2>
+            <p>
+              A comprehensive evaluation of The Division's shared-world
+              RPG-shooter interface paradigm. Examining the tension between
+              diegetic immersion and information density, and how the
+              Dark Zone's emergent social systems create both the game's
+              most compelling and most frustrating player experiences.
+            </p>
+
+            <table style="margin-bottom: 2em">
+              <thead>
+                <tr>
+                  <th>
+                    System Strengths
+                    <span class="badge badge-success">Positive_Vectors</span>
+                  </th>
+                  <th>
+                    System Weaknesses
+                    <span class="badge badge-danger">Negative_Vectors</span>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="sw-item-head">
+                      <span class="sw-icon" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"></path>
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7Z"></path>
+                        </svg>
+                      </span>
+                      <span class="label">01_DIEGETIC_UI</span>
+                    </div>
+                    <h6>Landmark Diegetic Interface</h6>
+                    <p>
+                      The holographic HUD, wrist-mounted inventory, and 3D
+                      projected map represent a benchmark in diegetic UI
+                      design. Every interface element has an in-world
+                      technological justification through SHD Tech, creating
+                      seamless immersion where opening the map or checking
+                      inventory never breaks the fiction of being a Division
+                      agent in post-pandemic Manhattan.
+                    </p>
+                  </td>
+                  <td>
+                    <div class="sw-item-head">
+                      <span class="sw-icon" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75M6.75 10.5h10.5A2.25 2.25 0 0 1 19.5 12.75v6A2.25 2.25 0 0 1 17.25 21H6.75A2.25 2.25 0 0 1 4.5 18.75v-6A2.25 2.25 0 0 1 6.75 10.5Z"></path>
+                        </svg>
+                      </span>
+                      <span class="label">01_MENU_DEPTH</span>
+                    </div>
+                    <h6>Excessive Menu Navigation</h6>
+                    <p>
+                      The inventory and gear management system requires
+                      extensive menu clicking to compare items, manage mods,
+                      and optimize builds. The diegetic wrist UI, while
+                      visually impressive, adds animation overhead to every
+                      menu interaction. Managing a full inventory of weapons,
+                      gear, and mods across multiple tabs creates significant
+                      friction during the loot-heavy endgame.
+                    </p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="sw-item-head">
+                      <span class="sw-icon" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25l4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z"></path>
+                        </svg>
+                      </span>
+                      <span class="label">02_DARK_ZONE</span>
+                    </div>
+                    <h6>Dark Zone Social Design</h6>
+                    <p>
+                      The Dark Zone's PvPvE extraction mechanic is a
+                      masterpiece of emergent social game design. The
+                      90-second extraction timer, Rogue status system, and
+                      contaminated loot mechanics create genuine tension,
+                      trust dynamics, and memorable player stories. The
+                      UI reinforces this through distinct Rogue status
+                      indicators and proximity alerts that heighten
+                      paranoia and situational awareness.
+                    </p>
+                  </td>
+                  <td>
+                    <div class="sw-item-head">
+                      <span class="sw-icon" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v4.5m0 3.75h.008v.008H12v-.008ZM10.29 3.86l-7.5 13A1.5 1.5 0 0 0 4.09 19h15.82a1.5 1.5 0 0 0 1.3-2.14l-7.5-13a1.5 1.5 0 0 0-2.6 0Z"></path>
+                        </svg>
+                      </span>
+                      <span class="label">02_BULLET_SPONGE</span>
+                    </div>
+                    <h6>RPG-Realism Dissonance</h6>
+                    <p>
+                      The RPG damage model creates a fundamental UX
+                      dissonance: enemies wearing hoodies and jeans absorb
+                      hundreds of bullets in a visually realistic modern
+                      setting. The UI faithfully communicates damage numbers
+                      and health bars, but the feedback feels incongruent
+                      with the game's grounded aesthetic — undermining
+                      the immersion that the diegetic interface works
+                      so hard to establish.
+                    </p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="sw-item-head">
+                      <span class="sw-icon" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09Z"></path>
+                        </svg>
+                      </span>
+                      <span class="label">03_WORLD_BUILDING</span>
+                    </div>
+                    <h6>Environmental Storytelling via UI</h6>
+                    <p>
+                      ECHO holograms — frozen orange holographic
+                      reconstructions of past events — are a brilliant
+                      union of UI and narrative design. They transform
+                      environmental storytelling into an interactive,
+                      diegetic interface element that rewards exploration.
+                      Phone recordings, incident reports, and survival
+                      guides build the world through discoverable UI
+                      objects scattered across Manhattan.
+                    </p>
+                  </td>
+                  <td>
+                    <div class="sw-item-head">
+                      <span class="sw-icon" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M3.98 8.223A10.477 10.477 0 0 0 1.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.451 10.451 0 0 1 12 4.5c4.756 0 8.773 3.162 10.065 7.498a10.522 10.522 0 0 1-4.293 5.774M6.228 6.228 3 3m3.228 3.228 3.65 3.65m7.894 7.894L21 21m-3.228-3.228-3.65-3.65m0 0a3 3 0 1 0-4.243-4.243m4.242 4.242L9.88 9.88"></path>
+                        </svg>
+                      </span>
+                      <span class="label">03_MISSION_VARIETY</span>
+                    </div>
+                    <h6>Repetitive Mission Structure</h6>
+                    <p>
+                      Despite Manhattan's detailed open world, the mission
+                      UI reveals a narrow set of repeating objectives —
+                      defend a point, eliminate hostiles, collect items.
+                      The mission tracker and map markers expose this
+                      repetition by displaying identical objective types
+                      across dozens of encounters, undermining the
+                      variety promised by the expansive map and the
+                      diversity of the game's faction enemies.
+                    </p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="footnote summary">
+              <p>
+                Tom Clancy's The Division represents a landmark in
+                diegetic RPG-shooter interface design — a system built
+                on the premise that
+                <u>every UI element should exist within the game's
+                fiction</u>. While its strengths lie in the revolutionary
+                holographic HUD, the Dark Zone's emergent social mechanics,
+                and ECHO-driven environmental storytelling, its weaknesses
+                reveal the friction between RPG information density and
+                menu navigation efficiency, and the fundamental tension
+                between bullet-sponge RPG mechanics and a grounded
+                realistic aesthetic. The system's greatest achievement
+                is proving that a loot-shooter can achieve cinematic
+                immersion through interface design alone.
+              </p>
+            </div>
+          </section>
+        </div>
+      </article>
+    </main>
+
+    <footer>
+        <h6>GameUX Atlas</h6>
+        <ul class="socials">
+            <li>
+                <a href="https://www.facebook.com/profile.php?id=61575774944293" class="social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987H7.898v-2.89h2.54V9.845c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/>
+                    </svg>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/gameux_atlas/" class="social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                </a>
+            </li>
+            <li>
+                <a href="https://x.com/GameUX_Atlas?s=20" class="social-link" aria-label="Twitter / X" target="_blank" rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.261 5.635 5.903-5.635zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+        <div class="footer-info">
+            <span>&copy; Group 5</span>
+            <span>CIP 1101</span>
+            <span>2026</span>
+            <span>GameUX Atlas</span>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top" title="Back to top">
+        <svg viewBox="0 0 56 56" width="56" height="56" aria-hidden="true" focusable="false">
+            <circle class="btn-bg" cx="28" cy="28" r="27"></circle>
+            <circle class="btn-progress-track" cx="28" cy="28" r="22"></circle>
+            <circle class="btn-progress" id="back-to-top-progress" cx="28" cy="28" r="22"></circle>
+            <path class="btn-icon" d="M28 36V20"></path>
+            <path class="btn-icon" d="M21.5 26.5L28 20l6.5 6.5"></path>
+        </svg>
+    </button>
+
+    <script>
+      // VARIABLES
+      const GAMENAME = "Tom Clancy's The Division";
+      const DATERELEASED = "03/08/2016";
+      const PUBLISHER = "Ubisoft";
+      const BADGE = "Full Release";
+      const POSTERURL = "https://upload.wikimedia.org/wikipedia/en/d/d5/Tom_Clancy%27s_The_Division.jpg";
+      const POSTERALTTEXT = "The Division Poster";
+      const VIDEOURL = "";
+      const VIDEOURLYT =
+        "https://www.youtube.com/embed/njfj6KwEAfg";
+      const YTVID = true;
+
+      const GAMEUSERSTARS = "6.5";
+      const GAMEUSERRATINGS = "10,000,000+";
+
+      const HASCRITICS = true;
+      const GAMECRITICSTARS = "7.9";
+      const GAMECRITICRATINGS = "71";
+
+      const GENRES = ["Action RPG", "Shooter", "Open World"];
+      const PLATFORMS = ["PS4", "Xbox One", "PC"];
+      const EDITIONS = ["Standard Edition", "Gold Edition"];
+
+      const DESCRIPTION =
+        "Tom Clancy's The Division is an online-only action RPG developed by Massive Entertainment and published by Ubisoft. Set in a pandemic-ravaged New York City, players are Division agents restoring order. Combines third-person cover-based shooting with RPG loot mechanics, skill builds, and cooperative PvE and PvPvE Dark Zone gameplay.";
+
+      // -- Document Variables --
+      const sectionRadios = Array.from(
+        document.querySelectorAll('input[name="game-section"]'),
+      );
+      const gameSections = Array.from(
+        document.querySelectorAll(".game-sections"),
+      );
+      const gameInfoNav = document.getElementById("game-info-nav");
+      const gameInfoNavLeft = document.getElementById("game-info-nav-left");
+      const gameInfoNavRight = document.getElementById("game-info-nav-right");
+      const backToTopButton = document.getElementById("back-to-top");
+      const backToTopProgress = document.getElementById("back-to-top-progress");
+
+
+      // -- Implementation --
+      document.getElementById("title").textContent = GAMENAME + " - GameUX";
+      for (let el of document.getElementsByClassName("game-name")) {
+        el.textContent = GAMENAME;
+      }
+      for (let el of document.getElementsByClassName("date-released")) {
+        el.textContent = DATERELEASED;
+      }
+      for (let el of document.getElementsByClassName("publisher")) {
+        el.textContent = PUBLISHER;
+      }
+      for (let el of document.getElementsByClassName("game-badge")) {
+        el.textContent = BADGE;
+      }
+      for (let el of document.getElementsByClassName("game-user-rating")) {
+        el.textContent = GAMEUSERSTARS;
+      }
+      for (let el of document.getElementsByClassName("game-user-ratings")) {
+        el.textContent = GAMEUSERRATINGS + " user ratings";
+      }
+      for (let el of document.getElementsByClassName("game-critic-rating")) {
+        el.textContent = GAMECRITICSTARS;
+      }
+      for (let el of document.getElementsByClassName("game-critic-ratings")) {
+        el.textContent = GAMECRITICRATINGS + " critic ratings";
+      }
+      for (let el of document.getElementsByClassName("game-poster-content")) {
+        el.src = POSTERURL;
+      }
+      document.getElementById("game-poster-img").src = POSTERURL;
+      document.getElementById("game-poster-img").title =
+        GAMENAME + " Game Poster";
+      document.getElementById("game-poster").href = POSTERURL;
+      document.getElementById("game-description").textContent = DESCRIPTION;
+      document.getElementById("game-poster-img").alt = POSTERALTTEXT;
+
+      // Video / YouTube Toggle Logic
+      const videoEl = document.getElementById("game-video");
+      const videoSourceEl = document.getElementById("game-video-source");
+      const ytEl = document.getElementById("game-video-yt");
+      if (YTVID) {
+        if (ytEl) {
+          ytEl.src = VIDEOURLYT;
+          ytEl.hidden = false;
+        }
+        if (videoEl) {
+          videoEl.hidden = true;
+          try {
+            videoEl.pause();
+          } catch (e) {}
+        }
+      } else {
+        if (videoSourceEl) {
+          videoSourceEl.src = VIDEOURL;
+        }
+        if (videoEl) {
+          videoEl.hidden = false;
+          try {
+            videoEl.load();
+          } catch (e) {}
+        }
+        if (ytEl) {
+          ytEl.hidden = true;
+          ytEl.src = "";
+        }
+      }
+
+      // Lists
+      for (let genre of GENRES) {
+        let li = document.createElement("li");
+        li.textContent = genre;
+        document.getElementById("genres").appendChild(li);
+      }
+
+      for (let platform of PLATFORMS) {
+        let li = document.createElement("li");
+        li.textContent = platform;
+        document.getElementById("platforms").appendChild(li);
+      }
+
+      for (let edition of EDITIONS) {
+        let li = document.createElement("li");
+        li.textContent = edition;
+        document.getElementById("editions").appendChild(li);
+      }
+
+      // Critic Visibility
+      if (!HASCRITICS) {
+        for (let el of document.getElementsByClassName(
+          "game-critic-rating-cont",
+        )) {
+          el.classList.add("hidden");
+        }
+      }
+
+      // Days/Years Calculation
+      let timeDiff = new Date().getTime() - new Date(DATERELEASED).getTime();
+      let daysAgo = Math.floor(timeDiff / (1000 * 3600 * 24));
+      if (daysAgo > 365) {
+        let yearsAgo = Math.floor(daysAgo / 365);
+        for (let el of document.getElementsByClassName("days-ago")) {
+          el.textContent = "(" + yearsAgo + " years ago)";
+        }
+      } else {
+        for (let el of document.getElementsByClassName("days-ago")) {
+          el.textContent = "(" + daysAgo + " days ago)";
+        }
+      }
+
+      // Section Navigation
+      function getSectionIdFromHash() {
+        const rawHash = window.location.hash || "";
+        const hash = rawHash.startsWith("#") ? rawHash.slice(1) : rawHash;
+        if (!hash) { return null; }
+        return gameSections.some((section) => section.id === hash) ? hash : null;
+      }
+
+      function syncSectionFromHash() {
+        const hashSectionId = getSectionIdFromHash();
+        if (!hashSectionId) { return false; }
+        const matchingRadio = sectionRadios.find((radio) => radio.value === hashSectionId);
+        if (matchingRadio) { matchingRadio.checked = true; }
+        showGameSection(hashSectionId);
+        return true;
+      }
+
+
+      function showGameSection(sectionId) {
+        for (let section of gameSections) {
+          let isActive = section.id === sectionId;
+          section.classList.toggle("is-active", isActive);
+          section.setAttribute("aria-hidden", String(!isActive));
+        }
+      }
+
+      const defaultSection = document.querySelector(
+        'input[name="game-section"]:checked',
+      );
+      showGameSection(
+        defaultSection ? defaultSection.value : "short-description",
+      );
+
+      for (let radio of sectionRadios) {
+        radio.addEventListener("change", () => {
+          if (!radio.checked) {
+            return;
+          }
+          showGameSection(radio.value);
+        });
+      }
+
+      // Scroll Navigation Arrows
+      function updateGameInfoNavArrows() {
+        if (!gameInfoNav || !gameInfoNavLeft || !gameInfoNavRight) {
+          return;
+        }
+
+        const maxScrollLeft = gameInfoNav.scrollWidth - gameInfoNav.clientWidth;
+        const canScroll = maxScrollLeft > 1;
+        const canScrollLeft = canScroll && gameInfoNav.scrollLeft > 1;
+        const canScrollRight =
+          canScroll && gameInfoNav.scrollLeft < maxScrollLeft - 1;
+
+        gameInfoNavLeft.hidden = !canScrollLeft;
+        gameInfoNavRight.hidden = !canScrollRight;
+      }
+
+      function scrollGameInfoNavBy(distance) {
+        if (!gameInfoNav) {
+          return;
+        }
+        gameInfoNav.scrollBy({ left: distance, behavior: "smooth" });
+      }
+
+      if (gameInfoNav && gameInfoNavLeft && gameInfoNavRight) {
+        gameInfoNav.addEventListener("scroll", updateGameInfoNavArrows);
+        gameInfoNavLeft.addEventListener("click", () => {
+          scrollGameInfoNavBy(
+            -Math.max(200, Math.floor(gameInfoNav.clientWidth * 0.5)),
+          );
+        });
+        gameInfoNavRight.addEventListener("click", () => {
+          scrollGameInfoNavBy(
+            Math.max(200, Math.floor(gameInfoNav.clientWidth * 0.5)),
+          );
+        });
+        window.addEventListener("resize", updateGameInfoNavArrows);
+        updateGameInfoNavArrows();
+      }
+      // Back-to-top button with circular scroll progress
+      const progressRadius = 22;
+      const progressCircumference = 2 * Math.PI * progressRadius;
+
+      if (backToTopProgress) {
+        backToTopProgress.style.strokeDasharray = String(progressCircumference);
+        backToTopProgress.style.strokeDashoffset = String(progressCircumference);
+      }
+
+      function updateBackToTop() {
+        if (!backToTopButton || !backToTopProgress) { return; }
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = scrollableHeight > 0 ? Math.min(scrollTop / scrollableHeight, 1) : 0;
+        const dashOffset = progressCircumference * (1 - progress);
+        backToTopProgress.style.strokeDashoffset = String(dashOffset);
+        backToTopButton.classList.toggle("is-visible", scrollTop > 160);
+      }
+
+      if (backToTopButton) {
+        backToTopButton.addEventListener("click", () => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+      }
+
+      window.addEventListener("scroll", updateBackToTop, { passive: true });
+      window.addEventListener("resize", updateBackToTop);
+      updateBackToTop();
+    </script>
+  </body>
+</html>
