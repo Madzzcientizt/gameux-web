@@ -1,4 +1,4 @@
-/* body::after {
+body::after {
   content: 'sm';
   position: fixed;
   top: 1em;
@@ -38,4 +38,4 @@
     body::after {
         content:'3xl';
     }
-} */
+}
