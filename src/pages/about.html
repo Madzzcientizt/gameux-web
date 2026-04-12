@@ -45,18 +45,11 @@
         }
         
         .about-kicker {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.45rem;
-            border: 1px solid var(--t-color-base-300);
-            border-radius: 999px;
-            padding: 0.35rem 0.75rem;
-            font-family: "Lexend", sans-serif;
-            font-size: 0.8rem;
+            font-family: var(--bs-font-monospace);
+            font-weight: 900;
             text-transform: uppercase;
-            letter-spacing: 0.08em;
-            background-color: rgba(255, 255, 255, 0.85);
             margin-bottom: 0.8rem;
+            color: var(--t-color-primary);
         }
         
         .about-title {
@@ -78,17 +71,15 @@
             display: grid;
             gap: 0.35rem;
             grid-template-columns: 1fr;
+            margin-bottom: 1em;
         }
         
         .hero-team-list li {
             border: 1px solid var(--t-color-base-300);
             border-radius: 0.75rem;
             padding: 0.45rem 0.7rem;
-            background-color: rgba(255, 255, 255, 0.75);
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 0.75rem;
+            flex-direction: column;
         }
         
         .about-grid {
@@ -104,6 +95,9 @@
             background: var(--t-color-base-100);
             border-radius: 1rem;
             padding: 0.75rem;
+            min-height: 100%;
+            display: flex;
+            flex-direction: column;
         }
         
         .about-card h2,
@@ -214,16 +208,15 @@
             padding: 0.75rem;
             background-color: var(--t-color-base-100);
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             gap: 1rem;
-            align-items: center;
         }
         
         .team-role {
-            font-size: 0.82rem;
-            font-family: var(--bs-font-monospace);
-            color: var(--t-color-secondary);
-            text-transform: uppercase;
+            font-size: 1.5em;
+            color: var(--t-color-primary);
+            font-weight: 700;
+            /* text-transform: uppercase; */
             letter-spacing: 0.04em;
         }
         
@@ -330,43 +323,43 @@
     <main>
         <article class="about-page">
             <section class="about-hero">
-                <span class="about-kicker">[ Group 5 | CIP 1101 ]</span>
+                <span class="about-kicker">Group 5 | CIP 1101</span>
                 <h1 class="about-title">About GameUX Atlas</h1>
                 <p class="about-subtitle">
                     This page explains who we are and what this website is for. We built GameUX Atlas as a class project to study how game interfaces guide players, deliver feedback, and shape user behavior.
                 </p>
                 <ul class="hero-team-list">
                     <li>
-                        <span>Group 5 Team Leader</span>
                         <span class="team-role">John Gabrielle Valencerina</span>
+                        <span>Team Leader</span>
                     </li>
                     <li>
-                        <span>Group 5 Team Member</span>
                         <span class="team-role">Sean Kirby Reales</span>
+                        <span>Developer</span>
                     </li>
                     <li>
-                        <span>Group 5 Team Member</span>
                         <span class="team-role">Lixter Niño Dinawanao</span>
+                        <span>Navigation Expert</span>
                     </li>
                     <li>
-                        <span>Group 5 Team Member</span>
                         <span class="team-role">Louiegie Roldan</span>
+                        <span>Tester</span>
                     </li>
                     <li>
-                        <span>Group 5 Team Member</span>
                         <span class="team-role">Vincent Laureano Palanas</span>
+                        <span>Content Manager</span>
                     </li>
                     <li>
-                        <span>Group 5 Team Member</span>
                         <span class="team-role">Mark Andrew Mateo</span>
+                        <span>UI Designer</span>
                     </li>
                     <li>
-                        <span>Group 5 Team Member</span>
                         <span class="team-role">Garnette Kyle Valenzuela</span>
+                        <span>Tester</span>
                     </li>
                     <li>
-                        <span>Group 5 Team Member</span>
                         <span class="team-role">Basher Sultan</span>
+                        <span>Content Manager</span>
                     </li>
                 </ul>
                 <div class="group-layout">
@@ -433,7 +426,7 @@
                         </li>
                     </ul>
 
-                    <div class="cta-box">
+                    <div class="cta-box mt-auto">
                         <p>
                             Want to explore the analyses? Start at the game list and open any featured game page.
                         </p>
