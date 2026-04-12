@@ -92,7 +92,7 @@ window.gameCatalog = [{
         title: "Team Fortress 2",
         genre: "Shooter",
         image: "../../public/posters/teamFortress2_poster.jpg",
-        href: "./gamesList/teamFortress2.html"
+        href: "./gamesList/teamFortress.html"
     },
     {
         title: "osu!",
@@ -573,6 +573,24 @@ window.gameCatalog = [{
         genre: "Action",
         image: "../../public/posters/laraCroftTombRaider_poster.jpg",
         href: "./gamesList/laraCroftTombRaider.html"
+    },
+    {
+        title: "Among Us",
+        genre: "Co-op",
+        image: "../../public/posters/amongUs_poster.jpg",
+        href: "./gamesList/amongUs.html"
+    },
+    {
+        title: "Tetris",
+        genre: "Puzzle",
+        image: "../../public/posters/tetris_poster.jpg",
+        href: "./gamesList/tetris.html"
+    },
+    {
+        title: "The Sims",
+        genre: "Simulation",
+        image: "../../public/posters/theSims_poster.jpg",
+        href: "./gamesList/thesims.html"
     },
     {
         title: "Omori",
