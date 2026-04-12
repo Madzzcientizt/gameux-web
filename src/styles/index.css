@@ -28,8 +28,8 @@ body {
     content: '';
     position: absolute;
     inset: 0;
-    background-image: radial-gradient(var(--t-color-base-300) 1px, transparent 1px);
-    background-size: 24px 24px;
+    background-color: var(--t-color-base-300);
+    opacity: 0.35;
     pointer-events: none;
     z-index: 0;
 }
@@ -91,8 +91,8 @@ body {
     letter-spacing: 0.08em;
     padding: 0.3rem 0.875rem;
     background-color: transparent;
-    border: 1.5px solid var(--t-color-base-300);
-    border-radius: 999px;
+    border: var(--t-border) solid var(--t-color-base-300);
+    border-radius: calc(var(--t-radius-selector) * 99);
     color: var(--t-color-base-content);
     opacity: 0.75;
     white-space: nowrap;
@@ -122,8 +122,8 @@ body {
     background-color: var(--t-color-primary);
     color: var(--t-color-primary-content);
     text-decoration: none;
-    border: 1.5px solid var(--t-color-primary);
-    border-radius: 0.125rem;
+    border: var(--t-border) solid var(--t-color-primary);
+    border-radius: var(--t-radius-field);
     transition: background-color 0.2s, color 0.2s, transform 0.15s;
     text-transform: uppercase;
 }
@@ -143,8 +143,8 @@ body {
     background-color: transparent;
     color: var(--t-color-base-content);
     text-decoration: none;
-    border: 1.5px solid var(--t-color-base-300);
-    border-radius: 0.125rem;
+    border: var(--t-border) solid var(--t-color-base-300);
+    border-radius: var(--t-radius-field);
     transition: border-color 0.2s, color 0.2s, transform 0.15s;
     text-transform: uppercase;
 }
@@ -303,8 +303,8 @@ body {
     text-align: left;
     gap: 0.875rem;
     background-color: var(--t-color-base-100);
-    border: 1px solid color-mix(in oklab, var(--t-color-base-content) 10%, transparent);
-    border-radius: 0.5rem;
+    border: var(--t-border) solid color-mix(in oklab, var(--t-color-base-content) 10%, transparent);
+    border-radius: var(--t-radius-box);
     position: relative;
     transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
     box-shadow: 0 1px 3px rgba(0,0,0,0.05);
@@ -338,9 +338,9 @@ body {
 .approach-icon {
     width: 2.5rem;
     height: 2.5rem;
-    border-radius: 0.375rem;
+    border-radius: calc(var(--t-radius-field) * 0.75);
     background-color: color-mix(in oklab, var(--t-color-primary) 8%, var(--t-color-base-100));
-    border: 1px solid color-mix(in oklab, var(--t-color-primary) 20%, transparent);
+    border: var(--t-border) solid color-mix(in oklab, var(--t-color-primary) 20%, transparent);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -484,7 +484,7 @@ body {
 
 /* ── game card — full poster style ── */
 .game-card {
-    border-radius: 1.5rem;
+    border-radius: calc(var(--t-radius-box) * 1.5);
     cursor: pointer;
     transition: transform 0.22s ease, box-shadow 0.22s ease;
     overflow: hidden;
@@ -517,13 +517,7 @@ body {
     content: '';
     position: absolute;
     inset: 0;
-    background: repeating-linear-gradient(
-        45deg,
-        var(--t-color-base-300),
-        var(--t-color-base-300) 1px,
-        transparent 1px,
-        transparent 8px
-    );
+    background-color: var(--t-color-base-300);
     opacity: 0.5;
     z-index: 0;
 }
@@ -568,12 +562,7 @@ body {
     flex-direction: column;
     justify-content: flex-end;
     padding: 0;
-    background: linear-gradient(
-        to top,
-        rgba(0,0,0,0.88) 0%,
-        rgba(0,0,0,0.55) 30%,
-        rgba(0,0,0,0.0) 60%
-    );
+    background-color: color-mix(in oklab, var(--t-color-base-content) 70%, transparent);
 }
 
 .game-card-top {
@@ -657,8 +646,8 @@ body {
 .c-dot {
     width: 0.5rem;
     height: 0.5rem;
-    border-radius: 999px;
-    border: 1.5px solid var(--t-color-base-300);
+    border-radius: calc(var(--t-radius-selector) * 99);
+    border: var(--t-border) solid var(--t-color-base-300);
     background: transparent;
     cursor: pointer;
     transition: background-color 0.2s, border-color 0.2s, width 0.2s;
@@ -767,7 +756,7 @@ footer .socials:empty {
     width: 3.5rem;
     height: 3.5rem;
     border: 0;
-    border-radius: 999px;
+    border-radius: calc(var(--t-radius-selector) * 99);
     background-color: transparent;
     padding: 0;
     display: grid;

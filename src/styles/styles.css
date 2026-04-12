@@ -238,18 +238,18 @@ html {
 
 ::-webkit-scrollbar-track {
   background: var(--t-color-base-200);
-  border-radius: 10px;
+  border-radius: var(--t-radius-selector);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, var(--t-color-primary) 0%, var(--t-color-accent) 100%);
-  border-radius: 10px;
-  border: 2px solid var(--t-color-base-200);
+  background-color: var(--t-color-primary);
+  border-radius: var(--t-radius-selector);
+  border: var(--t-border) solid var(--t-color-base-200);
   transition: background 0.3s ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, var(--t-color-secondary) 0%, var(--t-color-primary) 100%);
+  background-color: var(--t-color-secondary);
   box-shadow: 0 0 6px rgba(var(--t-color-primary-rgb), 0.4);
 }
 
@@ -301,7 +301,7 @@ section { /* Hero */
 .navbar-logo {
   height: 2em;
   width: auto;
-  border-radius: 0.5rem;
+  border-radius: var(--t-radius-field);
 }
 
 .navbar {
