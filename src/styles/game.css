@@ -68,31 +68,86 @@ nav.game-info-nav {
 }
 
 footer {
-    width: 100%;
-    min-height: 5em;
-    background-color: var(--t-color-base-300);
+    background-color: var(--t-color-base-100);
+    color: var(--t-color-base-content);
+    padding: 2rem 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    border-top: none;
+}
 
-    & h6 {
-        font-weight: 900;
-        font-size: 1.25em;
-        margin: 0;
-        padding: 1em;
-        text-align: center;
-        color: var(--t-color-primary)
-    }
+footer h6 {
+    font-family: var(--bs-font-serif);
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: var(--t-color-primary);
+    margin: 0;
+    text-align: center;
+}
 
-    & .footer-info {
-        display: flex;
-        justify-content: center;
-        gap: 1em;
-        padding: 1em;
-        border-top: 1px solid var(--t-color-base-200);
+footer .socials {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 0.625rem;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
 
-        & span::before {
-            content: '•';
-            margin-right: 1em;
-        }
-    }
+footer .socials:empty {
+    display: none;
+}
+
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border: 1.5px solid var(--t-color-base-300);
+    border-radius: 50%;
+    color: var(--t-color-base-content);
+    transition: border-color 0.2s, color 0.2s;
+    flex-shrink: 0;
+}
+
+.social-link svg {
+    width: 1rem;
+    height: 1rem;
+    display: block;
+}
+
+.social-link:hover {
+    border-color: var(--t-color-primary);
+    color: var(--t-color-primary);
+}
+
+.footer-info {
+    display: flex;
+    gap: 0;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.875rem;
+    letter-spacing: 0.03em;
+    color: var(--t-color-base-content);
+    flex-wrap: wrap;
+    font-family: 'Lexend', sans-serif;
+}
+
+.footer-info span {
+    white-space: nowrap;
+    padding: 0 0.6rem;
+}
+
+.footer-info span + span::before {
+    content: '•';
+    margin-right: 0.6rem;
+    opacity: 0.45;
 }
 
 .metrics-list {
