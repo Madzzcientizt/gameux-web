@@ -1,8 +1,4 @@
 
-body {
-    font-family: 'Lexend', sans-serif !important;
-}
-
 .hero-section,
 .approach-section,
 .featured-section {
@@ -15,7 +11,7 @@ body {
     height: 100dvh;
     min-height: 560px;
     padding: 0 2rem;
-    background-color: var(--t-color-base-200);
+    background-color: #080b12;
     position: relative;
     display: flex;
     align-items: center;
@@ -23,16 +19,106 @@ body {
     overflow: hidden;
 }
 
-/* subtle dot-grid texture across the full bg */
+/* darkened veil on top of poster wall so hero text remains readable */
 .hero-section::after {
     content: '';
     position: absolute;
     inset: 0;
-    background-color: var(--t-color-base-300);
-    opacity: 0.35;
+    background:
+        radial-gradient(circle at 50% 0%, color-mix(in oklab, #0f1624 72%, transparent) 0%, transparent 55%),
+        linear-gradient(180deg,
+            color-mix(in oklab, #05070c 90%, transparent) 0%,
+            color-mix(in oklab, #05070c 76%, transparent) 42%,
+            color-mix(in oklab, #05070c 92%, transparent) 100%);
+    opacity: 0.9;
     pointer-events: none;
     z-index: 0;
 }
+
+
+.hero-poster-grid {
+    position: absolute;
+    inset: -8% -12%;
+    display: grid;
+    grid-template-rows: repeat(4, minmax(0, 1fr));
+    gap: clamp(0.6rem, 1.2vw, 1.25rem);
+    transform: skewX(-16deg) rotate(-2deg) scale(1.12);
+    transform-origin: center;
+    filter: blur(2px) saturate(0.8) brightness(0.85);
+    opacity: 0.8;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.hero-poster-row {
+    display: flex;
+    gap: clamp(0.6rem, 1.2vw, 1.25rem);
+    width: max-content;
+    align-items: stretch;
+    will-change: transform;
+}
+
+.hero-poster-row-a {
+    animation: heroPosterScrollLeft 70s linear infinite;
+}
+
+.hero-poster-row-b {
+    animation: heroPosterScrollLeft 70s linear infinite;
+}
+
+.hero-poster-row-c {
+    animation: heroPosterScrollLeft 70s linear infinite;
+}
+
+.hero-poster-row-d {
+    animation: heroPosterScrollLeft 70s linear infinite;
+}
+
+.hero-poster {
+    height: clamp(12.4rem, 18vw, 17.25rem);
+    aspect-ratio: 2 / 3;
+    border-radius: 0.55rem;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.26);
+}
+
+.poster-1  { background-image: url('../../public/posters/eldenRing_poster.jpg'); }
+.poster-2  { background-image: url('../../public/posters/residentEvil4_poster.jpg'); }
+.poster-3  { background-image: url('../../public/posters/cyberPunk_poster.jpg'); }
+.poster-4  { background-image: url('../../public/posters/ghostOfTsushima_poster.jpg'); }
+.poster-5  { background-image: url('../../public/posters/geometryDash_poster.jpg'); }
+.poster-6  { background-image: url('../../public/posters/assassinsCreedBlackFlag_poster.jpg'); }
+.poster-7  { background-image: url('../../public/posters/dyingLight_poster.jpg'); }
+.poster-8  { background-image: url('../../public/posters/liesOfPi_poster.jpg'); }
+.poster-9  { background-image: url('../../public/posters/warframe_poster.jpg'); }
+.poster-10 { background-image: url('../../public/posters/persona5Royal_poster.jpg'); }
+.poster-11 { background-image: url('../../public/posters/undertale_poster.jpg'); }
+.poster-12 { background-image: url('../../public/posters/needForSpeed_poster.jpg'); }
+
+.poster-13 { background-image: url('../../public/posters/discoElysium_poster.jpg'); }
+.poster-14 { background-image: url('../../public/posters/monsterHunterWorld_poster.jpg'); }
+.poster-15 { background-image: url('../../public/posters/halfLife_poster.jpg'); }
+.poster-16 { background-image: url('../../public/posters/nierAutomata_poster.jpg'); }
+.poster-17 { background-image: url('../../public/posters/sekiro_poster.jpg'); }
+.poster-18 { background-image: url('../../public/posters/signalis_poster.jpg'); }
+.poster-19 { background-image: url('../../public/posters/subnautica_poster.jpg'); }
+.poster-20 { background-image: url('../../public/posters/stardewvalley_poster.jpg'); }
+.poster-21 { background-image: url('../../public/posters/teamFortress_poster.jpg'); }
+.poster-22 { background-image: url('../../public/posters/uncharted_poster.jpg'); }
+.poster-23 { background-image: url('../../public/posters/bloodborne_poster.jpg'); }
+.poster-24 { background-image: url('../../public/posters/arknightsEndfield_poster.png'); }
+
+@keyframes heroPosterScrollLeft {
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+    to {
+        transform: translate3d(-50%, 0, 0);
+    }
+}
+
+
 
 /* all content lives above the texture */
 .hero-content {
@@ -49,18 +135,17 @@ body {
 
 .hero-label {
     font-family: var(--bs-font-monospace);
-    font-size: 0.65rem;
     font-weight: 600;
     letter-spacing: 0.2em;
-    color: var(--t-color-secondary);
-    opacity: 0.8;
+    color: var(--t-color-primary);
+    opacity: 1;
 }
 
 .hero-heading {
     font-family: var(--bs-font-serif);
     font-size: clamp(2.8rem, 6vw + 1rem, 5.5rem);
     font-weight: 700;
-    color: var(--t-color-primary);
+    color: #f6f9ff;
     letter-spacing: -0.01em;
     margin: 0;
     line-height: 1.08;
@@ -69,8 +154,8 @@ body {
 .hero-desc {
     font-size: clamp(1rem, 1.5vw, 1.15rem);
     line-height: 1.8;
-    color: var(--t-color-base-content);
-    opacity: 0.75;
+    color: rgba(226, 234, 248, 0.9);
+    opacity: 1;
     max-width: 38rem;
     margin: 0;
     font-family: 'Lexend', sans-serif;
@@ -86,22 +171,21 @@ body {
 
 .hero-chip {
     font-family: var(--bs-font-monospace);
-    font-size: 0.62rem;
     font-weight: 600;
     letter-spacing: 0.08em;
     padding: 0.3rem 0.875rem;
     background-color: transparent;
-    border: var(--t-border) solid var(--t-color-base-300);
+    border: var(--t-border) solid rgba(255, 255, 255, 0.28);
     border-radius: calc(var(--t-radius-selector) * 99);
-    color: var(--t-color-base-content);
-    opacity: 0.75;
+    color: rgba(240, 245, 255, 0.94);
+    opacity: 1;
     white-space: nowrap;
     transition: border-color 0.18s, color 0.18s, opacity 0.18s;
 }
 
 .hero-chip:hover {
-    border-color: var(--t-color-primary);
-    color: var(--t-color-primary);
+    border-color: rgba(255, 255, 255, 0.76);
+    color: #ffffff;
     opacity: 1;
 }
 
@@ -115,7 +199,6 @@ body {
 
 .hero-btn-primary {
     display: inline-block;
-    font-size: 0.78rem;
     font-weight: 600;
     letter-spacing: 0.1em;
     padding: 0.75rem 2rem;
@@ -129,29 +212,26 @@ body {
 }
 
 .hero-btn-primary:hover {
-    background-color: transparent;
-    color: var(--t-color-primary);
     transform: translateY(-2px);
+    color: var(--t-color-light);
 }
 
 .hero-btn-secondary {
     display: inline-block;
-    font-size: 0.78rem;
     font-weight: 600;
     letter-spacing: 0.1em;
     padding: 0.75rem 2rem;
-    background-color: transparent;
-    color: var(--t-color-base-content);
+    color: #eef3ff;
     text-decoration: none;
-    border: var(--t-border) solid var(--t-color-base-300);
+    border: var(--t-border) solid rgba(255, 255, 255, 0.36);
     border-radius: var(--t-radius-field);
-    transition: border-color 0.2s, color 0.2s, transform 0.15s;
+    transition: border-color 0.2s, color 0.2s, transform 0.15s, background-color 0.2s;
     text-transform: uppercase;
 }
 
 .hero-btn-secondary:hover {
-    border-color: var(--t-color-primary);
-    color: var(--t-color-primary);
+    border-color: #ffffff;
+    color: #ffffff;
     transform: translateY(-2px);
 }
 
@@ -161,13 +241,12 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 0.3rem;
-    margin-top: 0.5rem;
+    margin-top: 5rem;
     font-family: var(--bs-font-monospace);
-    font-size: 0.55rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--t-color-base-content);
-    opacity: 0.35;
+    color: rgba(235, 243, 255, 0.84);
+    opacity: 0.7;
     animation: scrollBounce 2s ease-in-out infinite;
 }
 
@@ -201,18 +280,17 @@ body {
 
 .hero-byline-name {
     font-family: var(--bs-font-serif);
-    font-size: 0.8rem;
     font-weight: 700;
     color: var(--t-color-primary);
+    font-size: 1.5em;
     letter-spacing: 0.02em;
 }
 
 .hero-byline-sub {
     font-family: var(--bs-font-monospace);
-    font-size: 0.6rem;
     letter-spacing: 0.08em;
-    color: var(--t-color-base-content);
-    opacity: 0.5;
+    color: rgba(233, 240, 252, 0.82);
+    opacity: 1;
 }
 
 /* old card-specific rules removed — no longer used */
@@ -252,9 +330,8 @@ body {
 
 .approach-eyebrow {
     font-family: var(--bs-font-monospace);
-    font-size: 0.62rem;
     letter-spacing: 0.14em;
-    font-weight: 500;
+    font-weight: 700;
     color: var(--t-color-primary);
     opacity: 1;
     margin-bottom: 0;
@@ -274,7 +351,6 @@ body {
 }
 
 .approach-card-sub {
-    font-size: 0.9rem;
     color: var(--t-color-base-content);
     opacity: 0.5;
     text-align: right;
@@ -326,7 +402,6 @@ body {
 .approach-item::before {
     content: attr(data-step);
     font-family: var(--bs-font-monospace);
-    font-size: 0.65rem;
     font-weight: 700;
     letter-spacing: 0.14em;
     color: var(--t-color-primary);
@@ -362,7 +437,7 @@ body {
 
 .approach-item-title {
     font-family: var(--bs-font-serif);
-    font-size: 1.2rem;
+    font-size: 2rem;
     font-weight: 700;
     color: var(--t-color-base-content);
     letter-spacing: 0.01em;
@@ -370,7 +445,6 @@ body {
 }
 
 .approach-item-desc {
-    font-size: 0.95rem;
     line-height: 1.75;
     color: var(--t-color-base-content);
     opacity: 0.6;
@@ -416,9 +490,8 @@ body {
 
 .featured-eyebrow {
     font-family: var(--bs-font-monospace);
-    font-size: 0.62rem;
     letter-spacing: 0.14em;
-    font-weight: 500;
+    font-weight: 700;
     color: var(--t-color-secondary);
     opacity: 0.75;
     margin-bottom: 0.25rem;
@@ -426,15 +499,14 @@ body {
 
 .featured-title {
     font-family: var(--bs-font-serif);
-    font-size: 1.25rem;
-    font-weight: 700;
+    font-size: 2.5em;
+    font-weight: 900;
     letter-spacing: 0.02em;
     margin: 0;
     line-height: 1.2;
 }
 
 .featured-subtitle {
-    font-size: 0.9rem;
     margin-top: 0.3rem;
     color: var(--t-color-base-content);
     opacity: 0.6;
@@ -818,7 +890,7 @@ footer .socials:empty {
     to   { opacity: 1; transform: translateY(0); }
 }
 
-.hero-section     { animation: fadeUp 0.45s ease both; }
+.hero-section:not(#home)     { animation: fadeUp 0.45s ease both; }
 .approach-section { animation: fadeUp 0.45s 0.07s ease both; }
 .featured-section { animation: fadeUp 0.45s 0.13s ease both; }
 footer            { animation: fadeUp 0.45s 0.18s ease both; }
@@ -826,6 +898,28 @@ footer            { animation: fadeUp 0.45s 0.18s ease both; }
 
 /* RESPONSIVE — lg (48rem–62rem) — 3 cards */
 @media (width < 62rem) {
+    .hero-poster-grid {
+        inset: -5% -20%;
+        transform: skewX(-14deg) rotate(-2deg) scale(1.08);
+        filter: blur(2.5px) saturate(0.78) brightness(0.82);
+    }
+
+    .hero-poster-row-a {
+        animation-duration: 24s;
+    }
+
+    .hero-poster-row-b {
+        animation-duration: 24s;
+    }
+
+    .hero-poster-row-c {
+        animation-duration: 24s;
+    }
+
+    .hero-poster-row-d {
+        animation-duration: 24s;
+    }
+
     .carousel-track {
         grid-template-columns: repeat(3, 1fr);
     }
@@ -866,6 +960,20 @@ footer            { animation: fadeUp 0.45s 0.18s ease both; }
 
 /* md (36rem–48rem) — 2 cards */
 @media (width < 48rem) {
+    .hero-poster-grid {
+        inset: -2% -28%;
+        gap: 0.55rem;
+        filter: blur(3px) saturate(0.75) brightness(0.8);
+    }
+
+    .hero-poster-row {
+        gap: 0.55rem;
+    }
+
+    .hero-poster {
+        height: clamp(10.2rem, 34.5vw, 12.6rem);
+    }
+
     .carousel-track {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -895,6 +1003,16 @@ footer            { animation: fadeUp 0.45s 0.18s ease both; }
 
 /* 1 card, everything stacks */
 @media (width < 36rem) {
+    .hero-poster-grid {
+        inset: 3% -38%;
+        transform: skewX(-12deg) rotate(-1deg) scale(1.02);
+        filter: blur(3.4px) saturate(0.72) brightness(0.78);
+    }
+
+    .hero-poster {
+        height: clamp(9.15rem, 42vw, 10.8rem);
+    }
+
     .carousel-track {
         grid-template-columns: 1fr;
     }
@@ -947,3 +1065,4 @@ footer            { animation: fadeUp 0.45s 0.18s ease both; }
         bottom: 1rem;
     }
 }
+
