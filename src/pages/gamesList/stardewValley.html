@@ -893,46 +893,17 @@
             text-indent: 0;
         }
 
-        .fallback-actions {
-            display: flex;
-            gap: 1em;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 1.5em;
-        }
 
-        .btn-fallback {
-            padding: 0.75em 1.5em;
-            border: none;
-            border-radius: var(--t-radius-field);
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.25s ease;
-            font-size: 0.9em;
-            white-space: nowrap;
-        }
 
-        .btn-retry {
-            background-color: var(--t-color-primary);
-            color: var(--t-color-primary-content);
-            box-shadow: 0 4px 12px rgba(var(--t-color-primary-rgb), 0.3);
-        }
 
-        .btn-retry:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(var(--t-color-primary-rgb), 0.4);
-        }
 
-        .btn-local {
-            background-color: var(--t-color-secondary);
-            color: var(--t-color-secondary-content);
-            box-shadow: 0 4px 12px rgba(42.551% 0.161 282.339, 0.3);
-        }
 
-        .btn-local:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(42.551% 0.161 282.339, 0.4);
-        }
+
+
+
+
+
+
 
         .fallback-hint {
             color: var(--t-color-dark);
@@ -1199,13 +1170,7 @@
                                 </svg>
                                 <h4>YouTube is Blocked on Your Network</h4>
                                 <p>It appears YouTube is not accessible in your current network environment.</p>
-                                <div class="fallback-actions">
-                                    <button id="retry-youtube-btn" class="btn-fallback btn-retry" type="button">Retry
-                                        YouTube</button>
-                                    <button id="use-local-video-btn" class="btn-fallback btn-local" type="button">Use
-                                        Local Video</button>
-                                </div>
-                                <p class="fallback-hint">ðŸ’¡ Try connecting through a different network or VPN to access
+                                <p class="fallback-hint">Try connecting through a different network or VPN to access
                                     YouTube content.</p>
                             </div>
                         </div>
@@ -2118,6 +2083,22 @@
     window.addEventListener("scroll", updateBackToTop, { passive: true });
     window.addEventListener("resize", updateBackToTop);
     updateBackToTop();
+
+    // YouTube fallback handling
+    const videoFallback = document.getElementById("video-fallback");
+
+
+
+
+
+    // Handle YouTube connectivity issues
+    if (ytEl && YTVID && videoFallback) {
+        fetch("https://www.youtube.com/favicon.ico", { mode: "no-cors", cache: "no-store" })
+            .catch(() => {
+                videoFallback.hidden = false;
+                ytEl.hidden = true;
+            });
+    }
 </script>
 
 </html>

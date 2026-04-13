@@ -899,6 +899,65 @@
         border: none;
       }
 
+      /* YouTube Ban Fallback Styling */
+      .video-fallback-message {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--t-color-base-200);
+        border-radius: var(--t-radius-field);
+        padding: 2em;
+        z-index: 10;
+        backdrop-filter: blur(4px);
+      }
+
+      .fallback-content {
+        text-align: center;
+        max-width: 90%;
+      }
+
+      .fallback-icon {
+        width: 3.5em;
+        height: 3.5em;
+        color: var(--t-color-accent);
+        margin: 0 auto 1em;
+        stroke: var(--t-color-accent);
+      }
+
+      .fallback-content h4 {
+        font-weight: 700;
+        font-size: 1.5em;
+        color: var(--t-color-dark);
+        margin-bottom: 0.5em;
+      }
+
+      .fallback-content p {
+        color: var(--t-color-dark);
+        font-size: 0.95em;
+        margin-bottom: 1.5em;
+        text-indent: 0;
+      }
+
+
+
+
+
+
+
+
+
+
+
+
+
+      .fallback-hint {
+        color: var(--t-color-dark);
+        font-size: 0.85em;
+        margin: 0;
+      }
+
 
 
 
@@ -1153,6 +1212,19 @@
                 allowfullscreen
                 hidden
               ></iframe>
+              <div class="video-fallback-message" id="video-fallback" hidden>
+                <div class="fallback-content">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" class="fallback-icon">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                  </svg>
+                  <h4>YouTube is Blocked on Your Network</h4>
+                  <p>It appears YouTube is not accessible in your current network environment.</p>
+                  <p class="fallback-hint">Try connecting through a different network or VPN to access YouTube content.</p>
+                </div>
+              </div>
             </div>
 
             <div class="game-rating">
@@ -2308,6 +2380,22 @@
     window.addEventListener("scroll", updateBackToTop, { passive: true });
     window.addEventListener("resize", updateBackToTop);
     updateBackToTop();
-  </script>
+  
+    // YouTube fallback handling
+    const videoFallback = document.getElementById("video-fallback");
+
+
+
+
+
+    // Handle YouTube connectivity issues
+    if (ytEl && YTVID && videoFallback) {
+        fetch("https://www.youtube.com/favicon.ico", { mode: "no-cors", cache: "no-store" })
+            .catch(() => {
+                videoFallback.hidden = false;
+                ytEl.hidden = true;
+            });
+    }
+</script>
 </html>
 
