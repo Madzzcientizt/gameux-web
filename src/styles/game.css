@@ -1166,46 +1166,11 @@ footer .socials:empty {
     text-indent: 0;
 }
 
-.fallback-actions {
-    display: flex;
-    gap: 1em;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-bottom: 1.5em;
-}
 
-.btn-fallback {
-    padding: 0.75em 1.5em;
-    border: none;
-    border-radius: var(--t-radius-field);
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.25s ease;
-    font-size: 0.9em;
-    white-space: nowrap;
-}
 
-.btn-retry {
-    background-color: var(--t-color-primary);
-    color: var(--t-color-primary-content);
-    box-shadow: 0 4px 12px rgba(var(--t-color-primary-rgb), 0.3);
-}
 
-.btn-retry:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(var(--t-color-primary-rgb), 0.4);
-}
 
-.btn-local {
-    background-color: var(--t-color-secondary);
-    color: var(--t-color-secondary-content);
-    box-shadow: 0 4px 12px rgba(42.551% 0.161 282.339, 0.3);
-}
 
-.btn-local:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(42.551% 0.161 282.339, 0.4);
-}
 
 .fallback-hint {
     color: var(--t-color-dark);
@@ -1349,4 +1314,4 @@ footer .socials:empty {
         width: 100%;
         margin: 0;
     }
-}
+}
