@@ -1,7 +1,7 @@
 ﻿window.gameCatalog = [{
         title: "Clair Obscur: Expedition 33",
         genre: "RPG",
-        image: "../../public/posters/e33.jpg",
+        image: "../../public/posters/E33.jpg",
         href: "./gamesList/expedition33.html"
     },
     {
@@ -43,7 +43,7 @@
     {
         title: "The Legend of Zelda: Tears of the Kingdom",
         genre: "Action",
-        image: "../../public/posters/tloz.jpg",
+        image: "../../public/posters/TLOZ.jpg",
         href: "./gamesList/tloz.html"
     },
     {
