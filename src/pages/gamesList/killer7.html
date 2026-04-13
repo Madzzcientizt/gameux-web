@@ -2181,14 +2181,13 @@
     if (useLocalVideoBtn) {
         useLocalVideoBtn.addEventListener("click", useLocalVideo);
     }
-
-    // Handle YouTube load errors
-    if (ytEl) {
-        ytEl.addEventListener("error", () => {
-            if (videoFallback) {
+    // Handle YouTube connectivity issues
+    if (ytEl && YTVID && videoFallback) {
+        fetch("https://www.youtube.com/favicon.ico", { mode: "no-cors", cache: "no-store" })
+            .catch(() => {
                 videoFallback.hidden = false;
-            }
-        });
+                ytEl.hidden = true;
+            });
     }
 </script>
 
