@@ -21,274 +21,6 @@
     <link rel="stylesheet" href="../styles/about.css" type="text/css">
     <link rel="stylesheet" href="../styles/index.css" type="text/css">
 
-    <!-- Custom Styles ------------------------------------------------------------------------------------------ -->
-    <style>
-        .about-page {
-            width: 100%;
-            max-width: var(--t-maxwidth);
-            margin: 0 auto;
-            padding: 1rem 1rem 1.5rem;
-        }
-        
-        .about-page section {
-            min-height: auto;
-        }
-        
-        .about-hero {
-            position: relative;
-            overflow: hidden;
-            border: 1px solid var(--t-color-base-300);
-            border-radius: var(--t-radius-box);
-            padding: clamp(0.9rem, 1.8vw, 1.25rem);
-            background-color: var(--t-color-base-100);
-            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.09);
-        }
-        
-        .about-kicker {
-            font-family: var(--bs-font-monospace);
-            font-weight: 900;
-            text-transform: uppercase;
-            margin-bottom: 0.8rem;
-            color: var(--t-color-primary);
-        }
-        
-        .about-title {
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            font-weight: 900;
-            margin-bottom: 0.45rem;
-        }
-        
-        .about-subtitle {
-            max-width: 50rem;
-            margin-bottom: 0.5rem;
-            color: var(--t-color-base-content);
-        }
-        
-        .hero-team-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: grid;
-            gap: 0.35rem;
-            grid-template-columns: 1fr;
-            margin-bottom: 1em;
-        }
-        
-        .hero-team-list li {
-            border: 1px solid var(--t-color-base-300);
-            border-radius: 0.75rem;
-            padding: 0.45rem 0.7rem;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .about-grid {
-            margin-top: 0.55rem;
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 0.55rem;
-            align-items: start;
-            padding: 0 !important;
-        }
-        
-        .about-card {
-            border: 1px solid var(--t-color-base-300);
-            background: var(--t-color-base-100);
-            border-radius: 1rem;
-            padding: 1.2rem;
-            min-height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .about-card h2,
-        .about-card h3 {
-            margin-bottom: 0.45rem;
-            font-weight: 700;
-        }
-        
-        .about-card p {
-            margin-bottom: 0.5rem;
-            text-align: justify;
-        }
-        
-        .about-points {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: grid;
-            gap: 0.55rem;
-        }
-        
-        .about-points li {
-            position: relative;
-            padding-left: 0.95rem;
-        }
-        
-        .about-points li::before {
-            content: "";
-            position: absolute;
-            width: 0.28rem;
-            height: 100%;
-            border-radius: 999px;
-            left: 0;
-            top: 0;
-            background-color: var(--t-color-primary);
-        }
-        
-        .project-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.4rem;
-            margin-top: 0.45rem;
-        }
-        
-        .project-tags span {
-            border: 1px solid var(--t-color-base-300);
-            border-radius: 999px;
-            padding: 0.3rem 0.65rem;
-            font-size: 0.85rem;
-            background-color: var(--t-color-base-200);
-        }
-        
-        .group-layout {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 0.5rem;
-        }
-        
-        .group-photo-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 0.6rem;
-        }
-        
-        .group-photo-wrap {
-            border-radius: 1rem;
-            overflow: hidden;
-            border: 1px solid var(--t-color-base-300);
-            background-color: var(--t-color-base-200);
-            min-height: 16rem;
-            position: relative;
-            display: grid;
-            place-items: center;
-        }
-        
-        .group-photo-wrap img {
-            width: 100%;
-            max-width: 100%;
-            height: 100%;
-            max-height: 15rem;
-            object-fit: cover;
-            filter: drop-shadow(0 12px 20px rgba(0, 0, 0, 0.2));
-        }
-        
-        .group-photo-caption {
-            position: absolute;
-            left: 0.75rem;
-            bottom: 0.75rem;
-            font-size: 0.8rem;
-            border-radius: 999px;
-            border: 1px solid var(--t-color-base-300);
-            background: rgba(255, 255, 255, 0.88);
-            padding: 0.35rem 0.65rem;
-            margin: 0;
-        }
-        
-        .team-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: grid;
-            gap: 0.65rem;
-        }
-        
-        .team-list li {
-            border: 1px solid var(--t-color-base-300);
-            border-radius: 0.85rem;
-            padding: 0.75rem;
-            background-color: var(--t-color-base-100);
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-        
-        .team-role {
-            font-size: 1.5em;
-            color: var(--t-color-primary);
-            font-weight: 700;
-            /* text-transform: uppercase; */
-            letter-spacing: 0.04em;
-        }
-        
-        .cta-box {
-            margin-top: 0.75rem;
-            padding: 0.85rem;
-            border-radius: 1rem;
-            border: 1px solid var(--t-color-base-300);
-            background-color: rgba(var(--t-color-primary-rgb), 0.09);
-        }
-        
-        .cta-box p {
-            margin-bottom: 0.75rem;
-            text-align: left;
-        }
-        
-        .about-actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.65rem;
-        }
-        
-        .about-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0.55rem 1rem;
-            border-radius: 999px;
-            border: 1px solid var(--t-color-base-300);
-            text-decoration: none;
-            color: inherit;
-            font-weight: 600;
-            background: var(--t-color-base-100);
-            transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
-        }
-        
-        .about-btn:hover {
-            transform: translateY(-2px);
-            border-color: var(--t-color-primary);
-            box-shadow: 0 10px 20px rgba(var(--t-color-primary-rgb), 0.15);
-        }
-        
-        .about-btn.primary {
-            background-color: var(--t-color-primary);
-            color: var(--t-color-primary-content);
-            border-color: var(--t-color-primary);
-        }
-        
-        @media (min-width: 62rem) {
-            .about-grid {
-                grid-template-columns: 1.05fr 0.95fr;
-            }
-            .hero-team-list {
-                grid-template-columns: 1fr 1fr;
-            }
-            .group-layout {
-                grid-template-columns: 1fr;
-            }
-            .group-photo-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-            .group-photo-wrap {
-                min-height: 20rem;
-            }
-            .group-photo-wrap img {
-                max-height: 19rem;
-            }
-        }
-    </style>
-    <!-- Custom Styles ------------------------------------------------------------------------------------------ -->
-
     <title>About - GameUX</title>
 </head>
 
@@ -331,36 +63,52 @@
                 </p>
                 <ul class="hero-team-list">
                     <li>
-                        <span class="team-role">John Gabrielle Valencerina</span>
-                        <span>Team Leader</span>
+                        <a href="https://johngabb12.vercel.app/" target="_blank" rel="noopener noreferrer">
+                            <span class="team-name">John Gabrielle Valencerina</span>
+                            <span class="team-role">Team Leader</span>
+                        </a>
                     </li>
                     <li>
-                        <span class="team-role">Sean Kirby Reales</span>
-                        <span>Developer</span>
+                        <a href="https://madzzcientizt.github.io/IntegWebsite/" target="_blank" rel="noopener noreferrer">
+                            <span class="team-role">Sean Kirby Reales</span>
+                            <span>Developer</span>
+                        </a>
                     </li>
                     <li>
-                        <span class="team-role">Lixter Niño Dinawanao</span>
-                        <span>Navigation Expert</span>
+                        <a href="">
+                            <span class="team-role">Lixter Niño Dinawanao</span>
+                            <span>Navigation Expert</span>
+                        </a>
                     </li>
                     <li>
-                        <span class="team-role">Louiegie Roldan</span>
-                        <span>Tester</span>
+                        <a href="https://lucille-n.github.io/Integrative-Programming/" target="_blank" rel="noopener noreferrer">
+                            <span class="team-role">Louiegie Roldan</span>
+                            <span>Tester</span>
+                        </a>
                     </li>
                     <li>
-                        <span class="team-role">Vincent Laureano Palanas</span>
-                        <span>Content Manager</span>
+                        <a href="https://yano-static.github.io/Landing-Page/" target="_blank" rel="noopener noreferrer">
+                            <span class="team-role">Vincent Laureano Palanas</span>
+                            <span>Content Manager</span>
+                        </a>
                     </li>
                     <li>
-                        <span class="team-role">Mark Andrew Mateo</span>
-                        <span>UI Designer</span>
+                        <a href="https://reveiluure.github.io/Blogged-As-Markd-UPDATE-V.1-/" target="_blank" rel="noopener noreferrer">
+                            <span class="team-role">Mark Andrew Mateo</span>
+                            <span>UI Designer</span>
+                        </a>
                     </li>
                     <li>
-                        <span class="team-role">Garnette Kyle Valenzuela</span>
-                        <span>Tester</span>
+                        <a href="https://garnettekyle.github.io/My_Personal_Website/">
+                            <span class="team-role">Garnette Kyle Valenzuela</span>
+                            <span>Tester</span>
+                        </a>
                     </li>
                     <li>
-                        <span class="team-role">Basher Sultan</span>
-                        <span>Content Manager</span>
+                        <a href="https://sultanbasher-jpg.github.io/PersonalWebsite/" target="_blank" rel="noopener noreferrer">
+                            <span class="team-role">Basher Sultan</span>
+                            <span>Content Manager</span>
+                        </a>
                     </li>
                 </ul>
                 <div class="group-layout">
