@@ -1,7 +1,7 @@
 ﻿window.gameCatalog = [{
         title: "Clair Obscur: Expedition 33",
         genre: "RPG",
-        image: "../../public/posters/E33.jpg",
+        image: "../../public/posters/e33.jpg",
         href: "./gamesList/expedition33.html"
     },
     {
@@ -43,8 +43,8 @@
     {
         title: "The Legend of Zelda: Tears of the Kingdom",
         genre: "Action",
-        image: "../../public/posters/TLOZ.jpg",
-        href: "./gamesList/TLOZ.html"
+        image: "../../public/posters/tloz.jpg",
+        href: "./gamesList/tloz.html"
     },
     {
         title: "Super Mario Odyssey",
@@ -140,7 +140,7 @@
         title: "Cyberpunk 2077",
         genre: "RPG",
         image: "../../public/posters/cyberpunk2077.jpg",
-        href: "./gamesList/cyberpunk.html"
+        href: "./gamesList/cyberPunk.html"
     },
     {
         title: "Ghost of Tsushima",
@@ -187,7 +187,7 @@
     {
         title: "Stardew Valley",
         genre: "Simulation",
-        image: "../../public/posters/stardewValley.jpg",
+        image: "../../public/posters/stardewvalley.jpg",
         href: "./gamesList/stardewValley.html"
     },
     {
@@ -254,19 +254,19 @@
         title: "Sea of Thieves",
         genre: "Action",
         image: "../../public/posters/seaOfThieves.jpg",
-        href: "./gamesList/seaOfThieves.html"
+        href: "./gamesList/seaofthieves.html"
     },
     {
         title: "Detroit: Become Human",
         genre: "Interactive Drama",
         image: "../../public/posters/detroitBecomeHuman.jpg",
-        href: "./gamesList/detroitBecomeHuman.html"
+        href: "./gamesList/detroitbecomehuman.html"
     },
     {
         title: "Mirror's Edge",
         genre: "Action",
         image: "../../public/posters/mirrorsEdge.jpg",
-        href: "./gamesList/mirrorsEdge.html"
+        href: "./gamesList/mirrorsedge.html"
     },
     {
         title: "Bloodborne",
@@ -278,7 +278,7 @@
         title: "Kingdom Hearts",
         genre: "RPG",
         image: "../../public/posters/kingdomHearts.jpg",
-        href: "./gamesList/kingdomHearts.html"
+        href: "./gamesList/kingdomhearts.html"
     },
     {
         title: "Crash Bandicoot",
@@ -313,8 +313,8 @@
     {
         title: "Umamusume: Pretty Derby",
         genre: "Simulation",
-        image: "../../public/posters/umamusume.jpg",
-        href: "./gamesList/umamusume.html"
+        image: "../../public/posters/umaMusume.jpg",
+        href: "./gamesList/umaMusume.html"
     },
     {
         title: "Arknights: Endfield",
@@ -356,7 +356,7 @@
         title: "7 Days to Die",
         genre: "Survival",
         image: "../../public/posters/7daysToDie.jpg",
-        href: "./gamesList/7daysToDie.html"
+        href: "./gamesList/7daystoDie.html"
     },
     {
         title: "Content Warning",
@@ -386,7 +386,7 @@
         title: "Crossfire",
         genre: "FPS",
         image: "../../public/posters/crossfire.jpg",
-        href: "./gamesList/crossfire.html"
+        href: "./gamesList/crossFire.html"
     },
     {
         title: "It Takes Two",
@@ -409,7 +409,7 @@
     {
         title: "Toy Story 3",
         genre: "Platformer",
-        image: "../../public/posters/toyStory3.jpg",
+        image: "../../public/posters/toystory3.jpg",
         href: "./gamesList/toyStory.html"
     },
     {
@@ -500,7 +500,7 @@
         title: "The Division",
         genre: "Shooter",
         image: "../../public/posters/theDivision.jpg",
-        href: "./gamesList/theDivision.html"
+        href: "./gamesList/thedivision.html"
     },
     {
         title: "DJMAX Respect V",
@@ -554,7 +554,7 @@
         title: "Death Stranding",
         genre: "RPG",
         image: "../../public/posters/deathStranding.jpg",
-        href: "./gamesList/deathStranding.html"
+        href: "./gamesList/deathstranding.html"
     },
     {
         title: "Lies of P",
