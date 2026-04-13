@@ -2085,6 +2085,50 @@
     window.addEventListener("scroll", updateBackToTop, { passive: true });
     window.addEventListener("resize", updateBackToTop);
     updateBackToTop();
+
+    // YouTube fallback handling
+    const retryYouTubeBtn = document.getElementById("retry-youtube-btn");
+    const useLocalVideoBtn = document.getElementById("use-local-video-btn");
+    const videoFallback = document.getElementById("video-fallback");
+
+    function retryYouTube() {
+        if (ytEl && VIDEOURLYT) {
+            ytEl.src = VIDEOURLYT;
+            ytEl.hidden = false;
+            videoEl.hidden = true;
+            videoFallback.hidden = true;
+        }
+    }
+
+    function useLocalVideo() {
+        if (videoSourceEl && VIDEOURL) {
+            videoSourceEl.src = VIDEOURL;
+            videoEl.hidden = false;
+            ytEl.hidden = true;
+            ytEl.src = "";
+            videoFallback.hidden = true;
+            try {
+                videoEl.load();
+            } catch (e) { }
+        }
+    }
+
+    if (retryYouTubeBtn) {
+        retryYouTubeBtn.addEventListener("click", retryYouTube);
+    }
+
+    if (useLocalVideoBtn) {
+        useLocalVideoBtn.addEventListener("click", useLocalVideo);
+    }
+
+    // Handle YouTube connectivity issues
+    if (ytEl && YTVID && videoFallback) {
+        fetch("https://www.youtube.com/favicon.ico", { mode: "no-cors", cache: "no-store" })
+            .catch(() => {
+                videoFallback.hidden = false;
+                ytEl.hidden = true;
+            });
+    }
 </script>
 
 </html>
