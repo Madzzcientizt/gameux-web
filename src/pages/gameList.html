@@ -39,17 +39,13 @@
         }
         
         .controls-shell {
-            width: min(100%, 68rem);
+            width: 100%;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             align-items: stretch;
             gap: 0.85rem;
-            background-color: var(--t-color-base-100);
-            border: var(--t-border) solid var(--t-color-base-300);
-            border-radius: calc(var(--t-radius-selector) * 99);
             padding: 0.9rem;
-            box-shadow: 0 12px 28px rgba(var(--t-color-primary-rgb), 0.08);
         }
         
         .filter-dropdown,
@@ -61,12 +57,9 @@
         .filter-toggle,
         .sort-toggle,
         .search-input {
+            border-radius: var(--t-radius-box);
             border: var(--t-border) solid var(--t-color-base-300);
-            border-radius: calc(var(--t-radius-selector) * 99);
-            background-color: var(--t-color-base-100);
-            color: var(--t-color-base-content);
             font-weight: 600;
-            box-shadow: 0 8px 24px rgba(var(--t-color-primary-rgb), 0.06);
             min-height: 3.25rem;
         }
         
@@ -437,9 +430,6 @@
             .controls-shell {
                 gap: 1rem;
             }
-            .search-input {
-                max-width: 22rem;
-            }
             .game-grid {
                 grid-template-columns: repeat(4, minmax(0, 1fr));
             }
@@ -545,6 +535,8 @@
         <article class="game-list-page">
             <div class="game-controls">
                 <div class="controls-shell">
+                    <input class="search-input" id="titleSearch" type="search" placeholder="Search by title">
+
                     <div class="filter-dropdown">
                         <button class="filter-toggle" id="filterToggle" type="button">
                             Filters
@@ -562,8 +554,6 @@
                             <div class="genre-checklist" id="genreChecklist"></div>
                         </div>
                     </div>
-
-                    <input class="search-input" id="titleSearch" type="search" placeholder="Search by title">
 
                     <div class="sort-dropdown">
                         <button class="sort-toggle" id="sortToggle" type="button">
