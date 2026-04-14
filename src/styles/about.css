@@ -70,7 +70,7 @@
 .about-card {
   border: 1px solid var(--t-color-base-300);
   background: var(--t-color-base-100);
-  border-radius: 1rem;
+  border-radius: var(--t-radius-selector);
   padding: 1.2rem;
   min-height: 100%;
   display: flex;
@@ -140,7 +140,7 @@
 }
 
 .group-photo-wrap {
-  border-radius: 1rem;
+  border-radius: var(--t-radius-selector);
   overflow: hidden;
   border: 1px solid var(--t-color-base-300);
   background-color: var(--t-color-base-200);
@@ -181,7 +181,7 @@
 
 .team-list li {
   border: 1px solid var(--t-color-base-300);
-  border-radius: 0.85rem;
+  border-radius: var(--t-radius-box)5rem;
   padding: 0.75rem;
   background-color: var(--t-color-base-100);
   display: flex;
@@ -231,7 +231,7 @@
 .cta-box {
   margin-top: 0.75rem;
   padding: 0.85rem;
-  border-radius: 1rem;
+  border-radius: var(--t-radius-selector);
   border: 1px solid var(--t-color-base-300);
   background-color: rgba(var(--t-color-primary-rgb), 0.09);
 }

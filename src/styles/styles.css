@@ -395,7 +395,7 @@ section { /* Hero */
       height: 4px;
       bottom: -1em;
       left: calc(50% - 0.125em);
-      border-radius: 0.5em;
+      border-radius: var(--t-radius-field);
       opacity: 0;
       background-color: var(--t-color-secondary);
       transition: width 0.3s ease, left 0.3s ease, bottom 0.1s ease, opacity 0.1s ease;
@@ -458,7 +458,7 @@ section { /* Hero */
       display: block;
       position: absolute;
       width: 5px;
-      border-radius: 0.5em;
+      border-radius: var(--t-radius-field);
       margin-right: 1em;
       opacity: 0;
       height: 0;
