@@ -469,3 +469,46 @@ section { /* Hero */
     }
   }
 }
+
+/* Quick links in footers */
+footer h6 {
+  font-size: 2em !important;
+}
+
+footer .quick-links {
+  list-style: none;
+  margin: 0 0 0.5rem 0;
+  padding: 0;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+footer .quick-links li {
+  margin: 0;
+}
+
+footer .quick-links a {
+  color: var(--t-color-secondary);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: color 0.15s ease, opacity 0.15s ease;
+}
+
+footer .quick-links a:hover,
+footer .quick-links a:focus {
+  color: var(--t-color-accent);
+  text-decoration: underline;
+}
+
+@media (max-width: 520px) {
+  footer .quick-links {
+    gap: 0.75rem;
+    font-size: 0.95rem;
+  }
+  footer .quick-links a {
+    font-size: 0.92rem;
+  }
+}
